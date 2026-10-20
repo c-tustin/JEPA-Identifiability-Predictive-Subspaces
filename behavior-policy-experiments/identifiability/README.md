@@ -113,7 +113,7 @@ Notice that this forward proof needs only zero mean and unit variance; full Gaus
 Run from the repository root with the dependencies in `requirements.txt` installed:
 
 ```sh
-python3 identifiability/reproduce.py
+python3 behavior-policy-experiments/identifiability/reproduce.py
 ```
 
 The implementation uses a 6 → 48 → 48 → 1 MLP. It receives fixed, bounded transforms of the observed vertex coordinates. Each batch contains paired observations. The two training terms are:

@@ -1,6 +1,6 @@
 """Label-free recovery of log-distance from a triangle's inverse-distance projection.
 
-Run: python3 identifiability/reproduce.py
+Run: python3 behavior-policy-experiments/identifiability/reproduce.py
 Requires numpy, torch, matplotlib. Uses CPU; no downloads or external data.
 This is a toy adaptation of Theorem 1, not the authors' implementation.
 """
