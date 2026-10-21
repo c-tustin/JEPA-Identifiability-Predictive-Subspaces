@@ -1,0 +1,2757 @@
+{
+  "config": {
+    "policy_updates": 600,
+    "jepa_steps": 4000,
+    "nenv": 16,
+    "rollout": 20,
+    "train_episodes": 256,
+    "eval_episodes": 64,
+    "horizon": 64,
+    "burnin": 128,
+    "batch": 512,
+    "distance_min": 1.0,
+    "distance_max": 16.0,
+    "move": 0.25,
+    "sigma": 0.7,
+    "rho": 0.9,
+    "sigreg_weight": 0.1,
+    "forward_weight": 0.2,
+    "reward_scale": 0.2,
+    "entropy_weight": 0.0005,
+    "gamma": 0.99
+  },
+  "schedule": {
+    "start": 0.25,
+    "finish": 0.75,
+    "rho_start": 0.5,
+    "sigma_start": 1.0
+  },
+  "quick": false,
+  "upstream_commit": "3e220c2177fc253916f12d980957fc40579d577a",
+  "runs": [
+    {
+      "seed": 0,
+      "conditions": {
+        "ou": {
+          "metrics": {
+            "common_grid_r2": 0.9940795902994528,
+            "reference_ou_r2": 0.9770237533887884,
+            "reference_ou_raw_variance": 0.8370010256767273,
+            "reference_ou_gaussian_cf_error": 0.0025367706548422575,
+            "final_source": "ou",
+            "final_source_r2": 0.9770237533887884,
+            "final_source_raw_variance": 0.8370010256767273,
+            "final_source_coverage": 1.0
+          },
+          "history": [],
+          "reused_control": true
+        },
+        "icm": {
+          "metrics": {
+            "common_grid_r2": 0.9463824651692588,
+            "reference_ou_r2": 0.9111596713043767,
+            "reference_ou_raw_variance": 0.5613490343093872,
+            "reference_ou_gaussian_cf_error": 0.1698082834482193,
+            "final_source": "icm",
+            "final_source_r2": 0.9514436517144244,
+            "final_source_raw_variance": 0.7637869715690613,
+            "final_source_coverage": 1.0
+          },
+          "history": [],
+          "reused_control": true
+        },
+        "icm_entropy_decay": {
+          "metrics": {
+            "common_grid_r2": 0.9450764845015619,
+            "reference_ou_r2": 0.9090124759496734,
+            "reference_ou_raw_variance": 0.5639567971229553,
+            "reference_ou_gaussian_cf_error": 0.17378616333007812,
+            "final_source": "icm",
+            "final_source_r2": 0.9483483116834315,
+            "final_source_raw_variance": 0.7455770373344421,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.1718764199031284e-06,
+              "sigreg": 417.0652770996094,
+              "common_grid_r2": 0.7123677717317667,
+              "reference_ou_r2": 0.632032751548552
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.0012932070530951023,
+              "sigreg": 16.084545135498047,
+              "common_grid_r2": 0.9174545622992205,
+              "reference_ou_r2": 0.8768502595758273
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.0013867082307115197,
+              "sigreg": 16.402851104736328,
+              "common_grid_r2": 0.9219772778259494,
+              "reference_ou_r2": 0.8836590897712953
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.002323057036846876,
+              "sigreg": 7.176271438598633,
+              "common_grid_r2": 0.9411629800576198,
+              "reference_ou_r2": 0.9056760034288346
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.002717698458582163,
+              "sigreg": 6.746788501739502,
+              "common_grid_r2": 0.9450764845015619,
+              "reference_ou_r2": 0.9090124759496734
+            }
+          ],
+          "reused_control": false
+        },
+        "icm_to_ou": {
+          "metrics": {
+            "common_grid_r2": 0.9988361832745404,
+            "reference_ou_r2": 0.9896638210621119,
+            "reference_ou_raw_variance": 0.9324826002120972,
+            "reference_ou_gaussian_cf_error": 0.00035025010583922267,
+            "final_source": "ou",
+            "final_source_r2": 0.9896638210621119,
+            "final_source_raw_variance": 0.9324826002120972,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.1850577266159235e-06,
+              "sigreg": 417.0633239746094,
+              "common_grid_r2": 0.7123677693882515,
+              "reference_ou_r2": 0.6320327520294364
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.0012938551371917129,
+              "sigreg": 16.203527450561523,
+              "common_grid_r2": 0.9201172065989667,
+              "reference_ou_r2": 0.8800984498270981
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.5,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.0802505612373352,
+              "sigreg": 6.999113082885742,
+              "common_grid_r2": 0.9871057248751902,
+              "reference_ou_r2": 0.9688487654987242
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.19481930136680603,
+              "sigreg": 3.8570446968078613,
+              "common_grid_r2": 0.9987673792603483,
+              "reference_ou_r2": 0.9891252710761119
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.21420763432979584,
+              "sigreg": 3.117955446243286,
+              "common_grid_r2": 0.9988361832745404,
+              "reference_ou_r2": 0.9896638210621119
+            }
+          ],
+          "reused_control": false
+        },
+        "icm_entropy_decay_to_ou": {
+          "metrics": {
+            "common_grid_r2": 0.9988177748064435,
+            "reference_ou_r2": 0.9896743203530018,
+            "reference_ou_raw_variance": 0.933729350566864,
+            "reference_ou_gaussian_cf_error": 0.0003482074534986168,
+            "final_source": "ou",
+            "final_source_r2": 0.9896743203530018,
+            "final_source_raw_variance": 0.933729350566864,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.1718764199031284e-06,
+              "sigreg": 417.0652770996094,
+              "common_grid_r2": 0.7123677717317667,
+              "reference_ou_r2": 0.632032751548552
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.0012932070530951023,
+              "sigreg": 16.084545135498047,
+              "common_grid_r2": 0.9174545622992205,
+              "reference_ou_r2": 0.8768502595758273
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.5,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.08021334558725357,
+              "sigreg": 6.9939775466918945,
+              "common_grid_r2": 0.9869186068418271,
+              "reference_ou_r2": 0.9686636040379023
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.1950630247592926,
+              "sigreg": 3.838202476501465,
+              "common_grid_r2": 0.9987590111604411,
+              "reference_ou_r2": 0.9891706670105649
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.2146340310573578,
+              "sigreg": 3.0988149642944336,
+              "common_grid_r2": 0.9988177748064435,
+              "reference_ou_r2": 0.9896743203530018
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_rho_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.9944308625030381,
+            "reference_ou_r2": 0.9777840798262016,
+            "reference_ou_raw_variance": 0.839876651763916,
+            "reference_ou_gaussian_cf_error": 0.002409772714599967,
+            "final_source": "ou",
+            "final_source_r2": 0.9777840798262016,
+            "final_source_raw_variance": 0.839876651763916,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 0.7,
+              "alignment": 3.164796726196073e-05,
+              "sigreg": 416.7829284667969,
+              "common_grid_r2": 0.7408666817969067,
+              "reference_ou_r2": 0.6626015060171291
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 0.7,
+              "alignment": 0.8536153435707092,
+              "sigreg": 7.1482954025268555,
+              "common_grid_r2": 0.990235293681943,
+              "reference_ou_r2": 0.9688956349365161
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.7,
+              "sigma": 0.7,
+              "alignment": 0.530066728591919,
+              "sigreg": 3.9279532432556152,
+              "common_grid_r2": 0.9916142887234557,
+              "reference_ou_r2": 0.9717654661320234
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.18022459745407104,
+              "sigreg": 5.409197807312012,
+              "common_grid_r2": 0.9935465778854057,
+              "reference_ou_r2": 0.9758708718836896
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.18754063546657562,
+              "sigreg": 6.228466510772705,
+              "common_grid_r2": 0.9944308625030381,
+              "reference_ou_r2": 0.9777840798262016
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_sigma_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.9970485055848175,
+            "reference_ou_r2": 0.9839357613309733,
+            "reference_ou_raw_variance": 0.8684276342391968,
+            "reference_ou_gaussian_cf_error": 0.0013946135295554996,
+            "final_source": "ou",
+            "final_source_r2": 0.9839357613309733,
+            "final_source_raw_variance": 0.8684276342391968,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 1.0,
+              "alignment": 1.8426926544634625e-05,
+              "sigreg": 417.03533935546875,
+              "common_grid_r2": 0.7326539613068681,
+              "reference_ou_r2": 0.6537027896105183
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 1.0,
+              "alignment": 0.18440216779708862,
+              "sigreg": 10.434552192687988,
+              "common_grid_r2": 0.9913301191128729,
+              "reference_ou_r2": 0.971721794408087
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.85,
+              "alignment": 0.17585483193397522,
+              "sigreg": 4.575142860412598,
+              "common_grid_r2": 0.9938530129301625,
+              "reference_ou_r2": 0.976906461262171
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.18361321091651917,
+              "sigreg": 4.567972660064697,
+              "common_grid_r2": 0.9962615351957735,
+              "reference_ou_r2": 0.9820766963778236
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.19456566870212555,
+              "sigreg": 4.98220157623291,
+              "common_grid_r2": 0.9970485055848175,
+              "reference_ou_r2": 0.9839357613309733
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_rho_sigma_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.9975303487414333,
+            "reference_ou_r2": 0.9851510012141981,
+            "reference_ou_raw_variance": 0.8758025765419006,
+            "reference_ou_gaussian_cf_error": 0.0011853711912408471,
+            "final_source": "ou",
+            "final_source_r2": 0.9851510012141981,
+            "final_source_raw_variance": 0.8758025765419006,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 1.0,
+              "alignment": 4.596368671627715e-05,
+              "sigreg": 417.0583801269531,
+              "common_grid_r2": 0.7326539900193905,
+              "reference_ou_r2": 0.6537028217155809
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 1.0,
+              "alignment": 0.8181368112564087,
+              "sigreg": 10.631433486938477,
+              "common_grid_r2": 0.9914458561917183,
+              "reference_ou_r2": 0.9719100929343244
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.7,
+              "sigma": 0.85,
+              "alignment": 0.5288015007972717,
+              "sigreg": 4.451746463775635,
+              "common_grid_r2": 0.9942949230393975,
+              "reference_ou_r2": 0.9778749324413962
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.18529383838176727,
+              "sigreg": 4.584066390991211,
+              "common_grid_r2": 0.9967830329516255,
+              "reference_ou_r2": 0.9833010997134437
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.19651854038238525,
+              "sigreg": 4.702737331390381,
+              "common_grid_r2": 0.9975303487414333,
+              "reference_ou_r2": 0.9851510012141981
+            }
+          ],
+          "reused_control": false
+        }
+      },
+      "policy_histories": {
+        "fixed": [
+          {
+            "update": 0,
+            "intrinsic_reward": 0.21674299240112305,
+            "forward_error": 1.0837150812149048,
+            "inverse_accuracy": 0.359375,
+            "action_majority_fraction": 0.359375,
+            "entropy": 1.0986087322235107
+          },
+          {
+            "update": 25,
+            "intrinsic_reward": 0.006951763294637203,
+            "forward_error": 0.03475881740450859,
+            "inverse_accuracy": 0.34062498807907104,
+            "action_majority_fraction": 0.34375,
+            "entropy": 1.098576545715332
+          },
+          {
+            "update": 50,
+            "intrinsic_reward": 0.001018129987642169,
+            "forward_error": 0.005090649705380201,
+            "inverse_accuracy": 0.30937498807907104,
+            "action_majority_fraction": 0.34687501192092896,
+            "entropy": 1.098568320274353
+          },
+          {
+            "update": 75,
+            "intrinsic_reward": 0.00041170563781633973,
+            "forward_error": 0.0020585281308740377,
+            "inverse_accuracy": 0.34375,
+            "action_majority_fraction": 0.34687501192092896,
+            "entropy": 1.0985510349273682
+          },
+          {
+            "update": 100,
+            "intrinsic_reward": 0.00017884271801449358,
+            "forward_error": 0.0008942136773839593,
+            "inverse_accuracy": 0.30000001192092896,
+            "action_majority_fraction": 0.359375,
+            "entropy": 1.0985478162765503
+          },
+          {
+            "update": 125,
+            "intrinsic_reward": 0.000147133570862934,
+            "forward_error": 0.0007356678252108395,
+            "inverse_accuracy": 0.328125,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy": 1.0985424518585205
+          },
+          {
+            "update": 150,
+            "intrinsic_reward": 0.0002983603917527944,
+            "forward_error": 0.0014918020460754633,
+            "inverse_accuracy": 0.37812501192092896,
+            "action_majority_fraction": 0.37812501192092896,
+            "entropy": 1.0985106229782104
+          },
+          {
+            "update": 175,
+            "intrinsic_reward": 0.00011299045581836253,
+            "forward_error": 0.0005649522645398974,
+            "inverse_accuracy": 0.3187499940395355,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy": 1.0985167026519775
+          },
+          {
+            "update": 200,
+            "intrinsic_reward": 0.0003934654814656824,
+            "forward_error": 0.0019673272036015987,
+            "inverse_accuracy": 0.3375000059604645,
+            "action_majority_fraction": 0.34687501192092896,
+            "entropy": 1.098494052886963
+          },
+          {
+            "update": 225,
+            "intrinsic_reward": 0.0007063462398946285,
+            "forward_error": 0.003531730966642499,
+            "inverse_accuracy": 0.37812501192092896,
+            "action_majority_fraction": 0.37812501192092896,
+            "entropy": 1.0984485149383545
+          },
+          {
+            "update": 250,
+            "intrinsic_reward": 0.000344570231391117,
+            "forward_error": 0.001722851418890059,
+            "inverse_accuracy": 0.37187498807907104,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy": 1.0984498262405396
+          },
+          {
+            "update": 275,
+            "intrinsic_reward": 0.00045903673162683845,
+            "forward_error": 0.0022951834835112095,
+            "inverse_accuracy": 0.33125001192092896,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy": 1.0984517335891724
+          },
+          {
+            "update": 300,
+            "intrinsic_reward": 0.0006682997918687761,
+            "forward_error": 0.0033414990175515413,
+            "inverse_accuracy": 0.37187498807907104,
+            "action_majority_fraction": 0.34375,
+            "entropy": 1.0984022617340088
+          },
+          {
+            "update": 325,
+            "intrinsic_reward": 0.0004141015815548599,
+            "forward_error": 0.0020705077331513166,
+            "inverse_accuracy": 0.359375,
+            "action_majority_fraction": 0.36250001192092896,
+            "entropy": 1.098381519317627
+          },
+          {
+            "update": 350,
+            "intrinsic_reward": 0.00041478508501313627,
+            "forward_error": 0.0020739256870001554,
+            "inverse_accuracy": 0.39375001192092896,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy": 1.0983796119689941
+          },
+          {
+            "update": 375,
+            "intrinsic_reward": 0.0009915197733789682,
+            "forward_error": 0.0049575986340641975,
+            "inverse_accuracy": 0.5093749761581421,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy": 1.0982998609542847
+          },
+          {
+            "update": 400,
+            "intrinsic_reward": 0.0007542109815403819,
+            "forward_error": 0.0037710547912865877,
+            "inverse_accuracy": 0.4625000059604645,
+            "action_majority_fraction": 0.3968749940395355,
+            "entropy": 1.0982978343963623
+          },
+          {
+            "update": 425,
+            "intrinsic_reward": 0.0012196622556075454,
+            "forward_error": 0.006098310463130474,
+            "inverse_accuracy": 0.6187499761581421,
+            "action_majority_fraction": 0.36250001192092896,
+            "entropy": 1.098299264907837
+          },
+          {
+            "update": 450,
+            "intrinsic_reward": 0.003307799343019724,
+            "forward_error": 0.016538996249437332,
+            "inverse_accuracy": 0.887499988079071,
+            "action_majority_fraction": 0.359375,
+            "entropy": 1.0982667207717896
+          },
+          {
+            "update": 475,
+            "intrinsic_reward": 0.006159889046102762,
+            "forward_error": 0.030799444764852524,
+            "inverse_accuracy": 1.0,
+            "action_majority_fraction": 0.34062498807907104,
+            "entropy": 1.098097562789917
+          },
+          {
+            "update": 500,
+            "intrinsic_reward": 0.004871450364589691,
+            "forward_error": 0.024357255548238754,
+            "inverse_accuracy": 0.971875011920929,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy": 1.097977638244629
+          },
+          {
+            "update": 525,
+            "intrinsic_reward": 0.00495485682040453,
+            "forward_error": 0.02477428689599037,
+            "inverse_accuracy": 0.953125,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy": 1.0978082418441772
+          },
+          {
+            "update": 550,
+            "intrinsic_reward": 0.0070136962458491325,
+            "forward_error": 0.03506848216056824,
+            "inverse_accuracy": 0.981249988079071,
+            "action_majority_fraction": 0.34375,
+            "entropy": 1.0972884893417358
+          },
+          {
+            "update": 575,
+            "intrinsic_reward": 0.008174484595656395,
+            "forward_error": 0.04087241739034653,
+            "inverse_accuracy": 0.984375,
+            "action_majority_fraction": 0.359375,
+            "entropy": 1.0963388681411743
+          },
+          {
+            "update": 599,
+            "intrinsic_reward": 0.012126890011131763,
+            "forward_error": 0.06063445284962654,
+            "inverse_accuracy": 0.9781249761581421,
+            "action_majority_fraction": 0.37812501192092896,
+            "entropy": 1.093978762626648
+          }
+        ],
+        "decay": [
+          {
+            "update": 0,
+            "intrinsic_reward": 0.21674299240112305,
+            "forward_error": 1.0837150812149048,
+            "inverse_accuracy": 0.359375,
+            "action_majority_fraction": 0.359375,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0986087322235107
+          },
+          {
+            "update": 25,
+            "intrinsic_reward": 0.006951763294637203,
+            "forward_error": 0.03475881740450859,
+            "inverse_accuracy": 0.34062498807907104,
+            "action_majority_fraction": 0.34375,
+            "entropy_weight": 0.0005,
+            "entropy": 1.098576545715332
+          },
+          {
+            "update": 50,
+            "intrinsic_reward": 0.001018129987642169,
+            "forward_error": 0.005090649705380201,
+            "inverse_accuracy": 0.30937498807907104,
+            "action_majority_fraction": 0.34687501192092896,
+            "entropy_weight": 0.0005,
+            "entropy": 1.098568320274353
+          },
+          {
+            "update": 75,
+            "intrinsic_reward": 0.00041170563781633973,
+            "forward_error": 0.0020585281308740377,
+            "inverse_accuracy": 0.34375,
+            "action_majority_fraction": 0.34687501192092896,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985510349273682
+          },
+          {
+            "update": 100,
+            "intrinsic_reward": 0.00017884271801449358,
+            "forward_error": 0.0008942136773839593,
+            "inverse_accuracy": 0.30000001192092896,
+            "action_majority_fraction": 0.359375,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985478162765503
+          },
+          {
+            "update": 125,
+            "intrinsic_reward": 0.000147133570862934,
+            "forward_error": 0.0007356678252108395,
+            "inverse_accuracy": 0.328125,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985424518585205
+          },
+          {
+            "update": 150,
+            "intrinsic_reward": 0.0002983603917527944,
+            "forward_error": 0.0014918020460754633,
+            "inverse_accuracy": 0.37812501192092896,
+            "action_majority_fraction": 0.37812501192092896,
+            "entropy_weight": 0.0004995826377295492,
+            "entropy": 1.0985106229782104
+          },
+          {
+            "update": 175,
+            "intrinsic_reward": 0.00011299045581836253,
+            "forward_error": 0.0005649522645398974,
+            "inverse_accuracy": 0.3187499940395355,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy_weight": 0.00045784641068447415,
+            "entropy": 1.098516821861267
+          },
+          {
+            "update": 200,
+            "intrinsic_reward": 0.0003934654814656824,
+            "forward_error": 0.0019673272036015987,
+            "inverse_accuracy": 0.3375000059604645,
+            "action_majority_fraction": 0.34687501192092896,
+            "entropy_weight": 0.000416110183639399,
+            "entropy": 1.0984941720962524
+          },
+          {
+            "update": 225,
+            "intrinsic_reward": 0.0007063462398946285,
+            "forward_error": 0.003531730966642499,
+            "inverse_accuracy": 0.37812501192092896,
+            "action_majority_fraction": 0.37812501192092896,
+            "entropy_weight": 0.0003743739565943239,
+            "entropy": 1.098448395729065
+          },
+          {
+            "update": 250,
+            "intrinsic_reward": 0.000344570231391117,
+            "forward_error": 0.001722851418890059,
+            "inverse_accuracy": 0.37187498807907104,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy_weight": 0.00033263772954924875,
+            "entropy": 1.09844970703125
+          },
+          {
+            "update": 275,
+            "intrinsic_reward": 0.00045903673162683845,
+            "forward_error": 0.0022951834835112095,
+            "inverse_accuracy": 0.33125001192092896,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy_weight": 0.0002909015025041736,
+            "entropy": 1.0984514951705933
+          },
+          {
+            "update": 300,
+            "intrinsic_reward": 0.0006680318037979305,
+            "forward_error": 0.0033401590771973133,
+            "inverse_accuracy": 0.3687500059604645,
+            "action_majority_fraction": 0.34062498807907104,
+            "entropy_weight": 0.0002491652754590985,
+            "entropy": 1.0984019041061401
+          },
+          {
+            "update": 325,
+            "intrinsic_reward": 0.00040522677591070533,
+            "forward_error": 0.0020261339377611876,
+            "inverse_accuracy": 0.359375,
+            "action_majority_fraction": 0.36250001192092896,
+            "entropy_weight": 0.00020742904841402333,
+            "entropy": 1.0983811616897583
+          },
+          {
+            "update": 350,
+            "intrinsic_reward": 0.00041811756091192365,
+            "forward_error": 0.0020905877463519573,
+            "inverse_accuracy": 0.39375001192092896,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy_weight": 0.00016569282136894825,
+            "entropy": 1.098379135131836
+          },
+          {
+            "update": 375,
+            "intrinsic_reward": 0.0010219623800367117,
+            "forward_error": 0.005109812133014202,
+            "inverse_accuracy": 0.503125011920929,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy_weight": 0.00012395659432387306,
+            "entropy": 1.0982990264892578
+          },
+          {
+            "update": 400,
+            "intrinsic_reward": 0.0007914780871942639,
+            "forward_error": 0.0039573898538947105,
+            "inverse_accuracy": 0.453125,
+            "action_majority_fraction": 0.3968749940395355,
+            "entropy_weight": 8.2220367278798e-05,
+            "entropy": 1.0982967615127563
+          },
+          {
+            "update": 425,
+            "intrinsic_reward": 0.0011392156593501568,
+            "forward_error": 0.005696078296750784,
+            "inverse_accuracy": 0.6156250238418579,
+            "action_majority_fraction": 0.36250001192092896,
+            "entropy_weight": 4.048414023372282e-05,
+            "entropy": 1.098298192024231
+          },
+          {
+            "update": 450,
+            "intrinsic_reward": 0.0031019176822155714,
+            "forward_error": 0.0155095886439085,
+            "inverse_accuracy": 0.8374999761581421,
+            "action_majority_fraction": 0.359375,
+            "entropy_weight": 0.0,
+            "entropy": 1.0982662439346313
+          },
+          {
+            "update": 475,
+            "intrinsic_reward": 0.00639470387250185,
+            "forward_error": 0.031973522156476974,
+            "inverse_accuracy": 1.0,
+            "action_majority_fraction": 0.34062498807907104,
+            "entropy_weight": 0.0,
+            "entropy": 1.098097801208496
+          },
+          {
+            "update": 500,
+            "intrinsic_reward": 0.004650031216442585,
+            "forward_error": 0.02325015887618065,
+            "inverse_accuracy": 0.984375,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy_weight": 0.0,
+            "entropy": 1.0979740619659424
+          },
+          {
+            "update": 525,
+            "intrinsic_reward": 0.005087399389594793,
+            "forward_error": 0.025437001138925552,
+            "inverse_accuracy": 0.953125,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy_weight": 0.0,
+            "entropy": 1.0978057384490967
+          },
+          {
+            "update": 550,
+            "intrinsic_reward": 0.007638661656528711,
+            "forward_error": 0.03819330409169197,
+            "inverse_accuracy": 0.9750000238418579,
+            "action_majority_fraction": 0.34375,
+            "entropy_weight": 0.0,
+            "entropy": 1.0972882509231567
+          },
+          {
+            "update": 575,
+            "intrinsic_reward": 0.010684800334274769,
+            "forward_error": 0.05342400074005127,
+            "inverse_accuracy": 0.984375,
+            "action_majority_fraction": 0.359375,
+            "entropy_weight": 0.0,
+            "entropy": 1.0963256359100342
+          },
+          {
+            "update": 599,
+            "intrinsic_reward": 0.007972694002091885,
+            "forward_error": 0.0398634672164917,
+            "inverse_accuracy": 0.9781249761581421,
+            "action_majority_fraction": 0.37812501192092896,
+            "entropy_weight": 0.0,
+            "entropy": 1.094133734703064
+          }
+        ]
+      },
+      "policy_diagnostics": {
+        "fixed": {
+          "mean_action_probabilities": [
+            0.3704395890235901,
+            0.32657885551452637,
+            0.3029816150665283
+          ],
+          "mean_action_entropy_nats": 1.0949559211730957,
+          "final_model_reward_distance_1_to_2": 0.02134629338979721,
+          "final_model_reward_distance_8_to_16": 0.0021512724924832582,
+          "reward_note": "Frozen final-model diagnostic, not a reconstruction of the evolving training reward."
+        },
+        "decay": {
+          "mean_action_probabilities": [
+            0.3699299693107605,
+            0.3264468014240265,
+            0.3036232888698578
+          ],
+          "mean_action_entropy_nats": 1.095077395439148,
+          "final_model_reward_distance_1_to_2": 0.028332121670246124,
+          "final_model_reward_distance_8_to_16": 0.002057237084954977,
+          "reward_note": "Frozen final-model diagnostic, not a reconstruction of the evolving training reward."
+        }
+      }
+    },
+    {
+      "seed": 1,
+      "conditions": {
+        "ou": {
+          "metrics": {
+            "common_grid_r2": 0.9959137295392144,
+            "reference_ou_r2": 0.9828267965681808,
+            "reference_ou_raw_variance": 0.863822340965271,
+            "reference_ou_gaussian_cf_error": 0.0020504852291196585,
+            "final_source": "ou",
+            "final_source_r2": 0.9828267965681808,
+            "final_source_raw_variance": 0.863822340965271,
+            "final_source_coverage": 1.0
+          },
+          "history": [],
+          "reused_control": true
+        },
+        "icm": {
+          "metrics": {
+            "common_grid_r2": 0.8484077415885972,
+            "reference_ou_r2": 0.808713534089621,
+            "reference_ou_raw_variance": 22.91269302368164,
+            "reference_ou_gaussian_cf_error": 1.9419441223144531,
+            "final_source": "icm",
+            "final_source_r2": 0.958818451414041,
+            "final_source_raw_variance": 18.195497512817383,
+            "final_source_coverage": 0.6875
+          },
+          "history": [],
+          "reused_control": true
+        },
+        "icm_entropy_decay": {
+          "metrics": {
+            "common_grid_r2": 0.8551174612755887,
+            "reference_ou_r2": 0.8164884317890937,
+            "reference_ou_raw_variance": 23.218780517578125,
+            "reference_ou_gaussian_cf_error": 1.918654441833496,
+            "final_source": "icm",
+            "final_source_r2": 0.9624831238220521,
+            "final_source_raw_variance": 18.961925506591797,
+            "final_source_coverage": 0.6875
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.3492737025444512e-06,
+              "sigreg": 418.1487121582031,
+              "common_grid_r2": 0.7835584415194452,
+              "reference_ou_r2": 0.7249588758544787
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.7252097129821777,
+              "sigreg": 44.880409240722656,
+              "common_grid_r2": 0.8457410567973853,
+              "reference_ou_r2": 0.8054097821416089
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.7557333707809448,
+              "sigreg": 37.28736114501953,
+              "common_grid_r2": 0.8499817633080373,
+              "reference_ou_r2": 0.8103910765887475
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.6125407218933105,
+              "sigreg": 40.347686767578125,
+              "common_grid_r2": 0.8527397653709985,
+              "reference_ou_r2": 0.8137120573485748
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.645354151725769,
+              "sigreg": 40.457122802734375,
+              "common_grid_r2": 0.8551174612755887,
+              "reference_ou_r2": 0.8164884317890937
+            }
+          ],
+          "reused_control": false
+        },
+        "icm_to_ou": {
+          "metrics": {
+            "common_grid_r2": 0.9989883748840355,
+            "reference_ou_r2": 0.9947699318949172,
+            "reference_ou_raw_variance": 1.0177066326141357,
+            "reference_ou_gaussian_cf_error": 0.0003798876132350415,
+            "final_source": "ou",
+            "final_source_r2": 0.9947699318949172,
+            "final_source_raw_variance": 1.0177066326141357,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.3692788343178108e-06,
+              "sigreg": 418.1607666015625,
+              "common_grid_r2": 0.783558536894045,
+              "reference_ou_r2": 0.7249589750289298
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.7884266376495361,
+              "sigreg": 37.49626159667969,
+              "common_grid_r2": 0.840213712994353,
+              "reference_ou_r2": 0.7990436279191853
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.5,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.0846295952796936,
+              "sigreg": 44.459449768066406,
+              "common_grid_r2": 0.9806387075773538,
+              "reference_ou_r2": 0.9651526282370987
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.19262710213661194,
+              "sigreg": 4.0480756759643555,
+              "common_grid_r2": 0.9977286738665591,
+              "reference_ou_r2": 0.9926486731088802
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.19050627946853638,
+              "sigreg": 0.7333018183708191,
+              "common_grid_r2": 0.9989883748840355,
+              "reference_ou_r2": 0.9947699318949172
+            }
+          ],
+          "reused_control": false
+        },
+        "icm_entropy_decay_to_ou": {
+          "metrics": {
+            "common_grid_r2": 0.9990008432357379,
+            "reference_ou_r2": 0.9947622314568672,
+            "reference_ou_raw_variance": 1.0176126956939697,
+            "reference_ou_gaussian_cf_error": 0.0003772758354898542,
+            "final_source": "ou",
+            "final_source_r2": 0.9947622314568672,
+            "final_source_raw_variance": 1.0176126956939697,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.3492737025444512e-06,
+              "sigreg": 418.1487121582031,
+              "common_grid_r2": 0.7835584415194452,
+              "reference_ou_r2": 0.7249588758544787
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.7252097129821777,
+              "sigreg": 44.880409240722656,
+              "common_grid_r2": 0.8457410567973853,
+              "reference_ou_r2": 0.8054097821416089
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.5,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.08361459523439407,
+              "sigreg": 43.32633972167969,
+              "common_grid_r2": 0.9817431510681573,
+              "reference_ou_r2": 0.9666123338606916
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.19270430505275726,
+              "sigreg": 3.9929580688476562,
+              "common_grid_r2": 0.9977853145083538,
+              "reference_ou_r2": 0.99268519984312
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.19044330716133118,
+              "sigreg": 0.7300533056259155,
+              "common_grid_r2": 0.9990008432357379,
+              "reference_ou_r2": 0.9947622314568672
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_rho_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.99587134518519,
+            "reference_ou_r2": 0.9827254943427598,
+            "reference_ou_raw_variance": 0.8633350133895874,
+            "reference_ou_gaussian_cf_error": 0.0020669286604970694,
+            "final_source": "ou",
+            "final_source_r2": 0.9827254943427598,
+            "final_source_raw_variance": 0.8633350133895874,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 0.7,
+              "alignment": 3.311811087769456e-05,
+              "sigreg": 416.54302978515625,
+              "common_grid_r2": 0.5830659605505406,
+              "reference_ou_r2": 0.5126978930586676
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 0.7,
+              "alignment": 0.7986820936203003,
+              "sigreg": 4.805869102478027,
+              "common_grid_r2": 0.990827086457019,
+              "reference_ou_r2": 0.9723854216832075
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.7,
+              "sigma": 0.7,
+              "alignment": 0.4304281175136566,
+              "sigreg": 8.72211742401123,
+              "common_grid_r2": 0.9924019462578538,
+              "reference_ou_r2": 0.9755103140119727
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.16446435451507568,
+              "sigreg": 3.647970676422119,
+              "common_grid_r2": 0.9948917268880635,
+              "reference_ou_r2": 0.9806026076140609
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.1647922545671463,
+              "sigreg": 2.7904269695281982,
+              "common_grid_r2": 0.99587134518519,
+              "reference_ou_r2": 0.9827254943427598
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_sigma_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.9987854951506494,
+            "reference_ou_r2": 0.9899699525535881,
+            "reference_ou_raw_variance": 0.9127376675605774,
+            "reference_ou_gaussian_cf_error": 0.0007168347365222871,
+            "final_source": "ou",
+            "final_source_r2": 0.9899699525535881,
+            "final_source_raw_variance": 0.9127376675605774,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 1.0,
+              "alignment": 1.4451016795646865e-05,
+              "sigreg": 416.7823181152344,
+              "common_grid_r2": 0.583065967225791,
+              "reference_ou_r2": 0.5126978924521532
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 1.0,
+              "alignment": 0.173304945230484,
+              "sigreg": 5.670662879943848,
+              "common_grid_r2": 0.9925811653553328,
+              "reference_ou_r2": 0.9761216493235769
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.85,
+              "alignment": 0.1463966816663742,
+              "sigreg": 7.107975959777832,
+              "common_grid_r2": 0.9962332372825876,
+              "reference_ou_r2": 0.9838001215218135
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.17085684835910797,
+              "sigreg": 2.5981085300445557,
+              "common_grid_r2": 0.9983945192816744,
+              "reference_ou_r2": 0.9888320302256742
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.17262108623981476,
+              "sigreg": 1.317878007888794,
+              "common_grid_r2": 0.9987854951506494,
+              "reference_ou_r2": 0.9899699525535881
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_rho_sigma_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.998855979705121,
+            "reference_ou_r2": 0.9901888618318837,
+            "reference_ou_raw_variance": 0.915337085723877,
+            "reference_ou_gaussian_cf_error": 0.0006708181463181973,
+            "final_source": "ou",
+            "final_source_r2": 0.9901888618318837,
+            "final_source_raw_variance": 0.915337085723877,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 1.0,
+              "alignment": 5.3278512496035546e-05,
+              "sigreg": 416.7715148925781,
+              "common_grid_r2": 0.583065957732011,
+              "reference_ou_r2": 0.5126978845139916
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 1.0,
+              "alignment": 0.7537354826927185,
+              "sigreg": 7.495275497436523,
+              "common_grid_r2": 0.9925814801103927,
+              "reference_ou_r2": 0.9761347281346673
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.7,
+              "sigma": 0.85,
+              "alignment": 0.4349821209907532,
+              "sigreg": 8.792878150939941,
+              "common_grid_r2": 0.996387370355648,
+              "reference_ou_r2": 0.9841329374213478
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.17136338353157043,
+              "sigreg": 2.5458881855010986,
+              "common_grid_r2": 0.9984862229689161,
+              "reference_ou_r2": 0.9890821521284379
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.17309719324111938,
+              "sigreg": 1.2647554874420166,
+              "common_grid_r2": 0.998855979705121,
+              "reference_ou_r2": 0.9901888618318837
+            }
+          ],
+          "reused_control": false
+        }
+      },
+      "policy_histories": {
+        "fixed": [
+          {
+            "update": 0,
+            "intrinsic_reward": 0.12182022631168365,
+            "forward_error": 0.6091011762619019,
+            "inverse_accuracy": 0.31562501192092896,
+            "action_majority_fraction": 0.359375,
+            "entropy": 1.0986112356185913
+          },
+          {
+            "update": 25,
+            "intrinsic_reward": 0.004317041020840406,
+            "forward_error": 0.02158520184457302,
+            "inverse_accuracy": 0.34062498807907104,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy": 1.0985661745071411
+          },
+          {
+            "update": 50,
+            "intrinsic_reward": 0.00044773853733204305,
+            "forward_error": 0.002238692482933402,
+            "inverse_accuracy": 0.34062498807907104,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy": 1.0985398292541504
+          },
+          {
+            "update": 75,
+            "intrinsic_reward": 0.00024213906726799905,
+            "forward_error": 0.0012106953654438257,
+            "inverse_accuracy": 0.37187498807907104,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy": 1.098526954650879
+          },
+          {
+            "update": 100,
+            "intrinsic_reward": 0.0003193716111127287,
+            "forward_error": 0.0015968580264598131,
+            "inverse_accuracy": 0.3499999940395355,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy": 1.0985186100006104
+          },
+          {
+            "update": 125,
+            "intrinsic_reward": 0.00020112826314289123,
+            "forward_error": 0.001005641301162541,
+            "inverse_accuracy": 0.265625,
+            "action_majority_fraction": 0.39375001192092896,
+            "entropy": 1.098501205444336
+          },
+          {
+            "update": 150,
+            "intrinsic_reward": 0.00030828657327219844,
+            "forward_error": 0.001541433040983975,
+            "inverse_accuracy": 0.2906250059604645,
+            "action_majority_fraction": 0.359375,
+            "entropy": 1.0985071659088135
+          },
+          {
+            "update": 175,
+            "intrinsic_reward": 0.00021842739079147577,
+            "forward_error": 0.0010921369539573789,
+            "inverse_accuracy": 0.3062500059604645,
+            "action_majority_fraction": 0.3656249940395355,
+            "entropy": 1.0985137224197388
+          },
+          {
+            "update": 200,
+            "intrinsic_reward": 0.0002840009401552379,
+            "forward_error": 0.0014200047589838505,
+            "inverse_accuracy": 0.3499999940395355,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy": 1.0985229015350342
+          },
+          {
+            "update": 225,
+            "intrinsic_reward": 0.0004339126462582499,
+            "forward_error": 0.0021695629693567753,
+            "inverse_accuracy": 0.34062498807907104,
+            "action_majority_fraction": 0.34375,
+            "entropy": 1.0985010862350464
+          },
+          {
+            "update": 250,
+            "intrinsic_reward": 0.0003673323371913284,
+            "forward_error": 0.0018366618314757943,
+            "inverse_accuracy": 0.33125001192092896,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy": 1.0985301733016968
+          },
+          {
+            "update": 275,
+            "intrinsic_reward": 0.00023538953973911703,
+            "forward_error": 0.0011769476113840938,
+            "inverse_accuracy": 0.3656249940395355,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy": 1.0984978675842285
+          },
+          {
+            "update": 300,
+            "intrinsic_reward": 0.00018437043763697147,
+            "forward_error": 0.0009218521299771965,
+            "inverse_accuracy": 0.2874999940395355,
+            "action_majority_fraction": 0.375,
+            "entropy": 1.098533272743225
+          },
+          {
+            "update": 325,
+            "intrinsic_reward": 0.00038358778692781925,
+            "forward_error": 0.0019179389346390963,
+            "inverse_accuracy": 0.35624998807907104,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy": 1.0985177755355835
+          },
+          {
+            "update": 350,
+            "intrinsic_reward": 0.0011522502172738314,
+            "forward_error": 0.005761249922215939,
+            "inverse_accuracy": 0.9125000238418579,
+            "action_majority_fraction": 0.34062498807907104,
+            "entropy": 1.0985333919525146
+          },
+          {
+            "update": 375,
+            "intrinsic_reward": 0.002407117746770382,
+            "forward_error": 0.012035587802529335,
+            "inverse_accuracy": 0.6156250238418579,
+            "action_majority_fraction": 0.359375,
+            "entropy": 1.0985164642333984
+          },
+          {
+            "update": 400,
+            "intrinsic_reward": 0.0028629128355532885,
+            "forward_error": 0.014314563944935799,
+            "inverse_accuracy": 0.731249988079071,
+            "action_majority_fraction": 0.34687501192092896,
+            "entropy": 1.0984669923782349
+          },
+          {
+            "update": 425,
+            "intrinsic_reward": 0.00374147342517972,
+            "forward_error": 0.018707364797592163,
+            "inverse_accuracy": 0.8687499761581421,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy": 1.0984103679656982
+          },
+          {
+            "update": 450,
+            "intrinsic_reward": 0.005114320199936628,
+            "forward_error": 0.02557159960269928,
+            "inverse_accuracy": 0.984375,
+            "action_majority_fraction": 0.34375,
+            "entropy": 1.0979809761047363
+          },
+          {
+            "update": 475,
+            "intrinsic_reward": 0.005050593055784702,
+            "forward_error": 0.025252962484955788,
+            "inverse_accuracy": 0.987500011920929,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy": 1.096623420715332
+          },
+          {
+            "update": 500,
+            "intrinsic_reward": 0.02280156873166561,
+            "forward_error": 0.1140078455209732,
+            "inverse_accuracy": 0.862500011920929,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy": 1.0905470848083496
+          },
+          {
+            "update": 525,
+            "intrinsic_reward": 0.007502906024456024,
+            "forward_error": 0.03751453012228012,
+            "inverse_accuracy": 0.9468749761581421,
+            "action_majority_fraction": 0.4000000059604645,
+            "entropy": 1.0766836404800415
+          },
+          {
+            "update": 550,
+            "intrinsic_reward": 0.01935698464512825,
+            "forward_error": 0.09678492695093155,
+            "inverse_accuracy": 0.925000011920929,
+            "action_majority_fraction": 0.5406249761581421,
+            "entropy": 1.0258351564407349
+          },
+          {
+            "update": 575,
+            "intrinsic_reward": 0.03724408149719238,
+            "forward_error": 0.18622039258480072,
+            "inverse_accuracy": 0.612500011920929,
+            "action_majority_fraction": 0.637499988079071,
+            "entropy": 0.878313422203064
+          },
+          {
+            "update": 599,
+            "intrinsic_reward": 0.018961478024721146,
+            "forward_error": 0.09480740129947662,
+            "inverse_accuracy": 0.753125011920929,
+            "action_majority_fraction": 0.6937500238418579,
+            "entropy": 0.794289231300354
+          }
+        ],
+        "decay": [
+          {
+            "update": 0,
+            "intrinsic_reward": 0.12182022631168365,
+            "forward_error": 0.6091011762619019,
+            "inverse_accuracy": 0.31562501192092896,
+            "action_majority_fraction": 0.359375,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0986112356185913
+          },
+          {
+            "update": 25,
+            "intrinsic_reward": 0.004317041020840406,
+            "forward_error": 0.02158520184457302,
+            "inverse_accuracy": 0.34062498807907104,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985661745071411
+          },
+          {
+            "update": 50,
+            "intrinsic_reward": 0.00044773853733204305,
+            "forward_error": 0.002238692482933402,
+            "inverse_accuracy": 0.34062498807907104,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985398292541504
+          },
+          {
+            "update": 75,
+            "intrinsic_reward": 0.00024213906726799905,
+            "forward_error": 0.0012106953654438257,
+            "inverse_accuracy": 0.37187498807907104,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy_weight": 0.0005,
+            "entropy": 1.098526954650879
+          },
+          {
+            "update": 100,
+            "intrinsic_reward": 0.0003193716111127287,
+            "forward_error": 0.0015968580264598131,
+            "inverse_accuracy": 0.3499999940395355,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985186100006104
+          },
+          {
+            "update": 125,
+            "intrinsic_reward": 0.00020112826314289123,
+            "forward_error": 0.001005641301162541,
+            "inverse_accuracy": 0.265625,
+            "action_majority_fraction": 0.39375001192092896,
+            "entropy_weight": 0.0005,
+            "entropy": 1.098501205444336
+          },
+          {
+            "update": 150,
+            "intrinsic_reward": 0.00030828657327219844,
+            "forward_error": 0.001541433040983975,
+            "inverse_accuracy": 0.2906250059604645,
+            "action_majority_fraction": 0.359375,
+            "entropy_weight": 0.0004995826377295492,
+            "entropy": 1.0985071659088135
+          },
+          {
+            "update": 175,
+            "intrinsic_reward": 0.00021842739079147577,
+            "forward_error": 0.0010921369539573789,
+            "inverse_accuracy": 0.3062500059604645,
+            "action_majority_fraction": 0.3656249940395355,
+            "entropy_weight": 0.00045784641068447415,
+            "entropy": 1.0985138416290283
+          },
+          {
+            "update": 200,
+            "intrinsic_reward": 0.0002840009401552379,
+            "forward_error": 0.0014200047589838505,
+            "inverse_accuracy": 0.3499999940395355,
+            "action_majority_fraction": 0.3499999940395355,
+            "entropy_weight": 0.000416110183639399,
+            "entropy": 1.0985227823257446
+          },
+          {
+            "update": 225,
+            "intrinsic_reward": 0.0004339126462582499,
+            "forward_error": 0.0021695629693567753,
+            "inverse_accuracy": 0.34062498807907104,
+            "action_majority_fraction": 0.34375,
+            "entropy_weight": 0.0003743739565943239,
+            "entropy": 1.0985010862350464
+          },
+          {
+            "update": 250,
+            "intrinsic_reward": 0.0003673323371913284,
+            "forward_error": 0.0018366618314757943,
+            "inverse_accuracy": 0.33125001192092896,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy_weight": 0.00033263772954924875,
+            "entropy": 1.0985300540924072
+          },
+          {
+            "update": 275,
+            "intrinsic_reward": 0.00023538953973911703,
+            "forward_error": 0.0011769476113840938,
+            "inverse_accuracy": 0.3656249940395355,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy_weight": 0.0002909015025041736,
+            "entropy": 1.0984975099563599
+          },
+          {
+            "update": 300,
+            "intrinsic_reward": 0.00018437043763697147,
+            "forward_error": 0.0009218521299771965,
+            "inverse_accuracy": 0.2874999940395355,
+            "action_majority_fraction": 0.375,
+            "entropy_weight": 0.0002491652754590985,
+            "entropy": 1.0985326766967773
+          },
+          {
+            "update": 325,
+            "intrinsic_reward": 0.00038358778692781925,
+            "forward_error": 0.0019179389346390963,
+            "inverse_accuracy": 0.35624998807907104,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy_weight": 0.00020742904841402333,
+            "entropy": 1.0985171794891357
+          },
+          {
+            "update": 350,
+            "intrinsic_reward": 0.0011522502172738314,
+            "forward_error": 0.005761249922215939,
+            "inverse_accuracy": 0.9125000238418579,
+            "action_majority_fraction": 0.34062498807907104,
+            "entropy_weight": 0.00016569282136894825,
+            "entropy": 1.0985324382781982
+          },
+          {
+            "update": 375,
+            "intrinsic_reward": 0.002406873507425189,
+            "forward_error": 0.012034367769956589,
+            "inverse_accuracy": 0.6156250238418579,
+            "action_majority_fraction": 0.359375,
+            "entropy_weight": 0.00012395659432387306,
+            "entropy": 1.098515510559082
+          },
+          {
+            "update": 400,
+            "intrinsic_reward": 0.002862814348191023,
+            "forward_error": 0.014314073137938976,
+            "inverse_accuracy": 0.7281249761581421,
+            "action_majority_fraction": 0.34687501192092896,
+            "entropy_weight": 8.2220367278798e-05,
+            "entropy": 1.0984655618667603
+          },
+          {
+            "update": 425,
+            "intrinsic_reward": 0.003782355459406972,
+            "forward_error": 0.018911777064204216,
+            "inverse_accuracy": 0.8687499761581421,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy_weight": 4.048414023372282e-05,
+            "entropy": 1.0984079837799072
+          },
+          {
+            "update": 450,
+            "intrinsic_reward": 0.00525289261713624,
+            "forward_error": 0.026264462620019913,
+            "inverse_accuracy": 0.984375,
+            "action_majority_fraction": 0.34375,
+            "entropy_weight": 0.0,
+            "entropy": 1.0979740619659424
+          },
+          {
+            "update": 475,
+            "intrinsic_reward": 0.005019745789468288,
+            "forward_error": 0.025098729878664017,
+            "inverse_accuracy": 0.987500011920929,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy_weight": 0.0,
+            "entropy": 1.0966064929962158
+          },
+          {
+            "update": 500,
+            "intrinsic_reward": 0.022253597155213356,
+            "forward_error": 0.11126796901226044,
+            "inverse_accuracy": 0.859375,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy_weight": 0.0,
+            "entropy": 1.0905768871307373
+          },
+          {
+            "update": 525,
+            "intrinsic_reward": 0.007800230290740728,
+            "forward_error": 0.03900114819407463,
+            "inverse_accuracy": 0.9468749761581421,
+            "action_majority_fraction": 0.4000000059604645,
+            "entropy_weight": 0.0,
+            "entropy": 1.0766334533691406
+          },
+          {
+            "update": 550,
+            "intrinsic_reward": 0.019322454929351807,
+            "forward_error": 0.09661227464675903,
+            "inverse_accuracy": 0.925000011920929,
+            "action_majority_fraction": 0.543749988079071,
+            "entropy_weight": 0.0,
+            "entropy": 1.0232813358306885
+          },
+          {
+            "update": 575,
+            "intrinsic_reward": 0.03201266750693321,
+            "forward_error": 0.16006334125995636,
+            "inverse_accuracy": 0.6468750238418579,
+            "action_majority_fraction": 0.6499999761581421,
+            "entropy_weight": 0.0,
+            "entropy": 0.8745695352554321
+          },
+          {
+            "update": 599,
+            "intrinsic_reward": 0.018244486302137375,
+            "forward_error": 0.09122242033481598,
+            "inverse_accuracy": 0.753125011920929,
+            "action_majority_fraction": 0.690625011920929,
+            "entropy_weight": 0.0,
+            "entropy": 0.8018134832382202
+          }
+        ]
+      },
+      "policy_diagnostics": {
+        "fixed": {
+          "mean_action_probabilities": [
+            0.5620771050453186,
+            0.24951477348804474,
+            0.18840815126895905
+          ],
+          "mean_action_entropy_nats": 0.9755233526229858,
+          "final_model_reward_distance_1_to_2": 0.04242204874753952,
+          "final_model_reward_distance_8_to_16": 0.0943654403090477,
+          "reward_note": "Frozen final-model diagnostic, not a reconstruction of the evolving training reward."
+        },
+        "decay": {
+          "mean_action_probabilities": [
+            0.5589414834976196,
+            0.25283700227737427,
+            0.1882214993238449
+          ],
+          "mean_action_entropy_nats": 0.9782969951629639,
+          "final_model_reward_distance_1_to_2": 0.033431146293878555,
+          "final_model_reward_distance_8_to_16": 0.05247087776660919,
+          "reward_note": "Frozen final-model diagnostic, not a reconstruction of the evolving training reward."
+        }
+      }
+    },
+    {
+      "seed": 2,
+      "conditions": {
+        "ou": {
+          "metrics": {
+            "common_grid_r2": 0.9937195423293169,
+            "reference_ou_r2": 0.980725112928336,
+            "reference_ou_raw_variance": 0.8403223752975464,
+            "reference_ou_gaussian_cf_error": 0.0029246113263070583,
+            "final_source": "ou",
+            "final_source_r2": 0.980725112928336,
+            "final_source_raw_variance": 0.8403223752975464,
+            "final_source_coverage": 1.0
+          },
+          "history": [],
+          "reused_control": true
+        },
+        "icm": {
+          "metrics": {
+            "common_grid_r2": 0.8548714106002684,
+            "reference_ou_r2": 0.8163408859585768,
+            "reference_ou_raw_variance": 23.822444915771484,
+            "reference_ou_gaussian_cf_error": 1.9136459827423096,
+            "final_source": "icm",
+            "final_source_r2": 0.9664703317598895,
+            "final_source_raw_variance": 13.842378616333008,
+            "final_source_coverage": 0.53125
+          },
+          "history": [],
+          "reused_control": true
+        },
+        "icm_entropy_decay": {
+          "metrics": {
+            "common_grid_r2": 0.8530134133359067,
+            "reference_ou_r2": 0.8141756334503362,
+            "reference_ou_raw_variance": 24.03464698791504,
+            "reference_ou_gaussian_cf_error": 1.918137550354004,
+            "final_source": "icm",
+            "final_source_r2": 0.9640262918186188,
+            "final_source_raw_variance": 13.762660026550293,
+            "final_source_coverage": 0.53125
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 2.0010070329590235e-06,
+              "sigreg": 417.95806884765625,
+              "common_grid_r2": 0.959765817092327,
+              "reference_ou_r2": 0.9369275352048834
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 2.023167848587036,
+              "sigreg": 29.414039611816406,
+              "common_grid_r2": 0.8539584514606192,
+              "reference_ou_r2": 0.8150977273852885
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.9523084163665771,
+              "sigreg": 31.139148712158203,
+              "common_grid_r2": 0.8533652646977995,
+              "reference_ou_r2": 0.8145007288411421
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 2.014324426651001,
+              "sigreg": 32.1573486328125,
+              "common_grid_r2": 0.8531654605646928,
+              "reference_ou_r2": 0.8143361346532589
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 2.1184935569763184,
+              "sigreg": 32.22723388671875,
+              "common_grid_r2": 0.8530134133359067,
+              "reference_ou_r2": 0.8141756334503362
+            }
+          ],
+          "reused_control": false
+        },
+        "icm_to_ou": {
+          "metrics": {
+            "common_grid_r2": 0.9995519755946257,
+            "reference_ou_r2": 0.995294691071118,
+            "reference_ou_raw_variance": 0.9374734163284302,
+            "reference_ou_gaussian_cf_error": 0.0004059018683619797,
+            "final_source": "ou",
+            "final_source_r2": 0.995294691071118,
+            "final_source_raw_variance": 0.9374734163284302,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 2.121698571500019e-06,
+              "sigreg": 417.9027404785156,
+              "common_grid_r2": 0.9597658185882888,
+              "reference_ou_r2": 0.9369275344831437
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 1.9479637145996094,
+              "sigreg": 49.259437561035156,
+              "common_grid_r2": 0.8544462499342093,
+              "reference_ou_r2": 0.815693890870089
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.5,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.28069090843200684,
+              "sigreg": 108.1244888305664,
+              "common_grid_r2": 0.9779146366494529,
+              "reference_ou_r2": 0.9605886029647133
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.20533515512943268,
+              "sigreg": 10.875486373901367,
+              "common_grid_r2": 0.9995428614278274,
+              "reference_ou_r2": 0.9950044667873997
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.20192769169807434,
+              "sigreg": 3.763866424560547,
+              "common_grid_r2": 0.9995519755946257,
+              "reference_ou_r2": 0.995294691071118
+            }
+          ],
+          "reused_control": false
+        },
+        "icm_entropy_decay_to_ou": {
+          "metrics": {
+            "common_grid_r2": 0.999563237985666,
+            "reference_ou_r2": 0.9954075894622949,
+            "reference_ou_raw_variance": 0.9402304291725159,
+            "reference_ou_gaussian_cf_error": 0.00039214928983710706,
+            "final_source": "ou",
+            "final_source_r2": 0.9954075894622949,
+            "final_source_raw_variance": 0.9402304291725159,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 2.0010070329590235e-06,
+              "sigreg": 417.95806884765625,
+              "common_grid_r2": 0.959765817092327,
+              "reference_ou_r2": 0.9369275352048834
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 0.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 2.023167848587036,
+              "sigreg": 29.414039611816406,
+              "common_grid_r2": 0.8539584514606192,
+              "reference_ou_r2": 0.8150977273852885
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 0.5,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.33801573514938354,
+              "sigreg": 134.49427795410156,
+              "common_grid_r2": 0.9824473656190754,
+              "reference_ou_r2": 0.9660393179231508
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.2063237577676773,
+              "sigreg": 10.802372932434082,
+              "common_grid_r2": 0.9995461996768242,
+              "reference_ou_r2": 0.9951160185319924
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.20234648883342743,
+              "sigreg": 3.7515616416931152,
+              "common_grid_r2": 0.999563237985666,
+              "reference_ou_r2": 0.9954075894622949
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_rho_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.9938832210669163,
+            "reference_ou_r2": 0.9810405183410916,
+            "reference_ou_raw_variance": 0.8414943218231201,
+            "reference_ou_gaussian_cf_error": 0.0028658329974859953,
+            "final_source": "ou",
+            "final_source_r2": 0.9810405183410916,
+            "final_source_raw_variance": 0.8414943218231201,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 0.7,
+              "alignment": 0.0020900543313473463,
+              "sigreg": 409.332275390625,
+              "common_grid_r2": 0.9687606123057751,
+              "reference_ou_r2": 0.9478971126648106
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 0.7,
+              "alignment": 0.8759344816207886,
+              "sigreg": 3.0467617511749268,
+              "common_grid_r2": 0.9906288614336706,
+              "reference_ou_r2": 0.9747253801492642
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.7,
+              "sigma": 0.7,
+              "alignment": 0.5132713913917542,
+              "sigreg": 11.558096885681152,
+              "common_grid_r2": 0.9915278897471691,
+              "reference_ou_r2": 0.9764153361119111
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.18001669645309448,
+              "sigreg": 13.261178970336914,
+              "common_grid_r2": 0.9931967506802246,
+              "reference_ou_r2": 0.9796909691602051
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.18570145964622498,
+              "sigreg": 5.646167278289795,
+              "common_grid_r2": 0.9938832210669163,
+              "reference_ou_r2": 0.9810405183410916
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_sigma_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.9962899479393473,
+            "reference_ou_r2": 0.9860445972611349,
+            "reference_ou_raw_variance": 0.8631600141525269,
+            "reference_ou_gaussian_cf_error": 0.001974673243239522,
+            "final_source": "ou",
+            "final_source_r2": 0.9860445972611349,
+            "final_source_raw_variance": 0.8631600141525269,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 1.0,
+              "alignment": 0.0007091810111887753,
+              "sigreg": 407.3055419921875,
+              "common_grid_r2": 0.9684510617064137,
+              "reference_ou_r2": 0.9475474916587728
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 1.0,
+              "alignment": 0.1794651299715042,
+              "sigreg": 6.375019550323486,
+              "common_grid_r2": 0.9915690120644702,
+              "reference_ou_r2": 0.9769549012541561
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.85,
+              "alignment": 0.17655949294567108,
+              "sigreg": 12.109965324401855,
+              "common_grid_r2": 0.993319006765264,
+              "reference_ou_r2": 0.9801324252703479
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.1848413199186325,
+              "sigreg": 11.149209976196289,
+              "common_grid_r2": 0.9955387383066965,
+              "reference_ou_r2": 0.9844734927909004
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.18931661546230316,
+              "sigreg": 4.9112467765808105,
+              "common_grid_r2": 0.9962899479393473,
+              "reference_ou_r2": 0.9860445972611349
+            }
+          ],
+          "reused_control": false
+        },
+        "ou_rho_sigma_schedule": {
+          "metrics": {
+            "common_grid_r2": 0.996682218331469,
+            "reference_ou_r2": 0.9868900216529947,
+            "reference_ou_raw_variance": 0.8676419258117676,
+            "reference_ou_gaussian_cf_error": 0.0018137547885999084,
+            "final_source": "ou",
+            "final_source_r2": 0.9868900216529947,
+            "final_source_raw_variance": 0.8676419258117676,
+            "final_source_coverage": 1.0
+          },
+          "history": [
+            {
+              "step": 0,
+              "epoch_fraction": 0.0,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 1.0,
+              "alignment": 0.003337990026921034,
+              "sigreg": 407.26470947265625,
+              "common_grid_r2": 0.9685411121675568,
+              "reference_ou_r2": 0.9476621662654919
+            },
+            {
+              "step": 1000,
+              "epoch_fraction": 0.25,
+              "ou_fraction": 1.0,
+              "rho": 0.5,
+              "sigma": 1.0,
+              "alignment": 0.8286404609680176,
+              "sigreg": 6.0702080726623535,
+              "common_grid_r2": 0.9918308890440526,
+              "reference_ou_r2": 0.9772468939989555
+            },
+            {
+              "step": 2000,
+              "epoch_fraction": 0.5,
+              "ou_fraction": 1.0,
+              "rho": 0.7,
+              "sigma": 0.85,
+              "alignment": 0.5051773190498352,
+              "sigreg": 12.808549880981445,
+              "common_grid_r2": 0.9936495410955819,
+              "reference_ou_r2": 0.9806926623580021
+            },
+            {
+              "step": 3000,
+              "epoch_fraction": 0.75,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.18611280620098114,
+              "sigreg": 10.378974914550781,
+              "common_grid_r2": 0.9959229695421739,
+              "reference_ou_r2": 0.9852600528104518
+            },
+            {
+              "step": 3999,
+              "epoch_fraction": 1.0,
+              "ou_fraction": 1.0,
+              "rho": 0.9,
+              "sigma": 0.7,
+              "alignment": 0.1901092231273651,
+              "sigreg": 4.784450531005859,
+              "common_grid_r2": 0.996682218331469,
+              "reference_ou_r2": 0.9868900216529947
+            }
+          ],
+          "reused_control": false
+        }
+      },
+      "policy_histories": {
+        "fixed": [
+          {
+            "update": 0,
+            "intrinsic_reward": 0.10832788795232773,
+            "forward_error": 0.5416394472122192,
+            "inverse_accuracy": 0.30000001192092896,
+            "action_majority_fraction": 0.3531250059604645,
+            "entropy": 1.0986113548278809
+          },
+          {
+            "update": 25,
+            "intrinsic_reward": 0.004761134274303913,
+            "forward_error": 0.02380567044019699,
+            "inverse_accuracy": 0.3031249940395355,
+            "action_majority_fraction": 0.3812499940395355,
+            "entropy": 1.0985677242279053
+          },
+          {
+            "update": 50,
+            "intrinsic_reward": 0.0013335203984752297,
+            "forward_error": 0.0066676014102995396,
+            "inverse_accuracy": 0.37187498807907104,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy": 1.0985409021377563
+          },
+          {
+            "update": 75,
+            "intrinsic_reward": 0.00035656531690619886,
+            "forward_error": 0.001782826497219503,
+            "inverse_accuracy": 0.33125001192092896,
+            "action_majority_fraction": 0.3375000059604645,
+            "entropy": 1.0985081195831299
+          },
+          {
+            "update": 100,
+            "intrinsic_reward": 0.0009908591164276004,
+            "forward_error": 0.004954295698553324,
+            "inverse_accuracy": 0.35624998807907104,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy": 1.0984113216400146
+          },
+          {
+            "update": 125,
+            "intrinsic_reward": 0.0004128282016608864,
+            "forward_error": 0.0020641409792006016,
+            "inverse_accuracy": 0.30937498807907104,
+            "action_majority_fraction": 0.3656249940395355,
+            "entropy": 1.0983915328979492
+          },
+          {
+            "update": 150,
+            "intrinsic_reward": 0.0004731288063339889,
+            "forward_error": 0.0023656440898776054,
+            "inverse_accuracy": 0.3343749940395355,
+            "action_majority_fraction": 0.3531250059604645,
+            "entropy": 1.0982396602630615
+          },
+          {
+            "update": 175,
+            "intrinsic_reward": 0.0009188791736960411,
+            "forward_error": 0.0045943958684802055,
+            "inverse_accuracy": 0.29374998807907104,
+            "action_majority_fraction": 0.390625,
+            "entropy": 1.0980130434036255
+          },
+          {
+            "update": 200,
+            "intrinsic_reward": 0.0006343055283650756,
+            "forward_error": 0.0031715277582406998,
+            "inverse_accuracy": 0.36250001192092896,
+            "action_majority_fraction": 0.3656249940395355,
+            "entropy": 1.0978126525878906
+          },
+          {
+            "update": 225,
+            "intrinsic_reward": 0.00047247414477169514,
+            "forward_error": 0.0023623707238584757,
+            "inverse_accuracy": 0.359375,
+            "action_majority_fraction": 0.359375,
+            "entropy": 1.0978401899337769
+          },
+          {
+            "update": 250,
+            "intrinsic_reward": 0.0009302421240136027,
+            "forward_error": 0.004651210270822048,
+            "inverse_accuracy": 0.753125011920929,
+            "action_majority_fraction": 0.4124999940395355,
+            "entropy": 1.0978103876113892
+          },
+          {
+            "update": 275,
+            "intrinsic_reward": 0.0019011268159374595,
+            "forward_error": 0.00950563419610262,
+            "inverse_accuracy": 0.643750011920929,
+            "action_majority_fraction": 0.36250001192092896,
+            "entropy": 1.0976827144622803
+          },
+          {
+            "update": 300,
+            "intrinsic_reward": 0.0020893013570457697,
+            "forward_error": 0.010446504689753056,
+            "inverse_accuracy": 0.903124988079071,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy": 1.0976911783218384
+          },
+          {
+            "update": 325,
+            "intrinsic_reward": 0.0037488173693418503,
+            "forward_error": 0.018744084984064102,
+            "inverse_accuracy": 0.956250011920929,
+            "action_majority_fraction": 0.40937501192092896,
+            "entropy": 1.0970572233200073
+          },
+          {
+            "update": 350,
+            "intrinsic_reward": 0.004895599093288183,
+            "forward_error": 0.024477992206811905,
+            "inverse_accuracy": 0.9937499761581421,
+            "action_majority_fraction": 0.40937501192092896,
+            "entropy": 1.095973253250122
+          },
+          {
+            "update": 375,
+            "intrinsic_reward": 0.010510146617889404,
+            "forward_error": 0.052550725638866425,
+            "inverse_accuracy": 0.9375,
+            "action_majority_fraction": 0.4437499940395355,
+            "entropy": 1.0912706851959229
+          },
+          {
+            "update": 400,
+            "intrinsic_reward": 0.014283296652138233,
+            "forward_error": 0.07141648232936859,
+            "inverse_accuracy": 0.9781249761581421,
+            "action_majority_fraction": 0.39375001192092896,
+            "entropy": 1.0823018550872803
+          },
+          {
+            "update": 425,
+            "intrinsic_reward": 0.012479899451136589,
+            "forward_error": 0.062399495393037796,
+            "inverse_accuracy": 0.9281250238418579,
+            "action_majority_fraction": 0.512499988079071,
+            "entropy": 1.056122064590454
+          },
+          {
+            "update": 450,
+            "intrinsic_reward": 0.012257352471351624,
+            "forward_error": 0.06128675863146782,
+            "inverse_accuracy": 0.8812500238418579,
+            "action_majority_fraction": 0.518750011920929,
+            "entropy": 1.0188133716583252
+          },
+          {
+            "update": 475,
+            "intrinsic_reward": 0.01041423063725233,
+            "forward_error": 0.05207115411758423,
+            "inverse_accuracy": 0.8656250238418579,
+            "action_majority_fraction": 0.5625,
+            "entropy": 0.9869922399520874
+          },
+          {
+            "update": 500,
+            "intrinsic_reward": 0.01849856786429882,
+            "forward_error": 0.09249284118413925,
+            "inverse_accuracy": 0.8531249761581421,
+            "action_majority_fraction": 0.625,
+            "entropy": 0.9200553894042969
+          },
+          {
+            "update": 525,
+            "intrinsic_reward": 0.011483438313007355,
+            "forward_error": 0.05741720274090767,
+            "inverse_accuracy": 0.934374988079071,
+            "action_majority_fraction": 0.606249988079071,
+            "entropy": 0.9720516204833984
+          },
+          {
+            "update": 550,
+            "intrinsic_reward": 0.012100773863494396,
+            "forward_error": 0.060503870248794556,
+            "inverse_accuracy": 0.831250011920929,
+            "action_majority_fraction": 0.609375,
+            "entropy": 0.8841516375541687
+          },
+          {
+            "update": 575,
+            "intrinsic_reward": 0.014068258926272392,
+            "forward_error": 0.07034130394458771,
+            "inverse_accuracy": 0.8125,
+            "action_majority_fraction": 0.703125,
+            "entropy": 0.7811312079429626
+          },
+          {
+            "update": 599,
+            "intrinsic_reward": 0.014188773930072784,
+            "forward_error": 0.07094386965036392,
+            "inverse_accuracy": 0.8343750238418579,
+            "action_majority_fraction": 0.7250000238418579,
+            "entropy": 0.7568461894989014
+          }
+        ],
+        "decay": [
+          {
+            "update": 0,
+            "intrinsic_reward": 0.10832788795232773,
+            "forward_error": 0.5416394472122192,
+            "inverse_accuracy": 0.30000001192092896,
+            "action_majority_fraction": 0.3531250059604645,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0986113548278809
+          },
+          {
+            "update": 25,
+            "intrinsic_reward": 0.004761134274303913,
+            "forward_error": 0.02380567044019699,
+            "inverse_accuracy": 0.3031249940395355,
+            "action_majority_fraction": 0.3812499940395355,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985677242279053
+          },
+          {
+            "update": 50,
+            "intrinsic_reward": 0.0013335203984752297,
+            "forward_error": 0.0066676014102995396,
+            "inverse_accuracy": 0.37187498807907104,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985409021377563
+          },
+          {
+            "update": 75,
+            "intrinsic_reward": 0.00035656531690619886,
+            "forward_error": 0.001782826497219503,
+            "inverse_accuracy": 0.33125001192092896,
+            "action_majority_fraction": 0.3375000059604645,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0985081195831299
+          },
+          {
+            "update": 100,
+            "intrinsic_reward": 0.0009908591164276004,
+            "forward_error": 0.004954295698553324,
+            "inverse_accuracy": 0.35624998807907104,
+            "action_majority_fraction": 0.37187498807907104,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0984113216400146
+          },
+          {
+            "update": 125,
+            "intrinsic_reward": 0.0004128282016608864,
+            "forward_error": 0.0020641409792006016,
+            "inverse_accuracy": 0.30937498807907104,
+            "action_majority_fraction": 0.3656249940395355,
+            "entropy_weight": 0.0005,
+            "entropy": 1.0983915328979492
+          },
+          {
+            "update": 150,
+            "intrinsic_reward": 0.0004731288063339889,
+            "forward_error": 0.0023656440898776054,
+            "inverse_accuracy": 0.3343749940395355,
+            "action_majority_fraction": 0.3531250059604645,
+            "entropy_weight": 0.0004995826377295492,
+            "entropy": 1.0982396602630615
+          },
+          {
+            "update": 175,
+            "intrinsic_reward": 0.0009188791736960411,
+            "forward_error": 0.0045943958684802055,
+            "inverse_accuracy": 0.29374998807907104,
+            "action_majority_fraction": 0.390625,
+            "entropy_weight": 0.00045784641068447415,
+            "entropy": 1.0980130434036255
+          },
+          {
+            "update": 200,
+            "intrinsic_reward": 0.0006343055283650756,
+            "forward_error": 0.0031715277582406998,
+            "inverse_accuracy": 0.36250001192092896,
+            "action_majority_fraction": 0.3656249940395355,
+            "entropy_weight": 0.000416110183639399,
+            "entropy": 1.0978124141693115
+          },
+          {
+            "update": 225,
+            "intrinsic_reward": 0.00047247414477169514,
+            "forward_error": 0.0023623707238584757,
+            "inverse_accuracy": 0.359375,
+            "action_majority_fraction": 0.359375,
+            "entropy_weight": 0.0003743739565943239,
+            "entropy": 1.097839593887329
+          },
+          {
+            "update": 250,
+            "intrinsic_reward": 0.0009302421240136027,
+            "forward_error": 0.004651210270822048,
+            "inverse_accuracy": 0.753125011920929,
+            "action_majority_fraction": 0.4124999940395355,
+            "entropy_weight": 0.00033263772954924875,
+            "entropy": 1.0978095531463623
+          },
+          {
+            "update": 275,
+            "intrinsic_reward": 0.0019011268159374595,
+            "forward_error": 0.00950563419610262,
+            "inverse_accuracy": 0.643750011920929,
+            "action_majority_fraction": 0.36250001192092896,
+            "entropy_weight": 0.0002909015025041736,
+            "entropy": 1.0976811647415161
+          },
+          {
+            "update": 300,
+            "intrinsic_reward": 0.0020893013570457697,
+            "forward_error": 0.010446504689753056,
+            "inverse_accuracy": 0.903124988079071,
+            "action_majority_fraction": 0.35624998807907104,
+            "entropy_weight": 0.0002491652754590985,
+            "entropy": 1.0976890325546265
+          },
+          {
+            "update": 325,
+            "intrinsic_reward": 0.0037488173693418503,
+            "forward_error": 0.018744084984064102,
+            "inverse_accuracy": 0.956250011920929,
+            "action_majority_fraction": 0.40937501192092896,
+            "entropy_weight": 0.00020742904841402333,
+            "entropy": 1.097052812576294
+          },
+          {
+            "update": 350,
+            "intrinsic_reward": 0.004895599093288183,
+            "forward_error": 0.024477992206811905,
+            "inverse_accuracy": 0.9937499761581421,
+            "action_majority_fraction": 0.40937501192092896,
+            "entropy_weight": 0.00016569282136894825,
+            "entropy": 1.0959644317626953
+          },
+          {
+            "update": 375,
+            "intrinsic_reward": 0.010510146617889404,
+            "forward_error": 0.052550725638866425,
+            "inverse_accuracy": 0.9375,
+            "action_majority_fraction": 0.4437499940395355,
+            "entropy_weight": 0.00012395659432387306,
+            "entropy": 1.0912461280822754
+          },
+          {
+            "update": 400,
+            "intrinsic_reward": 0.014357912354171276,
+            "forward_error": 0.07178956270217896,
+            "inverse_accuracy": 0.9781249761581421,
+            "action_majority_fraction": 0.39375001192092896,
+            "entropy_weight": 8.2220367278798e-05,
+            "entropy": 1.0822237730026245
+          },
+          {
+            "update": 425,
+            "intrinsic_reward": 0.012495547533035278,
+            "forward_error": 0.062477730214595795,
+            "inverse_accuracy": 0.9281250238418579,
+            "action_majority_fraction": 0.512499988079071,
+            "entropy_weight": 4.048414023372282e-05,
+            "entropy": 1.0559837818145752
+          },
+          {
+            "update": 450,
+            "intrinsic_reward": 0.012100125662982464,
+            "forward_error": 0.06050063297152519,
+            "inverse_accuracy": 0.8812500238418579,
+            "action_majority_fraction": 0.518750011920929,
+            "entropy_weight": 0.0,
+            "entropy": 1.0185410976409912
+          },
+          {
+            "update": 475,
+            "intrinsic_reward": 0.010326078161597252,
+            "forward_error": 0.05163038894534111,
+            "inverse_accuracy": 0.8656250238418579,
+            "action_majority_fraction": 0.5625,
+            "entropy_weight": 0.0,
+            "entropy": 0.9862452745437622
+          },
+          {
+            "update": 500,
+            "intrinsic_reward": 0.01849368028342724,
+            "forward_error": 0.09246841073036194,
+            "inverse_accuracy": 0.8531249761581421,
+            "action_majority_fraction": 0.628125011920929,
+            "entropy_weight": 0.0,
+            "entropy": 0.9168108105659485
+          },
+          {
+            "update": 525,
+            "intrinsic_reward": 0.011137054301798344,
+            "forward_error": 0.055685270577669144,
+            "inverse_accuracy": 0.934374988079071,
+            "action_majority_fraction": 0.606249988079071,
+            "entropy_weight": 0.0,
+            "entropy": 0.9705794453620911
+          },
+          {
+            "update": 550,
+            "intrinsic_reward": 0.011790138669312,
+            "forward_error": 0.05895069241523743,
+            "inverse_accuracy": 0.828125,
+            "action_majority_fraction": 0.609375,
+            "entropy_weight": 0.0,
+            "entropy": 0.8824966549873352
+          },
+          {
+            "update": 575,
+            "intrinsic_reward": 0.014032776467502117,
+            "forward_error": 0.07016388326883316,
+            "inverse_accuracy": 0.8062499761581421,
+            "action_majority_fraction": 0.703125,
+            "entropy_weight": 0.0,
+            "entropy": 0.7765083909034729
+          },
+          {
+            "update": 599,
+            "intrinsic_reward": 0.013986213132739067,
+            "forward_error": 0.06993106007575989,
+            "inverse_accuracy": 0.840624988079071,
+            "action_majority_fraction": 0.731249988079071,
+            "entropy_weight": 0.0,
+            "entropy": 0.7502197623252869
+          }
+        ]
+      },
+      "policy_diagnostics": {
+        "fixed": {
+          "mean_action_probabilities": [
+            0.5845403075218201,
+            0.21214419603347778,
+            0.20331549644470215
+          ],
+          "mean_action_entropy_nats": 0.9565984010696411,
+          "final_model_reward_distance_1_to_2": 0.023806801065802574,
+          "final_model_reward_distance_8_to_16": 0.028433790430426598,
+          "reward_note": "Frozen final-model diagnostic, not a reconstruction of the evolving training reward."
+        },
+        "decay": {
+          "mean_action_probabilities": [
+            0.587318480014801,
+            0.2108122557401657,
+            0.20186927914619446
+          ],
+          "mean_action_entropy_nats": 0.9535147547721863,
+          "final_model_reward_distance_1_to_2": 0.025031741708517075,
+          "final_model_reward_distance_8_to_16": 0.016159214079380035,
+          "reward_note": "Frozen final-model diagnostic, not a reconstruction of the evolving training reward."
+        }
+      }
+    }
+  ]
+}

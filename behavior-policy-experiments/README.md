@@ -4,14 +4,15 @@ A **behavior policy** is the rule an agent uses to decide its next move. These e
 
 The scene is always the same: a fixed triangle looks smaller as the agent moves away. The learning system sees the triangle’s corner positions, without being told the distance.
 
-## Two experiments
+## Three experiments
 
 | Experiment | What it asks | Read more |
 | --- | --- | --- |
 | Original paper reproduction | Can the network learn log-distance when movements follow the paper’s special random rule? | [Simple explanation](identifiability/README.md) |
 | Curiosity comparison | What happens with random actions or a learned curiosity rule instead? | [Setup and findings](curiosity/README.md) |
+| Scheduled exploration | Can starting with curiosity and gradually switching toward OU improve recovery? What if OU settings change over epochs? | [Schedules and results](schedules/README.md) |
 
-The original reproduction’s code and saved results are kept in `identifiability/`. The new comparison is in `curiosity/`.
+The original reproduction’s code and saved results are kept in `identifiability/`. The first behavior comparison is in `curiosity/`. The follow-up schedules are in `schedules/`.
 
 ## Main finding
 
@@ -29,6 +30,9 @@ python behavior-policy-experiments/identifiability/reproduce.py
 
 # Compare all three movement rules
 python behavior-policy-experiments/curiosity/experiment.py
+
+# Test curiosity-to-OU handovers and changing OU settings
+python behavior-policy-experiments/schedules/run_schedules.py
 ```
 
 The comparison gives all three rules the same number of training pairs. Its OU run is a fresh comparison run, so its scores differ slightly from the original reproduction, which keeps generating new pairs throughout training.

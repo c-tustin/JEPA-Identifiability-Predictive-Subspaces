@@ -108,7 +108,7 @@ def discounted_returns(rewards, done, bootstrap, gamma):
     return result
 
 
-def train_policy(c, seed):
+def train_policy(c, seed, entropy_schedule=None):
     torch.manual_seed(seed)
     policy, icm = Policy(), ICM()
     actor_optimizer = torch.optim.Adam(policy.parameters(), lr=1e-4)
@@ -147,7 +147,8 @@ def train_policy(c, seed):
         # Matches upstream pi_loss + .5*vf_loss - entropy_beta*entropy,
         # with vf_loss=.5*mean((V-return)^2), no advantage normalization.
         actor_loss = -(distribution.log_prob(action) * advantage).mean()
-        actor_loss += .25 * (value - returns).square().mean() - c.entropy_weight * distribution.entropy().mean()
+        entropy_weight = c.entropy_weight if entropy_schedule is None else entropy_schedule(update, c.policy_updates)
+        actor_loss += .25 * (value - returns).square().mean() - entropy_weight * distribution.entropy().mean()
         actor_optimizer.zero_grad()
         actor_loss.backward()
         nn.utils.clip_grad_norm_(policy.parameters(), 40.)
@@ -164,6 +165,7 @@ def train_policy(c, seed):
                             "forward_error": float(error.detach().mean()),
                             "inverse_accuracy": float((inverse_logits.argmax(-1) == action).float().mean()),
                             "action_majority_fraction": float(torch.bincount(action, minlength=3).max() / len(action)),
+                            "entropy_weight": float(entropy_weight),
                             "entropy": float(distribution.entropy().detach().mean())})
         if update % 200 == 0:
             print(f"  policy update {update}/{c.policy_updates}, reward={history[-1]['intrinsic_reward']:.5f}", flush=True)

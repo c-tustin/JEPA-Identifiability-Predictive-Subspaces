@@ -59,6 +59,8 @@ There is also a simple mathematical limit in our bounded scene: a straight-line 
 
 These results show how well approximate recovery survived in this particular setup. They do not show that curiosity always prevents learning distance, or that the paper’s theorem is wrong.
 
+The [follow-up schedule experiment](../schedules/README.md) tests a possible remedy: start with curiosity, then gradually switch the distance network’s training pairs to OU. It also tests decreasing the action-entropy bonus separately and changing OU settings over epochs.
+
 ## Run it
 
 Install the dependencies using the [main README](../../README.md#try-it). Then run commands from the repository’s top folder.

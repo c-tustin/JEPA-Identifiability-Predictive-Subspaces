@@ -20,7 +20,11 @@ These are average **R² scores** across three runs, tested at the same distances
 
 The curiosity-trained agents did worse on that shared test. In two runs they spent much of their time near the object. Their learned numbers also failed to have the bell-shaped spread that training was meant to encourage. These results mix changes in exploration with training problems; they do not overturn the original paper’s mathematical result.
 
-The [experiment guide](behavior-policy-experiments/README.md) explains the two experiments. The [full results](behavior-policy-experiments/curiosity/output/RESULTS.md) include every run and the extra checks.
+The [experiment guide](behavior-policy-experiments/README.md) explains the experiments. The [full results](behavior-policy-experiments/curiosity/output/RESULTS.md) include every run and the extra checks.
+
+The [schedule experiment](behavior-policy-experiments/schedules/README.md) follows up by gradually switching from curiosity to OU, reducing the incentive for random actions, and changing OU settings over training epochs. It keeps these changes separate so we can see which ones help.
+
+In that follow-up, gradually switching from ICM to OU raised the shared-range score to **0.9991** across three runs. Reducing the entropy bonus alone did little. Starting OU with a wider distance spread and narrowing it also helped. The [schedule results](behavior-policy-experiments/schedules/output/RESULTS.md) include the full comparison and training checks.
 
 ## Try it
 
@@ -56,6 +60,7 @@ The code runs on CPU and creates its own training data. A full run writes new re
 
 - [Original paper reproduction](behavior-policy-experiments/identifiability/README.md): the simple setting where the mathematical result applies.
 - [Curiosity experiment](behavior-policy-experiments/curiosity/README.md): what changes when the agent learns where to move.
+- [Scheduled exploration](behavior-policy-experiments/schedules/README.md): curiosity-to-OU handovers and OU settings that change over time.
 - [Comparison figure](behavior-policy-experiments/curiosity/output/comparison.png) and [detailed results](behavior-policy-experiments/curiosity/output/RESULTS.md).
 - [Credits and licenses](THIRD_PARTY_NOTICES.md): the original papers and the code we adapted. This repository uses the [MIT license](LICENSE), with separate notices for borrowed code.
 
