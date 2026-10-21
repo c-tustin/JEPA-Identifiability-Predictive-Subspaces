@@ -1,67 +1,62 @@
 # JEPA Identifiability and Predictive Subspaces
 
-A minimal unsupervised experiment studying identifiability from an object whose apparent size scales as **1/distance**. The original experiment adapts Theorem 1 of [*When Does LeJEPA Learn a World Model?*](https://arxiv.org/abs/2605.26379), by David Klindt, Yann LeCun and Randall Balestriero.
+**Can an agent learn how far away an object is just by watching it change size?** This project tests that question with a triangle that looks half as big when the agent moves twice as far away.
 
-An agent observes the projected vertices of a fixed triangle. A neural encoder learns from pairs of observations using alignment and **SIGReg**, without distance labels. With stationary Gaussian dynamics in log-distance, the ideal representation recovers log-distance up to sign.
+The agent is a small neural network. It sees the positions of the triangle’s three corners, rather than a full image. During training, it never receives the correct distance.
 
-This is a one-dimensional toy adaptation, not the authors' full experimental pipeline. It uses continuous vertex coordinates rather than raster images. Predictive subspaces beyond this scalar setting are future work.
+We ask whether the number it learns has a simple straight-line relationship with **log-distance**. This is what we mean by *linear identifiability*. Log-distance measures changes in ratios: doubling the distance adds the same amount wherever the agent starts.
 
-![SIGReg identifiability experiment](behavior-policy-experiments/identifiability/output/reproduction.png)
+## What we found
 
-## Behavior-policy extension
+We tried three ways of choosing the agent’s movements:
 
-The new [behavior-policy experiments](behavior-policy-experiments/README.md) keep the original reproduction alongside an ICM curiosity-policy test based on Pathak et al.'s official GitHub code. The comparison uses OU, random-action and learned curiosity trajectories, with separate on-policy and common-grid evaluation.
+| Movement rule | Recovery score on the same test range |
+| --- | ---: |
+| A special random rule chosen to match the paper’s assumptions, called OU | 0.995 |
+| Random choices to move closer, stay, or move farther away | 0.961 |
+| A learned curiosity rule that seeks hard-to-predict changes | 0.883 |
 
-```sh
-python behavior-policy-experiments/curiosity/experiment.py
-```
+These are average **R² scores** across three runs, tested at the same distances between 1 and 16. A score of 1 means a straight line predicts log-distance perfectly from the learned number; lower scores mean a worse fit.
 
-See the [curiosity implementation and protocol](behavior-policy-experiments/curiosity/README.md) and its [results](behavior-policy-experiments/curiosity/output/RESULTS.md). All original code, write-up and outputs now live under `behavior-policy-experiments/identifiability/`.
+The curiosity-trained agents did worse on that shared test. In two runs they spent much of their time near the object. Their learned numbers also failed to have the bell-shaped spread that training was meant to encourage. These results mix changes in exploration with training problems; they do not overturn the original paper’s mathematical result.
 
-Across three seeds, common-grid log-distance recovery is R² = **0.9946 ± 0.0012** for OU, **0.9609 ± 0.0004** for random actions, and **0.8832 ± 0.0548** for learned ICM. The ICM condition also has incomplete coverage in two seeds and substantial failures to maintain unit embedding variance. These results show degraded recovery in this configuration; they do not isolate a failure of the population theorem from distribution changes and optimization errors.
+The [experiment guide](behavior-policy-experiments/README.md) explains the two experiments. The [full results](behavior-policy-experiments/curiosity/output/RESULTS.md) include every run and the extra checks.
 
-## Quick start
+## Try it
 
-Use Python 3.12 (the pinned PyTorch version supports Python 3.8–3.12):
+Set up Python 3.12:
 
 ```sh
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
-python behavior-policy-experiments/identifiability/reproduce.py
 ```
 
-The default run trains three seeds for 10,000 steps each on CPU and writes metrics, a figure and checkpoints under `behavior-policy-experiments/identifiability/output/`. Training generates fresh data locally; it does not download datasets or pretrained models.
-
-For a quick smoke run that preserves the checked-in results:
+Run a short check that the code works:
 
 ```sh
-python behavior-policy-experiments/identifiability/reproduce.py --steps 20 --seeds 0 --output /tmp/jepa-smoke
+python behavior-policy-experiments/curiosity/experiment.py --quick --seeds 0 --output /tmp/behavior-policy-smoke
 ```
 
-Run the numerical checks:
+That short run is too small to draw conclusions. For the full comparison, run:
 
 ```sh
-python -m unittest discover -s behavior-policy-experiments/identifiability -p 'test_*.py' -v
-python -m unittest discover -s behavior-policy-experiments/curiosity -p 'test_*.py' -v
+python behavior-policy-experiments/curiosity/experiment.py
 ```
 
-## Results
+To check the saved results without training again:
 
-Across three seeds, a held-out linear probe recovers the Gaussian log-distance coordinate with **R² = 0.9890–0.9906**. A probe directly from apparent size reaches R² = 0.7661–0.7776. The learned raw embedding variance is 0.9250–0.9401, so Gaussianity and recovery remain approximate.
+```sh
+python behavior-policy-experiments/curiosity/experiment.py --evaluate-only
+```
 
-The encoder observes only triangle vertices during optimization. Latent coordinates are used for evaluation and resolving the unavoidable global sign. Raw and independently calibrated metrics are both reported.
+The code runs on CPU and creates its own training data. A full run writes new results over the files in its output folder; add `--output /tmp/my-behavior-run` to save a separate run.
 
-## Files
+## Where to look
 
-- [Derivation and experimental details](behavior-policy-experiments/identifiability/README.md): assumptions, Hermite proof, SIGReg formula and limitations.
-- [Experiment](behavior-policy-experiments/identifiability/reproduce.py): renderer, encoder, SIGReg and evaluation.
-- [Numerical checks](behavior-policy-experiments/identifiability/test_reproduce.py): reference-loss equivalence, gradients and sensor geometry.
-- [Recorded metrics](behavior-policy-experiments/identifiability/output/metrics.json) and [figure](behavior-policy-experiments/identifiability/output/reproduction.png).
-- `behavior-policy-experiments/identifiability/output/encoder_seed{0,1,2}.pt`: model state, calibration, configuration and training history.
+- [Original paper reproduction](behavior-policy-experiments/identifiability/README.md): the simple setting where the mathematical result applies.
+- [Curiosity experiment](behavior-policy-experiments/curiosity/README.md): what changes when the agent learns where to move.
+- [Comparison figure](behavior-policy-experiments/curiosity/output/comparison.png) and [detailed results](behavior-policy-experiments/curiosity/output/RESULTS.md).
+- [Credits and licenses](THIRD_PARTY_NOTICES.md): the original papers and the code we adapted. This repository uses the [MIT license](LICENSE), with separate notices for borrowed code.
 
-## Scope and assumptions
-
-Distance is positive, so the Gaussian coordinate is **log-distance**, not physical distance. Paired states follow a stationary Ornstein–Uhlenbeck transition in that coordinate. The object has fixed physical size and remains visible with unchanged orientation. Unknown variable physical size introduces a size–distance ambiguity. Ordinary walking policies and finite raster images require additional analysis.
-
-The numerical implementation uses the scalar specialization of the [authors' SIGReg code](https://github.com/klindtlab/lejepa-identifiability/blob/main/experiments/lejepa_id/losses.py). See [third-party notices](THIRD_PARTY_NOTICES.md) for SIGReg and the curiosity port, including their respective licenses. This repository's license is [MIT](LICENSE).
+The title also mentions predictive subspaces, but the current experiments study just one changing quantity: distance.

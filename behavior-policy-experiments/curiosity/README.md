@@ -1,94 +1,94 @@
-# Curiosity-driven behavior policy and identifiability
+# What changes when the agent learns where to move?
 
-## Question
+The [original experiment](../identifiability/README.md) uses a special random movement rule chosen to match the paper’s assumptions. Here we replace that rule with a learned **behavior policy**: a rule for choosing the next action.
 
-Does a SIGReg encoder still linearly recover log-distance when its positive pairs come from a curiosity-trained agent instead of the Gaussian OU process?
+The agent still sees a triangle that shrinks with distance. It can move closer by 0.25, stay, or move farther away by 0.25. In the two action-based tests, distance stays between 1 and 16; attempts to move past an end bounce back.
 
-The observation remains a fixed triangle's six projected vertex coordinates, proportional to 1/distance. Representation fitting uses only observations. Ground-truth distance and log-distance are used by the simulator and evaluation, not as training labels or policy inputs.
+## How curiosity works
 
-## Sources and actual code reuse
+We use the **Intrinsic Curiosity Module (ICM)** from Pathak et al.’s [curiosity-driven exploration paper](https://pathak22.github.io/noreward-rl/).
 
-The curiosity source is Pathak, Agrawal, Efros and Darrell, [*Curiosity-driven Exploration by Self-supervised Prediction*, ICML 2017](https://pathak22.github.io/noreward-rl/), supplied locally as `curiosity_driven_exploration.pdf`. The official implementation is [pathak22/noreward-rl](https://github.com/pathak22/noreward-rl).
+It learns two things from the agent’s experience:
 
-The port is based on commit **3e220c2177fc253916f12d980957fc40579d577a**. The relevant unmodified source files, original README and complete license are retained in [`upstream/noreward-rl`](upstream/noreward-rl), with SHA-256 hashes in [`PROVENANCE.json`](upstream/noreward-rl/PROVENANCE.json). Every experiment verifies these hashes before training. No upstream TensorFlow code is executed or imported.
+- Given the view before and after a move, which action did the agent take?
+- Given the current view and the action, what should the next view look like in the model’s learned description?
 
-The PyTorch implementation in [`experiment.py`](experiment.py) ports these parts:
+The agent receives a curiosity reward when the second prediction is wrong. It learns to choose actions that earn more of that reward. There is no goal reward and no distance label.
 
-| Upstream code | Toy implementation |
+We adapted the [authors’ official code](https://github.com/pathak22/noreward-rl) to PyTorch and the triangle scene. Their original code uses TensorFlow and game images. The [technical notes](TECHNICAL_NOTES.md#sources-and-actual-code-reuse) explain the changes; a fixed copy of the relevant original files and license is kept in [`upstream/`](upstream/noreward-rl).
+
+## The comparison
+
+We test three movement rules:
+
+| Rule | How the next view is chosen |
 | --- | --- |
-| `src/model.py: StateActionPredictor` | Shared feature encoder phi; inverse action classifier; action-conditioned forward feature predictor |
-| `StateActionPredictor.forwardloss` | Half the squared feature-error **sum**, averaged over transitions; the feature dimension is factored out of the mean, as upstream |
-| `StateActionPredictor.pred_bonus` | Intrinsic reward from the forward error, evaluated before updating ICM |
-| `src/a3c.py: process_rollout` | Bootstrapped discounted returns; terminal masks stop returns at reset |
-| `src/a3c.py: A3C` | Actor loss, value loss and entropy regularization; separate policy and predictor optimizers |
-| `src/constants.py` | Gamma 0.99, rollout length 20, gradient clipping 40, forward/inverse mixture beta 0.2 |
+| OU baseline | The special random rule from the original experiment |
+| Random actions | Equal chances of moving closer, staying or moving away |
+| Curiosity policy | A network chooses actions after learning from curiosity rewards |
 
-This is an attributed **source-derived port**, not an exact run of the legacy TensorFlow/game stack. Four game CNN layers become a small MLP over six landmarks; feature width is 32 instead of 288. The policy is feedforward because the ideal visual sensor is Markov, rather than an LSTM. Training is synchronous vectorized advantage actor–critic, not distributed A3C. There is no game action repeat. The worker's batch-size/predictor gradient scale factors are replaced by mean reductions and separate optimizer learning rates. The policy and ICM are separate from the SIGReg encoder.
+After learning a curiosity policy, we stop changing it and collect fresh trips through the scene. A separate network then learns a single output number from pairs of views, using the same SIGReg training method as the original experiment. It does not reuse the curiosity model’s learned description.
 
-An important implementation detail is preserved: the official source does **not** stop the forward-loss gradient through phi(s_next); the port likewise trains both feature branches. The intrinsic reward is detached for the actor–critic update, so policy optimization cannot backpropagate through the simulator or manipulate the predictor directly.
+Every rule gets the same number of training pairs. Training and testing use different trips, and a jump back to a starting position is never counted as a real movement pair.
 
-## Environment and conditions
+## What happened
 
-The controlled physical environment has distance d in [1,16], initial distances sampled uniformly in physical distance, and three discrete actions: approach by 0.25, stay, retreat by 0.25. Overshoot reflects at the boundaries; no observations are resized to erase apparent size. There is no external reward and no injected observation or actuation noise.
+We ran each comparison three times. We measured how well a straight line could turn the learned output into log-distance on the **same test distances from 1 to 16**.
 
-1. **OU:** independent stationary Gaussian pairs in z=log(d/4)/0.7 with rho=0.9, rendered through the original inverse-distance mapping. This condition is unbounded in physical distance, as required by the original Gaussian construction.
-2. **Random:** uniformly sampled physical actions in the bounded environment.
-3. **ICM:** actions sampled from the learned curiosity policy in that same bounded environment.
+| Movement rule | Average R² | Variation across runs |
+| --- | ---: | ---: |
+| OU baseline | 0.9946 | ± 0.0012 |
+| Random actions | 0.9609 | ± 0.0004 |
+| Curiosity policy | 0.8832 | ± 0.0548 |
 
-Random and ICM conditions share dynamics, sensor, bounds, start distribution, episode lengths, transition budgets and representation-learning settings. The random-action control helps distinguish curiosity learning from changing the environment and data-generating process. OU versus either behavior condition changes multiple assumptions, so it does not isolate the effect of curiosity alone.
+A score of 1 means a perfect straight-line fit. The variation column is the sample standard deviation across the three runs.
 
-ICM and policy train jointly, then **freeze**. Fresh train, calibration and test trajectories are collected with different seeds and disjoint episodes. Each behavior trajectory discards 128 burn-in steps and records 64 transitions. Resets are never treated as positive pairs, and no time steps within an episode are randomly split between train and test. Burn-in does not establish stationarity; distribution diagnostics are reported rather than assuming it.
+The curiosity agents did worse across the shared test range. Two spent much of their time near the object and covered less of the distance range. In those runs, the output numbers also spread out far more than the training target intended.
 
-Defaults per seed:
+When we tested only on distances each curiosity agent tended to visit, the average score was higher: **0.9589**. Doing well on familiar views can therefore hide problems elsewhere in the scene.
 
-- Policy: 600 updates × 20 steps × 16 parallel environments = 192,000 interactions; independent training episodes have length 256.
-- Policy Adam learning rate 0.0001; ICM Adam learning rate 0.001; gamma 0.99; entropy weight 0.0005; intrinsic reward scale 0.2 and clipping at 1. These are toy settings drawing on the upstream constants/Mario settings, not a claim to reproduce a particular game run.
-- Representation data: 256 training trajectories × 64 recorded steps = 16,384 pairs; 64 calibration and 64 test trajectories (4,096 pairs each). OU uses matching independent pair counts.
-- Each representation is initialized from the same seed across conditions and trained from scratch for 4,000 minibatches of 512 pairs, with alignment + SIGReg, lambda 0.1, and the same cosine-decay schedule as the original toy implementation. No batch whitening is used.
-- Seeds: 0, 1 and 2. The ICM feature encoder is never reused as the representation encoder.
+The [full report](output/RESULTS.md) includes every run, checks on the output spread, and evidence that the policy actually learned. The [comparison figure](output/comparison.png) shows the results visually.
 
-## Evaluation and interpretation
+## Does identifiability still hold?
 
-Two tests answer different questions:
+**The learned distance scale was less reliable under curiosity in this experiment.** We cannot claim that the original mathematical guarantee applies to these agents.
 
-- **Behavior-distribution R²:** fit a linear embedding-to-log-distance probe on separate calibration trajectories and score it on new test trajectories under the same frozen policy.
-- **Common-grid R²:** fit a separate evaluation-only probe on independently sampled log-distances, then score on a shared log-distance grid covering physical distances [1,16]. This reveals nonlinear geometry or missing coverage that a narrow behavior distribution can conceal. The common-grid probe is not used for training, model selection or early stopping.
+There are two reasons to be careful about the conclusion. First, both action-based tests change the distribution of distances and movements assumed by the theorem. Second, some networks did not meet the intended training target, so training problems may explain part of the drop.
 
-Additional metrics include raw and calibration embedding means/variances, raw alignment, held-out characteristic-function discrepancy from the Gaussian target (SIGReg divided by sample count), latent skewness and excess kurtosis, distance from a standard Gaussian CDF after standardization, pair correlation, paired marginal mean shift, fraction of samples in the common range, and occupancy of 32 physical-distance bins. No Gaussianity p-values are reported for correlated trajectory samples. The learned policy's weight change and action-distribution difference from uniform are recorded, along with inverse-model accuracy relative to the majority-action baseline.
+There is also a simple mathematical limit in our bounded scene: a straight-line function of a quantity limited to a fixed range is still limited to a fixed range. It cannot have an exact Gaussian distribution, which has unbounded tails. This issue already affects the random-action test; curiosity is not its only cause.
 
-**The mathematical guarantee does not automatically transfer.** The bounded behavior conditions cannot have an exact non-degenerate Gaussian log-distance marginal. Their action-driven transitions also differ from isotropic additive Gaussian OU noise. The experiment therefore tests empirical linear recovery under those policies; it does not apply the original theorem's alignment lower bound or approximate-identifiability bound to them. A high R² is evidence of near-linear recovery on a tested distribution, not a proof of identifiability over all encoders. A lower R² is evidence of failure of this trained model/configuration, not a counterexample to the theorem under its original assumptions.
+These results show how well approximate recovery survived in this particular setup. They do not show that curiosity always prevents learning distance, or that the paper’s theorem is wrong.
 
-There is a direct incompatibility here: an affine function of bounded log-distance is bounded, so it cannot have an exact standard-Gaussian distribution. Thus exact affine recovery plus exact Gaussian matching cannot hold simultaneously in either bounded behavior condition. This follows from the support we chose, before learning any curiosity policy. The useful comparison is how well approximate recovery survives, and how learned curiosity changes it relative to random actions in the same bounded environment.
+## Run it
 
-One-dimensional monotonic Gaussianization is also a simple problem: these experiments do not demonstrate disentangling several independent latent factors. Coverage, bounded geometry and optimization can each affect the outcome. The random-action control, raw variances, common-grid test and multiple seeds make those limits visible, but do not isolate every mechanism.
+Install the dependencies using the [main README](../../README.md#try-it). Then run commands from the repository’s top folder.
 
-## Run and inspect
-
-From the repository root with `requirements.txt` installed:
+Full comparison:
 
 ```sh
 python behavior-policy-experiments/curiosity/experiment.py
 ```
 
-For a short execution check, keeping recorded results intact:
+This trains three curiosity agents and nine distance-learning networks. It saves new reports, figures and models in `output/`, replacing the existing files there. Use `--output /tmp/my-behavior-run` to keep a separate run.
 
-```sh
-python behavior-policy-experiments/curiosity/experiment.py --quick --seeds 0 --output /tmp/behavior-policy-smoke
-```
-
-The quick mode has only 3 actor–critic updates and 10 representation updates. Its R² is **not** an identifiability result; a nearly collapsed random network can still have a high calibrated R² in one dimension.
-
-```sh
-python -m unittest discover -s behavior-policy-experiments/identifiability -p 'test_*.py' -v
-python -m unittest discover -s behavior-policy-experiments/curiosity -p 'test_*.py' -v
-```
-
-Results are in [`output/RESULTS.md`](output/RESULTS.md), [`output/metrics.json`](output/metrics.json) and [`output/comparison.png`](output/comparison.png). Checkpoints retain the behavior policy, ICM and each representation. The compressed evaluation arrays support replotting without retraining. Data generation can be reconstructed from the policy checkpoint, configuration and collection seeds in the source.
-
-To reconstruct all held-out trajectories and verify the recorded recovery scores and variances from the saved checkpoints, without training:
+To check the saved scores without training again:
 
 ```sh
 python behavior-policy-experiments/curiosity/experiment.py --evaluate-only
 ```
 
-This also regenerates the report and figure. The checked-in evaluation was verified in this way for all nine seed/condition combinations.
+That command loads the saved models, recreates the test data, checks the recorded scores, and regenerates the report and figure.
+
+For a quick check that the program runs:
+
+```sh
+python behavior-policy-experiments/curiosity/experiment.py --quick --seeds 0 --output /tmp/behavior-policy-smoke
+```
+
+The quick run is too short to judge learning quality. Run the six numerical checks with:
+
+```sh
+python -m unittest discover -s behavior-policy-experiments/curiosity -p 'test_*.py' -v
+```
+
+For exact settings, equations, code changes and measurement details, see the [technical notes](TECHNICAL_NOTES.md).

@@ -1,18 +1,34 @@
 # Behavior policy experiments
 
-This folder contains the inverse-distance reproduction and a new test of what happens when a learned curiosity policy supplies the training transitions.
+A **behavior policy** is the rule an agent uses to decide its next move. These experiments ask whether changing that rule changes what the agent learns about distance.
 
-- [Original Klindt-paper reproduction](identifiability/README.md): Gaussian log-distance and stationary OU positive pairs; original figure, metrics and checkpoints are retained.
-- [Curiosity-policy experiment](curiosity/README.md): compares OU, random-action, and learned ICM trajectories with the same triangle observation and SIGReg encoder.
-- [Curiosity results](curiosity/output/RESULTS.md): generated from the multi-seed run.
+The scene is always the same: a fixed triangle looks smaller as the agent moves away. The learning system sees the triangle’s corner positions, without being told the distance.
 
-Run commands from the repository root after installing `requirements.txt` with Python 3.12:
+## Two experiments
+
+| Experiment | What it asks | Read more |
+| --- | --- | --- |
+| Original paper reproduction | Can the network learn log-distance when movements follow the paper’s special random rule? | [Simple explanation](identifiability/README.md) |
+| Curiosity comparison | What happens with random actions or a learned curiosity rule instead? | [Setup and findings](curiosity/README.md) |
+
+The original reproduction’s code and saved results are kept in `identifiability/`. The new comparison is in `curiosity/`.
+
+## Main finding
+
+On the same test distances, the average recovery score was **0.995 for the paper’s random rule**, **0.961 for random actions**, and **0.883 for curiosity-driven actions**. Closer to 1 is better.
+
+The curiosity agents explored unevenly, and some networks did not learn the intended spread of output values. The [results report](curiosity/output/RESULTS.md) shows these problems alongside the scores.
+
+## Run either experiment
+
+First follow the [installation instructions](../README.md#try-it), then run commands from the repository’s top folder:
 
 ```sh
+# Original reproduction
 python behavior-policy-experiments/identifiability/reproduce.py
+
+# Compare all three movement rules
 python behavior-policy-experiments/curiosity/experiment.py
 ```
 
-The second command is the behavior-policy comparison. Its OU condition uses a fixed offline pair budget matching the behavior conditions. It is a new control run, separate from the historical online-OU reproduction.
-
-The experiment assesses empirical linear recovery. A bounded, policy-driven distribution violates the exact Gaussian OU assumptions, so neither success nor failure proves or disproves the original theorem outside its stated setting.
+The comparison gives all three rules the same number of training pairs. Its OU run is a fresh comparison run, so its scores differ slightly from the original reproduction, which keeps generating new pairs throughout training.
