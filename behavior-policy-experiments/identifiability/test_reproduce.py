@@ -38,6 +38,35 @@ class ReproductionChecks(unittest.TestCase):
         self.assertLess(reference, float(criterion(torch.zeros_like(normal))))
         self.assertLess(reference, float(criterion(normal + 1.)))
 
+    def test_readable_sigreg_preserves_previous_values_and_gradients(self):
+        for dtype in [torch.float32, torch.float64]:
+            for shape in [(512,), (512, 1), (2, 256, 1)]:
+                old_input = torch.randn(shape, dtype=dtype, requires_grad=True)
+                new_input = old_input.detach().clone().requires_grad_(True)
+                loss = SIGReg1D().to(dtype=dtype)
+                # Exact pre-refactor expression, retained as an independent check.
+                phase = old_input.reshape(-1, 1) * loss.frequency
+                real_error = phase.cos().mean(0) - loss.target
+                imaginary_error = phase.sin().mean(0)
+                previous = old_input.numel() * ((real_error.square() + imaginary_error.square()) * loss.weight).sum()
+                readable = loss(new_input)
+                torch.testing.assert_close(readable, previous, rtol=0, atol=0)
+                old_gradient = torch.autograd.grad(previous, old_input)[0]
+                new_gradient = torch.autograd.grad(readable, new_input)[0]
+                torch.testing.assert_close(new_gradient, old_gradient, rtol=0, atol=0)
+
+    def test_sigreg_buffer_compatibility_and_invalid_input(self):
+        source, restored = SIGReg1D(), SIGReg1D()
+        self.assertEqual(set(source.state_dict()), {"frequency", "target", "weight"})
+        restored.load_state_dict(source.state_dict())
+        data = torch.randn(32)
+        torch.testing.assert_close(source(data), restored(data), rtol=0, atol=0)
+        for data in [torch.empty(0), torch.randn(8, 2), torch.tensor(1.)]:
+            with self.assertRaises(ValueError):
+                source(data)
+        with self.assertRaises(ValueError):
+            SIGReg1D(knots=1)
+
     def test_inverse_distance_sensor(self):
         sigma = .7
         z = torch.tensor([-1., 0., 1.])

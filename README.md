@@ -24,7 +24,9 @@ The [experiment guide](behavior-policy-experiments/README.md) explains the exper
 
 The [schedule experiment](behavior-policy-experiments/schedules/README.md) follows up by gradually switching from curiosity to OU, reducing the incentive for random actions, and changing OU settings over training epochs. It keeps these changes separate so we can see which ones help.
 
-In that follow-up, gradually switching from ICM to OU raised the shared-range score to **0.9991** across three runs. Reducing the entropy bonus alone did little. Starting OU with a wider distance spread and narrowing it also helped. The [schedule results](behavior-policy-experiments/schedules/output/RESULTS.md) include the full comparison and training checks.
+In that follow-up, gradually switching from ICM to OU raised the shared-range score to **0.9991** across three runs. The handover with entropy-bonus decay scored almost identically; these two settings are effectively tied. Reducing the entropy bonus alone did little. Starting OU with a wider distance spread and narrowing it also helped. The [schedule results](behavior-policy-experiments/schedules/output/RESULTS.md) include the full comparison and training checks.
+
+For why the movement rule matters, start with [the plain-language explanation and research ideas](behavior-policy-experiments/analysis/README.md). It links to precise arguments, a controlled counterexample, and proposed extensions to nonlinear dynamics and action-dependent policies. The [SIGReg guide](behavior-policy-experiments/identifiability/SIGREG.md) explains the regularizer step by step.
 
 ## Try it
 

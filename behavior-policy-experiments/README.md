@@ -20,7 +20,11 @@ On the same test distances, the average recovery score was **0.995 for the paper
 
 The curiosity agents explored unevenly, and some networks did not learn the intended spread of output values. The [results report](curiosity/output/RESULTS.md) shows these problems alongside the scores.
 
-## Run either experiment
+The follow-up handovers from ICM to OU scored **0.9991**, essentially tied with and without entropy-bonus decay. Fixed OU scored 0.9946 in the matched comparison. These are results from three runs in one world, rather than a general ranking of exploration methods.
+
+See [why policies change recovery and what to test next](analysis/README.md) for the explanation, mathematical arguments, and research directions.
+
+## Run the experiments
 
 First follow the [installation instructions](../README.md#try-it), then run commands from the repository’s top folder:
 

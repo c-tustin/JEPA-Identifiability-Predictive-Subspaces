@@ -19,6 +19,7 @@ import matplotlib.pyplot as plt
 import numpy as np
 import torch
 from torch import nn
+from sigreg import SIGReg1D
 
 # Fixed, frontoparallel triangle, with unit circumradius. Image coordinates are
 # continuous and unbounded: no crop, quantization, visibility loss, or noise.
@@ -47,31 +48,6 @@ class Encoder(nn.Module):
         # Bounded sensor coordinates improve conditioning. This supplies neither
         # log-distance nor an inverse-distance formula to the network.
         return self.net(torch.tanh(4 * x)).flatten()
-
-
-class SIGReg1D(nn.Module):
-    """Scalar specialization of the authors' SIGReg (17 knots, t_max=3).
-
-    Reference: https://github.com/klindtlab/lejepa-identifiability/blob/main/experiments/lejepa_id/losses.py
-    In 1D every normalized projection is +1 or -1. The squared CF error is
-    invariant to this sign, so averaging random slices gives this same loss.
-    Matches their factor of two, Gaussian integration weight, and sample scaling.
-    """
-    def __init__(self, knots=17, t_max=3.):
-        super().__init__()
-        frequency = torch.linspace(0., t_max, knots)
-        target = torch.exp(-frequency.square() / 2)
-        quadrature = torch.ones(knots) * (2 * t_max / (knots - 1))
-        quadrature[[0, -1]] *= .5
-        self.register_buffer("frequency", frequency)
-        self.register_buffer("target", target)
-        self.register_buffer("weight", quadrature * target)
-
-    def forward(self, embedding):
-        phase = embedding.reshape(-1, 1) * self.frequency
-        real_error = phase.cos().mean(0) - self.target
-        imaginary_error = phase.sin().mean(0)
-        return embedding.numel() * ((real_error.square() + imaginary_error.square()) * self.weight).sum()
 
 
 def fit(steps, batch, rho, sigma, seed, sigreg_weight):

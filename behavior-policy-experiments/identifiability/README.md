@@ -29,7 +29,7 @@ Under these ideal assumptions and perfect training, the network’s output must 
 
 That is the identifiability result we test here. It recovers log-distance. Turning that number into physical distance still requires an exponential calculation and a known distance scale.
 
-The [mathematical notes](THEORY.md) contain the equations, proof, exact training settings and SIGReg formula.
+The [mathematical notes](THEORY.md) contain the equations, proof, exact training settings and SIGReg formula. The [step-by-step SIGReg guide](SIGREG.md) explains the readable implementation in [sigreg.py](sigreg.py).
 
 ## What happened
 
@@ -57,7 +57,7 @@ For a short check that leaves the saved results alone:
 python behavior-policy-experiments/identifiability/reproduce.py --steps 20 --seeds 0 --output /tmp/jepa-smoke
 ```
 
-Run its four numerical checks with:
+Run its six numerical checks with:
 
 ```sh
 python -m unittest discover -s behavior-policy-experiments/identifiability -p 'test_*.py' -v

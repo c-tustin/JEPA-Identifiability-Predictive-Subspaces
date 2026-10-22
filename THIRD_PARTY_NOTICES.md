@@ -1,6 +1,6 @@
 # Third-party notices
 
-`SIGReg1D` in `behavior-policy-experiments/identifiability/reproduce.py` adapts the scalar form of SIGReg in the following MIT-licensed project:
+`SIGReg1D` in `behavior-policy-experiments/identifiability/sigreg.py` (also exported by `reproduce.py`) adapts the scalar form of SIGReg in the following MIT-licensed project:
 
 - Project: [LeJEPA Identifiability](https://github.com/klindtlab/lejepa-identifiability)
 - Source: [`experiments/lejepa_id/losses.py`](https://github.com/klindtlab/lejepa-identifiability/blob/main/experiments/lejepa_id/losses.py)
