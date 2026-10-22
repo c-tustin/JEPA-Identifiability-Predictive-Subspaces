@@ -4,13 +4,14 @@ A **behavior policy** is the rule an agent uses to decide its next move. These e
 
 The scene is always the same: a fixed triangle looks smaller as the agent moves away. The learning system sees the triangle’s corner positions, without being told the distance.
 
-## Three experiments
+## Experiments
 
 | Experiment | What it asks | Read more |
 | --- | --- | --- |
 | Original paper reproduction | Can the network learn log-distance when movements follow the paper’s special random rule? | [Simple explanation](identifiability/README.md) |
 | Curiosity comparison | What happens with random actions or a learned curiosity rule instead? | [Setup and findings](curiosity/README.md) |
 | Scheduled exploration | Can starting with curiosity and gradually switching toward OU improve recovery? What if OU settings change over epochs? | [Schedules and results](schedules/README.md) |
+| Curriculum controls | Is curiosity necessary for the gain? Do optimizer memory, learning-rate timing, or OU exposure explain it? | [Controlled study](curriculum-controls/README.md) |
 
 The original reproduction’s code and saved results are kept in `identifiability/`. The first behavior comparison is in `curiosity/`. The follow-up schedules are in `schedules/`.
 
@@ -21,6 +22,8 @@ On the same test distances, the average recovery score was **0.995 for the paper
 The curiosity agents explored unevenly, and some networks did not learn the intended spread of output values. The [results report](curiosity/output/RESULTS.md) shows these problems alongside the scores.
 
 The follow-up handovers from ICM to OU scored **0.9991**, essentially tied with and without entropy-bonus decay. Fixed OU scored 0.9946 in the matched comparison. These are results from three runs in one world, rather than a general ranking of exploration methods.
+
+The [larger curriculum-control study](curriculum-controls/INTERPRETATION.md) revises that three-run conclusion: the handover can help, but two of five new seeds fail badly with folded distance curves. Its controls keep the same single-distance world.
 
 See [why policies change recovery and what to test next](analysis/README.md) for the explanation, mathematical arguments, and research directions.
 

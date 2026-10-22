@@ -1,5 +1,7 @@
 # Why did starting with curiosity help?
 
+**Completed finding:** the first three ICM→OU successes do not generalize reliably. Two of five new seeds fail with folded distance curves. See the [interpretation](INTERPRETATION.md) and [all results](output/RESULTS.md).
+
 This study keeps the same triangle, its inverse-distance size change, and the single distance coordinate. It tests explanations for the earlier ICM→OU gain. No coordinates or actions are added.
 
 ## Questions fixed before running
@@ -10,6 +12,8 @@ This study keeps the same triangle, its inverse-distance size change, and the si
 4. Does the handover still beat OU-only controls that receive exactly the same OU observations, with the same repetitions?
 
 The primary comparison is ICM→OU versus random→OU on five new seeds (3–7), using the common-distance-range R². The original three seeds (0–2) are replayed as a separate historical group. The broader Gaussian OU test is a second outcome. We also report all eight seeds together. Settings and seed counts are fixed before inspecting these results; no early stopping or best-checkpoint selection is used.
+
+The protocol and training runner were recorded in [commit b701df1](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/commit/b701df1a7b7027ba62ad47c4d577e8f85aad878a) before inspecting the trained study results. Later changes add descriptive comparisons, figures and interpretation.
 
 ## What stays the same
 
@@ -51,6 +55,8 @@ From the repository root, after the [usual installation](../../README.md#try-it)
 python -m unittest discover -s behavior-policy-experiments/curriculum-controls -p 'test_*.py' -v
 python behavior-policy-experiments/curriculum-controls/run_controls.py
 python behavior-policy-experiments/curriculum-controls/run_controls.py --evaluate-only
+python behavior-policy-experiments/curriculum-controls/plot_training.py
+python behavior-policy-experiments/curriculum-controls/diagnose_curves.py
 ```
 
 The full run replaces the output folder. For a short execution check that preserves the saved study:
@@ -66,3 +72,5 @@ Use `--resume` to skip fully completed seeds after an interruption. A partially 
 [Results and individual runs](output/RESULTS.md) · [Interpretation](INTERPRETATION.md)
 
 Report averages include sample standard deviations. Paired seed differences and 95% bootstrap intervals are descriptive; only five new seeds are available, and the many exploratory comparisons are not corrected for multiple testing. Results concern this environment and finite training budget. No inference is based on comparing selected best seeds.
+
+`diagnose_curves.py` is a post-result diagnostic, added after the first new seed failed. It plots saved models and measures the fraction of grid steps where the output reverses direction. These checks are separate from the fixed primary comparison and do not select or retrain models.

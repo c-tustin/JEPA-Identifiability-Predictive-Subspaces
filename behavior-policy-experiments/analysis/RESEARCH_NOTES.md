@@ -4,6 +4,8 @@ These notes separate measured findings, mathematical deductions, and research pr
 
 ## 1. Was ICM→OU the best?
 
+**Follow-up:** the [curriculum controls](../curriculum-controls/INTERPRETATION.md) include five new seeds and identify two serious folded-representation failures. The three-run ranking below describes the original experiment; it does not establish that the handover is reliably best.
+
 In these three runs, yes: the handover and the handover with entropy-bonus decay are essentially tied. Their shared-range R² values are 0.9991255 and 0.9991273 on average. The difference is too small to support a preference between them. Fixed OU averages 0.9945710. The plain handover beats fixed OU on each tested seed by about 0.00476, 0.00307 and 0.00583.
 
 The same pattern holds on the broader fixed Gaussian OU test: about 0.9932–0.9933 for the handovers, versus 0.9802 for fixed OU. Their output variances are also closer to one. See the [complete schedule results](../schedules/output/RESULTS.md).

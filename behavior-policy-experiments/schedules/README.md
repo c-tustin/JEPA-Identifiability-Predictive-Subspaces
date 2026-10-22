@@ -115,3 +115,7 @@ Run the schedule checks:
 ```sh
 python -m unittest discover -s behavior-policy-experiments/schedules -p 'test_*.py' -v
 ```
+
+## Why does the handover help?
+
+The [curriculum-control study](../curriculum-controls/README.md) follows up in the same distance-only world. It compares random→OU with ICM→OU, checks the original runs exactly, and tests optimizer resets, learning-rate restarts, and matched OU-pair exposure.

@@ -28,6 +28,8 @@ In that follow-up, gradually switching from ICM to OU raised the shared-range sc
 
 For why the movement rule matters, start with [the plain-language explanation and research ideas](behavior-policy-experiments/analysis/README.md). It links to precise arguments, a controlled counterexample, and proposed extensions to nonlinear dynamics and action-dependent policies. The [SIGReg guide](behavior-policy-experiments/identifiability/SIGREG.md) explains the regularizer step by step.
 
+The larger [curriculum-control study](behavior-policy-experiments/curriculum-controls/README.md) revisits that three-run gain in the same one-distance world. It finds that the gain is seed-dependent: two of five new ICM→OU runs develop folded distance curves and fail badly, even with optimizer and learning-rate resets. See the [updated interpretation](behavior-policy-experiments/curriculum-controls/INTERPRETATION.md) before treating ICM→OU as the best choice.
+
 ## Try it
 
 Set up Python 3.12:

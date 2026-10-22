@@ -239,7 +239,8 @@ def comparisons(runs):
     pairs = [("icm_carry", "ou_carry"), ("random_carry", "ou_carry"), ("icm_carry", "random_carry"),
              ("icm_carry", "ou_exposure_compressed_clock"), ("icm_carry", "ou_exposure_original_clock")]
     pairs += [(f"{s}_{t}", f"{s}_carry") for s in SOURCES for t in TAILS[1:]]
-    pairs += [(f"icm_{t}", f"random_{t}") for t in TAILS[1:]]
+    pairs += [(f"{a}_{t}", f"{b}_{t}") for t in TAILS[1:]
+              for a, b in [("icm", "random"), ("icm", "ou"), ("random", "ou")]]
     result = []
     for group, subset in [("all", runs), ("new", [r for r in runs if r["new_seed"]]),
                            ("historical", [r for r in runs if not r["new_seed"]])]:

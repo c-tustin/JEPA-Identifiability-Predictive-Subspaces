@@ -2,7 +2,9 @@
 
 **ICM→OU and ICM→OU with entropy-bonus decay were tied for best in our three runs.** Their average distance-recovery scores were both about 0.9991, compared with 0.9946 for fixed OU and 0.8832 for ICM alone. The [full comparison](../schedules/output/RESULTS.md) includes individual runs and tests on a broader distance distribution.
 
-That is encouraging evidence for the handover in this small world. It does not yet tell us whether curiosity specifically is responsible, or whether another starting policy would help just as much.
+**Follow-up:** the [larger control study](../curriculum-controls/INTERPRETATION.md) finds serious failures on two of five new seeds. The earlier three-run ranking is not a reliable general conclusion.
+
+The original result was encouraging evidence for the handover in this small world. It does not yet tell us whether curiosity specifically is responsible, or whether another starting policy would help just as much.
 
 ## Why ICM alone did worse
 
