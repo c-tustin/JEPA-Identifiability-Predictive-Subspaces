@@ -20,7 +20,7 @@ The policy changes both which distances are sampled and which views are paired. 
 - [Rigorous explanation](reliability/MECHANISM.md): what follows mathematically, what the controls establish, and what remains uncertain.
 - [Learned OU](learned-ou/README.md): train correlation/spread or an OU-inspired physical controller.
 - [Planning summary](planning/SUMMARY.md): actual goal error with shared versus policy-native predictor data.
-- [Nonlinear-control proof](nonlinear-control/README.md): a conditional identification result using known actuation, with one physical coordinate.
+- [Nonlinear dynamics findings](nonlinear-control/SUMMARY.md): 36 ordinary-trajectory tests of the flexible encoder, plus a conditional identification proof using known actuation. Still one physical coordinate.
 
 ## Earlier studies
 

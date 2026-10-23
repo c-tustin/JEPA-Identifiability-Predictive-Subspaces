@@ -43,6 +43,8 @@ Planning tests use actual goal-reaching error, with either shared predictor-trai
 
 The [action-anchor proof and prototype](behavior-policy-experiments/nonlinear-control/README.md) keep one distance coordinate while allowing nonlinear drift. Known constant physical actuation identifies affine coordinates among informative smooth encoders. The proof includes an approximate bound; it does not claim unconstrained JEPA training satisfies its assumptions.
 
+A [36-model trajectory comparison](behavior-policy-experiments/nonlinear-control/SUMMARY.md) tests the original flexible encoder without paired interventions. Under nonlinear drift, persistent actions with raw SIGReg reach physical-distance $R^2=0.9975$ with no detected grid reversals. Balanced SIGReg performs worse in this world. Coverage gaps and coordinate warping mean this is an empirical result, not a nonlinear identification guarantee.
+
 ## Try the code
 
 ```sh
@@ -64,4 +66,4 @@ The quick command checks execution, not trained performance. Full runs overwrite
 | [SIGReg guide](behavior-policy-experiments/identifiability/SIGREG.md) | Readable scalar code and the equations it implements |
 | [Credits](THIRD_PARTY_NOTICES.md) | Paper/code sources and retained licenses |
 
-Verification: all 47 numerical checks pass. The 218 new representation/action-anchor evaluations and 202 planning evaluations reproduce from saved checkpoints.
+Verification: all 52 numerical checks pass. The 218 earlier representation/action-anchor evaluations, 36 new nonlinear-trajectory evaluations, and 202 planning evaluations reproduce from saved checkpoints.

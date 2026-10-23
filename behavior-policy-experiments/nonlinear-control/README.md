@@ -1,5 +1,23 @@
 # Nonlinear dynamics without adding state coordinates
 
+Two experiments answer different questions:
+
+1. **Ordinary trajectories:** does the original flexible encoder + SIGReg still recover distance when the dynamics change? [Short findings](SUMMARY.md) · [Fixed comparison](TRAJECTORY_PROTOCOL.md) · [Full results](output-trajectories/RESULTS.md).
+2. **Known action effects:** can stronger structural assumptions identify distance despite nonlinear drift? The proof and first prototype below address this question.
+
+## Ordinary trajectories
+
+Keep the same triangle, one distance, and original encoder. Compare zero versus nonlinear drift, random versus persistent versus action-balanced policies, and raw versus balanced SIGReg sampling. The fixed protocol uses three new seeds and 36 encoders. No ordered encoder or paired interventions are used here.
+
+```sh
+python behavior-policy-experiments/nonlinear-control/run_trajectories.py
+python behavior-policy-experiments/nonlinear-control/run_trajectories.py --evaluate-only
+```
+
+Use `--quick --output /tmp/nonlinear-trajectories-smoke` for an execution check; use `--resume` to continue an interrupted run. An existing output is never silently overwritten. [How to interpret recovery and folding](TRAJECTORY_INTERPRETATION.md).
+
+## Known action effects
+
 The triangle still changes as $x=V/d$. We allow nonlinear drift and state-dependent noise in the same distance variable:
 
 $$
