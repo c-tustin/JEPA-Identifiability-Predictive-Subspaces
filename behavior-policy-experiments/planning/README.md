@@ -34,6 +34,7 @@ python -m unittest discover -s behavior-policy-experiments/planning -p 'test_*.p
 python behavior-policy-experiments/planning/evaluate_planning.py --source legacy
 python behavior-policy-experiments/planning/evaluate_planning.py --source policies
 python behavior-policy-experiments/planning/evaluate_planning.py --source repairs
+python behavior-policy-experiments/planning/evaluate_planning.py --source learned_ou
 ```
 
 Each source has its own output directory. `legacy` checks the original three encoders across eight seeds. `policies` checks the four alternative exploration rules across five new seeds. `repairs` checks OU/random/ICM, the two ICM-policy changes, and the monotone diagnostic. Use `--resume` for completed predictors or `--evaluate-only` to verify saved results. `--quick --output /tmp/planning-smoke` is only an execution check.
@@ -41,3 +42,5 @@ Each source has its own output directory. `legacy` checks the original three enc
 **Planner validation:** an initial terminal-only random-search pilot failed even with exact dynamics. That pilot was superseded before interpreting learned-policy comparisons; version 2 uses the structured candidates and intermediate cost described above.
 
 This first test uses local goals, point predictions, a fixed search budget and a short horizon. It does not establish arbitrary-distance or partially observed planning. Cases share a trained model, so seeds—not individual trajectories—are the replication units. [Original encoders](output-legacy/RESULTS.md) · [Alternative policies](output-policies/RESULTS.md) · [Repair study](output-repairs/RESULTS.md).
+
+The [learned-OU planning comparison](output-learned_ou/RESULTS.md) uses five additional seeds, 13–17. It is a separate cohort from seeds 8–12 and should be compared within that cohort.

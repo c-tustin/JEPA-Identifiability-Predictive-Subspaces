@@ -63,7 +63,7 @@ The [follow-up schedule experiment](../schedules/README.md) tests a possible rem
 
 ## Run it
 
-Install the dependencies using the [main README](../../README.md#try-it). Then run commands from the repository’s top folder.
+Install the dependencies using the [main README](../../README.md#try-the-code). Then run commands from the repository’s top folder.
 
 Full comparison:
 

@@ -1,45 +1,29 @@
-# Behavior policy experiments
+# Behavior policies: what the agent sees, and what it learns
 
-A **behavior policy** is the rule an agent uses to decide its next move. These experiments ask whether changing that rule changes what the agent learns about distance.
+A behavior policy chooses the next action. The scene remains a triangle with
 
-The scene is always the same: a fixed triangle looks smaller as the agent moves away. The learning system sees the triangle’s corner positions, without being told the distance.
+$$
+x=V/d,\qquad z=\log(d/4)/0.7.
+$$
 
-## Experiments
+The representation sees the triangle, not distance labels. Its fitting loss is
 
-| Experiment | What it asks | Read more |
-| --- | --- | --- |
-| Original paper reproduction | Can the network learn log-distance when movements follow the paper’s special random rule? | [Simple explanation](identifiability/README.md) |
-| Curiosity comparison | What happens with random actions or a learned curiosity rule instead? | [Setup and findings](curiosity/README.md) |
-| Scheduled exploration | Can starting with curiosity and gradually switching toward OU improve recovery? What if OU settings change over epochs? | [Schedules and results](schedules/README.md) |
-| Curriculum controls | Is curiosity necessary for the gain? Do optimizer memory, learning-rate timing, or OU exposure explain it? | [Controlled study](curriculum-controls/README.md) |
+$$
+\mathcal L=0.9\,\mathcal L_{\rm alignment}+0.1\,\mathcal L_{\rm SIGReg}.
+$$
 
-The original reproduction’s code and saved results are kept in `identifiability/`. The first behavior comparison is in `curiosity/`. The follow-up schedules are in `schedules/`.
+The policy changes both which distances are sampled and which views are paired. Some ICM datasets lead to folded encoders: different distances produce the same output. The original three-run handover gain did not hold reliably on new seeds.
 
-## Main finding
+## Latest work
 
-On the same test distances, the average recovery score was **0.995 for the paper’s random rule**, **0.961 for random actions**, and **0.883 for curiosity-driven actions**. Closer to 1 is better.
+- [Reliability findings](reliability/INTERPRETATION.md): balanced replay, alternative policies and independent encoder seeds.
+- [Rigorous explanation](reliability/MECHANISM.md): what follows mathematically, what the controls establish, and what remains uncertain.
+- [Learned OU](learned-ou/README.md): train correlation/spread or an OU-inspired physical controller.
+- [Planning summary](planning/SUMMARY.md): actual goal error with shared versus policy-native predictor data.
+- [Nonlinear-control proof](nonlinear-control/README.md): a conditional identification result using known actuation, with one physical coordinate.
 
-The curiosity agents explored unevenly, and some networks did not learn the intended spread of output values. The [results report](curiosity/output/RESULTS.md) shows these problems alongside the scores.
+## Earlier studies
 
-The follow-up handovers from ICM to OU scored **0.9991**, essentially tied with and without entropy-bonus decay. Fixed OU scored 0.9946 in the matched comparison. These are results from three runs in one world, rather than a general ranking of exploration methods.
+[Original reproduction](identifiability/README.md) · [ICM comparison](curiosity/README.md) · [Schedules](schedules/README.md) · [Eight-seed curriculum controls](curriculum-controls/README.md) · [Research notes](analysis/RESEARCH_NOTES.md)
 
-The [larger curriculum-control study](curriculum-controls/INTERPRETATION.md) revises that three-run conclusion: the handover can help, but two of five new seeds fail badly with folded distance curves. Its controls keep the same single-distance world.
-
-See [why policies change recovery and what to test next](analysis/README.md) for the explanation, mathematical arguments, and research directions.
-
-## Run the experiments
-
-First follow the [installation instructions](../README.md#try-it), then run commands from the repository’s top folder:
-
-```sh
-# Original reproduction
-python behavior-policy-experiments/identifiability/reproduce.py
-
-# Compare all three movement rules
-python behavior-policy-experiments/curiosity/experiment.py
-
-# Test curiosity-to-OU handovers and changing OU settings
-python behavior-policy-experiments/schedules/run_schedules.py
-```
-
-The comparison gives all three rules the same number of training pairs. Its OU run is a fresh comparison run, so its scores differ slightly from the original reproduction, which keeps generating new pairs throughout training.
+Follow the [installation instructions](../README.md#try-the-code), then use the run and reevaluation commands in each guide. Results distinguish historical diagnostics from new validation seeds and retain unsuccessful runs.

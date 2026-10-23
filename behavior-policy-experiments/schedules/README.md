@@ -90,7 +90,7 @@ For OU-to-OU changes, each correlation setting retains the linear optimum descri
 
 ## Run it
 
-After following the [installation instructions](../../README.md#try-it), run this from the repository’s top folder:
+After following the [installation instructions](../../README.md#try-the-code), run this from the repository’s top folder:
 
 ```sh
 python behavior-policy-experiments/schedules/run_schedules.py

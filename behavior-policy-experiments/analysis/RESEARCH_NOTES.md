@@ -28,26 +28,26 @@ Three different extensions matter:
 
 Let q_pi(z,z') be the distribution of pairs collected under policy pi, including its starting-state and episode protocol. Let mu_0 and mu_1 be its two endpoint distributions. Define
 
-\[
+$$
  \nu=(\mu_0+\mu_1)/2,\qquad
  q_s(z,z')=\tfrac12[q_\pi(z,z')+q_\pi(z',z)].
-\]
+$$
 
 The alignment loss is unchanged by swapping endpoints, so using q_s gives exactly the same loss. Both marginals of q_s are nu. This also matches the marginal tested when SIGReg is applied to the concatenated pair endpoints in our code.
 
 Let S_pi be the conditional-expectation operator associated with q_s:
 
-\[
+$$
  (S_\pi f)(z)=\mathbb E_{q_s}[f(z')\mid z].
-\]
+$$
 
 It is self-adjoint on L²(nu). For a stationary policy with stationary measure mu, nu=mu and S_pi=(P_pi+P_pi^*)/2, where P_pi is the ordinary transition operator. Thus the construction covers nonreversible policies too. It also gives a well-defined pair objective when our burn-in has not established stationarity.
 
 For a mean-zero representation h with identity covariance under nu, the identity is
 
-\[
+$$
  \boxed{L_\pi(h)=2n-2\sum_{j=1}^n\langle h_j,S_\pi h_j\rangle_\nu.}
-\]
+$$
 
 **Deduction:** a policy changes both the state measure nu and the operator S_pi. Keeping coverage high, or matching the state histogram, does not by itself fix which features alignment prefers.
 
@@ -59,9 +59,9 @@ Under the weaker mean/covariance constraints, an isolated top-n nonconstant eige
 
 For isotropic Gaussian OU pairs, nu=N(0,I) and the Hermite functions of total degree k have eigenvalue rho^k. Since 0<rho<1, the n linear coordinate functions have eigenvalue rho, while every nonlinear component has eigenvalue at most rho². The gap is
 
-\[
+$$
  \gamma=\rho-\rho^2>0.
-\]
+$$
 
 The alignment objective favors the linear subspace. Those linear coordinates already have the required joint Gaussian distribution. This makes the whitening optimum feasible for the stronger constraint and recovers the paper’s orthogonal identifiability result.
 
@@ -77,9 +77,9 @@ There is a simple obstruction even before optimization: if z is non-Gaussian and
 
 For a scalar continuous distribution with strictly increasing CDF F_nu, its monotone Gaussianizing map is
 
-\[
+$$
  T(z)=\Phi^{-1}(F_\nu(z)).
-\]
+$$
 
 It is usually nonlinear. Restricting the encoder to monotone maps would force the exact Gaussianizing output to T(z) or −T(z), not an affine physical z. Without monotonicity, many other Gaussian-preserving rearrangements exist, and alignment still matters. This is a distribution argument, not a claim that our neural network has learned exactly T.
 
@@ -97,9 +97,9 @@ The 17-frequency SIGReg implementation is a finite approximation. It is not an e
 
 For our three actions, away from boundaries,
 
-\[
+$$
  \mathbb E[\Delta d\mid d]=0.25\,[\pi(\text{away}\mid d)-\pi(\text{approach}\mid d)].
-\]
+$$
 
 The action probabilities (0.6,0.2,0.2) and (0.2,0.2,0.6), ordered approach/stay/away, have exactly the same entropy, but opposite drift. An entropy number alone therefore cannot determine occupancy or temporal features. Lowering a small entropy bonus need not make the process OU-like; our measured action entropies changed little under the tested bonus decay.
 
@@ -109,24 +109,24 @@ The action probabilities (0.6,0.2,0.2) and (0.2,0.2,0.6), ordered approach/stay/
 
 Let z~N(0,I_2), and define a radius-dependent rotation
 
-\[
+$$
  F(z)=R_{c\|z\|^2}z,\qquad c\ne0.
-\]
+$$
 
 F preserves the radius and rotates the uniform angle on every circle. It therefore preserves the entire standard Gaussian measure. Its inverse is the rotation with strength −c; it is an invertible smooth map.
 
 Define the physical transition by
 
-\[
+$$
  z'=F^{-1}\!\left(\rho F(z)+\sqrt{1-\rho^2}\eta\right),
  \qquad \eta\sim N(0,I_2).
-\]
+$$
 
 Both endpoints are exactly N(0,I_2). In coordinates u=F(z), however, the process is standard OU. For any representation h, put k=h composed with F^{-1}. Then the Gaussian-output constraint and alignment are exactly the OU constraint and alignment for k. The original theorem therefore implies
 
-\[
+$$
  \boxed{h_*(z)=QF(z),\quad L_*=4(1-\rho),\quad Q\in O(2).}
-\]
+$$
 
 Every Gaussian-compatible linear map h(z)=Qz is feasible, but strictly suboptimal when F is genuinely nonlinear. Otherwise k=QF^{-1} would tie a linear OU optimum while being nonlinear, contradicting the equality case of the OU theorem.
 
@@ -146,23 +146,23 @@ The [saved numbers](output/policy_counterexample.json) and [figure](output/polic
 
 **Deduction under explicit matched-marginal assumptions.** Let q_0 be Gaussian OU pairs and q_K be any other pair distribution with the *same* Gaussian endpoint marginal mu. Consider q_alpha=(1−alpha)q_0+alpha q_K, with 0<=alpha<1. Let h have zero mean and identity covariance under mu, and suppose
 
-\[
+$$
  L_\alpha(h)\le L_\alpha(z)+\varepsilon.
-\]
+$$
 
 For any such normalized representation, 0<=L_K(h)<=4n. Rearranging the inequality gives the OU excess loss bound
 
-\[
+$$
  \delta_0=L_0(h)-2n(1-\rho)
  \le \frac{4n\alpha+\varepsilon}{1-\alpha}.
-\]
+$$
 
 The OU Hermite argument then bounds the total nonlinear variance E_nl:
 
-\[
+$$
  E_{\rm nl}\le\frac{\delta_0}{2\rho(1-\rho)}
  \le\frac{4n\alpha+\varepsilon}{2(1-\alpha)\rho(1-\rho)}.
-\]
+$$
 
 With exact whitening, writing h=Mz+r gives MM^T+Cov(r)=I. The nearest orthogonal linear map has error at most 2 E_nl, since the squared deviations of M’s singular values from one are at most the corresponding variance deficits.
 
@@ -191,9 +191,9 @@ The next controls should be random→OU, OU→OU with the same phase boundaries,
 
 If a target pair distribution q_* is absolutely continuous with respect to q_pi, then
 
-\[
+$$
  \mathbb E_{q_*}[\ell]=\mathbb E_{q_\pi}[(dq_*/dq_\pi)\ell].
-\]
+$$
 
 This suggests off-policy alignment and weighted output-distribution constraints. State-only importance weights are generally insufficient: they change occupancy but not the conditional transition rule. The Gaussian regularizer must also target the corrected endpoint distribution.
 
@@ -203,9 +203,9 @@ Our bounded three-action transitions and full Gaussian OU transitions do not hav
 
 For independent Gaussian OU coordinates with correlations rho_i in (0,1), all linear modes have eigenvalues rho_i and every nonlinear Hermite mode has eigenvalue at most rho_max². Therefore
 
-\[
+$$
  \rho_{\min}>\rho_{\max}^2
-\]
+$$
 
 is a sufficient condition for the top-n nonconstant subspace to remain linear. Since that linear solution is jointly Gaussian, it is feasible for full Gaussian regularization as well. Exact isotropy is sufficient, but is not necessary under this gap condition. Appendix F already discusses the corresponding continuous-time rate condition, so this should be treated as a building block rather than a claimed new contribution.
 

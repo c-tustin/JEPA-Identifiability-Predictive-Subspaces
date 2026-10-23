@@ -49,7 +49,7 @@ This produces 14 conditions per seed, or 112 final models. Shared prefixes are t
 
 ## Run or check it
 
-From the repository root, after the [usual installation](../../README.md#try-it):
+From the repository root, after the [usual installation](../../README.md#try-the-code):
 
 ```sh
 python -m unittest discover -s behavior-policy-experiments/curriculum-controls -p 'test_*.py' -v

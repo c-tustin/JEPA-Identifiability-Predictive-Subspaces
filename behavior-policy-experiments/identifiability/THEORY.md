@@ -10,9 +10,9 @@ Put a fixed triangle at the origin. An agent looks straight at it while moving a
 
 Let the triangle's three physical vertices be the rows of a fixed matrix V. With unit focal length, the ideal observation is
 
-\[
+$$
  x(d)=V/d,\qquad s(d)=1/d.
-\]
+$$
 
 Here s means a **linear image dimension**, such as radius or side length. Image area instead scales as 1/d². Scaling changes the object's apparent size and preserves its shape.
 
@@ -22,31 +22,31 @@ The experiment feeds the six continuous projected vertex coordinates to an MLP. 
 
 Physical distance cannot be an exactly Gaussian latent: it is positive. Instead define
 
-\[
+$$
  z\sim\mathcal N(0,1),\qquad
  d=d_0\exp(\sigma z),\qquad \sigma>0.
-\]
+$$
 
 Thus distance is log-normal, and the renderer is a nonlinear, injective map of a Gaussian latent:
 
-\[
+$$
  x=g(z)=\frac{V}{d_0}\exp(-\sigma z).
-\]
+$$
 
 Generate positive pairs with the explicit stationary OU transition used by the paper:
 
-\[
+$$
  z'=\rho z+\sqrt{1-\rho^2}\eta,
  \quad \eta\sim\mathcal N(0,1),\quad \eta\perp z,
  \quad 0<\rho<1.
-\]
+$$
 
 Both z and z' have the same standard Gaussian marginal. In physical coordinates the movement rule is
 
-\[
+$$
  d'=d_0(d/d_0)^\rho
        \exp\!\left(\sigma\sqrt{1-\rho^2}\eta\right).
-\]
+$$
 
 An agent can implement this as a random move to the next positive distance along its viewing ray. This is deliberately a stationary exploration policy in **log-distance**; ordinary constant-step walking in physical distance does not satisfy these assumptions. The code draws independent stationary pairs, rather than a single correlated trajectory.
 
@@ -56,31 +56,31 @@ Defaults: d₀ = 4, σ = 0.7, ρ = 0.9. A central 95% of distances lies approxim
 
 Let y=f(x) be a scalar embedding. The paper's ideal population objective specializes to
 
-\[
+$$
  \min_f\ \mathbb E[(f(x')-f(x))^2]
  \quad\text{subject to }f(x)\sim\mathcal N(0,1).
-\]
+$$
 
 Its global optima satisfy, almost surely,
 
-\[
+$$
  \boxed{f(x(d))=\pm\frac{\log(d/d_0)}{\sigma}},
  \qquad L_*=2(1-\rho).
-\]
+$$
 
 In one dimension the orthogonal ambiguity is a sign. Equivalently, if s₀=1/d₀ is the apparent size at the reference distance, an ideal encoder is
 
-\[
+$$
  f(x)=\pm\frac{\log(s_0/s(x))}{\sigma}.
-\]
+$$
 
 This is a nonlinear inverse of the observation process, followed by a possible reflection. The network is not supplied this formula.
 
 At the optimum, the learned dynamics also have the correct form:
 
-\[
+$$
  y'\mid y\sim\mathcal N(\rho y,1-\rho^2).
-\]
+$$
 
 **What is identified?** The Gaussian log-distance coordinate, up to sign. Physical distance is available through the nonlinear decoder d=d₀ exp(±σy). The result does not make d a linear function of y or give the agent an absolute physical scale without calibration.
 
@@ -88,23 +88,23 @@ At the optimum, the learned dynamics also have the correct form:
 
 Write h(z)=f(g(z)). Expand it in normalized probabilists' Hermite polynomials:
 
-\[
+$$
  h(z)=\sum_{k\geq1}a_k\psi_k(z),\qquad
  \sum_{k\geq1}a_k^2=1.
-\]
+$$
 
 The constant coefficient vanishes because the embedding has mean zero; its variance is one. Under the explicit OU pairing,
 
-\[
+$$
  \mathbb E[\psi_j(z)\psi_k(z')]=\mathbf1_{j=k}\rho^k.
-\]
+$$
 
 Therefore
 
-\[
+$$
  L(h)=2-2\sum_{k\geq1}a_k^2\rho^k
        \geq 2(1-\rho).
-\]
+$$
 
 Since 0<ρ<1, equality requires aₖ=0 for every k≥2. Thus h(z)=a₁z with a₁²=1, giving h(z)=±z. Such an f exists because the ideal observation is injective in z. Substitution gives the stated transition for y.
 
@@ -125,11 +125,11 @@ The implementation uses a 6 → 48 → 48 → 1 MLP. It receives fixed, bounded 
 
 `SIGReg1D` matches the scalar specialization of the [authors' SIGReg implementation](https://github.com/klindtlab/lejepa-identifiability/blob/main/experiments/lejepa_id/losses.py). With M=2B embeddings, it computes
 
-\[
+$$
  L_{\mathrm{SIG}}=M\sum_{j=0}^{16}w_j e^{-t_j^2/2}
  \left[\left(\frac1M\sum_m\cos(t_jy_m)-e^{-t_j^2/2}\right)^2
        +\left(\frac1M\sum_m\sin(t_jy_m)\right)^2\right],
-\]
+$$
 
 where tⱼ are 17 equally spaced knots from 0 to 3, and wⱼ are twice the trapezoidal integration weights. In one dimension, normalized random projections are ±1; both signs have identical squared error, so computing duplicate random slices is unnecessary. The numerical implementation is checked against the authors' full 256-slice expression.
 

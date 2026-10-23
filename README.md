@@ -1,71 +1,67 @@
-# JEPA Identifiability and Predictive Subspaces
+# Learning distance from a shrinking triangle
 
-**Can an agent learn how far away an object is just by watching it change size?** This project tests that question with a triangle that looks half as big when the agent moves twice as far away.
+An agent sees a fixed triangle whose apparent size changes inversely with distance:
 
-The agent is a small neural network. It sees the positions of the triangle’s three corners, rather than a full image. During training, it never receives the correct distance.
+$$
+x(d)=\frac{V}{d}.
+$$
 
-We ask whether the number it learns has a simple straight-line relationship with **log-distance**. This is what we mean by *linear identifiability*. Log-distance measures changes in ratios: doubling the distance adds the same amount wherever the agent starts.
+It receives six corner coordinates, not distance labels. We test whether its learned number has a straight-line relationship with log-distance,
 
-## What we found
+$$
+z=\frac{\log(d/4)}{0.7}.
+$$
 
-We tried three ways of choosing the agent’s movements:
+The scene still has **one changing coordinate: distance**.
 
-| Movement rule | Recovery score on the same test range |
+## Current findings
+
+Five new validation seeds, 8–12; mean shared-range $R^2$ after 4,000 representation updates:
+
+| Training data / intervention | Recovery $R^2$ |
 | --- | ---: |
-| A special random rule chosen to match the paper’s assumptions, called OU | 0.995 |
-| Random choices to move closer, stay, or move farther away | 0.961 |
-| A learned curiosity rule that seeks hard-to-predict changes | 0.883 |
+| Fixed OU | 0.9944 |
+| Random actions → OU | 0.9960 |
+| ICM curiosity → OU | 0.7382 |
+| Same ICM transitions, balanced replay → OU | 0.9940 |
+| Count-based coverage → OU | 0.9959 |
+| Action-balanced exploration → OU | 0.9957 |
 
-These are average **R² scores** across three runs, tested at the same distances between 1 and 16. A score of 1 means a straight line predicts log-distance perfectly from the learned number; lower scores mean a worse fit.
+**ICM→OU is not reliably best.** Its original three runs looked excellent, but later runs developed folded distance mappings. The two original failed datasets also fail across three independent encoder initializations. A separate loss-term ablation identifies the regularizer batch as the sensitive component: balancing SIGReg alone repairs the observed folds; balancing alignment alone does not. Balanced replay removes the observed folds in both historical failures and all five new validation seeds. It restores roughly OU-level recovery rather than establishing superiority.
 
-The curiosity-trained agents did worse on that shared test. In two runs they spent much of their time near the object. Their learned numbers also failed to have the bell-shaped spread that training was meant to encourage. These results mix changes in exploration with training problems; they do not overturn the original paper’s mathematical result.
+A longer, 8,000-update OU control reaches 0.9992 on the same validation seeds. Extra ICM training, the tested entropy/action-noise changes, and an earlier handover do not reliably fix the problem. These are small-world, finite-training results, not universal rankings.
 
-The [experiment guide](behavior-policy-experiments/README.md) explains the experiments. The [full results](behavior-policy-experiments/curiosity/output/RESULTS.md) include every run and the extra checks.
+[Concise reliability findings](behavior-policy-experiments/reliability/INTERPRETATION.md) · [What the policy changes mathematically](behavior-policy-experiments/reliability/MECHANISM.md) · [Separate alignment/SIGReg test](behavior-policy-experiments/reliability/LOSS_ABLATION.md)
 
-The [schedule experiment](behavior-policy-experiments/schedules/README.md) follows up by gradually switching from curiosity to OU, reducing the incentive for random actions, and changing OU settings over training epochs. It keeps these changes separate so we can see which ones help.
+## Learned OU and planning
 
-In that follow-up, gradually switching from ICM to OU raised the shared-range score to **0.9991** across three runs. The handover with entropy-bonus decay scored almost identically; these two settings are effectively tied. Reducing the entropy bonus alone did little. Starting OU with a wider distance spread and narrowing it also helped. The [schedule results](behavior-policy-experiments/schedules/output/RESULTS.md) include the full comparison and training checks.
+A separate study learns OU correlation and spread without distance-recovery labels. Correlation converges near 0.5; learning spread gives a small improvement. A second controller learns OU-inspired parameters while retaining the physical approach/stay/retreat actions; it is explicitly not an exact OU process. [Learned-OU study](behavior-policy-experiments/learned-ou/README.md).
 
-For why the movement rule matters, start with [the plain-language explanation and research ideas](behavior-policy-experiments/analysis/README.md). It links to precise arguments, a controlled counterexample, and proposed extensions to nonlinear dynamics and action-dependent policies. The [SIGReg guide](behavior-policy-experiments/identifiability/SIGREG.md) explains the regularizer step by step.
+Planning tests use actual goal-reaching error, with either shared predictor-training data or each policy's own data. This separates representation problems from coverage problems. The planner receives current and goal observations, never true distance. [Latest planning summary](behavior-policy-experiments/planning/SUMMARY.md).
 
-The larger [curriculum-control study](behavior-policy-experiments/curriculum-controls/README.md) revisits that three-run gain in the same one-distance world. It finds that the gain is seed-dependent: two of five new ICM→OU runs develop folded distance curves and fail badly, even with optimizer and learning-rate resets. See the [updated interpretation](behavior-policy-experiments/curriculum-controls/INTERPRETATION.md) before treating ICM→OU as the best choice.
+## Nonlinear dynamics
 
-## Try it
+The [action-anchor proof and prototype](behavior-policy-experiments/nonlinear-control/README.md) keep one distance coordinate while allowing nonlinear drift. Known constant physical actuation identifies affine coordinates among informative smooth encoders. The proof includes an approximate bound; it does not claim unconstrained JEPA training satisfies its assumptions.
 
-Set up Python 3.12:
+## Try the code
 
 ```sh
 python3.12 -m venv .venv
 source .venv/bin/activate
 python -m pip install -r requirements.txt
+python behavior-policy-experiments/reliability/run_study.py --quick --output /tmp/reliability-smoke
 ```
 
-Run a short check that the code works:
+The quick command checks execution, not trained performance. Full runs overwrite their own output directories unless a different `--output` is given. Each guide documents training, checkpoint-only reevaluation, and saved settings.
 
-```sh
-python behavior-policy-experiments/curiosity/experiment.py --quick --seeds 0 --output /tmp/behavior-policy-smoke
-```
+| Where | What it contains |
+| --- | --- |
+| [Original reproduction](behavior-policy-experiments/identifiability/README.md) | The setting where the Klindt-paper guarantee applies |
+| [Curiosity comparison](behavior-policy-experiments/curiosity/README.md) | The source-derived ICM implementation and initial controls |
+| [Schedules](behavior-policy-experiments/schedules/README.md) | Entropy decay, handovers and changing OU settings |
+| [Curriculum controls](behavior-policy-experiments/curriculum-controls/README.md) | Eight-seed optimizer/exposure controls |
+| [Reliability](behavior-policy-experiments/reliability/README.md) | Repairs, alternative policies and crossed seeds |
+| [SIGReg guide](behavior-policy-experiments/identifiability/SIGREG.md) | Readable scalar code and the equations it implements |
+| [Credits](THIRD_PARTY_NOTICES.md) | Paper/code sources and retained licenses |
 
-That short run is too small to draw conclusions. For the full comparison, run:
-
-```sh
-python behavior-policy-experiments/curiosity/experiment.py
-```
-
-To check the saved results without training again:
-
-```sh
-python behavior-policy-experiments/curiosity/experiment.py --evaluate-only
-```
-
-The code runs on CPU and creates its own training data. A full run writes new results over the files in its output folder; add `--output /tmp/my-behavior-run` to save a separate run.
-
-## Where to look
-
-- [Original paper reproduction](behavior-policy-experiments/identifiability/README.md): the simple setting where the mathematical result applies.
-- [Curiosity experiment](behavior-policy-experiments/curiosity/README.md): what changes when the agent learns where to move.
-- [Scheduled exploration](behavior-policy-experiments/schedules/README.md): curiosity-to-OU handovers and OU settings that change over time.
-- [Comparison figure](behavior-policy-experiments/curiosity/output/comparison.png) and [detailed results](behavior-policy-experiments/curiosity/output/RESULTS.md).
-- [Credits and licenses](THIRD_PARTY_NOTICES.md): the original papers and the code we adapted. This repository uses the [MIT license](LICENSE), with separate notices for borrowed code.
-
-The title also mentions predictive subspaces, but the current experiments study just one changing quantity: distance.
+Verification: all 47 numerical checks pass. The 218 new representation/action-anchor evaluations and 202 planning evaluations reproduce from saved checkpoints.

@@ -12,6 +12,20 @@ The goal is to give the network’s output numbers a standard bell-shaped distri
 4. Square the differences and add them together at each frequency.
 5. Add the errors using the authors’ integration weights, then multiply by the number of output samples.
 
+In equations, for $M$ scalar outputs and frequencies $t_k$,
+
+$$
+\widehat c_k=\frac1M\sum_j\cos(t_k y_j),\qquad
+\widehat s_k=\frac1M\sum_j\sin(t_k y_j),
+$$
+
+$$
+L_{\rm SIGReg}=M\sum_k w_k\left[
+(\widehat c_k-e^{-t_k^2/2})^2+\widehat s_k^2\right].
+$$
+
+The code's `weight` buffer contains $w_k$, including trapezoidal, negative-frequency and Gaussian integration weights.
+
 The sine/cosine averages together are called a **characteristic function**. They describe a distribution in a different way from a histogram.
 
 The integration weights are larger at low frequencies. The endpoint frequencies get half the usual trapezoidal weight. We multiply the positive-frequency integral by two to account for negative frequencies, which have the same squared error. These choices match the [authors’ implementation](https://github.com/klindtlab/lejepa-identifiability/blob/main/experiments/lejepa_id/losses.py).

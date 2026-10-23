@@ -2,6 +2,12 @@
 
 Two separate tests keep the same distance observation $x=V/d$. **Neither learns from distance-recovery scores.** Seeds 13–17 are new to the earlier studies.
 
+## Completed result
+
+On five new seeds, 13–17, learning both generator parameters gives mean shared-range $R^2=0.9959$, versus $0.9949$ for fixed OU. Learned correlation is about 0.50 and spread about 0.73. Correlation learning alone gives essentially no gain; spread accounts for the small improvement. This does not establish a planning advantage: common-data goal error is 0.102 versus 0.083 for fixed OU.
+
+The physical controller reaches $R^2=0.9481$ alone and $0.9922$ after an OU handover. With the handover, mean planning error is 0.097 using common predictor data but 1.017 using its own data. It still has a coverage problem. Its target correlation parameters (roughly 0.965–0.984) differ from empirical collected pair correlations (0.901–0.990), illustrating why this controller must not be called an exact OU process.
+
 ## Exact OU pair generator
 
 Learn correlation $\rho$, observation spread $s$, or both before fitting the encoder:

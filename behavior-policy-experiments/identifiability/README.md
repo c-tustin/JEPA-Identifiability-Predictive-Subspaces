@@ -19,6 +19,10 @@ The correct distances are used only to generate the scene and check the result a
 
 Distance must be positive. The paper’s result assumes that the hidden quantity being learned follows a bell-shaped, or **Gaussian**, distribution that extends in both directions. We therefore choose that quantity to be log-distance.
 
+$$
+z=\frac{\log(d/4)}{0.7},\qquad z'=\rho z+\sqrt{1-\rho^2}\,\epsilon,\quad \epsilon\sim\mathcal N(0,1).
+$$
+
 Log-distance treats equal ratios as equal steps: moving from distance 2 to 4 changes it by the same amount as moving from 4 to 8.
 
 Pairs follow a particular random movement rule called **Ornstein–Uhlenbeck (OU)**. It tends to keep successive log-distances close while preserving the required distribution. Ordinary random walking does not automatically have these properties.
@@ -43,7 +47,7 @@ See the [recorded numbers](output/metrics.json) or the [detailed results table](
 
 ## Run it
 
-After installing the dependencies as described in the [main README](../../README.md#try-it), run this from the repository’s top folder:
+After installing the dependencies as described in the [main README](../../README.md#try-the-code), run this from the repository’s top folder:
 
 ```sh
 python behavior-policy-experiments/identifiability/reproduce.py
