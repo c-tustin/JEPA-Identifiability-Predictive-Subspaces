@@ -88,15 +88,16 @@ class Disagreement(nn.Module):
         return self.predictions(x, a).var(0, unbiased=False).mean(-1)
 
 
-def train(c, seed, kind):
+def train(c, seed, kind, policy_factory=None):
     """Same A2C interaction budget as ICM; all rewards are detached for actor."""
     torch.manual_seed(seed)
     epsilon = .2 if kind == "icm_epsilon" else 0.
-    policy = ExploratoryPolicy(epsilon)
+    policy = ExploratoryPolicy(epsilon) if policy_factory is None else policy_factory()
     # Instantiate ICM even for alternative bonuses to preserve actor RNG setup.
     icm = behavior.ICM()
     bonus = RND() if kind == "rnd" else Disagreement() if kind == "disagreement" else None
-    actor_opt = torch.optim.Adam(policy.parameters(), lr=1e-4)
+    actor_groups = policy.optimizer_groups() if hasattr(policy, "optimizer_groups") else policy.parameters()
+    actor_opt = torch.optim.Adam(actor_groups, lr=1e-4)
     intrinsic_model = icm if bonus is None else bonus
     intrinsic_opt = torch.optim.Adam([p for p in intrinsic_model.parameters() if p.requires_grad], lr=1e-3)
     counts = CountBonus()
@@ -147,8 +148,11 @@ def train(c, seed, kind):
             else:
                 predictions = bonus.predictions(x, a)
                 # Independently bootstrap transitions for each ensemble member.
-                intrinsic_loss = sum((predictions[j, ix := torch.randint(len(x), (len(x),))] - torch.tanh(4 * xp[ix])).square().mean()
-                                     for j in range(len(bonus.models))) / len(bonus.models)
+                member_losses = []
+                for member in range(len(bonus.models)):
+                    sampled = torch.randint(len(x), (len(x),))
+                    member_losses.append((predictions[member, sampled] - torch.tanh(4 * xp[sampled])).square().mean())
+                intrinsic_loss = torch.stack(member_losses).mean()
             intrinsic_opt.zero_grad(); intrinsic_loss.backward()
             nn.utils.clip_grad_norm_(intrinsic_model.parameters(), 40.); intrinsic_opt.step()
         if iteration % 100 == 0 or iteration == c.policy_updates - 1:
