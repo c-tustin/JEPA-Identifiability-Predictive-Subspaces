@@ -1,5 +1,7 @@
 # Planning: first completed comparison
 
+**New nonlinear-world follow-up:** [matched coverage and nonlinear goal reaching](../nonlinear-control/EXTENSION_SUMMARY.md). That study uses a different world and goal task; its numbers should not be pooled with this original fixed-step comparison.
+
 **Both representation quality and action-data coverage matter.** All three completed suites use the same goal-reaching task and an oracle-validated planner. The original encoders have eight seeds; the policy/repair validation comparison below uses the same five new seeds, 8–12.
 
 Mean actual terminal distance error; lower is better:

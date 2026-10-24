@@ -1,5 +1,15 @@
 # Nonlinear dynamics without adding state coordinates
 
+**Latest:** [coverage, nonlinear planning and the drift-estimation result](EXTENSION_SUMMARY.md). This extends the first trajectory comparison with 12 paired coverage controls and 84 predictors evaluated in deterministic/noisy execution.
+
+```sh
+python behavior-policy-experiments/nonlinear-control/run_coverage.py
+python behavior-policy-experiments/nonlinear-control/evaluate_control.py
+python behavior-policy-experiments/nonlinear-control/check_drift_sampling.py
+```
+
+The first two commands support `--quick --output /tmp/a-new-folder`, `--resume` and `--evaluate-only`. Full planning requires the completed trajectory and coverage encoders. The drift diagnostic supports `--quick` and `--output`. [Exact protocol](EXTENSION_PROTOCOL.md) · [Why finite-time prediction differs from drift fitting](DRIFT_ESTIMATION.md).
+
 Two experiments answer different questions:
 
 1. **Ordinary trajectories:** does the original flexible encoder + SIGReg still recover distance when the dynamics change? [Short findings](SUMMARY.md) · [Fixed comparison](TRAJECTORY_PROTOCOL.md) · [Full results](output-trajectories/RESULTS.md).

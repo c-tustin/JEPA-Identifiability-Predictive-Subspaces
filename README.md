@@ -45,6 +45,8 @@ The [action-anchor proof and prototype](behavior-policy-experiments/nonlinear-co
 
 A [36-model trajectory comparison](behavior-policy-experiments/nonlinear-control/SUMMARY.md) tests the original flexible encoder without paired interventions. Under nonlinear drift, persistent actions with raw SIGReg reach physical-distance $R^2=0.9975$ with no detected grid reversals. Balanced SIGReg performs worse in this world. Coverage gaps and coordinate warping mean this is an empirical result, not a nonlinear identification guarantee.
 
+The [latest extension](behavior-policy-experiments/nonlinear-control/EXTENSION_SUMMARY.md) adds matched-coverage controls and actual nonlinear goal reaching. Raw persistent representations achieve 100% hit rate on the tested local goals with native predictor data; balanced versions perform worse. A new calculation and independent-noise check explain why instantaneous drift identification cannot simply be imposed on a finite-time predictor.
+
 ## Try the code
 
 ```sh
@@ -66,4 +68,4 @@ The quick command checks execution, not trained performance. Full runs overwrite
 | [SIGReg guide](behavior-policy-experiments/identifiability/SIGREG.md) | Readable scalar code and the equations it implements |
 | [Credits](THIRD_PARTY_NOTICES.md) | Paper/code sources and retained licenses |
 
-Verification: all 52 numerical checks pass. The 218 earlier representation/action-anchor evaluations, 36 new nonlinear-trajectory evaluations, and 202 planning evaluations reproduce from saved checkpoints.
+Verification: all 58 numerical checks pass. Saved representation/planning evaluations reproduce, including the 12 latest coverage controls and 84 nonlinear action predictors tested in deterministic/noisy execution.
