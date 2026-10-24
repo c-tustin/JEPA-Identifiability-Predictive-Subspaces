@@ -1,0 +1,42 @@
+{
+  "description": "Analytic Gaussian-preserving nonlinear transition example; not a trained behavior policy.",
+  "samples": 250000,
+  "rho": 0.9,
+  "strength": 0.7,
+  "seed": 123,
+  "population_nonlinear_optimum": 0.3999999999999999,
+  "empirical_linear_alignment": 2.084388770451115,
+  "empirical_nonlinear_alignment": 0.39985534293744307,
+  "empirical_loss_advantage": 1.6845334275136719,
+  "monte_carlo_standard_error_of_advantage": 0.008539556772676631,
+  "initial_mean": [
+    -0.001879129462236267,
+    0.0015049230529370198
+  ],
+  "successor_mean": [
+    9.62041872076702e-05,
+    0.0005178524352986885
+  ],
+  "initial_covariance": [
+    [
+      1.0004503699453338,
+      0.001026346973634868
+    ],
+    [
+      0.001026346973634868,
+      1.00102933814927
+    ]
+  ],
+  "successor_covariance": [
+    [
+      1.0002752587040418,
+      -0.0014197299902368036
+    ],
+    [
+      -0.0014197299902368036,
+      1.0016066849870435
+    ]
+  ],
+  "roundtrip_max_absolute_error": 2.328692794151266e-14,
+  "interpretation": "Exact Gaussian marginals follow from the measure-preserving construction, not from these sample moment checks. The nonlinear transition lies outside the original independent additive-OU assumptions."
+}
