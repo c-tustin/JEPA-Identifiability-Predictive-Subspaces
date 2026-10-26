@@ -71,3 +71,9 @@ The quick command checks execution, not trained performance. Full runs overwrite
 | [Credits](THIRD_PARTY_NOTICES.md) | Paper/code sources and retained licenses |
 
 Verification: all 58 numerical checks pass. Saved representation/planning evaluations reproduce, including the 12 latest coverage controls and 84 nonlinear action predictors tested in deterministic/noisy execution.
+
+## Predictive Closure extensions
+
+[Cloud experiments and results](behavior-policy-experiments/predictive-closure/README.md): signed-OU information controls, matched-budget scalar triangle encoders, and independently noisy multi-interval drift/planning pilots. Includes negative results, checkpoints, exact run status and the paper's assumption boundaries.
+
+The cloud extension now includes 20 trained encoders and an explicit same-world folding check. Final verification: 68 tests pass; all 20 new checkpoint evaluations reproduce exactly.
