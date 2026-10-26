@@ -1,5 +1,5 @@
 {
-  "status": "in_progress_local_cpu_variant",
+  "status": "paused_local_cpu_variant",
   "reason": "Verified data; smoke completed; full traffic training started. See dated local-evidence.json.",
   "optimization_seeds": [
     303,
@@ -156,5 +156,6 @@
     "official": "cuda:0 with bf16=true",
     "cpu_variant": "Explicit --cpu-fp32 changes device and bf16 only; not identical numerical execution.",
     "local_intel_variant": "Torch2.2.2/NumPy1.26.4/Matplotlib3.9.0; explicit CPU FP32; full budgets retained"
-  }
+  },
+  "pause_evidence": "pause-evidence.json"
 }

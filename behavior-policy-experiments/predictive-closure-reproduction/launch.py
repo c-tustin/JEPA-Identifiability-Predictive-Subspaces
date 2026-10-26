@@ -209,6 +209,36 @@ def smoke(official, records, upstream, data, output, timeout):
             raise RuntimeError("Smoke did not complete; inspect its log before launching full runs")
 
 
+def restartable_traffic_stage(official, row, upstream, seed_output, every):
+    """Complete/resume encoder stage, then let official.execute run the probes."""
+    from jepa.artifacts import record_completion
+    directory = seed_output / row["tag"]
+    directory.mkdir(parents=True, exist_ok=True)
+    config = row["stages"][0][1]
+    path, receipt = directory / "config_0.json", directory / "complete_0.json"
+    if receipt.exists():
+        return
+    if path.exists():
+        if read(path) != config:
+            raise RuntimeError("Existing stage config differs")
+        if not (directory / "restart/latest.json").exists():
+            raise RuntimeError("Existing incomplete stage has no restart checkpoint; use a new output folder")
+    else:
+        official.write_new(path, config)
+    command = [sys.executable, str(ROOT / "restart_traffic.py"), "--upstream", str(upstream),
+               "--config", str(path), "--checkpoint-every", str(every)]
+    with (directory / "log_0.txt").open("a") as log:
+        process = subprocess.Popen(command, cwd=upstream, stdout=log, stderr=subprocess.STDOUT)
+        write(directory / "restart-process.json", dict(pid=process.pid, command=command))
+        code = process.wait()
+    if code == 75:
+        print("Paused with a durable checkpoint. Rerun this launcher command to resume.", flush=True)
+        raise SystemExit(75)
+    if code:
+        raise subprocess.CalledProcessError(code, command)
+    record_completion(receipt, config)
+
+
 def main(argv=None):
     parser = argparse.ArgumentParser()
     parser.add_argument("--upstream", type=Path, default=ROOT / "upstream")
@@ -225,12 +255,19 @@ def main(argv=None):
                         help="Run only these q/pD/N grid values; partial grids are not a complete reproduction")
     parser.add_argument("--skip-plot", action="store_true",
                         help="For partial grids: the upstream plotter requires a complete sweep")
+    parser.add_argument("--restartable", action="store_true",
+                        help="Traffic only: add durable checkpoint/restore hooks to the official encoder loop")
+    parser.add_argument("--checkpoint-every", type=int, default=10)
     parser.add_argument("--smoke-timeout", type=float, default=180.)
     args = parser.parse_args(argv)
     if len(set(args.seeds)) != len(args.seeds):
         parser.error("Optimization seeds must be distinct")
     if args.smoke_timeout <= 0:
         parser.error("Smoke timeout must be positive")
+    if args.checkpoint_every <= 0:
+        parser.error("Checkpoint interval must be positive")
+    if args.restartable and set(args.study) != {"traffic"}:
+        parser.error("--restartable currently supports --study traffic only")
     upstream, output = args.upstream.resolve(), args.output.resolve()
     data = args.data_root.resolve() if args.data_root else upstream / "data/cifar-10-batches-py"
     verify_source(upstream)
@@ -273,6 +310,8 @@ def main(argv=None):
             started = time.perf_counter()
             with journal.open("a") as handle:
                 handle.write(json.dumps(dict(event="start", tag=row["tag"])) + "\n")
+            if args.restartable:
+                restartable_traffic_stage(official, row, upstream, seed_output, args.checkpoint_every)
             official.execute([row], seed_output)
             with journal.open("a") as handle:
                 handle.write(json.dumps(dict(event="completed", tag=row["tag"],

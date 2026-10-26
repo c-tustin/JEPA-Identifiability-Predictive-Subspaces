@@ -1,6 +1,6 @@
 # Original Predictive Closure reproduction
 
-**Full-budget local CPU training is running; no paper result is complete yet.** The four-update timing check passed in 86 seconds, and the first full model has logged a finite-loss update. Six source/run-plan checks pass. [Status](RUN_STATUS.md) · [Execution evidence](local-evidence.json) · [Coverage](figure-manifest.json) · [Full run list](run-manifest.json).
+**Local training is paused at the user's request; no paper result is complete yet.** Its current weights remain in memory only. Restart-safe checkpointing is now implemented and tested, but using it requires restarting this model. [Pause/restart instructions](RESTART.md) · [Status](RUN_STATUS.md) · [Earlier execution evidence](local-evidence.json) · [Coverage](figure-manifest.json).
 
 This is separate from PR #4's distance-world extensions. It uses unmodified original CIFAR collage code at **2964fa8f737fa43871d47928edc9aac16fa9298f**. All tracked upstream files have pinned Git blob hashes in [source-manifest.json](source-manifest.json); runtime audit will record SHA-256 hashes. No source is vendored. Upstream is MIT licensed.
 
@@ -106,6 +106,6 @@ PC_UPSTREAM="$PC_UPSTREAM" python -m unittest discover -s "$PC_REPRO" -p test_la
 python "$PC_REPRO/launch.py" --upstream "$PC_UPSTREAM" --mode plan --output /tmp/pc-plan-check
 ~~~
 
-**Six planner/source/runtime-guard checks passed locally.** These check configuration accounting, not scientific results. Missing source explicitly skips tests rather than passing them.
+**Seven planner/source/runtime-guard checks and a separate-process checkpoint/resume test passed locally.** These check execution mechanics, not scientific results. Missing source explicitly skips planner tests rather than passing them.
 
 Sources: [paper v1](https://arxiv.org/abs/2610.27364v1), [official repository](https://github.com/Mosh0110/predictive-closure), [pinned runner](https://github.com/Mosh0110/predictive-closure/blob/2964fa8f737fa43871d47928edc9aac16fa9298f/run.py).

@@ -1,12 +1,16 @@
 # Reproduction run status
 
-2026-10-26: **local CPU execution started; no completed paper result yet.**
+2026-10-26: **local training paused; no completed paper result yet.**
+
+The trainer and both launchers were confirmed stopped with SIGSTOP. Logs/configs and hashes are archived in `runs-local/pause-logs-and-configs.tar.gz`. The existing full model's weights are still **only in memory** and will not survive a computer restart. See [pause evidence](pause-evidence.json).
+
+Restart-safe checkpointing has now been added and tested: a separate-process resume test matched uninterrupted weights, optimizer state, RNG states and histories exactly in a small test. Seven planner/runtime checks pass. The new adapter cannot attach to the old suspended process. A checkpoint-enabled full model would need to start again; none has been started, honoring the pause request. [Instructions and limits](RESTART.md).
 
 The cloud outage was bypassed after the user authorized local execution. Source verification and six planner/runtime-guard tests pass. CIFAR-10 passed the official archive MD5 and all extracted-file SHA-256 checks. Python files compile.
 
 The background worker started at **16:32:15 UTC**. The four-update official-trainer timing check completed successfully in **86.0 seconds**, including startup, evaluation and checkpoint I/O. Architecture, batch 512 and 1,024 SIGReg projections were retained. This short check is not a scientific result or a steady-state timing estimate.
 
-**Full training started at 16:33:45 UTC.** The q=0, seed-303 model has logged its first finite-loss update toward the full 25 epochs/4,900 updates. The worker runs q=1 next, with official probes/interventions for both models, then completes all five traffic values for seeds 303–305. The other 62 main-paper encoders remain pending. No full model is complete yet.
+**Full training started at 16:33:45 UTC and is now paused.** The q=0, seed-303 model logged its first finite-loss update toward the full 25 epochs/4,900 updates. Later progress was between log intervals, so its exact update is unknown. The queued q=1 and remaining traffic runs are paused too. The other 62 main-paper encoders remain pending. No full model is complete yet.
 
 **Local variant:** Intel Mac, 6 physical cores / 12 logical CPUs, 16 GB RAM, no available PyTorch GPU backend. Python 3.12.3, Torch 2.2.2, NumPy 1.26.4, Matplotlib 3.9.0; CPU FP32. Explicit flags distinguish it from the official CUDA/BF16 environment. Model/loss/data source and full training/probe budgets stay unchanged. The virtual environment reuses installed packages without upgrading them.
 

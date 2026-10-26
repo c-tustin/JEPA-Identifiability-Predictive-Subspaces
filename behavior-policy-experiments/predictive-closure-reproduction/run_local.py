@@ -25,8 +25,8 @@ def main():
               "--study", "traffic"]
     stages = [
         ("smoke", ["--mode", "smoke", "--seeds", "303", "--values", "1", "--smoke-timeout", "1800"]),
-        ("full_endpoints", ["--mode", "full", "--seeds", "303", "--values", "0", "1", "--skip-plot"]),
-        ("full_traffic", ["--mode", "full", "--seeds", "303", "304", "305"]),
+        ("full_endpoints", ["--mode", "full", "--seeds", "303", "--values", "0", "1", "--skip-plot", "--restartable"]),
+        ("full_traffic", ["--mode", "full", "--seeds", "303", "304", "305", "--restartable"]),
     ]
 
     def save():

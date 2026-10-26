@@ -6,7 +6,8 @@ import json
 from pathlib import Path
 import tempfile
 import unittest
-from launch import ROOT, build_records, main, official_runner, verify_source, validate_runtime
+from launch import (ROOT, build_records, main, official_runner, verify_source,
+                    validate_runtime, restartable_traffic_stage)
 
 
 class OfficialPlanTests(unittest.TestCase):
@@ -76,6 +77,16 @@ class OfficialPlanTests(unittest.TestCase):
             validate_runtime(audit, "cpu", True)
         with self.assertRaisesRegex(ValueError, "requires --device cpu --cpu-fp32"):
             validate_runtime(audit, "cuda:0", False, local_intel=True)
+
+    def test_restartable_does_not_replace_uncheckpointed_run(self):
+        row = self.jobs(studies=["traffic"], seeds=[303])[0]
+        with tempfile.TemporaryDirectory() as temporary:
+            seed_output = Path(temporary)
+            directory = seed_output / row["tag"]
+            directory.mkdir()
+            (directory / "config_0.json").write_text(json.dumps(row["stages"][0][1]))
+            with self.assertRaisesRegex(RuntimeError, "no restart checkpoint"):
+                restartable_traffic_stage(self.official, row, self.upstream, seed_output, 10)
 
 
 if __name__ == "__main__":

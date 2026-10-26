@@ -1,5 +1,6 @@
 {
-  "status": "in_progress_local_cpu_variant",
+  "status": "paused_local_cpu_variant",
+  "pause_evidence": "pause-evidence.json",
   "hardware": {"physical_cores":6,"logical_cpus":12,"ram_bytes":17179869184,"device":"cpu"},
   "data_downloaded_or_verified": true,
   "smoke_timing": {"completed":true,"updates":4,"wall_seconds":86.00265913700059,"scientific_result":false},
@@ -10,7 +11,7 @@
     305
   ],
   "runs": [
-    {"tag":"traffic_r0p1_x0_b0_s303","study":"traffic","seed":303,"x":0,"beta":0,"status":"running_local_cpu_variant","encoder_updates":4900,"probe_stage":"not_run","checkpoints":[],"logs":[],"measured_wall_seconds":null},
+    {"tag":"traffic_r0p1_x0_b0_s303","study":"traffic","seed":303,"x":0,"beta":0,"status":"paused_in_memory_only","encoder_updates":4900,"probe_stage":"not_run","checkpoints":[],"logs":[],"measured_wall_seconds":null},
     {"tag":"traffic_r0p1_x0p25_b0_s303","study":"traffic","seed":303,"x":0.25,"beta":0,"status":"not_run","encoder_updates":4900,"probe_stage":"not_run","checkpoints":[],"logs":[],"measured_wall_seconds":null},
     {"tag":"traffic_r0p1_x0p5_b0_s303","study":"traffic","seed":303,"x":0.5,"beta":0,"status":"not_run","encoder_updates":4900,"probe_stage":"not_run","checkpoints":[],"logs":[],"measured_wall_seconds":null},
     {"tag":"traffic_r0p1_x0p75_b0_s303","study":"traffic","seed":303,"x":0.75,"beta":0,"status":"not_run","encoder_updates":4900,"probe_stage":"not_run","checkpoints":[],"logs":[],"measured_wall_seconds":null},
