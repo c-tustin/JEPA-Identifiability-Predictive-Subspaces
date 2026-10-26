@@ -62,6 +62,10 @@ This is related to the paper's side-information proposal, but our single fully o
 
 Use independently noisy endpoints to learn an action-structured drift model at several short intervals. Compare its finite-time bias and sampling noise with the [existing derivation](../nonlinear-control/DRIFT_ESTIMATION.md). Evaluate physical control as well as coordinate recovery. An explicit information-preservation condition is still required for the [identification lemma](../nonlinear-control/PROOF.md); small empirical loss alone does not establish one.
 
+## Additional direction: make capacity pressure explicit
+
+[A four-symbol distance representation](FINITE_CAPACITY_DISTANCE.md) provides an exact finite-capacity reference for feature-set competition and side-information steering. It is proposed work, with analytic reference values; no training result is claimed. Unlike the current continuous scalar pilot, it deliberately prevents the encoder from retaining every distance.
+
 ## Cloud handoff and evidence
 
 The cloud task was launched from branch `behavior-policy-experiments`, after commit `eb5ba66`; the simplified planning summary was subsequently pushed as `937018a`. Fetch the latest branch before creating `codex/predictive-closure-extensions`. Read the upstream source/license and record the exact revision before adapting code. Keep the paper's assumptions, our hypotheses, simulator privileges and actual results separate.
