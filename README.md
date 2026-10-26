@@ -49,6 +49,8 @@ The [latest extension](behavior-policy-experiments/nonlinear-control/EXTENSION_S
 
 ## Try the code
 
+New research is continuing in the cloud: [Predictive Closure directions](behavior-policy-experiments/research-next/PREDICTIVE_CLOSURE.md) and [a same-world test of predictive information versus distance ambiguity](behavior-policy-experiments/research-next/SIGNED_OU_EXTENSION.md). These are derivations and proposed experiments; completed neural results are not claimed yet.
+
 ```sh
 python3.12 -m venv .venv
 source .venv/bin/activate
