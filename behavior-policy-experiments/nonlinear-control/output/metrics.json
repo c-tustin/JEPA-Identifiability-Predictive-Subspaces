@@ -1,0 +1,27 @@
+{
+  "quick": false,
+  "assumptions": "Paired interventions, common noise, invertible ordered encoder, interior distances; no distance-labelled target.",
+  "analytic_bound_check": {
+    "conditional_drift_risk": 5.069264017322541e-05,
+    "actual_sup_affine_error_squared": 0.007124744738090968,
+    "proved_sup_error_squared_bound": 0.2593354363037936,
+    "bound_holds_on_grid": true
+  },
+  "runs": [
+    {
+      "seed": 0,
+      "physical_distance_r2": 0.9999999999524661,
+      "final_action_effect_loss": 1.189804118774954e-08
+    },
+    {
+      "seed": 1,
+      "physical_distance_r2": 0.9999999999293062,
+      "final_action_effect_loss": 1.586650083137463e-08
+    },
+    {
+      "seed": 2,
+      "physical_distance_r2": 0.9999999999539144,
+      "final_action_effect_loss": 3.876249141636771e-08
+    }
+  ]
+}
