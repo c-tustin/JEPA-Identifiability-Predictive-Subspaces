@@ -19,8 +19,10 @@ We kept one distance coordinate and added nonlinear drift and noise. Persistent 
 
 These are closest-approach scores, not final errors, so do not compare them directly with the original task above. The nonlinear test has three representation seeds; success on these local goals does not establish long-range planning.
 
-**Completed:** policy comparisons, shared/own-data controls, nonlinear planning, and checks of coverage and distance confusion. All 58 numerical checks pass; saved evaluations reproduce.
+**Completed:** policy comparisons, shared/own-data controls, nonlinear planning, and checks of coverage and distance confusion. Saved evaluations reproduce.
 
-**Next:** test Predictive Closure ideas, especially whether supplying actions and predicting uncertainty helps retain useful information. Those experiments are not completed results yet.
+**Cloud follow-up:** [Predictive Closure experiments are now available in PR #4](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/pull/4). Supplying the action improved prediction, but all 20 learned models still retained distance; predicting uncertainty did not produce a clear feature-selection advantage.
+
+**Next:** give the representation a stricter information budget, and separate what an action reveals about position from what it physically changes.
 
 [Nonlinear results and plots](../nonlinear-control/EXTENSION_SUMMARY.md) · [Full original results](README.md) · [Why prediction error can mislead](../nonlinear-control/CONTROL_INTERPRETATION.md)
