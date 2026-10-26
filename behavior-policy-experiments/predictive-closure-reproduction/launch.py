@@ -101,10 +101,16 @@ def resource_audit(upstream, output):
     return audit
 
 
-def validate_runtime(audit, device, cpu_fp32):
+def validate_runtime(audit, device, cpu_fp32, local_intel=False):
     if sys.version_info[:2] != (3, 12):
         raise RuntimeError("Recorded environment requires Python 3.12")
     expected = {"torch": "2.11.0", "numpy": "2.4.3", "matplotlib": "3.10.8"}
+    if local_intel:
+        if not cpu_fp32 or device != "cpu":
+            raise ValueError("--local-intel requires --device cpu --cpu-fp32")
+        if platform.system() != "Darwin" or platform.machine() != "x86_64":
+            raise ValueError("--local-intel is the recorded Intel macOS runtime variant")
+        expected = {"torch": "2.2.2", "numpy": "1.26.4", "matplotlib": "3.9.0"}
     for name, version in expected.items():
         actual = audit["packages"][name]
         if actual is None or actual.split("+")[0] != version:
@@ -211,8 +217,14 @@ def main(argv=None):
     parser.add_argument("--mode", choices=["plan", "audit", "fetch-data", "smoke", "full"], default="plan")
     parser.add_argument("--device", default="cuda:0")
     parser.add_argument("--cpu-fp32", action="store_true")
+    parser.add_argument("--local-intel", action="store_true",
+                        help="Explicit Intel Mac variant: Torch 2.2.2, NumPy 1.26.4, Matplotlib 3.9.0; CPU FP32 only")
     parser.add_argument("--seeds", nargs="+", type=int, choices=SEEDS, default=list(SEEDS))
     parser.add_argument("--study", nargs="+", choices=STUDIES, default=list(STUDIES))
+    parser.add_argument("--values", nargs="+", type=float,
+                        help="Run only these q/pD/N grid values; partial grids are not a complete reproduction")
+    parser.add_argument("--skip-plot", action="store_true",
+                        help="For partial grids: the upstream plotter requires a complete sweep")
     parser.add_argument("--smoke-timeout", type=float, default=180.)
     args = parser.parse_args(argv)
     if len(set(args.seeds)) != len(args.seeds):
@@ -224,6 +236,8 @@ def main(argv=None):
     verify_source(upstream)
     official = official_runner(upstream)
     records = build_records(official, data, output, args.seeds, args.study, args.device, args.cpu_fp32)
+    if args.values is not None:
+        records = [row for row in records if row["x"] in args.values]
     if not records:
         raise ValueError("No jobs selected")
     output.mkdir(parents=True, exist_ok=True)
@@ -244,7 +258,7 @@ def main(argv=None):
     if args.mode == "audit":
         print(json.dumps({k: audit[k] for k in ["cpu_count", "disk_free_bytes", "packages"]}))
         return
-    validate_runtime(audit, args.device, args.cpu_fp32)
+    validate_runtime(audit, args.device, args.cpu_fp32, args.local_intel)
     from download_data import verify
     verify(data)
     if args.mode == "smoke":
@@ -263,8 +277,9 @@ def main(argv=None):
             with journal.open("a") as handle:
                 handle.write(json.dumps(dict(event="completed", tag=row["tag"],
                                              wall_seconds=time.perf_counter() - started)) + "\n")
-        from plot import plot
-        plot(seed_output)
+        if not args.skip_plot:
+            from plot import plot
+            plot(seed_output)
     print("Selected official training/probe stages completed. Appendix C is not implemented by this launcher.")
 
 

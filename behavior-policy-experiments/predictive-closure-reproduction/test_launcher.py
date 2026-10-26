@@ -1,8 +1,12 @@
 """Standard-library checks of the pinned job protocol; no data, Torch or training."""
 import os
+import contextlib
+import io
+import json
 from pathlib import Path
+import tempfile
 import unittest
-from launch import ROOT, build_records, official_runner, verify_source
+from launch import ROOT, build_records, main, official_runner, verify_source, validate_runtime
 
 
 class OfficialPlanTests(unittest.TestCase):
@@ -56,6 +60,22 @@ class OfficialPlanTests(unittest.TestCase):
             else:
                 self.assertEqual(config["steps"], 4900)
             self.assertTrue(config["bf16"])
+
+    def test_endpoint_plan_keeps_full_training_budget(self):
+        with tempfile.TemporaryDirectory() as directory, contextlib.redirect_stdout(io.StringIO()):
+            main(["--upstream", str(self.upstream), "--output", directory,
+                  "--study", "traffic", "--seeds", "303", "--values", "0", "1",
+                  "--device", "cpu", "--cpu-fp32", "--local-intel", "--skip-plot"])
+            rows = json.loads((Path(directory) / "launcher-plan.json").read_text())
+            self.assertEqual([r["x"] for r in rows], [0, 1])
+            self.assertTrue(all(r["stages"][0]["config"]["epochs"] == 25 for r in rows))
+
+    def test_legacy_runtime_cannot_be_labelled_official(self):
+        audit = {"packages": {"torch": "2.2.2", "numpy": "1.26.4", "matplotlib": "3.9.0"}}
+        with self.assertRaisesRegex(RuntimeError, "torch must be 2.11.0"):
+            validate_runtime(audit, "cpu", True)
+        with self.assertRaisesRegex(ValueError, "requires --device cpu --cpu-fp32"):
+            validate_runtime(audit, "cuda:0", False, local_intel=True)
 
 
 if __name__ == "__main__":

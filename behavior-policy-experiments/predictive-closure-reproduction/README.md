@@ -1,6 +1,6 @@
 # Original Predictive Closure reproduction
 
-**No paper result has been reproduced in this branch yet.** Compute is offline. Source/configuration auditing and an unexecuted harness are prepared. [Status](RUN_STATUS.md) · [Coverage](figure-manifest.json) · [77 pending runs](run-manifest.json).
+**Full-budget local CPU training is running; no paper result is complete yet.** The four-update timing check passed in 86 seconds, and the first full model has logged a finite-loss update. Six source/run-plan checks pass. [Status](RUN_STATUS.md) · [Execution evidence](local-evidence.json) · [Coverage](figure-manifest.json) · [Full run list](run-manifest.json).
 
 This is separate from PR #4's distance-world extensions. It uses unmodified original CIFAR collage code at **2964fa8f737fa43871d47928edc9aac16fa9298f**. All tracked upstream files have pinned Git blob hashes in [source-manifest.json](source-manifest.json); runtime audit will record SHA-256 hashes. No source is vendored. Upstream is MIT licensed.
 
@@ -21,6 +21,24 @@ Unfiltered upstream --main-only gives 39 encoders per seed and needlessly repeat
 Full budgets remain batch 512, eight-frame sequences, base channels 32, projection width 1024, latent 3 and SIGReg 1024 projections. Traffic/pairs/steering use 25 epochs or 4,900 updates; group size uses 100 epochs/19,600 updates. Image probes retain 1,000 updates; traffic probes retain 1,200.
 
 ## Run
+
+### Local Intel Mac
+
+The local machine has 6 physical cores, 12 logical CPUs, 16 GB RAM and no available PyTorch GPU backend. Its recorded runtime is Python 3.12.3, Torch 2.2.2, NumPy 1.26.4 and Matplotlib 3.9.0. This is an explicit **CPU/FP32 runtime variant**, not the authors' CUDA/BF16 environment. Architecture, batch size, losses, training steps and probe budgets stay unchanged. These results will be reported separately from an exact-environment reproduction.
+
+With the pinned checkout available, run from this folder:
+
+~~~bash
+/usr/local/bin/python3 -m venv --system-site-packages .venv-intel
+.venv-intel/bin/python download_parallel.py --upstream /absolute/path/to/predictive-closure-upstream
+.venv-intel/bin/python run_local.py --upstream /absolute/path/to/predictive-closure-upstream
+~~~
+
+The environment reuses installed packages, and the launcher checks the versions in `requirements-intel.txt`. Downloading uses official-server byte ranges and verifies the original archive MD5 plus all extracted-file SHA-256 hashes. A four-update smoke test must succeed before full training starts. The queue runs q=0 and q=1 for seed 303 first, then completes all five traffic-light values for seeds 303–305, reusing completed stages. Other paper experiments remain pending.
+
+`runs-local/local-process.json` records the active stage and child PID. Launcher logs, upstream training logs, timing, checkpoints and verification receipts stay in `runs-local/`. Upstream saves the training checkpoint only when a model finishes; an interrupted incomplete model cannot resume from its last update. No completed reproduction is inferred from an active process.
+
+### Authors' CUDA environment
 
 From repository root. Bootstrap creates a separate checkout; to reuse the prior one, override PC_UPSTREAM with /workspace/scratch/339c04b91302/predictive-closure-upstream.
 
@@ -88,6 +106,6 @@ PC_UPSTREAM="$PC_UPSTREAM" python -m unittest discover -s "$PC_REPRO" -p test_la
 python "$PC_REPRO/launch.py" --upstream "$PC_UPSTREAM" --mode plan --output /tmp/pc-plan-check
 ~~~
 
-**Not executed here.** Missing source explicitly skips tests rather than passing them.
+**Six planner/source/runtime-guard checks passed locally.** These check configuration accounting, not scientific results. Missing source explicitly skips tests rather than passing them.
 
 Sources: [paper v1](https://arxiv.org/abs/2610.27364v1), [official repository](https://github.com/Mosh0110/predictive-closure), [pinned runner](https://github.com/Mosh0110/predictive-closure/blob/2964fa8f737fa43871d47928edc9aac16fa9298f/run.py).
