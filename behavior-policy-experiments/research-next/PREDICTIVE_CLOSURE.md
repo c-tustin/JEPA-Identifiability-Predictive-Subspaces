@@ -52,6 +52,8 @@ Thus more information can coexist with worse mean prediction outside the paper's
 
 ## Priority 2: actions as side information in the existing nonlinear world
 
+[A sharper control and derivation](ACTION_INFORMATION.md) separate the information carried by a state-dependent policy's action from its physical effect. The actuator-off control remains unrun.
+
 Train the encoder jointly with predictors that receive either current action, a shuffled action, or no action. Use matched source states/actions to separate information from coverage. The shuffled-action control distinguishes helpful action information from extra model inputs. No additional physical state is needed. Test whether representation geometry and physical planning improve, rather than reporting only latent prediction error.
 
 This is related to the paper's side-information proposal, but our single fully observed physical coordinate does not reproduce its competition among independent image features. Do not label the experiment a full paper reproduction.
