@@ -11,6 +11,6 @@ The central question is whether good prediction of a representation's **mean** c
 
 **Main findings:** an explicit folded coordinate predicts its own future better while losing distance information; all 20 learned neural encoders still retain distance. Multiple sampling intervals did not improve drift estimation in these pilots. These results do not refute the paper's conditional-Gaussian theorem.
 
-All required code and saved outputs are inside predictive-closure-extensions/. No other experimental branch is required. Files already present on main are retained unchanged, apart from this branch overview.
+All required code and saved outputs are inside predictive-closure-extensions/. No other experimental branch is required. The practice folder is intentionally excluded; the repository license and original research proposal are retained.
 
 Sources: [paper](https://arxiv.org/abs/2610.27364v1), [authors' code](https://github.com/Mosh0110/predictive-closure).

@@ -7,4 +7,4 @@
 - `sigreg.py` is byte-for-byte identical to the implementation used by the original study; its license notice is retained.
 - All **29 saved output files**, including 20 model checkpoints, are byte-for-byte unchanged. No model was retrained and no saved numerical result was regenerated.
 - All **10 standalone scientific tests pass** after the move. Earlier 68-test counts included unrelated experiments and are not the standalone test count.
-- Main's existing files are preserved; the root README describes this branch. Earlier experimental branches are not ancestors of the new study commit.
+- The root README describes this branch. The practice folder is intentionally excluded; main's license and original research proposal are retained. Earlier experimental branches are not ancestors of the new study commit.
