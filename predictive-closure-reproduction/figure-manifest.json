@@ -1,0 +1,161 @@
+{
+  "status": "paused_local_cpu_variant",
+  "reason": "Verified data; smoke completed; full traffic training started. See dated local-evidence.json.",
+  "optimization_seeds": [
+    303,
+    304,
+    305
+  ],
+  "seed_policy": "303 is upstream default; 304 and 305 are new independent optimization seeds chosen for this reproduction, not claimed to be the original authors' exact seeds. Data-generation seeds remain upstream defaults.",
+  "main_regularization_weight": 0.1,
+  "main_encoder_total": 77,
+  "studies": [
+    {
+      "name": "traffic",
+      "values": [
+        0,
+        0.25,
+        0.5,
+        0.75,
+        1
+      ],
+      "seeds": [
+        303,
+        304,
+        305
+      ],
+      "encoders": 15,
+      "epochs": 25,
+      "sequences_per_epoch": 100000,
+      "updates_per_encoder": 4900,
+      "stages": [
+        "encoder",
+        "probes",
+        "light_intervention"
+      ],
+      "figure": "traffic_light"
+    },
+    {
+      "name": "predictability",
+      "values": [
+        0.6,
+        0.75,
+        0.85,
+        0.95,
+        1
+      ],
+      "seeds": [
+        303,
+        304,
+        305
+      ],
+      "encoders": 15,
+      "epochs_equivalent": 25,
+      "steps": 4900,
+      "stages": [
+        "encoder",
+        "image_probes"
+      ],
+      "figure": "predictability"
+    },
+    {
+      "name": "subset",
+      "values": [
+        2,
+        4,
+        8,
+        16
+      ],
+      "seeds": [
+        303,
+        304,
+        305
+      ],
+      "encoders": 12,
+      "epochs": 100,
+      "sequences_per_epoch": 100000,
+      "updates_per_encoder": 19600,
+      "stages": [
+        "encoder",
+        "image_probes"
+      ],
+      "figure": "subset_size"
+    },
+    {
+      "name": "reconstruction",
+      "values": [
+        0.6,
+        0.75,
+        0.85,
+        0.95,
+        1
+      ],
+      "nonzero_beta": [
+        0.0425,
+        0.105,
+        0.135,
+        0.36
+      ],
+      "seeds": [
+        303
+      ],
+      "encoders": 20,
+      "baseline": "Reuse predictability at seed 303; no additional beta=0 training.",
+      "steps": 4900,
+      "stages": [
+        "encoder",
+        "image_probes"
+      ],
+      "figure": "reconstruction"
+    },
+    {
+      "name": "side_input",
+      "values": [
+        0.6,
+        0.75,
+        0.85,
+        0.95,
+        1
+      ],
+      "seeds": [
+        303,
+        304,
+        305
+      ],
+      "encoders": 15,
+      "baseline": "Paired predictability at the same seed.",
+      "steps": 4900,
+      "stages": [
+        "encoder",
+        "image_probes"
+      ],
+      "figure": "side_information"
+    }
+  ],
+  "training_update_total_excluding_probes": 553700,
+  "official_seed_counts": {
+    "303": 39,
+    "304": 19,
+    "305": 19
+  },
+  "appendices": {
+    "C": {
+      "status": "implementation_gap",
+      "description": "Pinned run.py does not schedule Appendix C actual-versus-incompatible-alternative and shuffled-prediction checks. Traffic-light intervention and latent prediction MSE are different diagnostics."
+    },
+    "D": {
+      "status": "out_of_initial_main_scope",
+      "description": "The official default adds r=.05 and .20. Applying the same paper seed policy gives 231 distinct encoders total, not 351 from three unfiltered default runs."
+    },
+    "E": {
+      "status": "uses_existing_subset_checkpoints",
+      "description": "Worst/best position summaries need no additional encoder training."
+    }
+  },
+  "runtime_precision": {
+    "official": "cuda:0 with bf16=true",
+    "cpu_variant": "Explicit --cpu-fp32 changes device and bf16 only; not identical numerical execution.",
+    "local_intel_variant": "Torch2.2.2/NumPy1.26.4/Matplotlib3.9.0; explicit CPU FP32; full budgets retained"
+  },
+  "pause_evidence": "pause-evidence.json"
+}

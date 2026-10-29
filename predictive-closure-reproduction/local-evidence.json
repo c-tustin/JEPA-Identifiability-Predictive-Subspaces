@@ -1,0 +1,105 @@
+{
+  "snapshot_utc": "2026-10-26T16:35:35Z",
+  "source_commit": "2964fa8f737fa43871d47928edc9aac16fa9298f",
+  "exact_author_environment": false,
+  "profile": "Intel macOS CPU FP32 runtime variant",
+  "hardware": {
+    "physical_cores": 6,
+    "logical_cpus": 12,
+    "ram_bytes": 17179869184,
+    "cuda_available": false,
+    "mps_available": false
+  },
+  "packages": {
+    "torch": "2.2.2",
+    "numpy": "1.26.4",
+    "matplotlib": "3.9.0"
+  },
+  "python": "3.12.3",
+  "source_manifest_sha256": "ebf59f8a5fc1c63d9bd248b03f5ab4e400a21bc3714bd991b572ed50bdb1de5d",
+  "source_files_verified": 42,
+  "data_verification": {
+    "status": "verified",
+    "source_commit": "2964fa8f737fa43871d47928edc9aac16fa9298f",
+    "files": {
+      "batches.meta": "f962466ef690d46b226450fb9aadc74ba4bc64a76aa526b5827fe4bc5c7125cb",
+      "data_batch_1": "54636561a3ce25bd3e19253c6b0d8538147b0ae398331ac4a2d86c6d987368cd",
+      "data_batch_2": "766b2cef9fbc745cf056b3152224f7cf77163b330ea9a15f9392beb8b89bc5a8",
+      "data_batch_3": "0f00d98ebfb30b3ec0ad19f9756dc2630b89003e10525f5e148445e82aa6a1f9",
+      "data_batch_4": "3f7bb240661948b8f4d53e36ec720d8306f5668bd0071dcb4e6c947f78e9682b",
+      "data_batch_5": "d91802434d8376bbaeeadf58a737e3a1b12ac839077e931237e0dcd43adcb154",
+      "test_batch": "f53d8d457504f7cff4ea9e021afcf0e0ad8e24a91f3fc42091b8adef61157831"
+    }
+  },
+  "smoke": {
+    "completed_steps": 4,
+    "timing": {
+      "study": "traffic",
+      "status": "completed",
+      "detail": null,
+      "training_process_wall_seconds": 86.00265913700059,
+      "workload": "4 updates; includes startup, loading, evaluation and checkpoint I/O",
+      "scientific_result": false,
+      "config_sha256": "7b028c9ad66f1111a5bfd4baad89d33929cbef4c8f11364ec0deaf3a166242b6"
+    },
+    "checkpoint_sha256": "56ca654de8b44114e46cf8273fa03e99537d68178078686105326c962b4a6ad0",
+    "result_sha256": "e3d078b3dd54bd5b8b48f4f3fdd8b2947637624d3563497e7911cfeb3d000985",
+    "scientific_result": false
+  },
+  "full_run": {
+    "tag": "traffic_r0p1_x0_b0_s303",
+    "status": "running",
+    "highest_logged_update": 1,
+    "planned_updates": 4900,
+    "completed_full_models": 0,
+    "logged_losses_finite": true,
+    "config_sha256": "8c226825968affb21975e0d204db41bded4137c471a6dfb7d8eac73ad3d87c24",
+    "training_config": {
+      "batch_size": 512,
+      "bf16": false,
+      "cpu_interop_threads": 1,
+      "cpu_threads": 8,
+      "device": "cpu",
+      "encoder_base_channels": 32,
+      "encoder_frame_chunk_size": 1024,
+      "encoder_representation_width": 1024,
+      "epochs": 25,
+      "evaluation_batch_size": 256,
+      "evaluation_batches": 2,
+      "evaluation_every": 980,
+      "evaluation_sequence_seed": 270102,
+      "evaluation_sigreg_seed": 270103,
+      "feed": {
+        "identity_count": 5000,
+        "identity_subset_seed": 20260805,
+        "light_patch_size": 4,
+        "light_strength": 1.0,
+        "sequence_length": 8,
+        "visible_mode_probability": 0.0
+      },
+      "format_version": 1,
+      "gradient_clip": 10.0,
+      "latent_dim": 3,
+      "learning_rate": 0.001,
+      "log_every": 196,
+      "minimum_learning_rate": 1e-05,
+      "predictor_hidden_dim": 16,
+      "sequences_per_epoch": 100000,
+      "sigreg_chunk_size": 256,
+      "sigreg_knots": 17,
+      "sigreg_projections": 1024,
+      "train_sequence_seed": 270101,
+      "warmup_steps": 196,
+      "weight_decay": 0.0001,
+      "seed": 303,
+      "prediction_weight": 0.9,
+      "sigreg_weight": 0.1,
+      "run_id": "traffic_r0p1_x0_b0_s303"
+    },
+    "log": "runs-local/seed303/traffic_r0p1_x0_b0_s303/log_0.txt"
+  },
+  "queued_scope": "15 full traffic encoders including current run; q=0 and q=1 seed303 first, then remaining grid/seeds",
+  "other_main_encoders_pending": 62,
+  "paper_result_reproduced": false,
+  "tests_passed": 6
+}
