@@ -1,1 +1,0 @@
-Created a simple JEPA model for practice using the moving MNIST dataset. Used SIGReg code by Randall Balestriero and Yann LeCun, from this repo: https://github.com/galilai-group/lejepa/blob/main/MINIMAL.md?utm_source=chatgpt.com#the-code. Further steps might be to robustly evaluate whether the model encodes movement.
