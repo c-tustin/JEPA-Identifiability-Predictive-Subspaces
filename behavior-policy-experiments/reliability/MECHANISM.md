@@ -37,18 +37,51 @@ Five additional new seeds, 18–22, with independent alignment and regularizer b
 
 The two historical failures show the same pattern: balancing SIGReg restores roughly 0.994 recovery, whereas balancing alignment alone leaves the mean near 0.337. These results isolate a sampling intervention on the regularizer within this protocol. They do not claim every possible failure is regularizer-driven.
 
-There is a direct mathematical reason sampling matters. Write the endpoint-weighted characteristic-function estimates as
+## What “balanced SIGReg” means here
+
+We keep the SIGReg formula and its loss coefficient unchanged. We change which stored observation pairs enter its batch:
+
+1. Put each pair into one of **32 bins of log apparent triangle height**, using its source observation. The bin range comes from the known sensor geometry; no true distance labels are used.
+2. Resample stored pairs with replacement, giving each pair weight inversely proportional to the number of pairs in its bin. If bin $b(i)$ contains $n_{b(i)}$ pairs and $M$ bins are occupied, the ideal sampling probability is
 
 $$
-c_k=sum_i v_icos(t_k h_i),qquad s_k=sum_i v_isin(t_k h_i),qquad sum_i v_i=1.
+p_i=\frac{1}{M\,n_{b(i)}}.
 $$
 
-For the frequency-weighted discrepancy $R=sum_k w_k[(c_k-c_k^*)^2+s_k^2]$, its derivative at a sampled output is
+3. Apply ordinary SIGReg to the encoded source **and** next observations of those resampled pairs. In the “ordinary alignment / balanced SIGReg” condition, only the regularizer uses this replay pool; alignment keeps its ordinary pool.
+
+Thus a bin with 100 stored pairs and a bin with 10 stored pairs receive the same total sampling probability, rather than the first contributing ten times as much. The code draws a fixed replay pool, so equal bin contributions hold **in expectation**, not exactly in every batch. Empty bins stay empty; source-bin balancing does not make the next-observation distribution uniform. The ICM-to-OU mixing schedule and final OU data stay unchanged.
+
+The code implements this by resampling; SIGReg still averages its actual batch uniformly. The weighted expressions below describe the resulting replay measure.
+
+This intervention is implemented in [`balanced_views`](ablate_losses.py), using [`size_bin`](policies.py). It uses a known observation ordering; it is not a general guarantee of uniform physical-state coverage.
+
+## Why the sampling changes SIGReg gradients
+
+Write $h_i$ for a sampled scalar encoder output, $v_i$ for its normalized endpoint weight, and $t_k$ for an integration frequency. The endpoint-weighted characteristic-function estimates are
 
 $$
-rac{partial R}{partial h_i}
-=2v_isum_k w_k t_kleft[-(c_k-c_k^*)sin(t_kh_i)+s_kcos(t_kh_i)
-ight].
+c_k=\sum_i v_i\cos(t_k h_i),
+\qquad
+s_k=\sum_i v_i\sin(t_k h_i),
+\qquad
+\sum_i v_i=1.
+$$
+
+For a standard Gaussian target, $c_k^*=\exp(-t_k^2/2)$ and the target sine average is zero. With fixed integration weights $w_k$, define
+
+$$
+R=\sum_k w_k\left[(c_k-c_k^*)^2+s_k^2\right].
+$$
+
+Its derivative at a sampled output is
+
+$$
+\frac{\partial R}{\partial h_i}
+=2v_i\sum_k w_k t_k\left[
+-(c_k-c_k^*)\sin(t_k h_i)
++s_k\cos(t_k h_i)
+\right].
 $$
 
 The implementation adds a common batch-size multiplier. The explicit factor $v_i$ shows that the regularizer's gradient weights the visited distribution, not an abstract uniform physical state space. Repeated near-object observations dominate; rare regions contribute less. Balanced batches change this weighting and the target distribution the encoder is asked to Gaussianize. Shared neural parameters couple outputs, so this derivative alone is not a complete optimization proof.
