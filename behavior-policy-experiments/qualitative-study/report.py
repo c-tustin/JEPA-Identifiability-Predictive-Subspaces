@@ -5,8 +5,10 @@ from __future__ import annotations
 import argparse
 import csv
 import json
+import os
 from pathlib import Path
 
+os.environ.setdefault("MPLCONFIGDIR", "/tmp/kempner-qualitative-mpl")
 import matplotlib
 
 matplotlib.use("Agg")
@@ -674,6 +676,8 @@ def write_results(out, seeds, rows, statistics, regions, quick):
         "",
         "The subgroup is selected using separate validation goals and a fold check, never the held-out errors in the table. Its conclusion is conditional on passing this particular screen. A small subgroup has little power; testing only the held-out winners would be invalid. Supplementary paired t-tests and their assumptions are in [statistics.json](statistics.json).",
         "",
+        "The percentile bootstrap interval describes the mean, whereas the sign test concerns win probability. With only ten seeds and skewed differences, the bootstrap interval is also fragile; it is descriptive, not a substitute for the specified tests.",
+        "",
         "## What to inspect qualitatively",
         "",
     ]
@@ -761,7 +765,7 @@ def main():
     atomic_json(out / "statistics.json", statistics)
     atomic_json(out / "trials.json", rows)
     with (out / "trials.csv").open("w", newline="") as handle:
-        writer = csv.DictWriter(handle, fieldnames=list(rows[0]))
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
         writer.writeheader()
         writer.writerows(rows)
     for arm in PRIMARY:

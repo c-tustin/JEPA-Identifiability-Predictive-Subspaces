@@ -16,6 +16,7 @@ The policy changes both which distances are sampled and which views are paired. 
 
 ## Latest work
 
+- [Ten-trial picture gallery and planning comparison](qualitative-study/README.md): ICM folds, OU and ICM→OU, replay binning, and controlled coverage removals.
 - [Reliability findings](reliability/INTERPRETATION.md): balanced replay, alternative policies and independent encoder seeds.
 - [Rigorous explanation](reliability/MECHANISM.md): what follows mathematically, what the controls establish, and what remains uncertain.
 - [Learned OU](learned-ou/README.md): train correlation/spread or an OU-inspired physical controller.

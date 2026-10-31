@@ -9,7 +9,15 @@ from pathlib import Path
 import numpy as np
 import torch
 
-from run_trials import ARMS, ROOT, atomic_json, behavior, load, representation
+from run_trials import (
+    ARMS,
+    ROOT,
+    atomic_json,
+    behavior,
+    distances,
+    load,
+    representation,
+)
 
 
 def main():
@@ -40,6 +48,15 @@ def main():
     max_path_difference, max_error_difference, max_curve_difference = 0.0, 0.0, 0.0
     for seed in seeds:
         assert (out / f"completed-{seed}.json").exists()
+        for source in ("icm", "physical-common"):
+            saved = load(out / "sources" / f"{source}-{seed}.pt")
+            data = saved["data"] if source == "icm" else saved
+            assert len(data["x"]) == c.train_episodes * c.horizon
+            assert bool(((data["action"] >= 0) & (data["action"] <= 2)).all())
+            expected = behavior.move(distances(data["x"]), data["action"], c)
+            np.testing.assert_allclose(
+                expected.numpy(), distances(data["xp"]).numpy(), atol=1e-5, rtol=0
+            )
         keys = [
             f"{arm}-{kind}-{seed}"
             for arm in ARMS
@@ -50,6 +67,11 @@ def main():
         for key in keys:
             counts["predictors"] += int((out / "predictors" / f"{key}.pt").exists())
             saved = load(out / "planning" / f"{key}.pt")
+            coverage = saved["data_coverage"]["counts"]
+            assert sum(coverage) == c.train_episodes * c.horizon
+            if key.startswith("remove-") and not key.startswith("remove-all-"):
+                region = int(key.split("-")[1])
+                assert sum(coverage[4 * region : 4 * (region + 1)]) == 0
             counts["planning_results"] += 1
             for split in ("screen", "test"):
                 result = saved[split]
@@ -112,6 +134,8 @@ def main():
             max_recomputed_curve_difference=max_curve_difference,
             checks=[
                 "Protocol and training-source hashes unchanged",
+                "Physical training pairs agree with their saved action labels",
+                "Region removals keep the pair budget and exclude their specified bins",
                 "All requested encoders and predictors saved",
                 "Same goals and oracle paths across methods within seed",
                 "Physical actions replay to saved paths and terminal errors",

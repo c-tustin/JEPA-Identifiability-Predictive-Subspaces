@@ -2,6 +2,8 @@
 
 There are three separate questions: does the encoder preserve distance order, does the predictor learn the effects of all actions, and does the planner need the regions that were sampled? The plots in this study check each question separately.
 
+ICM rewards errors of its own learned forward model. That model is separate from the JEPA encoder and the later planning predictor. Seeking surprise for ICM therefore need not supply the examples that either later model needs.
+
 ## What the representation loss rewards
 
 Write the learned coordinate as $h(d)$. The alignment part of our actual training objective is
@@ -28,7 +30,7 @@ $$
 
 It cannot reach both goals accurately. This is an exact ambiguity argument for equal encodings. Our plotted near-collisions suggest a practical problem but are not exact equalities, and finite numerical planners can respond differently to nearby encodings. The grid reversal check is a diagnostic, not a proof of every possible collision or planning failure.
 
-Folding is also not necessary for poor planning. A monotone encoder can squeeze a large physical interval into a tiny output interval. The predictor and planner must then resolve small latent differences to choose the right action. The sensitivity plot and actual trajectories help reveal this failure.
+Folding is also not necessary for poor planning. A monotone encoder can squeeze a large physical interval into a tiny output interval. The predictor and planner must then resolve small latent differences to choose the right action. The sensitivity plot and actual trajectories help reveal this failure. A collision with a different branch can also affect a goal outside the reversed interval itself, so route overlap is a descriptive check rather than a complete failure criterion.
 
 ## Why binning changes more than a coverage score
 
