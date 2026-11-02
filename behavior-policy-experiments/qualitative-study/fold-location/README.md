@@ -1,5 +1,7 @@
 # Why do the curves turn or flatten near distance 2–4?
 
+**Latest mechanism check:** [replaying the creation and movement of a fold](training-mechanism/README.md). In seed 131 the first in-range turn appears near distance 15.81, then moves inward to 2.37. Pure-ICM sampling controls isolate the SIGReg measure without an OU handover.
+
 **There is a distance scale built into our network.** Before its learned layers, the encoder transforms the six observed coordinates with `tanh(4*x)`. Because the image is $x=V/d$, the nonzero input magnitudes pass through the tanh transition around distances **2, 3.46 and 4**. These are smooth scale landmarks, not hard thresholds or physical events.
 
 The renderer itself has no special change at those distances. Its observation is still exactly $V/d$. The reference distance 4 used to define the simulator's log-coordinate cancels on rendering; it is distinct from the encoder's input multiplier 4.

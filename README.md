@@ -18,6 +18,8 @@ The scene still has **one changing coordinate: distance**.
 
 [Why the ICM curves bend near distance 2–4](behavior-policy-experiments/qualitative-study/fold-location/README.md): matched input-gain controls move the learned extrema while keeping the data fixed. The encoder's input scale matters; this is not a special physical distance.
 
+[The optimizer mechanism](behavior-policy-experiments/qualitative-study/fold-location/training-mechanism/README.md) traces a reversal that first appears far away and then moves inward. Pure-ICM sampling controls separate SIGReg reweighting from the earlier OU handover.
+
 ## Current findings
 
 Five new validation seeds, 8–12; mean shared-range $R^2$ after 4,000 representation updates:

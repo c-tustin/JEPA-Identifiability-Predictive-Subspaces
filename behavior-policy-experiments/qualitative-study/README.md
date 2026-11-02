@@ -4,6 +4,8 @@ This study plots what ICM, OU and ICM→OU learn in the same distance-only world
 
 **Follow-up:** [Why do the ICM curves turn or taper near distance 2–4?](fold-location/README.md) Input-scale interventions, exact derivatives and sampling diagnostics.
 
+**Deeper mechanism:** [the first reversal and its subsequent movement](fold-location/training-mechanism/README.md), including pure-ICM regularizer-sampling controls and a replay of the actual optimizer update.
+
 ## What happened
 
 | Representation training | Folded runs | Mean physical goal error ↓ |
