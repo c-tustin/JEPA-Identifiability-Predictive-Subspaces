@@ -16,6 +16,8 @@ The scene still has **one changing coordinate: distance**.
 
 **Latest: [ten-trial curves and planning comparison](behavior-policy-experiments/qualitative-study/README.md).** ICM and ICM→OU each fold in 5/10 new trials; OU folds in 0/10. ICM→OU beats OU in only 2/10 held-out planning comparisons, with no significant advantage. Balancing only the SIGReg sampling removes the observed folds in both tested binnings and brings average shared-data goal error close to OU's. The gallery includes coverage versus planning plots and controlled region removals.
 
+[Why the ICM curves bend near distance 2–4](behavior-policy-experiments/qualitative-study/fold-location/README.md): matched input-gain controls move the learned extrema while keeping the data fixed. The encoder's input scale matters; this is not a special physical distance.
+
 ## Current findings
 
 Five new validation seeds, 8–12; mean shared-range $R^2$ after 4,000 representation updates:

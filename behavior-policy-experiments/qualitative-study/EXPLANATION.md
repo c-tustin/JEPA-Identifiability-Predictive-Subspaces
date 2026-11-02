@@ -1,5 +1,7 @@
 # Why coverage can improve while planning gets worse
 
+For the specific clustering near distances 2–4, see the [input-scale interventions and derivative inspection](fold-location/README.md).
+
 There are three separate questions: does the encoder preserve distance order, does the predictor learn the effects of all actions, and does the planner need the regions that were sampled? The plots in this study check each question separately.
 
 ICM rewards errors of its own learned forward model. That model is separate from the JEPA encoder and the later planning predictor. Seeking surprise for ICM therefore need not supply the examples that either later model needs.

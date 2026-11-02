@@ -2,6 +2,8 @@
 
 This study plots what ICM, OU and ICM→OU learn in the same distance-only world, then tests whether they help the agent reach physical goals. **ICM + OU means the existing ICM→OU curriculum:** start with ICM pairs, gradually replace them with OU pairs, and finish with OU. There are ten paired trials per main policy, plus ten trials for each of two replay binnings.
 
+**Follow-up:** [Why do the ICM curves turn or taper near distance 2–4?](fold-location/README.md) Input-scale interventions, exact derivatives and sampling diagnostics.
+
 ## What happened
 
 | Representation training | Folded runs | Mean physical goal error ↓ |
