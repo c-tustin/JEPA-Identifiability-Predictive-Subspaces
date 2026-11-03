@@ -16,6 +16,7 @@ The policy changes both which distances are sampled and which views are paired. 
 
 ## Latest work
 
+- [Policy zoo](policy-zoo/README.md): 17 physical behavior policies and low-/high-pass filtered OU sources, 20 paired seeds, pure and handover protocols, with Holm-corrected paired tests.
 - [Ten-trial picture gallery and planning comparison](qualitative-study/README.md): ICM folds, OU and ICM→OU, replay binning, and controlled coverage removals.
 - [Reliability findings](reliability/INTERPRETATION.md): balanced replay, alternative policies and independent encoder seeds.
 - [Rigorous explanation](reliability/MECHANISM.md): what follows mathematically, what the controls establish, and what remains uncertain.
