@@ -99,8 +99,12 @@ class Disagreement(nn.Module):
         return self.predictions(x, a).var(0, unbiased=False).mean(-1)
 
 
-def train(c, seed, kind, policy_factory=None):
-    """Same A2C interaction budget as ICM; all rewards are detached for actor."""
+def train(c, seed, kind, policy_factory=None, reward_fn=None):
+    """Same A2C interaction budget as ICM; all rewards are detached for actor.
+
+    reward_fn, if given, is an extrinsic reward of the successor view; it
+    replaces the intrinsic bonus and no intrinsic model is trained.
+    """
     torch.manual_seed(seed)
     epsilon = 0.2 if kind == "icm_epsilon" else 0.0
     policy = ExploratoryPolicy(epsilon) if policy_factory is None else policy_factory()
@@ -134,6 +138,8 @@ def train(c, seed, kind, policy_factory=None):
                 xp = behavior.sensor(successor, c)
                 if kind == "count":
                     reward = counts.reward(xp)
+                elif reward_fn is not None:
+                    reward = reward_fn(xp)
                 elif bonus is not None:
                     error = bonus.errors(x, xp, a)
                     reward_second_moment = 0.99 * reward_second_moment + 0.01 * float(
@@ -172,7 +178,7 @@ def train(c, seed, kind, policy_factory=None):
         actor_loss.backward()
         nn.utils.clip_grad_norm_(policy.parameters(), 40.0)
         actor_opt.step()
-        if kind != "count":
+        if kind != "count" and reward_fn is None:
             if bonus is None:
                 error, inverse = icm(x, xp, a)
                 intrinsic_loss = (1 - c.forward_weight) * F.cross_entropy(

@@ -39,6 +39,10 @@ A longer, 8,000-update OU control reaches 0.9992 on the same validation seeds. E
 
 [Concise reliability findings](behavior-policy-experiments/reliability/INTERPRETATION.md) · [What the policy changes mathematically](behavior-policy-experiments/reliability/MECHANISM.md) · [Separate alignment/SIGReg test](behavior-policy-experiments/reliability/LOSS_ABLATION.md)
 
+## Policy zoo
+
+A [20-seed paired comparison](behavior-policy-experiments/policy-zoo/README.md) of 17 physical behavior policies and low-/high-pass filtered OU sources, all under the reliability protocol. Most simple policies match random actions; persistent policies and learned curiosity bonuses (ICM, RND, disagreement) degrade recovery when their data are used alone. Across policies, recovery tracks how Gaussian the visited log-distance distribution is (Spearman −0.91). Filtering OU changes results only through its lag-1 correlation. Negative-correlation sources still recover distance, but only because training never reaches their lower-loss folded optimum.
+
 ## Learned OU and planning
 
 A separate study learns OU correlation and spread without distance-recovery labels. Correlation converges near 0.5; learning spread gives a small improvement. A second controller learns OU-inspired parameters while retaining the physical approach/stay/retreat actions; it is explicitly not an exact OU process. [Learned-OU study](behavior-policy-experiments/learned-ou/README.md).
