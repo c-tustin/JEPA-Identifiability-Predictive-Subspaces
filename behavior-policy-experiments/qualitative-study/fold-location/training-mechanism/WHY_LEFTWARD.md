@@ -49,7 +49,9 @@ $$
 
 A positive slope change at the old bottom therefore gives a **negative change in log-distance**, which is leftward movement. The finite interventions above check the direction directly; the separate [root-motion audit](output/refined-root-motion-check.json) checks this local approximation against refined roots. [MATH.md](MATH.md) gives the optimizer and sampling details.
 
-**What remains unexplained:** these checks explain the direction at inspected updates and establish a role for SIGReg sampling. They do not prove that every update moves left, that every seed follows this history, or that the final position must be 2–4. Predicting the final turning distance from the data and initialization remains open.
+**New continuation check:** [the turn had not settled at 2.4](stopping-point/README.md). The original learning rate reaches zero; restoring it to 0.0001 and continuing for 8,000 updates moves the same seed-131 turn from 2.368 to 1.905 while lowering the objective. Switching SIGReg sampling late instead gives 2.426. These checks explain why a nearly stationary late curve is insufficient evidence of an equilibrium.
+
+These results do not prove that every update moves left, that every seed follows this history, or that any eventual position must be 2–4. Predicting the complete trajectory from data and initialization remains open.
 
 Recreate the three PNG/PDF figures and the [numerical table](output/leftward-explanation.json) from repository root:
 
