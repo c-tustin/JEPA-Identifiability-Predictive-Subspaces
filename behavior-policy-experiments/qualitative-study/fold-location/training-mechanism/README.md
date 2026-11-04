@@ -2,6 +2,8 @@
 
 **The turn is learned and moves during training.** Distances 2, 3.46 and 4 are landmarks of `tanh(4*x)`, not three measured or inevitable fold locations. The input scale shapes the network's response; the sampling-weighted loss changes its weights and can reverse the slope elsewhere.
 
+**Start with [Why does the fold move left?](WHY_LEFTWARD.md)** for the plain-language explanation, curve snapshots, and exact one-update comparisons of alignment versus SIGReg. At update 250, the turn moves from 6.0632 to 5.9207; applying only the SIGReg component gives 5.9210, while alignment alone gives 6.0629.
+
 ## We replayed the creation of a fold
 
 For **seed 131, gain 4**, update **204→205** introduces the first detected turn in the evaluated interval, at **distance 15.81**. The raw far-end slope changes from **+0.00415 to −0.00083**. Applying only the SIGReg-moment component of that actual update also creates a turn; applying only the alignment component does not. The replay reaches the saved update-250 weights exactly.
