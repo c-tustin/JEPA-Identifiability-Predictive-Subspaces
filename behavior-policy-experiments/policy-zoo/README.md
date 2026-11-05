@@ -1,5 +1,7 @@
 # Policy zoo: many behavior policies, one protocol
 
+**Latest: [original-policy identifiability, ICM-fold tests and actual planning](original-policy-followup/README.md).** We re-evaluated 700 original encoders. Removing alignment preserves fold status in all 100 new fits; collecting earlier with the same frozen ICM actor repairs all ten old folds and improves actual reaching. SIGReg is unchanged.
+
 **Expanded catalog:** [13 additional physical controllers and fresh-seed comparisons](new-policy-results/README.md), bringing the catalog to 30 physical policies. The new report includes failures, comparisons with the old best policies, and a clear [boundary between theorem assumptions and empirical extensions](ASSUMPTION_BOUNDARY.md). The original comparison below remains reproducible.
 
 Same triangle, same single distance coordinate, same encoder and loss as the [reliability study](../reliability/README.md). This study adds 11 physical behavior policies and 16 latent Gaussian sources, including low-pass and high-pass filtered OU. It reruns the six previously tested policies on the same 20 data seeds (8–27), so every comparison is **paired by seed**: each seed fixes the encoder initialization and minibatch index stream for all conditions. The 35 earlier runs on seeds 8–12 were regenerated and match their saved metrics exactly.

@@ -1,3 +1,5 @@
+**Latest original-policy comparison:** [ICM folds, collection age and actual goal-reaching](../policy-zoo/original-policy-followup/README.md). This adds shared/native comparisons for unchanged original zoo encoders and the same frozen ICM actor under early versus late collection. The historical summary below remains available.
+
 # What we learned about planning
 
 The agent sees a triangle that shrinks with distance. We tested whether what it learns lets it move toward a goal, rather than just score well on a prediction test.

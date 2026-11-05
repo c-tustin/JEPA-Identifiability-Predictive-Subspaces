@@ -1,0 +1,41 @@
+{
+  "original_geometry_replays": 700,
+  "alignment_removal_geometry_replays": 100,
+  "physical_planning_replays": 170,
+  "exact_tests_and_holm_checked": 29,
+  "errors": 0,
+  "early_geometry_replays": 60,
+  "controlled_tests_passed": 4,
+  "original_training_gates": [
+    {
+      "policy": "icm",
+      "seed": 8,
+      "max_parameter_error": 0.0,
+      "source_hash": "ce8439faa0435297ef8858d34049c8eafcebd69b319d3afb00f117ab772c0339"
+    },
+    {
+      "policy": "random",
+      "seed": 8,
+      "max_parameter_error": 0.0,
+      "source_hash": "679f6185ae670ee29b31e4c7bf8a0f6ae6f350b1dfdfd816b924238430d6ddad"
+    }
+  ],
+  "intervention_training_replays": [
+    {
+      "fit": "no_alignment-icm_seed8",
+      "max_parameter_error": 0.0
+    },
+    {
+      "fit": "early-icm_seed8",
+      "max_parameter_error": 0.0
+    },
+    {
+      "fit": "early-icm_seed8_shared_predictor",
+      "max_parameter_error": 0.0
+    },
+    {
+      "fit": "early-icm_seed8_native_predictor",
+      "max_parameter_error": 0.0
+    }
+  ]
+}
