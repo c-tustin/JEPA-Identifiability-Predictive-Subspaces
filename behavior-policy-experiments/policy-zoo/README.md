@@ -8,6 +8,12 @@ Physical policies are run two ways. **Pure** uses only the policy's data for all
 
 **New explanation and tests:** [short explanation of the data, initialization and loss effects](mechanism-tests/SUMMARY.md), with crossed fits and targeted statistical checks. These exploratory follow-ups retain the original results and distinguish truly untrained encoders from their first training update.
 
+## Separating coverage from movement
+
+The original zoo changes both **which distances are visited** and **how the agent moves between them**. It establishes associations, not a causal explanation of those differences. Curriculum recovery gains also do not establish planning gains.
+
+The new [matched-coverage comparison](matched-coverage/README.md) holds both endpoint distributions, all occupied bins, stationarity and overall physical movement fixed while changing local crossing rules. It evaluates affine distance recovery, folds and actual goal-reaching with shared versus policy-native predictor data. SIGReg stays unchanged. These controlled policies follow up the zoo; they do not replace its original ICM or OU results.
+
 ## Findings
 
 **1. Most simple policies recover distance about as well as random actions. Learned curiosity bonuses are the outliers.** Pure-protocol mean shared-range $R^2$ over 20 seeds (Holm-corrected paired sign-flip tests):

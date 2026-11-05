@@ -14,7 +14,9 @@ $$
 
 The scene still has **one changing coordinate: distance**.
 
-**Latest: [ten-trial curves and planning comparison](behavior-policy-experiments/qualitative-study/README.md).** ICM and ICM→OU each fold in 5/10 new trials; OU folds in 0/10. ICM→OU beats OU in only 2/10 held-out planning comparisons, with no significant advantage. Balancing only the SIGReg sampling removes the observed folds in both tested binnings and brings average shared-data goal error close to OU's. The gallery includes coverage versus planning plots and controlled region removals.
+**Latest controlled test: [same coverage, different movement](behavior-policy-experiments/policy-zoo/matched-coverage/README.md).** Forty encoder fits and 80 planning evaluations keep stationarity, both endpoint distance distributions and overall physical movement fixed. Recovery is nearly identical across the four tested policies; no corrected planning comparison is significant. SIGReg is unchanged.
+
+**Earlier: [ten-trial curves and planning comparison](behavior-policy-experiments/qualitative-study/README.md).** ICM and ICM→OU each fold in 5/10 new trials; OU folds in 0/10. ICM→OU beats OU in only 2/10 held-out planning comparisons, with no significant advantage. Balancing only the SIGReg sampling removes the observed folds in both tested binnings and brings average shared-data goal error close to OU's. The gallery includes coverage versus planning plots and controlled region removals.
 
 [Why the ICM curves bend near distance 2–4](behavior-policy-experiments/qualitative-study/fold-location/README.md): matched input-gain controls move the learned extrema while keeping the data fixed. The encoder's input scale matters; this is not a special physical distance.
 
