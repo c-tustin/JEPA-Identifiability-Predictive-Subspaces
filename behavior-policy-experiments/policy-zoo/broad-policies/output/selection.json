@@ -1,0 +1,31 @@
+{
+  "selected": {
+    "pure": [
+      "adaptive_bias",
+      "no_escort_log_diffusion"
+    ],
+    "handover": [
+      "guarded_bias",
+      "adaptive_bias"
+    ]
+  },
+  "discovery_means": {
+    "pure": {
+      "guarded_bias": 0.9576658670292172,
+      "gentle_bias": 0.9556203421749278,
+      "adaptive_bias": 0.9751048971159719,
+      "guarded_sweep": 0.9612461188984867,
+      "bias_sweep_mix": 0.9617170497957833,
+      "no_escort_log_diffusion": 0.9719303529003447
+    },
+    "handover": {
+      "guarded_bias": 0.9982590329222777,
+      "gentle_bias": 0.997683260780758,
+      "adaptive_bias": 0.9979449689177995,
+      "guarded_sweep": 0.996303257801453,
+      "bias_sweep_mix": 0.9962864940867,
+      "no_escort_log_diffusion": 0.997621496218555
+    }
+  },
+  "rule": "Top two by discovery mean R\u00b2 within protocol; ties by name; no fold/p-value selection."
+}
