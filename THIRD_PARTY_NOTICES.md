@@ -1,6 +1,6 @@
 # Third-party notices
 
-`SIGReg1D` in `identifiability/reproduce.py` adapts the scalar form of SIGReg in the following MIT-licensed project:
+`SIGReg1D` in `behavior-policy-experiments/identifiability/sigreg.py` (also exported by `reproduce.py`) adapts the scalar form of SIGReg in the following MIT-licensed project:
 
 - Project: [LeJEPA Identifiability](https://github.com/klindtlab/lejepa-identifiability)
 - Source: [`experiments/lejepa_id/losses.py`](https://github.com/klindtlab/lejepa-identifiability/blob/main/experiments/lejepa_id/losses.py)
@@ -31,3 +31,8 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
+
+
+## Curiosity-driven exploration (Pathak et al., 2017)
+
+The ICM and actor–critic implementations in `behavior-policy-experiments/curiosity/experiment.py` and the adapted actor/reward loop in `behavior-policy-experiments/reliability/policies.py` is a source-derived PyTorch port of [pathak22/noreward-rl](https://github.com/pathak22/noreward-rl), commit `3e220c2177fc253916f12d980957fc40579d577a`. The relevant unmodified sources and complete BSD-style and OpenAI MIT notices are retained under [the upstream snapshot](behavior-policy-experiments/curiosity/upstream/noreward-rl/LICENSE). Those notices apply to the snapshot and adapted portions; the repository's MIT license does not replace them. The curiosity README documents exactly what is ported and changed.

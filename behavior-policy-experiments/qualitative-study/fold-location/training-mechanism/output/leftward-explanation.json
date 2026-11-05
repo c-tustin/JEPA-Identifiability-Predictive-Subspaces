@@ -1,0 +1,44 @@
+{
+  "seed": 131,
+  "gain": 4,
+  "new_training": false,
+  "finite_update_interventions": [
+    {
+      "updates_before": 250,
+      "distance_before": 6.063222511132533,
+      "before_distance": 6.063222511132533,
+      "before_log_shift": 0.0,
+      "actual_distance": 5.9207362500222755,
+      "actual_log_shift": -0.023780618535750087,
+      "alignment_only_distance": 6.062939162038962,
+      "alignment_only_log_shift": -4.673351737505271e-05,
+      "sigreg_only_distance": 5.921005320661996,
+      "sigreg_only_log_shift": -0.023735174098686418
+    },
+    {
+      "updates_before": 500,
+      "distance_before": 3.443679138165885,
+      "before_distance": 3.443679138165885,
+      "before_log_shift": 0.0,
+      "actual_distance": 3.443178743288212,
+      "actual_log_shift": -0.00014531877589663011,
+      "alignment_only_distance": 3.4434261522021634,
+      "alignment_only_log_shift": -7.34665590749195e-05,
+      "sigreg_only_distance": 3.4434314145716156,
+      "sigreg_only_log_shift": -7.193832376550802e-05
+    },
+    {
+      "updates_before": 1000,
+      "distance_before": 3.073262021939335,
+      "before_distance": 3.073262021939335,
+      "before_log_shift": 0.0,
+      "actual_distance": 3.0703837073884137,
+      "actual_log_shift": -0.0009370054486614876,
+      "alignment_only_distance": 3.07286321025028,
+      "alignment_only_log_shift": -0.00012977662333524265,
+      "sigreg_only_distance": 3.070781935467024,
+      "sigreg_only_log_shift": -0.0008073140831039716
+    }
+  ],
+  "note": "Counterfactual components include momentum history and the actual shared Adam denominator. They are not independently trained optimizers. Display normalization is fixed over time."
+}

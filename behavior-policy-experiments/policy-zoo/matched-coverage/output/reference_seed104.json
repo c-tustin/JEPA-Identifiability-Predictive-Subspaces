@@ -1,0 +1,95 @@
+{
+  "name": "reference",
+  "seed": 104,
+  "protocol_hash": "35576d83f673ce7abf064386a2e707009d08b1fb1342966de1a815515b81c6f4",
+  "representation": {
+    "log_distance_r2": 0.9970392421938536,
+    "physical_distance_r2": 0.8835616073005136,
+    "uniform_log_grid_r2": 0.997464635170978,
+    "slow_feature_r2": 0.7479659251988612,
+    "folded": false,
+    "reversed_fraction": 0.0,
+    "eigenvalue_1": 0.999631115175483,
+    "alignment_unit_variance": 0.003057183425149823
+  },
+  "history": [
+    {
+      "step": 1000,
+      "alignment": 0.0019039369653910398,
+      "sigreg": 11.968198776245117,
+      "lr": 0.001,
+      "log_distance_r2": 0.9907142789654894,
+      "physical_distance_r2": 0.8676372770695842,
+      "uniform_log_grid_r2": 0.9913849889107719,
+      "slow_feature_r2": 0.7276351061374711,
+      "folded": false,
+      "reversed_fraction": 0.0,
+      "eigenvalue_1": 0.999631115175483,
+      "alignment_unit_variance": 0.00267208147674447
+    },
+    {
+      "step": 2000,
+      "alignment": 0.0019186222925782204,
+      "sigreg": 12.319435119628906,
+      "lr": 0.001,
+      "log_distance_r2": 0.9926746750565937,
+      "physical_distance_r2": 0.8749086024408671,
+      "uniform_log_grid_r2": 0.9933032941111162,
+      "slow_feature_r2": 0.7371370815313444,
+      "folded": false,
+      "reversed_fraction": 0.0,
+      "eigenvalue_1": 0.999631115175483,
+      "alignment_unit_variance": 0.002706929735018404
+    },
+    {
+      "step": 3000,
+      "alignment": 0.002091628033667803,
+      "sigreg": 8.158535957336426,
+      "lr": 0.0005003928954890302,
+      "log_distance_r2": 0.9958838461853116,
+      "physical_distance_r2": 0.8799952057250271,
+      "uniform_log_grid_r2": 0.9963593034679022,
+      "slow_feature_r2": 0.7433366561263802,
+      "folded": false,
+      "reversed_fraction": 0.0,
+      "eigenvalue_1": 0.999631115175483,
+      "alignment_unit_variance": 0.002956356476783828
+    },
+    {
+      "step": 4000,
+      "alignment": 0.0019874311983585358,
+      "sigreg": 8.812300682067871,
+      "lr": 0.0,
+      "log_distance_r2": 0.9970392421938536,
+      "physical_distance_r2": 0.8835616073005136,
+      "uniform_log_grid_r2": 0.997464635170978,
+      "slow_feature_r2": 0.7479659251988612,
+      "folded": false,
+      "reversed_fraction": 0.0,
+      "eigenvalue_1": 0.999631115175483,
+      "alignment_unit_variance": 0.003057183425149823
+    }
+  ],
+  "planning": {
+    "shared": {
+      "goal_error": 0.0859375,
+      "success": 1.0,
+      "stay_error": 1.0625,
+      "oracle_error": 0.0,
+      "near_error": 0.0,
+      "middle_error": 0.0714285746216774,
+      "far_error": 0.13333334028720856,
+      "heldout_latent_mse": 1.3932598449173383e-05
+    },
+    "native": {
+      "goal_error": 0.06640625,
+      "success": 0.96875,
+      "stay_error": 1.0625,
+      "oracle_error": 0.0,
+      "near_error": 0.0,
+      "middle_error": 0.0,
+      "far_error": 0.14166666567325592,
+      "heldout_latent_mse": 1.6396397768403403e-05
+    }
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "passed": true,
+  "models_checked": {
+    "discovery": 240,
+    "confirmation": 220
+  },
+  "sources_checked": 300,
+  "max_metric_difference": 0.0,
+  "max_curve_difference": 0.0,
+  "regenerated_new_policy_sources": [
+    {
+      "policy": "guarded_bias",
+      "seed": 8
+    },
+    {
+      "policy": "gentle_bias",
+      "seed": 8
+    },
+    {
+      "policy": "adaptive_bias",
+      "seed": 8
+    },
+    {
+      "policy": "guarded_sweep",
+      "seed": 8
+    },
+    {
+      "policy": "bias_sweep_mix",
+      "seed": 8
+    },
+    {
+      "policy": "no_escort_log_diffusion",
+      "seed": 8
+    },
+    {
+      "policy": "adaptive_bias",
+      "seed": 48
+    },
+    {
+      "policy": "guarded_bias",
+      "seed": 48
+    },
+    {
+      "policy": "no_escort_log_diffusion",
+      "seed": 48
+    }
+  ],
+  "full_training_replays": [
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "adaptive_bias",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "gentle_bias",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "guarded_bias",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "guarded_sweep",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "bias_sweep_mix",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "no_escort_log_diffusion",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "protocol": "pure",
+      "policy": "adaptive_bias",
+      "seed": 48,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "protocol": "pure",
+      "policy": "no_escort_log_diffusion",
+      "seed": 48,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "protocol": "handover",
+      "policy": "guarded_bias",
+      "seed": 48,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "protocol": "handover",
+      "policy": "adaptive_bias",
+      "seed": 48,
+      "max_parameter_error": 0.0
+    }
+  ],
+  "scope": "Every saved model/score/fold/curve, source fingerprints, seed pairing, frozen discovery selection, and every test family; representative source regeneration and full training replays, not every training history."
+}
