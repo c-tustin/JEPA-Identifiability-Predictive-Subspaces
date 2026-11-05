@@ -1,0 +1,456 @@
+{
+  "scope": "Post hoc conservative sensitivity check: one Holm family over all 29 newly reported exact tests, in addition to the predeclared separate families. Does not remove exploratory/adaptive study-design limits.",
+  "tests": [
+    {
+      "comparison": "alignment_removal",
+      "policy": "icm",
+      "endpoint": "affine_log_r2",
+      "n": 20,
+      "mean_gain": 0.022034029407794455,
+      "wins": 4,
+      "losses": 16,
+      "p": 0.01181793212890625,
+      "ci95": [
+        -0.008256107404488863,
+        0.07759271990576543
+      ],
+      "holm_p": 0.09454345703125,
+      "global_holm_p": 0.2599945068359375
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "icm",
+      "endpoint": "fold_status",
+      "n": 20,
+      "mean_gain": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "p": 1.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "random",
+      "endpoint": "affine_log_r2",
+      "n": 20,
+      "mean_gain": 7.419100831197456e-05,
+      "wins": 19,
+      "losses": 1,
+      "p": 4.00543212890625e-05,
+      "ci95": [
+        6.161731116954256e-05,
+        8.493947125198865e-05
+      ],
+      "holm_p": 0.000400543212890625,
+      "global_holm_p": 0.00112152099609375
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "random",
+      "endpoint": "fold_status",
+      "n": 20,
+      "mean_gain": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "p": 1.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "count",
+      "endpoint": "affine_log_r2",
+      "n": 20,
+      "mean_gain": 3.826995404244693e-05,
+      "wins": 16,
+      "losses": 4,
+      "p": 0.01181793212890625,
+      "ci95": [
+        1.0468226031152827e-05,
+        6.277547611198197e-05
+      ],
+      "holm_p": 0.09454345703125,
+      "global_holm_p": 0.2599945068359375
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "count",
+      "endpoint": "fold_status",
+      "n": 20,
+      "mean_gain": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "p": 1.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "ou_actions_lp_w0.1",
+      "endpoint": "affine_log_r2",
+      "n": 20,
+      "mean_gain": -0.00032772552344277893,
+      "wins": 6,
+      "losses": 14,
+      "p": 0.11531829833984375,
+      "ci95": [
+        -0.0007792858372107309,
+        -2.7662630849306936e-05
+      ],
+      "holm_p": 0.6919097900390625,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "ou_actions_lp_w0.1",
+      "endpoint": "fold_status",
+      "n": 20,
+      "mean_gain": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "p": 1.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "rnd",
+      "endpoint": "affine_log_r2",
+      "n": 20,
+      "mean_gain": -0.0011441134626029262,
+      "wins": 3,
+      "losses": 17,
+      "p": 0.0025768280029296875,
+      "ci95": [
+        -0.004937978085458622,
+        0.0032391059862773857
+      ],
+      "holm_p": 0.023191452026367188,
+      "global_holm_p": 0.05926704406738281
+    },
+    {
+      "comparison": "alignment_removal",
+      "policy": "rnd",
+      "endpoint": "fold_status",
+      "n": 20,
+      "mean_gain": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "p": 1.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "original_shared_vs_ou",
+      "policy": "icm",
+      "n": 10,
+      "mean_gain": -0.747265625,
+      "wins": 1,
+      "losses": 9,
+      "p": 0.021484375,
+      "ci95": [
+        -1.03125,
+        -0.46014648437500083
+      ],
+      "holm_p": 0.0859375,
+      "global_holm_p": 0.4296875
+    },
+    {
+      "comparison": "original_shared_vs_ou",
+      "policy": "random",
+      "n": 10,
+      "mean_gain": 0.045703125,
+      "wins": 7,
+      "losses": 3,
+      "p": 0.34375,
+      "ci95": [
+        0.01875,
+        0.07110351562499914
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "original_shared_vs_ou",
+      "policy": "count",
+      "n": 10,
+      "mean_gain": 0.00859375,
+      "wins": 6,
+      "losses": 3,
+      "p": 0.5078125,
+      "ci95": [
+        -0.019140625,
+        0.0328125
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "original_shared_vs_ou",
+      "policy": "ou_actions_lp_w0.1",
+      "n": 10,
+      "mean_gain": -0.224609375,
+      "wins": 5,
+      "losses": 5,
+      "p": 1.0,
+      "ci95": [
+        -0.595703125,
+        0.041796875
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "original_shared_vs_ou",
+      "policy": "rnd",
+      "n": 10,
+      "mean_gain": -1.9453125,
+      "wins": 0,
+      "losses": 10,
+      "p": 0.001953125,
+      "ci95": [
+        -2.133203125,
+        -1.726171875
+      ],
+      "holm_p": 0.009765625,
+      "global_holm_p": 0.05078125
+    },
+    {
+      "comparison": "original_native_vs_shared",
+      "policy": "icm",
+      "n": 10,
+      "mean_gain": -0.11875,
+      "wins": 4,
+      "losses": 6,
+      "p": 0.75390625,
+      "ci95": [
+        -0.30703125,
+        0.015234375
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "original_native_vs_shared",
+      "policy": "random",
+      "n": 10,
+      "mean_gain": -0.038671875,
+      "wins": 2,
+      "losses": 8,
+      "p": 0.109375,
+      "ci95": [
+        -0.069140625,
+        -0.006640625
+      ],
+      "holm_p": 0.546875,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "original_native_vs_shared",
+      "policy": "count",
+      "n": 10,
+      "mean_gain": -0.030859375,
+      "wins": 4,
+      "losses": 6,
+      "p": 0.75390625,
+      "ci95": [
+        -0.06640625,
+        0.008203125
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "original_native_vs_shared",
+      "policy": "ou_actions_lp_w0.1",
+      "n": 10,
+      "mean_gain": 0.0625,
+      "wins": 2,
+      "losses": 8,
+      "p": 0.109375,
+      "ci95": [
+        -0.066796875,
+        0.237109375
+      ],
+      "holm_p": 0.546875,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "original_native_vs_shared",
+      "policy": "rnd",
+      "n": 10,
+      "mean_gain": 0.327734375,
+      "wins": 7,
+      "losses": 3,
+      "p": 0.34375,
+      "ci95": [
+        0.083984375,
+        0.5472753906249991
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "early_identifiability",
+      "policy": "icm",
+      "endpoint": "affine_log_r2",
+      "n": 20,
+      "mean_gain": 0.34224438904717186,
+      "wins": 19,
+      "losses": 1,
+      "p": 4.00543212890625e-05,
+      "ci95": [
+        0.2046139410013393,
+        0.49370573779401233
+      ],
+      "holm_p": 0.0002002716064453125,
+      "global_holm_p": 0.00112152099609375
+    },
+    {
+      "comparison": "early_identifiability",
+      "policy": "icm",
+      "endpoint": "fold_status",
+      "n": 20,
+      "mean_gain": 0.5,
+      "wins": 10,
+      "losses": 0,
+      "p": 0.001953125,
+      "ci95": [
+        0.3,
+        0.7
+      ],
+      "holm_p": 0.0078125,
+      "global_holm_p": 0.05078125
+    },
+    {
+      "comparison": "early_identifiability",
+      "policy": "random",
+      "endpoint": "affine_log_r2",
+      "n": 20,
+      "mean_gain": -0.0018619088894559655,
+      "wins": 12,
+      "losses": 8,
+      "p": 0.5034446716308594,
+      "ci95": [
+        -0.006232948102428744,
+        0.002224554794146922
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "early_identifiability",
+      "policy": "random",
+      "endpoint": "fold_status",
+      "n": 20,
+      "mean_gain": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "p": 1.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "early_identifiability",
+      "policy": "count",
+      "endpoint": "affine_log_r2",
+      "n": 20,
+      "mean_gain": -0.04596462619978491,
+      "wins": 0,
+      "losses": 20,
+      "p": 1.9073486328125e-06,
+      "ci95": [
+        -0.05310438441317098,
+        -0.03954778181805568
+      ],
+      "holm_p": 1.1444091796875e-05,
+      "global_holm_p": 5.53131103515625e-05
+    },
+    {
+      "comparison": "early_identifiability",
+      "policy": "count",
+      "endpoint": "fold_status",
+      "n": 20,
+      "mean_gain": 0.0,
+      "wins": 0,
+      "losses": 0,
+      "p": 1.0,
+      "ci95": [
+        0.0,
+        0.0
+      ],
+      "holm_p": 1.0,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "early_shared_planning",
+      "policy": "icm",
+      "n": 10,
+      "mean_gain": 0.780078125,
+      "wins": 10,
+      "losses": 0,
+      "p": 0.001953125,
+      "ci95": [
+        0.503125,
+        1.056640625
+      ],
+      "holm_p": 0.005859375,
+      "global_holm_p": 0.05078125
+    },
+    {
+      "comparison": "early_shared_planning",
+      "policy": "random",
+      "n": 10,
+      "mean_gain": 0.0015625,
+      "wins": 2,
+      "losses": 4,
+      "p": 0.6875,
+      "ci95": [
+        -0.008984375,
+        0.01484375
+      ],
+      "holm_p": 0.6875,
+      "global_holm_p": 1.0
+    },
+    {
+      "comparison": "early_shared_planning",
+      "policy": "count",
+      "n": 10,
+      "mean_gain": 0.025390625,
+      "wins": 7,
+      "losses": 3,
+      "p": 0.34375,
+      "ci95": [
+        -0.0046875,
+        0.056650390624999145
+      ],
+      "holm_p": 0.6875,
+      "global_holm_p": 1.0
+    }
+  ]
+}

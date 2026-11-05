@@ -14,7 +14,9 @@ $$
 
 The scene still has **one changing coordinate: distance**.
 
-**Latest controlled test: [same coverage, different movement](behavior-policy-experiments/policy-zoo/matched-coverage/README.md).** Forty encoder fits and 80 planning evaluations keep stationarity, both endpoint distance distributions and overall physical movement fixed. Recovery is nearly identical across the four tested policies; no corrected planning comparison is significant. SIGReg is unchanged.
+**Latest: [original policies, identifiability and the ICM-fold explanation](behavior-policy-experiments/policy-zoo/original-policy-followup/README.md).** Keeping each seed's ICM actor frozen gives 10/20 folded encoders with late collection and 0/20 with early collection. Recovery rises from 0.6035 to 0.9457; shared-data goal error falls from 0.8316 to 0.0516. The study includes all 700 original zoo encoders, 100 alignment-removal controls and 60 collection-age controls, with SIGReg unchanged.
+
+**Earlier controlled test: [same coverage, different movement](behavior-policy-experiments/policy-zoo/matched-coverage/README.md).** Forty encoder fits and 80 planning evaluations keep stationarity, both endpoint distance distributions and overall physical movement fixed. Recovery is nearly identical across the four tested policies; no corrected planning comparison is significant. SIGReg is unchanged.
 
 **Earlier: [ten-trial curves and planning comparison](behavior-policy-experiments/qualitative-study/README.md).** ICM and ICM→OU each fold in 5/10 new trials; OU folds in 0/10. ICM→OU beats OU in only 2/10 held-out planning comparisons, with no significant advantage. Balancing only the SIGReg sampling removes the observed folds in both tested binnings and brings average shared-data goal error close to OU's. The gallery includes coverage versus planning plots and controlled region removals.
 
