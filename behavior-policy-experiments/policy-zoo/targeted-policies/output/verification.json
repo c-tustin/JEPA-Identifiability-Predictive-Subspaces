@@ -1,0 +1,132 @@
+{
+  "passed": true,
+  "models_checked": {
+    "discovery": 280,
+    "confirmation": 180
+  },
+  "sources_checked": 280,
+  "max_metric_difference": 0.0,
+  "max_curve_difference": 0.0,
+  "regenerated_new_policy_sources": [
+    {
+      "policy": "gaussian_walk",
+      "seed": 8
+    },
+    {
+      "policy": "gaussian_log_diffusion",
+      "seed": 8
+    },
+    {
+      "policy": "gaussian_wide_diffusion",
+      "seed": 8
+    },
+    {
+      "policy": "gaussian_target_fast",
+      "seed": 8
+    },
+    {
+      "policy": "gaussian_target_slow",
+      "seed": 8
+    },
+    {
+      "policy": "gaussian_deficit",
+      "seed": 8
+    },
+    {
+      "policy": "gaussian_start_random",
+      "seed": 8
+    },
+    {
+      "policy": "gaussian_start_random",
+      "seed": 28
+    },
+    {
+      "policy": "gaussian_target_slow",
+      "seed": 28
+    },
+    {
+      "policy": "gaussian_wide_diffusion",
+      "seed": 28
+    }
+  ],
+  "full_training_replays": [
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "gaussian_walk",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "gaussian_wide_diffusion",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "gaussian_log_diffusion",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "gaussian_target_fast",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "gaussian_deficit",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "gaussian_target_slow",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "protocol": "pure",
+      "policy": "gaussian_wide_diffusion",
+      "seed": 28,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "discovery",
+      "protocol": "pure",
+      "policy": "gaussian_start_random",
+      "seed": 8,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "protocol": "pure",
+      "policy": "gaussian_target_slow",
+      "seed": 28,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "protocol": "handover",
+      "policy": "gaussian_wide_diffusion",
+      "seed": 28,
+      "max_parameter_error": 0.0
+    },
+    {
+      "stage": "confirmation",
+      "protocol": "handover",
+      "policy": "gaussian_start_random",
+      "seed": 28,
+      "max_parameter_error": 0.0
+    }
+  ],
+  "scope": "Every saved model/score/fold/curve, source fingerprints, seed pairing, frozen discovery selection, and every test family; representative source regeneration and full training replays, not every training history."
+}

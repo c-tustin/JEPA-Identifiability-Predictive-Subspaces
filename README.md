@@ -41,7 +41,7 @@ A longer, 8,000-update OU control reaches 0.9992 on the same validation seeds. E
 
 ## Policy zoo
 
-A [20-seed paired comparison](behavior-policy-experiments/policy-zoo/README.md) of 17 physical behavior policies and low-/high-pass filtered OU sources, all under the reliability protocol. Most simple policies match random actions; persistent policies and learned curiosity bonuses (ICM, RND, disagreement) degrade recovery when their data are used alone. Across policies, recovery tracks how Gaussian the visited log-distance distribution is (Spearman −0.91). Filtering OU changes results only through its lag-1 correlation. Negative-correlation sources still recover distance, but only because training never reaches their lower-loss folded optimum.
+The [original 20-seed comparison](behavior-policy-experiments/policy-zoo/README.md) covers 17 physical behavior policies and Gaussian OU source variants. The [expanded catalog adds 13 controllers](behavior-policy-experiments/policy-zoo/new-policy-results/README.md), with fresh-seed testing and comparisons against OU and the old best policies. Gaussian-looking visits alone are insufficient: pair dynamics, initialization and finite training also matter. These physical-policy extensions are [outside the paper's exact Gaussian-OU assumptions](behavior-policy-experiments/policy-zoo/ASSUMPTION_BOUNDARY.md); their reported gains concern finite-training representation recovery.
 
 ## Learned OU and planning
 

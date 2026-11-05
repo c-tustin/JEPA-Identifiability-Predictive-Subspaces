@@ -1,0 +1,82 @@
+{
+  "stage": "discovery",
+  "protocol": "pure",
+  "source": "gaussian_deficit",
+  "seed": 14,
+  "metrics": {
+    "common_grid_r2": 0.9904782801321136,
+    "reference_ou_r2": 0.9724261130496972,
+    "reference_ou_raw_variance": 1.3415638208389282,
+    "reference_ou_gaussian_cf_error": 0.05964335799217224,
+    "reference_ou_alignment": 0.2903670072555542,
+    "reversed_grid_fraction": 0.0
+  },
+  "initial_metrics": {
+    "common_grid_r2": 0.9010616908172899,
+    "reference_ou_r2": 0.8708937561114195,
+    "reference_ou_raw_variance": 7.063872180879116e-05,
+    "reference_ou_gaussian_cf_error": 0.40212032198905945,
+    "reference_ou_alignment": 1.699605127214454e-05
+  },
+  "history": [
+    {
+      "updates": 1000,
+      "alignment": 0.013720687478780746,
+      "sigreg": 4.048492908477783,
+      "lr": 0.001,
+      "common_grid_r2": 0.9888549570177328,
+      "reference_ou_r2": 0.9693815449795185,
+      "reference_ou_raw_variance": 1.3299109935760498,
+      "reference_ou_gaussian_cf_error": 0.06427288055419922,
+      "reference_ou_alignment": 0.28951311111450195
+    },
+    {
+      "updates": 2000,
+      "alignment": 0.013884840533137321,
+      "sigreg": 4.51359748840332,
+      "lr": 0.001,
+      "common_grid_r2": 0.9894599793074688,
+      "reference_ou_r2": 0.9705187208240533,
+      "reference_ou_raw_variance": 1.2931933403015137,
+      "reference_ou_gaussian_cf_error": 0.053699836134910583,
+      "reference_ou_alignment": 0.2809153199195862
+    },
+    {
+      "updates": 3000,
+      "alignment": 0.01340368203818798,
+      "sigreg": 10.552802085876465,
+      "lr": 0.0005003928954890302,
+      "common_grid_r2": 0.9902354687837395,
+      "reference_ou_r2": 0.9719691200810019,
+      "reference_ou_raw_variance": 1.310983419418335,
+      "reference_ou_gaussian_cf_error": 0.05510085076093674,
+      "reference_ou_alignment": 0.2839926779270172
+    },
+    {
+      "updates": 4000,
+      "alignment": 0.014749537222087383,
+      "sigreg": 2.8054404258728027,
+      "lr": 0.0,
+      "common_grid_r2": 0.9904782801321136,
+      "reference_ou_r2": 0.9724261130496972,
+      "reference_ou_raw_variance": 1.3415638208389282,
+      "reference_ou_gaussian_cf_error": 0.05964335799217224,
+      "reference_ou_alignment": 0.2903670072555542
+    }
+  ],
+  "source_statistics": {
+    "lag_correlation": 0.9904577732086182,
+    "gaussian_cdf_distance": 0.018103837966918945,
+    "z_std": 0.7156141400337219,
+    "size_bin_entropy": 0.9115269780158997,
+    "size_bin_coverage": 1.0,
+    "max_size_bin_mass": 0.0653076171875,
+    "fraction_in_sensor_range": 1.0,
+    "stay_fraction": 0.33721923828125,
+    "mean_abs_step": 0.07194841653108597,
+    "sha256": "456c45a9c70d06a42200499e3853ba7644281e1fe35fce8fdbbfd33889b1f563"
+  },
+  "pair_indices_sha256": "6cac8b745baab3c369b3811afd44ce9fdd25469e89f6d7f39d9ed5909c1732cf",
+  "masks_sha256": "e09534d59390e996d03db62710722cd319f787613231ec0ab6b4d53b0837c94f",
+  "checkpoint": "checkpoints/discovery/pure-gaussian_deficit_seed14.pt"
+}
