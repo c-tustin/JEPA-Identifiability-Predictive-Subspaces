@@ -4,6 +4,8 @@ Same triangle, same single distance coordinate, same encoder and loss as the [re
 
 Physical policies are run two ways. **Pure** uses only the policy's data for all 4,000 updates. **Handover** uses the original 25%→75% handover to fixed OU, the protocol behind the earlier tables. Settings and tests were fixed in advance in [PROTOCOL.md](PROTOCOL.md). Full tables, CIs and every p-value are in [output/RESULTS.md](output/RESULTS.md).
 
+**New explanation and tests:** [short explanation of the data, initialization and loss effects](mechanism-tests/SUMMARY.md), with crossed fits and targeted statistical checks. These exploratory follow-ups retain the original results and distinguish truly untrained encoders from their first training update.
+
 ## Findings
 
 **1. Most simple policies recover distance about as well as random actions. Learned curiosity bonuses are the outliers.** Pure-protocol mean shared-range $R^2$ over 20 seeds (Holm-corrected paired sign-flip tests):
@@ -34,11 +36,11 @@ In the pure protocol only count coverage beats random significantly. Persistent 
 
 **4. Low-pass and high-pass OU in latent space change almost nothing, and the reason is informative.** A linear filter keeps a Gaussian process Gaussian, so every filtered pair is bivariate normal with some lag-1 correlation ρ. Filtering spans ρ from +0.995 (low-pass) down to +0.30 (high-pass), and to −0.07 and −0.45 (second-order high-pass).
 
-- Filtered trajectories never differ significantly from i.i.d. pairs with the same ρ (all Holm p = 1). The filter matters only through ρ.
+- Filtered trajectories never differ significantly from i.i.d. pairs with the same ρ (all original Holm p = 1). At the population one-pair level, a stationary Gaussian source is specified by its marginal variance and ρ. Finite correlated datasets can still differ. The [follow-up equivalence tests](mechanism-tests/README.md) support agreement within ±0.001 R² for these trained encoders; a non-significant difference alone would not establish that.
 - All 160 filtered and 160 matched runs stay at $R^2$ ≥ 0.991 with no folds. Differences from fixed OU are tiny but significant for the high-pass end: −0.0005 at ρ = 0.30, and −0.0013 / −0.0021 at ρ = −0.07 / −0.45.
-- **The negative-ρ result is not identifiability.** For ρ < 0, the population alignment term favors an even (folded) code. Under the implemented loss, a Gaussianized fold $y=\Phi^{-1}(F_{\chi^2_1}(z^2))$ scores 1.65 at ρ = −0.45, below the best rescaled linear map's 2.71. Training never finds it: with 8,000 updates (exploratory, added afterwards), linear recovery *improves* to 0.998 and there are still 0/80 folds. The encoder starts close to affine (mean $R^2$ ≈ 0.93 after one update) and stays in that basin. So here, high-pass recovery reflects initialization and optimization bias, not a property of the data.
+- **The negative-ρ result is not identifiability.** For ρ < 0, an even Gaussianized fold can beat a linear code on population alignment. A [finite paired-batch calculation](mechanism-tests/MATH.md) gives expected implemented loss **1.648** for that fold versus **2.568** for the best rescaled linear code at ρ ≈ −0.452. This corrects the earlier 2.71 reference, which was not the rescaled minimum. With 8,000 updates (exploratory), trained linear recovery *improves* to 0.998 and there are still 0/80 folds. A lower-loss measurable comparator and the trained finite network differ; this does not prove that the fixed architecture can represent the comparator exactly, or isolate optimization from expressivity and finite-data effects.
 
-**5. The metric has a high floor.** Every condition shares a seed's initialization, and that initial tanh encoder already scores mean $R^2$ ≈ 0.93. Good conditions mostly *preserve or refine* this map. ICM starts at 0.94 after one update and ends at 0.60, so it actively destroys it. Read large differences (ICM, RND, disagreement, persistent policies) as real data effects. Treat differences in the third decimal place as conditional on this architecture.
+**5. Initialization supplies a substantial, uneven head start.** Every condition shares a seed's initialization. The truly untrained mean $R^2$ is **0.886**, with 5/20 initially folded encoders; the previously quoted **0.934** is after one OU update. Good policies can refine or repair these maps. ICM ends at 0.603 and worsens the untouched baseline in 17/20 seeds (follow-up Holm-adjusted sign-test p = 0.0387). Read large differences as data-dependent training effects; treat third-decimal differences as conditional on the architecture. The [crossed experiment](mechanism-tests/README.md) separates data and initialization more directly.
 
 ![Policies](output/policies.png)
 
