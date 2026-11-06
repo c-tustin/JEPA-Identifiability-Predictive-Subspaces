@@ -1,0 +1,167 @@
+{
+  "post_hoc": true,
+  "primary": "Seed-blocked permutation repeated-measures ANOVA (policy means)",
+  "sensitivity": "Seed-blocked Friedman permutation test (policy ranks)",
+  "permutations_per_nondegenerate_test": 100000,
+  "multiplicity_family": 12,
+  "margins_used": false,
+  "rows": [
+    {
+      "study": "previous_stationary_four",
+      "endpoint": "recovery",
+      "seeds": 10,
+      "policies": 4,
+      "mean_test": {
+        "statistic": 1.1709003804747014,
+        "p": 0.34221657783422166,
+        "df_policy": 3,
+        "df_residual": 27,
+        "permutations": 100000,
+        "exceedances": 34221,
+        "all_within_seed_equal": false,
+        "assumption": "Exchangeability of policy labels within seed under the null; no parametric F reference distribution used.",
+        "holm_p": 1.0
+      },
+      "rank_test": {
+        "statistic": 3.48,
+        "p": 0.3269567304326957,
+        "permutations": 100000,
+        "exceedances": 32695,
+        "all_tied": false,
+        "assumption": "Within-seed policy-label exchangeability under the null.",
+        "holm_p": 1.0
+      }
+    },
+    {
+      "study": "previous_stationary_four",
+      "endpoint": "shared_goal_error",
+      "seeds": 10,
+      "policies": 4,
+      "mean_test": {
+        "statistic": 0.9999999999999999,
+        "p": 1.0,
+        "df_policy": 3,
+        "df_residual": 27,
+        "permutations": 100000,
+        "exceedances": 100000,
+        "all_within_seed_equal": false,
+        "assumption": "Exchangeability of policy labels within seed under the null; no parametric F reference distribution used.",
+        "holm_p": 1.0
+      },
+      "rank_test": {
+        "statistic": 2.9999999999999973,
+        "p": 1.0,
+        "permutations": 100000,
+        "exceedances": 100000,
+        "all_tied": false,
+        "assumption": "Within-seed policy-label exchangeability under the null.",
+        "holm_p": 1.0
+      }
+    },
+    {
+      "study": "previous_stationary_four",
+      "endpoint": "native_goal_error",
+      "seeds": 10,
+      "policies": 4,
+      "mean_test": {
+        "statistic": 1.2214059276405174,
+        "p": 0.31779682203177967,
+        "df_policy": 3,
+        "df_residual": 27,
+        "permutations": 100000,
+        "exceedances": 31779,
+        "all_within_seed_equal": false,
+        "assumption": "Exchangeability of policy labels within seed under the null; no parametric F reference distribution used.",
+        "holm_p": 1.0
+      },
+      "rank_test": {
+        "statistic": 1.2857142857142858,
+        "p": 0.7525824741752583,
+        "permutations": 100000,
+        "exceedances": 75258,
+        "all_tied": false,
+        "assumption": "Within-seed policy-label exchangeability under the null.",
+        "holm_p": 1.0
+      }
+    },
+    {
+      "study": "original_policies_common_reset",
+      "endpoint": "recovery",
+      "seeds": 20,
+      "policies": 7,
+      "mean_test": {
+        "statistic": 1.6598986925888821,
+        "p": 0.11754882451175488,
+        "df_policy": 6,
+        "df_residual": 114,
+        "permutations": 100000,
+        "exceedances": 11754,
+        "all_within_seed_equal": false,
+        "assumption": "Exchangeability of policy labels within seed under the null; no parametric F reference distribution used.",
+        "holm_p": 1.0
+      },
+      "rank_test": {
+        "statistic": 8.807142857142857,
+        "p": 0.1828181718182818,
+        "permutations": 100000,
+        "exceedances": 18281,
+        "all_tied": false,
+        "assumption": "Within-seed policy-label exchangeability under the null.",
+        "holm_p": 1.0
+      }
+    },
+    {
+      "study": "original_policies_common_reset",
+      "endpoint": "shared_goal_error",
+      "seeds": 20,
+      "policies": 7,
+      "mean_test": {
+        "statistic": 0.9250936329588012,
+        "p": 0.7158028419715803,
+        "df_policy": 6,
+        "df_residual": 114,
+        "permutations": 100000,
+        "exceedances": 71580,
+        "all_within_seed_equal": false,
+        "assumption": "Exchangeability of policy labels within seed under the null; no parametric F reference distribution used.",
+        "holm_p": 1.0
+      },
+      "rank_test": {
+        "statistic": 5.57142857142857,
+        "p": 0.7151228487715123,
+        "permutations": 100000,
+        "exceedances": 71512,
+        "all_tied": false,
+        "assumption": "Within-seed policy-label exchangeability under the null.",
+        "holm_p": 1.0
+      }
+    },
+    {
+      "study": "original_policies_common_reset",
+      "endpoint": "native_goal_error",
+      "seeds": 20,
+      "policies": 7,
+      "mean_test": {
+        "statistic": 0.575841890165536,
+        "p": 0.7497625023749762,
+        "df_policy": 6,
+        "df_residual": 114,
+        "permutations": 100000,
+        "exceedances": 74976,
+        "all_within_seed_equal": false,
+        "assumption": "Exchangeability of policy labels within seed under the null; no parametric F reference distribution used.",
+        "holm_p": 1.0
+      },
+      "rank_test": {
+        "statistic": 3.747974797479748,
+        "p": 0.7188628113718862,
+        "permutations": 100000,
+        "exceedances": 71886,
+        "all_tied": false,
+        "assumption": "Within-seed policy-label exchangeability under the null.",
+        "holm_p": 1.0
+      }
+    }
+  ],
+  "interpretation": "Failure to reject a policy effect does not prove exact equality or practical equivalence. Proposed margins were not endorsed; equivalence remains a separate illustrative sensitivity analysis."
+}
