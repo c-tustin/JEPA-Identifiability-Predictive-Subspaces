@@ -127,7 +127,7 @@ Complete factor seed blocks: 20/20; zoo blocks: 20/20.
 
 ## Requested test: do matched policies differ?
 
-The [user-requested omnibus tests](MATCHED_OMNIBUS.md) use seed-blocked permutation repeated-measures ANOVA for means and Friedman tests for ranks, without an equivalence margin. Neither detects systematic policy effects in the matched conditions. Failure to reject is not proof of exact equality. The [optional equivalence sensitivity](MATCHED_EQUIVALENCE.md) is separately labeled; proposed margins were not endorsed. These post hoc analyses do not replace the 54 planned comparisons.
+The requested [equivalence analysis](EQUIVALENCE_SUMMARY.md) uses paired TOST and requires every policy pair to pass. At exploratory tolerances ±0.001 R² and ±0.005 physical goal error, recovery and shared-data planning pass in both matched studies; policy-specific-data planning does not. [Full tolerance sensitivity](MATCHED_EQUIVALENCE.md). [Complementary difference tests](MATCHED_OMNIBUS.md) detect no systematic policy effect, but nonsignificance alone is not equivalence. These post hoc analyses do not replace the 54 planned comparisons.
 
 ## Limits
 

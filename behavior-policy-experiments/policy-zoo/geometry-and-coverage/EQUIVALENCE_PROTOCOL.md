@@ -1,6 +1,6 @@
 # Requested hypothesis test: are matched policies practically similar?
 
-The user subsequently clarified that they wanted a direct, margin-free performance-difference test, rather than endorsing the proposed margins. [The requested tests](output/MATCHED_OMNIBUS.md) now lead the report. This document preserves the optional margin-sensitivity analysis.
+The requested claim is **practical equivalence**, not merely failure to detect a difference. Paired TOST below addresses that claim. [Permutation difference tests](output/MATCHED_OMNIBUS.md) remain a separate complementary analysis.
 
 This is an additional **post hoc** analysis. It does not replace or relabel the campaign's 54 prespecified tests.
 
@@ -15,7 +15,7 @@ For each study/endpoint, use a seed-blocked Friedman rank statistic with 100,000
 
 ## Practical mean equivalence
 
-Proposed margins, stated to the user before calculating these tests: **0.005 in recovery R²** and **0.05 in physical goal error** (one-fifth of the 0.25 action step). They are practical choices, not margins estimated from the observed differences. Ask the user if these reflect their intent; report a margin-sensitivity table regardless. No margin is chosen because it yields significance.
+Report illustrative tolerances of **0.001 in recovery R²** (0.1 percentage point) and **0.005 in physical goal error** (2% of the 0.25 action step). These tolerances are chosen after the experiments, so the analysis is exploratory rather than a prespecified equivalence claim. The sensitivity grid also retains the earlier proposed, broader tolerances of 0.005 R² and 0.05 physical goal error. Statistical analysis cannot decide which loss of performance is scientifically acceptable.
 
 For every policy pair, let D be its paired seed-wise performance difference. Perform paired t-based TOST at alpha .05 for the null that the population mean difference is <= -margin OR >= margin. Equivalently, the ordinary 90% paired-t interval must lie strictly within the margins. Paired t inference assumes approximately normal seed differences; n=10 or 20 and discrete goal errors limit this approximation.
 
