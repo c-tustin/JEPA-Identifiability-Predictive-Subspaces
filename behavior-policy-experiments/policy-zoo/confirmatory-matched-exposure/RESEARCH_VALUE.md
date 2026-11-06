@@ -26,3 +26,5 @@ Separate **representation quality** from **learning the action-conditioned trans
 If planning differences survive a common encoder but disappear after filling specific action-coverage gaps, behavior affects planning through transition learning even when recovery is fixed. If they survive both controls, investigate multistep model error and planner sensitivity. This is not claimed to have been answered by the current cohort.
 
 Linear identifiability is also stronger than necessary for control: a one-to-one nonlinear representation can support planning with the correctly transformed dynamics and goal cost. Conversely, two distant goals sharing an encoding can force goal ambiguity even with excellent one-step prediction. Those are distinct questions from asking which policy attains the highest R².
+
+[An important one-dimensional caveat](ONE_DIMENSION_CAVEAT.md): once monotonicity and an exact output law are assumed, the common observation marginal determines the coordinate. This is another reason to prioritize the fold mechanism and action-conditioned planning over a broad claim of policy-independent identifiability.
