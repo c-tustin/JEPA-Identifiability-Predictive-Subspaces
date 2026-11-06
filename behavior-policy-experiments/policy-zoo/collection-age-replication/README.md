@@ -1,5 +1,7 @@
 # Early ICM avoids late-data damage; it does not establish superiority
 
+**Mechanism follow-up:** [Separate loss sources and matched original-policy exposure](../geometry-and-coverage/README.md). Late observations sent to SIGReg are the larger geometric lever in the new factorial; update-level interventions identify the first fold-producing contribution. The original fresh-seed study below is retained.
+
 **Fresh replication:** 20 new seeds, five collection ages, 360 encoder conditions and 700 planning evaluations. Same distance-only world, original frozen behavior policies and unchanged SIGReg.
 
 [Full results and all 19 tests](output/RESULTS.md) · [What this can prove](EXPLANATION.md) · [Protocol fixed before training](PROTOCOL.md)

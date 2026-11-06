@@ -1,0 +1,40 @@
+{
+  "ols_statistic_checks": [
+    {
+      "study": "previous_stationary_four",
+      "endpoint": "recovery",
+      "ols_f": 1.1709003804747011
+    },
+    {
+      "study": "previous_stationary_four",
+      "endpoint": "shared_goal_error",
+      "ols_f": 1.0000000000000027
+    },
+    {
+      "study": "previous_stationary_four",
+      "endpoint": "native_goal_error",
+      "ols_f": 1.2214059276405196
+    },
+    {
+      "study": "original_policies_common_reset",
+      "endpoint": "recovery",
+      "ols_f": 1.6598986926140773
+    },
+    {
+      "study": "original_policies_common_reset",
+      "endpoint": "shared_goal_error",
+      "ols_f": 0.9250936329587632
+    },
+    {
+      "study": "original_policies_common_reset",
+      "endpoint": "native_goal_error",
+      "ols_f": 0.5758418901655354
+    }
+  ],
+  "mean_tests_reproduced": 6,
+  "holm_tests_checked": 12,
+  "small_exact_p": 0.16666666666666666,
+  "small_permutation_p": 0.16695833041669583,
+  "all_tied_case_passed": true,
+  "errors": 0
+}
