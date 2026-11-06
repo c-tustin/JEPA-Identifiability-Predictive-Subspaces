@@ -1,5 +1,7 @@
 # Why late data bends the code—and whether matched policies differ
 
+**Prospective follow-up completed:** [60 fresh seeds, fixed tolerances and exposure controls](../confirmatory-matched-exposure/output/SUMMARY.md). It confirms the matched-policy equivalence finding and an exposure-only ICM improvement; all fresh results and baseline rollouts are verified.
+
 **Completed:** 360 new encoders, 640 planning evaluations, 54 planned comparisons, and post hoc equivalence and difference tests.
 
 [Zoo recap](ZOO_RECAP.md) · [Full results/graphs](output/RESULTS.md) · [Equivalence test](output/EQUIVALENCE_SUMMARY.md) · [Math](MATH.md)

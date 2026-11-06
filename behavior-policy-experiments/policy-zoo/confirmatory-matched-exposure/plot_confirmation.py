@@ -39,7 +39,8 @@ def equivalence_figure(inference):
             ax.axvline(bound, color='gray', ls='--', lw=1)
         ax.axvline(0, color='black', lw=.6)
         ax.set_xlim(-1.15, 1.15)
-        ax.set(title=key.replace('_', ' '), xlabel='Difference / fixed tolerance')
+        titles = {'affine_log_r2':'Whole-range recovery', 'near_r2':'Near-object recovery', 'far_r2':'Far-object recovery', 'shared_goal_error':'Physical goal error'}
+        ax.set(title=titles[key], xlabel='Difference / fixed tolerance')
         ax.grid(axis='x', alpha=.15)
         ax.set_yticks(range(len(labels)), labels, fontsize=8)
     axes[0].invert_yaxis()
@@ -56,16 +57,18 @@ def mechanism_figure(rows):
             ax.plot(range(3), values, color='gray', alpha=.2, lw=.6)
         means = [np.mean([analysis.endpoint(rows['icm', cell, seed], key) for seed in run.SEEDS]) for cell in cells]
         ax.plot(range(3), means, '-o', color='#d65a21', lw=2)
-        ax.set_xticks(range(3), ['Native A\nnative R', 'Native A\ncommon R', 'Reset A\ncommon R'])
-        ax.set(title=key.replace('_', ' '))
+        ax.set_xticks(range(3), ['ICM pairs\nICM views', 'ICM pairs\nbroad views', 'Reset pairs\nbroad views'])
+        ax.set(title='Log-distance recovery (R²)' if key == 'affine_log_r2' else 'Physical goal-reaching error')
         ax.grid(axis='y', alpha=.2)
+        ax.tick_params(axis='x', labelsize=9)
     counts = [sum(rows['icm', cell, seed]['metrics']['folded'] for seed in run.SEEDS) for cell in cells]
     axes[2].bar(range(3), counts, color=['#d65a21', '#16856c', '#397db5'])
-    axes[2].set_xticks(range(3), ['Native A\nnative R', 'Native A\ncommon R', 'Reset A\ncommon R'])
-    axes[2].set(title='ICM folds / 60', ylim=(0, 63))
+    axes[2].set_xticks(range(3), ['ICM pairs\nICM views', 'ICM pairs\nbroad views', 'Reset pairs\nbroad views'])
+    axes[2].set(title='Folded runs (out of 60)', ylim=(0, 63))
+    axes[2].tick_params(axis='x', labelsize=9)
     for index, count in enumerate(counts):
         axes[2].text(index, count + 1, str(count), ha='center')
-    fig.suptitle('ICM exposure intervention: gray lines retain every seed; orange = mean\nFirst two cells have identical alignment pairs. A = alignment; R = SIGReg observations.')
+    fig.suptitle('ICM: change which observations SIGReg sees\nGray lines: 60 paired runs; orange: mean. First two conditions use identical transition pairs.')
     save(fig, 'icm_exposure_control')
 
 
@@ -83,19 +86,19 @@ def representation_figure():
             x = run.behavior.sensor(torch.tensor(distance, dtype=torch.float32), c)
             y0 = initial(x).numpy()
         sign = 1 if np.cov(q, y0)[0, 1] >= 0 else -1
-        mean, scale = y0.mean(), max(1e-8, y0.std())
         for cell, color in zip(cells, colors):
             state = torch.load(run.OUT / f'encoder_icm_{cell}_seed{seed}.pt', map_location='cpu')
             model = run.behavior.Encoder()
             model.load_state_dict(state['encoder'])
             with torch.no_grad():
-                y = sign * (model(x).numpy() - mean) / scale
-            ax.plot(distance, y, color=color, label=cell)
-        ax.set(xscale='log', title=f'Seed {seed}', xlabel='Physical distance', ylabel='Code / initial output scale')
+                y = sign * model(x).numpy()
+            labels = {'native_exposure':'ICM pairs + ICM observations', 'common_exposure':'ICM pairs + broad observations', 'matched':'Reset pairs + broad observations'}
+            ax.plot(distance, y, color=color, label=labels[cell])
+        ax.set(xscale='log', title=f'Seed {seed}', xlabel='Physical distance', ylabel='Learned output')
         ax.set_xticks([1, 2, 4, 8, 16], ['1', '2', '4', '8', '16'])
         ax.grid(alpha=.15)
     axes[0, 0].legend(fontsize=8)
-    fig.suptitle('First six seed IDs, fixed before inspecting their curves\nOne common initial affine display transform per seed; no per-curve unfolding or normalization.')
+    fig.suptitle('First six seed IDs, fixed before inspecting their curves\nRaw outputs with one initial sign convention per seed; no per-curve unfolding or normalization.')
     save(fig, 'first_six_icm_curves')
 
 
@@ -107,7 +110,7 @@ def main():
     equivalence_figure(inference)
     mechanism_figure(rows)
     representation_figure()
-    (run.OUT / 'FIGURES.md').write_text('# Fresh-cohort figures\n\n![All policy pairs](fresh_equivalence.png)\n\n![ICM exposure controls](icm_exposure_control.png)\n\n![First six ICM curves](first_six_icm_curves.png)\n\n[Results](RESULTS.md)\n')
+    (run.OUT / 'FIGURES.md').write_text('# Fresh-cohort figures\n\n![All policy pairs](fresh_equivalence.png)\n\n![ICM exposure controls](icm_exposure_control.png)\n\n![First six ICM curves](first_six_icm_curves.png)\n\nThe blue and green broad-exposure curves nearly overlap. A decreasing monotone curve is a valid sign reversal, not a fold.\n\n[Results](RESULTS.md)\n')
 
 
 if __name__ == '__main__':

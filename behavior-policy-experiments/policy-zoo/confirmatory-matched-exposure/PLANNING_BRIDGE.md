@@ -30,7 +30,7 @@ $$
 \epsilon\sum_{j=0}^{H-1}L^j}{m}.
 $$
 
-Proof: each step satisfies e_(t+1) <= L e_t + epsilon, starting at e_0=0. Sum the recurrence, add predicted terminal goal error, then apply the inverse sensitivity bound. Predictions must remain in the domain on which the uniform bounds hold. This is a sequence-level statement, not a convergence theorem for receding-horizon replanning.
+Proof: each step satisfies $e_{t+1}\leq L e_t+\epsilon$, starting at $e_0=0$. Sum the recurrence, add predicted terminal goal error, then apply the inverse sensitivity bound. Predictions must remain in the domain on which the uniform bounds hold. This is a sequence-level statement, not a convergence theorem for receding-horizon replanning.
 
 ## What behavior can change
 
