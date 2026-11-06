@@ -1,5 +1,7 @@
 # Original policies: why ICM folds
 
+**Fresh replication completed:** [20 new seeds, five collection ages and matched continuations](../collection-age-replication/README.md). Late data creates folds in 15/20 early-trained encoders, versus 0/20 under continued early data. Early ICM does not establish superiority to random/count. The original cohort below is retained.
+
 **The original policies differ strongly.** The earlier matched-coverage test used modified stationary policies, so it did not settle the original ICM–random–OU comparison.
 
 [Full zoo comparison](output/RESULTS.md) · [Collection experiment and graphs](output/EARLY_COLLECTION_RESULTS.md) · [Mechanism and limitations](MECHANISM.md)
@@ -47,7 +49,7 @@ Recovery uses 20 seeds; planning uses the fixed first ten, 8–17. Random/count 
 
 Removing alignment on five original data sources preserved fold status in **all 100 new fits**. Explicit alignment is therefore unnecessary for these intervention folds. SIGReg was unchanged. Paired endpoints still share finite minibatches, so this does not eliminate every pair-law effect or establish a sole cause. [Clarification](CLARIFICATIONS.md).
 
-The same-actor collection repair supports investigating concentration and generalization. Early ICM still has lower affine recovery than ideal OU. Next: replicate early versus late collection on fresh ICM actors/seeds, then test intermediate ages—16, 32 and 64—to locate the onset of concentration, folding and planning failure. These follow-ups remain proposed; ages 0 and 128 on the original cohort are completed.
+The same-actor collection repair supports investigating concentration and generalization. Early ICM still has lower affine recovery than ideal OU. The [fresh replication](../collection-age-replication/README.md) now completes those next steps: new actors/seeds, intermediate collection ages and a direct test of late-data damage in the same pretrained encoder. It supports collection-phase rescue and continuation harm, while not establishing early ICM superiority over the direct controls.
 
 ## Reproduce
 

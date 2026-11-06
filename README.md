@@ -14,7 +14,9 @@ $$
 
 The scene still has **one changing coordinate: distance**.
 
-**Latest: [original policies, identifiability and the ICM-fold explanation](behavior-policy-experiments/policy-zoo/original-policy-followup/README.md).** Keeping each seed's ICM actor frozen gives 10/20 folded encoders with late collection and 0/20 with early collection. Recovery rises from 0.6035 to 0.9457; shared-data goal error falls from 0.8316 to 0.0516. The study includes all 700 original zoo encoders, 100 alignment-removal controls and 60 collection-age controls, with SIGReg unchanged.
+**Latest fresh-seed test: [early ICM, late-data damage and planning](behavior-policy-experiments/policy-zoo/collection-age-replication/README.md).** On 20 new seeds, switching early-trained ICM encoders to late data creates folds in 15/20 runs; equal extra training on early data creates none. Shared-data goal error is 1.013 versus 0.101. Early ICM does not establish superiority over random/count, and OU retains higher affine recovery. All 19 planned tests use one correction; 360 encoder conditions and 700 planning evaluations are verified.
+
+**Earlier cohort: [original policies, identifiability and the ICM-fold explanation](behavior-policy-experiments/policy-zoo/original-policy-followup/README.md).** Keeping each seed's ICM actor frozen gives 10/20 folded encoders with late collection and 0/20 with early collection. Recovery rises from 0.6035 to 0.9457; shared-data goal error falls from 0.8316 to 0.0516. The study includes all 700 original zoo encoders, 100 alignment-removal controls and 60 collection-age controls, with SIGReg unchanged.
 
 **Earlier controlled test: [same coverage, different movement](behavior-policy-experiments/policy-zoo/matched-coverage/README.md).** Forty encoder fits and 80 planning evaluations keep stationarity, both endpoint distance distributions and overall physical movement fixed. Recovery is nearly identical across the four tested policies; no corrected planning comparison is significant. SIGReg is unchanged.
 

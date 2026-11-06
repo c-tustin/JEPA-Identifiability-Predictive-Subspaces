@@ -61,4 +61,4 @@ This motivates a more specific hypothesis: late ICM collection concentrates the 
 
 ## What would come next
 
-First replicate early/late collection with fresh ICM actors and seeds. Then test intermediate collection ages with fixed actors and equal budgets to locate the onset of concentration, folds and planning failure. Keep random and count controls. Separately, independently sampled pooled-endpoint controls could distinguish residual finite-batch endpoint correlations from the marginal sample distribution. These are proposed follow-ups, not completed results.
+The [fresh replication](../collection-age-replication/README.md) now completes new actors/seeds, intermediate ages and equal-budget continuation tests. It finds direct late-data damage in the same early-trained encoders, but does not establish early ICM superiority over random/count. Concentration still needs to be separated from other pair-law changes. Separately, independently sampled pooled-endpoint controls could distinguish residual finite-batch endpoint correlations from the marginal sample distribution. These are proposed follow-ups, not completed results.
