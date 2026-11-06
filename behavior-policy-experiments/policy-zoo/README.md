@@ -1,6 +1,8 @@
 # Policy zoo: many behavior policies, one protocol
 
-**Latest: [original-policy identifiability, ICM-fold tests and actual planning](original-policy-followup/README.md).** We re-evaluated 700 original encoders. Removing alignment preserves fold status in all 100 new fits; collecting earlier with the same frozen ICM actor repairs all ten old folds and improves actual reaching. SIGReg is unchanged.
+**Latest fresh-seed replication:** [Does early ICM help, and can later data create folds?](collection-age-replication/README.md) The same early-trained encoder folds in 15/20 runs after switching to late data, versus 0/20 after equal extra early-data training. Early ICM does not establish an advantage over random/count. The comparison covers five collection ages, original frozen policies, 360 encoder conditions and 700 verified planning evaluations.
+
+**Earlier: [original-policy identifiability, ICM-fold tests and actual planning](original-policy-followup/README.md).** We re-evaluated 700 original encoders. Removing alignment preserves fold status in all 100 new fits; collecting earlier with the same frozen ICM actor repairs all ten old folds and improves actual reaching. SIGReg is unchanged.
 
 **Expanded catalog:** [13 additional physical controllers and fresh-seed comparisons](new-policy-results/README.md), bringing the catalog to 30 physical policies. The new report includes failures, comparisons with the old best policies, and a clear [boundary between theorem assumptions and empirical extensions](ASSUMPTION_BOUNDARY.md). The original comparison below remains reproducible.
 

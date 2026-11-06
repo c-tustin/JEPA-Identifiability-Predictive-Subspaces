@@ -1,4 +1,6 @@
-**Latest original-policy comparison:** [ICM folds, collection age and actual goal-reaching](../policy-zoo/original-policy-followup/README.md). This adds shared/native comparisons for unchanged original zoo encoders and the same frozen ICM actor under early versus late collection. The historical summary below remains available.
+**Latest fresh-seed planning test:** [Early ICM versus late data, direct baselines and matched continuations](../policy-zoo/collection-age-replication/README.md). All 20 fresh early encoders are unfolded; switching to late data creates folds in 15/20 and raises shared-data physical goal error to 1.013, versus 0.101 with continued early data. This does not establish an early-ICM advantage over random/count.
+
+**Earlier original-policy comparison:** [ICM folds, collection age and actual goal-reaching](../policy-zoo/original-policy-followup/README.md). This adds shared/native comparisons for unchanged original zoo encoders and the same frozen ICM actor under early versus late collection. The historical summary below remains available.
 
 # What we learned about planning
 
