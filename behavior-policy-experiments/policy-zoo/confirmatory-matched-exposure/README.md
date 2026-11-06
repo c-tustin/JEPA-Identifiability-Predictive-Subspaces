@@ -1,40 +1,44 @@
-# Fresh-seed confirmation: does the apparent policy tie hold up?
+# Fresh-seed confirmation: policy ties and ICM exposure
 
-**Status: fresh-cohort training is running; no confirmatory conclusion yet.** Results will be reported only after all 60 seed blocks finish. The earlier exploratory results are not new confirmation results.
+**Completed and verified:** 60 fresh paired seeds, 240 newly trained exploration actors, 540 encoder fits and 1,080 planning evaluations. A separate untrained-encoder check adds 60 predictor fits.
 
-[Fixed plan](PROTOCOL.md) · [Published code/time lock](output/LOCK.json) · [Why this is useful beyond the paper](RESEARCH_VALUE.md) · [Geometry-to-planning explanation](PLANNING_BRIDGE.md)
+**Start here: [concise results and explanation](output/SUMMARY.md).** [Graphs](output/FIGURES.md) · [Fixed protocol](PROTOCOL.md) · [Published code/time lock](output/LOCK.json)
 
-We fix “close enough” before the new runs:
+## What held up?
 
-- Recovery differs by less than **0.001 R²**: 0.1% of target variance in normalized linear-reconstruction error.
-- Actual goal-reaching error differs by less than **0.005 distance units**: 2% of one action step.
+All seven matched policies pass practical equivalence for whole-range/near/far recovery and shared-data physical goal error. We fixed **±0.001 R²** and **±0.005 distance units** before training. The latter is 2% of one action step. The joint claim passes the four-claim Holm correction: **p = 1.08 × 10⁻¹⁹**. TOST's paired-mean assumptions apply; this does not prove exact equality.
 
-These are explicit task-resolution choices, not unique physical constants. They retain the strict earlier tolerances. Fresh learned actors, datasets, encoder initialization, and planning cases vary across seeds 6000–6059; all seven policies share randomness within each seed where appropriate.
+## The stronger mechanism result
 
-The test requires every policy pair to pass for whole-range, near-object and far-object recovery **and** shared-data planning. We also keep ICM's native transitions fixed and change only SIGReg's observation exposure. This asks whether broad observations repair geometry and reaching without replacing ICM's action rule.
+Keep ICM's actor, transition pairs and initial encoder weights fixed. Change only which observations SIGReg sees; keep its formula and weight unchanged.
 
-Total: **540 encoders, 1,080 predictor/planning evaluations**, with 240 newly trained actors. No extra environment coordinates, SIGReg formula changes, or dynamics changes. Starting observations and regularizer exposure match; successor distributions and stationarity do not.
+| SIGReg observations | Recovery R² | Folds / 60 | Physical goal error |
+| --- | ---: | ---: | ---: |
+| ICM's native observations | 0.6611 | 30 | 0.8739 |
+| Broad common observations | 0.9975 | 0 | 0.0760 |
 
-From the repository root:
+Recovery and reaching improve in all 60 seeds; all three planned mechanism tests pass correction. The broad pool supplies additional real observations through controlled resets. It is a data intervention, not a free autonomous exploration improvement.
+
+The secondary untrained baseline has recovery 0.8421, 26/60 folds and goal error 0.4479. Matched training therefore improves beyond the starting geometry. [Baseline results](output/untrained_baseline/RESULTS.md).
+
+## What remains open?
+
+Policy-specific predictor-data planning equivalence is not established at the same tolerance. The next useful test keeps one encoder fixed while changing predictor action data. The present result identifies a finite-training exposure effect; it does not extend the paper's general identifiability guarantee to nonlinear systems.
+
+Starting observations and SIGReg exposure match; successor distributions and stationarity do not. These are physical OU action controllers, not Gaussian-latent OU dynamics. [Research value](RESEARCH_VALUE.md) · [One-dimensional caveat](ONE_DIMENSION_CAVEAT.md) · [Statistical assumptions](ASSUMPTIONS.md) · [Geometry/planning link](PLANNING_BRIDGE.md)
+
+## Reproduce
+
+With Python 3.12, from the repository root:
 
 ```sh
-python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/run_confirmation.py --gate
-# Commit the protocol/code, then lock it before any cohort training:
-python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/run_confirmation.py --freeze
+python3 -m pip install -r behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/requirements.txt
 python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/run_confirmation.py --run --workers 6
-python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/analyze_confirmation.py --require-complete
+python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/finish_confirmation.py --workers 6
+python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/untrained_baseline.py --train --analyze --verify --workers 4
+python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/write_summary.py
 ```
 
-Repeating `--run` resumes the same cohort. Encoder/Adam checkpoints save every 500 updates. Completed actors and predictors are reused; an interrupted actor/predictor restarts its bounded fit. Dataset caches are regenerable and ignored by Git. No hypothesis tests are run on a partial cohort.
+The published lock is already present; do not refreeze a completed cohort. Encoder/Adam resumes every 500 updates. Completed actor/predictor states are reused; interrupted actor/predictor fits restart deterministically. Regenerable source caches are ignored by Git. See the protocol for the historical gates and pre-training freeze procedure.
 
-The main four-claim family includes global recovery/planning equivalence and three directional ICM exposure-control tests, all Holm-corrected. Fold-rate and policy-specific predictor-data tests are prespecified secondary diagnostics, not extra confirmatory claims. TOST is an approximate test of population means; the sign check addresses typical differences. Neither gives a distribution-free guarantee against arbitrarily rare failures.
-
-Historical actor/encoder/planning gates passed exactly. Full RND and resumed-at-500 ICM fits on the first fresh seed also reproduce weights, Adam and planning outputs exactly. The scientific training and analysis files remain hash-locked.
-
-[One-dimensional caveat](ONE_DIMENSION_CAVEAT.md): a common marginal already determines the ideal monotone Gaussianizing coordinate. With log-uniform exposure that coordinate is nonlinear; high log-distance R² does not certify Gaussianization. This limits what a policy tie alone can establish.
-
-A detached finisher is waiting for the complete cohort. It then runs the locked inference, all-source/geometry/physical-planning verification, and figure generation. To run that stage manually after training: `python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/finish_confirmation.py`. Use `--wait` to wait for completion. Resume training with `--run` after the previous training process has stopped.
-
-[Assumption check](ASSUMPTIONS.md): fresh seeds make the test prospective, but do not turn its mean-TOST approximation into a distribution-free guarantee against rare large failures.
-
-A [secondary untrained-encoder baseline](BASELINE_ADDENDUM.md), added after cohort training began, checks whether training improves recovery and reaching beyond the initial geometry. It adds 60 predictor fits and no confirmatory hypotheses; its results will be kept separate.
+[Main verification](output/VERIFICATION.json) covers all 420 sources, 540 geometries, 1,080 physical-planning replays and 84 primary TOST boundary checks. [Fresh full/resumed gates](output/FRESH_REPLAY_GATES.json) · [Baseline verification](output/untrained_baseline/VERIFICATION.json)

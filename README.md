@@ -14,7 +14,7 @@ $$
 
 The scene still has **one changing coordinate: distance**.
 
-**Fresh confirmation is running:** [Fixed tolerances, new actors/seeds and ICM exposure controls](behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/README.md). The protocol and executable hash were published before training. No fresh-cohort conclusion is available until all 60 seed blocks finish.
+**Fresh confirmation completed:** [Concise results: policy equivalence and ICM exposure](behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/output/SUMMARY.md). Sixty new paired seeds confirm practical equivalence of matched-policy recovery/shared-data planning at fixed tolerances. With ICM transitions held fixed, changing only SIGReg's observations raises R² from 0.661 to 0.998, reduces folds from 30/60 to 0/60, and lowers physical goal error from 0.874 to 0.076. All planned claims pass correction; all runs and 1,140 main/baseline planning evaluations are verified.
 
 **Latest mechanism and matched-exposure tests:** [Why late data changes geometry](behavior-policy-experiments/policy-zoo/geometry-and-coverage/README.md). Swapping the observations sent to SIGReg has much larger geometric/task effects than swapping alignment pairs in this test. With broad common exposure, paired TOST supports practical equivalence of recovery and shared-data planning among seven original policies at explicit tolerances; policy-specific-data planning does not pass the same criterion. The study adds 360 encoders, 640 planning evaluations and local checks of the first fold-producing updates.
 
