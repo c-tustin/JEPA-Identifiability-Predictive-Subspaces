@@ -51,6 +51,12 @@ This supports practical similarity of linear recovery and shared-data planning i
 
 [Concise explanation](output/EQUIVALENCE_SUMMARY.md) · [Full pairwise tests, intervals and tolerance sensitivity](output/MATCHED_EQUIVALENCE.md) · [Complementary difference tests](output/MATCHED_OMNIBUS.md)
 
+## Identifiability follow-up
+
+Whole-range, near-object and far-object linear recovery all pass paired TOST across the seven matched policies at **±0.001 R²**. Whole-range policy means span 0.997994–0.998000. These are empirical recovery diagnostics, not a proof of identifiability up to rotation.
+
+All seven have zero grid-detected folds in 20 runs, but the exact paired test does **not** establish fold-risk equivalence within ±5 percentage points (p = 0.358). Twenty seeds are insufficient for that stricter failure-risk claim. [Focused tests, assumptions and results](output/IDENTIFIABILITY_EQUIVALENCE.md).
+
 The full original native-policy zoo showed substantial observed differences: it has 17 original physical policies, 13 additions (30 total), and 18 Gaussian sources. [What each earlier study showed](ZOO_RECAP.md).
 
 ## Reproduce
@@ -69,6 +75,7 @@ python3 behavior-policy-experiments/policy-zoo/geometry-and-coverage/matched_equ
 python3 behavior-policy-experiments/policy-zoo/geometry-and-coverage/replay_gates.py
 python3 behavior-policy-experiments/policy-zoo/geometry-and-coverage/verify_geometry.py --require-complete
 python3 behavior-policy-experiments/policy-zoo/geometry-and-coverage/verify_equivalence.py
+python3 behavior-policy-experiments/policy-zoo/geometry-and-coverage/identifiability_equivalence.py
 python3 behavior-policy-experiments/policy-zoo/geometry-and-coverage/omnibus_test.py
 python3 behavior-policy-experiments/policy-zoo/geometry-and-coverage/verify_omnibus.py
 ```

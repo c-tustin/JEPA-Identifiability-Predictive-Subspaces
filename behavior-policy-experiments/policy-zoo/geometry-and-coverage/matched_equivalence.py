@@ -150,6 +150,7 @@ def write_summary(results, recovery_margin, goal_margin):
              '**Yes for mean recovery and shared-data planning, within the stated tolerances; equivalence is not established for policy-specific-data planning at those tolerances.**', '',
              'Use paired **TOST** (two one-sided tests). For each pair, test whether the mean seed-wise difference lies strictly between the negative and positive tolerance. Require every policy pair to pass. Seeds are the independent units, not individual goals.', '',
              f'Illustrative tolerances: **±{recovery_margin:g} R²** and **±{goal_margin:g} physical goal error**. A physical action moves 0.25, so the goal-error tolerance is {100 * goal_margin / .25:g}% of one action step. These tolerances were chosen after the experiments: this is exploratory evidence, not a prespecified confirmation.', '',
+             'A tolerance is the largest difference we are willing to treat as practically unimportant. It is not estimated by a hypothesis test. Choosing it after seeing outcomes risks making the test too easy: a wider tolerance makes equivalence easier to establish. For a confirmatory claim, fix the tolerance first and evaluate a fresh, fixed-size seed cohort. Exact equality cannot be established from these finite runs.', '',
              '| Study | Recovery equivalence p | Shared-data planning equivalence p | Policy-specific-data planning equivalence p |',
              '| --- | ---: | ---: | ---: |']
     for result in results:
@@ -162,7 +163,7 @@ def write_summary(results, recovery_margin, goal_margin):
               'Paired mean-TOST uses a t approximation for seed differences. With 10/20 seeds and discrete planning errors, interpret this with the sign check and tolerance sensitivity. A larger p-value for policy-specific-data planning means insufficient evidence of equivalence, not proof of a difference.', '',
               'Why not chi-squared? These outcomes are continuous paired scores. A chi-squared test on bins would answer a different question about category frequencies, and a nonsignificant ordinary chi-squared test would still not establish equivalence.', '',
               'Scope: the seven-policy experiment matches starting observations and SIGReg exposure, not successor distributions or stationarity. Policy-specific predictor data means the reset transitions from each matched cell. These results do not establish equivalence of the original native-policy zoo or exact mathematical identifiability.', '',
-              '[All pairwise intervals and tolerance sensitivity](MATCHED_EQUIVALENCE.md) · [Verification](EQUIVALENCE_VERIFICATION.json) · [Complementary difference tests](MATCHED_OMNIBUS.md)', '']
+              '[Focused identifiability and fold-risk tests](IDENTIFIABILITY_EQUIVALENCE.md) · [All pairwise intervals and tolerance sensitivity](MATCHED_EQUIVALENCE.md) · [Verification](EQUIVALENCE_VERIFICATION.json) · [Complementary difference tests](MATCHED_OMNIBUS.md)', '']
     (OUT / 'EQUIVALENCE_SUMMARY.md').write_text('\n'.join(lines))
 
 
