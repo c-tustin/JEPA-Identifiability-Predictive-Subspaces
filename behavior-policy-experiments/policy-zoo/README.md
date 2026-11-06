@@ -1,6 +1,6 @@
 # Policy zoo: many behavior policies, one protocol
 
-**Latest:** [Geometry mechanism and original-policy matched exposure](geometry-and-coverage/README.md). The source seen by SIGReg is the larger geometric lever in the new early/late factorial. Seven original policies—not stationary surrogates—show no detected mean/rank performance difference under common starting observations and regularizer exposure. [Requested hypothesis tests](geometry-and-coverage/output/MATCHED_OMNIBUS.md) · [Zoo recap](geometry-and-coverage/ZOO_RECAP.md).
+**Latest:** [Geometry mechanism and original-policy matched exposure](geometry-and-coverage/README.md). The source seen by SIGReg is the larger geometric lever in the new early/late factorial. Seven original policies—not stationary surrogates—pass paired TOST for practical equivalence of recovery and shared-data planning under common starting observations and regularizer exposure; policy-specific-data planning does not pass the same tolerance. [Equivalence tests](geometry-and-coverage/output/EQUIVALENCE_SUMMARY.md) · [Zoo recap](geometry-and-coverage/ZOO_RECAP.md).
 
 **Previous fresh-seed replication:** [Does early ICM help, and can later data create folds?](collection-age-replication/README.md) The same early-trained encoder folds in 15/20 runs after switching to late data, versus 0/20 after equal extra early-data training. Early ICM does not establish an advantage over random/count. The comparison covers five collection ages, original frozen policies, 360 encoder conditions and 700 verified planning evaluations.
 

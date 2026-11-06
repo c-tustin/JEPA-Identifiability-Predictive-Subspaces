@@ -1,8 +1,8 @@
 # Why late data bends the code—and whether matched policies differ
 
-**Completed:** 360 new encoders, 640 planning evaluations, 54 planned comparisons, and requested post hoc mean/rank hypothesis tests.
+**Completed:** 360 new encoders, 640 planning evaluations, 54 planned comparisons, and post hoc equivalence and difference tests.
 
-[Zoo recap](ZOO_RECAP.md) · [Full results/graphs](output/RESULTS.md) · [Requested hypothesis test](output/MATCHED_OMNIBUS.md) · [Math](MATH.md)
+[Zoo recap](ZOO_RECAP.md) · [Full results/graphs](output/RESULTS.md) · [Equivalence test](output/EQUIVALENCE_SUMMARY.md) · [Math](MATH.md)
 
 ## Which part of training creates the geometric effect?
 
@@ -33,23 +33,23 @@ Seven unchanged original policies receive identical reset-state observations. SI
 
 All 280 zoo-control encoders are unfolded, including those retaining native ICM/RND/disagreement alignment pairs. The broad shared observation pool is a real data intervention, not just reweighting existing native coverage. [Exact matching and precision](PRECISION.md).
 
-## Actual hypothesis test for matched-policy performance
+## Are matched policies equivalent?
 
-Use a **seed-blocked permutation repeated-measures ANOVA** to test policy mean differences, with 100,000 within-seed permutations. Friedman permutation tests check policy ranks. Neither test needs an equivalence margin. Seeds are the independent blocks, not the individual goals.
+Use **paired TOST** (two one-sided tests), with seed as the independent unit. The null says at least one policy pair differs by the tolerance or more; the alternative says every pair is inside it. Every pair must pass. This tests practical equivalence, unlike merely failing to detect a difference.
 
-For the seven original policies with common starting observations/SIGReg exposure (20 paired seeds):
+For seven original policies and 20 paired seeds, using illustrative tolerances of **±0.001 R²** and **±0.005 physical goal error**:
 
-| Outcome | F statistic | Mean-test permutation p | Friedman permutation p |
-| --- | ---: | ---: | ---: |
-| Recovery R² | 1.660 | 0.118 | 0.183 |
-| Shared-data goal error | 0.925 | 0.716 | 0.715 |
-| Policy-specific predictor-data goal error | 0.576 | 0.750 | 0.719 |
+| Outcome | Global mean-equivalence p | Equivalent within tolerance? |
+| --- | ---: | --- |
+| Recovery R² | 1.55 × 10⁻³³ | Yes |
+| Shared-data goal error | 9.67 × 10⁻¹² | Yes |
+| Policy-specific predictor-data goal error | 0.930 | Not established |
 
-**No systematic policy-performance difference is detected.** All remain nonsignificant after one Holm correction across the 12 mean/rank tests for both matched studies. The earlier four-policy stationary study also shows no significant differences. This is failure to reject the null of no policy effect, not proof of exact equality. [Full hypotheses, assumptions and statistics](output/MATCHED_OMNIBUS.md).
+The joint claim for recovery **and** shared-data planning passes (p = 9.67 × 10⁻¹²). The earlier four-policy matched-coverage study also passes for those two outcomes (joint p = 4.44 × 10⁻⁷). The goal-error tolerance is 2% of one 0.25 action step. These are exploratory, post hoc tolerances; significance does not decide what difference is scientifically acceptable. Paired-t assumptions apply, and the sign-based check concerns typical differences rather than population means.
 
-Observed mean recovery ranges from 0.997994 to 0.998000 across the seven reset conditions; shared-data goal error ranges from 0.0576 to 0.0580. Policy-specific data here means each reset cell's own action transitions, not the original native trajectory pool.
+This supports practical similarity of linear recovery and shared-data planning in these matched conditions. It does **not** establish equivalence of policy-specific-data planning at the same tolerance. Policy-specific data here means each reset cell's own action transitions, not the original native trajectory pool. All pairs must pass, so the global equivalence claim uses an intersection-union test, not selected significant pairs.
 
-The [optional equivalence sensitivity](output/MATCHED_EQUIVALENCE.md) uses illustrative margins and additional assumptions. Those margins were chosen after observing results and are not the basis of the conclusion above.
+[Concise explanation](output/EQUIVALENCE_SUMMARY.md) · [Full pairwise tests, intervals and tolerance sensitivity](output/MATCHED_EQUIVALENCE.md) · [Complementary difference tests](output/MATCHED_OMNIBUS.md)
 
 The full original native-policy zoo showed substantial observed differences: it has 17 original physical policies, 13 additions (30 total), and 18 Gaussian sources. [What each earlier study showed](ZOO_RECAP.md).
 

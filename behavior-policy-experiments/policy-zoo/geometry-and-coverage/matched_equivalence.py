@@ -13,6 +13,7 @@ from scipy import stats
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
+from matplotlib.ticker import MaxNLocator
 
 HERE=Path(__file__).resolve().parent
 OUT=HERE/'output'
@@ -129,6 +130,9 @@ def figure(name,endpoint_results):
             ax.plot(mean,index,'o',color=color,ms=4)
         ax.axvline(-margin,color='gray',ls='--');ax.axvline(margin,color='gray',ls='--')
         ax.axvline(0,color='black',lw=.7)
+        ax.xaxis.set_major_locator(MaxNLocator(nbins=5))
+        if endpoint == 'recovery':
+            ax.ticklabel_format(axis='x',style='sci',scilimits=(0,0),useMathText=True)
         labels={'reference':'Ref','near_bottleneck':'Slow near','far_bottleneck':'Slow far','icm_shaped':'ICM-shaped','icm':'ICM','random':'Random','count':'Count','rnd':'RND','disagreement':'Disagree','ou_actions_lp_w0.1':'OU-LP','ou_actions_hp_w0.3':'OU-HP'}
         ax.set_yticks(range(len(pairs)),[labels.get(p['policy_a'],p['policy_a'])+' − '+labels.get(p['policy_b'],p['policy_b']) for p in pairs],fontsize=7)
         if ax is not axes[0]:ax.tick_params(labelleft=False)
@@ -141,10 +145,31 @@ def figure(name,endpoint_results):
     plt.close(fig)
 
 
+def write_summary(results, recovery_margin, goal_margin):
+    lines = ['# Are the matched policies equivalent?', '',
+             '**Yes for mean recovery and shared-data planning, within the stated tolerances; equivalence is not established for policy-specific-data planning at those tolerances.**', '',
+             'Use paired **TOST** (two one-sided tests). For each pair, test whether the mean seed-wise difference lies strictly between the negative and positive tolerance. Require every policy pair to pass. Seeds are the independent units, not individual goals.', '',
+             f'Illustrative tolerances: **±{recovery_margin:g} R²** and **±{goal_margin:g} physical goal error**. A physical action moves 0.25, so the goal-error tolerance is {100 * goal_margin / .25:g}% of one action step. These tolerances were chosen after the experiments: this is exploratory evidence, not a prespecified confirmation.', '',
+             '| Study | Recovery equivalence p | Shared-data planning equivalence p | Policy-specific-data planning equivalence p |',
+             '| --- | ---: | ---: | ---: |']
+    for result in results:
+        values = [result['endpoints'][endpoint]['equivalence']['mean_global_p'] for endpoint in ENDPOINTS]
+        label = 'Seven original policies, 20 seeds' if len(result['names']) == 7 else 'Four stationary surrogates, 10 seeds'
+        lines.append(f'| {label} | {values[0]:.3g} | {values[1]:.3g} | {values[2]:.3g} |')
+    latest = results[-1]
+    lines += ['', f"For seven policies, the joint claim that **both recovery and shared-data planning are equivalent** has p = {latest['primary_joint_mean_p']:.3g}. The sign-based check also passes for typical paired differences (joint p = {latest['primary_joint_median_p']:.3g}); that check concerns typical differences, not the population mean.", '',
+              'The global null is that at least one pair lies outside the tolerance. Its p-value is the largest pairwise TOST p-value: all pairs must pass. This intersection-union test does not need an extra Bonferroni correction for its single all-pairs equivalence claim.', '',
+              'Paired mean-TOST uses a t approximation for seed differences. With 10/20 seeds and discrete planning errors, interpret this with the sign check and tolerance sensitivity. A larger p-value for policy-specific-data planning means insufficient evidence of equivalence, not proof of a difference.', '',
+              'Why not chi-squared? These outcomes are continuous paired scores. A chi-squared test on bins would answer a different question about category frequencies, and a nonsignificant ordinary chi-squared test would still not establish equivalence.', '',
+              'Scope: the seven-policy experiment matches starting observations and SIGReg exposure, not successor distributions or stationarity. Policy-specific predictor data means the reset transitions from each matched cell. These results do not establish equivalence of the original native-policy zoo or exact mathematical identifiability.', '',
+              '[All pairwise intervals and tolerance sensitivity](MATCHED_EQUIVALENCE.md) · [Verification](EQUIVALENCE_VERIFICATION.json) · [Complementary difference tests](MATCHED_OMNIBUS.md)', '']
+    (OUT / 'EQUIVALENCE_SUMMARY.md').write_text('\n'.join(lines))
+
+
 def main():
     parser=argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--recovery-margin',type=float,default=.005)
-    parser.add_argument('--goal-margin',type=float,default=.05)
+    parser.add_argument('--recovery-margin',type=float,default=.001)
+    parser.add_argument('--goal-margin',type=float,default=.005)
     parser.add_argument('--require-complete',action='store_true')
     parser.add_argument('--permutations',type=int,default=100000)
     args=parser.parse_args();studies=load_studies();results=[];difference_rows=[]
@@ -178,8 +203,8 @@ def main():
              'assumptions':'Paired-mean TOST uses t/normal approximation for seed differences. Median sign-TOST is distribution-free for typical differences. Global equivalence is an intersection-union test.'}
     (OUT/'MATCHED_EQUIVALENCE.json').write_text(json.dumps(payload,indent=2)+'\n')
     lines=['# Did matched policies perform around the same?','',
-           '**Optional margin sensitivity.** The user clarified that they wanted the [margin-free performance-difference tests](MATCHED_OMNIBUS.md). The proposed margins below were not endorsed and are not the basis of the requested test’s conclusion. These supplementary post hoc analyses do not replace the campaign’s 54 planned tests.','',
-           f"Practical margins: **±{args.recovery_margin:g} R²**, **±{args.goal_margin:g} physical goal error**. The latter is {args.goal_margin/.25:g} of an action step. These are proposed practical choices, not estimated from the outcomes. A sensitivity table is provided. [Test protocol](../EQUIVALENCE_PROTOCOL.md).",'']
+           '**Equivalence test:** paired two one-sided tests (TOST), requiring every policy pair to pass. Unlike a nonsignificant difference test, this tests whether differences are inside stated tolerances. This is a post hoc analysis, not one of the campaign’s 54 planned tests.','',
+           f"Practical margins: **±{args.recovery_margin:g} R²**, **±{args.goal_margin:g} physical goal error**. The latter is {args.goal_margin/.25:g} of an action step. These are illustrative tolerances, not a prespecified scientific definition of equivalence. The default R² tolerance is 0.1 percentage point and the goal-error tolerance is 2% of one action step. A sensitivity table includes the earlier, broader tolerances of 0.005 R² and 0.05 goal error. [Test protocol](../EQUIVALENCE_PROTOCOL.md).",'']
     for result in results:
         lines += ['## '+result['name'].replace('_',' '),'',result['description'],'']
         if not result['complete']:
@@ -207,6 +232,8 @@ def main():
               '- The minimum supported margin is a descriptive precision threshold, not a reason to choose a margin after inspecting the data.','',
               '[Full pairwise differences, intervals, tests and sensitivity](MATCHED_EQUIVALENCE.json).','']
     (OUT/'MATCHED_EQUIVALENCE.md').write_text('\n'.join(lines))
+    if all(s['complete'] for s in results):
+        write_summary(results,args.recovery_margin,args.goal_margin)
     print(json.dumps([{s['name']:s.get('primary_joint_mean_p','pending')} for s in results]))
 
 

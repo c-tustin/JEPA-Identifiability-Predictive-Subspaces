@@ -1,8 +1,8 @@
 # Did matched policies perform around the same?
 
-**Optional margin sensitivity.** The user clarified that they wanted the [margin-free performance-difference tests](MATCHED_OMNIBUS.md). The proposed margins below were not endorsed and are not the basis of the requested test’s conclusion. These supplementary post hoc analyses do not replace the campaign’s 54 planned tests.
+**Equivalence test:** paired two one-sided tests (TOST), requiring every policy pair to pass. Unlike a nonsignificant difference test, this tests whether differences are inside stated tolerances. This is a post hoc analysis, not one of the campaign’s 54 planned tests.
 
-Practical margins: **±0.005 R²**, **±0.05 physical goal error**. The latter is 0.2 of an action step. These are proposed practical choices, not estimated from the outcomes. A sensitivity table is provided. [Test protocol](../EQUIVALENCE_PROTOCOL.md).
+Practical margins: **±0.001 R²**, **±0.005 physical goal error**. The latter is 0.02 of an action step. These are illustrative tolerances, not a prespecified scientific definition of equivalence. The default R² tolerance is 0.1 percentage point and the goal-error tolerance is 2% of one action step. A sensitivity table includes the earlier, broader tolerances of 0.005 R² and 0.05 goal error. [Test protocol](../EQUIVALENCE_PROTOCOL.md).
 
 ## previous stationary four
 
@@ -12,11 +12,11 @@ Policies: 4; paired seeds: 10.
 
 | Endpoint | Difference-test Holm p | Mean-equivalence global p | Mean equivalent? | Median-equivalence p | Smallest margin exceeding all 90% mean-interval endpoints |
 | --- | ---: | ---: | --- | ---: | ---: |
-| recovery | 1 | 5.8963e-28 | yes, under stated assumptions/margin | 0.00097656 | 6.5711e-06 |
-| shared_goal_error | 1 | 2.9554e-16 | yes, under stated assumptions/margin | 0.00097656 | 0.0011067 |
-| native_goal_error | 1 | 0.044423 | yes, under stated assumptions/margin | 0.054688 | 0.048967 |
+| recovery | 1 | 1.1763e-21 | yes, under stated assumptions/margin | 0.00097656 | 6.5711e-06 |
+| shared_goal_error | 1 | 4.442e-07 | yes, under stated assumptions/margin | 0.00097656 | 0.0011067 |
+| native_goal_error | 1 | 0.89091 | not established | 0.82812 | 0.048967 |
 
-**Joint primary mean equivalence (recovery AND shared-data reaching): p = 2.9554e-16.** Both endpoints must pass; native-data reaching asks an additional question. Including all three endpoints gives p = 0.044423.
+**Joint primary mean equivalence (recovery AND shared-data reaching): p = 4.442e-07.** Both endpoints must pass; native-data reaching asks an additional question. Including all three endpoints gives p = 0.89091.
 
 ![Pairwise intervals](equivalence_previous_stationary_four.png)
 
@@ -54,11 +54,11 @@ Policies: 7; paired seeds: 20.
 
 | Endpoint | Difference-test Holm p | Mean-equivalence global p | Mean equivalent? | Median-equivalence p | Smallest margin exceeding all 90% mean-interval endpoints |
 | --- | ---: | ---: | --- | ---: | ---: |
-| recovery | 1 | 7.3719e-47 | yes, under stated assumptions/margin | 9.5367e-07 | 1.4852e-05 |
-| shared_goal_error | 1 | 1.1248e-30 | yes, under stated assumptions/margin | 9.5367e-07 | 0.0008555 |
-| native_goal_error | 1 | 0.03357 | yes, under stated assumptions/margin | 0.13159 | 0.046621 |
+| recovery | 1 | 1.5457e-33 | yes, under stated assumptions/margin | 9.5367e-07 | 1.4852e-05 |
+| shared_goal_error | 1 | 9.6723e-12 | yes, under stated assumptions/margin | 9.5367e-07 | 0.0008555 |
+| native_goal_error | 1 | 0.92964 | not established | 0.86841 | 0.046621 |
 
-**Joint primary mean equivalence (recovery AND shared-data reaching): p = 1.1248e-30.** Both endpoints must pass; native-data reaching asks an additional question. Including all three endpoints gives p = 0.03357.
+**Joint primary mean equivalence (recovery AND shared-data reaching): p = 9.6723e-12.** Both endpoints must pass; native-data reaching asks an additional question. Including all three endpoints gives p = 0.92964.
 
 ![Pairwise intervals](equivalence_original_policies_common_reset.png)
 

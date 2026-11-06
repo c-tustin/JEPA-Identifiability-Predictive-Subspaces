@@ -1,6 +1,6 @@
 # Does movement matter when coverage is the same?
 
-**Statistical follow-up completed:** [Paired permutation hypothesis tests](../geometry-and-coverage/output/MATCHED_OMNIBUS.md) detect no systematic performance difference among these four policies. This does not prove equality. The [new comparison with seven original policies](../geometry-and-coverage/README.md) matches starts and regularizer exposure without correcting their action rules.
+**Statistical follow-up completed:** [Paired TOST equivalence tests](../geometry-and-coverage/output/EQUIVALENCE_SUMMARY.md) support practical equivalence of recovery (±0.001 R²) and shared-data planning (±0.005 goal error) among these four policies; policy-specific-data planning does not pass the same tolerance. These are exploratory tolerance choices, not proof of exact equality. The [new comparison with seven original policies](../geometry-and-coverage/README.md) matches starts and regularizer exposure without correcting their action rules.
 
 **Main question:** Can two behavior policies see the same distances equally often, yet learn different representations or reach goals differently?
 
