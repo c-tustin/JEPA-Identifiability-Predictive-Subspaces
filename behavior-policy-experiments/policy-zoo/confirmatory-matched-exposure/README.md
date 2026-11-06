@@ -34,3 +34,7 @@ Historical actor/encoder/planning gates passed exactly. Full RND and resumed-at-
 [One-dimensional caveat](ONE_DIMENSION_CAVEAT.md): a common marginal already determines the ideal monotone Gaussianizing coordinate. With log-uniform exposure that coordinate is nonlinear; high log-distance R² does not certify Gaussianization. This limits what a policy tie alone can establish.
 
 A detached finisher is waiting for the complete cohort. It then runs the locked inference, all-source/geometry/physical-planning verification, and figure generation. To run that stage manually after training: `python3 behavior-policy-experiments/policy-zoo/confirmatory-matched-exposure/finish_confirmation.py`. Use `--wait` to wait for completion. Resume training with `--run` after the previous training process has stopped.
+
+[Assumption check](ASSUMPTIONS.md): fresh seeds make the test prospective, but do not turn its mean-TOST approximation into a distribution-free guarantee against rare large failures.
+
+A [secondary untrained-encoder baseline](BASELINE_ADDENDUM.md), added after cohort training began, checks whether training improves recovery and reaching beyond the initial geometry. It adds 60 predictor fits and no confirmatory hypotheses; its results will be kept separate.
