@@ -1,0 +1,82 @@
+{
+  "stage": "confirmation",
+  "protocol": "handover",
+  "source": "random",
+  "seed": 51,
+  "metrics": {
+    "common_grid_r2": 0.9969451671157366,
+    "reference_ou_r2": 0.9883474442580354,
+    "reference_ou_raw_variance": 0.9542341232299805,
+    "reference_ou_gaussian_cf_error": 0.0008332959259860218,
+    "reference_ou_alignment": 0.1997394859790802,
+    "reversed_grid_fraction": 0.0
+  },
+  "initial_metrics": {
+    "common_grid_r2": 0.9477189210441808,
+    "reference_ou_r2": 0.9115296645875206,
+    "reference_ou_raw_variance": 0.00034861182211898267,
+    "reference_ou_gaussian_cf_error": 0.4115997552871704,
+    "reference_ou_alignment": 8.246149809565395e-05
+  },
+  "history": [
+    {
+      "updates": 1000,
+      "alignment": 0.0013823810731992126,
+      "sigreg": 12.170153617858887,
+      "lr": 0.001,
+      "common_grid_r2": 0.878334904669036,
+      "reference_ou_r2": 0.831570712726444,
+      "reference_ou_raw_variance": 0.47383740544319153,
+      "reference_ou_gaussian_cf_error": 0.40005940198898315,
+      "reference_ou_alignment": 0.11873131990432739
+    },
+    {
+      "updates": 2000,
+      "alignment": 0.06515346467494965,
+      "sigreg": 3.666543960571289,
+      "lr": 0.001,
+      "common_grid_r2": 0.9864273311791107,
+      "reference_ou_r2": 0.9709564408793184,
+      "reference_ou_raw_variance": 0.6420546770095825,
+      "reference_ou_gaussian_cf_error": 0.09581152349710464,
+      "reference_ou_alignment": 0.13752396404743195
+    },
+    {
+      "updates": 3000,
+      "alignment": 0.19604912400245667,
+      "sigreg": 0.4897956848144531,
+      "lr": 0.0005003928954890302,
+      "common_grid_r2": 0.9965849262029653,
+      "reference_ou_r2": 0.9878197676613536,
+      "reference_ou_raw_variance": 0.9976019859313965,
+      "reference_ou_gaussian_cf_error": 0.0013108451385051012,
+      "reference_ou_alignment": 0.2091389149427414
+    },
+    {
+      "updates": 4000,
+      "alignment": 0.1808927357196808,
+      "sigreg": 1.270459532737732,
+      "lr": 0.0,
+      "common_grid_r2": 0.9969451671157366,
+      "reference_ou_r2": 0.9883474442580354,
+      "reference_ou_raw_variance": 0.9542341232299805,
+      "reference_ou_gaussian_cf_error": 0.0008332959259860218,
+      "reference_ou_alignment": 0.1997394859790802
+    }
+  ],
+  "source_statistics": {
+    "lag_correlation": 0.9971239566802979,
+    "gaussian_cdf_distance": 0.10491549968719482,
+    "z_std": 1.035510540008545,
+    "size_bin_entropy": 0.9430296421051025,
+    "size_bin_coverage": 1.0,
+    "max_size_bin_mass": 0.07684326171875,
+    "fraction_in_sensor_range": 1.0,
+    "stay_fraction": 0.33819580078125,
+    "mean_abs_step": 0.048136696219444275,
+    "sha256": "9d2cadcb49707df0b81f61b743c8ca3e1f28eafd8eb4be37afdb6b6975e4cfcc"
+  },
+  "pair_indices_sha256": "2a09e6b231580a0b5b3b9f484396e9516087cd6f423d429a35a7aa05a1b25ce6",
+  "masks_sha256": "89539d52ef3609bceec4eeb1f999403dc3bd8a7b741727ac5c492ace4ceebb29",
+  "checkpoint": "checkpoints/confirmation/handover-random_seed51.pt"
+}

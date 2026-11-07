@@ -1,0 +1,188 @@
+{
+  "signature": "badc556c3b35086d2a3562200c5269d0e7685a856f4fbc6c8817cdc4d82c8664",
+  "condition": "zoo_ou_actions_lp_w0.1_native",
+  "experiment": "zoo",
+  "policy": "ou_actions_lp_w0.1",
+  "alignment_source": "native",
+  "regularizer_source": "common",
+  "seed": 24,
+  "parent_checkpoint_sha256": null,
+  "source_hash": "1aee186ccb224fd43160030fa19f2e35b709bde439d75a4e30a499c214aed781",
+  "regularizer_pool_sha256": "e170dad3d79029a718be248d297238835e969ecf583743675d2b69be84e75085",
+  "initial_metrics": {
+    "affine_log_r2": 0.10697855906315692,
+    "absolute_rank_correlation": 0.2449293304854908,
+    "reversed_fraction": 0.4921875,
+    "folded": true,
+    "near_r2": 0.9828830688899391,
+    "far_r2": 0.9997929225133725,
+    "alias_distance_gap": 14.493799421600897,
+    "alias_goal_error_bound": 7.246899710800449,
+    "alias_residual": 1.3877787807814457e-17,
+    "alias_goals": [
+      1.5061974145758275,
+      15.999996836176726
+    ]
+  },
+  "metrics": {
+    "affine_log_r2": 0.9992615843105856,
+    "absolute_rank_correlation": 0.9999999999999998,
+    "reversed_fraction": 0.0,
+    "folded": false,
+    "near_r2": 0.9948295483429107,
+    "far_r2": 0.9986455628518418,
+    "alias_distance_gap": 0.0,
+    "alias_goal_error_bound": 0.0,
+    "alias_residual": 0.0
+  },
+  "history": [
+    {
+      "step": 0,
+      "affine_log_r2": 0.10697855906315692,
+      "absolute_rank_correlation": 0.2449293304854908,
+      "reversed_fraction": 0.4921875,
+      "folded": true,
+      "near_r2": 0.9828830688899391,
+      "far_r2": 0.9997929225133725,
+      "alias_distance_gap": 14.493799421600897,
+      "alias_goal_error_bound": 7.246899710800449,
+      "alias_residual": 1.3877787807814457e-17,
+      "alias_goals": [
+        1.5061974145758275,
+        15.999996836176726
+      ]
+    },
+    {
+      "step": 500,
+      "alignment_weighted": 0.0014776744646951556,
+      "regularizer_weighted": 1.026918888092041,
+      "affine_log_r2": 0.9908692690511608,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9702476840306667,
+      "far_r2": 0.9947615530453136,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 1000,
+      "alignment_weighted": 0.0014623838942497969,
+      "regularizer_weighted": 0.991607129573822,
+      "affine_log_r2": 0.9916032336528977,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9731244749423965,
+      "far_r2": 0.9949746147464319,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 1500,
+      "alignment_weighted": 0.001738836639560759,
+      "regularizer_weighted": 0.9776641130447388,
+      "affine_log_r2": 0.9924871393400524,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9760487648784753,
+      "far_r2": 0.99521473459263,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 2000,
+      "alignment_weighted": 0.0017842717934399843,
+      "regularizer_weighted": 0.9030134081840515,
+      "affine_log_r2": 0.9939406016954783,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9804243798693595,
+      "far_r2": 0.9956517459519555,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 2500,
+      "alignment_weighted": 0.0018879377748817205,
+      "regularizer_weighted": 1.3405659198760986,
+      "affine_log_r2": 0.9964493761723259,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9868793239684925,
+      "far_r2": 0.9966957995885076,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 3000,
+      "alignment_weighted": 0.0018838149262592196,
+      "regularizer_weighted": 0.7992832064628601,
+      "affine_log_r2": 0.998622312759669,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9922201058878852,
+      "far_r2": 0.9979616468463327,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 3500,
+      "alignment_weighted": 0.001901242765597999,
+      "regularizer_weighted": 0.772625744342804,
+      "affine_log_r2": 0.9992611046424839,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9945859384085368,
+      "far_r2": 0.9985055932044106,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 4000,
+      "alignment_weighted": 0.002528485609218478,
+      "regularizer_weighted": 0.6169959902763367,
+      "affine_log_r2": 0.9992615843105856,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9948295483429107,
+      "far_r2": 0.9986455628518418,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    }
+  ],
+  "planning": {
+    "shared": {
+      "goal_error": 0.078125,
+      "success": 1.0,
+      "stay_error": 1.0,
+      "oracle_error": 0.0,
+      "near_error": 0.0,
+      "middle_error": 0.011904762126505375,
+      "far_error": 0.15833333134651184
+    },
+    "native": {
+      "goal_error": 0.12109375,
+      "success": 0.953125,
+      "stay_error": 1.0,
+      "oracle_error": 0.0,
+      "near_error": 0.01923076994717121,
+      "middle_error": 0.1428571492433548,
+      "far_error": 0.15000000596046448
+    }
+  }
+}

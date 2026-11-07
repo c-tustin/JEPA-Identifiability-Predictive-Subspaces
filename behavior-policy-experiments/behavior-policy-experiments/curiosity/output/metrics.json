@@ -1,0 +1,882 @@
+{
+  "config": {
+    "policy_updates": 600,
+    "jepa_steps": 4000,
+    "nenv": 16,
+    "rollout": 20,
+    "train_episodes": 256,
+    "eval_episodes": 64,
+    "horizon": 64,
+    "burnin": 128,
+    "batch": 512,
+    "distance_min": 1.0,
+    "distance_max": 16.0,
+    "move": 0.25,
+    "sigma": 0.7,
+    "rho": 0.9,
+    "sigreg_weight": 0.1,
+    "forward_weight": 0.2,
+    "reward_scale": 0.2,
+    "entropy_weight": 0.0005,
+    "gamma": 0.99
+  },
+  "seeds": [
+    0,
+    1,
+    2
+  ],
+  "quick": false,
+  "upstream_commit": "3e220c2177fc253916f12d980957fc40579d577a",
+  "runs": [
+    {
+      "seed": 0,
+      "conditions": {
+        "ou": {
+          "on_policy_log_distance_r2": 0.9770237533887884,
+          "on_policy_physical_distance_r2": 0.7390039523447054,
+          "calibration_embedding_mean": 0.03375941887497902,
+          "calibration_embedding_variance": 0.8299770355224609,
+          "raw_embedding_mean": -0.0032355710864067078,
+          "raw_embedding_variance": 0.8370010256767273,
+          "heldout_gaussian_cf_discrepancy": 0.0025367706548422575,
+          "raw_alignment": 0.17436009645462036,
+          "latent_distribution": {
+            "mean": -0.012109216302633286,
+            "variance": 1.0360007286071777,
+            "skewness": -0.02946421504020691,
+            "excess_kurtosis": 0.03556537628173828,
+            "standardized_gaussian_cdf_distance": 0.00982820987701416,
+            "lag_correlation": 0.9013186693191528,
+            "paired_marginal_mean_shift": 0.008670536801218987
+          },
+          "common_log_distance_grid_r2": 0.9940795902994528,
+          "grid_calibrated_variance": 1.0242505073547363,
+          "physical_range_bin_coverage": 1.0,
+          "fraction_in_common_distance_range": 0.94580078125
+        },
+        "random": {
+          "on_policy_log_distance_r2": 0.9329684588148949,
+          "on_policy_physical_distance_r2": 0.9686253998385806,
+          "calibration_embedding_mean": -0.1640050858259201,
+          "calibration_embedding_variance": 0.885133683681488,
+          "raw_embedding_mean": -0.08846692740917206,
+          "raw_embedding_variance": 0.942286491394043,
+          "heldout_gaussian_cf_discrepancy": 0.0038009316194802523,
+          "raw_alignment": 0.0037147924304008484,
+          "latent_distribution": {
+            "mean": 0.8243005275726318,
+            "variance": 0.9868029952049255,
+            "skewness": -1.0626509189605713,
+            "excess_kurtosis": 0.11925005912780762,
+            "standardized_gaussian_cdf_distance": 0.1432018280029297,
+            "lag_correlation": 0.9972862601280212,
+            "paired_marginal_mean_shift": -0.0014945268630981445
+          },
+          "common_log_distance_grid_r2": 0.9613097609894246,
+          "grid_calibrated_variance": 1.026245355606079,
+          "physical_range_bin_coverage": 1.0,
+          "fraction_in_common_distance_range": 1.0
+        },
+        "icm": {
+          "on_policy_log_distance_r2": 0.9514436517144244,
+          "on_policy_physical_distance_r2": 0.9857615287036797,
+          "calibration_embedding_mean": -0.1509040743112564,
+          "calibration_embedding_variance": 0.9052358865737915,
+          "raw_embedding_mean": -0.09429112076759338,
+          "raw_embedding_variance": 0.7637869715690613,
+          "heldout_gaussian_cf_discrepancy": 0.012460993602871895,
+          "raw_alignment": 0.003020690521225333,
+          "latent_distribution": {
+            "mean": 0.2108907848596573,
+            "variance": 1.4598098993301392,
+            "skewness": -0.3730629086494446,
+            "excess_kurtosis": -1.3020001649856567,
+            "standardized_gaussian_cdf_distance": 0.1327890157699585,
+            "lag_correlation": 0.9959328174591064,
+            "paired_marginal_mean_shift": -0.0038165301084518433
+          },
+          "common_log_distance_grid_r2": 0.9463824651692588,
+          "grid_calibrated_variance": 1.024315595626831,
+          "physical_range_bin_coverage": 1.0,
+          "fraction_in_common_distance_range": 1.0
+        }
+      },
+      "policy_weight_change_l2": 0.3447456359863281,
+      "policy_mean_l1_deviation_from_uniform": 0.0742124617099762,
+      "policy_mean_action_probabilities": [
+        0.3704395890235901,
+        0.32657885551452637,
+        0.3029816150665283
+      ],
+      "policy_history": [
+        {
+          "update": 0,
+          "intrinsic_reward": 0.21674299240112305,
+          "forward_error": 1.0837150812149048,
+          "inverse_accuracy": 0.359375,
+          "action_majority_fraction": 0.359375,
+          "entropy": 1.0986087322235107
+        },
+        {
+          "update": 25,
+          "intrinsic_reward": 0.006951763294637203,
+          "forward_error": 0.03475881740450859,
+          "inverse_accuracy": 0.34062498807907104,
+          "action_majority_fraction": 0.34375,
+          "entropy": 1.098576545715332
+        },
+        {
+          "update": 50,
+          "intrinsic_reward": 0.001018129987642169,
+          "forward_error": 0.005090649705380201,
+          "inverse_accuracy": 0.30937498807907104,
+          "action_majority_fraction": 0.34687501192092896,
+          "entropy": 1.098568320274353
+        },
+        {
+          "update": 75,
+          "intrinsic_reward": 0.00041170563781633973,
+          "forward_error": 0.0020585281308740377,
+          "inverse_accuracy": 0.34375,
+          "action_majority_fraction": 0.34687501192092896,
+          "entropy": 1.0985510349273682
+        },
+        {
+          "update": 100,
+          "intrinsic_reward": 0.00017884271801449358,
+          "forward_error": 0.0008942136773839593,
+          "inverse_accuracy": 0.30000001192092896,
+          "action_majority_fraction": 0.359375,
+          "entropy": 1.0985478162765503
+        },
+        {
+          "update": 125,
+          "intrinsic_reward": 0.000147133570862934,
+          "forward_error": 0.0007356678252108395,
+          "inverse_accuracy": 0.328125,
+          "action_majority_fraction": 0.3499999940395355,
+          "entropy": 1.0985424518585205
+        },
+        {
+          "update": 150,
+          "intrinsic_reward": 0.0002983603917527944,
+          "forward_error": 0.0014918020460754633,
+          "inverse_accuracy": 0.37812501192092896,
+          "action_majority_fraction": 0.37812501192092896,
+          "entropy": 1.0985106229782104
+        },
+        {
+          "update": 175,
+          "intrinsic_reward": 0.00011299045581836253,
+          "forward_error": 0.0005649522645398974,
+          "inverse_accuracy": 0.3187499940395355,
+          "action_majority_fraction": 0.3499999940395355,
+          "entropy": 1.0985167026519775
+        },
+        {
+          "update": 200,
+          "intrinsic_reward": 0.0003934654814656824,
+          "forward_error": 0.0019673272036015987,
+          "inverse_accuracy": 0.3375000059604645,
+          "action_majority_fraction": 0.34687501192092896,
+          "entropy": 1.098494052886963
+        },
+        {
+          "update": 225,
+          "intrinsic_reward": 0.0007063462398946285,
+          "forward_error": 0.003531730966642499,
+          "inverse_accuracy": 0.37812501192092896,
+          "action_majority_fraction": 0.37812501192092896,
+          "entropy": 1.0984485149383545
+        },
+        {
+          "update": 250,
+          "intrinsic_reward": 0.000344570231391117,
+          "forward_error": 0.001722851418890059,
+          "inverse_accuracy": 0.37187498807907104,
+          "action_majority_fraction": 0.37187498807907104,
+          "entropy": 1.0984498262405396
+        },
+        {
+          "update": 275,
+          "intrinsic_reward": 0.00045903673162683845,
+          "forward_error": 0.0022951834835112095,
+          "inverse_accuracy": 0.33125001192092896,
+          "action_majority_fraction": 0.35624998807907104,
+          "entropy": 1.0984517335891724
+        },
+        {
+          "update": 300,
+          "intrinsic_reward": 0.0006682997918687761,
+          "forward_error": 0.0033414990175515413,
+          "inverse_accuracy": 0.37187498807907104,
+          "action_majority_fraction": 0.34375,
+          "entropy": 1.0984022617340088
+        },
+        {
+          "update": 325,
+          "intrinsic_reward": 0.0004141015815548599,
+          "forward_error": 0.0020705077331513166,
+          "inverse_accuracy": 0.359375,
+          "action_majority_fraction": 0.36250001192092896,
+          "entropy": 1.098381519317627
+        },
+        {
+          "update": 350,
+          "intrinsic_reward": 0.00041478508501313627,
+          "forward_error": 0.0020739256870001554,
+          "inverse_accuracy": 0.39375001192092896,
+          "action_majority_fraction": 0.3499999940395355,
+          "entropy": 1.0983796119689941
+        },
+        {
+          "update": 375,
+          "intrinsic_reward": 0.0009915197733789682,
+          "forward_error": 0.0049575986340641975,
+          "inverse_accuracy": 0.5093749761581421,
+          "action_majority_fraction": 0.35624998807907104,
+          "entropy": 1.0982998609542847
+        },
+        {
+          "update": 400,
+          "intrinsic_reward": 0.0007542109815403819,
+          "forward_error": 0.0037710547912865877,
+          "inverse_accuracy": 0.4625000059604645,
+          "action_majority_fraction": 0.3968749940395355,
+          "entropy": 1.0982978343963623
+        },
+        {
+          "update": 425,
+          "intrinsic_reward": 0.0012196622556075454,
+          "forward_error": 0.006098310463130474,
+          "inverse_accuracy": 0.6187499761581421,
+          "action_majority_fraction": 0.36250001192092896,
+          "entropy": 1.098299264907837
+        },
+        {
+          "update": 450,
+          "intrinsic_reward": 0.003307799343019724,
+          "forward_error": 0.016538996249437332,
+          "inverse_accuracy": 0.887499988079071,
+          "action_majority_fraction": 0.359375,
+          "entropy": 1.0982667207717896
+        },
+        {
+          "update": 475,
+          "intrinsic_reward": 0.006159889046102762,
+          "forward_error": 0.030799444764852524,
+          "inverse_accuracy": 1.0,
+          "action_majority_fraction": 0.34062498807907104,
+          "entropy": 1.098097562789917
+        },
+        {
+          "update": 500,
+          "intrinsic_reward": 0.004871450364589691,
+          "forward_error": 0.024357255548238754,
+          "inverse_accuracy": 0.971875011920929,
+          "action_majority_fraction": 0.35624998807907104,
+          "entropy": 1.097977638244629
+        },
+        {
+          "update": 525,
+          "intrinsic_reward": 0.00495485682040453,
+          "forward_error": 0.02477428689599037,
+          "inverse_accuracy": 0.953125,
+          "action_majority_fraction": 0.37187498807907104,
+          "entropy": 1.0978082418441772
+        },
+        {
+          "update": 550,
+          "intrinsic_reward": 0.0070136962458491325,
+          "forward_error": 0.03506848216056824,
+          "inverse_accuracy": 0.981249988079071,
+          "action_majority_fraction": 0.34375,
+          "entropy": 1.0972884893417358
+        },
+        {
+          "update": 575,
+          "intrinsic_reward": 0.008174484595656395,
+          "forward_error": 0.04087241739034653,
+          "inverse_accuracy": 0.984375,
+          "action_majority_fraction": 0.359375,
+          "entropy": 1.0963388681411743
+        },
+        {
+          "update": 599,
+          "intrinsic_reward": 0.012126890011131763,
+          "forward_error": 0.06063445284962654,
+          "inverse_accuracy": 0.9781249761581421,
+          "action_majority_fraction": 0.37812501192092896,
+          "entropy": 1.093978762626648
+        }
+      ]
+    },
+    {
+      "seed": 1,
+      "conditions": {
+        "ou": {
+          "on_policy_log_distance_r2": 0.9828267965681808,
+          "on_policy_physical_distance_r2": 0.7270677682910316,
+          "calibration_embedding_mean": -0.02385047636926174,
+          "calibration_embedding_variance": 0.8612870573997498,
+          "raw_embedding_mean": -0.008593915030360222,
+          "raw_embedding_variance": 0.863822340965271,
+          "heldout_gaussian_cf_discrepancy": 0.0020504852291196585,
+          "raw_alignment": 0.17231601476669312,
+          "latent_distribution": {
+            "mean": -0.00025826459750533104,
+            "variance": 1.0139284133911133,
+            "skewness": -0.02244274877011776,
+            "excess_kurtosis": -0.028262615203857422,
+            "standardized_gaussian_cdf_distance": 0.011121273040771484,
+            "lag_correlation": 0.9023154377937317,
+            "paired_marginal_mean_shift": -0.0028844187036156654
+          },
+          "common_log_distance_grid_r2": 0.9959137295392144,
+          "grid_calibrated_variance": 0.9992512464523315,
+          "physical_range_bin_coverage": 1.0,
+          "fraction_in_common_distance_range": 0.951171875
+        },
+        "random": {
+          "on_policy_log_distance_r2": 0.902566073608959,
+          "on_policy_physical_distance_r2": 0.9797178471797755,
+          "calibration_embedding_mean": 0.01901906728744507,
+          "calibration_embedding_variance": 0.8682823181152344,
+          "raw_embedding_mean": 0.2390298843383789,
+          "raw_embedding_variance": 1.0969407558441162,
+          "heldout_gaussian_cf_discrepancy": 0.04561637341976166,
+          "raw_alignment": 0.0036952088121324778,
+          "latent_distribution": {
+            "mean": 0.9439095258712769,
+            "variance": 0.8810774683952332,
+            "skewness": -0.9833009243011475,
+            "excess_kurtosis": 0.09787678718566895,
+            "standardized_gaussian_cdf_distance": 0.13844263553619385,
+            "lag_correlation": 0.9976233243942261,
+            "paired_marginal_mean_shift": 0.0009965300559997559
+          },
+          "common_log_distance_grid_r2": 0.9606088015886409,
+          "grid_calibrated_variance": 1.001183032989502,
+          "physical_range_bin_coverage": 1.0,
+          "fraction_in_common_distance_range": 1.0
+        },
+        "icm": {
+          "on_policy_log_distance_r2": 0.958818451414041,
+          "on_policy_physical_distance_r2": 0.7751481763935494,
+          "calibration_embedding_mean": 1.4528487920761108,
+          "calibration_embedding_variance": 16.172405242919922,
+          "raw_embedding_mean": 1.694499135017395,
+          "raw_embedding_variance": 18.195497512817383,
+          "heldout_gaussian_cf_discrepancy": 0.04719279333949089,
+          "raw_alignment": 1.7781128883361816,
+          "latent_distribution": {
+            "mean": -1.5626338720321655,
+            "variance": 0.4082445204257965,
+            "skewness": 2.9099016189575195,
+            "excess_kurtosis": 8.027406692504883,
+            "standardized_gaussian_cdf_distance": 0.31057029962539673,
+            "lag_correlation": 0.9574686884880066,
+            "paired_marginal_mean_shift": -0.007498383522033691
+          },
+          "common_log_distance_grid_r2": 0.8484077415885972,
+          "grid_calibrated_variance": 0.9863502979278564,
+          "physical_range_bin_coverage": 0.6875,
+          "fraction_in_common_distance_range": 1.0
+        }
+      },
+      "policy_weight_change_l2": 1.0459131002426147,
+      "policy_mean_l1_deviation_from_uniform": 0.45748746395111084,
+      "policy_mean_action_probabilities": [
+        0.5620771050453186,
+        0.24951477348804474,
+        0.18840815126895905
+      ],
+      "policy_history": [
+        {
+          "update": 0,
+          "intrinsic_reward": 0.12182022631168365,
+          "forward_error": 0.6091011762619019,
+          "inverse_accuracy": 0.31562501192092896,
+          "action_majority_fraction": 0.359375,
+          "entropy": 1.0986112356185913
+        },
+        {
+          "update": 25,
+          "intrinsic_reward": 0.004317041020840406,
+          "forward_error": 0.02158520184457302,
+          "inverse_accuracy": 0.34062498807907104,
+          "action_majority_fraction": 0.35624998807907104,
+          "entropy": 1.0985661745071411
+        },
+        {
+          "update": 50,
+          "intrinsic_reward": 0.00044773853733204305,
+          "forward_error": 0.002238692482933402,
+          "inverse_accuracy": 0.34062498807907104,
+          "action_majority_fraction": 0.3499999940395355,
+          "entropy": 1.0985398292541504
+        },
+        {
+          "update": 75,
+          "intrinsic_reward": 0.00024213906726799905,
+          "forward_error": 0.0012106953654438257,
+          "inverse_accuracy": 0.37187498807907104,
+          "action_majority_fraction": 0.37187498807907104,
+          "entropy": 1.098526954650879
+        },
+        {
+          "update": 100,
+          "intrinsic_reward": 0.0003193716111127287,
+          "forward_error": 0.0015968580264598131,
+          "inverse_accuracy": 0.3499999940395355,
+          "action_majority_fraction": 0.3499999940395355,
+          "entropy": 1.0985186100006104
+        },
+        {
+          "update": 125,
+          "intrinsic_reward": 0.00020112826314289123,
+          "forward_error": 0.001005641301162541,
+          "inverse_accuracy": 0.265625,
+          "action_majority_fraction": 0.39375001192092896,
+          "entropy": 1.098501205444336
+        },
+        {
+          "update": 150,
+          "intrinsic_reward": 0.00030828657327219844,
+          "forward_error": 0.001541433040983975,
+          "inverse_accuracy": 0.2906250059604645,
+          "action_majority_fraction": 0.359375,
+          "entropy": 1.0985071659088135
+        },
+        {
+          "update": 175,
+          "intrinsic_reward": 0.00021842739079147577,
+          "forward_error": 0.0010921369539573789,
+          "inverse_accuracy": 0.3062500059604645,
+          "action_majority_fraction": 0.3656249940395355,
+          "entropy": 1.0985137224197388
+        },
+        {
+          "update": 200,
+          "intrinsic_reward": 0.0002840009401552379,
+          "forward_error": 0.0014200047589838505,
+          "inverse_accuracy": 0.3499999940395355,
+          "action_majority_fraction": 0.3499999940395355,
+          "entropy": 1.0985229015350342
+        },
+        {
+          "update": 225,
+          "intrinsic_reward": 0.0004339126462582499,
+          "forward_error": 0.0021695629693567753,
+          "inverse_accuracy": 0.34062498807907104,
+          "action_majority_fraction": 0.34375,
+          "entropy": 1.0985010862350464
+        },
+        {
+          "update": 250,
+          "intrinsic_reward": 0.0003673323371913284,
+          "forward_error": 0.0018366618314757943,
+          "inverse_accuracy": 0.33125001192092896,
+          "action_majority_fraction": 0.37187498807907104,
+          "entropy": 1.0985301733016968
+        },
+        {
+          "update": 275,
+          "intrinsic_reward": 0.00023538953973911703,
+          "forward_error": 0.0011769476113840938,
+          "inverse_accuracy": 0.3656249940395355,
+          "action_majority_fraction": 0.37187498807907104,
+          "entropy": 1.0984978675842285
+        },
+        {
+          "update": 300,
+          "intrinsic_reward": 0.00018437043763697147,
+          "forward_error": 0.0009218521299771965,
+          "inverse_accuracy": 0.2874999940395355,
+          "action_majority_fraction": 0.375,
+          "entropy": 1.098533272743225
+        },
+        {
+          "update": 325,
+          "intrinsic_reward": 0.00038358778692781925,
+          "forward_error": 0.0019179389346390963,
+          "inverse_accuracy": 0.35624998807907104,
+          "action_majority_fraction": 0.35624998807907104,
+          "entropy": 1.0985177755355835
+        },
+        {
+          "update": 350,
+          "intrinsic_reward": 0.0011522502172738314,
+          "forward_error": 0.005761249922215939,
+          "inverse_accuracy": 0.9125000238418579,
+          "action_majority_fraction": 0.34062498807907104,
+          "entropy": 1.0985333919525146
+        },
+        {
+          "update": 375,
+          "intrinsic_reward": 0.002407117746770382,
+          "forward_error": 0.012035587802529335,
+          "inverse_accuracy": 0.6156250238418579,
+          "action_majority_fraction": 0.359375,
+          "entropy": 1.0985164642333984
+        },
+        {
+          "update": 400,
+          "intrinsic_reward": 0.0028629128355532885,
+          "forward_error": 0.014314563944935799,
+          "inverse_accuracy": 0.731249988079071,
+          "action_majority_fraction": 0.34687501192092896,
+          "entropy": 1.0984669923782349
+        },
+        {
+          "update": 425,
+          "intrinsic_reward": 0.00374147342517972,
+          "forward_error": 0.018707364797592163,
+          "inverse_accuracy": 0.8687499761581421,
+          "action_majority_fraction": 0.35624998807907104,
+          "entropy": 1.0984103679656982
+        },
+        {
+          "update": 450,
+          "intrinsic_reward": 0.005114320199936628,
+          "forward_error": 0.02557159960269928,
+          "inverse_accuracy": 0.984375,
+          "action_majority_fraction": 0.34375,
+          "entropy": 1.0979809761047363
+        },
+        {
+          "update": 475,
+          "intrinsic_reward": 0.005050593055784702,
+          "forward_error": 0.025252962484955788,
+          "inverse_accuracy": 0.987500011920929,
+          "action_majority_fraction": 0.37187498807907104,
+          "entropy": 1.096623420715332
+        },
+        {
+          "update": 500,
+          "intrinsic_reward": 0.02280156873166561,
+          "forward_error": 0.1140078455209732,
+          "inverse_accuracy": 0.862500011920929,
+          "action_majority_fraction": 0.35624998807907104,
+          "entropy": 1.0905470848083496
+        },
+        {
+          "update": 525,
+          "intrinsic_reward": 0.007502906024456024,
+          "forward_error": 0.03751453012228012,
+          "inverse_accuracy": 0.9468749761581421,
+          "action_majority_fraction": 0.4000000059604645,
+          "entropy": 1.0766836404800415
+        },
+        {
+          "update": 550,
+          "intrinsic_reward": 0.01935698464512825,
+          "forward_error": 0.09678492695093155,
+          "inverse_accuracy": 0.925000011920929,
+          "action_majority_fraction": 0.5406249761581421,
+          "entropy": 1.0258351564407349
+        },
+        {
+          "update": 575,
+          "intrinsic_reward": 0.03724408149719238,
+          "forward_error": 0.18622039258480072,
+          "inverse_accuracy": 0.612500011920929,
+          "action_majority_fraction": 0.637499988079071,
+          "entropy": 0.878313422203064
+        },
+        {
+          "update": 599,
+          "intrinsic_reward": 0.018961478024721146,
+          "forward_error": 0.09480740129947662,
+          "inverse_accuracy": 0.753125011920929,
+          "action_majority_fraction": 0.6937500238418579,
+          "entropy": 0.794289231300354
+        }
+      ]
+    },
+    {
+      "seed": 2,
+      "conditions": {
+        "ou": {
+          "on_policy_log_distance_r2": 0.980725112928336,
+          "on_policy_physical_distance_r2": 0.7409030707941979,
+          "calibration_embedding_mean": 0.009108852595090866,
+          "calibration_embedding_variance": 0.8512715697288513,
+          "raw_embedding_mean": 0.0074805524200201035,
+          "raw_embedding_variance": 0.8403223752975464,
+          "heldout_gaussian_cf_discrepancy": 0.0029246113263070583,
+          "raw_alignment": 0.17263495922088623,
+          "latent_distribution": {
+            "mean": -0.0010818236041814089,
+            "variance": 0.977347731590271,
+            "skewness": -0.007110951468348503,
+            "excess_kurtosis": -0.10545897483825684,
+            "standardized_gaussian_cdf_distance": 0.00922420620918274,
+            "lag_correlation": 0.8990465402603149,
+            "paired_marginal_mean_shift": -0.005501364357769489
+          },
+          "common_log_distance_grid_r2": 0.9937195423293169,
+          "grid_calibrated_variance": 1.0059670209884644,
+          "physical_range_bin_coverage": 1.0,
+          "fraction_in_common_distance_range": 0.956298828125
+        },
+        "random": {
+          "on_policy_log_distance_r2": 0.9202097782897714,
+          "on_policy_physical_distance_r2": 0.9811942826479889,
+          "calibration_embedding_mean": -0.048485204577445984,
+          "calibration_embedding_variance": 0.9668117761611938,
+          "raw_embedding_mean": 0.11201661080121994,
+          "raw_embedding_variance": 0.8227672576904297,
+          "heldout_gaussian_cf_discrepancy": 0.008762910030782223,
+          "raw_alignment": 0.0027308696880936623,
+          "latent_distribution": {
+            "mean": 0.9139809608459473,
+            "variance": 0.7458571195602417,
+            "skewness": -0.9427379965782166,
+            "excess_kurtosis": 0.3058021068572998,
+            "standardized_gaussian_cdf_distance": 0.1169326901435852,
+            "lag_correlation": 0.997575044631958,
+            "paired_marginal_mean_shift": -0.0007283687591552734
+          },
+          "common_log_distance_grid_r2": 0.9606555457931544,
+          "grid_calibrated_variance": 1.0149673223495483,
+          "physical_range_bin_coverage": 1.0,
+          "fraction_in_common_distance_range": 1.0
+        },
+        "icm": {
+          "on_policy_log_distance_r2": 0.9664703317598895,
+          "on_policy_physical_distance_r2": 0.7784680609739336,
+          "calibration_embedding_mean": 0.7622214555740356,
+          "calibration_embedding_variance": 6.6292924880981445,
+          "raw_embedding_mean": 1.331211805343628,
+          "raw_embedding_variance": 13.842378616333008,
+          "heldout_gaussian_cf_discrepancy": 0.03957933187484741,
+          "raw_alignment": 2.071995258331299,
+          "latent_distribution": {
+            "mean": -1.617522954940796,
+            "variance": 0.2827608585357666,
+            "skewness": 3.3436577320098877,
+            "excess_kurtosis": 11.249972343444824,
+            "standardized_gaussian_cdf_distance": 0.28968802094459534,
+            "lag_correlation": 0.9266393184661865,
+            "paired_marginal_mean_shift": -0.004111289978027344
+          },
+          "common_log_distance_grid_r2": 0.8548714106002684,
+          "grid_calibrated_variance": 0.9968847036361694,
+          "physical_range_bin_coverage": 0.53125,
+          "fraction_in_common_distance_range": 1.0
+        }
+      },
+      "policy_weight_change_l2": 0.8596110343933105,
+      "policy_mean_l1_deviation_from_uniform": 0.5024139881134033,
+      "policy_mean_action_probabilities": [
+        0.5845403075218201,
+        0.21214419603347778,
+        0.20331549644470215
+      ],
+      "policy_history": [
+        {
+          "update": 0,
+          "intrinsic_reward": 0.10832788795232773,
+          "forward_error": 0.5416394472122192,
+          "inverse_accuracy": 0.30000001192092896,
+          "action_majority_fraction": 0.3531250059604645,
+          "entropy": 1.0986113548278809
+        },
+        {
+          "update": 25,
+          "intrinsic_reward": 0.004761134274303913,
+          "forward_error": 0.02380567044019699,
+          "inverse_accuracy": 0.3031249940395355,
+          "action_majority_fraction": 0.3812499940395355,
+          "entropy": 1.0985677242279053
+        },
+        {
+          "update": 50,
+          "intrinsic_reward": 0.0013335203984752297,
+          "forward_error": 0.0066676014102995396,
+          "inverse_accuracy": 0.37187498807907104,
+          "action_majority_fraction": 0.37187498807907104,
+          "entropy": 1.0985409021377563
+        },
+        {
+          "update": 75,
+          "intrinsic_reward": 0.00035656531690619886,
+          "forward_error": 0.001782826497219503,
+          "inverse_accuracy": 0.33125001192092896,
+          "action_majority_fraction": 0.3375000059604645,
+          "entropy": 1.0985081195831299
+        },
+        {
+          "update": 100,
+          "intrinsic_reward": 0.0009908591164276004,
+          "forward_error": 0.004954295698553324,
+          "inverse_accuracy": 0.35624998807907104,
+          "action_majority_fraction": 0.37187498807907104,
+          "entropy": 1.0984113216400146
+        },
+        {
+          "update": 125,
+          "intrinsic_reward": 0.0004128282016608864,
+          "forward_error": 0.0020641409792006016,
+          "inverse_accuracy": 0.30937498807907104,
+          "action_majority_fraction": 0.3656249940395355,
+          "entropy": 1.0983915328979492
+        },
+        {
+          "update": 150,
+          "intrinsic_reward": 0.0004731288063339889,
+          "forward_error": 0.0023656440898776054,
+          "inverse_accuracy": 0.3343749940395355,
+          "action_majority_fraction": 0.3531250059604645,
+          "entropy": 1.0982396602630615
+        },
+        {
+          "update": 175,
+          "intrinsic_reward": 0.0009188791736960411,
+          "forward_error": 0.0045943958684802055,
+          "inverse_accuracy": 0.29374998807907104,
+          "action_majority_fraction": 0.390625,
+          "entropy": 1.0980130434036255
+        },
+        {
+          "update": 200,
+          "intrinsic_reward": 0.0006343055283650756,
+          "forward_error": 0.0031715277582406998,
+          "inverse_accuracy": 0.36250001192092896,
+          "action_majority_fraction": 0.3656249940395355,
+          "entropy": 1.0978126525878906
+        },
+        {
+          "update": 225,
+          "intrinsic_reward": 0.00047247414477169514,
+          "forward_error": 0.0023623707238584757,
+          "inverse_accuracy": 0.359375,
+          "action_majority_fraction": 0.359375,
+          "entropy": 1.0978401899337769
+        },
+        {
+          "update": 250,
+          "intrinsic_reward": 0.0009302421240136027,
+          "forward_error": 0.004651210270822048,
+          "inverse_accuracy": 0.753125011920929,
+          "action_majority_fraction": 0.4124999940395355,
+          "entropy": 1.0978103876113892
+        },
+        {
+          "update": 275,
+          "intrinsic_reward": 0.0019011268159374595,
+          "forward_error": 0.00950563419610262,
+          "inverse_accuracy": 0.643750011920929,
+          "action_majority_fraction": 0.36250001192092896,
+          "entropy": 1.0976827144622803
+        },
+        {
+          "update": 300,
+          "intrinsic_reward": 0.0020893013570457697,
+          "forward_error": 0.010446504689753056,
+          "inverse_accuracy": 0.903124988079071,
+          "action_majority_fraction": 0.35624998807907104,
+          "entropy": 1.0976911783218384
+        },
+        {
+          "update": 325,
+          "intrinsic_reward": 0.0037488173693418503,
+          "forward_error": 0.018744084984064102,
+          "inverse_accuracy": 0.956250011920929,
+          "action_majority_fraction": 0.40937501192092896,
+          "entropy": 1.0970572233200073
+        },
+        {
+          "update": 350,
+          "intrinsic_reward": 0.004895599093288183,
+          "forward_error": 0.024477992206811905,
+          "inverse_accuracy": 0.9937499761581421,
+          "action_majority_fraction": 0.40937501192092896,
+          "entropy": 1.095973253250122
+        },
+        {
+          "update": 375,
+          "intrinsic_reward": 0.010510146617889404,
+          "forward_error": 0.052550725638866425,
+          "inverse_accuracy": 0.9375,
+          "action_majority_fraction": 0.4437499940395355,
+          "entropy": 1.0912706851959229
+        },
+        {
+          "update": 400,
+          "intrinsic_reward": 0.014283296652138233,
+          "forward_error": 0.07141648232936859,
+          "inverse_accuracy": 0.9781249761581421,
+          "action_majority_fraction": 0.39375001192092896,
+          "entropy": 1.0823018550872803
+        },
+        {
+          "update": 425,
+          "intrinsic_reward": 0.012479899451136589,
+          "forward_error": 0.062399495393037796,
+          "inverse_accuracy": 0.9281250238418579,
+          "action_majority_fraction": 0.512499988079071,
+          "entropy": 1.056122064590454
+        },
+        {
+          "update": 450,
+          "intrinsic_reward": 0.012257352471351624,
+          "forward_error": 0.06128675863146782,
+          "inverse_accuracy": 0.8812500238418579,
+          "action_majority_fraction": 0.518750011920929,
+          "entropy": 1.0188133716583252
+        },
+        {
+          "update": 475,
+          "intrinsic_reward": 0.01041423063725233,
+          "forward_error": 0.05207115411758423,
+          "inverse_accuracy": 0.8656250238418579,
+          "action_majority_fraction": 0.5625,
+          "entropy": 0.9869922399520874
+        },
+        {
+          "update": 500,
+          "intrinsic_reward": 0.01849856786429882,
+          "forward_error": 0.09249284118413925,
+          "inverse_accuracy": 0.8531249761581421,
+          "action_majority_fraction": 0.625,
+          "entropy": 0.9200553894042969
+        },
+        {
+          "update": 525,
+          "intrinsic_reward": 0.011483438313007355,
+          "forward_error": 0.05741720274090767,
+          "inverse_accuracy": 0.934374988079071,
+          "action_majority_fraction": 0.606249988079071,
+          "entropy": 0.9720516204833984
+        },
+        {
+          "update": 550,
+          "intrinsic_reward": 0.012100773863494396,
+          "forward_error": 0.060503870248794556,
+          "inverse_accuracy": 0.831250011920929,
+          "action_majority_fraction": 0.609375,
+          "entropy": 0.8841516375541687
+        },
+        {
+          "update": 575,
+          "intrinsic_reward": 0.014068258926272392,
+          "forward_error": 0.07034130394458771,
+          "inverse_accuracy": 0.8125,
+          "action_majority_fraction": 0.703125,
+          "entropy": 0.7811312079429626
+        },
+        {
+          "update": 599,
+          "intrinsic_reward": 0.014188773930072784,
+          "forward_error": 0.07094386965036392,
+          "inverse_accuracy": 0.8343750238418579,
+          "action_majority_fraction": 0.7250000238418579,
+          "entropy": 0.7568461894989014
+        }
+      ]
+    }
+  ],
+  "interpretation": "Finite-sample empirical recovery only; non-OU conditions are outside the Gaussian OU theorem. No Theorem 3 bounds are applied to them."
+}
