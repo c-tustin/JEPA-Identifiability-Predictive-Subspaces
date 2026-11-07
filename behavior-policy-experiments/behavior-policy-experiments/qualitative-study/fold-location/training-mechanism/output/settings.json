@@ -1,0 +1,58 @@
+{
+  "config": {
+    "policy_updates": 600,
+    "jepa_steps": 4000,
+    "nenv": 16,
+    "rollout": 20,
+    "train_episodes": 256,
+    "eval_episodes": 64,
+    "horizon": 64,
+    "burnin": 128,
+    "batch": 512,
+    "distance_min": 1.0,
+    "distance_max": 16.0,
+    "move": 0.25,
+    "sigma": 0.7,
+    "rho": 0.9,
+    "sigreg_weight": 0.1,
+    "forward_weight": 0.2,
+    "reward_scale": 0.2,
+    "entropy_weight": 0.0005,
+    "gamma": 0.99
+  },
+  "seeds": [
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139
+  ],
+  "gains": [
+    2,
+    4,
+    8
+  ],
+  "diagnostic_seeds": [
+    130,
+    131,
+    136
+  ],
+  "snapshot_steps": [
+    0,
+    25,
+    100,
+    250,
+    500,
+    1000,
+    2000,
+    3000
+  ],
+  "code_sha256": "460f1a5cc855917f5d856f8b92757e90d22d61922b229838f0caf5957312e3a6",
+  "protocol_sha256": "e5a98a7285254edd1f461dddde46d32753741ab086e36e4033ae3d169002abb5",
+  "exploratory": true
+}

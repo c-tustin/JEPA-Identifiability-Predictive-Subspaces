@@ -1,0 +1,84 @@
+{
+  "comparisons": [
+    {
+      "n": 10,
+      "wins": 2,
+      "losses": 8,
+      "ties": 0,
+      "candidate_mean": 0.3655545309185982,
+      "baseline_mean": 0.09882812574505806,
+      "mean_difference": 0.2667264051735401,
+      "bootstrap_95": [
+        0.0464823466166854,
+        0.5911267320998007
+      ],
+      "sign_test_p": 0.109375,
+      "supplementary_paired_t_p": 0.11999941243116562,
+      "differences": [
+        -0.0546875,
+        0.17578125,
+        0.1953125,
+        0.021079137921333313,
+        -0.046875,
+        0.12890625,
+        0.546875,
+        0.0507812425494194,
+        0.07421875,
+        1.5758724212646484
+      ],
+      "name": "all_trials",
+      "seeds": [
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139
+      ],
+      "sign_test_holm_p": 0.21875,
+      "significantly_better": false,
+      "significantly_worse": false
+    },
+    {
+      "n": 2,
+      "wins": 1,
+      "losses": 1,
+      "ties": 0,
+      "candidate_mean": 0.107421875,
+      "baseline_mean": 0.1093750037252903,
+      "mean_difference": -0.0019531287252902985,
+      "bootstrap_95": [
+        -0.0546875,
+        0.0507812425494194
+      ],
+      "sign_test_p": 1.0,
+      "supplementary_paired_t_p": 0.976432215685117,
+      "differences": [
+        -0.0546875,
+        0.0507812425494194
+      ],
+      "name": "independent_screen",
+      "seeds": [
+        130,
+        137
+      ],
+      "sign_test_holm_p": 1.0,
+      "significantly_better": false,
+      "significantly_worse": false
+    }
+  ],
+  "screen_selected_seeds": [
+    130,
+    137
+  ],
+  "unit": "one independently trained seed; goals are averaged within seed",
+  "sign_test_estimand": "P(candidate has lower held-out seed-mean physical error), among non-ties",
+  "subgroup_estimand": "Runs passing this fixed validation screen; not all runs or held-out winners",
+  "t_test_assumption": "Normal paired differences; supplementary with small n",
+  "bootstrap_note": "Percentile paired-seed bootstrap, 20,000 resamples; descriptive with small n",
+  "quick": false
+}

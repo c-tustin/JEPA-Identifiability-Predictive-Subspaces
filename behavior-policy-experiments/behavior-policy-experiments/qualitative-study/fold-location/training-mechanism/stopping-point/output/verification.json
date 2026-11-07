@@ -1,0 +1,64 @@
+{
+  "passed": true,
+  "runs": [
+    {
+      "seed": 131,
+      "arm": "ordinary_lr1e-5",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    },
+    {
+      "seed": 131,
+      "arm": "ordinary_lr1e-4",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    },
+    {
+      "seed": 131,
+      "arm": "balanced_lr1e-4",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    },
+    {
+      "seed": 130,
+      "arm": "ordinary_lr1e-5",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    },
+    {
+      "seed": 130,
+      "arm": "ordinary_lr1e-4",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    },
+    {
+      "seed": 130,
+      "arm": "balanced_lr1e-4",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    },
+    {
+      "seed": 136,
+      "arm": "ordinary_lr1e-5",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    },
+    {
+      "seed": 136,
+      "arm": "ordinary_lr1e-4",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    },
+    {
+      "seed": 136,
+      "arm": "balanced_lr1e-4",
+      "replayed_updates": 8000,
+      "max_parameter_difference": 0.0
+    }
+  ],
+  "checkpoint_states_checked": 153,
+  "total_replayed_updates": 72000,
+  "max_curve_difference": 0.0,
+  "max_slope_difference": 0.0,
+  "scope": "Exact replay of all continuation weights, optimizer moments and RNG states; all saved curves and slopes. This does not establish convergence."
+}

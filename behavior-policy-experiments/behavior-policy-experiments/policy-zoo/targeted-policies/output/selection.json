@@ -1,0 +1,33 @@
+{
+  "selected": {
+    "pure": [
+      "gaussian_wide_diffusion",
+      "gaussian_target_slow"
+    ],
+    "handover": [
+      "gaussian_start_random",
+      "gaussian_wide_diffusion"
+    ]
+  },
+  "discovery_means": {
+    "pure": {
+      "gaussian_walk": 0.9894435951327682,
+      "gaussian_log_diffusion": 0.9886815253776454,
+      "gaussian_wide_diffusion": 0.9913084906644338,
+      "gaussian_target_fast": 0.9901681379627982,
+      "gaussian_target_slow": 0.9904514728186697,
+      "gaussian_deficit": 0.9899280971668925,
+      "gaussian_start_random": 0.9891091051521947
+    },
+    "handover": {
+      "gaussian_walk": 0.9920451708598247,
+      "gaussian_log_diffusion": 0.9921265941750871,
+      "gaussian_wide_diffusion": 0.9937323909693021,
+      "gaussian_target_fast": 0.9928878201547514,
+      "gaussian_target_slow": 0.9926673933693054,
+      "gaussian_deficit": 0.9920695986800361,
+      "gaussian_start_random": 0.9955779454798739
+    }
+  },
+  "rule": "Top two by discovery mean R\u00b2 within protocol; ties by name; no fold/p-value selection."
+}

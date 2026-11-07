@@ -1,0 +1,37 @@
+{
+  "passed": true,
+  "quick": false,
+  "seeds": [
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139
+  ],
+  "counts": {
+    "encoders": 50,
+    "predictors": 180,
+    "planning_results": 180,
+    "held_out_goals": 11520,
+    "screening_goals": 4320
+  },
+  "max_replayed_path_difference": 0.0,
+  "max_recomputed_goal_error_difference": 0.0,
+  "max_recomputed_curve_difference": 0.0,
+  "checks": [
+    "Protocol and training-source hashes unchanged",
+    "Physical training pairs agree with their saved action labels",
+    "Region removals keep the pair budget and exclude their specified bins",
+    "All requested encoders and predictors saved",
+    "Same goals and oracle paths across methods within seed",
+    "Physical actions replay to saved paths and terminal errors",
+    "Every goal reachable by oracle",
+    "Representation curves reproduce from encoder checkpoints",
+    "No fabricated OU-native action data"
+  ]
+}

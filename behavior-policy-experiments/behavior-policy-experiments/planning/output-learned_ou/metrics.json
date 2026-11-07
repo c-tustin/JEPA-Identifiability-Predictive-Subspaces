@@ -1,0 +1,593 @@
+{
+  "source": "learned_ou",
+  "quick": false,
+  "predictor_updates": 1000,
+  "planner_version": 2,
+  "runs": [
+    {
+      "seed": 13,
+      "condition": "fixed_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0078125,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 9.586628584656864e-05
+      }
+    },
+    {
+      "seed": 13,
+      "condition": "fixed_gap_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.015625,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 9.322613186668605e-05
+      }
+    },
+    {
+      "seed": 13,
+      "condition": "learn_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.015625,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 9.324942948296666e-05
+      }
+    },
+    {
+      "seed": 13,
+      "condition": "learn_spread",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0234375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 0.0001028329279506579
+      }
+    },
+    {
+      "seed": 13,
+      "condition": "learn_both",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0234375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 9.982925985241309e-05
+      }
+    },
+    {
+      "seed": 13,
+      "condition": "physical_only",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.7109375,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 0.5625,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 0.0005824961699545383
+      }
+    },
+    {
+      "seed": 13,
+      "condition": "physical_only",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 2.03125,
+        "median_terminal_distance_error": 1.75,
+        "success_within_one_step": 0.15625,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 0.019726570695638657
+      }
+    },
+    {
+      "seed": 13,
+      "condition": "physical_to_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 9.329822933068499e-05
+      }
+    },
+    {
+      "seed": 13,
+      "condition": "physical_to_ou",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 1.40625,
+        "median_terminal_distance_error": 0.75,
+        "success_within_one_step": 0.3125,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.0703125,
+        "heldout_latent_mse": 0.032667044550180435
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "fixed_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0859375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.000407863175496459
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "fixed_gap_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1015625,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.0003957822045776993
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "learn_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1015625,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.00039579172153025866
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "learn_spread",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1015625,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.000431407883297652
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "learn_both",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0859375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.00041996431536972523
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "physical_only",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0390625,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.00021993659902364016
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "physical_only",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1328125,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.00024282452068291605
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "physical_to_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.109375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.00034071042318828404
+      }
+    },
+    {
+      "seed": 14,
+      "condition": "physical_to_ou",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1171875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.9375,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.1015625,
+        "heldout_latent_mse": 0.00024964928161352873
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "fixed_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.046875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.96875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.00013409764505922794
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "fixed_gap_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0546875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.96875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.00013566002598963678
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "learn_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.0546875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.96875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.00013577644131146371
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "learn_spread",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.09375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.90625,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.00014270920655690134
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "learn_both",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1171875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.0001447026734240353
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "physical_only",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.328125,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 0.71875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.00042671343544498086
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "physical_only",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 2.2578125,
+        "median_terminal_distance_error": 2.0,
+        "success_within_one_step": 0.1875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.0034421635791659355
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "physical_to_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1796875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.8125,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.00013256497913971543
+      }
+    },
+    {
+      "seed": 15,
+      "condition": "physical_to_ou",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 2.1328125,
+        "median_terminal_distance_error": 2.0,
+        "success_within_one_step": 0.1875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 1.2109375,
+        "heldout_latent_mse": 0.014028591103851795
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "fixed_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.109375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.0002995367394760251
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "fixed_gap_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1171875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.0002974199305754155
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "learn_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1171875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00029746111249551177
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "learn_spread",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.109375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00031310421763919294
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "learn_both",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.109375,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00031371848308481276
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "physical_only",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.15625,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 0.875,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.000980207696557045
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "physical_only",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 1.526381254196167,
+        "median_terminal_distance_error": 0.7499995231628418,
+        "success_within_one_step": 0.34375,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.0014013478066772223
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "physical_to_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1484375,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 0.9375,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.0003148173273075372
+      }
+    },
+    {
+      "seed": 16,
+      "condition": "physical_to_ou",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 1.09375,
+        "median_terminal_distance_error": 0.7499995231628418,
+        "success_within_one_step": 0.40625,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.0026110666804015636
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "fixed_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1640625,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00025507155805826187
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "fixed_gap_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1796875,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00025924103101715446
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "learn_rho",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1796875,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00025945351808331907
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "learn_spread",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.1796875,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00029133676434867084
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "learn_both",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.171875,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.000296389072900638
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "physical_only",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.140625,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.0004697617550846189
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "physical_only",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 0.40625,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 0.75,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00040486763464286923
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "physical_to_ou",
+      "predictor_data": "common",
+      "metrics": {
+        "mean_terminal_distance_error": 0.046875,
+        "median_terminal_distance_error": 0.0,
+        "success_within_one_step": 1.0,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.00019525224342942238
+      }
+    },
+    {
+      "seed": 17,
+      "condition": "physical_to_ou",
+      "predictor_data": "native",
+      "metrics": {
+        "mean_terminal_distance_error": 0.3359375,
+        "median_terminal_distance_error": 0.25,
+        "success_within_one_step": 0.78125,
+        "oracle_mean_error": 0.0,
+        "stay_mean_error": 0.984375,
+        "heldout_latent_mse": 0.0002838627260643989
+      }
+    }
+  ]
+}

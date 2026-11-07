@@ -1,0 +1,2124 @@
+{
+  "protocol": {
+    "settings": {
+      "episodes": 256,
+      "horizon": 64,
+      "burnin": 32,
+      "substeps": 50,
+      "dt": 0.02,
+      "updates": 4000,
+      "batch": 512
+    },
+    "updates": 1000,
+    "cases": 32,
+    "horizon": 8,
+    "candidates": 128,
+    "replicates": 2,
+    "quick": false
+  },
+  "quick": false,
+  "runs": [
+    {
+      "seed": 23,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_raw_common_seed23_fit0.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0015022223815321922,
+        "deterministic": {
+          "mean_closest_error": 0.05082730948925018,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.23744943737983704
+        },
+        "stochastic": {
+          "mean_closest_error": 0.08460920304059982,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 0.30879390239715576
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_raw_common_seed23_fit1.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0011769444681704044,
+        "deterministic": {
+          "mean_closest_error": 0.022120632231235504,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.29142463207244873
+        },
+        "stochastic": {
+          "mean_closest_error": 0.03863227367401123,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.28155452013015747
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_raw_native_seed23_fit0.pt",
+      "predictor_data_sha256": "5ae745562a4a892d17348fd1c86601be9a21ac7f2cf51d02738ed4accf7b8e33",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0022024272475391626,
+        "deterministic": {
+          "mean_closest_error": 0.014112070202827454,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.14794416725635529
+        },
+        "stochastic": {
+          "mean_closest_error": 0.027412787079811096,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.23658820986747742
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_raw_native_seed23_fit1.pt",
+      "predictor_data_sha256": "5ae745562a4a892d17348fd1c86601be9a21ac7f2cf51d02738ed4accf7b8e33",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.002169267740100622,
+        "deterministic": {
+          "mean_closest_error": 0.011823222041130066,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.22305434942245483
+        },
+        "stochastic": {
+          "mean_closest_error": 0.020627722144126892,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.3209875822067261
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_balanced_common_seed23_fit0.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0011958484537899494,
+        "deterministic": {
+          "mean_closest_error": 0.22071878612041473,
+          "success_within_point_one": 0.75,
+          "mean_terminal_error": 1.2495335340499878
+        },
+        "stochastic": {
+          "mean_closest_error": 0.25113096833229065,
+          "success_within_point_one": 0.6875,
+          "mean_terminal_error": 1.287501573562622
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_balanced_common_seed23_fit1.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0010817088186740875,
+        "deterministic": {
+          "mean_closest_error": 0.29487064480781555,
+          "success_within_point_one": 0.625,
+          "mean_terminal_error": 1.9303781986236572
+        },
+        "stochastic": {
+          "mean_closest_error": 0.32403266429901123,
+          "success_within_point_one": 0.5,
+          "mean_terminal_error": 1.879464864730835
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_balanced_native_seed23_fit0.pt",
+      "predictor_data_sha256": "5ae745562a4a892d17348fd1c86601be9a21ac7f2cf51d02738ed4accf7b8e33",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.00898728147149086,
+        "deterministic": {
+          "mean_closest_error": 0.2784919738769531,
+          "success_within_point_one": 0.46875,
+          "mean_terminal_error": 1.3356953859329224
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2806093096733093,
+          "success_within_point_one": 0.4375,
+          "mean_terminal_error": 1.2713801860809326
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_balanced_native_seed23_fit1.pt",
+      "predictor_data_sha256": "5ae745562a4a892d17348fd1c86601be9a21ac7f2cf51d02738ed4accf7b8e33",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.019926277920603752,
+        "deterministic": {
+          "mean_closest_error": 0.22071878612041473,
+          "success_within_point_one": 0.75,
+          "mean_terminal_error": 1.6531848907470703
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2524991035461426,
+          "success_within_point_one": 0.6875,
+          "mean_terminal_error": 1.6368560791015625
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_raw_common_seed23_fit0.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0017471035243943334,
+        "deterministic": {
+          "mean_closest_error": 0.014201939105987549,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.2368735373020172
+        },
+        "stochastic": {
+          "mean_closest_error": 0.027778930962085724,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.32377922534942627
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_raw_common_seed23_fit1.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001327230129390955,
+        "deterministic": {
+          "mean_closest_error": 0.006661251187324524,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.1700025498867035
+        },
+        "stochastic": {
+          "mean_closest_error": 0.018121592700481415,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.23260194063186646
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_raw_native_seed23_fit0.pt",
+      "predictor_data_sha256": "ebaa64d40d380b909d6dee1d2e97229f8cce0ccfb9b5a25e132a25ec6eb07c53",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0028290266636759043,
+        "deterministic": {
+          "mean_closest_error": 0.003864191472530365,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.15284782648086548
+        },
+        "stochastic": {
+          "mean_closest_error": 0.019572369754314423,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.2004292756319046
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_raw_native_seed23_fit1.pt",
+      "predictor_data_sha256": "ebaa64d40d380b909d6dee1d2e97229f8cce0ccfb9b5a25e132a25ec6eb07c53",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0029116258956491947,
+        "deterministic": {
+          "mean_closest_error": 0.002702184021472931,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.21792225539684296
+        },
+        "stochastic": {
+          "mean_closest_error": 0.021745353937149048,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.27808934450149536
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_balanced_common_seed23_fit0.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0009686299017630517,
+        "deterministic": {
+          "mean_closest_error": 0.05778235197067261,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.5488691329956055
+        },
+        "stochastic": {
+          "mean_closest_error": 0.08182976394891739,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 0.5885647535324097
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_balanced_common_seed23_fit1.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001106244046241045,
+        "deterministic": {
+          "mean_closest_error": 0.2002386897802353,
+          "success_within_point_one": 0.6875,
+          "mean_terminal_error": 1.0759518146514893
+        },
+        "stochastic": {
+          "mean_closest_error": 0.21727094054222107,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.0394421815872192
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_balanced_native_seed23_fit0.pt",
+      "predictor_data_sha256": "ebaa64d40d380b909d6dee1d2e97229f8cce0ccfb9b5a25e132a25ec6eb07c53",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.003588863182812929,
+        "deterministic": {
+          "mean_closest_error": 0.21391218900680542,
+          "success_within_point_one": 0.75,
+          "mean_terminal_error": 0.9128372073173523
+        },
+        "stochastic": {
+          "mean_closest_error": 0.24139955639839172,
+          "success_within_point_one": 0.625,
+          "mean_terminal_error": 0.978813648223877
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_balanced_native_seed23_fit1.pt",
+      "predictor_data_sha256": "ebaa64d40d380b909d6dee1d2e97229f8cce0ccfb9b5a25e132a25ec6eb07c53",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.005135000683367252,
+        "deterministic": {
+          "mean_closest_error": 0.09006790816783905,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.9960793256759644
+        },
+        "stochastic": {
+          "mean_closest_error": 0.1550004780292511,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 1.2871160507202148
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_raw_common_seed23_fit0.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0015040843281894922,
+        "deterministic": {
+          "mean_closest_error": 0.0506284162402153,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.22967378795146942
+        },
+        "stochastic": {
+          "mean_closest_error": 0.07210209965705872,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.29202398657798767
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_raw_common_seed23_fit1.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001166895148344338,
+        "deterministic": {
+          "mean_closest_error": 0.01884472370147705,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.28833574056625366
+        },
+        "stochastic": {
+          "mean_closest_error": 0.03889762610197067,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.23941485583782196
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_raw_native_seed23_fit0.pt",
+      "predictor_data_sha256": "3a5f20c4c11872fe36e90b9d15b073a3ca4f968b138397bb84e96a581a59c9e2",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.002161641139537096,
+        "deterministic": {
+          "mean_closest_error": 0.012296706438064575,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.20190945267677307
+        },
+        "stochastic": {
+          "mean_closest_error": 0.025127731263637543,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.27666032314300537
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_raw_native_seed23_fit1.pt",
+      "predictor_data_sha256": "3a5f20c4c11872fe36e90b9d15b073a3ca4f968b138397bb84e96a581a59c9e2",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0021616171579807997,
+        "deterministic": {
+          "mean_closest_error": 0.00847405195236206,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.2741084098815918
+        },
+        "stochastic": {
+          "mean_closest_error": 0.02491142600774765,
+          "success_within_point_one": 0.9375,
+          "mean_terminal_error": 0.269798219203949
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_common_seed23_fit0.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0014067807933315635,
+        "deterministic": {
+          "mean_closest_error": 0.23635032773017883,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.852380394935608
+        },
+        "stochastic": {
+          "mean_closest_error": 0.24181972444057465,
+          "success_within_point_one": 0.46875,
+          "mean_terminal_error": 1.925672173500061
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_common_seed23_fit1.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001264716498553753,
+        "deterministic": {
+          "mean_closest_error": 0.23381558060646057,
+          "success_within_point_one": 0.59375,
+          "mean_terminal_error": 1.2180559635162354
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2508668303489685,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.2227330207824707
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_native_seed23_fit0.pt",
+      "predictor_data_sha256": "3a5f20c4c11872fe36e90b9d15b073a3ca4f968b138397bb84e96a581a59c9e2",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.010354367084801197,
+        "deterministic": {
+          "mean_closest_error": 0.2007891684770584,
+          "success_within_point_one": 0.625,
+          "mean_terminal_error": 0.7353396415710449
+        },
+        "stochastic": {
+          "mean_closest_error": 0.17222890257835388,
+          "success_within_point_one": 0.65625,
+          "mean_terminal_error": 0.8604079484939575
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed23.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_native_seed23_fit1.pt",
+      "predictor_data_sha256": "3a5f20c4c11872fe36e90b9d15b073a3ca4f968b138397bb84e96a581a59c9e2",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.01984291709959507,
+        "deterministic": {
+          "mean_closest_error": 0.2589654326438904,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.5895671844482422
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2388184666633606,
+          "success_within_point_one": 0.625,
+          "mean_terminal_error": 1.3465890884399414
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_raw_common_seed24_fit0.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0016214216593652964,
+        "deterministic": {
+          "mean_closest_error": 0.02043239027261734,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.3034856915473938
+        },
+        "stochastic": {
+          "mean_closest_error": 0.04467606544494629,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.35312899947166443
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_raw_common_seed24_fit1.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0012555792927742004,
+        "deterministic": {
+          "mean_closest_error": 0.03733326494693756,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.23509898781776428
+        },
+        "stochastic": {
+          "mean_closest_error": 0.04330228269100189,
+          "success_within_point_one": 0.9375,
+          "mean_terminal_error": 0.24974484741687775
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_raw_native_seed24_fit0.pt",
+      "predictor_data_sha256": "1ef0b4ed9fa1818d90b2ad8d6cd2de70ffb6127858a78fe3fe874d6c15bffb96",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.002138671698048711,
+        "deterministic": {
+          "mean_closest_error": 0.008242957293987274,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.13944420218467712
+        },
+        "stochastic": {
+          "mean_closest_error": 0.01871507614850998,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.22620265185832977
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_raw_native_seed24_fit1.pt",
+      "predictor_data_sha256": "1ef0b4ed9fa1818d90b2ad8d6cd2de70ffb6127858a78fe3fe874d6c15bffb96",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0020430858712643385,
+        "deterministic": {
+          "mean_closest_error": 0.002761274576187134,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.16542252898216248
+        },
+        "stochastic": {
+          "mean_closest_error": 0.015015505254268646,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.16577249765396118
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_balanced_common_seed24_fit0.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001127784256823361,
+        "deterministic": {
+          "mean_closest_error": 0.26366743445396423,
+          "success_within_point_one": 0.59375,
+          "mean_terminal_error": 0.9399556517601013
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2861759066581726,
+          "success_within_point_one": 0.5,
+          "mean_terminal_error": 0.9206726551055908
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_balanced_common_seed24_fit1.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001761828432790935,
+        "deterministic": {
+          "mean_closest_error": 0.3620031774044037,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.8719446659088135
+        },
+        "stochastic": {
+          "mean_closest_error": 0.34523558616638184,
+          "success_within_point_one": 0.5,
+          "mean_terminal_error": 2.0218188762664795
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_balanced_native_seed24_fit0.pt",
+      "predictor_data_sha256": "1ef0b4ed9fa1818d90b2ad8d6cd2de70ffb6127858a78fe3fe874d6c15bffb96",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.01803295686841011,
+        "deterministic": {
+          "mean_closest_error": 0.20372623205184937,
+          "success_within_point_one": 0.75,
+          "mean_terminal_error": 2.1952056884765625
+        },
+        "stochastic": {
+          "mean_closest_error": 0.24074624478816986,
+          "success_within_point_one": 0.625,
+          "mean_terminal_error": 2.1829941272735596
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_balanced_native_seed24_fit1.pt",
+      "predictor_data_sha256": "1ef0b4ed9fa1818d90b2ad8d6cd2de70ffb6127858a78fe3fe874d6c15bffb96",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.013432643376290798,
+        "deterministic": {
+          "mean_closest_error": 0.3532739579677582,
+          "success_within_point_one": 0.4375,
+          "mean_terminal_error": 1.1037321090698242
+        },
+        "stochastic": {
+          "mean_closest_error": 0.3441629111766815,
+          "success_within_point_one": 0.40625,
+          "mean_terminal_error": 0.9834458827972412
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_raw_common_seed24_fit0.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0019341628067195415,
+        "deterministic": {
+          "mean_closest_error": 0.046230748295784,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.219687357544899
+        },
+        "stochastic": {
+          "mean_closest_error": 0.0390954315662384,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.2700580358505249
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_raw_common_seed24_fit1.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001523526618257165,
+        "deterministic": {
+          "mean_closest_error": 0.017736800014972687,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.2501869201660156
+        },
+        "stochastic": {
+          "mean_closest_error": 0.03267810493707657,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.3294861316680908
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_raw_native_seed24_fit0.pt",
+      "predictor_data_sha256": "090b11d552b0089ce04451f43c5d9e6bbb07d9bfac909425429dc331dc5b74a7",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.003076608292758465,
+        "deterministic": {
+          "mean_closest_error": 0.0019332468509674072,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.2410833239555359
+        },
+        "stochastic": {
+          "mean_closest_error": 0.030270852148532867,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.28372523188591003
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_raw_native_seed24_fit1.pt",
+      "predictor_data_sha256": "090b11d552b0089ce04451f43c5d9e6bbb07d9bfac909425429dc331dc5b74a7",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.002853737212717533,
+        "deterministic": {
+          "mean_closest_error": 0.0,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.17410415410995483
+        },
+        "stochastic": {
+          "mean_closest_error": 0.020768888294696808,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.17543412744998932
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_balanced_common_seed24_fit0.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001312091713771224,
+        "deterministic": {
+          "mean_closest_error": 0.29864710569381714,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.1790016889572144
+        },
+        "stochastic": {
+          "mean_closest_error": 0.3125106990337372,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.10486900806427
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_balanced_common_seed24_fit1.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0014902447583153844,
+        "deterministic": {
+          "mean_closest_error": 0.3427197337150574,
+          "success_within_point_one": 0.40625,
+          "mean_terminal_error": 1.2785016298294067
+        },
+        "stochastic": {
+          "mean_closest_error": 0.32523006200790405,
+          "success_within_point_one": 0.5,
+          "mean_terminal_error": 1.3721871376037598
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_balanced_native_seed24_fit0.pt",
+      "predictor_data_sha256": "090b11d552b0089ce04451f43c5d9e6bbb07d9bfac909425429dc331dc5b74a7",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.005455693695694208,
+        "deterministic": {
+          "mean_closest_error": 0.2960120141506195,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.4904619455337524
+        },
+        "stochastic": {
+          "mean_closest_error": 0.30217424035072327,
+          "success_within_point_one": 0.53125,
+          "mean_terminal_error": 1.5541361570358276
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_balanced_native_seed24_fit1.pt",
+      "predictor_data_sha256": "090b11d552b0089ce04451f43c5d9e6bbb07d9bfac909425429dc331dc5b74a7",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.004960290621966124,
+        "deterministic": {
+          "mean_closest_error": 0.23767206072807312,
+          "success_within_point_one": 0.59375,
+          "mean_terminal_error": 1.1071858406066895
+        },
+        "stochastic": {
+          "mean_closest_error": 0.27695655822753906,
+          "success_within_point_one": 0.5,
+          "mean_terminal_error": 1.1826677322387695
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_raw_common_seed24_fit0.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0015600700862705708,
+        "deterministic": {
+          "mean_closest_error": 0.017632387578487396,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.2729824483394623
+        },
+        "stochastic": {
+          "mean_closest_error": 0.03929890692234039,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.3285307288169861
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_raw_common_seed24_fit1.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0012401590356603265,
+        "deterministic": {
+          "mean_closest_error": 0.03756070137023926,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.2795356214046478
+        },
+        "stochastic": {
+          "mean_closest_error": 0.04425841569900513,
+          "success_within_point_one": 0.9375,
+          "mean_terminal_error": 0.2313683032989502
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_raw_native_seed24_fit0.pt",
+      "predictor_data_sha256": "933baac4ccf4c61a8dc9c7be4ea31286ece6eb93f85409c4ac871b55621bd2b5",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0021500266157090664,
+        "deterministic": {
+          "mean_closest_error": 0.023023642599582672,
+          "success_within_point_one": 0.84375,
+          "mean_terminal_error": 0.16404801607131958
+        },
+        "stochastic": {
+          "mean_closest_error": 0.038933247327804565,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.18990260362625122
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_raw_native_seed24_fit1.pt",
+      "predictor_data_sha256": "933baac4ccf4c61a8dc9c7be4ea31286ece6eb93f85409c4ac871b55621bd2b5",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0020902929827570915,
+        "deterministic": {
+          "mean_closest_error": 0.008495531976222992,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.20910567045211792
+        },
+        "stochastic": {
+          "mean_closest_error": 0.022229745984077454,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.218446284532547
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_common_seed24_fit0.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0012671699514612556,
+        "deterministic": {
+          "mean_closest_error": 0.3163303732872009,
+          "success_within_point_one": 0.4375,
+          "mean_terminal_error": 1.1825894117355347
+        },
+        "stochastic": {
+          "mean_closest_error": 0.3152059316635132,
+          "success_within_point_one": 0.5,
+          "mean_terminal_error": 1.355709195137024
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_common_seed24_fit1.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0019819557201117277,
+        "deterministic": {
+          "mean_closest_error": 0.22729609906673431,
+          "success_within_point_one": 0.625,
+          "mean_terminal_error": 2.103576898574829
+        },
+        "stochastic": {
+          "mean_closest_error": 0.25600841641426086,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 2.145639657974243
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_native_seed24_fit0.pt",
+      "predictor_data_sha256": "933baac4ccf4c61a8dc9c7be4ea31286ece6eb93f85409c4ac871b55621bd2b5",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.02161596156656742,
+        "deterministic": {
+          "mean_closest_error": 0.28768590092658997,
+          "success_within_point_one": 0.46875,
+          "mean_terminal_error": 1.4449970722198486
+        },
+        "stochastic": {
+          "mean_closest_error": 0.259133905172348,
+          "success_within_point_one": 0.53125,
+          "mean_terminal_error": 1.3964457511901855
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed24.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_native_seed24_fit1.pt",
+      "predictor_data_sha256": "933baac4ccf4c61a8dc9c7be4ea31286ece6eb93f85409c4ac871b55621bd2b5",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.015384674072265625,
+        "deterministic": {
+          "mean_closest_error": 0.31559664011001587,
+          "success_within_point_one": 0.4375,
+          "mean_terminal_error": 1.679381251335144
+        },
+        "stochastic": {
+          "mean_closest_error": 0.302015483379364,
+          "success_within_point_one": 0.40625,
+          "mean_terminal_error": 1.3979871273040771
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_raw_common_seed25_fit0.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.000919187325052917,
+        "deterministic": {
+          "mean_closest_error": 0.08719279617071152,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.29521045088768005
+        },
+        "stochastic": {
+          "mean_closest_error": 0.10392362624406815,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.34328126907348633
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_raw_common_seed25_fit1.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001209756825119257,
+        "deterministic": {
+          "mean_closest_error": 0.09944000840187073,
+          "success_within_point_one": 0.6875,
+          "mean_terminal_error": 0.27538999915122986
+        },
+        "stochastic": {
+          "mean_closest_error": 0.08503521978855133,
+          "success_within_point_one": 0.6875,
+          "mean_terminal_error": 0.2980893850326538
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_raw_native_seed25_fit0.pt",
+      "predictor_data_sha256": "3dd5047d4d5679d7e011aae1f9696b6bd6e849b7a08416efa8678cf0964254fe",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0021265530958771706,
+        "deterministic": {
+          "mean_closest_error": 0.007854267954826355,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.1776110678911209
+        },
+        "stochastic": {
+          "mean_closest_error": 0.017833150923252106,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.1639067828655243
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_raw_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_raw_native_seed25_fit1.pt",
+      "predictor_data_sha256": "3dd5047d4d5679d7e011aae1f9696b6bd6e849b7a08416efa8678cf0964254fe",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.002130453009158373,
+        "deterministic": {
+          "mean_closest_error": 0.0437898263335228,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.1966468244791031
+        },
+        "stochastic": {
+          "mean_closest_error": 0.05915249139070511,
+          "success_within_point_one": 0.75,
+          "mean_terminal_error": 0.2408498227596283
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_balanced_common_seed25_fit0.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0010547279380261898,
+        "deterministic": {
+          "mean_closest_error": 0.13367938995361328,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 1.1887938976287842
+        },
+        "stochastic": {
+          "mean_closest_error": 0.16530773043632507,
+          "success_within_point_one": 0.6875,
+          "mean_terminal_error": 1.2257840633392334
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_balanced_common_seed25_fit1.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0010844898642972112,
+        "deterministic": {
+          "mean_closest_error": 0.1347348988056183,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 1.167642593383789
+        },
+        "stochastic": {
+          "mean_closest_error": 0.16539976000785828,
+          "success_within_point_one": 0.6875,
+          "mean_terminal_error": 1.1781120300292969
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_random_balanced_native_seed25_fit0.pt",
+      "predictor_data_sha256": "3dd5047d4d5679d7e011aae1f9696b6bd6e849b7a08416efa8678cf0964254fe",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.011401558294892311,
+        "deterministic": {
+          "mean_closest_error": 0.17923757433891296,
+          "success_within_point_one": 0.65625,
+          "mean_terminal_error": 1.2880058288574219
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2139139175415039,
+          "success_within_point_one": 0.53125,
+          "mean_terminal_error": 1.3374170064926147
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "random",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_random_balanced_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_random_balanced_native_seed25_fit1.pt",
+      "predictor_data_sha256": "3dd5047d4d5679d7e011aae1f9696b6bd6e849b7a08416efa8678cf0964254fe",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.013227049261331558,
+        "deterministic": {
+          "mean_closest_error": 0.22039151191711426,
+          "success_within_point_one": 0.65625,
+          "mean_terminal_error": 1.659226894378662
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2602769136428833,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.6316401958465576
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_raw_common_seed25_fit0.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0007534257019869983,
+        "deterministic": {
+          "mean_closest_error": 0.05425716191530228,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.2758024334907532
+        },
+        "stochastic": {
+          "mean_closest_error": 0.06765936315059662,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.32936856150627136
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_raw_common_seed25_fit1.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0011607204796746373,
+        "deterministic": {
+          "mean_closest_error": 0.016611874103546143,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.18621990084648132
+        },
+        "stochastic": {
+          "mean_closest_error": 0.022375352680683136,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.20639610290527344
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_raw_native_seed25_fit0.pt",
+      "predictor_data_sha256": "7a67cd4511ff4fa1ff16d252e7155c6bdfe663ec9d0c74008777ce1a46738afa",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.002979121869429946,
+        "deterministic": {
+          "mean_closest_error": 0.000760883092880249,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.17327603697776794
+        },
+        "stochastic": {
+          "mean_closest_error": 0.01730264723300934,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.23357531428337097
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "persistent",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_raw_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_raw_native_seed25_fit1.pt",
+      "predictor_data_sha256": "7a67cd4511ff4fa1ff16d252e7155c6bdfe663ec9d0c74008777ce1a46738afa",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.002652607159689069,
+        "deterministic": {
+          "mean_closest_error": 0.0,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.12019193917512894
+        },
+        "stochastic": {
+          "mean_closest_error": 0.012663781642913818,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.10616420209407806
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_balanced_common_seed25_fit0.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0010778153082355857,
+        "deterministic": {
+          "mean_closest_error": 0.0708034411072731,
+          "success_within_point_one": 0.75,
+          "mean_terminal_error": 0.4117354452610016
+        },
+        "stochastic": {
+          "mean_closest_error": 0.09447391331195831,
+          "success_within_point_one": 0.71875,
+          "mean_terminal_error": 0.5424849987030029
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_balanced_common_seed25_fit1.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0009566949447616935,
+        "deterministic": {
+          "mean_closest_error": 0.09298586845397949,
+          "success_within_point_one": 0.65625,
+          "mean_terminal_error": 0.6789888143539429
+        },
+        "stochastic": {
+          "mean_closest_error": 0.12685096263885498,
+          "success_within_point_one": 0.5,
+          "mean_terminal_error": 0.7577720880508423
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_persistent_balanced_native_seed25_fit0.pt",
+      "predictor_data_sha256": "7a67cd4511ff4fa1ff16d252e7155c6bdfe663ec9d0c74008777ce1a46738afa",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.003711109049618244,
+        "deterministic": {
+          "mean_closest_error": 0.1842174530029297,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.1219375133514404
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2137710452079773,
+          "success_within_point_one": 0.46875,
+          "mean_terminal_error": 1.1202280521392822
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "persistent",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_persistent_balanced_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_persistent_balanced_native_seed25_fit1.pt",
+      "predictor_data_sha256": "7a67cd4511ff4fa1ff16d252e7155c6bdfe663ec9d0c74008777ce1a46738afa",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0047873640432953835,
+        "deterministic": {
+          "mean_closest_error": 0.14438533782958984,
+          "success_within_point_one": 0.71875,
+          "mean_terminal_error": 0.7274249792098999
+        },
+        "stochastic": {
+          "mean_closest_error": 0.16450582444667816,
+          "success_within_point_one": 0.625,
+          "mean_terminal_error": 0.7220171093940735
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_raw_common_seed25_fit0.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0008696941658854485,
+        "deterministic": {
+          "mean_closest_error": 0.07973539084196091,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.2866232991218567
+        },
+        "stochastic": {
+          "mean_closest_error": 0.08817481249570847,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.33849814534187317
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_raw_common_seed25_fit1.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0011950340121984482,
+        "deterministic": {
+          "mean_closest_error": 0.046978436410427094,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.2349499762058258
+        },
+        "stochastic": {
+          "mean_closest_error": 0.0437239333987236,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.2359648197889328
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_raw_native_seed25_fit0.pt",
+      "predictor_data_sha256": "3c70b0d1b8a20f7b70d5a4f82945149140674216e48a411fc1209324e0fa036a",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.002142591867595911,
+        "deterministic": {
+          "mean_closest_error": 0.0031474679708480835,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.1578293740749359
+        },
+        "stochastic": {
+          "mean_closest_error": 0.017739318311214447,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.14563453197479248
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "action_balanced",
+      "sampler": "raw",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_raw_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_raw_native_seed25_fit1.pt",
+      "predictor_data_sha256": "3c70b0d1b8a20f7b70d5a4f82945149140674216e48a411fc1209324e0fa036a",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0021433881483972073,
+        "deterministic": {
+          "mean_closest_error": 0.04040486365556717,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.2371244579553604
+        },
+        "stochastic": {
+          "mean_closest_error": 0.05361028015613556,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 0.27374154329299927
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_common_seed25_fit0.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0012424959568306804,
+        "deterministic": {
+          "mean_closest_error": 0.24960385262966156,
+          "success_within_point_one": 0.5,
+          "mean_terminal_error": 1.016296625137329
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2510972023010254,
+          "success_within_point_one": 0.5625,
+          "mean_terminal_error": 1.075469970703125
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_common_seed25_fit1.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0013212363701313734,
+        "deterministic": {
+          "mean_closest_error": 0.24232137203216553,
+          "success_within_point_one": 0.53125,
+          "mean_terminal_error": 1.2839338779449463
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2592526376247406,
+          "success_within_point_one": 0.53125,
+          "mean_terminal_error": 1.2935127019882202
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_native_seed25_fit0.pt",
+      "predictor_data_sha256": "3c70b0d1b8a20f7b70d5a4f82945149140674216e48a411fc1209324e0fa036a",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.013050759211182594,
+        "deterministic": {
+          "mean_closest_error": 0.3325324058532715,
+          "success_within_point_one": 0.375,
+          "mean_terminal_error": 0.8586748242378235
+        },
+        "stochastic": {
+          "mean_closest_error": 0.33812764286994934,
+          "success_within_point_one": 0.34375,
+          "mean_terminal_error": 0.8800090551376343
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "action_balanced",
+      "sampler": "balanced",
+      "source": "trajectories",
+      "checkpoint": "output-trajectories/encoder_nonlinear_action_balanced_balanced_seed25.pt",
+      "predictor_data": "native",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_action_balanced_balanced_native_seed25_fit1.pt",
+      "predictor_data_sha256": "3c70b0d1b8a20f7b70d5a4f82945149140674216e48a411fc1209324e0fa036a",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.015195222571492195,
+        "deterministic": {
+          "mean_closest_error": 0.2696132957935333,
+          "success_within_point_one": 0.4375,
+          "mean_terminal_error": 1.1667283773422241
+        },
+        "stochastic": {
+          "mean_closest_error": 0.2845725119113922,
+          "success_within_point_one": 0.375,
+          "mean_terminal_error": 1.2951470613479614
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "reset_uniform",
+      "sampler": "raw",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_raw_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_reset_uniform_raw_common_seed23_fit0.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0019600039813667536,
+        "deterministic": {
+          "mean_closest_error": 0.0061527639627456665,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.3224165439605713
+        },
+        "stochastic": {
+          "mean_closest_error": 0.029774770140647888,
+          "success_within_point_one": 0.9375,
+          "mean_terminal_error": 0.3030107617378235
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "reset_uniform",
+      "sampler": "raw",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_raw_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_reset_uniform_raw_common_seed23_fit1.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001932467450387776,
+        "deterministic": {
+          "mean_closest_error": 0.0027098357677459717,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.3546639680862427
+        },
+        "stochastic": {
+          "mean_closest_error": 0.031180456280708313,
+          "success_within_point_one": 0.90625,
+          "mean_terminal_error": 0.423475980758667
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "reset_uniform",
+      "sampler": "balanced",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_balanced_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_reset_uniform_balanced_common_seed23_fit0.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0009917328134179115,
+        "deterministic": {
+          "mean_closest_error": 0.0685964822769165,
+          "success_within_point_one": 0.875,
+          "mean_terminal_error": 0.5015819072723389
+        },
+        "stochastic": {
+          "mean_closest_error": 0.07989522814750671,
+          "success_within_point_one": 0.875,
+          "mean_terminal_error": 0.5758742094039917
+        }
+      }
+    },
+    {
+      "seed": 23,
+      "policy": "reset_uniform",
+      "sampler": "balanced",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_balanced_seed23.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_reset_uniform_balanced_common_seed23_fit1.pt",
+      "predictor_data_sha256": "7d08b1791eb6a59a34b0194d05ac209caa9fbefcb91f2a164963ef1ad0edede1",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.000914831121917814,
+        "deterministic": {
+          "mean_closest_error": 0.2002757489681244,
+          "success_within_point_one": 0.71875,
+          "mean_terminal_error": 0.6116443872451782
+        },
+        "stochastic": {
+          "mean_closest_error": 0.23980087041854858,
+          "success_within_point_one": 0.59375,
+          "mean_terminal_error": 0.6758947372436523
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "reset_uniform",
+      "sampler": "raw",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_raw_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_reset_uniform_raw_common_seed24_fit0.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0020165774039924145,
+        "deterministic": {
+          "mean_closest_error": 0.03830756992101669,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.4430304169654846
+        },
+        "stochastic": {
+          "mean_closest_error": 0.05588298290967941,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.4386412501335144
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "reset_uniform",
+      "sampler": "raw",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_raw_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_reset_uniform_raw_common_seed24_fit1.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001965914387255907,
+        "deterministic": {
+          "mean_closest_error": 0.12777207791805267,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.6911163330078125
+        },
+        "stochastic": {
+          "mean_closest_error": 0.11437129229307175,
+          "success_within_point_one": 0.78125,
+          "mean_terminal_error": 0.6375096440315247
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "reset_uniform",
+      "sampler": "balanced",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_balanced_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_reset_uniform_balanced_common_seed24_fit0.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0013129920698702335,
+        "deterministic": {
+          "mean_closest_error": 0.03968998044729233,
+          "success_within_point_one": 0.84375,
+          "mean_terminal_error": 0.36101222038269043
+        },
+        "stochastic": {
+          "mean_closest_error": 0.049297697842121124,
+          "success_within_point_one": 0.875,
+          "mean_terminal_error": 0.32920628786087036
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "policy": "reset_uniform",
+      "sampler": "balanced",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_balanced_seed24.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_reset_uniform_balanced_common_seed24_fit1.pt",
+      "predictor_data_sha256": "a5ae46cfc48f54a1e1def8426d2f3f5a072c2ba13ee4a5c5abd7c7231a909154",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0011559181148186326,
+        "deterministic": {
+          "mean_closest_error": 0.03951700031757355,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 0.31612327694892883
+        },
+        "stochastic": {
+          "mean_closest_error": 0.05963347107172012,
+          "success_within_point_one": 0.875,
+          "mean_terminal_error": 0.35562318563461304
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "reset_uniform",
+      "sampler": "raw",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_raw_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_reset_uniform_raw_common_seed25_fit0.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0018496306147426367,
+        "deterministic": {
+          "mean_closest_error": 0.012951821088790894,
+          "success_within_point_one": 1.0,
+          "mean_terminal_error": 0.34549495577812195
+        },
+        "stochastic": {
+          "mean_closest_error": 0.04573345184326172,
+          "success_within_point_one": 0.84375,
+          "mean_terminal_error": 0.39758872985839844
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "reset_uniform",
+      "sampler": "raw",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_raw_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_reset_uniform_raw_common_seed25_fit1.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.001855581533163786,
+        "deterministic": {
+          "mean_closest_error": 0.037635087966918945,
+          "success_within_point_one": 0.84375,
+          "mean_terminal_error": 0.34042999148368835
+        },
+        "stochastic": {
+          "mean_closest_error": 0.057787373661994934,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 0.3911820650100708
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "reset_uniform",
+      "sampler": "balanced",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_balanced_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 0,
+      "predictor_checkpoint": "predictor_reset_uniform_balanced_common_seed25_fit0.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0008088138420134783,
+        "deterministic": {
+          "mean_closest_error": 0.05874479562044144,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 0.24215325713157654
+        },
+        "stochastic": {
+          "mean_closest_error": 0.06641234457492828,
+          "success_within_point_one": 0.84375,
+          "mean_terminal_error": 0.20192593336105347
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "policy": "reset_uniform",
+      "sampler": "balanced",
+      "source": "coverage",
+      "checkpoint": "output-coverage/encoder_nonlinear_balanced_seed25.pt",
+      "predictor_data": "common",
+      "predictor_replicate": 1,
+      "predictor_checkpoint": "predictor_reset_uniform_balanced_common_seed25_fit1.pt",
+      "predictor_data_sha256": "95666454425afa9f8a7899e55b0bd1717ee7243f9b14bdf700852e97b010da90",
+      "metrics": {
+        "shared_heldout_latent_mse": 0.0008476441726088524,
+        "deterministic": {
+          "mean_closest_error": 0.0435614213347435,
+          "success_within_point_one": 0.84375,
+          "mean_terminal_error": 0.2436787188053131
+        },
+        "stochastic": {
+          "mean_closest_error": 0.07189669460058212,
+          "success_within_point_one": 0.8125,
+          "mean_terminal_error": 0.250343918800354
+        }
+      }
+    }
+  ],
+  "references": [
+    {
+      "seed": 23,
+      "witness_max_error": 0.0,
+      "deterministic": {
+        "known_dynamics": {
+          "mean_closest_error": 0.017443254590034485,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.16922317445278168
+        },
+        "stay": {
+          "mean_closest_error": 0.5139533281326294,
+          "success_within_point_one": 0.0,
+          "mean_terminal_error": 1.8734469413757324
+        }
+      },
+      "stochastic": {
+        "known_dynamics": {
+          "mean_closest_error": 0.028007887303829193,
+          "success_within_point_one": 0.9375,
+          "mean_terminal_error": 0.20687317848205566
+        },
+        "stay": {
+          "mean_closest_error": 0.48499396443367004,
+          "success_within_point_one": 0.0625,
+          "mean_terminal_error": 1.8511037826538086
+        }
+      }
+    },
+    {
+      "seed": 24,
+      "witness_max_error": 0.0,
+      "deterministic": {
+        "known_dynamics": {
+          "mean_closest_error": 0.0685826912522316,
+          "success_within_point_one": 0.75,
+          "mean_terminal_error": 0.24769559502601624
+        },
+        "stay": {
+          "mean_closest_error": 0.5099576711654663,
+          "success_within_point_one": 0.0,
+          "mean_terminal_error": 1.8515095710754395
+        }
+      },
+      "stochastic": {
+        "known_dynamics": {
+          "mean_closest_error": 0.05376385897397995,
+          "success_within_point_one": 0.875,
+          "mean_terminal_error": 0.21778765320777893
+        },
+        "stay": {
+          "mean_closest_error": 0.47271963953971863,
+          "success_within_point_one": 0.03125,
+          "mean_terminal_error": 1.8229944705963135
+        }
+      }
+    },
+    {
+      "seed": 25,
+      "witness_max_error": 0.0,
+      "deterministic": {
+        "known_dynamics": {
+          "mean_closest_error": 0.03280039131641388,
+          "success_within_point_one": 0.875,
+          "mean_terminal_error": 0.11878335475921631
+        },
+        "stay": {
+          "mean_closest_error": 0.45248353481292725,
+          "success_within_point_one": 0.0,
+          "mean_terminal_error": 1.4390060901641846
+        }
+      },
+      "stochastic": {
+        "known_dynamics": {
+          "mean_closest_error": 0.024583488702774048,
+          "success_within_point_one": 0.96875,
+          "mean_terminal_error": 0.16918978095054626
+        },
+        "stay": {
+          "mean_closest_error": 0.40449684858322144,
+          "success_within_point_one": 0.0625,
+          "mean_terminal_error": 1.3390657901763916
+        }
+      }
+    }
+  ]
+}

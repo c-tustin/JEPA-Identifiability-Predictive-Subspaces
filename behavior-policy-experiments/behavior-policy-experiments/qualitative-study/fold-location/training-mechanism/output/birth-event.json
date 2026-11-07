@@ -1,0 +1,34 @@
+{
+  "seed": 131,
+  "gain": 4,
+  "update_before": 204,
+  "update_after": 205,
+  "before": {
+    "near_endpoint_slope": 0.7647498532804133,
+    "far_endpoint_slope": 0.004150230954889811,
+    "turning_distances": []
+  },
+  "after": {
+    "near_endpoint_slope": 0.7684465383114825,
+    "far_endpoint_slope": -0.0008327079118261027,
+    "turning_distances": [
+      15.811227976347613
+    ]
+  },
+  "alignment_moment_only": {
+    "near_endpoint_slope": 0.7646789013743971,
+    "far_endpoint_slope": 0.004138316191793889,
+    "turning_distances": []
+  },
+  "sigreg_moment_only": {
+    "near_endpoint_slope": 0.7685177684086766,
+    "far_endpoint_slope": -0.0008209771055607272,
+    "turning_distances": [
+      15.813860581759254
+    ]
+  },
+  "note": "One-step parameter interventions at the actual before-state and shared Adam denominator. Not independent optimizers or alternate full training histories.",
+  "replayed_update250_parameter_error": 0.0,
+  "all_updates_inspected_from_initialization": 250,
+  "derivative_grid_points": 2049
+}

@@ -1,0 +1,446 @@
+{
+  "settings": {
+    "seeds": [
+      101,
+      102,
+      103,
+      104,
+      105
+    ],
+    "moment_pairs": 200000,
+    "train_pairs": 16384,
+    "test_pairs": 65536,
+    "maxiter": 150,
+    "r": 0.95
+  },
+  "analytic": {
+    "signed_mi_lower_bound": 0.4708042699292222,
+    "ar_mi": 0.14384103622589045,
+    "signed_mse": 1.0,
+    "ar_mse": 0.75
+  },
+  "moments": [
+    {
+      "seed": 101,
+      "law": "ar",
+      "mean": 0.00034109834594807836,
+      "variance": 1.0000601330106709,
+      "fourth_moment": 3.0078788275510027,
+      "mse": 0.7496975057734345,
+      "mi": 0.14407282372297703,
+      "mi_mc_se": 0.001120938001261909,
+      "magnitude_correlation": 0.2554130250183695,
+      "correlation": 0.5003475558246536
+    },
+    {
+      "seed": 101,
+      "law": "signed",
+      "mean": 0.004378988671277814,
+      "variance": 1.0032687086469279,
+      "fourth_moment": 3.046600462201038,
+      "mse": 1.0032878841887107,
+      "mi": 0.6667893290844991,
+      "mi_mc_se": 0.0018860569431321784,
+      "magnitude_correlation": 0.9037060145936292,
+      "correlation": -0.0043228054412592625
+    },
+    {
+      "seed": 102,
+      "law": "ar",
+      "mean": -0.0030011233376070912,
+      "variance": 1.0053280331373375,
+      "fourth_moment": 3.013215359999845,
+      "mse": 0.7538943297333004,
+      "mi": 0.14391333634300246,
+      "mi_mc_se": 0.0011216919230476225,
+      "magnitude_correlation": 0.25117423271206146,
+      "correlation": 0.5001090125748912
+    },
+    {
+      "seed": 102,
+      "law": "signed",
+      "mean": -0.00010208003938268311,
+      "variance": 1.0036551852258206,
+      "fourth_moment": 3.0179822358698853,
+      "mse": 1.0036551956461552,
+      "mi": 0.662638968846844,
+      "mi_mc_se": 0.001891147758734448,
+      "magnitude_correlation": 0.9023710811996055,
+      "correlation": -0.00012377882907196552
+    },
+    {
+      "seed": 103,
+      "law": "ar",
+      "mean": 0.002592406818229661,
+      "variance": 0.9985425488743557,
+      "fourth_moment": 2.9935296558964795,
+      "mse": 0.7503814212371444,
+      "mi": 0.14286139012486096,
+      "mi_mc_se": 0.0011165911009472797,
+      "magnitude_correlation": 0.2523087620083706,
+      "correlation": 0.49852413125907663
+    },
+    {
+      "seed": 103,
+      "law": "signed",
+      "mean": -0.0023642245800307386,
+      "variance": 0.9935055878604852,
+      "fourth_moment": 2.9599267498345814,
+      "mse": 0.9935111774183499,
+      "mi": 0.6608901178129247,
+      "mi_mc_se": 0.0018828816091571556,
+      "magnitude_correlation": 0.9023275899733039,
+      "correlation": 0.0012324995288029426
+    },
+    {
+      "seed": 104,
+      "law": "ar",
+      "mean": 0.0013975683631272933,
+      "variance": 1.0010331841030269,
+      "fourth_moment": 3.0031975590735773,
+      "mse": 0.7513894598194708,
+      "mi": 0.1434322983297547,
+      "mi_mc_se": 0.0011206084247962335,
+      "magnitude_correlation": 0.25106347864540507,
+      "correlation": 0.4993913279576105
+    },
+    {
+      "seed": 104,
+      "law": "signed",
+      "mean": 0.000171559158484896,
+      "variance": 1.0024954577987253,
+      "fourth_moment": 3.0085655408723895,
+      "mse": 1.0024954872312701,
+      "mi": 0.6642910989420143,
+      "mi_mc_se": 0.0018839859082728921,
+      "magnitude_correlation": 0.9022343263028411,
+      "correlation": 0.0015540045133773672
+    },
+    {
+      "seed": 105,
+      "law": "ar",
+      "mean": -0.0018327378140291283,
+      "variance": 0.9978981864257355,
+      "fourth_moment": 2.9890619343524443,
+      "mse": 0.7464227619197054,
+      "mi": 0.14517663428956884,
+      "mi_mc_se": 0.0011172186870268752,
+      "magnitude_correlation": 0.25260066748659127,
+      "correlation": 0.5020040730427183
+    },
+    {
+      "seed": 105,
+      "law": "signed",
+      "mean": 0.0041777663802895345,
+      "variance": 0.9993855390116074,
+      "fourth_moment": 2.9911436210879385,
+      "mse": 0.9994029927435357,
+      "mi": 0.6643694661147116,
+      "mi_mc_se": 0.001877806697383334,
+      "magnitude_correlation": 0.9020889906403023,
+      "correlation": 0.003139870927085995
+    }
+  ],
+  "predictors": [
+    {
+      "seed": 101,
+      "kind": "mean",
+      "parameters": [
+        0.012460043220757368,
+        0.014002183700021147
+      ],
+      "converged": true,
+      "iterations": 6,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.417949176871006,
+      "mse": 0.9978944356596229,
+      "second_moment_mse": 2.022672409545763,
+      "conditional_second_moment_error": 1.6442026206788063
+    },
+    {
+      "seed": 101,
+      "kind": "heteroscedastic",
+      "parameters": [
+        0.9548508255209115,
+        -2.3318203936042035
+      ],
+      "converged": true,
+      "iterations": 8,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.091369916154429,
+      "mse": 0.9976191547555797,
+      "second_moment_mse": 0.3698962428914375,
+      "conditional_second_moment_error": 0.0002507649549119551
+    },
+    {
+      "seed": 101,
+      "kind": "mixture",
+      "parameters": [
+        0.9517039250566098,
+        -2.3321665130862086
+      ],
+      "converged": true,
+      "iterations": 7,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.7498804920510023,
+      "mse": 0.9976191547555797,
+      "second_moment_mse": 0.36971068547474273,
+      "conditional_second_moment_error": 2.9172401652399458e-05
+    },
+    {
+      "seed": 101,
+      "kind": "conditioned",
+      "parameters": [
+        0.9514936784380612,
+        -2.3279988716327633
+      ],
+      "converged": true,
+      "iterations": 10,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.2523810159946843,
+      "mse": 0.09699186530877923,
+      "second_moment_mse": 0.36970968852796293,
+      "conditional_second_moment_error": 2.429129945588719e-05
+    },
+    {
+      "seed": 102,
+      "kind": "mean",
+      "parameters": [
+        -0.01597177880772529,
+        0.010273176433765682
+      ],
+      "converged": true,
+      "iterations": 7,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.4196309038691888,
+      "mse": 1.0013459084662566,
+      "second_moment_mse": 2.0429464246890654,
+      "conditional_second_moment_error": 1.655594409038805
+    },
+    {
+      "seed": 102,
+      "kind": "heteroscedastic",
+      "parameters": [
+        0.9528269428000179,
+        -2.33366411113839
+      ],
+      "converged": true,
+      "iterations": 8,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.0942147136616984,
+      "mse": 1.0009867521057791,
+      "second_moment_mse": 0.37251027588591323,
+      "conditional_second_moment_error": 8.191792529954163e-05
+    },
+    {
+      "seed": 102,
+      "kind": "mixture",
+      "parameters": [
+        0.9529040065559794,
+        -2.3473329481406537
+      ],
+      "converged": true,
+      "iterations": 7,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.753935281498601,
+      "mse": 1.0009867521057791,
+      "second_moment_mse": 0.37250959441583764,
+      "conditional_second_moment_error": 7.530606042407e-05
+    },
+    {
+      "seed": 102,
+      "kind": "conditioned",
+      "parameters": [
+        0.9528073316729451,
+        -2.345381704083396
+      ],
+      "converged": true,
+      "iterations": 9,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.25670747540459876,
+      "mse": 0.09781494266667853,
+      "second_moment_mse": 0.37250856452987113,
+      "conditional_second_moment_error": 7.125663068626325e-05
+    },
+    {
+      "seed": 103,
+      "kind": "mean",
+      "parameters": [
+        -0.0007858077832029322,
+        0.0015383765272076319
+      ],
+      "converged": true,
+      "iterations": 7,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.419598206210219,
+      "mse": 1.0013201927085664,
+      "second_moment_mse": 1.9940553718196012,
+      "conditional_second_moment_error": 1.6122147786731493
+    },
+    {
+      "seed": 103,
+      "kind": "heteroscedastic",
+      "parameters": [
+        0.9457010595983735,
+        -2.332908133626928
+      ],
+      "converged": true,
+      "iterations": 8,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.0983183346311127,
+      "mse": 1.001302836951687,
+      "second_moment_mse": 0.3755397241148399,
+      "conditional_second_moment_error": 0.00020632069133352872
+    },
+    {
+      "seed": 103,
+      "kind": "mixture",
+      "parameters": [
+        0.946017385971523,
+        -2.338064085512449
+      ],
+      "converged": true,
+      "iterations": 7,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.7601944683202114,
+      "mse": 1.001302836951687,
+      "second_moment_mse": 0.3755151401042202,
+      "conditional_second_moment_error": 0.00018599213058508935
+    },
+    {
+      "seed": 103,
+      "kind": "conditioned",
+      "parameters": [
+        0.946117213600673,
+        -2.340032340550016
+      ],
+      "converged": true,
+      "iterations": 9,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.2602441509085862,
+      "mse": 0.09850565464503927,
+      "second_moment_mse": 0.37550820007010155,
+      "conditional_second_moment_error": 0.00018042525379286423
+    },
+    {
+      "seed": 104,
+      "kind": "mean",
+      "parameters": [
+        0.000937670699430453,
+        0.010521655323522278
+      ],
+      "converged": true,
+      "iterations": 6,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.4199363448998228,
+      "mse": 1.0019609890841177,
+      "second_moment_mse": 2.0182665946442886,
+      "conditional_second_moment_error": 1.6627069977691649
+    },
+    {
+      "seed": 104,
+      "kind": "heteroscedastic",
+      "parameters": [
+        0.9540552678145438,
+        -2.3499609393153387
+      ],
+      "converged": true,
+      "iterations": 8,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.0982366080166497,
+      "mse": 1.0019791124035966,
+      "second_moment_mse": 0.3692382930908171,
+      "conditional_second_moment_error": 0.00015320018506731703
+    },
+    {
+      "seed": 104,
+      "kind": "mixture",
+      "parameters": [
+        0.9520029284720481,
+        -2.3297823065694585
+      ],
+      "converged": true,
+      "iterations": 7,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.757636260600879,
+      "mse": 1.0019791124035966,
+      "second_moment_mse": 0.36906936025590054,
+      "conditional_second_moment_error": 4.284051247025024e-05
+    },
+    {
+      "seed": 104,
+      "kind": "conditioned",
+      "parameters": [
+        0.9521024043915475,
+        -2.331734980677082
+      ],
+      "converged": true,
+      "iterations": 9,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.2583724671993741,
+      "mse": 0.09815691100851527,
+      "second_moment_mse": 0.3690751941875763,
+      "conditional_second_moment_error": 4.585971636914381e-05
+    },
+    {
+      "seed": 105,
+      "kind": "mean",
+      "parameters": [
+        -0.01760414815040785,
+        0.013505290331871627
+      ],
+      "converged": true,
+      "iterations": 7,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.417246827533441,
+      "mse": 0.9964785630598245,
+      "second_moment_mse": 1.9580549909515277,
+      "conditional_second_moment_error": 1.6203600446466764
+    },
+    {
+      "seed": 105,
+      "kind": "heteroscedastic",
+      "parameters": [
+        0.9530620625498618,
+        -2.315959255527973
+      ],
+      "converged": true,
+      "iterations": 8,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 1.0972290653674879,
+      "mse": 0.9962300459931671,
+      "second_moment_mse": 0.3653667317097209,
+      "conditional_second_moment_error": 0.00011651113834649453
+    },
+    {
+      "seed": 105,
+      "kind": "mixture",
+      "parameters": [
+        0.9530514625205594,
+        -2.3262203618711585
+      ],
+      "converged": true,
+      "iterations": 7,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.755113984607688,
+      "mse": 0.9962300459931671,
+      "second_moment_mse": 0.36534602578770475,
+      "conditional_second_moment_error": 0.00010272590233664083
+    },
+    {
+      "seed": 105,
+      "kind": "conditioned",
+      "parameters": [
+        0.9530513031861436,
+        -2.3262137956749074
+      ],
+      "converged": true,
+      "iterations": 10,
+      "message": "CONVERGENCE: NORM OF PROJECTED GRADIENT <= PGTOL",
+      "nll": 0.25595564539675025,
+      "mse": 0.09768904976906309,
+      "second_moment_mse": 0.36534601563951136,
+      "conditional_second_moment_error": 0.00010272291286931922
+    }
+  ]
+}

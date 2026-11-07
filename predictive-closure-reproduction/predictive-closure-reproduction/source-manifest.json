@@ -1,0 +1,194 @@
+{
+  "upstream_repository": "https://github.com/Mosh0110/predictive-closure",
+  "commit": "2964fa8f737fa43871d47928edc9aac16fa9298f",
+  "license": "MIT",
+  "audit_method": "GitHub app; execution environment offline",
+  "files": [
+    {
+      "path": ".gitignore",
+      "git_blob_sha1": "e477127e0b619cac8910c5bd9641794d2a3c8262"
+    },
+    {
+      "path": "LICENSE",
+      "git_blob_sha1": "88ef9d36b44cb0648259c062e013e75790c32f74"
+    },
+    {
+      "path": "README.md",
+      "git_blob_sha1": "bdae4dba222db75b337d2e2b090793cd8eced0ba"
+    },
+    {
+      "path": "configs/data_sha256.json",
+      "git_blob_sha1": "e2a945d87a738b3cb308f880353b36004e8b1459"
+    },
+    {
+      "path": "configs/four_image_train.json",
+      "git_blob_sha1": "b3d2c77c48bc7157af39933c51816ccae500aca5"
+    },
+    {
+      "path": "configs/image_probe.json",
+      "git_blob_sha1": "70a07766bf32f7cb21f97987166d0f3f09d14476"
+    },
+    {
+      "path": "configs/subset_train.json",
+      "git_blob_sha1": "3406fa20cf441ed6a431016fa2568095b922dbee"
+    },
+    {
+      "path": "configs/traffic_intervention.json",
+      "git_blob_sha1": "20e33940c973473c96cb832f01d1bffbdfc4fc7e"
+    },
+    {
+      "path": "configs/traffic_probe.json",
+      "git_blob_sha1": "c2ab437a018a6ecdeca488f400938e3cae5c364b"
+    },
+    {
+      "path": "configs/traffic_train.json",
+      "git_blob_sha1": "d6e9d2e20522456df5e047f08caa6e26c6e7bb6e"
+    },
+    {
+      "path": "download_data.py",
+      "git_blob_sha1": "e8848288a4d946f83431b33058c40da7e339949d"
+    },
+    {
+      "path": "jepa/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "jepa/artifacts.py",
+      "git_blob_sha1": "4e29ee2d62b51e5ebe43ddcc4e3d894643a10856"
+    },
+    {
+      "path": "jepa/common.py",
+      "git_blob_sha1": "f0972814196244ec02ccc3103c4dfd09b4f63d22"
+    },
+    {
+      "path": "jepa/data.py",
+      "git_blob_sha1": "8625e9b7025e84ca6f7ef6ba6b5c7191dbd56fc4"
+    },
+    {
+      "path": "jepa/four_image/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "jepa/four_image/corpus.py",
+      "git_blob_sha1": "26626f31ff95e37a8bf65ab0c67a7876b1fdad9a"
+    },
+    {
+      "path": "jepa/four_image/feed.py",
+      "git_blob_sha1": "a8e72b86232d376aa8fc8e8a0cc7a677e8770030"
+    },
+    {
+      "path": "jepa/four_image/materialize_corpus.py",
+      "git_blob_sha1": "3eee8d84bc148fdc337fbb6c678509840e291a79"
+    },
+    {
+      "path": "jepa/four_image/models.py",
+      "git_blob_sha1": "00631d1d5c47d82ffed6e92f102fa67a8d5a1543"
+    },
+    {
+      "path": "jepa/four_image/probes.py",
+      "git_blob_sha1": "b7635678702677b58e1db25a99270d675d145419"
+    },
+    {
+      "path": "jepa/four_image/reconstruction.py",
+      "git_blob_sha1": "6a7867f32a8a57e3736a0bcac98cb87ce6bd5a93"
+    },
+    {
+      "path": "jepa/four_image/side_model.py",
+      "git_blob_sha1": "c1edd4df6e7104d29917a27ce5235bd1f8493864"
+    },
+    {
+      "path": "jepa/four_image/train_jepa.py",
+      "git_blob_sha1": "afd4b258feea70360123c90fa2e2129b775251d2"
+    },
+    {
+      "path": "jepa/four_image/train_steering.py",
+      "git_blob_sha1": "66488d9ba6532e2d240885a7c9a6fcb7185ec9f0"
+    },
+    {
+      "path": "jepa/image_probe.py",
+      "git_blob_sha1": "cdec00b815307c7087f465de28cb719477872c50"
+    },
+    {
+      "path": "jepa/losses.py",
+      "git_blob_sha1": "93e4eaf6598ce63eddb86db9bd2c40dfc8efb1a7"
+    },
+    {
+      "path": "jepa/subset/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "jepa/subset/encoding.py",
+      "git_blob_sha1": "547df5d25037b358a57d7542dbdb5ba5cc70a84a"
+    },
+    {
+      "path": "jepa/subset/feed.py",
+      "git_blob_sha1": "ec9191588f1db0f8eccf511868b7ce1491a826a4"
+    },
+    {
+      "path": "jepa/subset/models.py",
+      "git_blob_sha1": "69f26a82e41de6983e07f269a6d37294b0cb98f7"
+    },
+    {
+      "path": "jepa/subset/probe_data.py",
+      "git_blob_sha1": "c286f5c23f88701d5d813752fac3a835525e754c"
+    },
+    {
+      "path": "jepa/subset/train_jepa.py",
+      "git_blob_sha1": "0d5435b2c2b63afb543aa7edba25474e71a659a7"
+    },
+    {
+      "path": "jepa/traffic/__init__.py",
+      "git_blob_sha1": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "jepa/traffic/feed.py",
+      "git_blob_sha1": "cf22168fe88f746d2e56276a43f27f49e17b46f6"
+    },
+    {
+      "path": "jepa/traffic/intervention.py",
+      "git_blob_sha1": "a798782f989509de5e54e48f2084841b624545e8"
+    },
+    {
+      "path": "jepa/traffic/probes.py",
+      "git_blob_sha1": "1cd34cdb7e390d8ff8816339ea5cf08746d6e02f"
+    },
+    {
+      "path": "jepa/traffic/train_jepa.py",
+      "git_blob_sha1": "e07a3139c2ff24a25954ab5bb3c87b9883b6f730"
+    },
+    {
+      "path": "plot.py",
+      "git_blob_sha1": "959dbb7547d030b9aaff6d4d8ad6e06f00d7c46f"
+    },
+    {
+      "path": "reproduce.sh",
+      "git_blob_sha1": "36fbe161d63c339dd8672c9fc83cf405c7ee3a62"
+    },
+    {
+      "path": "requirements.txt",
+      "git_blob_sha1": "964adc2c4d79813a1ef49cf9dfd068d3722abd62"
+    },
+    {
+      "path": "run.py",
+      "git_blob_sha1": "e0cc75905261740e1194e7408aecd50a3d56d8df"
+    }
+  ],
+  "expected_packages": {
+    "torch": "2.11.0",
+    "numpy": "2.4.3",
+    "matplotlib": "3.10.8"
+  },
+  "cifar10": {
+    "url": "https://www.cs.toronto.edu/~kriz/cifar-10-python.tar.gz",
+    "archive_md5": "c58f30108f718f92721af3b95e74349a",
+    "extracted_sha256": {
+      "batches.meta": "f962466ef690d46b226450fb9aadc74ba4bc64a76aa526b5827fe4bc5c7125cb",
+      "data_batch_1": "54636561a3ce25bd3e19253c6b0d8538147b0ae398331ac4a2d86c6d987368cd",
+      "data_batch_2": "766b2cef9fbc745cf056b3152224f7cf77163b330ea9a15f9392beb8b89bc5a8",
+      "data_batch_3": "0f00d98ebfb30b3ec0ad19f9756dc2630b89003e10525f5e148445e82aa6a1f9",
+      "data_batch_4": "3f7bb240661948b8f4d53e36ec720d8306f5668bd0071dcb4e6c947f78e9682b",
+      "data_batch_5": "d91802434d8376bbaeeadf58a737e3a1b12ac839077e931237e0dcd43adcb154",
+      "test_batch": "f53d8d457504f7cff4ea9e021afcf0e0ad8e24a91f3fc42091b8adef61157831"
+    }
+  }
+}
