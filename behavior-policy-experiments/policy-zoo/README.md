@@ -1,5 +1,7 @@
 # Policy zoo: many behavior policies, one protocol
 
+**Latest OU exposure test:** [Original OU, independent OU observations and broad SIGReg observations](ou-broad-observations/output/SUMMARY.md). Sixty paired seeds show improved affine R² but greater raw scale error, no detected planning gain and zero folds throughout. [Verified results](ou-broad-observations/output/VERIFICATION.json).
+
 **Fresh confirmation completed:** [Fixed tolerances, 60 new actor/training seeds and exposure-only ICM controls](confirmatory-matched-exposure/output/SUMMARY.md). Matched recovery/shared-data planning equivalence passes; an ICM observation-pool change removes all 30 native-exposure folds and substantially improves reaching. The untrained baseline confirms improvement beyond initial geometry. [Protocol](confirmatory-matched-exposure/PROTOCOL.md).
 
 **Previous:** [Geometry mechanism and original-policy matched exposure](geometry-and-coverage/README.md). The source seen by SIGReg is the larger geometric lever in the new early/late factorial. Seven original policies—not stationary surrogates—pass paired TOST for practical equivalence of recovery and shared-data planning under common starting observations and regularizer exposure; policy-specific-data planning does not pass the same tolerance. [Equivalence tests](geometry-and-coverage/output/EQUIVALENCE_SUMMARY.md) · [Zoo recap](geometry-and-coverage/ZOO_RECAP.md).
