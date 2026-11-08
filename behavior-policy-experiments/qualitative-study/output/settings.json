@@ -1,0 +1,56 @@
+{
+  "config": {
+    "policy_updates": 600,
+    "jepa_steps": 4000,
+    "nenv": 16,
+    "rollout": 20,
+    "train_episodes": 256,
+    "eval_episodes": 64,
+    "horizon": 64,
+    "burnin": 128,
+    "batch": 512,
+    "distance_min": 1.0,
+    "distance_max": 16.0,
+    "move": 0.25,
+    "sigma": 0.7,
+    "rho": 0.9,
+    "sigreg_weight": 0.1,
+    "forward_weight": 0.2,
+    "reward_scale": 0.2,
+    "entropy_weight": 0.0005,
+    "gamma": 0.99
+  },
+  "seeds": [
+    130,
+    131,
+    132,
+    133,
+    134,
+    135,
+    136,
+    137,
+    138,
+    139
+  ],
+  "arms": [
+    "icm",
+    "ou",
+    "icm_to_ou",
+    "balanced_log",
+    "balanced_size"
+  ],
+  "predictor_updates": 1000,
+  "screen_cases": 24,
+  "test_cases": 64,
+  "quick": false,
+  "numpy": "1.26.4",
+  "torch": "2.2.2",
+  "protocol_sha256": "f02b040d4ca4e3388e5a945a288ba3384e53e1786063072360fd4faf32c0307a",
+  "source_sha256": {
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/qualitative-study/run_trials.py": "7149d54cef2126273b0459b471e331dc0570c9f894f3dfa3a1139efd77c6c7b5",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/planning/evaluate_planning.py": "1ef297bb91fb1956586920ca957b4cba55238f51b5f60d76a986abcb4e723912",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/reliability/run_study.py": "c20a49e93ce85c0486259e07a7145169b3dc99c6851b437c42139ee151079fca",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/curiosity/experiment.py": "b69f7def8642e54a8b726c2b0982040d8da75997b597976f35ad0a5253538328",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/curriculum-controls/run_controls.py": "cbcff97aef32622fd73dca86acc376a9f863e627c3c4756dc56d1e94bc4c3232"
+  }
+}

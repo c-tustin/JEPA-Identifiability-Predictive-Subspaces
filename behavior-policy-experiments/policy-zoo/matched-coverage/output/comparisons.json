@@ -1,0 +1,137 @@
+[
+  {
+    "name": "near_bottleneck",
+    "endpoint": "log_distance_r2",
+    "n": 10,
+    "mean_gain": 1.9475437145199949e-07,
+    "wins": 5,
+    "losses": 5,
+    "p": 1.0,
+    "ci95": [
+      -2.6082269782304325e-06,
+      2.9816549719785534e-06
+    ],
+    "family": "primary",
+    "holm_p": 1.0
+  },
+  {
+    "name": "near_bottleneck",
+    "endpoint": "shared_goal_error",
+    "n": 10,
+    "mean_gain": 0.0,
+    "wins": 0,
+    "losses": 0,
+    "p": 1.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "family": "primary",
+    "holm_p": 1.0
+  },
+  {
+    "name": "near_bottleneck",
+    "endpoint": "native_goal_error",
+    "n": 10,
+    "mean_gain": 0.0234375,
+    "wins": 7,
+    "losses": 3,
+    "p": 0.34375,
+    "ci95": [
+      -0.002353515624999991,
+      0.049609375
+    ],
+    "family": "secondary",
+    "holm_p": 1.0
+  },
+  {
+    "name": "far_bottleneck",
+    "endpoint": "log_distance_r2",
+    "n": 10,
+    "mean_gain": -1.0917000777710406e-06,
+    "wins": 5,
+    "losses": 5,
+    "p": 1.0,
+    "ci95": [
+      -4.797316784503347e-06,
+      2.258443622865089e-06
+    ],
+    "family": "primary",
+    "holm_p": 1.0
+  },
+  {
+    "name": "far_bottleneck",
+    "endpoint": "shared_goal_error",
+    "n": 10,
+    "mean_gain": 0.000390625,
+    "wins": 1,
+    "losses": 0,
+    "p": 1.0,
+    "ci95": [
+      0.0,
+      0.001171875
+    ],
+    "family": "primary",
+    "holm_p": 1.0
+  },
+  {
+    "name": "far_bottleneck",
+    "endpoint": "native_goal_error",
+    "n": 10,
+    "mean_gain": 0.010546875,
+    "wins": 5,
+    "losses": 5,
+    "p": 1.0,
+    "ci95": [
+      -0.00859375,
+      0.030859375
+    ],
+    "family": "secondary",
+    "holm_p": 1.0
+  },
+  {
+    "name": "icm_shaped",
+    "endpoint": "log_distance_r2",
+    "n": 10,
+    "mean_gain": 1.8654506001802852e-06,
+    "wins": 7,
+    "losses": 3,
+    "p": 0.34375,
+    "ci95": [
+      3.4107260314220073e-07,
+      3.7420183778408254e-06
+    ],
+    "family": "primary",
+    "holm_p": 1.0
+  },
+  {
+    "name": "icm_shaped",
+    "endpoint": "shared_goal_error",
+    "n": 10,
+    "mean_gain": 0.0,
+    "wins": 0,
+    "losses": 0,
+    "p": 1.0,
+    "ci95": [
+      0.0,
+      0.0
+    ],
+    "family": "primary",
+    "holm_p": 1.0
+  },
+  {
+    "name": "icm_shaped",
+    "endpoint": "native_goal_error",
+    "n": 10,
+    "mean_gain": 0.0046875,
+    "wins": 5,
+    "losses": 4,
+    "p": 1.0,
+    "ci95": [
+      -0.00625,
+      0.016796875
+    ],
+    "family": "secondary",
+    "holm_p": 1.0
+  }
+]

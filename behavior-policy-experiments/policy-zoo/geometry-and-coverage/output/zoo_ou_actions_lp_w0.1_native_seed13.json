@@ -1,0 +1,188 @@
+{
+  "signature": "badc556c3b35086d2a3562200c5269d0e7685a856f4fbc6c8817cdc4d82c8664",
+  "condition": "zoo_ou_actions_lp_w0.1_native",
+  "experiment": "zoo",
+  "policy": "ou_actions_lp_w0.1",
+  "alignment_source": "native",
+  "regularizer_source": "common",
+  "seed": 13,
+  "parent_checkpoint_sha256": null,
+  "source_hash": "89232c67ffaf8db5a8abd332ff6375dc88d2b4f0903277f5afd6188a656b0d26",
+  "regularizer_pool_sha256": "c50f72f93c4c368061750ed066f4fbeff62c18794a96ce6350c6da127fd258ef",
+  "initial_metrics": {
+    "affine_log_r2": 0.8409818883447217,
+    "absolute_rank_correlation": 0.8925313595524937,
+    "reversed_fraction": 0.1865234375,
+    "folded": true,
+    "near_r2": 0.09992028976420117,
+    "far_r2": 0.9942692683176348,
+    "alias_distance_gap": 1.9927234558442826,
+    "alias_goal_error_bound": 0.9963617279221413,
+    "alias_residual": 2.7755575615628914e-17,
+    "alias_goals": [
+      1.27519387150137,
+      3.2679173273456525
+    ]
+  },
+  "metrics": {
+    "affine_log_r2": 0.9992938214225143,
+    "absolute_rank_correlation": 0.9999999999999998,
+    "reversed_fraction": 0.0,
+    "folded": false,
+    "near_r2": 0.9954279477601203,
+    "far_r2": 0.9979063849574593,
+    "alias_distance_gap": 0.0,
+    "alias_goal_error_bound": 0.0,
+    "alias_residual": 0.0
+  },
+  "history": [
+    {
+      "step": 0,
+      "affine_log_r2": 0.8409818883447217,
+      "absolute_rank_correlation": 0.8925313595524937,
+      "reversed_fraction": 0.1865234375,
+      "folded": true,
+      "near_r2": 0.09992028976420117,
+      "far_r2": 0.9942692683176348,
+      "alias_distance_gap": 1.9927234558442826,
+      "alias_goal_error_bound": 0.9963617279221413,
+      "alias_residual": 2.7755575615628914e-17,
+      "alias_goals": [
+        1.27519387150137,
+        3.2679173273456525
+      ]
+    },
+    {
+      "step": 500,
+      "alignment_weighted": 0.0017885675188153982,
+      "regularizer_weighted": 1.0327624082565308,
+      "affine_log_r2": 0.9913989442684396,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9733056678315648,
+      "far_r2": 0.9948509122706632,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 1000,
+      "alignment_weighted": 0.0015356914373114705,
+      "regularizer_weighted": 1.0443809032440186,
+      "affine_log_r2": 0.9918214518455998,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9750692993121575,
+      "far_r2": 0.9949284646143222,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 1500,
+      "alignment_weighted": 0.0017295959405601025,
+      "regularizer_weighted": 0.9860638976097107,
+      "affine_log_r2": 0.992560323399811,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9779458983215052,
+      "far_r2": 0.9951015130127564,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 2000,
+      "alignment_weighted": 0.0014280122704803944,
+      "regularizer_weighted": 1.1917500495910645,
+      "affine_log_r2": 0.9937488956156769,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9813073842359373,
+      "far_r2": 0.9954103367379961,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 2500,
+      "alignment_weighted": 0.0020753240678459406,
+      "regularizer_weighted": 1.0402871370315552,
+      "affine_log_r2": 0.9958528180534726,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.986551705376472,
+      "far_r2": 0.9961181648161455,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 3000,
+      "alignment_weighted": 0.002214222215116024,
+      "regularizer_weighted": 0.7392528653144836,
+      "affine_log_r2": 0.9981195050151623,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9923184685523833,
+      "far_r2": 0.9970503262281628,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 3500,
+      "alignment_weighted": 0.0021294879261404276,
+      "regularizer_weighted": 0.7789802551269531,
+      "affine_log_r2": 0.9991571952788905,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9949634295995108,
+      "far_r2": 0.9977734251901446,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    },
+    {
+      "step": 4000,
+      "alignment_weighted": 0.002232528757303953,
+      "regularizer_weighted": 0.6979788541793823,
+      "affine_log_r2": 0.9992938214225143,
+      "absolute_rank_correlation": 0.9999999999999998,
+      "reversed_fraction": 0.0,
+      "folded": false,
+      "near_r2": 0.9954279477601203,
+      "far_r2": 0.9979063849574593,
+      "alias_distance_gap": 0.0,
+      "alias_goal_error_bound": 0.0,
+      "alias_residual": 0.0
+    }
+  ],
+  "planning": {
+    "shared": {
+      "goal_error": 0.125,
+      "success": 1.0,
+      "stay_error": 1.01171875,
+      "oracle_error": 0.0,
+      "near_error": 0.0,
+      "middle_error": 0.1190476194024086,
+      "far_error": 0.18333333730697632
+    },
+    "native": {
+      "goal_error": 0.09765625,
+      "success": 0.96875,
+      "stay_error": 1.01171875,
+      "oracle_error": 0.0,
+      "near_error": 0.057692307978868484,
+      "middle_error": 0.0595238097012043,
+      "far_error": 0.14166666567325592
+    }
+  }
+}

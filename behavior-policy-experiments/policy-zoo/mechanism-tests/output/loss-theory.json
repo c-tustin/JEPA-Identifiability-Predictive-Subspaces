@@ -1,0 +1,76 @@
+{
+  "batch_endpoints": 1024,
+  "formula_checks": [
+    {
+      "rho": 0.9,
+      "scale": 0.6,
+      "analytic": 9.900025675382219,
+      "monte_carlo": 9.848411084932643,
+      "mc_standard_error": 0.043225692108271783
+    },
+    {
+      "rho": 0.9,
+      "scale": 1.0,
+      "analytic": 0.3691072782993665,
+      "monte_carlo": 0.3717544501851834,
+      "mc_standard_error": 0.007495297683333871
+    },
+    {
+      "rho": -0.45,
+      "scale": 0.6,
+      "analytic": 10.708524697163666,
+      "monte_carlo": 10.65676505286806,
+      "mc_standard_error": 0.030924852234726335
+    },
+    {
+      "rho": -0.45,
+      "scale": 1.0,
+      "analytic": 2.6974542565723256,
+      "monte_carlo": 2.7070237762468814,
+      "mc_standard_error": 0.00851131722444473
+    }
+  ],
+  "comparators": [
+    {
+      "source": "ou",
+      "rho": 0.9,
+      "best_linear_scale": 0.9948181859863457,
+      "linear_expected_loss": 0.3677698085299945,
+      "gaussianized_fold_expected_loss": 0.72306060460379,
+      "fold_mc_se": 0.0008848318137954571,
+      "pairs": 1048576,
+      "fold_better_by_more_than_five_mc_se": false
+    },
+    {
+      "source": "ou_hp_w1",
+      "rho": 0.29948546911287005,
+      "best_linear_scale": 0.9747263640963906,
+      "linear_expected_loss": 1.3498399133770655,
+      "gaussianized_fold_expected_loss": 1.7957153367383227,
+      "fold_mc_se": 0.0022725741576185626,
+      "pairs": 1048576,
+      "fold_better_by_more_than_five_mc_se": false
+    },
+    {
+      "source": "ou_hp2_w1",
+      "rho": -0.07313127964751705,
+      "best_linear_scale": 0.9627268232162631,
+      "linear_expected_loss": 1.9588299036942152,
+      "gaussianized_fold_expected_loss": 1.899358921718877,
+      "fold_mc_se": 0.002411247657346322,
+      "pairs": 1048576,
+      "fold_better_by_more_than_five_mc_se": true
+    },
+    {
+      "source": "ou_hp2_w3",
+      "rho": -0.4518438113111338,
+      "best_linear_scale": 0.9510406339159213,
+      "linear_expected_loss": 2.5684262265954643,
+      "gaussianized_fold_expected_loss": 1.648108881865233,
+      "fold_mc_se": 0.0020822393487670843,
+      "pairs": 1048576,
+      "fold_better_by_more_than_five_mc_se": true
+    }
+  ],
+  "scope": "Independent stationary pairs; implemented finite paired-batch loss. Fold comparator is not a fitted network or proof of its representability by the fixed architecture."
+}
