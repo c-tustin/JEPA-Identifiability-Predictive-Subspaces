@@ -1,0 +1,100 @@
+{
+  "signature": "37f5c6eb23e0dcb7173bf927ec72dcbfce362519ef5ddbc4752f8f6d6fc83e1c",
+  "arm": "original",
+  "seed": 6034,
+  "source_hash": "0fbecc46b78acf5dd1303f94475f58aaadd9443c1172a0fd1676659fe99cb19f",
+  "regularizer_pool_hash": "coupled_to_alignment",
+  "initial_metrics": {
+    "affine_log_r2": 0.5721691572956941,
+    "absolute_rank_correlation": 0.5591663949767864,
+    "reversed_fraction": 0.3740234375,
+    "folded": true,
+    "near_r2": 0.9122293696244199,
+    "far_r2": 0.9993866183109138,
+    "alias_distance_gap": 4.651752178379686,
+    "alias_goal_error_bound": 2.325876089189843,
+    "alias_residual": 6.938893903907228e-18,
+    "alias_goals": [
+      1.0606781707193627,
+      5.712430349099049
+    ]
+  },
+  "metrics": {
+    "affine_log_r2": 0.9923085558421626,
+    "absolute_rank_correlation": 0.9999999999999998,
+    "reversed_fraction": 0.0,
+    "folded": false,
+    "near_r2": 0.9759506564184445,
+    "far_r2": 0.9948292541423862,
+    "alias_distance_gap": 0.0,
+    "alias_goal_error_bound": 0.0,
+    "alias_residual": 0.0
+  },
+  "gaussian": {
+    "gaussian_r2": 0.9739505173646147,
+    "orthogonal_mse": 0.033874217820339655,
+    "raw_mean": -0.0026023668276593526,
+    "raw_std": 0.9042252954535501,
+    "tail_r2": 0.9856640717368671,
+    "tail_points": 771
+  },
+  "planning": {
+    "goal_error": 0.125,
+    "success": 0.953125,
+    "stay_error": 0.91015625,
+    "oracle_error": 0.0,
+    "near_error": 0.07692307978868484,
+    "middle_error": 0.1666666716337204,
+    "far_error": 0.11666666716337204
+  },
+  "history": [
+    {
+      "step": 500,
+      "alignment": 0.18045751750469208,
+      "sigreg": 8.450151443481445,
+      "lr": 0.001
+    },
+    {
+      "step": 1000,
+      "alignment": 0.1445808708667755,
+      "sigreg": 4.01733922958374,
+      "lr": 0.001
+    },
+    {
+      "step": 1500,
+      "alignment": 0.171260803937912,
+      "sigreg": 8.434195518493652,
+      "lr": 0.001
+    },
+    {
+      "step": 2000,
+      "alignment": 0.1719861626625061,
+      "sigreg": 5.499198913574219,
+      "lr": 0.001
+    },
+    {
+      "step": 2500,
+      "alignment": 0.1767716258764267,
+      "sigreg": 3.9921445846557617,
+      "lr": 0.0008539698735403514
+    },
+    {
+      "step": 3000,
+      "alignment": 0.16966578364372253,
+      "sigreg": 3.979238271713257,
+      "lr": 0.0005003928954890302
+    },
+    {
+      "step": 3500,
+      "alignment": 0.15765391290187836,
+      "sigreg": 4.405950546264648,
+      "lr": 0.00014658554623821286
+    },
+    {
+      "step": 4000,
+      "alignment": 0.1505417823791504,
+      "sigreg": 4.807377815246582,
+      "lr": 0.0
+    }
+  ]
+}
