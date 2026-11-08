@@ -27,6 +27,12 @@ An additional descriptive check shows that native ICM exposure creates 14 new fo
 
 Matched trained encoders have recovery **0.997563–0.997565**, zero folds and shared-data goal error **0.076237–0.076693**. [All paired baseline effects and descriptive intervals](untrained_baseline/RESULTS.md). The baseline is secondary; it does not add confirmatory p-values.
 
+## What the observation pool and comparison mean
+
+The simulator supplies 16,384 additional single triangle views per seed, spread uniformly in log-distance from 1 to 16. Equal-ratio intervals (1–2, 2–4, 4–8, 8–16) receive equal numbers of views. They go only to SIGReg; ICM transition pairs still supply alignment. Common means identical pools and SIGReg minibatch draws within each seed. The loss formula and weight stay unchanged.
+
+The improvement in every seed compares the two ICM training conditions above: recovery increases and goal error decreases in all 60 runs. Fold counts improve in 30 and tie in 30. The baseline encoder is untrained, but its shared-data predictor is trained. This does not establish that the ICM/common-pool control beats regular Gaussian-latent OU; that OU baseline is absent from the fresh cohort. The included low-pass/high-pass OU action controllers are different policies.
+
 ## What this adds beyond the paper
 
 The useful result is the controlled finite-training exposure effect and its impact on actual reaching. The policy tie is a control, not the main theoretical advance. In one dimension, a common observation marginal already strongly restricts an unfolded Gaussianizing map. High log-distance R² also does not certify exact Gaussianization.
@@ -37,4 +43,4 @@ Limits: starts and SIGReg exposure match, not successor distributions or station
 
 **Verified:** 240 fresh actors; 420 recreated sources; 540 encoder geometries; 1,080 main and 60 baseline physical-planning replays; exact full/resumed training gates. The three frozen scientific files still match the pre-cohort Git commit.
 
-[Fixed protocol](../PROTOCOL.md) · [Code/time lock](LOCK.json) · [Detailed tests](RESULTS.md) · [All figures](FIGURES.md) · [Main verification](VERIFICATION.json) · [Research value](../RESEARCH_VALUE.md)
+[Fixed protocol](../PROTOCOL.md) · [Code/time lock](LOCK.json) · [Detailed tests](RESULTS.md) · [All figures](FIGURES.md) · [Main verification](VERIFICATION.json)
