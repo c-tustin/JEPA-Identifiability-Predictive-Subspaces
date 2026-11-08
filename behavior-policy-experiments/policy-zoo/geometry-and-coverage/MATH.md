@@ -27,7 +27,7 @@ The new factorial uses
 $$
 L_{a,r}(\theta)=0.9\,\mathbb E_{(x,x')\sim D_a}
 \left[(h_\theta(x)-h_\theta(x'))^2\right]
-+0.1\,\mathbb E\left[\operatorname{SIGReg}_B
++0.1\,\mathbb E\left[\mathrm{SIGReg}_B
 (h_\theta(X_1),\ldots,h_\theta(X_B))\right],
 $$
 
@@ -36,7 +36,7 @@ with $X_i$ sampled independently from the pooled endpoint measure of $D_r$, and 
 For fixed encoder and empirical pool, let $\phi(t)=\mathbb E[e^{it h(X)}]$, $\phi_0(t)=e^{-t^2/2}$ and integration weights $w_t$. The exact expected implemented regularizer for iid observations is
 
 $$
-\mathbb E[\operatorname{SIGReg}_B]
+\mathbb E[\mathrm{SIGReg}_B]
 =\sum_t w_t\left[B|\phi(t)-\phi_0(t)|^2+1-|\phi(t)|^2\right].
 $$
 

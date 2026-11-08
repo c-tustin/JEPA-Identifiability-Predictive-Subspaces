@@ -69,8 +69,8 @@ $$
 The constant function has eigenvalue one and carries no distance information. After removing it, the largest eigenvalue identifies the slowest nonconstant feature. To compute it stably, use the symmetric matrix
 
 $$
-S=\operatorname{diag}(\sqrt\pi)\,
-P\,\operatorname{diag}(\pi^{-1/2}).
+S=\mathrm{diag}(\sqrt\pi)\,
+P\,\mathrm{diag}(\pi^{-1/2}).
 $$
 
 If $Su=\lambda u$, convert back using $f_i=u_i/\sqrt{\pi_i}$. Normalize with stationary weights:
