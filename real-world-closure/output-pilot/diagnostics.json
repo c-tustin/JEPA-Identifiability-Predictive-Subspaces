@@ -1,0 +1,618 @@
+{
+  "interpretation": "Linear forecast gaps with frozen encoders; no mutual-information or causal claim",
+  "runs": [
+    {
+      "tag": "k2_none_seed0",
+      "mean_future_latent_r2_from_z": 0.7444199186173962,
+      "mean_future_latent_r2_from_z_and_weather": 0.7653125751120842,
+      "mean_future_latent_r2_from_full_observation": 0.7537527917924591,
+      "weather_gain_in_latent_r2": 0.020892656494687967,
+      "residual_covariance_eigenvalues": [
+        0.04093104859755538,
+        0.37149400583505293
+      ],
+      "residual_covariance_condition_number": 9.076093053165527,
+      "residual_excess_kurtosis": [
+        0.9274685135225398,
+        0.9535991613947532
+      ]
+    },
+    {
+      "tag": "k2_weather_seed0",
+      "mean_future_latent_r2_from_z": 0.7582778929474067,
+      "mean_future_latent_r2_from_z_and_weather": 0.7832022221490491,
+      "mean_future_latent_r2_from_full_observation": 0.7677159526309896,
+      "weather_gain_in_latent_r2": 0.024924329201642448,
+      "residual_covariance_eigenvalues": [
+        0.03429740547723202,
+        0.2879738933460263
+      ],
+      "residual_covariance_condition_number": 8.396375449950428,
+      "residual_excess_kurtosis": [
+        1.0154605493057929,
+        0.32184418662548575
+      ]
+    },
+    {
+      "tag": "k2_shuffled_weather_seed0",
+      "mean_future_latent_r2_from_z": 0.7582130841060735,
+      "mean_future_latent_r2_from_z_and_weather": 0.7774698122580888,
+      "mean_future_latent_r2_from_full_observation": 0.7665188890125704,
+      "weather_gain_in_latent_r2": 0.01925672815201529,
+      "residual_covariance_eigenvalues": [
+        0.037052454150205236,
+        0.36844388353453783
+      ],
+      "residual_covariance_condition_number": 9.943845609818991,
+      "residual_excess_kurtosis": [
+        1.134608082925907,
+        1.054166712260879
+      ]
+    },
+    {
+      "tag": "k2_none_seed1",
+      "mean_future_latent_r2_from_z": 0.815771939376946,
+      "mean_future_latent_r2_from_z_and_weather": 0.824613776328307,
+      "mean_future_latent_r2_from_full_observation": 0.7737839864274476,
+      "weather_gain_in_latent_r2": 0.008841836951360982,
+      "residual_covariance_eigenvalues": [
+        0.04479566729807355,
+        0.27311173221661983
+      ],
+      "residual_covariance_condition_number": 6.096833660258144,
+      "residual_excess_kurtosis": [
+        1.26301498245408,
+        1.1995147178637762
+      ]
+    },
+    {
+      "tag": "k2_weather_seed1",
+      "mean_future_latent_r2_from_z": 0.8048752254603485,
+      "mean_future_latent_r2_from_z_and_weather": 0.8219143857714959,
+      "mean_future_latent_r2_from_full_observation": 0.7863707866912237,
+      "weather_gain_in_latent_r2": 0.017039160311147383,
+      "residual_covariance_eigenvalues": [
+        0.044875456652443205,
+        0.26527491200941644
+      ],
+      "residual_covariance_condition_number": 5.911358497451051,
+      "residual_excess_kurtosis": [
+        0.9310650111367531,
+        1.492176496901422
+      ]
+    },
+    {
+      "tag": "k2_shuffled_weather_seed1",
+      "mean_future_latent_r2_from_z": 0.8153079253314062,
+      "mean_future_latent_r2_from_z_and_weather": 0.8241081699695706,
+      "mean_future_latent_r2_from_full_observation": 0.7752611653127157,
+      "weather_gain_in_latent_r2": 0.008800244638164423,
+      "residual_covariance_eigenvalues": [
+        0.044283918091259006,
+        0.27488923244164354
+      ],
+      "residual_covariance_condition_number": 6.207427984921294,
+      "residual_excess_kurtosis": [
+        1.2674466776880973,
+        1.1687043564161028
+      ]
+    },
+    {
+      "tag": "k2_none_seed2",
+      "mean_future_latent_r2_from_z": 0.8219257391587116,
+      "mean_future_latent_r2_from_z_and_weather": 0.8291316507238999,
+      "mean_future_latent_r2_from_full_observation": 0.7723960680431903,
+      "weather_gain_in_latent_r2": 0.00720591156518835,
+      "residual_covariance_eigenvalues": [
+        0.04873225351850228,
+        0.2519741250937969
+      ],
+      "residual_covariance_condition_number": 5.170582250995829,
+      "residual_excess_kurtosis": [
+        1.1191966680169374,
+        2.221132803120887
+      ]
+    },
+    {
+      "tag": "k2_weather_seed2",
+      "mean_future_latent_r2_from_z": 0.8077946647896864,
+      "mean_future_latent_r2_from_z_and_weather": 0.8241774687187624,
+      "mean_future_latent_r2_from_full_observation": 0.7864567471562232,
+      "weather_gain_in_latent_r2": 0.016382803929075984,
+      "residual_covariance_eigenvalues": [
+        0.043783597335452715,
+        0.25117833584222243
+      ],
+      "residual_covariance_condition_number": 5.736813581529009,
+      "residual_excess_kurtosis": [
+        0.7611826651181941,
+        1.8092429454011585
+      ]
+    },
+    {
+      "tag": "k2_shuffled_weather_seed2",
+      "mean_future_latent_r2_from_z": 0.8211307934535896,
+      "mean_future_latent_r2_from_z_and_weather": 0.8283226534626953,
+      "mean_future_latent_r2_from_full_observation": 0.7756212714853852,
+      "weather_gain_in_latent_r2": 0.007191860009105655,
+      "residual_covariance_eigenvalues": [
+        0.04792205859230348,
+        0.25537737468752253
+      ],
+      "residual_covariance_condition_number": 5.329015117237418,
+      "residual_excess_kurtosis": [
+        1.1781824391985145,
+        2.206952407658047
+      ]
+    },
+    {
+      "tag": "k8_none_seed0",
+      "mean_future_latent_r2_from_z": 0.47627408043532604,
+      "mean_future_latent_r2_from_z_and_weather": 0.49691239090843276,
+      "mean_future_latent_r2_from_full_observation": 0.36337776786801546,
+      "weather_gain_in_latent_r2": 0.020638310473106714,
+      "residual_covariance_eigenvalues": [
+        0.0362628093832295,
+        0.12480618512124182,
+        0.22453604224535337,
+        0.4101351713164915,
+        0.5507983887859936,
+        0.563287121840789,
+        0.6657922097391966,
+        0.6780858635929135
+      ],
+      "residual_covariance_condition_number": 18.699209331158677,
+      "residual_excess_kurtosis": [
+        -0.576430424121182,
+        -0.3807677912743559,
+        0.01914978541241341,
+        -0.6737214673573035,
+        0.040715456963163366,
+        0.12046846418780088,
+        -0.4669222465667566,
+        -0.5619454702229549
+      ]
+    },
+    {
+      "tag": "k8_weather_seed0",
+      "mean_future_latent_r2_from_z": 0.4703778879261219,
+      "mean_future_latent_r2_from_z_and_weather": 0.4919643162371877,
+      "mean_future_latent_r2_from_full_observation": 0.3631919150056035,
+      "weather_gain_in_latent_r2": 0.02158642831106583,
+      "residual_covariance_eigenvalues": [
+        0.036205503808960086,
+        0.12046343922728911,
+        0.2036283168830669,
+        0.39270252302166947,
+        0.5274151625434411,
+        0.5538666277536263,
+        0.6554203044545743,
+        0.690189618341692
+      ],
+      "residual_covariance_condition_number": 19.063113221224803,
+      "residual_excess_kurtosis": [
+        -0.30914413403909435,
+        -0.4258391776758712,
+        -0.10564290567920231,
+        -0.670338334568481,
+        0.08566325360508387,
+        0.29432429155292095,
+        -0.5566357169404115,
+        -0.37380194395651634
+      ]
+    },
+    {
+      "tag": "k8_shuffled_weather_seed0",
+      "mean_future_latent_r2_from_z": 0.4766814575211932,
+      "mean_future_latent_r2_from_z_and_weather": 0.49732719421813565,
+      "mean_future_latent_r2_from_full_observation": 0.36359298845482513,
+      "weather_gain_in_latent_r2": 0.020645736696942474,
+      "residual_covariance_eigenvalues": [
+        0.03617391314841404,
+        0.12830040781965935,
+        0.2288977029976081,
+        0.4138339033268971,
+        0.5537596448892306,
+        0.5660009874524279,
+        0.6585273698630864,
+        0.6775241140511967
+      ],
+      "residual_covariance_condition_number": 18.7296329062177,
+      "residual_excess_kurtosis": [
+        -0.5816256135701665,
+        -0.3971745290432853,
+        0.05540056268332583,
+        -0.6838633061177517,
+        0.0013609591905998641,
+        0.1438507057776497,
+        -0.45779245731956975,
+        -0.5809465838202321
+      ]
+    },
+    {
+      "tag": "k8_none_seed1",
+      "mean_future_latent_r2_from_z": 0.4766491832412723,
+      "mean_future_latent_r2_from_z_and_weather": 0.5081830756639943,
+      "mean_future_latent_r2_from_full_observation": 0.3435674665450544,
+      "weather_gain_in_latent_r2": 0.03153389242272203,
+      "residual_covariance_eigenvalues": [
+        0.05056165510776244,
+        0.18302688553416013,
+        0.26943006589920565,
+        0.3603416057746775,
+        0.47488992504257005,
+        0.6224354710155365,
+        0.6760912338166332,
+        0.7255543712520232
+      ],
+      "residual_covariance_condition_number": 14.349893604266782,
+      "residual_excess_kurtosis": [
+        0.2989931989911234,
+        0.15149203239083375,
+        1.0761221098738165,
+        -0.6970818522533091,
+        -0.46054228469443537,
+        -0.7420270600745438,
+        0.0038965182039647495,
+        -0.305695758390677
+      ]
+    },
+    {
+      "tag": "k8_weather_seed1",
+      "mean_future_latent_r2_from_z": 0.4781772163076482,
+      "mean_future_latent_r2_from_z_and_weather": 0.5121754142157326,
+      "mean_future_latent_r2_from_full_observation": 0.352917722766459,
+      "weather_gain_in_latent_r2": 0.03399819790808445,
+      "residual_covariance_eigenvalues": [
+        0.061093008895679556,
+        0.17179424595552026,
+        0.227247895219754,
+        0.3392402747918752,
+        0.4650954350473171,
+        0.5987796332126492,
+        0.645260982970895,
+        0.7077863008245839
+      ],
+      "residual_covariance_condition_number": 11.585389451568458,
+      "residual_excess_kurtosis": [
+        0.3940166284292794,
+        -0.1332267324166927,
+        0.8033191227347931,
+        -0.6496108484521956,
+        -0.36179751414352435,
+        -0.42835131685629246,
+        0.1074062532285831,
+        -0.2879757091692965
+      ]
+    },
+    {
+      "tag": "k8_shuffled_weather_seed1",
+      "mean_future_latent_r2_from_z": 0.47358379431796993,
+      "mean_future_latent_r2_from_z_and_weather": 0.5055323953856243,
+      "mean_future_latent_r2_from_full_observation": 0.3409239559437266,
+      "weather_gain_in_latent_r2": 0.0319486010676544,
+      "residual_covariance_eigenvalues": [
+        0.05130208868309316,
+        0.1844443596435229,
+        0.2810540244395859,
+        0.3615230865437416,
+        0.4757603382335513,
+        0.6234120243915711,
+        0.6770765257840109,
+        0.7276933148261179
+      ],
+      "residual_covariance_condition_number": 14.1844773479161,
+      "residual_excess_kurtosis": [
+        0.28855182161877657,
+        0.17888037432492032,
+        1.087802257015647,
+        -0.6938436097874097,
+        -0.4511587837798321,
+        -0.7543932000683835,
+        0.015178073165230899,
+        -0.30652333010180666
+      ]
+    },
+    {
+      "tag": "k8_none_seed2",
+      "mean_future_latent_r2_from_z": 0.4036833111097383,
+      "mean_future_latent_r2_from_z_and_weather": 0.43922787894407056,
+      "mean_future_latent_r2_from_full_observation": 0.277068467641567,
+      "weather_gain_in_latent_r2": 0.03554456783433224,
+      "residual_covariance_eigenvalues": [
+        0.04620625484781746,
+        0.1747827008092486,
+        0.3252329484819635,
+        0.4856600021858284,
+        0.5738648951525004,
+        0.6312009671918113,
+        0.7016192500902406,
+        0.7255310677556136
+      ],
+      "residual_covariance_condition_number": 15.70200982843525,
+      "residual_excess_kurtosis": [
+        -0.17638955509854748,
+        0.9763777769749162,
+        -0.533201714490751,
+        -0.7187096046293435,
+        1.2469426780943706,
+        -0.040483398442123786,
+        -0.20120277739380965,
+        -0.46879296020506356
+      ]
+    },
+    {
+      "tag": "k8_weather_seed2",
+      "mean_future_latent_r2_from_z": 0.40679040148621426,
+      "mean_future_latent_r2_from_z_and_weather": 0.4494744910412486,
+      "mean_future_latent_r2_from_full_observation": 0.2779706253535198,
+      "weather_gain_in_latent_r2": 0.04268408955503433,
+      "residual_covariance_eigenvalues": [
+        0.05098213717159969,
+        0.16715506719822518,
+        0.3110393103927577,
+        0.46652526895765967,
+        0.55737111732689,
+        0.5856250419018466,
+        0.6569269775194859,
+        0.6833267294066468
+      ],
+      "residual_covariance_condition_number": 13.403257833359397,
+      "residual_excess_kurtosis": [
+        -0.29105735175037495,
+        0.9394831880157719,
+        -0.32263403390824363,
+        -0.4365437174036595,
+        1.3468520773013832,
+        0.038350539606180956,
+        -0.20436884782430687,
+        -0.5263214055644574
+      ]
+    },
+    {
+      "tag": "k8_shuffled_weather_seed2",
+      "mean_future_latent_r2_from_z": 0.4025856170158477,
+      "mean_future_latent_r2_from_z_and_weather": 0.43811761346369554,
+      "mean_future_latent_r2_from_full_observation": 0.27734029556831297,
+      "weather_gain_in_latent_r2": 0.035531996447847825,
+      "residual_covariance_eigenvalues": [
+        0.047134363438602965,
+        0.17787853868645231,
+        0.3241256639437354,
+        0.4904047658023284,
+        0.5717389710862817,
+        0.6319963177918728,
+        0.7080945314305443,
+        0.7270295788289836
+      ],
+      "residual_covariance_condition_number": 15.42461859649403,
+      "residual_excess_kurtosis": [
+        -0.10736748520441974,
+        0.9059121908646124,
+        -0.5439951300231036,
+        -0.7370636369194319,
+        1.2358545078665752,
+        -0.04908524165118333,
+        -0.16753626889490336,
+        -0.4915823841098761
+      ]
+    }
+  ],
+  "self_predictability": {
+    "log_pm25": 0.5321079694455416,
+    "dewpoint": 0.9174408230372059,
+    "temperature": 0.793197122341631,
+    "pressure": 0.9447247740017133,
+    "log_cum_wind": 0.1445239494810322,
+    "log_snow": 0.017723021905984404,
+    "log_rain": 0.11557798971678157,
+    "wind_NE": 0.010034347100803753,
+    "wind_NW": 0.09752568443731402,
+    "wind_SE": 0.09019722856603463,
+    "wind_cv": 0.0006260431269534683
+  },
+  "additional_baselines": {
+    "top_self_k2": {
+      "selected_features": [
+        "pressure",
+        "dewpoint"
+      ],
+      "readout_r2": {
+        "log_pm25": 0.05909847177567873,
+        "dewpoint": 0.9999999999999957,
+        "temperature": 0.7255217060095593,
+        "pressure": 0.9999999999999957,
+        "log_cum_wind": 0.04664571514228977,
+        "log_snow": -0.010239170178253154,
+        "log_rain": 0.013591143102390624,
+        "wind_NE": -0.0022719467532041904,
+        "wind_NW": 0.07563837982220156,
+        "wind_SE": 0.043433889590332786,
+        "wind_cv": 0.004579683950363567
+      },
+      "readout_alpha": [
+        0.001,
+        0.001,
+        1000.0,
+        0.001,
+        0.001,
+        1000.0,
+        100.0,
+        1000.0,
+        1000.0,
+        1000.0,
+        0.001
+      ],
+      "forecast": {
+        "r2": [
+          -0.012549099126796692
+        ],
+        "rmse": [
+          93.99954682230414
+        ],
+        "mae": [
+          69.09184488682067
+        ],
+        "alpha": [
+          0.001
+        ]
+      },
+      "forecast_with_weather": {
+        "r2": [
+          0.1761890317827498
+        ],
+        "rmse": [
+          84.78743535855425
+        ],
+        "mae": [
+          59.19967433459669
+        ],
+        "alpha": [
+          10.0
+        ]
+      },
+      "monthly_rmse": {
+        "2014-01": 117.4867756819774,
+        "2014-02": 165.4352894979758,
+        "2014-03": 95.58854260254549,
+        "2014-04": 55.02021170267933,
+        "2014-05": 48.6586762881766,
+        "2014-06": 67.97915354722626,
+        "2014-07": 67.64889665937055,
+        "2014-08": 70.24188021353392,
+        "2014-09": 65.75016442756139,
+        "2014-10": 118.11580508704827,
+        "2014-11": 107.38837187998921,
+        "2014-12": 86.95766237434907
+      }
+    },
+    "top_self_k8": {
+      "selected_features": [
+        "pressure",
+        "dewpoint",
+        "temperature",
+        "log_pm25",
+        "log_cum_wind",
+        "log_rain",
+        "wind_NW",
+        "wind_SE"
+      ],
+      "readout_r2": {
+        "log_pm25": 0.9999999999999966,
+        "dewpoint": 0.9999999999999871,
+        "temperature": 0.9999999999999859,
+        "pressure": 0.9999999999999943,
+        "log_cum_wind": 0.9999999999999968,
+        "log_snow": 0.01315849058912355,
+        "log_rain": 0.999999999999998,
+        "wind_NE": 0.25787459880130703,
+        "wind_NW": 0.9999999999999962,
+        "wind_SE": 0.9999999999999967,
+        "wind_cv": 0.5850346746537749
+      },
+      "readout_alpha": [
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        1000.0,
+        0.001,
+        0.001,
+        0.001,
+        0.001,
+        100.0
+      ],
+      "forecast": {
+        "r2": [
+          0.49536892996641657
+        ],
+        "rmse": [
+          66.35974481063796
+        ],
+        "mae": [
+          46.436627416170836
+        ],
+        "alpha": [
+          0.001
+        ]
+      },
+      "forecast_with_weather": {
+        "r2": [
+          0.49602959539474445
+        ],
+        "rmse": [
+          66.31629133478287
+        ],
+        "mae": [
+          46.42625538833293
+        ],
+        "alpha": [
+          0.001
+        ]
+      },
+      "monthly_rmse": {
+        "2014-01": 89.53960692890041,
+        "2014-02": 107.4336046480502,
+        "2014-03": 65.76950043598738,
+        "2014-04": 49.788673110655225,
+        "2014-05": 45.65395987294788,
+        "2014-06": 43.91132170087052,
+        "2014-07": 43.369368940036296,
+        "2014-08": 44.52095506463055,
+        "2014-09": 44.17991431128725,
+        "2014-10": 82.1635816342145,
+        "2014-11": 75.34515643507441,
+        "2014-12": 68.19673327974928
+      }
+    },
+    "raw_pm_ridge": {
+      "r2": [
+        0.6133950433613715
+      ],
+      "rmse": [
+        58.08331874044881
+      ],
+      "mae": [
+        39.50624606817406
+      ],
+      "alpha": [
+        0.001
+      ]
+    },
+    "raw_pm_and_weather_ridge": {
+      "r2": [
+        0.6340604521044457
+      ],
+      "rmse": [
+        56.5096200975447
+      ],
+      "mae": [
+        37.70209993758816
+      ],
+      "alpha": [
+        0.001
+      ]
+    }
+  },
+  "checkpoint_sha256": {
+    "k2_none_seed0.pt": "5b54959bf3804573d21653376fb17e13e9a549fbe5af8ea8daeb9cbab64a35e8",
+    "k2_weather_seed0.pt": "c0ec1efcdfc1aaa32c8e051aa206ff24a4035f125653539e2399affcc40331e6",
+    "k2_shuffled_weather_seed0.pt": "f474bf784569ee367d3eb00272a1ceaf52a0171400c4525b8543f2ac0beb0413",
+    "k2_none_seed1.pt": "9e2db2548c333eedb089fe752ada831d3d183efe6dbb464a7f0bc06ccc7afda3",
+    "k2_weather_seed1.pt": "3983d0562f1367b05bdf88bcacedbd6d34bb8017df267c084e4abb32d3e2a4d9",
+    "k2_shuffled_weather_seed1.pt": "31f4026f0f02c825f78cf134a3ede861ed845e717b3ee5a65b2853bad6a63b16",
+    "k2_none_seed2.pt": "3de5492cf9341340957506cf7873e9eb758cd5eff6b3a368e060c3874da9ab61",
+    "k2_weather_seed2.pt": "9dff4db9cf14991620e5fae27e9eee21b9f164ad70d9379b407fb5c3d253d8db",
+    "k2_shuffled_weather_seed2.pt": "2e72e326e1d078f8f582d4ba9f58d2d2527a0d6192d3065a5a949938efd5f1b7",
+    "k8_none_seed0.pt": "1e35c6eada5d1e501a2811d24819d523cc57bf7edb8608d5748d6d707424b7dc",
+    "k8_weather_seed0.pt": "26fcb6a408a764e55e3684eac1e83b4ed8ced50f6f37345c8e9cb8ee891c818b",
+    "k8_shuffled_weather_seed0.pt": "1900036f79aa7e1e639d8366910268e7975f68a8996d864dcfb447208740e1e7",
+    "k8_none_seed1.pt": "da894a5dca45b067e15ebd5402d864587c5be528dd98f1d4a63adf65ef0d84ea",
+    "k8_weather_seed1.pt": "b3ad9bc685d4852977fbcafcb3f229427934b1b695ee5e1201469951467e39d2",
+    "k8_shuffled_weather_seed1.pt": "967385f47ce5d639bb7f8018affefc22dfe5bc4f32e03654c14d430f916b7cc2",
+    "k8_none_seed2.pt": "8f6d5f24b8df914f985185857b148963c91c8fe64981269029f4ad2670b8b347",
+    "k8_weather_seed2.pt": "0c6e716d7d1f7720edd85921efa9b937abe2208f04e2f2f6a184a29c24a14c15",
+    "k8_shuffled_weather_seed2.pt": "7892d11acc71aa1215d9ab0e3d1f6217b803c2564b0f8605bc05fd1468b211e1"
+  }
+}
