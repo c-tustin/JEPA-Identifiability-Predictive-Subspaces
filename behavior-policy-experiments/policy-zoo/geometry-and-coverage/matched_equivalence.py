@@ -56,6 +56,9 @@ def friedman_permutation(matrix,permutations=100000):
 
 
 def paired_equivalence(difference,margin):
+    # One difference per paired seed (policy A minus B), not per goal or grid
+    # point. TOST tests H0: mean <= -margin OR mean >= +margin against the
+    # alternative that the mean lies strictly between these practical bounds.
     d=np.asarray(difference,dtype=float);n=len(d);mean=float(d.mean())
     sem=float(d.std(ddof=1)/np.sqrt(n))
     if sem==0:
@@ -63,10 +66,15 @@ def paired_equivalence(difference,margin):
         lower=0. if mean>-margin else 1.
         upper=0. if mean<margin else 1.
     else:
+        # For a single pair at alpha=.05, both one-sided tests pass exactly when
+        # the 90% paired-t interval lies inside (-margin, +margin). This assumes
+        # the t approximation is appropriate for independent seed differences.
         width=stats.t.ppf(.95,n-1)*sem
         ci=[mean-width,mean+width]
         lower=float(stats.t.sf((mean+margin)/sem,n-1))
         upper=float(stats.t.cdf((mean-margin)/sem,n-1))
+    # Separate sign-based robustness check: typical differences rather than
+    # population means. It is not a distribution-free mean-equivalence test.
     successes_lower=int(np.sum(d>-margin))
     successes_upper=int(np.sum(d<margin))
     median_p=max(float(stats.binom.sf(successes_lower-1,n,.5)),float(stats.binom.sf(successes_upper-1,n,.5)))
@@ -77,6 +85,9 @@ def paired_equivalence(difference,margin):
 
 
 def global_equivalence(matrix,names,margin):
+    # Rows are seed blocks; columns are policies. Seven policies give 21 pairs.
+    # Every pair must pass: the maximum component p-value implements this
+    # intersection-union claim. Failure to detect a difference is insufficient.
     pairs=[]
     for i,j in itertools.combinations(range(len(names)),2):
         pairs.append({'policy_a':names[i],'policy_b':names[j],

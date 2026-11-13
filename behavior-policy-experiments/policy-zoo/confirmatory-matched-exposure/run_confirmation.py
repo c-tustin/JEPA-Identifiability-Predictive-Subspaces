@@ -39,6 +39,9 @@ def save_json(path, value):
 
 
 def signature():
+    # Hash source bytes, including comments, to identify the frozen experiment.
+    # The later explanatory comments intentionally change this signature; replay
+    # saved results from the historical checkout described in SOURCE_COMMENTS.md.
     digest = hashlib.sha256()
     for name in ('PROTOCOL.md', 'run_confirmation.py', 'analyze_confirmation.py'):
         digest.update((HERE / name).read_bytes())
@@ -69,6 +72,8 @@ def prepare_source(policy, seed, output=OUT):
     actor = None
     actor_hash = None
     if policy in LEARNED:
+        # Each learned exploration policy gets its own actor for this seed.
+        # Actor training is separate from the encoder and downstream predictor.
         actor_path = output / 'actors' / f'{policy}_seed{seed}.pt'
         if actor_path.exists():
             checkpoint = torch.load(actor_path, map_location='cpu')
@@ -78,24 +83,41 @@ def prepare_source(policy, seed, output=OUT):
             actor, saved_actor = original.learned.train(c, seed, policy)
             save(actor_path, {'signature': signature(), 'actor': saved_actor})
         actor_hash = previous.prior.tensor_hash(actor.state_dict())
+        # Native data follow continuous trajectories under the frozen actor.
+        # Keep these for the ICM exposure controls below, alongside reset data.
         native = original.learned.collect(c, policy, c.train_episodes, 10000 + seed, actor)
     elif policy == 'random':
         native = behavior.collect(c, 'random', c.train_episodes, 10000 + seed)
     else:
         native, _ = original.run_zoo.source(c, policy, seed, output)
+    # Common starting states are supplied by the simulator, not discovered by
+    # each policy: 16,384 single views stratified in log-distance over [1, 16].
+    # Every policy in a seed gets exactly the same pool. Each sampled state
+    # starts a separate one-step transition; successors are not fed back as
+    # the next starting states. Thus this does not measure rollout coverage.
     distance, pool = previous.reset_pool(seed)
     torch.manual_seed(5300000 + seed)
     if policy in ('ou_actions_lp_w0.1', 'ou_actions_hp_w0.3'):
+        # These controllers generate actions from filtered OU noise without
+        # reading the scene. Reuse their native action sequence to preserve
+        # its warm-up and temporal correlations at the common reset states.
+        # This is OU-driven physical action, not Gaussian OU log-distance.
         action = native['action'].clone()
     elif actor is not None:
         actions = []
         with torch.no_grad():
             for t in range(c.horizon):
                 views = pool[t * c.train_episodes:(t + 1) * c.train_episodes]
+                # ICM/count/RND/disagreement choose their own action at each
+                # supplied view. Sampling the actor does not update its weights.
                 actions.append(actor(views)[0].sample())
         action = torch.cat(actions)
     else:
+        # The remaining condition is uniform random approach/stay/retreat.
         action = torch.cat([torch.randint(0, 3, (c.train_episodes,)) for _ in range(c.horizon)])
+    # Apply the chosen physical move {-0.25, 0, +0.25}, reflecting at bounds,
+    # then render its successor. Starting views match; successors/actions may
+    # differ across policies. No stationary endpoint distribution is imposed.
     successor = behavior.move(distance, action, c)
     reset = {'x': pool, 'xp': behavior.sensor(successor, c), 'action': action,
              'z': torch.log(distance / 4) / c.sigma, 'zp': torch.log(successor / 4) / c.sigma}
@@ -127,11 +149,21 @@ def train_cell(policy, cell, seed, source, output=OUT, stop_at=None):
         assert result['signature'] == signature()
         return result
     c = original.config()
+    # Three cells separate the policy comparison from the ICM mechanism test:
+    #   matched:         reset transition pairs + common single-view SIGReg pool
+    #   native_exposure: native ICM pairs + their pooled endpoints for SIGReg
+    #   common_exposure: same native ICM pairs + common single-view SIGReg pool
+    # Only ICM runs the last two cells. Between them only SIGReg exposure changes;
+    # the common pool supplies extra observations, not just reweighted native data.
     data = source['reset' if cell == 'matched' else 'native']
     pool = previous.pooled(source['native']) if cell == 'native_exposure' else source['pool']
     model, plan = original.reliability.make_plan(c, seed, seed, 'icm')
     optimizer = torch.optim.Adam(model.parameters(), lr=.001)
     alignment_indices = plan['indices']
+    # Seed-only streams pair initialization and batch draws across policies.
+    # SIGReg samples 1,024 single views independently of the 512 alignment pairs.
+    # In common-pool cells its actual input observations match across policies;
+    # their encoded values can differ as their models learn different weights.
     rng = torch.Generator().manual_seed(3400000 + seed)
     regularizer_indices = torch.randint(len(pool), (c.jepa_steps, 2 * c.batch), generator=rng)
     regularizer = behavior.SIGReg1D()
@@ -151,7 +183,10 @@ def train_cell(policy, cell, seed, source, output=OUT, stop_at=None):
         optimizer.param_groups[0]['lr'] = previous.controls.learning_rate(step, c.jepa_steps)
         index = alignment_indices[step]
         y = model(torch.cat([data['x'][index], data['xp'][index]]))
+        # Alignment uses the correspondence between the two transition endpoints.
         alignment = .9 * (y[:c.batch] - y[c.batch:]).square().mean()
+        # SIGReg sees scalar embeddings, with no action or distance labels and
+        # no pairing requirement. The formula and weight stay fixed in all cells.
         reg_loss = .1 * regularizer(model(pool[regularizer_indices[step]]))
         alignment_gradient = torch.autograd.grad(alignment, parameters)
         regularizer_gradient = torch.autograd.grad(reg_loss, parameters)
@@ -172,10 +207,16 @@ def train_cell(policy, cell, seed, source, output=OUT, stop_at=None):
         save(checkpoint_path, {'signature': signature(), 'step': c.jepa_steps,
                               'encoder': model.state_dict(), 'optimizer': optimizer.state_dict(), 'history': history})
     model.eval()
+    # Encoder training ends here. Train a separate action-conditioned predictor
+    # for each frozen encoder, using either shared or policy-specific transitions.
     shared = previous.prior.matched.shared_predictor_data(previous.prior.matched.make_design(size=16384), seed)
     planning = {}
     arrays = dict(curves)
     for kind, predictor_data in (('shared', shared), ('native', data)):
+        # shared: identical physical observation/action transitions across policies
+        # within a seed, encoded through each model; isolates representation use.
+        # native: this cell's own alignment transitions. For matched cells these
+        # are reset pairs, not the policy's original continuous trajectory data.
         predictor_path = output / f'predictor_{name}_{kind}_seed{seed}.pt'
         if predictor_path.exists():
             saved_predictor = torch.load(predictor_path, map_location='cpu')
