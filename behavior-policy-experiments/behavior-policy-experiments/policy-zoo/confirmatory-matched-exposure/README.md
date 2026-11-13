@@ -19,13 +19,21 @@ Keep ICM's actor, transition pairs and initial encoder weights fixed. Change onl
 
 Recovery and reaching improve in all 60 seeds; all three planned mechanism tests pass correction. The broad pool supplies additional real observations through controlled resets. It is a data intervention, not a free autonomous exploration improvement.
 
-The secondary untrained baseline has recovery 0.8421, 26/60 folds and goal error 0.4479. Matched training therefore improves beyond the starting geometry. [Baseline results](output/untrained_baseline/RESULTS.md).
+The secondary baseline freezes the encoder before any encoder training, but still trains its action-conditioned predictor on the same shared data. It has recovery 0.8421, 26/60 folds and goal error 0.4479. Both versions receive the same predictor-training budget, so this comparison isolates the effect of encoder training. [Baseline results](output/untrained_baseline/RESULTS.md).
+
+## What are “broad common observations”?
+
+For each seed, the simulator renders 16,384 extra triangle views covering distances 1–16, evenly spread in **log-distance**. Thus intervals 1–2, 2–4, 4–8 and 8–16 receive equal numbers of views. These additional single views go only to SIGReg. They are not transition pairs collected by ICM. Within a seed the common-pool conditions use the identical observation pool and SIGReg minibatch draws. SIGReg’s formula and weight do not change.
+
+For the ICM control, alignment still receives the original ICM trajectory pairs. “Improves in every seed” means recovery rises and shared-data goal error falls in all 60 paired runs when the SIGReg pool changes. Fold counts improve in 30 runs and tie in 30. The three tests concern recovery, fold incidence and actual reaching across runs; all pass the four-claim Holm correction.
+
+This does **not** establish superiority over regular OU. The fresh cohort compares matched-reset ICM with low-pass/high-pass OU **action controllers**, not the original Gaussian-latent OU baseline. The native-ICM-alignment/common-SIGReg control was compared with native ICM exposure. Its improvement is an ICM-versus-ICM result, with additional broad observations supplied by the simulator.
 
 ## What remains open?
 
 Policy-specific predictor-data planning equivalence is not established at the same tolerance. The next useful test keeps one encoder fixed while changing predictor action data. The present result identifies a finite-training exposure effect; it does not extend the paper's general identifiability guarantee to nonlinear systems.
 
-Starting observations and SIGReg exposure match; successor distributions and stationarity do not. These are physical OU action controllers, not Gaussian-latent OU dynamics. [Research value](RESEARCH_VALUE.md) · [One-dimensional caveat](ONE_DIMENSION_CAVEAT.md) · [Statistical assumptions](ASSUMPTIONS.md) · [Geometry/planning link](PLANNING_BRIDGE.md)
+Starting observations and SIGReg exposure match; successor distributions and stationarity do not. These are physical OU action controllers, not Gaussian-latent OU dynamics. [One-dimensional caveat](ONE_DIMENSION_CAVEAT.md) · [Statistical assumptions](ASSUMPTIONS.md) · [Geometry/planning link](PLANNING_BRIDGE.md)
 
 ## Reproduce
 

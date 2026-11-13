@@ -73,7 +73,7 @@ $$
 
 The two endpoints of a pair are correlated: treating all $N$ outputs as independent would drop a covariance term. Even if the population output marginal is exactly Gaussian, the implemented batch-size-scaled loss has a nonzero finite-batch expectation that depends on pairing.
 
-The same expression holds exactly for sampling pairs with replacement from a finite stored pool, even with unequal source/successor marginals: define $\varphi$ as the **pooled endpoint** characteristic function. This follows from $\operatorname{Var}(A+A')=2+2\psi-4|\varphi|^2$ for $A=e^{itY}$. `pair_objective.py` checks that identity against actual sampled minibatches and uses it to evaluate oracle candidate codes without training a network.
+The same expression holds exactly for sampling pairs with replacement from a finite stored pool, even with unequal source/successor marginals: define $\varphi$ as the **pooled endpoint** characteristic function. This follows from $\mathrm{Var}(A+A')=2+2\psi-4|\varphi|^2$ for $A=e^{itY}$. `pair_objective.py` checks that identity against actual sampled minibatches and uses it to evaluate oracle candidate codes without training a network.
 
 For $Y=aZ$, $\varphi=e^{-a^2t^2/2}$ and $\psi=e^{-a^2t^2(1-\rho)}$. This gives an analytic expected loss for any rescaled linear code. `loss_theory.py` checks the formula against 512 independently sampled batches at each of four settings, then compares its numerical minimum against a Monte Carlo integral for $h_F$:
 

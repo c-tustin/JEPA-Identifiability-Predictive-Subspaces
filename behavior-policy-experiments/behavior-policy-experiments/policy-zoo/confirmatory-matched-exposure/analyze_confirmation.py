@@ -51,17 +51,26 @@ def collect():
 def analyze(rows):
     primary = {}
     for key in ENDPOINTS:
+        # Compare all seven matched-reset cells within each of the 60 seeds.
+        # Recovery uses no action predictor; shared_goal_error uses separately
+        # fitted predictors trained on the same physical transitions per seed.
         matrix = np.array([[endpoint(rows[p, 'matched', seed], key) for p in run.POLICIES] for seed in run.SEEDS])
+        # Tolerances were fixed before the fresh cohort: .001 R² and .005
+        # physical distance units (2% of a .25 action step), not exact equality.
         margin = .005 if key == 'shared_goal_error' else .001
         result = equivalence.global_equivalence(matrix, run.POLICIES, margin)
         result['policy_means'] = dict(zip(run.POLICIES, matrix.mean(0).tolist()))
         primary[key] = result
+    # All 21 pairs must pass on all four endpoints: whole/near/far recovery
+    # and shared-data reaching. This conjunction is one confirmatory claim.
     joint_p = max(r['mean_global_p'] for r in primary.values())
     joint_median_p = max(r['median_global_p'] for r in primary.values())
     mechanism = {}
     for key in ('affine_log_r2', 'folded', 'shared_goal_error'):
         values = []
         for seed in run.SEEDS:
+            # Mechanism comparison is ICM versus itself with identical native
+            # alignment pairs; only the independently sampled SIGReg pool differs.
             native = rows['icm', 'native_exposure', seed]
             common = rows['icm', 'common_exposure', seed]
             if key == 'folded':
@@ -72,11 +81,17 @@ def analyze(rows):
                     benefit *= -1
             values.append(benefit)
         mechanism[key] = paired_direction(values)
+    # Correct four planned claims together: the equivalence conjunction plus
+    # three directional ICM exposure effects. The latter are sign-based tests,
+    # not additional TOST comparisons of the seven policies.
     family = [{'claim': 'joint_recovery_and_shared_planning_equivalence', 'p': joint_p}]
     family += [{'claim': 'exposure_only_icm_benefit_' + key, 'p': value['p']} for key, value in mechanism.items()]
     for item, adjusted in zip(family, equivalence.holm([r['p'] for r in family])):
         item['holm_p'] = adjusted
         item['significant'] = adjusted < .05
+    # Secondary question: each matched cell supplies its own predictor data.
+    # These are its policy-specific reset transitions, not native rollout data.
+    # This equivalence claim need not pass even when shared-data planning does.
     native_matrix = np.array([[rows[p, 'matched', seed]['planning']['native']['goal_error'] for p in run.POLICIES] for seed in run.SEEDS])
     folds = np.array([[rows[p, 'matched', seed]['metrics']['folded'] for p in run.POLICIES] for seed in run.SEEDS])
     native_result = equivalence.global_equivalence(native_matrix, run.POLICIES, .005)
