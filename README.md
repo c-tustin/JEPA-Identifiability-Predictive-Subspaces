@@ -3,3 +3,5 @@ This repository holds all the code explorations in my project under Richard Haki
 The main branch will include writeups, research process notes, practice code, and main results. Folders include shorter experiments, like paper reproductions and toy models. These experiments are meant to give a foundation for further inquiry.
 
 Real-data experiment: [Predictive closure on hourly Beijing pollution and weather](real-world-closure/README.md), with [pilot findings](real-world-closure/FINDINGS.md), code, and saved checkpoints.
+
+ICM representation folding: [collected studies and progress](icm-folding/README.md), including occupancy/encoder figures, inverse-occupancy learning-rate tests, weighted-moment prevention versus repair, alternative-objective gradients, and no-fold proofs.

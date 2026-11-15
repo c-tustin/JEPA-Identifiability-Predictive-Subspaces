@@ -1,0 +1,414 @@
+{
+  "summary": [
+    {
+      "condition": "gain 4, ordinary, initialization",
+      "n": 5,
+      "folded": 2,
+      "material_folds": 2,
+      "mean_r2": 0.6647206609411189,
+      "min_std": 2.047482991812369
+    },
+    {
+      "condition": "gain 4, weighted, initialization",
+      "n": 5,
+      "folded": 0,
+      "material_folds": 0,
+      "mean_r2": 0.9829394234459297,
+      "min_std": 0.8642260434953967
+    },
+    {
+      "condition": "gain 8, ordinary, initialization",
+      "n": 5,
+      "folded": 5,
+      "material_folds": 5,
+      "mean_r2": 0.3392239365078521,
+      "min_std": 0.7364808867693939
+    },
+    {
+      "condition": "gain 8, weighted, initialization",
+      "n": 5,
+      "folded": 5,
+      "material_folds": 5,
+      "mean_r2": 0.9265326788775263,
+      "min_std": 0.8083969387196923
+    },
+    {
+      "condition": "gain 4, ordinary, existing fold",
+      "n": 2,
+      "folded": 2,
+      "material_folds": 2,
+      "mean_r2": 0.39363257613072755,
+      "min_std": 1.5582689508841165
+    },
+    {
+      "condition": "gain 4, weighted, existing fold",
+      "n": 2,
+      "folded": 2,
+      "material_folds": 2,
+      "mean_r2": 0.010836171548284274,
+      "min_std": 0.8929222811480516
+    },
+    {
+      "condition": "gain 4, weighted_reset, existing fold",
+      "n": 2,
+      "folded": 2,
+      "material_folds": 2,
+      "mean_r2": 0.008730623371292974,
+      "min_std": 0.8935153820557209
+    }
+  ],
+  "repair_seeds": [
+    141,
+    143
+  ],
+  "runs": [
+    {
+      "seed": 141,
+      "gain": 4,
+      "method": "ordinary",
+      "stage": "repair",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        3.4922894834296114
+      ],
+      "backward_fraction": 0.4092001061698553,
+      "std": 3.008952832213141,
+      "r2": 0.020851175629297926
+    },
+    {
+      "seed": 143,
+      "gain": 4,
+      "method": "ordinary",
+      "stage": "repair",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        1.6987598031652245
+      ],
+      "backward_fraction": 0.40298858754629485,
+      "std": 1.5582689508841165,
+      "r2": 0.7664139766321572
+    },
+    {
+      "seed": 141,
+      "gain": 4,
+      "method": "weighted",
+      "stage": "repair",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        3.3804409888703626
+      ],
+      "backward_fraction": 0.43924229902723666,
+      "std": 0.8929222811480516,
+      "r2": 0.0012985814602055553
+    },
+    {
+      "seed": 143,
+      "gain": 4,
+      "method": "weighted",
+      "stage": "repair",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        2.697589252918042
+      ],
+      "backward_fraction": 0.4034635426764936,
+      "std": 0.9128920480027319,
+      "r2": 0.020373761636362994
+    },
+    {
+      "seed": 141,
+      "gain": 4,
+      "method": "weighted_reset",
+      "stage": "repair",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        3.3774715516759373
+      ],
+      "backward_fraction": 0.43920749705460915,
+      "std": 0.8935153820557209,
+      "r2": 0.00133119056235424
+    },
+    {
+      "seed": 143,
+      "gain": 4,
+      "method": "weighted_reset",
+      "stage": "repair",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        2.758588566498738
+      ],
+      "backward_fraction": 0.4078002538317059,
+      "std": 0.9120604420514572,
+      "r2": 0.01613005618023171
+    },
+    {
+      "seed": 140,
+      "gain": 4,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": false,
+      "material_fold": false,
+      "roots": [],
+      "backward_fraction": 0.0,
+      "std": 4.926553950634574,
+      "r2": 0.8865281069577965
+    },
+    {
+      "seed": 141,
+      "gain": 4,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        3.5718133413979944
+      ],
+      "backward_fraction": 0.3810380280087863,
+      "std": 2.9973127855206205,
+      "r2": 0.05919014802974321
+    },
+    {
+      "seed": 142,
+      "gain": 4,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": false,
+      "material_fold": false,
+      "roots": [],
+      "backward_fraction": 0.0,
+      "std": 5.475309217672671,
+      "r2": 0.8364839092138502
+    },
+    {
+      "seed": 143,
+      "gain": 4,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        2.0906193592219404
+      ],
+      "backward_fraction": 0.3754096993131375,
+      "std": 2.047482991812369,
+      "r2": 0.6749785530524773
+    },
+    {
+      "seed": 144,
+      "gain": 4,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": false,
+      "material_fold": false,
+      "roots": [],
+      "backward_fraction": 0.0,
+      "std": 5.158967970452542,
+      "r2": 0.8664225874517278
+    },
+    {
+      "seed": 140,
+      "gain": 4,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": false,
+      "material_fold": false,
+      "roots": [],
+      "backward_fraction": 0.0,
+      "std": 0.8797280029038945,
+      "r2": 0.9868618176752179
+    },
+    {
+      "seed": 141,
+      "gain": 4,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": false,
+      "material_fold": false,
+      "roots": [],
+      "backward_fraction": 0.0,
+      "std": 0.8642260434953967,
+      "r2": 0.9846540661809843
+    },
+    {
+      "seed": 142,
+      "gain": 4,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": false,
+      "material_fold": false,
+      "roots": [],
+      "backward_fraction": 0.0,
+      "std": 0.9080490322744521,
+      "r2": 0.9796010268799494
+    },
+    {
+      "seed": 143,
+      "gain": 4,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": false,
+      "material_fold": false,
+      "roots": [],
+      "backward_fraction": 0.0,
+      "std": 0.8691282009132294,
+      "r2": 0.9865234043925118
+    },
+    {
+      "seed": 144,
+      "gain": 4,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": false,
+      "material_fold": false,
+      "roots": [],
+      "backward_fraction": 0.0,
+      "std": 0.8881406455098418,
+      "r2": 0.9770568021009847
+    },
+    {
+      "seed": 140,
+      "gain": 8,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        3.9721827264471896
+      ],
+      "backward_fraction": 0.25775208204148237,
+      "std": 0.7701472980423418,
+      "r2": 0.45661038594360037
+    },
+    {
+      "seed": 141,
+      "gain": 8,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        5.058614880148792
+      ],
+      "backward_fraction": 0.3701807467088196,
+      "std": 0.7951838957296155,
+      "r2": 0.42609516378972695
+    },
+    {
+      "seed": 142,
+      "gain": 8,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        4.678569776784647
+      ],
+      "backward_fraction": 0.473293718939255,
+      "std": 0.8991445888350519,
+      "r2": 0.1573850848107926
+    },
+    {
+      "seed": 143,
+      "gain": 8,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        3.271107891879046
+      ],
+      "backward_fraction": 0.19208773917242158,
+      "std": 0.7364808867693939,
+      "r2": 0.4311737335033486
+    },
+    {
+      "seed": 144,
+      "gain": 8,
+      "method": "ordinary",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        4.09339304195931
+      ],
+      "backward_fraction": 0.3924924244120192,
+      "std": 0.832560342618523,
+      "r2": 0.22485531449179172
+    },
+    {
+      "seed": 140,
+      "gain": 8,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        11.734886143614984
+      ],
+      "backward_fraction": 0.014469777997541199,
+      "std": 0.8355956081815246,
+      "r2": 0.9484874451604793
+    },
+    {
+      "seed": 141,
+      "gain": 8,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        9.568987996981383
+      ],
+      "backward_fraction": 0.059284105066172765,
+      "std": 0.8083969387196923,
+      "r2": 0.9280631710370192
+    },
+    {
+      "seed": 142,
+      "gain": 8,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        8.70683840670906
+      ],
+      "backward_fraction": 0.09849899443497726,
+      "std": 0.8216145025413036,
+      "r2": 0.9075939624669368
+    },
+    {
+      "seed": 143,
+      "gain": 8,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        10.220249900664946
+      ],
+      "backward_fraction": 0.03846422382129952,
+      "std": 0.81575521663881,
+      "r2": 0.9366560640856831
+    },
+    {
+      "seed": 144,
+      "gain": 8,
+      "method": "weighted",
+      "stage": "scratch",
+      "folded": true,
+      "material_fold": true,
+      "roots": [
+        8.830853339924179
+      ],
+      "backward_fraction": 0.08802412897062027,
+      "std": 0.8159068818588849,
+      "r2": 0.9118627516375131
+    }
+  ]
+}
