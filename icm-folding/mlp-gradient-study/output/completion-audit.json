@@ -1,0 +1,34 @@
+{
+  "requirements": {
+    "unchanged_MLP_from_scratch": "All 145 audited initializations and paired base batch hashes verified by cohort reports.",
+    "transition_only_gradients": "Training input dictionaries contain x/xp/action only; loss formula and direction checks passed.",
+    "alternative_regularizers": "Four objectives across ten development and five fresh sources; scalar adaptations stated explicitly.",
+    "fresh_source_validation": "Five 600-update ICM sources; coefficient 100 fixed before generation; 25 encoder fits verified.",
+    "controls": "Local coefficient 1, local coefficient 100, global coefficients 1/10/100; adaptive decisions retained.",
+    "prediction": "Independent checkpoint recomputation of held-out and coverage-stress decoder errors for all 145 fits.",
+    "geometry": "Independent 20001-point derivative checks for all 145 fits; any versus material folds separately reported.",
+    "artifacts": "Ten PNG/PDF figure pairs; all ten PNGs visually reviewed; gallery and repository links checked.",
+    "limitations": "No hard guarantee; one substantial mining failure; deterministic scalar simulator; compute and nuisance limits explicit."
+  },
+  "audited_encoder_fits": 145,
+  "independent_final_grid_points": 20001,
+  "newly_trained_policy_sources": 5,
+  "figure_pairs": 10,
+  "source_sha256": {
+    "mlp-gradient-study/run.py": "f67746ab79923109728e08c4294eac0323b01ecd5c07fcc044b7b34a386265f2",
+    "mlp-gradient-study/strength_control.py": "b1a5c248f6f4b76483bbb5924f9dcd8a7939b4c8b6557b899ed9db7b12646430",
+    "mlp-gradient-study/history_plot.py": "9a48019822858d76a52e56c63dea94517f4d26d4bfe384d5f60978c758f557f3",
+    "mlp-gradient-study/fresh.py": "13ac6d6566a059ffcbb3171d767ba3461730f6a27e924a82999c4e01907c6b4a",
+    "mlp-gradient-study/finalize.py": "f65c7d960668014edde0766724937fe05f9bff2589c35da0bf8f09f1954fe2aa",
+    "mlp-gradient-study/strength_report.py": "8d9c23f62e1faccca88d6c0e8eb21be4e183086ac58e53341c6670f1e1682223",
+    "mlp-gradient-study/mining_report.py": "4ae5a7fd75e51cd188f0eb5c9a6932a710e4b32a5fb313f1d7317e4eb17a8600",
+    "mlp-gradient-study/fresh_report.py": "fa554c4ad6a44540040ef8b5fadcbcd152fb370cb2315f83a7764977d82e8a7f",
+    "mlp-gradient-study/hard_mining.py": "6e82988c283e434e72b98a1230ff2c5843c502c207067767a55889beb6bc1313",
+    "mlp-gradient-study/reference.py": "5c3612e1b052a795194b668cfbabf169d552299727ceceba4db01b1719dc7fdd",
+    "mlp-gradient-study/report.py": "0bbc36eeecf091055737c509174d7c35f60882205f6566a074dad8d5d454abd3",
+    "mlp-gradient-study/README.md": "6de29ce52f7f3d4d2678bcffb62c1b6586940d11d874fdacb4acb793ef8c01e1",
+    "mlp-gradient-study/PROTOCOL.md": "15ba2f0bfc41a302994698f136dbe07630d38e8e107d8b5237c329c04858a446",
+    "README.md": "5871acfedfc33d53a8873514d9d68012ae33cd1a4b238f68fc969937bf9f85da",
+    "PROGRESS.md": "71ac2c7f6479f87b6853ddfee86434e6d974d1fd64a6a9d97f6d71c34c5de00f"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "births": [
+    {
+      "level": 0.875,
+      "tail": "one",
+      "step": 219,
+      "far_slope_before": 0.0005061786149642145,
+      "far_slope_after": -0.003486024615548089,
+      "near_contribution": -0.003772900570381122,
+      "far_contribution": -0.0001938330070152655,
+      "alignment_contribution": -1.4606178459031287e-05
+    },
+    {
+      "level": 0.875,
+      "tail": "two",
+      "step": 224,
+      "far_slope_before": 0.002708905043222798,
+      "far_slope_after": -0.006428262373114169,
+      "near_contribution": -0.010662564397300069,
+      "far_contribution": 0.0015477004964496337,
+      "alignment_contribution": -1.2778234839442956e-05
+    }
+  ],
+  "switches": [
+    {
+      "old_level": 0.875,
+      "new_level": 0.9375,
+      "at": 100,
+      "reset": false,
+      "folded": false,
+      "roots": [],
+      "r2": 0.8424147837624453,
+      "batch_objective": 6.191307062328988,
+      "population_objective": 5.859398634347592
+    },
+    {
+      "old_level": 0.875,
+      "new_level": 0.9375,
+      "at": 500,
+      "reset": true,
+      "folded": true,
+      "roots": [
+        2.646787610172975
+      ],
+      "r2": 0.5863041298979287,
+      "batch_objective": 4.842481737638829,
+      "population_objective": 4.578641014692756
+    },
+    {
+      "old_level": 0.875,
+      "new_level": 0.9375,
+      "at": 500,
+      "reset": false,
+      "folded": true,
+      "roots": [
+        2.6538095074914603
+      ],
+      "r2": 0.5791546220633857,
+      "batch_objective": 4.845372094815554,
+      "population_objective": 4.5781315437588175
+    },
+    {
+      "old_level": 0.9375,
+      "new_level": 0.875,
+      "at": 100,
+      "reset": false,
+      "folded": true,
+      "roots": [
+        2.546080450751623
+      ],
+      "r2": 0.5899061208332124,
+      "batch_objective": 4.28265794258207,
+      "population_objective": 4.064549582633022
+    },
+    {
+      "old_level": 0.9375,
+      "new_level": 0.875,
+      "at": 500,
+      "reset": true,
+      "folded": false,
+      "roots": [],
+      "r2": 0.9509131111534322,
+      "batch_objective": 7.902577588878886,
+      "population_objective": 7.440339411343297
+    },
+    {
+      "old_level": 0.9375,
+      "new_level": 0.875,
+      "at": 500,
+      "reset": false,
+      "folded": false,
+      "roots": [],
+      "r2": 0.9490845517342891,
+      "batch_objective": 7.924667720349264,
+      "population_objective": 7.460089536431881
+    }
+  ],
+  "traces": [
+    {
+      "level": 0.875,
+      "tail": "one",
+      "events": [
+        {
+          "step": 219,
+          "before_slopes": [
+            1.1930961608886719,
+            0.0005062520503997803
+          ],
+          "after_slopes": [
+            1.1980096101760864,
+            -0.003486037254333496
+          ]
+        }
+      ],
+      "reproduction_error": 0.0,
+      "gradient_relative_error": 3.0994415283203125e-06,
+      "moment_roundoff": 7.486343385210148e-06,
+      "step_error": 3.8255302263218854e-08
+    },
+    {
+      "level": 0.875,
+      "tail": "two",
+      "events": [
+        {
+          "step": 224,
+          "before_slopes": [
+            1.1923787593841553,
+            0.002708911895751953
+          ],
+          "after_slopes": [
+            1.1933180093765259,
+            -0.0064282710663974285
+          ]
+        }
+      ],
+      "reproduction_error": 0.0,
+      "gradient_relative_error": 3.065332974348783e-06,
+      "moment_roundoff": 8.296966548471119e-06,
+      "step_error": 2.9743943416428247e-08
+    },
+    {
+      "level": 0.9375,
+      "tail": "one",
+      "events": [],
+      "reproduction_error": 0.0,
+      "gradient_relative_error": 2.384185791015625e-06,
+      "moment_roundoff": 2.8356909744786662e-06,
+      "step_error": 2.800517550216456e-08
+    },
+    {
+      "level": 0.9375,
+      "tail": "two",
+      "events": [],
+      "reproduction_error": 0.0,
+      "gradient_relative_error": 3.2186508178710938e-06,
+      "moment_roundoff": 2.8952956210304137e-06,
+      "step_error": 2.9467980411498548e-08
+    }
+  ]
+}
