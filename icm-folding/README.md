@@ -1,0 +1,32 @@
+# ICM policy folding: progress and repairs
+
+Consolidated research workspace, updated November 15, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
+
+Several named folders here are relative symbolic links to the original studies; newer experiment directories are authored directly here. They expose the existing code, checkpoints, figures, protocols, and results without duplicating large artifacts or changing paths used by running experiments. The originals remain the source of truth. Open the source-document links below for documentation with its original relative links intact. Run reproduction commands from the main `kempner` directory using the original paths in each protocol.
+
+## Work collected so far
+
+| Work | Source documentation | Results and figures |
+| --- | --- | --- |
+| Weighted-moment validation and direct repair | [Fixed protocol](weighted-moments-validation/PROTOCOL.md), [study](weighted-moments-validation/README.md) | [Results](weighted-moments-validation/output/RESULTS.md), [prevention/stress curves](weighted-moments-validation/output/prevention.png), [direct-repair curves](weighted-moments-validation/output/repair.png) |
+| Inverse occupancy and learning rates | [Follow-up protocol](inverse-occupancy-lr/README.md) | [Native occupancy/encoders](inverse-occupancy-lr/output/native_occupancy_encoders.png), [bimodal/trimodal](inverse-occupancy-lr/output/bimodal_trimodal_encoders.png); [rate-control results](inverse-occupancy-lr/output/RESULTS.md) |
+| Original qualitative comparisons | [Study](../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/README.md) | [Results](../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/output/RESULTS.md) |
+| Fold location and input scale | [Location study](../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/fold-location/README.md) | [Mechanism](../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/fold-location/training-mechanism/README.md), [inward motion](../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/fold-location/training-mechanism/WHY_LEFTWARD.md), [stopping point](../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/fold-location/training-mechanism/stopping-point/README.md) |
+| Occupancy and policy diagnosis | [Study](sources/explanations/occupancy-folding/README.md) | [Gallery](sources/explanations/occupancy-folding/output/index.html), [results](sources/explanations/occupancy-folding/output/RESULTS.md) |
+| Prevention and repair of existing folds | [Repair study](sources/explanations/occupancy-folding/gradient-followup/README.md) | [Gallery](sources/explanations/occupancy-folding/gradient-followup/output/index.html), [results](sources/explanations/occupancy-folding/gradient-followup/output/RESULTS.md) |
+| Predictor error and optimizer mechanisms | [Mechanistic audit](sources/explanations/occupancy-folding/mech-interp/README.md) | [Gallery](sources/explanations/occupancy-folding/mech-interp/output/index.html) |
+| Concentration and one/two far bumps | [Matched comparison](sources/explanations/occupancy-folding/matched-concentration/README.md) | [Gallery](sources/explanations/occupancy-folding/matched-concentration/output/index.html), [results](sources/explanations/occupancy-folding/matched-concentration/output/RESULTS.md) |
+| Hard order constraints and actor geometry | [Protocol](sources/explanations/occupancy-folding/hypothesis-guarantee/PROTOCOL.md) | [Gallery](sources/explanations/occupancy-folding/hypothesis-guarantee/output/index.html), [results](sources/explanations/occupancy-folding/hypothesis-guarantee/output/RESULTS.md) |
+| No-fold theorem and training-code audit | [LaTeX source](no-fold-proof/no-fold.tex), [reproduction](no-fold-proof/README.md) | [PDF note](no-fold-proof/output/pdf/no-fold.pdf), [fresh audit](no-fold-proof/output/verification.json), [adversarial training](no-fold-proof/output/training-stress.png) |
+| Original MLP gradients and alternative regularizers | [Study](mlp-gradient-study/README.md), [protocol](mlp-gradient-study/PROTOCOL.md), [training code](mlp-gradient-study/run.py) | [Gallery](mlp-gradient-study/output/index.html), [main results](mlp-gradient-study/output/RESULTS.md), [fresh-source validation](mlp-gradient-study/output/FRESH.md) |
+| Earlier exposure and equivalence-test visuals | [Graph generator](../behavior-policy-experiments/explanations/tost-icm-sigreg/make_graphs.py) | [Exposure/outcomes](../behavior-policy-experiments/explanations/tost-icm-sigreg/sigreg_exposure_and_outcomes.png), [TOST explanation](../behavior-policy-experiments/explanations/tost-icm-sigreg/tost_explained.png) |
+
+## GitHub publication
+
+The November 15 snapshot includes the recent occupancy, gradient/learning-rate, alternative-objective/mining, mechanism, matched-concentration, hard-order and proof work. The [exporter](export_github.py) preserves the existing local source links and builds a portable snapshot with canonical sources, a file/hash manifest, figures, protocols and audits. It reuses the original qualitative study already present on the repository main branch. Recent source data and the new learning-rate and validation checkpoints are included; older derived checkpoint caches are inventoried rather than duplicated. No unrelated branches are merged.
+
+## Continuing the work
+
+Put new ICM folding code and experiment directories directly in this folder. Integrate related code created or discovered elsewhere during future work, preserving provenance and working imports and output paths. Existing experiments should continue to write to their original output locations; the source-folder links here automatically expose changes to that code. Link new code and results from this index and update `PROGRESS.md` in the same task, keeping pending results, empirical fold checks, and analytic guarantees distinct. This ongoing workflow is recorded in the workspace [workspace instructions](WORKSPACE_INSTRUCTIONS.md).
+
+The initial consolidation preserved existing results; subsequent experiments and checks are dated in `PROGRESS.md`. No unrelated Git branches are merged. The local source workspace and nested repositories were preserved during publication. See [publication details](PUBLISHING.md).
