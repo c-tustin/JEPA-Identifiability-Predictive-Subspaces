@@ -23,6 +23,8 @@ Several named folders here are relative symbolic links to the original studies; 
 
 ## GitHub publication
 
+Published on `codex/icm-folding-update` in [draft PR #8](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/pull/8). The update is reviewable on GitHub; `main` has not been changed.
+
 The November 15 snapshot includes the recent occupancy, gradient/learning-rate, alternative-objective/mining, mechanism, matched-concentration, hard-order and proof work. The [exporter](export_github.py) preserves the existing local source links and builds a portable snapshot with canonical sources, a file/hash manifest, figures, protocols and audits. It reuses the original qualitative study already present on the repository main branch. Recent source data and the new learning-rate and validation checkpoints are included; older derived checkpoint caches are inventoried rather than duplicated. No unrelated branches are merged.
 
 ## Continuing the work
