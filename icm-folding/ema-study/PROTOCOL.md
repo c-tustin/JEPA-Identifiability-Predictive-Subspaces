@@ -1,0 +1,17 @@
+# EMA and folding: protocol fixed before training
+
+November 15, 2026. Ten historical native ICM source datasets, seeds 130–139. Existing source-specific random initialization, original scalar MLP with input gain 4, original native occupancy, 4,000 scheduled Adam updates, batch 512, 0.9 alignment + 0.1 ordinary SIGReg. Frozen ICM actors and their 32-dimensional feature encoders are unchanged. No inverse weights, order penalties, predictor, extra observations, or architectural changes are introduced.
+
+## Two different EMA questions
+
+1. **Weight averaging for evaluation.** Retrain the original objective exactly while tracking encoder parameter averages at decay 0.9, 0.99, and 0.999. Initialize each average as an exact copy of the initial student, update after every optimizer step by `average = beta*average + (1-beta)*student`, and never feed these averages into training. Original live models must reproduce the stored baseline weights exactly. Each decay is a distinct evaluation encoder; none is selected after seeing results.
+2. **EMA targets during training.** Train a student with a separate stop-gradient target initialized identically and updated after each student step at decay 0.99 or 0.999. SIGReg still acts on the student's independent regularizer endpoint batch, exactly as before. Use symmetric alignment `mean((student(x)-target(xp))^2) + mean((student(xp)-target(x))^2)`. The sum (not half-sum) deliberately matches the original alignment **gradient** when target parameters equal student parameters; the numerical alignment loss is then twice the original. This avoids confounding EMA with halving alignment's gradient. There is no extra predictor, so this is a controlled extension of our scalar alignment trainer, not a full BYOL or image-JEPA reproduction. Report both student and EMA target geometry.
+3. **Zero-lag control.** Decay 0 targets reproduce current student parameters after each step. Run this full control for seed 131 and verify its final parameter equality with the original baseline; independently check gradient equivalence and that targets have no gradients. Other ten-seed no-lag comparisons are the original live controls, not additional zero-lag fits.
+
+Total: 31 new fits: ten original-objective reruns with three parameter averages each, twenty EMA-target fits, and one zero-lag control. No late-repair claim is made; all fits start from the matched random initialization. This is a diagnostic historical cohort, not fresh-seed validation.
+
+## Geometry and evidence
+
+Evaluate every 25 updates on a 1,025-point uniform-log-distance derivative grid, reporting all detected turns and their first sampled appearance. Final evaluation and checkpoint reload verification use a float64 20,001-point grid. Report any fold, material backward variation (>0.001 of total variation), output standard deviation, affine log-distance R², and student/target parameter lag. A stale or collapsed target is not evidence of a useful learned representation; no downstream utility is established here. Intermediate no-fold observations are sampled checks and can miss turns between times or grid points.
+
+Retain initial/final student and average/target weights, optimizer state, histories, source and code/protocol hashes, and matched training-plan hashes. Verify original reruns bit-for-bit, target detachment, EMA recurrence, identical source/initialization/batches across arms, and independently reload final curves and derivatives. Averaging a nonlinear network does not provide a mathematical monotonicity guarantee.

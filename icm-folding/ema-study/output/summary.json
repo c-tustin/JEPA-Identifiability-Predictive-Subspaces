@@ -1,0 +1,1198 @@
+{
+  "summary": [
+    {
+      "condition": "Live original",
+      "n": 10,
+      "final_folds": 5,
+      "material_folds": 5,
+      "ever_folded": 9,
+      "mean_r2": 0.6119120843411736,
+      "min_std": 0.6815128095226751,
+      "max_std": 5.8578799723655
+    },
+    {
+      "condition": "Weight EMA 0.9",
+      "n": 10,
+      "final_folds": 5,
+      "material_folds": 5,
+      "ever_folded": 9,
+      "mean_r2": 0.6119130425689224,
+      "min_std": 0.6815094147059977,
+      "max_std": 5.857850869457538
+    },
+    {
+      "condition": "Weight EMA 0.99",
+      "n": 10,
+      "final_folds": 5,
+      "material_folds": 5,
+      "ever_folded": 10,
+      "mean_r2": 0.6118597484371383,
+      "min_std": 0.681843201755078,
+      "max_std": 5.857381432901127
+    },
+    {
+      "condition": "Weight EMA 0.999",
+      "n": 10,
+      "final_folds": 5,
+      "material_folds": 5,
+      "ever_folded": 10,
+      "mean_r2": 0.5979020200039222,
+      "min_std": 0.6847310192430632,
+      "max_std": 5.652327830679867
+    },
+    {
+      "condition": "Target EMA 0.99: student",
+      "n": 10,
+      "final_folds": 7,
+      "material_folds": 6,
+      "ever_folded": 9,
+      "mean_r2": 0.6016778136545433,
+      "min_std": 0.6852233016125694,
+      "max_std": 5.44527985175045
+    },
+    {
+      "condition": "Target EMA 0.99: target",
+      "n": 10,
+      "final_folds": 7,
+      "material_folds": 6,
+      "ever_folded": 10,
+      "mean_r2": 0.601620512186343,
+      "min_std": 0.6855475030827116,
+      "max_std": 5.444850125157653
+    },
+    {
+      "condition": "Target EMA 0.999: student",
+      "n": 10,
+      "final_folds": 9,
+      "material_folds": 8,
+      "ever_folded": 10,
+      "mean_r2": 0.26527140604033683,
+      "min_std": 0.6517562372718092,
+      "max_std": 2.6072789851744465
+    },
+    {
+      "condition": "Target EMA 0.999: target",
+      "n": 10,
+      "final_folds": 9,
+      "material_folds": 9,
+      "ever_folded": 10,
+      "mean_r2": 0.2578391055872675,
+      "min_std": 0.6749751682023456,
+      "max_std": 2.622979417615835
+    },
+    {
+      "condition": "Target EMA 0: student",
+      "n": 1,
+      "final_folds": 1,
+      "material_folds": 1,
+      "ever_folded": 1,
+      "mean_r2": 0.5875558668797304,
+      "min_std": 2.328182332641833,
+      "max_std": 2.328182332641833
+    },
+    {
+      "condition": "Target EMA 0: target",
+      "n": 1,
+      "final_folds": 1,
+      "material_folds": 1,
+      "ever_folded": 1,
+      "mean_r2": 0.5875558668797304,
+      "min_std": 2.328182332641833,
+      "max_std": 2.328182332641833
+    }
+  ],
+  "runs": [
+    {
+      "seed": 130,
+      "label": "Live original",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.2293147765705505,
+      "r2": 0.8262279878417641,
+      "ever_folded": true,
+      "first_sampled_fold": 50
+    },
+    {
+      "seed": 130,
+      "label": "Weight EMA 0.9",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.229288627673824,
+      "r2": 0.8262273112153055,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 130,
+      "label": "Weight EMA 0.99",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.228657506410569,
+      "r2": 0.8261696058738571,
+      "ever_folded": true,
+      "first_sampled_fold": 625
+    },
+    {
+      "seed": 130,
+      "label": "Weight EMA 0.999",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 3.9561877682724624,
+      "r2": 0.8203360976189669,
+      "ever_folded": true,
+      "first_sampled_fold": 775
+    },
+    {
+      "seed": 130,
+      "label": "Target EMA 0.99: student",
+      "roots": [
+        15.897468246124037
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 3.8818873000080424e-07,
+      "std": 3.819956285649269,
+      "r2": 0.8078875848201438,
+      "ever_folded": true,
+      "first_sampled_fold": 50
+    },
+    {
+      "seed": 130,
+      "label": "Target EMA 0.99: target",
+      "roots": [
+        15.860362841026348
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 7.238772069327186e-07,
+      "std": 3.8192700057781988,
+      "r2": 0.807798977404906,
+      "ever_folded": true,
+      "first_sampled_fold": 575
+    },
+    {
+      "seed": 130,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        2.4829785059145304
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.4975583955913681,
+      "std": 1.5481340746851568,
+      "r2": 0.2618202510801466,
+      "ever_folded": true,
+      "first_sampled_fold": 50
+    },
+    {
+      "seed": 130,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        2.616532067128853
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.4950092279782429,
+      "std": 1.6075106371211614,
+      "r2": 0.2012776014054461,
+      "ever_folded": true,
+      "first_sampled_fold": 700
+    },
+    {
+      "seed": 131,
+      "label": "Live original",
+      "roots": [
+        2.3679451596192647
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.36428925814741814,
+      "std": 2.328182332641833,
+      "r2": 0.5875558668797304,
+      "ever_folded": true,
+      "first_sampled_fold": 225
+    },
+    {
+      "seed": 131,
+      "label": "Weight EMA 0.9",
+      "roots": [
+        2.3679444380021035
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3642883636911923,
+      "std": 2.3281868320597034,
+      "r2": 0.5875576929900319,
+      "ever_folded": true,
+      "first_sampled_fold": 225
+    },
+    {
+      "seed": 131,
+      "label": "Weight EMA 0.99",
+      "roots": [
+        2.36826092366238
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.36415874385672137,
+      "std": 2.329422448510355,
+      "r2": 0.5876450896937121,
+      "ever_folded": true,
+      "first_sampled_fold": 300
+    },
+    {
+      "seed": 131,
+      "label": "Weight EMA 0.999",
+      "roots": [
+        2.4859073872082
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.36424845930338745,
+      "std": 2.380515111043944,
+      "r2": 0.5405010210175112,
+      "ever_folded": true,
+      "first_sampled_fold": 450
+    },
+    {
+      "seed": 131,
+      "label": "Target EMA 0.99: student",
+      "roots": [
+        2.429275782211678
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3606249106207558,
+      "std": 2.435768308390736,
+      "r2": 0.5685779596619015,
+      "ever_folded": true,
+      "first_sampled_fold": 225
+    },
+    {
+      "seed": 131,
+      "label": "Target EMA 0.99: target",
+      "roots": [
+        2.429561472538171
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.360500637864242,
+      "std": 2.436994316865233,
+      "r2": 0.5686751062006136,
+      "ever_folded": true,
+      "first_sampled_fold": 300
+    },
+    {
+      "seed": 131,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        2.1969969657880313
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3406380574980916,
+      "std": 0.8055731003068132,
+      "r2": 0.03131598132132626,
+      "ever_folded": true,
+      "first_sampled_fold": 225
+    },
+    {
+      "seed": 131,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        2.3658943714732645
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3655254154632163,
+      "std": 0.8821453472758487,
+      "r2": 0.027360659313109388,
+      "ever_folded": true,
+      "first_sampled_fold": 450
+    },
+    {
+      "seed": 131,
+      "label": "Target EMA 0: student",
+      "roots": [
+        2.3679451596192647
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.36428925814741814,
+      "std": 2.328182332641833,
+      "r2": 0.5875558668797304,
+      "ever_folded": true,
+      "first_sampled_fold": 225
+    },
+    {
+      "seed": 131,
+      "label": "Target EMA 0: target",
+      "roots": [
+        2.3679451596192647
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.36428925814741814,
+      "std": 2.328182332641833,
+      "r2": 0.5875558668797304,
+      "ever_folded": true,
+      "first_sampled_fold": 225
+    },
+    {
+      "seed": 132,
+      "label": "Live original",
+      "roots": [
+        2.186208378540575
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3394270455916645,
+      "std": 2.4780920558790176,
+      "r2": 0.6875455959495832,
+      "ever_folded": true,
+      "first_sampled_fold": 375
+    },
+    {
+      "seed": 132,
+      "label": "Weight EMA 0.9",
+      "roots": [
+        2.1862108427475433
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3394280801322622,
+      "std": 2.4780877840891202,
+      "r2": 0.6875433308821647,
+      "ever_folded": true,
+      "first_sampled_fold": 375
+    },
+    {
+      "seed": 132,
+      "label": "Weight EMA 0.99",
+      "roots": [
+        2.186723066673904
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.33942305527946204,
+      "std": 2.4789970272024195,
+      "r2": 0.6873633450281048,
+      "ever_folded": true,
+      "first_sampled_fold": 475
+    },
+    {
+      "seed": 132,
+      "label": "Weight EMA 0.999",
+      "roots": [
+        2.316584855509855
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.34204978723199597,
+      "std": 2.5115229058850637,
+      "r2": 0.635564056505576,
+      "ever_folded": true,
+      "first_sampled_fold": 625
+    },
+    {
+      "seed": 132,
+      "label": "Target EMA 0.99: student",
+      "roots": [
+        2.1974470063464833
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3398742139306846,
+      "std": 2.492493198428768,
+      "r2": 0.6841292709626461,
+      "ever_folded": true,
+      "first_sampled_fold": 375
+    },
+    {
+      "seed": 132,
+      "label": "Target EMA 0.99: target",
+      "roots": [
+        2.1979614219707235
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3398725992543731,
+      "std": 2.4933562849484234,
+      "r2": 0.6839447162749546,
+      "ever_folded": true,
+      "first_sampled_fold": 450
+    },
+    {
+      "seed": 132,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        2.0993986300924736
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3430849871756892,
+      "std": 0.7720276135203711,
+      "r2": 0.05828780827584954,
+      "ever_folded": true,
+      "first_sampled_fold": 375
+    },
+    {
+      "seed": 132,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        2.2644026862467745
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.36817251830199615,
+      "std": 0.8489776447310694,
+      "r2": 0.05197939943851092,
+      "ever_folded": true,
+      "first_sampled_fold": 625
+    },
+    {
+      "seed": 133,
+      "label": "Live original",
+      "roots": [
+        2.6519643288801333
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.35181662054312673,
+      "std": 3.8575778520616573,
+      "r2": 0.5024418223463694,
+      "ever_folded": true,
+      "first_sampled_fold": 450
+    },
+    {
+      "seed": 133,
+      "label": "Weight EMA 0.9",
+      "roots": [
+        2.651961000085038
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.35181485710861266,
+      "std": 3.8575928191427136,
+      "r2": 0.5024461521640993,
+      "ever_folded": true,
+      "first_sampled_fold": 475
+    },
+    {
+      "seed": 133,
+      "label": "Weight EMA 0.99",
+      "roots": [
+        2.652121375329214
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3518260019287877,
+      "std": 3.8577537553096826,
+      "r2": 0.5023660052199588,
+      "ever_folded": true,
+      "first_sampled_fold": 550
+    },
+    {
+      "seed": 133,
+      "label": "Weight EMA 0.999",
+      "roots": [
+        2.7193361183600038
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.36466689728965956,
+      "std": 3.468924900994975,
+      "r2": 0.4524982778829958,
+      "ever_folded": true,
+      "first_sampled_fold": 825
+    },
+    {
+      "seed": 133,
+      "label": "Target EMA 0.99: student",
+      "roots": [
+        2.652599298693367
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.35254911150256674,
+      "std": 3.8484975974970865,
+      "r2": 0.5010147128858488,
+      "ever_folded": true,
+      "first_sampled_fold": 450
+    },
+    {
+      "seed": 133,
+      "label": "Target EMA 0.99: target",
+      "roots": [
+        2.6527700164667
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.35256201350036964,
+      "std": 3.8486382178097864,
+      "r2": 0.5009268197103288,
+      "ever_folded": true,
+      "first_sampled_fold": 550
+    },
+    {
+      "seed": 133,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        2.4917030858722846
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.4558887544044107,
+      "std": 1.5217384846986435,
+      "r2": 0.15307839298054135,
+      "ever_folded": true,
+      "first_sampled_fold": 450
+    },
+    {
+      "seed": 133,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        2.6387610807253608
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.4601685438397468,
+      "std": 1.568092145541918,
+      "r2": 0.11151617283198607,
+      "ever_folded": true,
+      "first_sampled_fold": 825
+    },
+    {
+      "seed": 134,
+      "label": "Live original",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.324278968712541,
+      "r2": 0.8385067421876022,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 134,
+      "label": "Weight EMA 0.9",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.324251408962118,
+      "r2": 0.8385064782467008,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 134,
+      "label": "Weight EMA 0.99",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.324067295857835,
+      "r2": 0.8384915434846055,
+      "ever_folded": true,
+      "first_sampled_fold": 50
+    },
+    {
+      "seed": 134,
+      "label": "Weight EMA 0.999",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.14261063860163,
+      "r2": 0.8434220990840504,
+      "ever_folded": true,
+      "first_sampled_fold": 250
+    },
+    {
+      "seed": 134,
+      "label": "Target EMA 0.99: student",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.938288871725074,
+      "r2": 0.8329475974578245,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 134,
+      "label": "Target EMA 0.99: target",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.938125821349504,
+      "r2": 0.8329260797078802,
+      "ever_folded": true,
+      "first_sampled_fold": 50
+    },
+    {
+      "seed": 134,
+      "label": "Target EMA 0.999: student",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.380112114834162,
+      "r2": 0.7772914702695308,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 134,
+      "label": "Target EMA 0.999: target",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.3800053000785075,
+      "r2": 0.7599786440704416,
+      "ever_folded": true,
+      "first_sampled_fold": 250
+    },
+    {
+      "seed": 135,
+      "label": "Live original",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.8578799723655,
+      "r2": 0.8474139375756357,
+      "ever_folded": false,
+      "first_sampled_fold": null
+    },
+    {
+      "seed": 135,
+      "label": "Weight EMA 0.9",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.857850869457538,
+      "r2": 0.8474135685733367,
+      "ever_folded": false,
+      "first_sampled_fold": null
+    },
+    {
+      "seed": 135,
+      "label": "Weight EMA 0.99",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.857381432901127,
+      "r2": 0.84741005386009,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 135,
+      "label": "Weight EMA 0.999",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.652327830679867,
+      "r2": 0.8527280607063127,
+      "ever_folded": true,
+      "first_sampled_fold": 150
+    },
+    {
+      "seed": 135,
+      "label": "Target EMA 0.99: student",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.44527985175045,
+      "r2": 0.8311690932648668,
+      "ever_folded": false,
+      "first_sampled_fold": null
+    },
+    {
+      "seed": 135,
+      "label": "Target EMA 0.99: target",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.444850125157653,
+      "r2": 0.8311626687903665,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 135,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        4.113145145066898
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.15598713563834768,
+      "std": 2.6072789851744465,
+      "r2": 0.46765203695649826,
+      "ever_folded": true,
+      "first_sampled_fold": 650
+    },
+    {
+      "seed": 135,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        4.262543335408696
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.14395065473605584,
+      "std": 2.622979417615835,
+      "r2": 0.5050802914867549,
+      "ever_folded": true,
+      "first_sampled_fold": 175
+    },
+    {
+      "seed": 136,
+      "label": "Live original",
+      "roots": [
+        3.136884936994429
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3568499954702087,
+      "std": 0.6935565831880508,
+      "r2": 0.03445264061770626,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 136,
+      "label": "Weight EMA 0.9",
+      "roots": [
+        3.1368966192112717
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3568465487504995,
+      "std": 0.6935607760563345,
+      "r2": 0.03445758107290634,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 136,
+      "label": "Weight EMA 0.99",
+      "roots": [
+        3.137620624037463
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3568838917534263,
+      "std": 0.6935600528229655,
+      "r2": 0.0345077040101928,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 136,
+      "label": "Weight EMA 0.999",
+      "roots": [
+        3.3390420185392924
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.34877670187978266,
+      "std": 0.6847310192430632,
+      "r2": 0.07262078903448736,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 136,
+      "label": "Target EMA 0.99: student",
+      "roots": [
+        3.1399598219606895
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3564699828258388,
+      "std": 0.6931605476169692,
+      "r2": 0.03548043134202992,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 136,
+      "label": "Target EMA 0.99: target",
+      "roots": [
+        3.1407026678157774
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.35649569864731184,
+      "std": 0.69316598990615,
+      "r2": 0.03554515831400301,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 136,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        3.172092716298987
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3503589475381851,
+      "std": 0.684838700874347,
+      "r2": 0.04603740084125078,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 136,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        3.372379441426815
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3413227067931898,
+      "std": 0.6749751682023456,
+      "r2": 0.08847769262928575,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 137,
+      "label": "Live original",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.15505134042361,
+      "r2": 0.8391975796973248,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 137,
+      "label": "Weight EMA 0.9",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.155026587507331,
+      "r2": 0.8391970687858163,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 137,
+      "label": "Weight EMA 0.99",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.155229842444516,
+      "r2": 0.8391837702831372,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 137,
+      "label": "Weight EMA 0.999",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.9756704460123515,
+      "r2": 0.8416629897799607,
+      "ever_folded": true,
+      "first_sampled_fold": 50
+    },
+    {
+      "seed": 137,
+      "label": "Target EMA 0.99: student",
+      "roots": [
+        11.62722886786645
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.0016653807112640103,
+      "std": 4.673481005564957,
+      "r2": 0.8102470897522256,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 137,
+      "label": "Target EMA 0.99: target",
+      "roots": [
+        11.622783757057679
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.0016702409212434582,
+      "std": 4.673506746993444,
+      "r2": 0.8102193971063337,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 137,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        3.4152411368763755
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3508453037123458,
+      "std": 2.1850073098782294,
+      "r2": 0.06791858079777989,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 137,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        3.4522472884629827
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.34397608806646707,
+      "std": 2.126303588004983,
+      "r2": 0.08435790667846411,
+      "ever_folded": true,
+      "first_sampled_fold": 50
+    },
+    {
+      "seed": 138,
+      "label": "Live original",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.356202508609047,
+      "r2": 0.8676768807981435,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 138,
+      "label": "Weight EMA 0.9",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.356226051723953,
+      "r2": 0.867677433716666,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 138,
+      "label": "Weight EMA 0.99",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.356842234700382,
+      "r2": 0.8676851408680573,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 138,
+      "label": "Weight EMA 0.999",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.125978438615304,
+      "r2": 0.8699249277259743,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 138,
+      "label": "Target EMA 0.99: student",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.954361515722241,
+      "r2": 0.8564113161875276,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 138,
+      "label": "Target EMA 0.99: target",
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.954930928432062,
+      "r2": 0.8564129995943034,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 138,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        13.49245421661573
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 0.0001554114691257613,
+      "std": 2.579696744979907,
+      "r2": 0.7351356808579728,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 138,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        9.496291398371346
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.002975123513662552,
+      "std": 2.4993800996191937,
+      "r2": 0.7270108438750836,
+      "ever_folded": true,
+      "first_sampled_fold": 0
+    },
+    {
+      "seed": 139,
+      "label": "Live original",
+      "roots": [
+        1.9071816067400051
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.325820815987103,
+      "std": 0.6815128095226751,
+      "r2": 0.08810178951787812,
+      "ever_folded": true,
+      "first_sampled_fold": 400
+    },
+    {
+      "seed": 139,
+      "label": "Weight EMA 0.9",
+      "roots": [
+        1.9071809550959555
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3258216405871129,
+      "std": 0.6815094147059977,
+      "r2": 0.08810380804219806,
+      "ever_folded": true,
+      "first_sampled_fold": 400
+    },
+    {
+      "seed": 139,
+      "label": "Weight EMA 0.99",
+      "roots": [
+        1.9074523095522773
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3257155030904832,
+      "std": 0.681843201755078,
+      "r2": 0.08777522604966785,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 139,
+      "label": "Weight EMA 0.999",
+      "roots": [
+        2.0202034484577402
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3256210413108558,
+      "std": 0.7381911336991893,
+      "r2": 0.04976188068338649,
+      "ever_folded": true,
+      "first_sampled_fold": 75
+    },
+    {
+      "seed": 139,
+      "label": "Target EMA 0.99: student",
+      "roots": [
+        1.9154922508687664
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.32744059500240985,
+      "std": 0.6852233016125694,
+      "r2": 0.08891308021041909,
+      "ever_folded": true,
+      "first_sampled_fold": 375
+    },
+    {
+      "seed": 139,
+      "label": "Target EMA 0.99: target",
+      "roots": [
+        1.9157690551949598
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3273381996703346,
+      "std": 0.6855475030827116,
+      "r2": 0.08859319875974118,
+      "ever_folded": true,
+      "first_sampled_fold": 25
+    },
+    {
+      "seed": 139,
+      "label": "Target EMA 0.999: student",
+      "roots": [
+        1.929483204310445
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3085684083624626,
+      "std": 0.6517562372718092,
+      "r2": 0.05417645702247183,
+      "ever_folded": true,
+      "first_sampled_fold": 375
+    },
+    {
+      "seed": 139,
+      "label": "Target EMA 0.999: target",
+      "roots": [
+        2.038631545856398
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.30336039673316667,
+      "std": 0.7023941874046603,
+      "r2": 0.021351844143592837,
+      "ever_folded": true,
+      "first_sampled_fold": 75
+    }
+  ]
+}

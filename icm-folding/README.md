@@ -1,6 +1,6 @@
 # ICM policy folding: progress and repairs
 
-Consolidated research workspace, updated November 15, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
+Consolidated research workspace, updated November 16, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
 
 Several named folders here are relative symbolic links to the original studies; newer experiment directories are authored directly here. They expose the existing code, checkpoints, figures, protocols, and results without duplicating large artifacts or changing paths used by running experiments. The originals remain the source of truth. Open the source-document links below for documentation with its original relative links intact. Run reproduction commands from the main `kempner` directory using the original paths in each protocol.
 
@@ -8,6 +8,10 @@ Several named folders here are relative symbolic links to the original studies; 
 
 | Work | Source documentation | Results and figures |
 | --- | --- | --- |
+| Recreate ICM occupancy with shared-input OU | [Study](icm-matched-ou/README.md), [protocol](icm-matched-ou/PROTOCOL.md), [generator/trainer](icm-matched-ou/run.py) | [Histogram/encoder/slope gallery](icm-matched-ou/output/icm_matched_histograms_encoders.png), [results](icm-matched-ou/output/RESULTS.md), [mapping diagram](icm-matched-ou/output/ou_quantile_transform.png); native folds 2/4, OU dt=.01 2/4, OU dt=.1 3/4 |
+| Multimodal temporal data shared by both losses | [Study](shared-occupancy-ou/README.md), [protocol](shared-occupancy-ou/PROTOCOL.md), [generator/trainer](shared-occupancy-ou/run.py) | [Measured occupancy and encoders](shared-occupancy-ou/output/shared_occupancy_encoders.png), [results](shared-occupancy-ou/output/RESULTS.md), [verification](shared-occupancy-ou/output/verification.json); 18 fits, no detected final folds |
+| EMA and fold development | [Study](ema-study/README.md), [fixed protocol](ema-study/PROTOCOL.md) | [Results](ema-study/output/RESULTS.md), [fold development](ema-study/output/fold_development.png), [verification](ema-study/output/verification.json) |
+| Occupancy integral at fold creation | [Calculation and interpretation](occupancy-integral/README.md), [diagnostic code](occupancy-integral/run.py) | [Numerical integral and Adam decomposition](occupancy-integral/output/results.json), [figure](occupancy-integral/output/integral.png) |
 | Weighted-moment validation and direct repair | [Fixed protocol](weighted-moments-validation/PROTOCOL.md), [study](weighted-moments-validation/README.md) | [Results](weighted-moments-validation/output/RESULTS.md), [prevention/stress curves](weighted-moments-validation/output/prevention.png), [direct-repair curves](weighted-moments-validation/output/repair.png) |
 | Inverse occupancy and learning rates | [Follow-up protocol](inverse-occupancy-lr/README.md) | [Native occupancy/encoders](inverse-occupancy-lr/output/native_occupancy_encoders.png), [bimodal/trimodal](inverse-occupancy-lr/output/bimodal_trimodal_encoders.png); [rate-control results](inverse-occupancy-lr/output/RESULTS.md) |
 | Original qualitative comparisons | [Study](../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/README.md) | [Results](../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/output/RESULTS.md) |
@@ -23,7 +27,9 @@ Several named folders here are relative symbolic links to the original studies; 
 
 ## GitHub publication
 
-Published on `codex/icm-folding-update` in [draft PR #8](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/pull/8). The pull request records the publication and merge status.
+The November 16 shared-input OU follow-up uses [branch `codex/icm-ou-occupancy`](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/tree/codex/icm-ou-occupancy), based on current `main`. It includes both OU studies, figures, protocols, audits and results, plus the completed EMA and occupancy-integral entries already indexed locally. The 30 large derived OU checkpoints stay local; their hashes and regeneration commands are included in the portable snapshot.
+
+The earlier `codex/icm-folding-update` publication was merged into `main` in [PR #8](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/pull/8).
 
 The November 15 snapshot includes the recent occupancy, gradient/learning-rate, alternative-objective/mining, mechanism, matched-concentration, hard-order and proof work. The [exporter](export_github.py) preserves the existing local source links and builds a portable snapshot with canonical sources, a file/hash manifest, figures, protocols and audits. It reuses the original qualitative study already present on the repository main branch. Recent source data and the new learning-rate and validation checkpoints are included; older derived checkpoint caches are inventoried rather than duplicated. No unrelated branches are merged.
 

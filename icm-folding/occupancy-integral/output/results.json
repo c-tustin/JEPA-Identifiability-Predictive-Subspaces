@@ -1,0 +1,775 @@
+{
+  "seed": 131,
+  "gain": 4,
+  "update": "204 -> 205",
+  "query_distance": 16,
+  "endpoint_observations": 32768,
+  "frequency_knots": 17,
+  "batch_scale": 1024,
+  "observed_distance_min": 1.0006208695919783,
+  "observed_distance_max": 13.736429059538123,
+  "occupied_bins": 31,
+  "empty_bins": [
+    31
+  ],
+  "regularizer_coefficient": 0.1,
+  "sgd_comparison_lr": 0.001,
+  "bins": 32,
+  "empirical_occupancy": {
+    "native": {
+      "integral": 38.77952527864416,
+      "autograd_contraction": 38.779525278644144,
+      "absolute_check_error": 1.4210854715202004e-14,
+      "regularizer_loss": 155.71449730299452,
+      "predicted_regularizer_sgd_slope_change": -0.003877952527864416,
+      "slope_after_regularizer_sgd_linearization": 0.000272278427025395,
+      "occupancy_mass_by_bin": [
+        0.2188720703125,
+        0.272216796875,
+        0.184173583984375,
+        0.07208251953125,
+        0.05413818359375,
+        0.021820068359375,
+        0.014617919921875,
+        0.008453369140625,
+        0.00592041015625,
+        0.00518798828125,
+        0.006195068359375,
+        0.005889892578125,
+        0.0054931640625,
+        0.004547119140625,
+        0.005767822265625,
+        0.00714111328125,
+        0.00738525390625,
+        0.008087158203125,
+        0.00616455078125,
+        0.008575439453125,
+        0.008758544921875,
+        0.010223388671875,
+        0.011260986328125,
+        0.011077880859375,
+        0.00897216796875,
+        0.010528564453125,
+        0.010406494140625,
+        0.003265380859375,
+        0.000823974609375,
+        0.001708984375,
+        0.000244140625,
+        0.0
+      ],
+      "integral_by_bin": [
+        -349.15398471719345,
+        -185.76532306147595,
+        54.07669179583288,
+        126.06669319761312,
+        153.5224592635834,
+        87.25130058618002,
+        67.69490886696751,
+        41.322425998938236,
+        27.59530267322013,
+        21.048195854577354,
+        19.632803920801706,
+        12.813236212949604,
+        7.44736990356562,
+        3.364627770268768,
+        1.4161046354645608,
+        -0.6994489095097327,
+        -2.3633180374607545,
+        -3.6662669034427204,
+        -3.210671487644266,
+        -4.711583474061138,
+        -4.815560077084188,
+        -5.436651140183831,
+        -5.66038646917089,
+        -5.206162313161295,
+        -3.9262410797793272,
+        -4.206040946813895,
+        -3.8051703604817786,
+        -1.0833973021556653,
+        -0.24356208426671663,
+        -0.45800722718037506,
+        -0.06081981025179252,
+        0.0
+      ],
+      "cosine": [
+        1.0,
+        0.9907690359135168,
+        0.9641308863839839,
+        0.9231130187994787,
+        0.8723235465128127,
+        0.8173559845892594,
+        0.7640698999716471,
+        0.7178427607172483,
+        0.682891701726878,
+        0.6617540826807398,
+        0.6549939953497798,
+        0.6611712671627309,
+        0.6770741861720503,
+        0.6981819402373239,
+        0.7192923841753163,
+        0.7352292997175269,
+        0.7415336313632448
+      ],
+      "sine": [
+        0.0,
+        0.027233101019718833,
+        0.04866479170097154,
+        0.059236856487313284,
+        0.055279590497403115,
+        0.03497448974442687,
+        -0.001425949978233275,
+        -0.05164908305837564,
+        -0.11171524144195749,
+        -0.1764699061340221,
+        -0.24026279680526896,
+        -0.2976827054836687,
+        -0.34425022034188413,
+        -0.37697700560050545,
+        -0.39471905782640676,
+        -0.39827972432081044,
+        -0.39025233213111643
+      ],
+      "finite_regularizer_sgd_slope_at_16": 0.0002660194521507675
+    },
+    "equal_log_bins": {
+      "integral": -5057.090715800059,
+      "autograd_contraction": -5057.090715800061,
+      "absolute_check_error": 1.8189894035458565e-12,
+      "regularizer_loss": 966.0228838684911,
+      "predicted_regularizer_sgd_slope_change": 0.5057090715800059,
+      "slope_after_regularizer_sgd_linearization": 0.5098593025348956,
+      "occupancy_mass_by_bin": [
+        0.032258064516131675,
+        0.032258064516123466,
+        0.03225806451613268,
+        0.0322580645161307,
+        0.03225806451612895,
+        0.03225806451612943,
+        0.03225806451612913,
+        0.032258064516128934,
+        0.03225806451612902,
+        0.03225806451612914,
+        0.03225806451612904,
+        0.03225806451612892,
+        0.03225806451612896,
+        0.03225806451612898,
+        0.032258064516129135,
+        0.03225806451612918,
+        0.03225806451612916,
+        0.03225806451612895,
+        0.03225806451612902,
+        0.032258064516128976,
+        0.03225806451612922,
+        0.032258064516129066,
+        0.03225806451612895,
+        0.03225806451612883,
+        0.03225806451612914,
+        0.032258064516128795,
+        0.032258064516129135,
+        0.03225806451612909,
+        0.03225806451612903,
+        0.032258064516129045,
+        0.03225806451612904,
+        0.0
+      ],
+      "integral_by_bin": [
+        -172.77391404722457,
+        -202.86680470011433,
+        -234.83010913044268,
+        -283.21067363850716,
+        -320.9945777968316,
+        -365.44099969512814,
+        -394.4610379566919,
+        -414.9855540096088,
+        -416.6023712420967,
+        -401.2976256842868,
+        -367.7354020443798,
+        -319.0107575252063,
+        -268.61566279160314,
+        -222.22277762524953,
+        -176.46627932025893,
+        -136.66780031562155,
+        -103.70248836319351,
+        -76.80263950643798,
+        -56.86047227000868,
+        -40.48172316853428,
+        -28.581595006734208,
+        -19.290954911681162,
+        -12.732897434335058,
+        -8.373314754845824,
+        -5.519196047180208,
+        -3.257010475873339,
+        -1.9070074735865041,
+        -0.9892751453733729,
+        -0.36925437941141803,
+        -0.08422182003508721,
+        0.04368248042325582,
+        0.0
+      ],
+      "cosine": [
+        1.0,
+        0.9595211124475715,
+        0.8430324655128736,
+        0.6647313872252623,
+        0.4462114068991194,
+        0.21365197434224895,
+        -0.005571694209301523,
+        -0.186404838808909,
+        -0.30928703516761147,
+        -0.3625643991508805,
+        -0.3438265664707758,
+        -0.26000261307710654,
+        -0.12621925515144292,
+        0.03640802707304887,
+        0.20373779264887487,
+        0.3519078809314782,
+        0.4605305564343861
+      ],
+      "sine": [
+        0.0,
+        0.23914307874426677,
+        0.45082289007640064,
+        0.6110764776377684,
+        0.7024763475248231,
+        0.7162984909042389,
+        0.6535389870618091,
+        0.5246508668106779,
+        0.3480457413319316,
+        0.14757067678582605,
+        -0.05069276481920337,
+        -0.22187202296566036,
+        -0.34552579374364983,
+        -0.40821617855606346,
+        -0.40509492952255044,
+        -0.34030597524997624,
+        -0.22616995984750865
+      ],
+      "finite_regularizer_sgd_slope_at_16": 0.5041859812239426
+    }
+  },
+  "hybrid_integrals": {
+    "native_moments_balanced_outer": 844.4987878923728,
+    "balanced_moments_native_outer": -6429.101331241082
+  },
+  "actual_update": {
+    "before_slope": 0.004150230954889811,
+    "after_slope": -0.0008327079118261027,
+    "measured_slope_change": -0.004982938866715914,
+    "linear_actual_update": -0.004968168004435258,
+    "central_finite_difference_actual_direction": -0.004968168004410023,
+    "linearization_absolute_error": 1.477086228065562e-05,
+    "saved_component_update_max_error": 1.4891952559992205e-08,
+    "linear_alignment_adam_component": -1.192209008388592e-05,
+    "linear_regularizer_adam_component": -0.0049562555576340775,
+    "linear_current_regularizer_adam": 0.0014269078629559932,
+    "linear_current_regularizer_float32_check": 0.0014269092729133008,
+    "linear_historical_regularizer_adam": -0.0063831634205900704,
+    "batch_integral": -139.44006699209953,
+    "batch_predicted_regularizer_sgd_change": 0.013944006699209954,
+    "current_regularizer_adam_by_bin": [
+      0.004854853505931504,
+      0.003170657137085888,
+      0.00012717085902314018,
+      -0.0009988025512885912,
+      -0.0016883875333558523,
+      -0.0008996017880625796,
+      -0.0010346141520184413,
+      -0.0006882548637647614,
+      -0.000567263437013858,
+      -0.0005431550047989929,
+      -0.000274744300289474,
+      -0.00020286972811061805,
+      -8.731699440208811e-05,
+      -2.867608496153656e-05,
+      -2.283844137264906e-05,
+      -4.106952858917564e-06,
+      1.0937658917872737e-05,
+      4.226974545936516e-05,
+      2.449957771854212e-05,
+      2.1763648777884292e-05,
+      3.0246060217973933e-05,
+      2.4198252887362277e-05,
+      5.1341075264497504e-05,
+      2.1923030036334222e-05,
+      2.461735702292509e-05,
+      3.182966706203942e-05,
+      2.2112656822447876e-05,
+      7.143272324010493e-06,
+      0.0,
+      1.976190702565226e-06,
+      0.0,
+      0.0
+    ],
+    "replay_parameter_max_error": 0.0
+  },
+  "profile": [
+    {
+      "distance": 1.0,
+      "before_slope": 0.7647498532804133,
+      "native_integral": -21.192153329323993,
+      "balanced_integral": 583.7366659221676,
+      "predicted_actual_adam_slope_change": 0.0036931540211879196
+    },
+    {
+      "distance": 1.0442737824274138,
+      "before_slope": 0.8581980176517782,
+      "native_integral": -22.994686535223572,
+      "balanced_integral": 523.0674684870048,
+      "predicted_actual_adam_slope_change": 0.004074799983234133
+    },
+    {
+      "distance": 1.0905077326652577,
+      "before_slope": 0.954784069285865,
+      "native_integral": -24.601585567520175,
+      "balanced_integral": 418.02098324883497,
+      "predicted_actual_adam_slope_change": 0.00444612364886928
+    },
+    {
+      "distance": 1.1387886347566916,
+      "before_slope": 1.053292623069873,
+      "native_integral": -25.934446565182316,
+      "balanced_integral": 260.7289731913412,
+      "predicted_actual_adam_slope_change": 0.004796810179733254
+    },
+    {
+      "distance": 1.189207115002721,
+      "before_slope": 1.1523619508252456,
+      "native_integral": -26.913434031630672,
+      "balanced_integral": 43.87466245159285,
+      "predicted_actual_adam_slope_change": 0.005115856722750712
+    },
+    {
+      "distance": 1.241857812073484,
+      "before_slope": 1.2505140085226765,
+      "native_integral": -27.460683222542176,
+      "balanced_integral": -238.83084061111884,
+      "predicted_actual_adam_slope_change": 0.005391918881506291
+    },
+    {
+      "distance": 1.2968395546510096,
+      "before_slope": 1.3461916204247086,
+      "native_integral": -27.50403371024848,
+      "balanced_integral": -592.1622408348886,
+      "predicted_actual_adam_slope_change": 0.00561371999542808
+    },
+    {
+      "distance": 1.3542555469368927,
+      "before_slope": 1.4378018824720322,
+      "native_integral": -26.980878049357322,
+      "balanced_integral": -1018.922096175461,
+      "predicted_actual_adam_slope_change": 0.005770507664595273
+    },
+    {
+      "distance": 1.4142135623730951,
+      "before_slope": 1.5237643339563207,
+      "native_integral": -25.84186415233515,
+      "balanced_integral": -1519.5532366137097,
+      "predicted_actual_adam_slope_change": 0.005852535106826856
+    },
+    {
+      "distance": 1.4768261459394993,
+      "before_slope": 1.6025619303682288,
+      "native_integral": -24.054164232679167,
+      "balanced_integral": -2091.86310398241,
+      "predicted_actual_adam_slope_change": 0.005851538791035542
+    },
+    {
+      "distance": 1.5422108254079407,
+      "before_slope": 1.6727923933793953,
+      "native_integral": -21.6040249888111,
+      "balanced_integral": -2730.89592289464,
+      "predicted_actual_adam_slope_change": 0.005761179458285368
+    },
+    {
+      "distance": 1.6104903319492543,
+      "before_slope": 1.7332171893202137,
+      "native_integral": -18.498348440694723,
+      "balanced_integral": -3428.9777122018468,
+      "predicted_actual_adam_slope_change": 0.005577412219152432
+    },
+    {
+      "distance": 1.681792830507429,
+      "before_slope": 1.7828052667503236,
+      "native_integral": -14.765121313879558,
+      "balanced_integral": -4175.943745282348,
+      "predicted_actual_adam_slope_change": 0.0052987537450671085
+    },
+    {
+      "distance": 1.7562521603732995,
+      "before_slope": 1.8207688210265989,
+      "native_integral": -10.452608110382023,
+      "balanced_integral": -4959.539869815054,
+      "predicted_actual_adam_slope_change": 0.004926420979130855
+    },
+    {
+      "distance": 1.8340080864093424,
+      "before_slope": 1.84658877112812,
+      "native_integral": -5.627338141637813,
+      "balanced_integral": -5765.970551864577,
+      "predicted_actual_adam_slope_change": 0.004464325907111519
+    },
+    {
+      "distance": 1.9152065613971474,
+      "before_slope": 1.8600283110228368,
+      "native_integral": -0.37103445455067163,
+      "balanced_integral": -6580.55039642664,
+      "predicted_actual_adam_slope_change": 0.0039189236463886695
+    },
+    {
+      "distance": 2.0,
+      "before_slope": 1.8611337702167037,
+      "native_integral": 5.223264386077545,
+      "balanced_integral": -7388.404778452576,
+      "predicted_actual_adam_slope_change": 0.0032989247371138773
+    },
+    {
+      "distance": 2.0885475648548275,
+      "before_slope": 1.8502229858437387,
+      "native_integral": 11.055565738304646,
+      "balanced_integral": -8175.160880817778,
+      "predicted_actual_adam_slope_change": 0.002614895088683927
+    },
+    {
+      "distance": 2.1810154653305154,
+      "before_slope": 1.8278623330947898,
+      "native_integral": 17.02341121732916,
+      "balanced_integral": -8927.573487813912,
+      "predicted_actual_adam_slope_change": 0.0018787767069421365
+    },
+    {
+      "distance": 2.2775772695133836,
+      "before_slope": 1.7948343662742123,
+      "native_integral": 23.026147042532465,
+      "balanced_integral": -9634.039627935563,
+      "predicted_actual_adam_slope_change": 0.0011033677774153893
+    },
+    {
+      "distance": 2.378414230005442,
+      "before_slope": 1.7520985975705463,
+      "native_integral": 28.968682499090747,
+      "balanced_integral": -10284.970777141425,
+      "predicted_actual_adam_slope_change": 0.0003018013546155578
+    },
+    {
+      "distance": 2.483715624146968,
+      "before_slope": 1.7007482320558542,
+      "native_integral": 34.76452249090232,
+      "balanced_integral": -10873.008311876161,
+      "predicted_actual_adam_slope_change": -0.0005129419039389356
+    },
+    {
+      "distance": 2.5936791093020193,
+      "before_slope": 1.6419656779700187,
+      "native_integral": 40.33795461688011,
+      "balanced_integral": -11393.084593058586,
+      "predicted_actual_adam_slope_change": -0.0013284588159090949
+    },
+    {
+      "distance": 2.7085110938737857,
+      "before_slope": 1.5769793950840556,
+      "native_integral": 45.62536542117763,
+      "balanced_integral": -11842.346208309962,
+      "predicted_actual_adam_slope_change": -0.00213326776091495
+    },
+    {
+      "distance": 2.82842712474619,
+      "before_slope": 1.5070241953745354,
+      "native_integral": 50.575741955222384,
+      "balanced_integral": -12219.965991451447,
+      "predicted_actual_adam_slope_change": -0.0029170628089504203
+    },
+    {
+      "distance": 2.9536522918789987,
+      "before_slope": 1.4333065491325092,
+      "native_integral": 55.1504752343941,
+      "balanced_integral": -12526.875861790686,
+      "predicted_actual_adam_slope_change": -0.003670877903997478
+    },
+    {
+      "distance": 3.0844216508158815,
+      "before_slope": 1.3569758557807268,
+      "native_integral": 59.322618088164326,
+      "balanced_integral": -12765.453493171295,
+      "predicted_actual_adam_slope_change": -0.004387168283213332
+    },
+    {
+      "distance": 3.2209806638985086,
+      "before_slope": 1.2791020798725627,
+      "native_integral": 63.075762169315354,
+      "balanced_integral": -12939.193154925997,
+      "predicted_actual_adam_slope_change": -0.00505982118285153
+    },
+    {
+      "distance": 3.363585661014858,
+      "before_slope": 1.2006596775304228,
+      "native_integral": 66.40269156246478,
+      "balanced_integral": -13052.385910902904,
+      "predicted_actual_adam_slope_change": -0.005684110418051119
+    },
+    {
+      "distance": 3.512504320746599,
+      "before_slope": 1.122517374007162,
+      "native_integral": 69.30394927658259,
+      "balanced_integral": -13109.827923351737,
+      "predicted_actual_adam_slope_change": -0.00625660992237313
+    },
+    {
+      "distance": 3.668016172818685,
+      "before_slope": 1.0454331065482816,
+      "native_integral": 71.78642401794325,
+      "balanced_integral": -13116.568944413311,
+      "predicted_actual_adam_slope_change": -0.006775080289427851
+    },
+    {
+      "distance": 3.830413122794295,
+      "before_slope": 0.9700533104951028,
+      "native_integral": 73.86203342751108,
+      "balanced_integral": -13077.706984525785,
+      "predicted_actual_adam_slope_change": -0.007238340332127445
+    },
+    {
+      "distance": 4.0,
+      "before_slope": 0.8969156829811823,
+      "native_integral": 75.54655055829978,
+      "balanced_integral": -12998.230119549542,
+      "predicted_actual_adam_slope_change": -0.007646133184712545
+    },
+    {
+      "distance": 4.177095129709655,
+      "before_slope": 0.8264545853728059,
+      "native_integral": 76.85859541912222,
+      "balanced_integral": -12882.902656116277,
+      "predicted_actual_adam_slope_change": -0.007998993935350779
+    },
+    {
+      "distance": 4.362030930661031,
+      "before_slope": 0.7590083200538267,
+      "native_integral": 77.81879420722854,
+      "balanced_integral": -12736.190419858021,
+      "predicted_actual_adam_slope_change": -0.008298123480295901
+    },
+    {
+      "distance": 4.555154539026767,
+      "before_slope": 0.6948276189001957,
+      "native_integral": 78.4490955863397,
+      "balanced_integral": -12562.218620037433,
+      "predicted_actual_adam_slope_change": -0.008545271395802898
+    },
+    {
+      "distance": 4.756828460010884,
+      "before_slope": 0.634084793416533,
+      "native_integral": 78.77222547873032,
+      "balanced_integral": -12364.75535395679,
+      "predicted_actual_adam_slope_change": -0.008742629187871002
+    },
+    {
+      "distance": 4.967431248293937,
+      "before_slope": 0.5768831080458966,
+      "native_integral": 78.81125834484172,
+      "balanced_integral": -12147.214097428705,
+      "predicted_actual_adam_slope_change": -0.00889273428349446
+    },
+    {
+      "distance": 5.187358218604039,
+      "before_slope": 0.5232660408468465,
+      "native_integral": 78.58928267845971,
+      "balanced_integral": -11912.669247869366,
+      "predicted_actual_adam_slope_change": -0.008998384505520488
+    },
+    {
+      "distance": 5.4170221877475715,
+      "before_slope": 0.4732261853190294,
+      "native_integral": 78.1291403415933,
+      "balanced_integral": -11663.879742923868,
+      "predicted_actual_adam_slope_change": -0.009062562440837295
+    },
+    {
+      "distance": 5.656854249492381,
+      "before_slope": 0.4267136220843364,
+      "native_integral": 77.45322244543607,
+      "balanced_integral": -11403.316812741688,
+      "predicted_actual_adam_slope_change": -0.009088368980946438
+    },
+    {
+      "distance": 5.907304583757997,
+      "before_slope": 0.3836436496549419,
+      "native_integral": 76.58330800558065,
+      "balanced_integral": -11133.192925914285,
+      "predicted_actual_adam_slope_change": -0.00907896530767256
+    },
+    {
+      "distance": 6.168843301631764,
+      "before_slope": 0.34390381099084893,
+      "native_integral": 75.54043503339534,
+      "balanced_integral": -10855.489886059968,
+      "predicted_actual_adam_slope_change": -0.009037522653773456
+    },
+    {
+      "distance": 6.441961327797018,
+      "before_slope": 0.3073601888335027,
+      "native_integral": 74.34479674313695,
+      "balanced_integral": -10571.984789852462,
+      "predicted_actual_adam_slope_change": -0.008967179245386647
+    },
+    {
+      "distance": 6.727171322029717,
+      "before_slope": 0.2738629698808126,
+      "native_integral": 73.01565799195438,
+      "balanced_integral": -10284.273155036837,
+      "predicted_actual_adam_slope_change": -0.008871003903960738
+    },
+    {
+      "distance": 7.025008641493199,
+      "before_slope": 0.24325129759484668,
+      "native_integral": 71.57128888612905,
+      "balanced_integral": -9993.788973448438,
+      "predicted_actual_adam_slope_change": -0.008751965836410951
+    },
+    {
+      "distance": 7.336032345637371,
+      "before_slope": 0.21535744740324136,
+      "native_integral": 70.02891372308649,
+      "balanced_integral": -9701.821755133044,
+      "predicted_actual_adam_slope_change": -0.008612910170346015
+    },
+    {
+      "distance": 7.6608262455885905,
+      "before_slope": 0.19001036757074985,
+      "native_integral": 68.40467418430867,
+      "balanced_integral": -9409.530827065533,
+      "predicted_actual_adam_slope_change": -0.008456538799208222
+    },
+    {
+      "distance": 7.999999999999999,
+      "before_slope": 0.16703863509990344,
+      "native_integral": 66.71360605949337,
+      "balanced_integral": -9117.957257286305,
+      "predicted_actual_adam_slope_change": -0.008285396096142341
+    },
+    {
+      "distance": 8.35419025941931,
+      "before_slope": 0.14627287945261472,
+      "native_integral": 64.96962887857279,
+      "balanced_integral": -8828.03381532922,
+      "predicted_actual_adam_slope_change": -0.008101859042399637
+    },
+    {
+      "distance": 8.72406186132206,
+      "before_slope": 0.1275477282641543,
+      "native_integral": 63.18554775567225,
+      "balanced_integral": -8540.593372952806,
+      "predicted_actual_adam_slope_change": -0.007908131302554787
+    },
+    {
+      "distance": 9.110309078053533,
+      "before_slope": 0.1107033290058742,
+      "native_integral": 61.373066589926836,
+      "balanced_integral": -8256.376112445103,
+      "predicted_actual_adam_slope_change": -0.007706240769809157
+    },
+    {
+      "distance": 9.513656920021768,
+      "before_slope": 0.09558649910446824,
+      "native_integral": 59.54281158419406,
+      "balanced_integral": -7976.035856618708,
+      "predicted_actual_adam_slope_change": -0.007498040103469942
+    },
+    {
+      "distance": 9.934862496587872,
+      "before_slope": 0.0820515546368937,
+      "native_integral": 57.70436387646086,
+      "balanced_integral": -7700.145775083818,
+      "predicted_actual_adam_slope_change": -0.007285209788922639
+    },
+    {
+      "distance": 10.374716437208077,
+      "before_slope": 0.06996086463749965,
+      "native_integral": 55.866299955520184,
+      "balanced_integral": -7429.203662483472,
+      "predicted_actual_adam_slope_change": -0.007069263268204107
+    },
+    {
+      "distance": 10.834044375495141,
+      "before_slope": 0.05918517448794008,
+      "native_integral": 54.03623846405004,
+      "balanced_integral": -7163.63693056452,
+      "predicted_actual_adam_slope_change": -0.0068515537157087456
+    },
+    {
+      "distance": 11.31370849898476,
+      "before_slope": 0.049603737992921275,
+      "native_integral": 52.220891980320914,
+      "balanced_integral": -6903.807409719972,
+      "predicted_actual_adam_slope_change": -0.006633282067002336
+    },
+    {
+      "distance": 11.814609167515995,
+      "before_slope": 0.04110429373143647,
+      "native_integral": 50.4261224094241,
+      "balanced_integral": -6650.016017974763,
+      "predicted_actual_adam_slope_change": -0.0064155059472088384
+    },
+    {
+      "distance": 12.337686603263526,
+      "before_slope": 0.03358291724498288,
+      "native_integral": 48.656998697271845,
+      "balanced_integral": -6402.507326273723,
+      "predicted_actual_adam_slope_change": -0.006199149186937955
+    },
+    {
+      "distance": 12.883922655594034,
+      "before_slope": 0.0269437766884388,
+      "native_integral": 46.917855695049575,
+      "balanced_integral": -6161.474027687506,
+      "predicted_actual_adam_slope_change": -0.005985011656328494
+    },
+    {
+      "distance": 13.454342644059432,
+      "before_slope": 0.02109881580974902,
+      "native_integral": 45.21235313750678,
+      "balanced_integral": -5927.061303733571,
+      "predicted_actual_adam_slope_change": -0.005773779189847112
+    },
+    {
+      "distance": 14.050017282986396,
+      "before_slope": 0.015967384603550343,
+      "native_integral": 43.5435338455351,
+      "balanced_integral": -5699.371072216789,
+      "predicted_actual_adam_slope_change": -0.005566033414681471
+    },
+    {
+      "distance": 14.67206469127474,
+      "before_slope": 0.011475834743803912,
+      "native_integral": 41.913880413432594,
+      "balanced_integral": -5478.466096623182,
+      "predicted_actual_adam_slope_change": -0.005362261332920643
+    },
+    {
+      "distance": 15.32165249117718,
+      "before_slope": 0.007557093966400902,
+      "native_integral": 40.32536978734933,
+      "balanced_integral": -5264.373936035019,
+      "predicted_actual_adam_slope_change": -0.005162864541569886
+    },
+    {
+      "distance": 16.0,
+      "before_slope": 0.004150230954889811,
+      "native_integral": 38.779525278644144,
+      "balanced_integral": -5057.090715800061,
+      "predicted_actual_adam_slope_change": -0.004968168004435258
+    }
+  ],
+  "provenance": {
+    "predictive-closure-workspace/behavior-policy-experiments/qualitative-study/fold-location/training-mechanism/output/birth-event.pt": "eeefda4b730d382380dead4e642195337703b503ab3d4f1574923cd9870d7f9d",
+    "predictive-closure-workspace/behavior-policy-experiments/qualitative-study/output/sources/icm-131.pt": "16719ee25f2dd78a6ca3c675d128df461fc352e9655996cf1528d638b55f17da",
+    "icm-folding/occupancy-integral/run.py": "714148bb89531d4d858dccb14889381fcf6662890c6889a0a49de847aa0cf333"
+  },
+  "scope": [
+    "Full-data empirical measure, not an exact unknown population density.",
+    "Equal occupied log bins at fixed before-state weights; privileged geometry.",
+    "Plug-in full-data moments differ from the expectation of finite-batch moments squared.",
+    "SGD linearization is not an Adam prediction or a finite-step fold certificate.",
+    "Adam attribution retains the actual shared denominator; historical term aggregates past regularizer gradients.",
+    "One inspected source and update; no universal occupancy-only threshold."
+  ]
+}
