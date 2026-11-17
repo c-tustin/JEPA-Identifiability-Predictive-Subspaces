@@ -7,5 +7,6 @@ The user wants `icm-folding/` to stay current as new code and findings arrive.
 - Existing source-folder links already expose changes to their target code immediately; do not copy those targets into competing versions.
 - Update `icm-folding/README.md` for new code, protocols, figures, and results. Update `icm-folding/PROGRESS.md` with substantive changes, dates, evidence, and remaining work. Label unrun code and pending results accurately; preserve the distinction between empirical fold checks and analytic guarantees.
 - Verify affected imports or appropriate checks and validate new document and source-folder links. Preserve unrelated work and nested repositories.
+- Publish updates directly to `main` inside their research folders. Do not create Codex-named folders or feature branches for this workspace.
 
 Apply this during future work in this workspace. This instruction does not itself create a background monitor or authorize merging unrelated Git branches.

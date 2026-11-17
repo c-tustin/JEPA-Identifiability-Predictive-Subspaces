@@ -4,7 +4,7 @@ Updated November 16, 2026 from the studies linked in [the index](README.md). Mos
 
 ## November 16: Portable OU publication update
 
-Extended [the exporter](export_github.py) to include both shared-input OU studies in the portable research snapshot, alongside the already indexed EMA and occupancy-integral studies. The new branch is `codex/icm-ou-occupancy`, based on current `main`; the earlier PR #8 is already merged. Source code, protocols, PNG/PDF figures, numerical results, audits and source/checkpoint hashes are included. The 30 derived OU checkpoint files (about 515 MB) remain local, following the snapshot's derived-cache policy; `PUBLISHING.md` records the exact generation order required before running checkpoint-dependent reports. Local source-folder links and nested repositories are preserved.
+Extended [the exporter](export_github.py) to include both shared-input OU studies in the portable research snapshot, alongside the already indexed EMA and occupancy-integral studies. The update is published directly to `main` in `icm-folding/`, per the user's publication preference; the earlier PR #8 is already merged. Future publication must not create Codex-named folders or feature branches. Source code, protocols, PNG/PDF figures, numerical results, audits and source/checkpoint hashes are included. The 30 derived OU checkpoint files (about 515 MB) remain local, following the snapshot's derived-cache policy; `PUBLISHING.md` records the exact generation order required before running checkpoint-dependent reports. Local source-folder links and nested repositories are preserved.
 
 ## November 16: ICM-occupancy-matched OU (completed exploratory comparison)
 

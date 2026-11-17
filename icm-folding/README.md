@@ -27,7 +27,7 @@ Several named folders here are relative symbolic links to the original studies; 
 
 ## GitHub publication
 
-The November 16 shared-input OU follow-up uses [branch `codex/icm-ou-occupancy`](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/tree/codex/icm-ou-occupancy), based on current `main`. It includes both OU studies, figures, protocols, audits and results, plus the completed EMA and occupancy-integral entries already indexed locally. The 30 large derived OU checkpoints stay local; their hashes and regeneration commands are included in the portable snapshot.
+The November 16 shared-input OU follow-up is published directly on [`main` in `icm-folding/`](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/tree/main/icm-folding). It includes both OU studies, figures, protocols, audits and results, plus the completed EMA and occupancy-integral entries already indexed locally. The 30 large derived OU checkpoints stay local; their hashes and regeneration commands are included in the portable snapshot. Future updates go directly to `main` inside the relevant research folder, without creating Codex-named folders or feature branches.
 
 The earlier `codex/icm-folding-update` publication was merged into `main` in [PR #8](https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces/pull/8).
 
