@@ -4,6 +4,8 @@ Requested follow-up to [the shared-input multimodal OU study](../shared-occupanc
 
 All twelve 4,000-update fits and final checkpoint verifications completed. Native shared-input pairs fold in 2/4 runs; ICM-matched OU folds in 2/4 at dt=0.01 and 3/4 at dt=0.1. Seeds 131 and 136 fold in all arms; seed 130 gains a fold at dt=0.1. All final roots lie inside their actual training distance range. Mean 64-log-bin occupancy TV from the source is 0.0534/0.0221 for dt=0.01/0.1. This recreates folding under concentrated ICM-like occupancy with OU-generated temporal pairs, without establishing that occupancy alone determines a fold.
 
+The [invariant-alignment follow-up](../occupancy-causal-dwell/README.md) addresses that causal ambiguity by changing where a fixed number of added stay pairs occur. Both losses still share the same endpoint outputs; stays contribute exactly zero alignment. Forty fits show that changing occupancy can introduce or remove folds depending on the source-pair fraction, and sixty same-state Adam forks isolate the regularizer channel. This is a controlled replay-measure result, not a newly trained physical policy or a universal occupancy rule.
+
 See [histograms, encoder curves and slopes](output/icm_matched_histograms_encoders.png), [per-seed fold histories](output/fold_histories.png), [compact bimodal/trimodal gallery](output/bimodal_trimodal_shared_inputs.png), [transformation diagram](output/ou_quantile_transform.png), [results](output/RESULTS.md), [full metrics](output/summary.json), [input/generator audits](output/generator-audit.json), [shared-loss audit](output/audit.json), [checkpoint verification](output/verification.json), and [source/runtime provenance](output/provenance.json).
 
 ## What the generator does
