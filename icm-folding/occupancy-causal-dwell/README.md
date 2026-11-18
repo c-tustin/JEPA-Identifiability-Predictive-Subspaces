@@ -2,6 +2,10 @@
 
 November 17, 2026. Completed [fixed-protocol](PROTOCOL.md) follow-up to the [ICM-matched OU experiment](../icm-matched-ou/README.md), with [code](run.py), forty 4,000-update fits and sixty same-state Adam forks.
 
+For a plain-language view of **when a turn develops**, see [the training sequence](output/development_plain.png) and [its extracted timings](output/development_plain.json), produced by [this script](explain_development.py). In run 131 with 75% added stays, the near-heavy allocation has no detected turn at update 200, a first saved turn at 300, and a retained turn near distance 2.52 at 4,000. The spread-out allocation has no detected turn at any saved checkpoint. Checks are 100 updates apart; the exact onset is not known. Other runs can have temporary turns that disappear, and some random initial encoders already turn, so final fold counts are not fold-birth counts.
+
+In the earlier OU gallery, `F/F/F` means three separate encoders are folded: original ICM pairs, small-step OU, large-step OU. `ordered` means no detected reversal; slash-separated labels are not times or numbers of folds. Lowercase `f` in the dwell experiment instead denotes the fraction of original source pairs. A stay is an added pair containing the identical observation twice, modeling no movement. Training updates the scalar encoder on frozen observation pairs; it does not train a new behavior actor.
+
 | Source pairs / added stays | Native-like stay allocation | Spread-out stay allocation |
 | --- | ---: | ---: |
 | 50% / 50% | 5/10 final folds | 9/10 final folds |

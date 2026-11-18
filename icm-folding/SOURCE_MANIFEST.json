@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-17",
+  "date": "2026-11-18",
   "files": [
     {
       "source": "explanations/occupancy-folding/PROTOCOL.md",
@@ -9068,10 +9068,10 @@
     {
       "source": "icm-folding/occupancy-causal-dwell/README.md",
       "destination": "occupancy-causal-dwell/README.md",
-      "bytes": 7188,
-      "source_sha256": "f70a9b79b8eef94fe75df159a0bdc484b04f6d02ab78e90eca9872546ad2ef0d",
+      "bytes": 8375,
+      "source_sha256": "4d5df8299fc58c58caa73735a84e347fe4a8f6ce46cd2d6cbc70e92ac1fcd786",
       "included": true,
-      "published_sha256": "f70a9b79b8eef94fe75df159a0bdc484b04f6d02ab78e90eca9872546ad2ef0d",
+      "published_sha256": "4d5df8299fc58c58caa73735a84e347fe4a8f6ce46cd2d6cbc70e92ac1fcd786",
       "adapted": false
     },
     {
@@ -9510,19 +9510,19 @@
     {
       "source": "icm-folding/README.md",
       "destination": "README.md",
-      "bytes": 9252,
-      "source_sha256": "dc9ab03702115a890e427340fc5ccce6ef2f91d3b6ddfcb51a525f82030faeee",
+      "bytes": 9630,
+      "source_sha256": "8387e8697941916ad8f4f9f7522c666ea0ba0c071c68fbd39dec558f35092f8f",
       "included": true,
-      "published_sha256": "e0b5c0d3ca75d7f7d4618d8f002ab8d0c9638e3141b30ed5344a210389320b8a",
+      "published_sha256": "5b757adc0473bcd911b9e6f101d6128e81fa35e765bc7102aa7637852988505f",
       "adapted": true
     },
     {
       "source": "icm-folding/PROGRESS.md",
       "destination": "PROGRESS.md",
-      "bytes": 33083,
-      "source_sha256": "deda12e615ca0b8d2c17c79540d95574fc1f76d687274862d3374216e2c507d3",
+      "bytes": 34493,
+      "source_sha256": "14120ddc570411999956ce3c92f9e7ec7a38edc09fc9dde52331ab0a6358cfbe",
       "included": true,
-      "published_sha256": "fa06994a369ccef2203bfeee254cda94e4150caa0f0fd185a7637f1b80c30ac2",
+      "published_sha256": "e30a216d1f59966310fdf832c88ec52270b95d4e205d9fec2f8a39cc4bcb03a3",
       "adapted": true
     },
     {
@@ -9551,6 +9551,42 @@
       "included": true,
       "published_sha256": "50bd05365bee35a6e77f1fcd06554fcf8d10b8d84a2e6eda1aa6350eef99a747",
       "adapted": false
+    },
+    {
+      "source": "icm-folding/occupancy-causal-dwell/explain_development.py",
+      "destination": "occupancy-causal-dwell/explain_development.py",
+      "bytes": 2545,
+      "source_sha256": "033a18d2470dc5ffd2f385f54aec3e00f4e133e8a72637436107505e7b4fa387",
+      "included": true,
+      "published_sha256": "033a18d2470dc5ffd2f385f54aec3e00f4e133e8a72637436107505e7b4fa387",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/occupancy-causal-dwell/output/development_plain.png",
+      "destination": "occupancy-causal-dwell/output/development_plain.png",
+      "bytes": 168382,
+      "source_sha256": "5eea65c465bfea9f621859f09fc7b3d4123fa73696194c668606958dba9818f8",
+      "included": true,
+      "published_sha256": "5eea65c465bfea9f621859f09fc7b3d4123fa73696194c668606958dba9818f8",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/occupancy-causal-dwell/output/development_plain.pdf",
+      "destination": "occupancy-causal-dwell/output/development_plain.pdf",
+      "bytes": 27096,
+      "source_sha256": "330da15617ed4c8f6428bddea2c750e5cd1b1936b6d87951e2f576973bafbef9",
+      "included": true,
+      "published_sha256": "330da15617ed4c8f6428bddea2c750e5cd1b1936b6d87951e2f576973bafbef9",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/occupancy-causal-dwell/output/development_plain.json",
+      "destination": "occupancy-causal-dwell/output/development_plain.json",
+      "bytes": 614,
+      "source_sha256": "d1a1d5e2351123ddb35419f803a3de99f315dad48258638869d57a753949864a",
+      "included": true,
+      "published_sha256": "d1a1d5e2351123ddb35419f803a3de99f315dad48258638869d57a753949864a",
+      "adapted": false
     }
   ],
   "aliases": {
@@ -9563,5 +9599,7 @@
     "hard-order-guarantees": "occupancy-study/hypothesis-guarantee",
     "earlier-qualitative-study": "sources/predictive-closure-workspace/behavior-policy-experiments/qualitative-study",
     "exposure-graphs": "sources/explanations/tost-icm-sigreg"
-  }
+  },
+  "publication_base_commit": "86800ab47b15fcfccdab337e3d8728aecacab3ba",
+  "publication_note": "Plain-language additions preserve intervening main-branch content; published hashes reflect that merged documentation."
 }

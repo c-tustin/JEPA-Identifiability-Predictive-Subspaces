@@ -1,6 +1,6 @@
 # ICM policy folding: progress and repairs
 
-Consolidated research workspace, updated November 17, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
+Consolidated research workspace, updated November 18, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
 
 Several named folders here are relative symbolic links to the original studies; newer experiment directories are authored directly here. They expose the existing code, checkpoints, figures, protocols, and results without duplicating large artifacts or changing paths used by running experiments. The originals remain the source of truth. Open the source-document links below for documentation with its original relative links intact. Run reproduction commands from the main `kempner` directory using the original paths in each protocol.
 
@@ -8,6 +8,7 @@ Several named folders here are relative symbolic links to the original studies; 
 
 | Work | Source documentation | Results and figures |
 | --- | --- | --- |
+| Plain-language fold development | [Labels, stays and training](occupancy-causal-dwell/README.md), [extraction script](occupancy-causal-dwell/explain_development.py) | [One run through training](occupancy-causal-dwell/output/development_plain.png), [saved onset bracket](occupancy-causal-dwell/output/development_plain.json); separates temporary turns from final fold counts |
 | Causal occupancy intervention with fixed alignment | [Study](occupancy-causal-dwell/README.md), [fixed protocol](occupancy-causal-dwell/PROTOCOL.md), [trainer](occupancy-causal-dwell/run.py) | [Summary](occupancy-causal-dwell/output/causal_summary.png), [encoder curves](occupancy-causal-dwell/output/occupancy_encoders_slopes.png), [results](occupancy-causal-dwell/output/RESULTS.md); 40 fits and 60 same-state forks. At 50% stays, folds 5/10 → 9/10; at 75% stays, 5/10 → 0/10 |
 | Verify fold development from occupancy and optimizer state | [LaTeX paper](fold-development/fold-development.tex), [PDF](fold-development/output/pdf/fold-development.pdf), [framework and checks](fold-development/README.md) | Occupancy/kernel derivation, Adam history, finite-batch correction, and sufficient next-step and finite-horizon certificates; neural-network bounds remain to be computed |
 | Recreate ICM occupancy with shared-input OU | [Study](icm-matched-ou/README.md), [protocol](icm-matched-ou/PROTOCOL.md), [generator/trainer](icm-matched-ou/run.py) | [Histogram/encoder/slope gallery](icm-matched-ou/output/icm_matched_histograms_encoders.png), [results](icm-matched-ou/output/RESULTS.md), [mapping diagram](icm-matched-ou/output/ou_quantile_transform.png); native folds 2/4, OU dt=.01 2/4, OU dt=.1 3/4 |

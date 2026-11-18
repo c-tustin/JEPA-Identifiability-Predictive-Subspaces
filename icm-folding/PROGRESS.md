@@ -1,6 +1,14 @@
 # Merged progress: ICM policy, folding, and repairs
 
-Updated November 17, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+Updated November 18, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+
+
+## November 18: Plain-language development sequence (no new training)
+
+Added [a plainly labeled training sequence](occupancy-causal-dwell/output/development_plain.png), [extraction code](occupancy-causal-dwell/explain_development.py) and [recorded timing bracket](occupancy-causal-dwell/output/development_plain.json) from existing run-131 dwell histories. With 128 source pairs plus 384 stays per batch, native-like stays show no detected turn at update 200 and a first saved turn at 300; the final turn is near distance 2.519. Spread-out stays show no turn at any saved 100-update checkpoint. The initial run-131 model is checked to have no sampled turn. These snapshots bracket onset in (200,300] without excluding unsaved transient turns or establishing continuous-domain order. Source code and checkpoint identities are preserved; no new fit is reported.
+
+Clarified that the old F/F/F labels describe three separate trained models, ordered means no detected turn, and lowercase f denotes source-pair fraction. Explained stay pairs as identical observations and distinguished encoder fitting from actor training. Development should track onset, turn position and persistence, rather than treating final fold counts as creation rates. Other inspected histories contain temporary reversals; the initial seed-136 encoder already has a sampled turn, which disappears before a later native-path turn develops.
+
 
 ## November 17: Occupancy causality with invariant alignment (completed exploratory comparison)
 
