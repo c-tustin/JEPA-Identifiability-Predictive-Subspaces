@@ -2,6 +2,8 @@
 
 November 17, 2026.
 
+Full paper: [LaTeX source](fold-development.tex) and [compiled PDF](output/pdf/fold-development.pdf). The LaTeX source is the editable paper; the Markdown below remains a browsing copy.
+
 A fold develops when training makes a scalar encoder turn backward along the observation manifold. We can verify a forthcoming fold by showing that the actual optimizer update drives the slope negative somewhere while it remains positive elsewhere. Occupancy determines which output forces are averaged; the encoder determines how those forces change a slope; optimizer state determines the update that is actually applied. A sufficient certificate also bounds the error of linearizing that update.
 
 The central sufficient condition, derived below, is
@@ -345,3 +347,14 @@ This framework supplies sufficient mathematical conditions and an implementation
 ## Reproducing the algebra checks
 
 Run `python3 icm-folding/fold-development/verify.py` from the workspace or published repository root. The [verifier](verify.py) checks the output-force, kernel, and alignment identities in float64; enumerates all ordered two-sample batches of a three-atom measure to check (10) and its gradient; checks the Adam momentum expansion; and exercises (19) on a polynomial encoder whose global parameter Hessian bound is analytic. The [saved checks](checks.json) record errors and example margins. These checks validate the formulas and example implementation; they do not supply a rigorous remainder bound for the trained neural encoder.
+
+## Building the LaTeX paper
+
+From this directory, run twice to resolve equation references:
+
+```sh
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=output/pdf fold-development.tex
+pdflatex -interaction=nonstopmode -halt-on-error -output-directory=output/pdf fold-development.tex
+```
+
+The paper uses standard AMS mathematics and theorem environments, Latin Modern fonts, booktabs, tabularx, microtype, and hyperref. The compiled PDF is visually checked page by page; the mathematical scope and pending neural-network bounds are unchanged.

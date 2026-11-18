@@ -14,6 +14,10 @@ See [causal summary](occupancy-causal-dwell/output/causal_summary.png), [histogr
 
 The controlled stay interventions identify a causal sampled-regularizer-measure effect on folding, rather than an alignment-function change. They do not establish occupancy as the only cause, a monotone concentration rule, newly collected behavior-policy stationarity, or a no-fold guarantee. Population objective versus finite-batch effects, independent policy/initialization cohorts, smaller stay doses closer to the original protocol, and long-budget/batch-size replication remain open. The complementary mathematical fold-development note still needs validated neural-network remainder bounds for certified forecasts.
 
+## November 17: Full LaTeX fold-development paper
+
+Converted the complete derivation into [standalone LaTeX](fold-development/fold-development.tex) with a [compiled PDF](fold-development/output/pdf/fold-development.pdf). The paper retains all 25 numbered mathematical statements, adds native equation cross-references and a formal proposition/proof environment, and typesets the existing birth-event table. The LaTeX source is the editable paper; the Markdown version remains a browsing companion with build instructions. Compilation, reference resolution, PDF text checks, and visual review of every page are performed before publication. Mathematical claims, existing numerical evidence, and pending trained-MLP remainder bounds are unchanged.
+
 ## November 17: Mathematical conditions for fold development
 
 Added [the mathematical framework](fold-development/README.md) directly under this folder. It derives the occupancy-weighted characteristic-function force, its contraction with the encoder response kernel, the alignment pair contribution, and Adam's current/history decomposition with the actual shared denominator. It distinguishes marginal occupancy from transition pairs and derives the expected iid finite-batch objective correction, with separate treatment of correlated endpoints.
