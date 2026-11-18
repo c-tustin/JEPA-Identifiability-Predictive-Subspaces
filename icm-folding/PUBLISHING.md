@@ -1,6 +1,6 @@
 # Portable GitHub snapshot
 
-Updated November 16, 2026 from the local ICM folding workspace. All study source code, protocols, reports, PNG/PDF figures and JSON audits are included. Each study appears once; named entry points are relative source-folder links. `SOURCE_MANIFEST.json` records the original path and SHA-256, inclusion policy, and published SHA-256 for adapted files.
+Updated November 17, 2026 from the local ICM folding workspace. The fold-development note derives sufficient slope-reversal conditions from occupancy, encoder response and optimizer state; its small verifier checks algebra and an analytic polynomial example, without claiming a trained-MLP certificate. All study source code, protocols, reports, PNG/PDF figures and JSON audits are included. Each study appears once; named entry points are relative source-folder links. `SOURCE_MANIFEST.json` records the original path and SHA-256, inclusion policy, and published SHA-256 for adapted files.
 
 The existing original qualitative study and its baseline sources are reused from the repository's `behavior-policy-experiments` tree through a relative link. No unrelated branches were merged. The scalar-MLP study's root path and occupancy driver's provenance root were adapted to this layout; loss/training formulas were not changed. Original audit files describe their original code hashes and run paths; use the manifest to distinguish those from the portable paths.
 

@@ -1,6 +1,12 @@
 # Merged progress: ICM policy, folding, and repairs
 
-Updated November 16, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+Updated November 17, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+
+## November 17: Mathematical conditions for fold development
+
+Added [the mathematical framework](fold-development/README.md) directly under this folder. It derives the occupancy-weighted characteristic-function force, its contraction with the encoder response kernel, the alignment pair contribution, and Adam's current/history decomposition with the actual shared denominator. It distinguishes marginal occupancy from transition pairs and derives the expected iid finite-batch objective correction, with separate treatment of correlated endpoints.
+
+The note proves sufficient next-update conditions using two opposite slope witnesses and a bounded finite-step remainder, and extends them to finite-horizon cumulative bounds with a surviving positive anchor. It also describes smooth interior versus boundary onset, existing-root motion, and a verification protocol for the original encoder. The existing seed-131 birth-event numbers are used as inspected empirical evidence; no new training or rigorous neural-network remainder enclosure is claimed. Computing validated remainder/error bounds and propagating training-state enclosures remain pending. The source identities and numerical examples are checked algebraically and with a small independent numerical validation; document links are checked before publication.
 
 ## November 16: Portable OU publication update
 

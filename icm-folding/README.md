@@ -1,6 +1,6 @@
 # ICM policy folding: progress and repairs
 
-Consolidated research workspace, updated November 16, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
+Consolidated research workspace, updated November 17, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
 
 Several named folders here are relative symbolic links to the original studies; newer experiment directories are authored directly here. They expose the existing code, checkpoints, figures, protocols, and results without duplicating large artifacts or changing paths used by running experiments. The originals remain the source of truth. Open the source-document links below for documentation with its original relative links intact. Run reproduction commands from the main `kempner` directory using the original paths in each protocol.
 
@@ -8,6 +8,7 @@ Several named folders here are relative symbolic links to the original studies; 
 
 | Work | Source documentation | Results and figures |
 | --- | --- | --- |
+| Verify fold development from occupancy and optimizer state | [Mathematical framework](fold-development/README.md) | Occupancy/kernel derivation, Adam history, finite-batch correction, and sufficient next-step and finite-horizon certificates; neural-network bounds remain to be computed |
 | Recreate ICM occupancy with shared-input OU | [Study](icm-matched-ou/README.md), [protocol](icm-matched-ou/PROTOCOL.md), [generator/trainer](icm-matched-ou/run.py) | [Histogram/encoder/slope gallery](icm-matched-ou/output/icm_matched_histograms_encoders.png), [results](icm-matched-ou/output/RESULTS.md), [mapping diagram](icm-matched-ou/output/ou_quantile_transform.png); native folds 2/4, OU dt=.01 2/4, OU dt=.1 3/4 |
 | Multimodal temporal data shared by both losses | [Study](shared-occupancy-ou/README.md), [protocol](shared-occupancy-ou/PROTOCOL.md), [generator/trainer](shared-occupancy-ou/run.py) | [Measured occupancy and encoders](shared-occupancy-ou/output/shared_occupancy_encoders.png), [results](shared-occupancy-ou/output/RESULTS.md), [verification](shared-occupancy-ou/output/verification.json); 18 fits, no detected final folds |
 | EMA and fold development | [Study](ema-study/README.md), [fixed protocol](ema-study/PROTOCOL.md) | [Results](ema-study/output/RESULTS.md), [fold development](ema-study/output/fold_development.png), [verification](ema-study/output/verification.json) |

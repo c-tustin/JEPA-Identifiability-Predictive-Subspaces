@@ -16,7 +16,7 @@ def main():
     dest.mkdir(exist_ok=True)
     records=[]
     roots=[(WORKSPACE/'explanations/occupancy-folding',Path('sources/explanations/occupancy-folding'))]
-    roots += [(HERE/name,Path(name)) for name in ('inverse-occupancy-lr','mlp-gradient-study','no-fold-proof','weighted-moments-validation','occupancy-integral','ema-study','shared-occupancy-ou','icm-matched-ou')]
+    roots += [(HERE/name,Path(name)) for name in ('inverse-occupancy-lr','mlp-gradient-study','no-fold-proof','weighted-moments-validation','occupancy-integral','ema-study','shared-occupancy-ou','icm-matched-ou','fold-development')]
     roots += [(HERE/name,Path(name)) for name in ('README.md','PROGRESS.md','export_github.py')]
     for source,relative in roots:
         files=[source] if source.is_file() else sorted(p for p in source.rglob('*') if p.is_file())
@@ -78,10 +78,10 @@ def main():
     (dest/'WORKSPACE_INSTRUCTIONS.md').write_bytes((WORKSPACE/'AGENTS.md').read_bytes())
     (dest/'.gitignore').write_text('__pycache__/\n*.py[cod]\n.DS_Store\n*.log\n*.aux\n*.out\n')
     (dest/'requirements.txt').write_text('numpy\ntorch\nmatplotlib\nscipy\n')
-    (dest/'SOURCE_MANIFEST.json').write_text(json.dumps(dict(date='2026-11-16',files=records,aliases=aliases),indent=2)+'\n')
+    (dest/'SOURCE_MANIFEST.json').write_text(json.dumps(dict(date='2026-11-17',files=records,aliases=aliases),indent=2)+'\n')
     (dest/'PUBLISHING.md').write_text('''# Portable GitHub snapshot
 
-Updated November 16, 2026 from the local ICM folding workspace. All study source code, protocols, reports, PNG/PDF figures and JSON audits are included. Each study appears once; named entry points are relative source-folder links. `SOURCE_MANIFEST.json` records the original path and SHA-256, inclusion policy, and published SHA-256 for adapted files.
+Updated November 17, 2026 from the local ICM folding workspace. The fold-development note derives sufficient slope-reversal conditions from occupancy, encoder response and optimizer state; its small verifier checks algebra and an analytic polynomial example, without claiming a trained-MLP certificate. All study source code, protocols, reports, PNG/PDF figures and JSON audits are included. Each study appears once; named entry points are relative source-folder links. `SOURCE_MANIFEST.json` records the original path and SHA-256, inclusion policy, and published SHA-256 for adapted files.
 
 The existing original qualitative study and its baseline sources are reused from the repository's `behavior-policy-experiments` tree through a relative link. No unrelated branches were merged. The scalar-MLP study's root path and occupancy driver's provenance root were adapted to this layout; loss/training formulas were not changed. Original audit files describe their original code hashes and run paths; use the manifest to distinguish those from the portable paths.
 
