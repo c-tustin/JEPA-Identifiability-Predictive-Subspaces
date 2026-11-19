@@ -13,4 +13,16 @@ OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/initialization-cros
 python3 icm-folding/initialization-crossing/run.py --report-only
 ```
 
-Original source datasets remain in the [linked qualitative study](../earlier-qualitative-study/output/sources/); no source checkpoint copies are created.
+Original source datasets remain in the [linked qualitative study](../../behavior-policy-experiments/behavior-policy-experiments/qualitative-study/output/sources); no source checkpoint copies are created.
+
+
+A subsequent [independent reload and provenance audit](report.py) verifies all
+100 dense geometries, regenerates all initialization and batch-plan hashes,
+and checks original diagonal parameters again. It finds 50/100 turns inside
+their source's observed support; the remaining five are outside support.
+[Audited measurements](output/audited-summary.json),
+[audit](output/verification.json), [matrix](output/crossing.png).
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/initialization-crossing/report.py
+```

@@ -60,3 +60,34 @@ Added latest-method-only final distance representations, seed-131 physical-dista
 ## November 19: Scalar projected-area InfoNCE
 
 Added scalar-area observations, scalar encoder/critic code, fixed protocol, all 15 new checkpoints, training histories, figures, results and independent reload audits. Encoder inputs and scorer targets are one-dimensional areas. The ICM actors remain from the original coordinate-trained sources. Next-area prediction MSE is not directly comparable with earlier coordinate-target MSE. All 15 final models have no detected folds on the stated grid; no injectivity guarantee is claimed.
+
+
+## November 19: Causal source and optimizer interventions
+
+The loss-source study includes 100 completed alignment-source × regularizer-source
+fits, 30 independent-endpoint fits and ten alignment-removal fits. The optimizer
+study includes exact replay and first-moment interventions across five historical
+failures. Reports, figures, protocols, complete numerical measurements and audits
+are included. Derived training/fork checkpoints stay local and are inventoried
+with hashes and inclusion flags in the manifest. No unrelated study outcomes are
+published by this update; existing sampling-crossing status remains separate.
+
+Reproduce the new source interventions from repository root:
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/loss-source-crossing/run.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/loss-source-crossing/iid_endpoints.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/loss-source-crossing/alignment_ablation.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/loss-source-crossing/report.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/occupancy-integral/birth_replication.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/occupancy-integral/report_births.py
+```
+
+The single-event `occupancy-integral/momentum_history.py` also requires the older
+birth-event checkpoint. Regenerate the original training-mechanism study and
+its `replay_birth.py` first, then run it. Saved local audits record local source
+hashes; the manifest distinguishes source files from portable path adaptations.
+Training formulas are unchanged by those adaptations. The older 100-cell
+initialization study must be regenerated before running its new `report.py`.
+Finite-grid folding checks and local causal interventions do not establish an
+all-input injectivity guarantee or universal occupancy threshold.

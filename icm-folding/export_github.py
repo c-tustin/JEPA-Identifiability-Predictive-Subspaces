@@ -16,7 +16,7 @@ def main():
     dest.mkdir(exist_ok=True)
     records=[]
     roots=[(WORKSPACE/'explanations/occupancy-folding',Path('sources/explanations/occupancy-folding'))]
-    roots += [(HERE/name,Path(name)) for name in ('inverse-occupancy-lr','mlp-gradient-study','no-fold-proof','weighted-moments-validation','occupancy-integral','ema-study','shared-occupancy-ou','icm-matched-ou','fold-development','occupancy-causal-dwell','raw-embedding-infonce','initialization-crossing','scalar-area-infonce','sampling-crossing')]
+    roots += [(HERE/name,Path(name)) for name in ('inverse-occupancy-lr','mlp-gradient-study','no-fold-proof','weighted-moments-validation','occupancy-integral','ema-study','shared-occupancy-ou','icm-matched-ou','fold-development','occupancy-causal-dwell','raw-embedding-infonce','initialization-crossing','scalar-area-infonce','sampling-crossing','loss-source-crossing')]
     roots += [(HERE/name,Path(name)) for name in ('README.md','PROGRESS.md','export_github.py')]
     for source,relative in roots:
         files=[source] if source.is_file() else sorted(p for p in source.rglob('*') if p.is_file())

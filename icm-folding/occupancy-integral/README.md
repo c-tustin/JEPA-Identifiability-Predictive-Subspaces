@@ -60,3 +60,63 @@ OPENBLAS_NUM_THREADS=1 python3 icm-folding/occupancy-integral/run.py
 Requires the original source and birth-event checkpoints, NumPy, PyTorch and Matplotlib. Input/checkpoint and script SHA-256 hashes are recorded in the JSON. The script asserts the integral/autograd identities, exact Adam replay, a current-gradient contraction check and a central finite-difference check. It also evaluates finite regularizer-only SGD steps without using them to claim whole-domain order.
 
 This is one previously inspected seed and update, not an independent cohort, continuous-domain certificate, full training-history occupancy attribution, or a universal concentration threshold. Full-data plug-in moments do not equal the expectation of a finite-batch squared-moment objective. No new policy or encoder training sweep was run. Next work is to accumulate per-bin Adam contributions over the preceding updates and repeat paired occupancy contrasts across seeds.
+
+
+## November 19: Historical attribution and actual optimizer-state intervention
+
+The [history tracer](momentum_history.py) replays all 205 updates exactly and
+contracts each past sample's SIGReg gradient through the actual birth-step
+second-moment denominator and before-step slope sensitivity. It records
+signed contributions by update and log-distance bin; these are linear
+attributions along the original path, not independent training histories.
+Their historical sum is −0.0063831652, agreeing with the saved numerator
+contraction within 3.7e−10. Per-sample sums agree with parameter-gradient
+contractions within 4.4e−11. [Measurements](output/momentum_history.json),
+[figure](output/momentum_history.png).
+
+More decisively, four actual one-step Adam forks start with identical saved
+before-weights, current gradients, second moments, step count and learning
+rate. Only the historical first-moment numerator is changed:
+
+| First-moment history | Slope at distance 16 after update | Detected turn |
+| --- | ---: | --- |
+| Original | −0.000832708 | 15.8112 |
+| Remove SIGReg history | +0.005567166 | None |
+| Remove all history | +0.005577816 | None |
+| Remove alignment history | −0.000822330 | 15.8136 |
+
+The full fork reproduces saved parameters bit-for-bit. Removing SIGReg
+momentum prevents this specific fold-creation step, while removing alignment
+momentum does not. Every fork is checked on a 20,001-point float64 derivative
+grid; fork checkpoints (`output/momentum_history_forks.pt`) remain local.
+This identifies a causal role for accumulated SIGReg momentum at this event.
+It does not show permanent prevention, that every fold needs momentum, or that
+occupancy is the only upstream cause. The first turn is outside the stored
+source support and later moves inside it. Run with:
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/occupancy-integral/momentum_history.py
+```
+
+
+## Replication across all five historical failures
+
+The [fixed-protocol replication](BIRTH_PROTOCOL.md) scans every update through
+500 in all five original final-folded runs, then requires their full
+4,000-update replays to match historical final weights exactly. It finds eight
+ordered-to-folded events and retains all of them. All 32 intervention models
+pass independent dense checkpoint-reload checks. Removing SIGReg history
+prevents six event steps; removing alignment history prevents none.
+
+The exceptions matter: source 139 has a first-update transient without any
+history, and source 132's update 368 still folds after removing all first
+moment history. Therefore momentum is a demonstrated trigger for several
+births, not a universal prerequisite. One-step prevention also does not imply
+permanent repair. [Complete event table](output/BIRTH_RESULTS.md),
+[measurements](output/birth_replication.json),
+[figure](output/birth_replication.png), [audit](output/birth_verification.json).
+
+```sh
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/occupancy-integral/birth_replication.py
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/occupancy-integral/report_births.py
+```
