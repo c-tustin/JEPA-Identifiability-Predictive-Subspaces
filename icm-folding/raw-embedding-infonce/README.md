@@ -21,3 +21,11 @@ All 15 fits completed: **0/10 historical and 0/5 reused follow-up sources have a
 [Results and per-seed measurements](output/RESULTS.md) · [Summary](output/summary.json) · [Independent verification](output/verification.json) · [Formula checks](output/formula-checks.json) · [All final curves](output/curves.png)
 
 All 15 final encoders were independently reloaded and checked on 20,001-point float64 derivative grids; source/batch hashes, initial weights, raw statistics and saved decoder errors were verified. New checkpoints are included in this study's output folder. The five follow-up datasets are reused, not newly collected validation. Differences in critic, candidate count and compute mean comparisons with the temporal run are descriptive. All fold checks are empirical, not analytic guarantees.
+
+## November 19: Training and error convergence
+
+[Encoder-training curves](output/training_convergence.png) · [Prediction-error curves](output/prediction_convergence.png) · [Representative representations](output/representative_representations.png) · [Seed-131 comparison](output/seed131_comparison.png)
+
+[Method and reproduction](CONVERGENCE.md) · [Measurements](output/convergence/RESULTS.md) · [Replay verification](output/convergence/verification.json). Dense histories were recovered by replay: all 15 encoders, scorers and downstream predictors reproduce the saved weights bit-for-bit. Encoder/critic evaluations occur every 25 updates; separate frozen-encoder decoder errors are evaluated on whole datasets every 50 decoder updates. The mean final held-out decoder MSE across all 15 sources is 0.001224 (median 0.001148).
+
+The scorer's raw MSE falls early and then increases; this is not a reconstruction-trained network. At least 99.927% of final held-out scorer MSE is perpendicular to the observed raw-data line in every source. Removing that component changes log probabilities by at most 1.02e-6, consistent with cancellation of candidate-independent score shifts. The prediction-error plots use a separate calibrated decoder. Representative seeds 130, 144 and 141 have the lowest, median and highest final held-out prediction errors, respectively. Cross-objective shape comparisons are centered, scaled and sign oriented for display; learning snapshots retain their original units. PNG and vector SVG versions are included.

@@ -1,6 +1,17 @@
 # Merged progress: ICM policy, folding, and repairs
 
-Updated November 18, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+
+
+## November 19: Dense raw/code InfoNCE convergence and representation plots
+
+Recovered dense histories for all 15 completed raw/code fits by [deterministic replay](raw-embedding-infonce/convergence.py), with [methods](raw-embedding-infonce/CONVERGENCE.md), [plotter](raw-embedding-infonce/plot_convergence.py) and [measurements](raw-embedding-infonce/output/convergence/RESULTS.md). Original checkpoints and protocol are unchanged. Every replay exactly matches saved final encoder, scorer and downstream decoder tensors, all six original sampled training losses, and final full-dataset decoder errors. Encoder/critic fixed train/held-out sets are evaluated every 25 updates; whole downstream datasets every 50 separate decoder updates. Histories, hashes and [audits](raw-embedding-infonce/output/convergence/verification.json) are saved as portable derived artifacts.
+
+[Training curves](raw-embedding-infonce/output/training_convergence.png) show median held-out InfoNCE 7.736 → 4.287. [Prediction curves](raw-embedding-infonce/output/prediction_convergence.png) show median held-out next-observation MSE 0.7178 → 0.001148 during the 1,500-update frozen-encoder decoder fit; final mean is 0.001224. These are different training stages and different target units. Bands are descriptive 10–90% ranges across reused sources, not confidence intervals. Intermediate-encoder downstream probe errors are not measured.
+
+The additional raw-MSE diagnostic reveals scorer drift: raw reconstruction MSE initially falls then rises, despite improving contrastive loss. At least 99.927% of final held-out scorer MSE is perpendicular to the observed one-dimensional raw-data line in every run. Projecting away that component changes candidate log probabilities by at most 1.02e-6. Such a component adds a row-constant distance term and cancels from the softmax; the scorer must not be interpreted as a calibrated reconstruction model. This does not change the saved final representations or existing downstream measurements.
+
+[Representation examples](raw-embedding-infonce/output/representative_representations.png) use sources 130, 144 and 141, selected by lowest/median/highest final held-out MSE, with initial/intermediate/final curves and final cross-objective comparisons. [Seed 131](raw-embedding-infonce/output/seed131_comparison.png) is shown separately as the earlier SIGReg fold case. Display-only centering, scaling and sign orientation are explicit. No new sources, tuning, repair or all-input guarantee is claimed.
 
 
 ## November 18: Raw observation versus own embedding InfoNCE

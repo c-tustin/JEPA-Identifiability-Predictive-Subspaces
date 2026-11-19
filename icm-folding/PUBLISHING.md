@@ -44,3 +44,7 @@ This snapshot is evidence and reproducible research code. Weighted moments' stan
 ## November 18: Raw observation / own embedding InfoNCE
 
 The raw/code study includes all 15 new checkpoints, code, fixed protocol, final curves and independent verification. Run the three commands in `raw-embedding-infonce/README.md` from the repository root. The trainer reuses the stored source datasets; the comparison report additionally requires the earlier alternative-objective checkpoints, regenerated using that study's README. Results are finite-grid empirical checks on reused datasets, with a restricted quadratic critic and one hyperparameter setting.
+
+## November 19: Dense convergence and representative curves
+
+The raw/code study now includes compressed per-source histories, bit-exact replay audits, encoder-training and separate downstream-decoder convergence plots, mechanically selected representation examples, and vector SVGs. Run `convergence.py` and `plot_convergence.py` using its `CONVERGENCE.md`. All 15 final encoder/scorer/decoder states reproduce the saved checkpoints bit-for-bit. Scorer raw reconstruction MSE grows in an unpenalized direction; it is distinguished from downstream prediction error. Original checkpoints and protocol are unchanged.

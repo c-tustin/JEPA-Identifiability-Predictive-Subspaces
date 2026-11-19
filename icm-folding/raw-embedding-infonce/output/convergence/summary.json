@@ -1,0 +1,155 @@
+{
+  "date": "2026-11-19",
+  "count": 15,
+  "selected_seeds": [
+    130,
+    144,
+    141
+  ],
+  "selection": "min, median, max final held-out MSE",
+  "all_encoder_critic_decoder_replays_bit_exact": true,
+  "scorer_diagnostics": [
+    {
+      "seed": 130,
+      "raw_mse": 318.30299682994576,
+      "parallel_mse": 0.12638115731227928,
+      "orthogonal_mse": 318.17661567263343,
+      "orthogonal_fraction": 0.9996029532911379,
+      "max_abs_log_probability_shift_after_projection": 4.6078080018219225e-07
+    },
+    {
+      "seed": 131,
+      "raw_mse": 328.4326096716132,
+      "parallel_mse": 0.23970047762517188,
+      "orthogonal_mse": 328.192909193988,
+      "orthogonal_fraction": 0.9992701684590187,
+      "max_abs_log_probability_shift_after_projection": 6.319444842972644e-07
+    },
+    {
+      "seed": 132,
+      "raw_mse": 445.8654150494079,
+      "parallel_mse": 0.18595490814986437,
+      "orthogonal_mse": 445.679460141258,
+      "orthogonal_fraction": 0.9995829348904999,
+      "max_abs_log_probability_shift_after_projection": 1.020458833878024e-06
+    },
+    {
+      "seed": 133,
+      "raw_mse": 371.98355734296064,
+      "parallel_mse": 0.24277368839350646,
+      "orthogonal_mse": 371.74078365456717,
+      "orthogonal_fraction": 0.999347353710665,
+      "max_abs_log_probability_shift_after_projection": 4.1073067791330686e-07
+    },
+    {
+      "seed": 134,
+      "raw_mse": 432.60841164032587,
+      "parallel_mse": 0.08472705698936932,
+      "orthogonal_mse": 432.5236845833365,
+      "orthogonal_fraction": 0.9998041483829033,
+      "max_abs_log_probability_shift_after_projection": 1.433804399653127e-07
+    },
+    {
+      "seed": 135,
+      "raw_mse": 528.877309622168,
+      "parallel_mse": 0.07441651840873932,
+      "orthogonal_mse": 528.8028931037594,
+      "orthogonal_fraction": 0.9998592934182374,
+      "max_abs_log_probability_shift_after_projection": 2.0684126056380592e-07
+    },
+    {
+      "seed": 136,
+      "raw_mse": 840.7551432879354,
+      "parallel_mse": 0.3964646051464242,
+      "orthogonal_mse": 840.358678682789,
+      "orthogonal_fraction": 0.9995284422482437,
+      "max_abs_log_probability_shift_after_projection": 7.618839603651395e-08
+    },
+    {
+      "seed": 137,
+      "raw_mse": 262.84702949924105,
+      "parallel_mse": 0.10665020010278427,
+      "orthogonal_mse": 262.7403792991382,
+      "orthogonal_fraction": 0.9995942499319626,
+      "max_abs_log_probability_shift_after_projection": 5.902946131897124e-07
+    },
+    {
+      "seed": 138,
+      "raw_mse": 352.8910471028599,
+      "parallel_mse": 0.091146443446755,
+      "orthogonal_mse": 352.7999006594132,
+      "orthogonal_fraction": 0.9997417150585286,
+      "max_abs_log_probability_shift_after_projection": 2.053220562459046e-07
+    },
+    {
+      "seed": 139,
+      "raw_mse": 418.9348887927261,
+      "parallel_mse": 0.23316870171943258,
+      "orthogonal_mse": 418.70172009100673,
+      "orthogonal_fraction": 0.9994434249618327,
+      "max_abs_log_probability_shift_after_projection": 4.214786741840726e-07
+    },
+    {
+      "seed": 140,
+      "raw_mse": 384.00397420803347,
+      "parallel_mse": 0.1477881264827177,
+      "orthogonal_mse": 383.85618608155073,
+      "orthogonal_fraction": 0.9996151390704028,
+      "max_abs_log_probability_shift_after_projection": 6.650280672815256e-07
+    },
+    {
+      "seed": 141,
+      "raw_mse": 334.6549311380275,
+      "parallel_mse": 0.1634016482655472,
+      "orthogonal_mse": 334.491529489762,
+      "orthogonal_fraction": 0.9995117309411521,
+      "max_abs_log_probability_shift_after_projection": 4.3197061216915245e-07
+    },
+    {
+      "seed": 142,
+      "raw_mse": 436.459568595338,
+      "parallel_mse": 0.11170373155465955,
+      "orthogonal_mse": 436.3478648637834,
+      "orthogonal_fraction": 0.9997440685470268,
+      "max_abs_log_probability_shift_after_projection": 4.325118503345493e-07
+    },
+    {
+      "seed": 143,
+      "raw_mse": 486.6424693362132,
+      "parallel_mse": 0.1590113772865349,
+      "orthogonal_mse": 486.4834579589267,
+      "orthogonal_fraction": 0.9996732480469626,
+      "max_abs_log_probability_shift_after_projection": 3.7037417044416543e-07
+    },
+    {
+      "seed": 144,
+      "raw_mse": 477.3100337575715,
+      "parallel_mse": 0.10478963852489358,
+      "orthogonal_mse": 477.2052441190464,
+      "orthogonal_fraction": 0.9997804579180958,
+      "max_abs_log_probability_shift_after_projection": 1.559109534809977e-07
+    }
+  ],
+  "encoder_evaluations": 161,
+  "decoder_evaluations": 31,
+  "encoder_final_median": {
+    "train_nce": 4.235446929931641,
+    "heldout_nce": 4.2869157791137695,
+    "train_raw_mse": 405.2010803222656,
+    "heldout_raw_mse": 418.9348449707031
+  },
+  "decoder_final_mean": {
+    "decoder_train_mse": 0.0012319407154185076,
+    "decoder_heldout_mse": 0.0012239243641185263,
+    "decoder_coverage_mse": 0.06941327098951054
+  },
+  "decoder_final_median": {
+    "decoder_train_mse": 0.0012427613837644458,
+    "decoder_heldout_mse": 0.001147901057265699,
+    "decoder_coverage_mse": 0.07279220223426819
+  },
+  "code_hashes": {
+    "convergence.py": "796451632b7fd0551ec8c560c8eb818ef0b0b2b5326487079ec6d4645a640d32",
+    "plot_convergence.py": "36e425221bdac81c6f12a3406988d32e415f503c0632495ba44bbe9b38b4f228"
+  }
+}

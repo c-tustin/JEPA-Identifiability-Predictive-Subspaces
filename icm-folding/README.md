@@ -1,6 +1,6 @@
 # ICM policy folding: progress and repairs
 
-Consolidated research workspace, updated November 18, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
+Consolidated research workspace, updated November 19, 2026. This brings the existing folding, policy, mechanism, and repair work together at the main workspace level. Start with [the merged progress report](PROGRESS.md).
 
 Several named folders here are relative symbolic links to the original studies; newer experiment directories are authored directly here. They expose the existing code, checkpoints, figures, protocols, and results without duplicating large artifacts or changing paths used by running experiments. The originals remain the source of truth. Open the source-document links below for documentation with its original relative links intact. Run reproduction commands from the main `kempner` directory using the original paths in each protocol.
 
@@ -8,6 +8,7 @@ Several named folders here are relative symbolic links to the original studies; 
 
 | Work | Source documentation | Results and figures |
 | --- | --- | --- |
+| Raw/code InfoNCE training and error convergence | [Exact replay and methods](raw-embedding-infonce/CONVERGENCE.md), [measurements](raw-embedding-infonce/output/convergence/RESULTS.md) | [Encoder training](raw-embedding-infonce/output/training_convergence.png), [prediction error](raw-embedding-infonce/output/prediction_convergence.png), [representations](raw-embedding-infonce/output/representative_representations.png); all 15 model/scorer/decoder replays bit-exact; unpenalized scorer drift distinguished from prediction error |
 | Raw observation / own embedding InfoNCE | [Study](raw-embedding-infonce/README.md), [fixed protocol](raw-embedding-infonce/PROTOCOL.md), [trainer](raw-embedding-infonce/run.py) | [Results](raw-embedding-infonce/output/RESULTS.md), [curves](raw-embedding-infonce/output/curves.png), [verification](raw-embedding-infonce/output/verification.json); 0/10 historical and 0/5 reused follow-up final folds; separate from temporal InfoNCE |
 | Plain-language fold development | [Labels, stays and training](occupancy-causal-dwell/README.md), [extraction script](occupancy-causal-dwell/explain_development.py) | [One run through training](occupancy-causal-dwell/output/development_plain.png), [saved onset bracket](occupancy-causal-dwell/output/development_plain.json); separates temporary turns from final fold counts |
 | Causal occupancy intervention with fixed alignment | [Study](occupancy-causal-dwell/README.md), [fixed protocol](occupancy-causal-dwell/PROTOCOL.md), [trainer](occupancy-causal-dwell/run.py) | [Summary](occupancy-causal-dwell/output/causal_summary.png), [encoder curves](occupancy-causal-dwell/output/occupancy_encoders_slopes.png), [results](occupancy-causal-dwell/output/RESULTS.md); 40 fits and 60 same-state forks. At 50% stays, folds 5/10 → 9/10; at 75% stays, 5/10 → 0/10 |
