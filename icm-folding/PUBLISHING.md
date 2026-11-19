@@ -48,3 +48,7 @@ The raw/code study includes all 15 new checkpoints, code, fixed protocol, final 
 ## November 19: Dense convergence and representative curves
 
 The raw/code study now includes compressed per-source histories, bit-exact replay audits, encoder-training and separate downstream-decoder convergence plots, mechanically selected representation examples, and vector SVGs. Run `convergence.py` and `plot_convergence.py` using its `CONVERGENCE.md`. All 15 final encoder/scorer/decoder states reproduce the saved checkpoints bit-for-bit. Scorer raw reconstruction MSE grows in an unpenalized direction; it is distinguished from downstream prediction error. Original checkpoints and protocol are unchanged.
+
+## November 19: Distance representation labels
+
+Representation figure labels now distinguish physical distance from learned scalar code units and identify teal as the latest raw/own-code InfoNCE. Display-only normalization remains explicit. No model weights or numerical results changed.

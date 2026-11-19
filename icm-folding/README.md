@@ -4,6 +4,8 @@ Consolidated research workspace, updated November 19, 2026. This brings the exis
 
 Several named folders here are relative symbolic links to the original studies; newer experiment directories are authored directly here. They expose the existing code, checkpoints, figures, protocols, and results without duplicating large artifacts or changing paths used by running experiments. The originals remain the source of truth. Open the source-document links below for documentation with its original relative links intact. Run reproduction commands from the main `kempner` directory using the original paths in each protocol.
 
+Representation plots label physical distance separately from learned code units; see [how to read the InfoNCE distance representations](raw-embedding-infonce/README.md#reading-the-distance-representation-graphs).
+
 ## Work collected so far
 
 | Work | Source documentation | Results and figures |

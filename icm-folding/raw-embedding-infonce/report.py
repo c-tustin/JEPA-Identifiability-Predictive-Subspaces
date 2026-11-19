@@ -110,9 +110,9 @@ def main():
         g=curves[seed]
         ax.plot(np.exp(g['q']),g['y'],color='#147b79' if not g['folded'] else '#b94348')
         ax.set_title(f"{seed}: {'fold' if g['folded'] else 'no detected fold'}",fontsize=10)
-        ax.set_xlabel('Distance (evaluation only)')
-        ax.set_ylabel('Scalar code')
-    fig.suptitle('Raw observation / own embedding InfoNCE — final encoders')
+        ax.set_xlabel('Physical distance (evaluation only)')
+        ax.set_ylabel('Representation z (arbitrary units)')
+    fig.suptitle('Learned distance representations — raw / own-code InfoNCE\nHorizontal: physical distance · vertical: learned code in arbitrary units')
     fig.tight_layout()
     fig.savefig(OUT/'curves.png',dpi=150)
     plt.close(fig)

@@ -2,6 +2,9 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 19: Clarified distance-representation figure labels
+
+Renamed the raw/code representation figure titles and axes to distinguish physical distance from its learned scalar representation. Comparison legends identify teal as the latest raw/own-code InfoNCE. Documented unconstrained code units, sign and offset, and the display-only normalization in comparison panels. Regenerated figures from existing audited checkpoints and replay histories; no training or numerical-result changes. Empirical fold checks remain distinct from guarantees.
 
 ## November 19: Dense raw/code InfoNCE convergence and representation plots
 
@@ -13,7 +16,6 @@ The additional raw-MSE diagnostic reveals scorer drift: raw reconstruction MSE i
 
 [Representation examples](raw-embedding-infonce/output/representative_representations.png) use sources 130, 144 and 141, selected by lowest/median/highest final held-out MSE, with initial/intermediate/final curves and final cross-objective comparisons. [Seed 131](raw-embedding-infonce/output/seed131_comparison.png) is shown separately as the earlier SIGReg fold case. Display-only centering, scaling and sign orientation are explicit. No new sources, tuning, repair or all-input guarantee is claimed.
 
-
 ## November 18: Raw observation versus own embedding InfoNCE
 
 Added and completed [the raw/code study](raw-embedding-infonce/README.md) with a [fixed protocol](raw-embedding-infonce/PROTOCOL.md). Positives are `(x, f(x))`, negatives pair the same code with other raw observations. Raw coordinates are standardized using training-endpoint statistics, with no learned raw branch. A learned 1→48→48→6 network supplies a quadratic distance critic. This replaces temporal pairing rather than renaming the earlier temporal InfoNCE experiment; no temporal alignment, SIGReg, EMA or reconstruction-MSE term is added.
@@ -22,13 +24,11 @@ All 15 encoders start from the matched initializations and train for 4,000 updat
 
 All 15 new checkpoints were independently reloaded and checked on 20,001-point float64 derivative grids. Source/batch hashes, encoder initializations, training raw statistics and downstream decoder errors were verified. Explicit-score, finite-difference code-gradient, permutation, mismatch-sensitivity, raw-detachment and encoder/critic-gradient checks passed. [Results](raw-embedding-infonce/output/RESULTS.md), [curves](raw-embedding-infonce/output/curves.png), [audit](raw-embedding-infonce/output/verification.json). The exporter includes the new code, artifacts and checkpoints. Reused sources, one restricted critic and one hyperparameter setting do not establish fresh validation, critic robustness, late repair or an analytic injectivity guarantee. Independent sources, broader critics and nuisance/stochastic observations remain open.
 
-
 ## November 18: Plain-language development sequence (no new training)
 
 Added [a plainly labeled training sequence](occupancy-causal-dwell/output/development_plain.png), [extraction code](occupancy-causal-dwell/explain_development.py) and [recorded timing bracket](occupancy-causal-dwell/output/development_plain.json) from existing run-131 dwell histories. With 128 source pairs plus 384 stays per batch, native-like stays show no detected turn at update 200 and a first saved turn at 300; the final turn is near distance 2.519. Spread-out stays show no turn at any saved 100-update checkpoint. The initial run-131 model is checked to have no sampled turn. These snapshots bracket onset in (200,300] without excluding unsaved transient turns or establishing continuous-domain order. Source code and checkpoint identities are preserved; no new fit is reported.
 
 Clarified that the old F/F/F labels describe three separate trained models, ordered means no detected turn, and lowercase f denotes source-pair fraction. Explained stay pairs as identical observations and distinguished encoder fitting from actor training. Development should track onset, turn position and persistence, rather than treating final fold counts as creation rates. Other inspected histories contain temporary reversals; the initial seed-136 encoder already has a sampled turn, which disappears before a later native-path turn develops.
-
 
 ## November 17: Occupancy causality with invariant alignment (completed exploratory comparison)
 

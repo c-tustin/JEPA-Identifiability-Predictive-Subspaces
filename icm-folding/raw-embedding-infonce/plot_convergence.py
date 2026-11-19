@@ -18,7 +18,7 @@ TEAL='#087f8c'
 ORANGE='#d16b32'
 PURPLE='#7b59a3'
 COLORS={'sigreg':'#ba4450','vicreg':'#8264a8','infonce':'#cc8a2e','raw-own-code':TEAL}
-LABELS={'sigreg':'SIGReg','vicreg':'VICReg (scalar)','infonce':'Temporal InfoNCE','raw-own-code':'Raw / own code'}
+LABELS={'sigreg':'SIGReg','vicreg':'VICReg (scalar)','infonce':'Temporal InfoNCE','raw-own-code':'Raw / own-code InfoNCE (latest)'}
 
 
 def digest(path):
@@ -146,19 +146,19 @@ def main():
             g=frames[step]
             axes[0,j].plot(np.exp(g['q']),g['y'],color=color,lw=2 if step==4000 else 1.3,label=f'{step:,}')
         axes[0,j].set(title=f"Seed {seed} · {role}\nfinal prediction MSE {r['prediction']['native_mse']:.6f}",
-                       ylabel='Scalar code (original units)')
+                       ylabel='Distance representation z\n(arbitrary code units)')
         for method in ('sigreg','vicreg','infonce','raw-own-code'):
             g=r['geometry'] if method=='raw-own-code' else original.base.trials.load(
                 original.base.OUT/'runs'/f'{seed}-{method}-c0-n4000.pt')['geometry']
             axes[1,j].plot(np.exp(g['q']),normalize_curve(g),color=COLORS[method],lw=2,
                            label=LABELS[method])
-        axes[1,j].set(ylabel='Code (centered, unit std, sign oriented)')
+        axes[1,j].set(ylabel='Distance representation z\n(centered, unit std, sign oriented)')
     for ax in axes.flat:
         ax.set(xlabel='Physical distance (evaluation only)',xlim=(1,16))
         ax.grid(True)
     axes[0,0].legend(title='Encoder updates',fontsize=8,title_fontsize=9,ncol=2)
     axes[1,0].legend(fontsize=8)
-    fig.suptitle('Representative scalar representations\n'
+    fig.suptitle('Learned representations of physical distance\n'
                  'Columns chosen by raw/code final held-out MSE · top: learning over updates · bottom: final objective comparison',fontsize=14)
     finish(fig,'representative_representations')
 
@@ -172,14 +172,14 @@ def main():
         d=np.exp(g['q'])
         axes[0].plot(d,y,color=COLORS[method],label=LABELS[method],lw=2)
         axes[1].plot(d,np.gradient(y,d),color=COLORS[method],lw=2)
-    axes[0].set(title='Final scalar representations',ylabel='Code (centered, unit std, sign oriented)')
+    axes[0].set(title='Learned distance representations',ylabel='Distance representation z\n(centered, unit std, sign oriented)')
     axes[0].legend(fontsize=9)
     axes[1].axhline(0,color='#55616c',lw=1)
-    axes[1].set(title='Negative slope reveals a reversal',ylabel='Derivative of displayed code vs distance')
+    axes[1].set(title='Representation slope vs distance',ylabel='Change in displayed code per unit distance')
     for ax in axes:
         ax.set(xlabel='Physical distance (evaluation only)',xlim=(1,16))
         ax.grid(True)
-    fig.suptitle('Seed 131 — the previously discussed SIGReg fold',fontsize=14)
+    fig.suptitle('Physical distance → learned scalar code · seed 131\nTeal: latest raw / own-code InfoNCE · code values are not physical distances',fontsize=14)
     finish(fig,'seed131_comparison')
 
     summary={'date':'2026-11-19','count':15,'selected_seeds':selected,'selection':'min, median, max final held-out MSE',
