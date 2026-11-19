@@ -16,7 +16,7 @@ def main():
     dest.mkdir(exist_ok=True)
     records=[]
     roots=[(WORKSPACE/'explanations/occupancy-folding',Path('sources/explanations/occupancy-folding'))]
-    roots += [(HERE/name,Path(name)) for name in ('inverse-occupancy-lr','mlp-gradient-study','no-fold-proof','weighted-moments-validation','occupancy-integral','ema-study','shared-occupancy-ou','icm-matched-ou','fold-development','occupancy-causal-dwell','raw-embedding-infonce','initialization-crossing')]
+    roots += [(HERE/name,Path(name)) for name in ('inverse-occupancy-lr','mlp-gradient-study','no-fold-proof','weighted-moments-validation','occupancy-integral','ema-study','shared-occupancy-ou','icm-matched-ou','fold-development','occupancy-causal-dwell','raw-embedding-infonce','initialization-crossing','scalar-area-infonce')]
     roots += [(HERE/name,Path(name)) for name in ('README.md','PROGRESS.md','export_github.py')]
     for source,relative in roots:
         files=[source] if source.is_file() else sorted(p for p in source.rglob('*') if p.is_file())
@@ -25,7 +25,7 @@ def main():
             targetrel=relative/local if source.is_dir() else relative
             if '__pycache__' in p.parts or p.suffix in ('.pyc','.log','.aux','.out') or p.name=='.DS_Store':continue
             data=p.read_bytes()
-            included=p.suffix!='.pt' or ('fresh-sources' in p.parts) or relative.name in ('inverse-occupancy-lr','weighted-moments-validation','ema-study','raw-embedding-infonce')
+            included=p.suffix!='.pt' or ('fresh-sources' in p.parts) or relative.name in ('inverse-occupancy-lr','weighted-moments-validation','ema-study','raw-embedding-infonce','scalar-area-infonce')
             entry=dict(source=str(p.relative_to(WORKSPACE)),destination=str(targetrel),bytes=len(data),source_sha256=sha(data),included=included)
             if included:
                 original=data

@@ -56,3 +56,7 @@ Representation figure labels now distinguish physical distance from learned scal
 ## November 19: Latest-only InfoNCE representations
 
 Added latest-method-only final distance representations, seed-131 physical-distance slopes, and training snapshots in original code units, with a checkpoint and derivative audit. The README distinguishes empirical zero-of-15 final folds from the additional constraints or validated derivative bounds needed for a no-fold guarantee. No training or checkpoint changes.
+
+## November 19: Scalar projected-area InfoNCE
+
+Added scalar-area observations, scalar encoder/critic code, fixed protocol, all 15 new checkpoints, training histories, figures, results and independent reload audits. Encoder inputs and scorer targets are one-dimensional areas. The ICM actors remain from the original coordinate-trained sources. Next-area prediction MSE is not directly comparable with earlier coordinate-target MSE. All 15 final models have no detected folds on the stated grid; no injectivity guarantee is claimed.
