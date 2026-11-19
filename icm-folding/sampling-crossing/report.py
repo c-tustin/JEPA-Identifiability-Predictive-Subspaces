@@ -81,8 +81,23 @@ def main():
         rows.append(row);hashes[path.name]=R.digest(path.read_bytes())
     assert len(rows)==len(cells)==500 and len(seen)==500
     folds,x=analyze(rows,'folded');material,m=analyze(rows,'material_fold')
+    historical_path=R.OUT/'summary-n4000.json'
+    historical=json.loads(historical_path.read_text())
+    assert historical['completed']==100 and len(historical['rows'])==100
+    historical_differences=[]
+    for old in historical['rows']:
+        matched=[r for r in rows if r['data_seed']==old['data_seed'] and r['init_seed']==old['init_seed']]
+        matched.sort(key=lambda r:r['plan'])
+        if any(r['folded']!=old['folded'] for r in matched):
+            historical_differences.append(dict(data_seed=old['data_seed'],init_seed=old['init_seed'],
+                historical_folded=old['folded'],historical_material=old['material_fold'],
+                fresh_folded=[r['folded'] for r in matched]))
+    historical_comparison=dict(summary_hash=R.digest(historical_path.read_bytes()),
+        original_folds=sum(r['folded'] for r in historical['rows']),
+        differing_dataset_init_pairs=historical_differences)
     summary=dict(status='complete_audited',completed=500,planned=500,folds=folds,material=material,
-        source_support_folds=sum(bool(r['roots_in_source_support']) for r in rows),rows=rows)
+        source_support_folds=sum(bool(r['roots_in_source_support']) for r in rows),
+        historical_comparison=historical_comparison,rows=rows)
     R.trials.atomic_json(S.OUT/'summary.json',summary)
     R.trials.atomic_json(S.OUT/'verification.json',dict(passed=True,checkpoints=500,
         geometry_reload_exact=True,initial_weights_and_plans_regenerated=True,
@@ -111,6 +126,7 @@ Every dataset/init pair was trained with five fresh, independently seeded alignm
 | --- | ---: | ---: |
 '''
     for d in S.DATA:text+=f"| {d} | {folds['by_dataset'][d]}/50 | {material['by_dataset'][d]}/50 |\n"
+    text+=f"\nSecondary range diagnostic: {summary['source_support_folds']}/500 fits have a final turn inside their own saved dataset's observed distance range. All are from datasets 131/132/133/136/139; the 20 extra turns from 134/135 are outside their respective observed ranges. The primary 270/500 count above still uses the prespecified full [1,16] evaluation interval.\n"
     text+='\n| Batch-plan label | Any final fold / 100 | Material final fold / 100 |\n| --- | ---: | ---: |\n'
     for p in S.PLANS:text+=f"| {p} | {folds['by_plan'][p]}/100 | {material['by_plan'][p]}/100 |\n"
     text+=f'''
@@ -124,7 +140,11 @@ Fraction of centered sum of squares for binary cell outcomes, including interact
 | --- | ---: | ---: |
 '''
     for key,v in folds['variance_decomposition']['fractions'].items():
-        text+=f"| {key.replace('_',' × ')} | {v:.3%} | {material['variance_decomposition']['fractions'][key]:.3%} |\n"
+        label='dataset × initialization × sampling' if key=='three_way' else key.replace('_',' × ')
+        text+=f"| {label} | {v:.3%} | {material['variance_decomposition']['fractions'][key]:.3%} |\n"
+    text+=f'\nThe separate historical matrix had {historical_comparison["original_folds"]}/100 final turns. Its differences from the fresh matrix are: '
+    text+='; '.join(f'dataset {v["data_seed"]}, initialization {v["init_seed"]}: historical folded={v["historical_folded"]}, material={v["historical_material"]}; fresh folded={v["fresh_folded"]}' for v in historical_differences)
+    text+='\n\nThe old extra tiny turn demonstrates that sampling can affect marginal cases. The invariance across five fresh streams does not establish invariance across every possible stream. Historical results are not pooled into the new 500-cell matrix.\n'
     text+='''
 These fits isolate encoder-training minibatch randomness from the fixed saved datasets conditional on the tested initialization bank and optimizer. They do not distinguish actor-training randomness from collection randomness, establish that occupancy is the unique dataset mechanism, or assess fresh-policy generalization. Shared episode/time indices do not match the physical observations across datasets. Five plans are a limited sampling replication. Fold detection remains a finite-grid diagnostic; no continuous-domain injectivity guarantee or downstream planning benefit is claimed.
 

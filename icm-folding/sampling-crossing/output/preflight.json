@@ -1,0 +1,87 @@
+{
+  "source_hashes": {
+    "130": "7e1a7b0fd5868fcfddb3e0345ea4899f9d8479fcefc03d16102a1cf1b496bca3",
+    "131": "16719ee25f2dd78a6ca3c675d128df461fc352e9655996cf1528d638b55f17da",
+    "132": "5e934518dc64a14ce064dde9002f549ea3b88700def5a13f068d639eca2a3e30",
+    "133": "e96c2f1cc2385bc5c7aec2a1eea52de3f9a5c0230845d1ae776c537faf4e02ee",
+    "134": "28faffedd68d9eddfa10e67be63e369b26133fd7a718ee1171090891dea5bd4d",
+    "135": "2a08b9896f0ff32e4996f797e91dff588a66320ae67880ac4d489a7047f7b3a5",
+    "136": "21c07001b9d00b85ccd44a49ff57d8647321ec4733fc1fc283ef1355b065806e",
+    "137": "f786c953fda2805cab03edda9b5995de1b2561e0b123d5c33967076f1d09a378",
+    "138": "6cf3f319e6ba530e85d3467f411ba875ef283e7ae0de252788814d1f5f86f579",
+    "139": "fe846a5eb9de6423939c12b16f95814e1802b854fb6803e1441862f23c266f1b"
+  },
+  "initial_hashes": {
+    "130": "4a1c5d0737d4d4e8db12de277532be1d01836784616b90bbb02162d420d8d726",
+    "131": "32dfecfbebf6804b8819a7a4f32f4067e5cf8a80ccd3e4fefadd30165327378f",
+    "132": "27ee59bd041fa6072e06b1788623247868e74ddd0659cec4f96c0333e7684ed7",
+    "133": "4474e2e9df3ccd64f1c3a5014be5eb43e8d48a9781d6bd578382f770695dddbb",
+    "134": "eae8db07351a9524dfea3acba04d68e512534818d6c073916877c1c8ef20778b",
+    "135": "0e3bf58f3f82f0a6da4952cb82c02880b775109f7063573be78ca6733f2fe22d",
+    "136": "fc966718450bef291a54c9ffd80248fbfe5d8f61d0067c5b757901c79645159d",
+    "137": "379666f8cef731df4cec7c915a0e2ad4fdd6a77edd135fb68dd5d03c19ec3a57",
+    "138": "3577402ba94b7bc9f7c76244a01b91aae306a7f1089db9e3289b11228c6f2eff",
+    "139": "bd5d31b5af9b997c282785b3b40ecee1c78875199353584bd4aecf4a63eb6cdc"
+  },
+  "plan_hashes": {
+    "0": [
+      "d1b2c37a0c0b8abc3a59ffef51b9ff4de43f6d13a5c8e0197cd856ced8a17e60",
+      "3656c3576c2448458f06c863ee08ad07bb34d5fc5454bc737b74063bda8c0a0a"
+    ],
+    "1": [
+      "c945c0cf59b90acdb8b7ab0df74456c8d8ccbc9bfb5dd82c96d69094f72f0cca",
+      "e598df069edcf909eb616894310964c25c1e631d9752dc4b858251ee19f960ae"
+    ],
+    "2": [
+      "d7a9d6e86b45ce81b1daf101a2b8acbf17a4256fab561189cdd446bf2b6d03bb",
+      "1f257843d81e29660fbb36d4f3b2949a61f2c3f11c9ad933557f25356b2e1825"
+    ],
+    "3": [
+      "37866bc0325490d85e256813ed4055ef92617910156a147acb7d32d9b33a993a",
+      "284c042336f9565c0a48420c97eeed684e3139f81c01e55d0d3f75f85433c387"
+    ],
+    "4": [
+      "80f7bf0f85a2348ceab397c1929751856994226c926cee0ed037cc251f2e924a",
+      "146ad7f1e1192e274c45668fbc535c1c62c79613488336b90b778e065cae712b"
+    ]
+  },
+  "config": {
+    "policy_updates": 600,
+    "jepa_steps": 4000,
+    "nenv": 16,
+    "rollout": 20,
+    "train_episodes": 256,
+    "eval_episodes": 64,
+    "horizon": 64,
+    "burnin": 128,
+    "batch": 512,
+    "distance_min": 1.0,
+    "distance_max": 16.0,
+    "move": 0.25,
+    "sigma": 0.7,
+    "rho": 0.9,
+    "sigreg_weight": 0.1,
+    "forward_weight": 0.2,
+    "reward_scale": 0.2,
+    "entropy_weight": 0.0005,
+    "gamma": 0.99
+  },
+  "dependencies": {
+    "icm-folding/sampling-crossing/run.py": "7cd9ede0625b34fad77e9941fe75336e03dcbb03a987a951f40c222946c87d53",
+    "icm-folding/sampling-crossing/PROTOCOL.md": "d94273d3cf32c30e73dfec6e07e66bde0ceb8d0e577571afe991217763a4a801",
+    "icm-folding/sampling-crossing/REFERENCES.json": "185c378e715ec296c93cb5ba1b55365e07e83773306208cb89dcf5c332ca0f0e",
+    "icm-folding/initialization-crossing/run.py": "5bd9e057e7436ce506c6318db97fa8ba54be62985863f7034ffb22d88c06b54b",
+    "predictive-closure-workspace/behavior-policy-experiments/qualitative-study/run_trials.py": "7149d54cef2126273b0459b471e331dc0570c9f894f3dfa3a1139efd77c6c7b5",
+    "predictive-closure-workspace/behavior-policy-experiments/reliability/run_study.py": "c20a49e93ce85c0486259e07a7145169b3dc99c6851b437c42139ee151079fca",
+    "predictive-closure-workspace/behavior-policy-experiments/curiosity/experiment.py": "b69f7def8642e54a8b726c2b0982040d8da75997b597976f35ad0a5253538328",
+    "predictive-closure-workspace/behavior-policy-experiments/identifiability/reproduce.py": "60c6636b5fe28487e07e1a911c448bdcc226d650a31972e6750a0cbcda58e3a4",
+    "predictive-closure-workspace/behavior-policy-experiments/identifiability/sigreg.py": "9ebc336776793c3bb33a59bd2a142849fd46b94bb4ce37bf8ff6cb5cb865f344",
+    "predictive-closure-workspace/behavior-policy-experiments/curriculum-controls/run_controls.py": "cbcff97aef32622fd73dca86acc376a9f863e627c3c4756dc56d1e94bc4c3232"
+  },
+  "passed": true,
+  "historical_replay_max_error": {
+    "130": 0.0,
+    "131": 0.0
+  },
+  "resume_model_and_adam_exact": true
+}
