@@ -2,6 +2,13 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 19: Dataset × initialization crossing (started; results pending)
+
+Added [a fixed-protocol crossing](initialization-crossing/PROTOCOL.md), [trainer](initialization-crossing/run.py) and [study notes](initialization-crossing/README.md). The design crosses all ten historical frozen-policy datasets with all ten original scalar-encoder initializations (100 fits, 4,000 updates each). Both original alignment and regularizer minibatch streams are held fixed within each dataset row; initial weights are held fixed within each initialization column. Diagonal fits must reproduce the historical final encoders bit-for-bit before crossed fits proceed. Checkpoints retain provenance, initial/final parameters, Adam state and 100-update geometry histories; final geometry is measured after reload on a 20,001-point float64 derivative grid.
+
+The first full diagonal replay (dataset 130, initialization 130) passed with zero maximum parameter difference from the original checkpoint. The complete batch has been launched with resumable checkpoints; no complete matrix or causal outcome is claimed. Dataset rows bundle actor learning, collection randomness and the fixed sampling plan, so this phase isolates initialization sensitivity conditional on those rows rather than separately identifying all sources of variation. Recollection from fixed actors and independent minibatch replications remain future phases. These are reused historical sources and finite-grid empirical checks, not fresh-source validation or injectivity guarantees.
+
+
 ## November 19: Latest-only InfoNCE representations and guarantee scope
 
 Added [a standalone latest-method plotter](raw-embedding-infonce/plot_latest.py), [all final distance representations](raw-embedding-infonce/output/latest_distance_representations.png), [seed-131 representation and physical-distance slope](raw-embedding-infonce/output/latest_seed131_distance.png), and [learning snapshots](raw-embedding-infonce/output/latest_distance_learning.png). These figures exclude alternative methods, retain original scalar code units and signs, and select learning examples by existing lowest/median/highest prediction error. Recomputed final geometries on 20,001 float64 points from hash-checked checkpoints; physical-distance derivatives use the chain rule and are compared with finite differences. [Audit](raw-embedding-infonce/output/latest_plots_verification.json).
