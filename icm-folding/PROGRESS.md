@@ -2,6 +2,14 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 19: Isolating saved datasets from minibatch sampling (in progress)
+
+Added [a fixed sampling-crossing protocol](sampling-crossing/PROTOCOL.md), [trainer](sampling-crossing/run.py), bounded [worker launcher](sampling-crossing/launch.py) and independent [audit/report](sampling-crossing/report.py). The 500-cell design crosses ten saved datasets, all ten original encoder initializations and five fresh paired alignment/regularizer batch plans. Plan generation uses independent explicit generators and no dataset or initialization seed; each plan's exact two index tensors are shared across the other factors. This removes the dataset/plan association in the previous 100-fit crossing while retaining the original optimizer, objective and 4,000-update budget.
+
+Preliminary implementation validation reproduced original full runs 130 and 131 exactly and passed an exact model/Adam interruption-resume check. Before training, archived source and initial-weight hashes anchor all ten original datasets and initializations. Validation passed and the full 500-fit matrix was launched with four one-thread workers; the complete matrix and its decomposition remain pending. The planned report independently reloads final geometry and checks provenance and pairing, counts within-data/init sampling disagreements, and reports the descriptive three-way sum-of-squares decomposition with all interactions. Dataset identity still bundles actor learning and trajectory collection; no new collection, fresh sources, downstream performance, or analytic injectivity guarantee is claimed.
+
+
+
 ## November 19: Scalar projected-area observations for InfoNCE
 
 Added [a scalar-area study](scalar-area-infonce/README.md), [fixed protocol](scalar-area-infonce/PROTOCOL.md), [trainer](scalar-area-infonce/run.py) and [independent report](scalar-area-infonce/report.py). The observation adapter reduces the three projected vertices to one unsigned area using the determinant formula. For this fixed frontoparallel triangle, area is A0/d². Both the encoder and contrastive scorer are now 1→48→48→1 tanh MLPs (encoder input tanh(4A), linear output). No coordinates or distance labels enter either learned network. Own-area/code InfoNCE uses 256 candidates, training-only raw standardization and the existing 4,000-update Adam schedule. Shape variation is not tested; independently varying shape can make area ambiguous about distance.

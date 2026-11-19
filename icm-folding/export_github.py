@@ -16,7 +16,7 @@ def main():
     dest.mkdir(exist_ok=True)
     records=[]
     roots=[(WORKSPACE/'explanations/occupancy-folding',Path('sources/explanations/occupancy-folding'))]
-    roots += [(HERE/name,Path(name)) for name in ('inverse-occupancy-lr','mlp-gradient-study','no-fold-proof','weighted-moments-validation','occupancy-integral','ema-study','shared-occupancy-ou','icm-matched-ou','fold-development','occupancy-causal-dwell','raw-embedding-infonce','initialization-crossing','scalar-area-infonce')]
+    roots += [(HERE/name,Path(name)) for name in ('inverse-occupancy-lr','mlp-gradient-study','no-fold-proof','weighted-moments-validation','occupancy-integral','ema-study','shared-occupancy-ou','icm-matched-ou','fold-development','occupancy-causal-dwell','raw-embedding-infonce','initialization-crossing','scalar-area-infonce','sampling-crossing')]
     roots += [(HERE/name,Path(name)) for name in ('README.md','PROGRESS.md','export_github.py')]
     for source,relative in roots:
         files=[source] if source.is_file() else sorted(p for p in source.rglob('*') if p.is_file())
@@ -34,7 +34,7 @@ def main():
                     data=data.replace(b'ROOT = HERE.parents[1]\nMECH = ROOT /',b'ROOT = HERE.parents[3]  # repository root for provenance paths\nMECH = HERE.parents[1] /')
                 if targetrel==Path('occupancy-integral/run.py'):
                     data=data.replace(b"MECH = ROOT/'predictive-closure-workspace/",b"MECH = HERE.parent/'sources/predictive-closure-workspace/")
-                if targetrel==Path('mlp-gradient-study/run.py'):
+                if targetrel in (Path('mlp-gradient-study/run.py'),Path('initialization-crossing/run.py')):
                     data=data.replace(b'ROOT = HERE.parents[1]',b'ROOT = HERE.parent / "sources"')
                 if targetrel in (Path('README.md'),Path('PROGRESS.md')):
                     text=data.decode().replace('../explanations/','sources/explanations/').replace('../predictive-closure-workspace/','sources/predictive-closure-workspace/')
