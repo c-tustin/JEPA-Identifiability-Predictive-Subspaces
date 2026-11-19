@@ -52,3 +52,7 @@ The raw/code study now includes compressed per-source histories, bit-exact repla
 ## November 19: Distance representation labels
 
 Representation figure labels now distinguish physical distance from learned scalar code units and identify teal as the latest raw/own-code InfoNCE. Display-only normalization remains explicit. No model weights or numerical results changed.
+
+## November 19: Latest-only InfoNCE representations
+
+Added latest-method-only final distance representations, seed-131 physical-distance slopes, and training snapshots in original code units, with a checkpoint and derivative audit. The README distinguishes empirical zero-of-15 final folds from the additional constraints or validated derivative bounds needed for a no-fold guarantee. No training or checkpoint changes.

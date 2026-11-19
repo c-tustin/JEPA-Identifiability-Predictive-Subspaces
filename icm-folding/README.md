@@ -6,6 +6,8 @@ Several named folders here are relative symbolic links to the original studies; 
 
 Representation plots label physical distance separately from learned code units; see [how to read the InfoNCE distance representations](raw-embedding-infonce/README.md#reading-the-distance-representation-graphs).
 
+Latest raw/own-code InfoNCE only: [all distance representations](raw-embedding-infonce/output/latest_distance_representations.png), [distance and slope](raw-embedding-infonce/output/latest_seed131_distance.png), [learning snapshots](raw-embedding-infonce/output/latest_distance_learning.png), and [what a no-fold guarantee would require](raw-embedding-infonce/README.md#can-infonce-guarantee-no-folding).
+
 ## Work collected so far
 
 | Work | Source documentation | Results and figures |

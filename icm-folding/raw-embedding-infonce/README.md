@@ -33,3 +33,20 @@ The scorer's raw MSE falls early and then increases; this is not a reconstructio
 ## Reading the distance-representation graphs
 
 Teal in objective-comparison plots denotes the latest raw-observation/own-code InfoNCE method. The horizontal axis is physical distance, used only for evaluation; the vertical axis is the learned scalar representation of that distance, not a distance estimate in physical units. Original code values have unconstrained scale, offset and sign (the final encoder layer is linear). Values around −6 or +6 are learned code units, not a prescribed range. Comparison panels explicitly center, scale to unit standard deviation and sign-orient each curve for display. Such transformations preserve folds. The flattening of a curve indicates compressed resolution at those distances. Figure labels were clarified November 19; model weights and numerical results are unchanged.
+
+## Latest InfoNCE only: distance-representation figures
+
+These figures contain only the raw-observation/own-code InfoNCE experiment, with no alternative objectives. All representations use original code units without centering, rescaling or sign flips. Physical distance is an evaluation coordinate, not a training label.
+
+- [All 15 final distance representations](output/latest_distance_representations.png).
+- [Seed 131: distance representation and its physical-distance derivative](output/latest_seed131_distance.png).
+- [Distance representations during learning](output/latest_distance_learning.png), for the lowest/median/highest saved final held-out decoder errors (seeds 130/144/141).
+- [Plotting source](plot_latest.py) and [checkpoint/derivative audit](output/latest_plots_verification.json). Matching SVG files are available beside each PNG.
+
+Reproduce with `OPENBLAS_NUM_THREADS=1 python3 icm-folding/raw-embedding-infonce/plot_latest.py` from the workspace root. This reloads only this method's saved checkpoints, checks their hashes against the existing independent report, recomputes all final geometries on 20,001 float64 points, and checks the chain rule against finite differences. The stored derivative is with respect to log-distance; the displayed physical-distance derivative divides it by distance. No training is performed.
+
+## Can InfoNCE guarantee no folding?
+
+Not for the current unconstrained MLP and finite-sample training procedure. InfoNCE classifies the matching observation among candidate observations; it does not impose a derivative-sign constraint over the physical interval. Identical codes for distinct co-occurring observations give identical candidate-score rows and impede their joint identification, but discouraging such collisions is not a proof that none exist. Finite sampled observations also leave intervals without direct checks. The current result remains zero detected final folds in 15 runs, not an all-input or all-training-step guarantee. The original [InfoNCE formulation](https://arxiv.org/abs/1807.03748) defines the contrastive classification objective; the missing interval constraint follows directly from our implementation.
+
+For this scalar distance representation, a sufficient guarantee is a certified fixed sign with positive margin for the derivative of `h(d)=f(sensor(d))` over the entire stated interval: `h'(d) >= m > 0`, or `h'(d) <= -m < 0`. This would require a validated bound, not a sampled minimum. Alternatively, train InfoNCE with a strictly monotone encoder using a known ordered coordinate, such as the [existing constrained constructions](../no-fold-proof/README.md); the guarantee would come from that constraint, not from InfoNCE. No such InfoNCE fit or certificate has been implemented here. Exact reconstruction of every distinguishable observation in an interval would also imply injectivity, but our contrastive scorer is not trained or verified to provide it.

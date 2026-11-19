@@ -2,6 +2,12 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 19: Latest-only InfoNCE representations and guarantee scope
+
+Added [a standalone latest-method plotter](raw-embedding-infonce/plot_latest.py), [all final distance representations](raw-embedding-infonce/output/latest_distance_representations.png), [seed-131 representation and physical-distance slope](raw-embedding-infonce/output/latest_seed131_distance.png), and [learning snapshots](raw-embedding-infonce/output/latest_distance_learning.png). These figures exclude alternative methods, retain original scalar code units and signs, and select learning examples by existing lowest/median/highest prediction error. Recomputed final geometries on 20,001 float64 points from hash-checked checkpoints; physical-distance derivatives use the chain rule and are compared with finite differences. [Audit](raw-embedding-infonce/output/latest_plots_verification.json).
+
+Explained why finite-sample InfoNCE alone does not provide an all-input no-fold certificate. A validated fixed-sign derivative bound or strictly monotone architecture would supply a separate sufficient guarantee; neither has been implemented for these InfoNCE encoders. Existing zero-of-15 final fold results remain empirical. No training, data, hyperparameter or checkpoint changes.
+
 ## November 19: Clarified distance-representation figure labels
 
 Renamed the raw/code representation figure titles and axes to distinguish physical distance from its learned scalar representation. Comparison legends identify teal as the latest raw/own-code InfoNCE. Documented unconstrained code units, sign and offset, and the display-only normalization in comparison panels. Regenerated figures from existing audited checkpoints and replay histories; no training or numerical-result changes. Empirical fold checks remain distinct from guarantees.
