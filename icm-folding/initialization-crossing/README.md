@@ -1,10 +1,10 @@
 # Historical policy data × encoder initialization
 
-Status, November 19, 2026: batch launched; complete results pending. The first full diagonal replay (130,130) reproduced the historical final weights bit-for-bit. See the [fixed protocol](PROTOCOL.md) and [trainer](run.py).
+Status: all 100 fits completed. All ten diagonal replays exactly reproduce the historical weights. Final folds: 55/100; material folds: 51/100. See [completed results](RESULTS.md). See the [fixed protocol](PROTOCOL.md) and [trainer](run.py).
 
 The full design is ten saved policy datasets × ten original encoder initializations, with both minibatch streams fixed within dataset. Diagonal fits replay the original models exactly as a required implementation check. This separates initialization sensitivity from the bundled dataset/sampling condition; it does not separate actor training from rollout collection or minibatch variation.
 
-The trainer writes resumable partials, completed checkpoints, 100-update geometry histories, independently reloaded dense final geometry and an incremental machine-readable summary. That summary distinguishes completed cells from the planned 100. No claim about the crossed outcomes is made before completion.
+The trainer writes resumable partials, completed checkpoints, 100-update geometry histories, independently reloaded dense final geometry and an incremental machine-readable summary. That summary distinguishes completed cells from the planned 100. The completed summary contains all 100 cells.
 
 From the workspace root, using existing numpy/torch/matplotlib dependencies:
 

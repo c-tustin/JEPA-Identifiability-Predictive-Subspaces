@@ -2,22 +2,11 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
-## November 19: Dataset × initialization crossing (started; results pending)
+## November 19: Dataset × initialization crossing (completed)
 
 Added [a fixed-protocol crossing](initialization-crossing/PROTOCOL.md), [trainer](initialization-crossing/run.py) and [study notes](initialization-crossing/README.md). The design crosses all ten historical frozen-policy datasets with all ten original scalar-encoder initializations (100 fits, 4,000 updates each). Both original alignment and regularizer minibatch streams are held fixed within each dataset row; initial weights are held fixed within each initialization column. Diagonal fits must reproduce the historical final encoders bit-for-bit before crossed fits proceed. Checkpoints retain provenance, initial/final parameters, Adam state and 100-update geometry histories; final geometry is measured after reload on a 20,001-point float64 derivative grid.
 
-The first full diagonal replay (dataset 130, initialization 130) passed with zero maximum parameter difference from the original checkpoint. The complete batch has been launched with resumable checkpoints; no complete matrix or causal outcome is claimed. Dataset rows bundle actor learning, collection randomness and the fixed sampling plan, so this phase isolates initialization sensitivity conditional on those rows rather than separately identifying all sources of variation. Recollection from fixed actors and independent minibatch replications remain future phases. These are reused historical sources and finite-grid empirical checks, not fresh-source validation or injectivity guarantees.
-
-
-## November 19: Latest-only InfoNCE representations and guarantee scope
-
-Added [a standalone latest-method plotter](raw-embedding-infonce/plot_latest.py), [all final distance representations](raw-embedding-infonce/output/latest_distance_representations.png), [seed-131 representation and physical-distance slope](raw-embedding-infonce/output/latest_seed131_distance.png), and [learning snapshots](raw-embedding-infonce/output/latest_distance_learning.png). These figures exclude alternative methods, retain original scalar code units and signs, and select learning examples by existing lowest/median/highest prediction error. Recomputed final geometries on 20,001 float64 points from hash-checked checkpoints; physical-distance derivatives use the chain rule and are compared with finite differences. [Audit](raw-embedding-infonce/output/latest_plots_verification.json).
-
-Explained why finite-sample InfoNCE alone does not provide an all-input no-fold certificate. A validated fixed-sign derivative bound or strictly monotone architecture would supply a separate sufficient guarantee; neither has been implemented for these InfoNCE encoders. Existing zero-of-15 final fold results remain empirical. No training, data, hyperparameter or checkpoint changes.
-
-## November 19: Clarified distance-representation figure labels
-
-Renamed the raw/code representation figure titles and axes to distinguish physical distance from its learned scalar representation. Comparison legends identify teal as the latest raw/own-code InfoNCE. Documented unconstrained code units, sign and offset, and the display-only normalization in comparison panels. Regenerated figures from existing audited checkpoints and replay histories; no training or numerical-result changes. Empirical fold checks remain distinct from guarantees.
+All 100 fits completed, with 55 detected final folds and 51 material folds. All ten diagonal replays exactly match the historical final parameters; pairing checks passed for all cells. The five originally folded datasets (131,132,133,136,139) fold under all ten initializations. Datasets 130/138 fold under none; 134/135 under initializations 130 and 136; 137 under initialization 130 only. [Completed results](initialization-crossing/RESULTS.md) and [cell measurements](initialization-crossing/output/summary-n4000.json) support a strong dataset/sampling-condition association, with initialization sensitivity in three rows. Dataset rows bundle actor learning, collection randomness and the fixed sampling plan, so this phase isolates initialization sensitivity conditional on those rows rather than separately identifying all sources of variation. Recollection from fixed actors and independent minibatch replications remain future phases. These are reused historical sources and finite-grid empirical checks, not fresh-source validation or injectivity guarantees.
 
 ## November 19: Dense raw/code InfoNCE convergence and representation plots
 
