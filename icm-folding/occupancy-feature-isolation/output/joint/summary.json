@@ -1,0 +1,4897 @@
+{
+  "completed": 160,
+  "groups": [
+    {
+      "condition": "native",
+      "method": "sigreg",
+      "folds": 8,
+      "material": 8,
+      "support_turns": 8,
+      "minimum_std": 0.710516965081221
+    },
+    {
+      "condition": "native",
+      "method": "infonce",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 0.0897803778465962
+    },
+    {
+      "condition": "native",
+      "method": "raw_infonce",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 1.4974758138303483
+    },
+    {
+      "condition": "native",
+      "method": "vicreg",
+      "folds": 5,
+      "material": 0,
+      "support_turns": 5,
+      "minimum_std": 1.1710039200200617
+    },
+    {
+      "condition": 0.5,
+      "method": "sigreg",
+      "folds": 1,
+      "material": 1,
+      "support_turns": 1,
+      "minimum_std": 0.6371501388762342
+    },
+    {
+      "condition": 0.5,
+      "method": "infonce",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 0.08580353738984708
+    },
+    {
+      "condition": 0.5,
+      "method": "raw_infonce",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 1.24918647931541
+    },
+    {
+      "condition": 0.5,
+      "method": "vicreg",
+      "folds": 1,
+      "material": 0,
+      "support_turns": 1,
+      "minimum_std": 1.116433040153093
+    },
+    {
+      "condition": 0.75,
+      "method": "sigreg",
+      "folds": 10,
+      "material": 10,
+      "support_turns": 10,
+      "minimum_std": 0.6337143757466169
+    },
+    {
+      "condition": 0.75,
+      "method": "infonce",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 0.11376797809321107
+    },
+    {
+      "condition": 0.75,
+      "method": "raw_infonce",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 1.9339203505446125
+    },
+    {
+      "condition": 0.75,
+      "method": "vicreg",
+      "folds": 5,
+      "material": 1,
+      "support_turns": 5,
+      "minimum_std": 1.4856819813381437
+    },
+    {
+      "condition": 0.9375,
+      "method": "sigreg",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 2.758213410876302
+    },
+    {
+      "condition": 0.9375,
+      "method": "infonce",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 0.11262806639035369
+    },
+    {
+      "condition": 0.9375,
+      "method": "raw_infonce",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 2.0393254867776447
+    },
+    {
+      "condition": 0.9375,
+      "method": "vicreg",
+      "folds": 0,
+      "material": 0,
+      "support_turns": 0,
+      "minimum_std": 3.991773190727053
+    }
+  ],
+  "rows": [
+    {
+      "source": 9100,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.498321533203125,
+          0.00335693359375,
+          0.498321533203125
+        ],
+        "near_shape_tv_bound": 0.0016128397297893212,
+        "far_shape_tv_bound": 0.04124971685231651
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.3115692894179398,
+      "affine_r2": 0.8378750287643083,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.498321533203125,
+          0.00335693359375,
+          0.498321533203125
+        ],
+        "near_shape_tv_bound": 0.0016128397297893212,
+        "far_shape_tv_bound": 0.04124971685231651
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.5284864685453157,
+      "affine_r2": 0.9408221199434466,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.498321533203125,
+          0.00335693359375,
+          0.498321533203125
+        ],
+        "near_shape_tv_bound": 0.0016128397297893212,
+        "far_shape_tv_bound": 0.04124971685231651
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.7188977067866872,
+      "affine_r2": 0.8913337056738486,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.498321533203125,
+          0.00335693359375,
+          0.498321533203125
+        ],
+        "near_shape_tv_bound": 0.0016128397297893212,
+        "far_shape_tv_bound": 0.04124971685231651
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.6646535511406568,
+      "affine_r2": 0.969604796192214,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.748321533203125,
+          0.00335693359375,
+          0.248321533203125
+        ],
+        "near_shape_tv_bound": 0.0004938618652059879,
+        "far_shape_tv_bound": 0.03789278325856651
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.3203327441045852,
+      "affine_r2": 0.847655366803684,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.748321533203125,
+          0.00335693359375,
+          0.248321533203125
+        ],
+        "near_shape_tv_bound": 0.0004938618652059879,
+        "far_shape_tv_bound": 0.03789278325856651
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1769654642634877,
+      "affine_r2": 0.9094061287116834,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.748321533203125,
+          0.00335693359375,
+          0.248321533203125
+        ],
+        "near_shape_tv_bound": 0.0004938618652059879,
+        "far_shape_tv_bound": 0.03789278325856651
+      },
+      "roots": [
+        2.9161149337730423
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.433633818810146,
+      "std": 0.6963321723352681,
+      "affine_r2": 0.013393370554846783,
+      "roots_in_source_support": [
+        2.9161149337730423
+      ]
+    },
+    {
+      "source": 9100,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.748321533203125,
+          0.00335693359375,
+          0.248321533203125
+        ],
+        "near_shape_tv_bound": 0.0004938618652059879,
+        "far_shape_tv_bound": 0.03789278325856651
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.2733714999562395,
+      "affine_r2": 0.9587483049409945,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.935821533203125,
+          0.00335693359375,
+          0.060821533203125
+        ],
+        "near_shape_tv_bound": 4.627071937265462e-05,
+        "far_shape_tv_bound": 0.017751181696066504
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.22543367954703253,
+      "affine_r2": 0.9316088476662302,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.935821533203125,
+          0.00335693359375,
+          0.060821533203125
+        ],
+        "near_shape_tv_bound": 4.627071937265462e-05,
+        "far_shape_tv_bound": 0.017751181696066504
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.0393254867776447,
+      "affine_r2": 0.884665948377377,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.935821533203125,
+          0.00335693359375,
+          0.060821533203125
+        ],
+        "near_shape_tv_bound": 4.627071937265462e-05,
+        "far_shape_tv_bound": 0.017751181696066504
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.096064664835202,
+      "affine_r2": 0.8320040610387578,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.935821533203125,
+          0.00335693359375,
+          0.060821533203125
+        ],
+        "near_shape_tv_bound": 4.627071937265462e-05,
+        "far_shape_tv_bound": 0.017751181696066504
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.986195758696339,
+      "affine_r2": 0.9420045668625961,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.962371826171875,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.960693359375,
+          0.00335693359375,
+          0.03594970703125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.17985415264474694,
+      "affine_r2": 0.9917473613747424,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.962371826171875,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.960693359375,
+          0.00335693359375,
+          0.03594970703125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.2056821455516418,
+      "affine_r2": 0.8833752863141512,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.962371826171875,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.960693359375,
+          0.00335693359375,
+          0.03594970703125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.146492321085772,
+      "affine_r2": 0.822161489061535,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9100,
+      "alpha": 0.962371826171875,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.960693359375,
+          0.00335693359375,
+          0.03594970703125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 6.070609926873266,
+      "affine_r2": 0.9337608203693514,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.4970703125,
+          0.005859375,
+          0.4970703125
+        ],
+        "near_shape_tv_bound": 0.0025889518890100157,
+        "far_shape_tv_bound": 0.022260132908611598
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.196878647210351,
+      "affine_r2": 0.9089232746198692,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.4970703125,
+          0.005859375,
+          0.4970703125
+        ],
+        "near_shape_tv_bound": 0.0025889518890100157,
+        "far_shape_tv_bound": 0.022260132908611598
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.4147727446836107,
+      "affine_r2": 0.9522758124785059,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.4970703125,
+          0.005859375,
+          0.4970703125
+        ],
+        "near_shape_tv_bound": 0.0025889518890100157,
+        "far_shape_tv_bound": 0.022260132908611598
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.6976235422406563,
+      "affine_r2": 0.9119445703339426,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.4970703125,
+          0.005859375,
+          0.4970703125
+        ],
+        "near_shape_tv_bound": 0.0025889518890100157,
+        "far_shape_tv_bound": 0.022260132908611598
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.501105199391564,
+      "affine_r2": 0.9538640652251077,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.7470703125,
+          0.005859375,
+          0.2470703125
+        ],
+        "near_shape_tv_bound": 0.0006358268890100157,
+        "far_shape_tv_bound": 0.016400757908611598
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.22663788101731674,
+      "affine_r2": 0.9163636012598249,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.7470703125,
+          0.005859375,
+          0.2470703125
+        ],
+        "near_shape_tv_bound": 0.0006358268890100157,
+        "far_shape_tv_bound": 0.016400757908611598
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.302904247935117,
+      "affine_r2": 0.9231587551204176,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.7470703125,
+          0.005859375,
+          0.2470703125
+        ],
+        "near_shape_tv_bound": 0.0006358268890100157,
+        "far_shape_tv_bound": 0.016400757908611598
+      },
+      "roots": [
+        2.578134475958907
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.35813485997851324,
+      "std": 0.6687233781825487,
+      "affine_r2": 0.0004586236882111973,
+      "roots_in_source_support": [
+        2.578134475958907
+      ]
+    },
+    {
+      "source": 9101,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.7470703125,
+          0.005859375,
+          0.2470703125
+        ],
+        "near_shape_tv_bound": 0.0006358268890100157,
+        "far_shape_tv_bound": 0.016400757908611598
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.0668388238224593,
+      "affine_r2": 0.9406129627148747,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.89581298828125,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.89288330078125,
+          0.005859375,
+          0.10125732421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1802517564232639,
+      "affine_r2": 0.9149643349247504,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.89581298828125,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.89288330078125,
+          0.005859375,
+          0.10125732421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.172594135316449,
+      "affine_r2": 0.9116215604610682,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.89581298828125,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.89288330078125,
+          0.005859375,
+          0.10125732421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        2.592851618564743
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.30535560723413346,
+      "std": 4.457900785850463,
+      "affine_r2": 0.5955351445208552,
+      "roots_in_source_support": [
+        2.592851618564743
+      ]
+    },
+    {
+      "source": 9101,
+      "alpha": 0.89581298828125,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.89288330078125,
+          0.005859375,
+          0.10125732421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 3.5986418458612195,
+      "affine_r2": 0.9243813412207221,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.9345703125,
+          0.005859375,
+          0.0595703125
+        ],
+        "near_shape_tv_bound": 0.00014542311098998412,
+        "far_shape_tv_bound": 0.018755492091388402
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1952662889288524,
+      "affine_r2": 0.9156938781773192,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.9345703125,
+          0.005859375,
+          0.0595703125
+        ],
+        "near_shape_tv_bound": 0.00014542311098998412,
+        "far_shape_tv_bound": 0.018755492091388402
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1108306255412552,
+      "affine_r2": 0.8986956368996033,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.9345703125,
+          0.005859375,
+          0.0595703125
+        ],
+        "near_shape_tv_bound": 0.00014542311098998412,
+        "far_shape_tv_bound": 0.018755492091388402
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.689252581128687,
+      "affine_r2": 0.8460811654340405,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9101,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.9345703125,
+          0.005859375,
+          0.0595703125
+        ],
+        "near_shape_tv_bound": 0.00014542311098998412,
+        "far_shape_tv_bound": 0.018755492091388402
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.77573525864256,
+      "affine_r2": 0.9260373420098734,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.497222900390625,
+          0.00555419921875,
+          0.497222900390625
+        ],
+        "near_shape_tv_bound": 0.002592827224867999,
+        "far_shape_tv_bound": 0.039075521232451574
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.15986102656932064,
+      "affine_r2": 0.8643507808273172,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.497222900390625,
+          0.00555419921875,
+          0.497222900390625
+        ],
+        "near_shape_tv_bound": 0.002592827224867999,
+        "far_shape_tv_bound": 0.039075521232451574
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.445537848881248,
+      "affine_r2": 0.95881980792119,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.497222900390625,
+          0.00555419921875,
+          0.497222900390625
+        ],
+        "near_shape_tv_bound": 0.002592827224867999,
+        "far_shape_tv_bound": 0.039075521232451574
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.6672219964443248,
+      "affine_r2": 0.8811411798307142,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.497222900390625,
+          0.00555419921875,
+          0.497222900390625
+        ],
+        "near_shape_tv_bound": 0.002592827224867999,
+        "far_shape_tv_bound": 0.039075521232451574
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.4871677728331543,
+      "affine_r2": 0.9230864778681038,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.747222900390625,
+          0.00555419921875,
+          0.247222900390625
+        ],
+        "near_shape_tv_bound": 0.0007414274852846655,
+        "far_shape_tv_bound": 0.033521322013701574
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1899868504578662,
+      "affine_r2": 0.923172040901343,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.747222900390625,
+          0.00555419921875,
+          0.247222900390625
+        ],
+        "near_shape_tv_bound": 0.0007414274852846655,
+        "far_shape_tv_bound": 0.033521322013701574
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.3006426233884616,
+      "affine_r2": 0.9266328381410541,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.747222900390625,
+          0.00555419921875,
+          0.247222900390625
+        ],
+        "near_shape_tv_bound": 0.0007414274852846655,
+        "far_shape_tv_bound": 0.033521322013701574
+      },
+      "roots": [
+        2.5002898599237744
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3128591584517155,
+      "std": 0.6337143757466169,
+      "affine_r2": 0.008061988441691073,
+      "roots_in_source_support": [
+        2.5002898599237744
+      ]
+    },
+    {
+      "source": 9102,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.747222900390625,
+          0.00555419921875,
+          0.247222900390625
+        ],
+        "near_shape_tv_bound": 0.0007414274852846655,
+        "far_shape_tv_bound": 0.033521322013701574
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.0488850510401786,
+      "affine_r2": 0.9168927828752618,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.934722900390625,
+          0.00555419921875,
+          0.059722900390625
+        ],
+        "near_shape_tv_bound": 8.67589451332346e-07,
+        "far_shape_tv_bound": 0.0001961267012015723
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.16984235208643045,
+      "affine_r2": 0.9314193716871672,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.934722900390625,
+          0.00555419921875,
+          0.059722900390625
+        ],
+        "near_shape_tv_bound": 8.67589451332346e-07,
+        "far_shape_tv_bound": 0.0001961267012015723
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.158807344706694,
+      "affine_r2": 0.8986314878765684,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.934722900390625,
+          0.00555419921875,
+          0.059722900390625
+        ],
+        "near_shape_tv_bound": 8.67589451332346e-07,
+        "far_shape_tv_bound": 0.0001961267012015723
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.031496338409397,
+      "affine_r2": 0.8440240656327433,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.934722900390625,
+          0.00555419921875,
+          0.059722900390625
+        ],
+        "near_shape_tv_bound": 8.67589451332346e-07,
+        "far_shape_tv_bound": 0.0001961267012015723
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.873233468241549,
+      "affine_r2": 0.9060417609862234,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.937774658203125,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.93499755859375,
+          0.00555419921875,
+          0.0594482421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.16968243505817215,
+      "affine_r2": 0.9364680862492909,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.937774658203125,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.93499755859375,
+          0.00555419921875,
+          0.0594482421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.210792689198774,
+      "affine_r2": 0.9014629289184155,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.937774658203125,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.93499755859375,
+          0.00555419921875,
+          0.0594482421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 5.002502873678094,
+      "affine_r2": 0.8435383907629189,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9102,
+      "alpha": 0.937774658203125,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.93499755859375,
+          0.00555419921875,
+          0.0594482421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.860236052688013,
+      "affine_r2": 0.9050660018922883,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.497161865234375,
+          0.00567626953125,
+          0.497161865234375
+        ],
+        "near_shape_tv_bound": 0.002437318533444128,
+        "far_shape_tv_bound": 0.017258379050747532
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1504323274827159,
+      "affine_r2": 0.9160542208175727,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.497161865234375,
+          0.00567626953125,
+          0.497161865234375
+        ],
+        "near_shape_tv_bound": 0.002437318533444128,
+        "far_shape_tv_bound": 0.017258379050747532
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.3371670319828517,
+      "affine_r2": 0.960640412650626,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.497161865234375,
+          0.00567626953125,
+          0.497161865234375
+        ],
+        "near_shape_tv_bound": 0.002437318533444128,
+        "far_shape_tv_bound": 0.017258379050747532
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.6808123149046219,
+      "affine_r2": 0.9250182421075629,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.497161865234375,
+          0.00567626953125,
+          0.497161865234375
+        ],
+        "near_shape_tv_bound": 0.002437318533444128,
+        "far_shape_tv_bound": 0.017258379050747532
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.371661727152994,
+      "affine_r2": 0.9451417023825596,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.747161865234375,
+          0.00567626953125,
+          0.247161865234375
+        ],
+        "near_shape_tv_bound": 0.0005452286896941278,
+        "far_shape_tv_bound": 0.011582109519497534
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.19361584357215542,
+      "affine_r2": 0.9241123679491937,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.747161865234375,
+          0.00567626953125,
+          0.247161865234375
+        ],
+        "near_shape_tv_bound": 0.0005452286896941278,
+        "far_shape_tv_bound": 0.011582109519497534
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1406323039391273,
+      "affine_r2": 0.9351660391979556,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.747161865234375,
+          0.00567626953125,
+          0.247161865234375
+        ],
+        "near_shape_tv_bound": 0.0005452286896941278,
+        "far_shape_tv_bound": 0.011582109519497534
+      },
+      "roots": [
+        2.4228133255455564
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3449523934082663,
+      "std": 0.7229696491027061,
+      "affine_r2": 0.0030155277966962663,
+      "roots_in_source_support": [
+        2.4228133255455564
+      ]
+    },
+    {
+      "source": 9103,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.747161865234375,
+          0.00567626953125,
+          0.247161865234375
+        ],
+        "near_shape_tv_bound": 0.0005452286896941278,
+        "far_shape_tv_bound": 0.011582109519497534
+      },
+      "roots": [
+        1.0115155234847837
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 1.798254053844123e-06,
+      "std": 1.8364255340311324,
+      "affine_r2": 0.9343216967297641,
+      "roots_in_source_support": [
+        1.0115155234847837
+      ]
+    },
+    {
+      "source": 9103,
+      "alpha": 0.876251220703125,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.8734130859375,
+          0.00567626953125,
+          0.12091064453125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.20832114676230315,
+      "affine_r2": 0.9253193797831485,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.876251220703125,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.8734130859375,
+          0.00567626953125,
+          0.12091064453125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.2070142475843237,
+      "affine_r2": 0.9270693201216408,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.876251220703125,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.8734130859375,
+          0.00567626953125,
+          0.12091064453125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        2.5744049758973144
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.33057604452803135,
+      "std": 3.3300517917330112,
+      "affine_r2": 0.5598043626419745,
+      "roots_in_source_support": [
+        2.5744049758973144
+      ]
+    },
+    {
+      "source": 9103,
+      "alpha": 0.876251220703125,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.8734130859375,
+          0.00567626953125,
+          0.12091064453125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.810072019530077,
+      "affine_r2": 0.9158584174013928,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.934661865234375,
+          0.00567626953125,
+          0.059661865234375
+        ],
+        "near_shape_tv_bound": 0.00021160724780587204,
+        "far_shape_tv_bound": 0.022475507668002468
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1624746799106102,
+      "affine_r2": 0.926836884712193,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.934661865234375,
+          0.00567626953125,
+          0.059661865234375
+        ],
+        "near_shape_tv_bound": 0.00021160724780587204,
+        "far_shape_tv_bound": 0.022475507668002468
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.0871781359929016,
+      "affine_r2": 0.9086342590853618,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.934661865234375,
+          0.00567626953125,
+          0.059661865234375
+        ],
+        "near_shape_tv_bound": 0.00021160724780587204,
+        "far_shape_tv_bound": 0.022475507668002468
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.400084907192852,
+      "affine_r2": 0.8556025049138676,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9103,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.934661865234375,
+          0.00567626953125,
+          0.059661865234375
+        ],
+        "near_shape_tv_bound": 0.00021160724780587204,
+        "far_shape_tv_bound": 0.022475507668002468
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.500836762857333,
+      "affine_r2": 0.9141699132687422,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.493988037109375,
+          0.01202392578125,
+          0.493988037109375
+        ],
+        "near_shape_tv_bound": 0.003974238370634219,
+        "far_shape_tv_bound": 0.011725320752806662
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.10418805921306598,
+      "affine_r2": 0.9188215840969695,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.493988037109375,
+          0.01202392578125,
+          0.493988037109375
+        ],
+        "near_shape_tv_bound": 0.003974238370634219,
+        "far_shape_tv_bound": 0.011725320752806662
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.3145680777292255,
+      "affine_r2": 0.964116704311876,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.493988037109375,
+          0.01202392578125,
+          0.493988037109375
+        ],
+        "near_shape_tv_bound": 0.003974238370634219,
+        "far_shape_tv_bound": 0.011725320752806662
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.6538983684833313,
+      "affine_r2": 0.8915603882757283,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.493988037109375,
+          0.01202392578125,
+          0.493988037109375
+        ],
+        "near_shape_tv_bound": 0.003974238370634219,
+        "far_shape_tv_bound": 0.011725320752806662
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.2753022589529643,
+      "affine_r2": 0.9112826063443594,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.746856689453125,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.7408447265625,
+          0.01202392578125,
+          0.24713134765625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.14397945953168037,
+      "affine_r2": 0.9397955180011526,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.746856689453125,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.7408447265625,
+          0.01202392578125,
+          0.24713134765625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.092998173874562,
+      "affine_r2": 0.9433815644526546,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.746856689453125,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.7408447265625,
+          0.01202392578125,
+          0.24713134765625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        2.4869885435473966
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.32886014746966946,
+      "std": 0.710516965081221,
+      "affine_r2": 0.00020477157755596794,
+      "roots_in_source_support": [
+        2.4869885435473966
+      ]
+    },
+    {
+      "source": 9104,
+      "alpha": 0.746856689453125,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.7408447265625,
+          0.01202392578125,
+          0.24713134765625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        1.1893574603382804
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 0.0004958819782472352,
+      "std": 1.7313575174597338,
+      "affine_r2": 0.9084971652165958,
+      "roots_in_source_support": [
+        1.1893574603382804
+      ]
+    },
+    {
+      "source": 9104,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.743988037109375,
+          0.01202392578125,
+          0.243988037109375
+        ],
+        "near_shape_tv_bound": 3.373688978244823e-05,
+        "far_shape_tv_bound": 0.0002986050284433385
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.13663664516624968,
+      "affine_r2": 0.9386639928490298,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.743988037109375,
+          0.01202392578125,
+          0.243988037109375
+        ],
+        "near_shape_tv_bound": 3.373688978244823e-05,
+        "far_shape_tv_bound": 0.0002986050284433385
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1200714362863455,
+      "affine_r2": 0.9404956714133255,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.743988037109375,
+          0.01202392578125,
+          0.243988037109375
+        ],
+        "near_shape_tv_bound": 3.373688978244823e-05,
+        "far_shape_tv_bound": 0.0002986050284433385
+      },
+      "roots": [
+        2.4695677073563527
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3283822152634247,
+      "std": 0.7110825932659381,
+      "affine_r2": 3.3869724292444973e-05,
+      "roots_in_source_support": [
+        2.4695677073563527
+      ]
+    },
+    {
+      "source": 9104,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.743988037109375,
+          0.01202392578125,
+          0.243988037109375
+        ],
+        "near_shape_tv_bound": 3.373688978244823e-05,
+        "far_shape_tv_bound": 0.0002986050284433385
+      },
+      "roots": [
+        1.163860898823777
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 0.0003610733240388369,
+      "std": 1.7473415615487007,
+      "affine_r2": 0.9110063613244854,
+      "roots_in_source_support": [
+        1.163860898823777
+      ]
+    },
+    {
+      "source": 9104,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.931488037109375,
+          0.01202392578125,
+          0.056488037109375
+        ],
+        "near_shape_tv_bound": 0.0016369269939491146,
+        "far_shape_tv_bound": 0.07244215971594334
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.12333376454127495,
+      "affine_r2": 0.9592457906445806,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.931488037109375,
+          0.01202392578125,
+          0.056488037109375
+        ],
+        "near_shape_tv_bound": 0.0016369269939491146,
+        "far_shape_tv_bound": 0.07244215971594334
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1448368171952352,
+      "affine_r2": 0.9140512186774953,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.931488037109375,
+          0.01202392578125,
+          0.056488037109375
+        ],
+        "near_shape_tv_bound": 0.0016369269939491146,
+        "far_shape_tv_bound": 0.07244215971594334
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 3.835477732075208,
+      "affine_r2": 0.8732041166154744,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9104,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.931488037109375,
+          0.01202392578125,
+          0.056488037109375
+        ],
+        "near_shape_tv_bound": 0.0016369269939491146,
+        "far_shape_tv_bound": 0.07244215971594334
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.577885024560979,
+      "affine_r2": 0.8742916678502561,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.49774169921875,
+          0.0045166015625,
+          0.49774169921875
+        ],
+        "near_shape_tv_bound": 0.002001989628287685,
+        "far_shape_tv_bound": 0.01763908706025449
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.2083005822496782,
+      "affine_r2": 0.8839114112833995,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.49774169921875,
+          0.0045166015625,
+          0.49774169921875
+        ],
+        "near_shape_tv_bound": 0.002001989628287685,
+        "far_shape_tv_bound": 0.01763908706025449
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.348332514177268,
+      "affine_r2": 0.9649031517340048,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.49774169921875,
+          0.0045166015625,
+          0.49774169921875
+        ],
+        "near_shape_tv_bound": 0.002001989628287685,
+        "far_shape_tv_bound": 0.01763908706025449
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.6652177053211017,
+      "affine_r2": 0.9078482346711394,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.49774169921875,
+          0.0045166015625,
+          0.49774169921875
+        ],
+        "near_shape_tv_bound": 0.002001989628287685,
+        "far_shape_tv_bound": 0.01763908706025449
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.3533461430003149,
+      "affine_r2": 0.9174915447780415,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.74774169921875,
+          0.0045166015625,
+          0.24774169921875
+        ],
+        "near_shape_tv_bound": 0.0004964557741210183,
+        "far_shape_tv_bound": 0.01312248549775449
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.185984776817191,
+      "affine_r2": 0.8883303426581806,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.74774169921875,
+          0.0045166015625,
+          0.24774169921875
+        ],
+        "near_shape_tv_bound": 0.0004964557741210183,
+        "far_shape_tv_bound": 0.01312248549775449
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.216365575575117,
+      "affine_r2": 0.9304158969110662,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.74774169921875,
+          0.0045166015625,
+          0.24774169921875
+        ],
+        "near_shape_tv_bound": 0.0004964557741210183,
+        "far_shape_tv_bound": 0.01312248549775449
+      },
+      "roots": [
+        2.453546224677594
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.31472149902292296,
+      "std": 0.6618254174929016,
+      "affine_r2": 0.003495427724770989,
+      "roots_in_source_support": [
+        2.453546224677594
+      ]
+    },
+    {
+      "source": 9105,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.74774169921875,
+          0.0045166015625,
+          0.24774169921875
+        ],
+        "near_shape_tv_bound": 0.0004964557741210183,
+        "far_shape_tv_bound": 0.01312248549775449
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.8836187509613558,
+      "affine_r2": 0.916936561303783,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.8980712890625,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.89581298828125,
+          0.0045166015625,
+          0.09967041015625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.14064721656705326,
+      "affine_r2": 0.9316528934880439,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.8980712890625,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.89581298828125,
+          0.0045166015625,
+          0.09967041015625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.270487164228789,
+      "affine_r2": 0.9136420709306996,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.8980712890625,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.89581298828125,
+          0.0045166015625,
+          0.09967041015625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        2.8134730935951806
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.37464371909811145,
+      "std": 3.8562228373332266,
+      "affine_r2": 0.3966698199472922,
+      "roots_in_source_support": [
+        2.8134730935951806
+      ]
+    },
+    {
+      "source": 9105,
+      "alpha": 0.8980712890625,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.89581298828125,
+          0.0045166015625,
+          0.09967041015625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 3.377250982951825,
+      "affine_r2": 0.8854306284096347,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.93524169921875,
+          0.0045166015625,
+          0.06024169921875
+        ],
+        "near_shape_tv_bound": 0.00010575776754564828,
+        "far_shape_tv_bound": 0.01397712387724551
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.15679704841688938,
+      "affine_r2": 0.9311386854601643,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.93524169921875,
+          0.0045166015625,
+          0.06024169921875
+        ],
+        "near_shape_tv_bound": 0.00010575776754564828,
+        "far_shape_tv_bound": 0.01397712387724551
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.2982691998747864,
+      "affine_r2": 0.9064331416735566,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.93524169921875,
+          0.0045166015625,
+          0.06024169921875
+        ],
+        "near_shape_tv_bound": 0.00010575776754564828,
+        "far_shape_tv_bound": 0.01397712387724551
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.9954200489652365,
+      "affine_r2": 0.8413613779377155,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9105,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.93524169921875,
+          0.0045166015625,
+          0.06024169921875
+        ],
+        "near_shape_tv_bound": 0.00010575776754564828,
+        "far_shape_tv_bound": 0.01397712387724551
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.7200091313085215,
+      "affine_r2": 0.8949077333949115,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.494659423828125,
+          0.01068115234375,
+          0.494659423828125
+        ],
+        "near_shape_tv_bound": 0.003455420480336978,
+        "far_shape_tv_bound": 0.009789078092558341
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1322131449717037,
+      "affine_r2": 0.8972178105895723,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.494659423828125,
+          0.01068115234375,
+          0.494659423828125
+        ],
+        "near_shape_tv_bound": 0.003455420480336978,
+        "far_shape_tv_bound": 0.009789078092558341
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.3077243102060014,
+      "affine_r2": 0.9652572585209598,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.494659423828125,
+          0.01068115234375,
+          0.494659423828125
+        ],
+        "near_shape_tv_bound": 0.003455420480336978,
+        "far_shape_tv_bound": 0.009789078092558341
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.6606453254799779,
+      "affine_r2": 0.9174047962266042,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.494659423828125,
+          0.01068115234375,
+          0.494659423828125
+        ],
+        "near_shape_tv_bound": 0.003455420480336978,
+        "far_shape_tv_bound": 0.009789078092558341
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.2583242001534516,
+      "affine_r2": 0.9179248617742011,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.739105224609375,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.7337646484375,
+          0.01068115234375,
+          0.25555419921875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.13782435768518614,
+      "affine_r2": 0.9145904254932606,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.739105224609375,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.7337646484375,
+          0.01068115234375,
+          0.25555419921875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1142110849692397,
+      "affine_r2": 0.9425053562217857,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.739105224609375,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.7337646484375,
+          0.01068115234375,
+          0.25555419921875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        2.536263850898578
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3325742973018575,
+      "std": 0.7151072488902026,
+      "affine_r2": 0.0010722593157064645,
+      "roots_in_source_support": [
+        2.536263850898578
+      ]
+    },
+    {
+      "source": 9106,
+      "alpha": 0.739105224609375,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.7337646484375,
+          0.01068115234375,
+          0.25555419921875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        1.1545574052181116
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 0.000320226007406671,
+      "std": 1.6611044371651402,
+      "affine_r2": 0.9108579263715547,
+      "roots_in_source_support": [
+        1.1545574052181116
+      ]
+    },
+    {
+      "source": 9106,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.744659423828125,
+          0.01068115234375,
+          0.244659423828125
+        ],
+        "near_shape_tv_bound": 0.000104963634246356,
+        "far_shape_tv_bound": 0.0008920742511916588
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1386027496771353,
+      "affine_r2": 0.9202813191333074,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.744659423828125,
+          0.01068115234375,
+          0.244659423828125
+        ],
+        "near_shape_tv_bound": 0.000104963634246356,
+        "far_shape_tv_bound": 0.0008920742511916588
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.089686783761413,
+      "affine_r2": 0.9409241561473288,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.744659423828125,
+          0.01068115234375,
+          0.244659423828125
+        ],
+        "near_shape_tv_bound": 0.000104963634246356,
+        "far_shape_tv_bound": 0.0008920742511916588
+      },
+      "roots": [
+        2.4751687734599477
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3319164116640377,
+      "std": 0.7213664552587664,
+      "affine_r2": 1.0855502654130162e-06,
+      "roots_in_source_support": [
+        2.4751687734599477
+      ]
+    },
+    {
+      "source": 9106,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.744659423828125,
+          0.01068115234375,
+          0.244659423828125
+        ],
+        "near_shape_tv_bound": 0.000104963634246356,
+        "far_shape_tv_bound": 0.0008920742511916588
+      },
+      "roots": [
+        1.1685923212405538
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 0.00039655171736272443,
+      "std": 1.6738671461663106,
+      "affine_r2": 0.9115291811428111,
+      "roots_in_source_support": [
+        1.1685923212405538
+      ]
+    },
+    {
+      "source": 9106,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.932159423828125,
+          0.01068115234375,
+          0.057159423828125
+        ],
+        "near_shape_tv_bound": 0.001529117280079689,
+        "far_shape_tv_bound": 0.06497898831369166
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.12974267014496563,
+      "affine_r2": 0.9453937526051972,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.932159423828125,
+          0.01068115234375,
+          0.057159423828125
+        ],
+        "near_shape_tv_bound": 0.001529117280079689,
+        "far_shape_tv_bound": 0.06497898831369166
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.157544083670051,
+      "affine_r2": 0.9121825905215335,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.932159423828125,
+          0.01068115234375,
+          0.057159423828125
+        ],
+        "near_shape_tv_bound": 0.001529117280079689,
+        "far_shape_tv_bound": 0.06497898831369166
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 3.995473386445171,
+      "affine_r2": 0.8705708396138784,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9106,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.932159423828125,
+          0.01068115234375,
+          0.057159423828125
+        ],
+        "near_shape_tv_bound": 0.001529117280079689,
+        "far_shape_tv_bound": 0.06497898831369166
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.39736043187112,
+      "affine_r2": 0.8663560200510029,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.496124267578125,
+          0.00775146484375,
+          0.496124267578125
+        ],
+        "near_shape_tv_bound": 0.003085263572485717,
+        "far_shape_tv_bound": 0.015127295739928617
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1714973992710661,
+      "affine_r2": 0.9354874116027367,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.496124267578125,
+          0.00775146484375,
+          0.496124267578125
+        ],
+        "near_shape_tv_bound": 0.003085263572485717,
+        "far_shape_tv_bound": 0.015127295739928617
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.3969277916233789,
+      "affine_r2": 0.9499533838646209,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.496124267578125,
+          0.00775146484375,
+          0.496124267578125
+        ],
+        "near_shape_tv_bound": 0.003085263572485717,
+        "far_shape_tv_bound": 0.015127295739928617
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.6888081545914703,
+      "affine_r2": 0.9070929719114101,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.496124267578125,
+          0.00775146484375,
+          0.496124267578125
+        ],
+        "near_shape_tv_bound": 0.003085263572485717,
+        "far_shape_tv_bound": 0.015127295739928617
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.4639050932732354,
+      "affine_r2": 0.9457476688148155,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.746124267578125,
+          0.00775146484375,
+          0.246124267578125
+        ],
+        "near_shape_tv_bound": 0.000501441957902383,
+        "far_shape_tv_bound": 0.0073758308961786164
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1817772434917789,
+      "affine_r2": 0.9393082304256031,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.746124267578125,
+          0.00775146484375,
+          0.246124267578125
+        ],
+        "near_shape_tv_bound": 0.000501441957902383,
+        "far_shape_tv_bound": 0.0073758308961786164
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.2319966827068574,
+      "affine_r2": 0.9280927567036671,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.746124267578125,
+          0.00775146484375,
+          0.246124267578125
+        ],
+        "near_shape_tv_bound": 0.000501441957902383,
+        "far_shape_tv_bound": 0.0073758308961786164
+      },
+      "roots": [
+        2.428684069815853
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3499318777431121,
+      "std": 0.694882134781242,
+      "affine_r2": 0.004423924006183662,
+      "roots_in_source_support": [
+        2.428684069815853
+      ]
+    },
+    {
+      "source": 9107,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.746124267578125,
+          0.00775146484375,
+          0.246124267578125
+        ],
+        "near_shape_tv_bound": 0.000501441957902383,
+        "far_shape_tv_bound": 0.0073758308961786164
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.0076513536609646,
+      "affine_r2": 0.9358410166854244,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.830596923828125,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.82672119140625,
+          0.00775146484375,
+          0.16552734375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.2232409165521365,
+      "affine_r2": 0.9475673694807212,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.830596923828125,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.82672119140625,
+          0.00775146484375,
+          0.16552734375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.2035607416763887,
+      "affine_r2": 0.9253829354751251,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.830596923828125,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.82672119140625,
+          0.00775146484375,
+          0.16552734375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        2.2013146119053477
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3218436700969042,
+      "std": 2.3389874639419843,
+      "affine_r2": 0.697935762121847,
+      "roots_in_source_support": [
+        2.2013146119053477
+      ]
+    },
+    {
+      "source": 9107,
+      "alpha": 0.830596923828125,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.82672119140625,
+          0.00775146484375,
+          0.16552734375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        1.076344503482312
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 7.864400328517822e-05,
+      "std": 2.4440215302294708,
+      "affine_r2": 0.932180203468439,
+      "roots_in_source_support": [
+        1.076344503482312
+      ]
+    },
+    {
+      "source": 9107,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.933624267578125,
+          0.00775146484375,
+          0.058624267578125
+        ],
+        "near_shape_tv_bound": 0.0005320866879309501,
+        "far_shape_tv_bound": 0.03913295816632138
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.16174763139994155,
+      "affine_r2": 0.9477509470521922,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.933624267578125,
+          0.00775146484375,
+          0.058624267578125
+        ],
+        "near_shape_tv_bound": 0.0005320866879309501,
+        "far_shape_tv_bound": 0.03913295816632138
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1175836786325024,
+      "affine_r2": 0.9011693754059962,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.933624267578125,
+          0.00775146484375,
+          0.058624267578125
+        ],
+        "near_shape_tv_bound": 0.0005320866879309501,
+        "far_shape_tv_bound": 0.03913295816632138
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.281013809964695,
+      "affine_r2": 0.8666674287920413,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9107,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.933624267578125,
+          0.00775146484375,
+          0.058624267578125
+        ],
+        "near_shape_tv_bound": 0.0005320866879309501,
+        "far_shape_tv_bound": 0.03913295816632138
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.771574752763274,
+      "affine_r2": 0.9187547718553634,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.497528076171875,
+          0.00494384765625,
+          0.497528076171875
+        ],
+        "near_shape_tv_bound": 0.0020541897774729316,
+        "far_shape_tv_bound": 0.012155582362749367
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.17447121093480225,
+      "affine_r2": 0.8398098678641136,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.497528076171875,
+          0.00494384765625,
+          0.497528076171875
+        ],
+        "near_shape_tv_bound": 0.0020541897774729316,
+        "far_shape_tv_bound": 0.012155582362749367
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.3475251588531907,
+      "affine_r2": 0.9692753202241322,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.497528076171875,
+          0.00494384765625,
+          0.497528076171875
+        ],
+        "near_shape_tv_bound": 0.0020541897774729316,
+        "far_shape_tv_bound": 0.012155582362749367
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.6468306310153822,
+      "affine_r2": 0.9125840989713654,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.497528076171875,
+          0.00494384765625,
+          0.497528076171875
+        ],
+        "near_shape_tv_bound": 0.0020541897774729316,
+        "far_shape_tv_bound": 0.012155582362749367
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.2498576003932822,
+      "affine_r2": 0.9450693980313272,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.747528076171875,
+          0.00494384765625,
+          0.247528076171875
+        ],
+        "near_shape_tv_bound": 0.00040624055872293135,
+        "far_shape_tv_bound": 0.007211734706499367
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.1943400033300026,
+      "affine_r2": 0.8501555860439137,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.747528076171875,
+          0.00494384765625,
+          0.247528076171875
+        ],
+        "near_shape_tv_bound": 0.00040624055872293135,
+        "far_shape_tv_bound": 0.007211734706499367
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1704000876124607,
+      "affine_r2": 0.9421090627679115,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.747528076171875,
+          0.00494384765625,
+          0.247528076171875
+        ],
+        "near_shape_tv_bound": 0.00040624055872293135,
+        "far_shape_tv_bound": 0.007211734706499367
+      },
+      "roots": [
+        2.5013471582593443
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3557007002554214,
+      "std": 0.7765578381312211,
+      "affine_r2": 0.002888887647489711,
+      "roots_in_source_support": [
+        2.5013471582593443
+      ]
+    },
+    {
+      "source": 9108,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.747528076171875,
+          0.00494384765625,
+          0.247528076171875
+        ],
+        "near_shape_tv_bound": 0.00040624055872293135,
+        "far_shape_tv_bound": 0.007211734706499367
+      },
+      "roots": [
+        1.0614092796059653
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 6.116554757144412e-05,
+      "std": 1.6541086138689587,
+      "affine_r2": 0.9379237898103743,
+      "roots_in_source_support": [
+        1.0614092796059653
+      ]
+    },
+    {
+      "source": 9108,
+      "alpha": 0.855438232421875,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.85296630859375,
+          0.00494384765625,
+          0.14208984375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.21079746331373858,
+      "affine_r2": 0.8789928307863003,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.855438232421875,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.85296630859375,
+          0.00494384765625,
+          0.14208984375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.2174476128800573,
+      "affine_r2": 0.9290830383163005,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.855438232421875,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.85296630859375,
+          0.00494384765625,
+          0.14208984375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        2.7125191057653812
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3698958679711716,
+      "std": 3.33433604279735,
+      "affine_r2": 0.4460589907883555,
+      "roots_in_source_support": [
+        2.7125191057653812
+      ]
+    },
+    {
+      "source": 9108,
+      "alpha": 0.855438232421875,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.85296630859375,
+          0.00494384765625,
+          0.14208984375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        1.1627671591046063
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 0.00042574834867152415,
+      "std": 2.1678926501290263,
+      "affine_r2": 0.934727353382405,
+      "roots_in_source_support": [
+        1.1627671591046063
+      ]
+    },
+    {
+      "source": 9108,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.935028076171875,
+          0.00494384765625,
+          0.060028076171875
+        ],
+        "near_shape_tv_bound": 0.0002529391287770685,
+        "far_shape_tv_bound": 0.022451351231000633
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.14672080683715744,
+      "affine_r2": 0.9220318547781181,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.935028076171875,
+          0.00494384765625,
+          0.060028076171875
+        ],
+        "near_shape_tv_bound": 0.0002529391287770685,
+        "far_shape_tv_bound": 0.022451351231000633
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.2359795682776,
+      "affine_r2": 0.9125531093086362,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.935028076171875,
+          0.00494384765625,
+          0.060028076171875
+        ],
+        "near_shape_tv_bound": 0.0002529391287770685,
+        "far_shape_tv_bound": 0.022451351231000633
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.6139367382811285,
+      "affine_r2": 0.8349816114671745,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9108,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.935028076171875,
+          0.00494384765625,
+          0.060028076171875
+        ],
+        "near_shape_tv_bound": 0.0002529391287770685,
+        "far_shape_tv_bound": 0.022451351231000633
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 4.02015396214483,
+      "affine_r2": 0.9051409980500155,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.5,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.49169921875,
+          0.0166015625,
+          0.49169921875
+        ],
+        "near_shape_tv_bound": 0.001966891242063919,
+        "far_shape_tv_bound": 0.002577678791778312
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.08580353738984708,
+      "affine_r2": 0.8674891736199648,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.5,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.49169921875,
+          0.0166015625,
+          0.49169921875
+        ],
+        "near_shape_tv_bound": 0.001966891242063919,
+        "far_shape_tv_bound": 0.002577678791778312
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.24918647931541,
+      "affine_r2": 0.975081693653413,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.5,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.49169921875,
+          0.0166015625,
+          0.49169921875
+        ],
+        "near_shape_tv_bound": 0.001966891242063919,
+        "far_shape_tv_bound": 0.002577678791778312
+      },
+      "roots": [
+        10.880918956877707
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.0035123873135125185,
+      "std": 0.6371501388762342,
+      "affine_r2": 0.8524794985834924,
+      "roots_in_source_support": [
+        10.880918956877707
+      ]
+    },
+    {
+      "source": 9109,
+      "alpha": 0.5,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.49169921875,
+          0.0166015625,
+          0.49169921875
+        ],
+        "near_shape_tv_bound": 0.001966891242063919,
+        "far_shape_tv_bound": 0.002577678791778312
+      },
+      "roots": [
+        1.1015529953930965
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 0.00015532359134331296,
+      "std": 1.116433040153093,
+      "affine_r2": 0.9233939924957472,
+      "roots_in_source_support": [
+        1.1015529953930965
+      ]
+    },
+    {
+      "source": 9109,
+      "alpha": 0.56719970703125,
+      "method": "infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.55889892578125,
+          0.0166015625,
+          0.42449951171875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.0897803778465962,
+      "affine_r2": 0.8737913193131902,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.56719970703125,
+      "method": "raw_infonce",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.55889892578125,
+          0.0166015625,
+          0.42449951171875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.4974758138303483,
+      "affine_r2": 0.9666326085810523,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.56719970703125,
+      "method": "sigreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.55889892578125,
+          0.0166015625,
+          0.42449951171875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        3.5594979151292256
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.3892509621440232,
+      "std": 0.790918062186523,
+      "affine_r2": 0.0516569863952502,
+      "roots_in_source_support": [
+        3.5594979151292256
+      ]
+    },
+    {
+      "source": 9109,
+      "alpha": 0.56719970703125,
+      "method": "vicreg",
+      "is_native": true,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.55889892578125,
+          0.0166015625,
+          0.42449951171875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      "roots": [
+        1.1963604681038074
+      ],
+      "folded": true,
+      "material_fold": false,
+      "backward_fraction": 0.0006869307337127193,
+      "std": 1.1710039200200617,
+      "affine_r2": 0.9216013062905298,
+      "roots_in_source_support": [
+        1.1963604681038074
+      ]
+    },
+    {
+      "source": 9109,
+      "alpha": 0.75,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.74169921875,
+          0.0166015625,
+          0.24169921875
+        ],
+        "near_shape_tv_bound": 0.0035669629246027484,
+        "far_shape_tv_bound": 0.014023883708221689
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.11376797809321107,
+      "affine_r2": 0.8964940373656765,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.75,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.74169921875,
+          0.0166015625,
+          0.24169921875
+        ],
+        "near_shape_tv_bound": 0.0035669629246027484,
+        "far_shape_tv_bound": 0.014023883708221689
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 1.9339203505446125,
+      "affine_r2": 0.9558761786344936,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.75,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.74169921875,
+          0.0166015625,
+          0.24169921875
+        ],
+        "near_shape_tv_bound": 0.0035669629246027484,
+        "far_shape_tv_bound": 0.014023883708221689
+      },
+      "roots": [
+        2.8350622020637855
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.37026531331124374,
+      "std": 0.8651336283484962,
+      "affine_r2": 0.0015218254844719984,
+      "roots_in_source_support": [
+        2.8350622020637855
+      ]
+    },
+    {
+      "source": 9109,
+      "alpha": 0.75,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.74169921875,
+          0.0166015625,
+          0.24169921875
+        ],
+        "near_shape_tv_bound": 0.0035669629246027484,
+        "far_shape_tv_bound": 0.014023883708221689
+      },
+      "roots": [
+        1.3049243707505218
+      ],
+      "folded": true,
+      "material_fold": true,
+      "backward_fraction": 0.0017690449334465106,
+      "std": 1.4856819813381437,
+      "affine_r2": 0.9157140648968759,
+      "roots_in_source_support": [
+        1.3049243707505218
+      ]
+    },
+    {
+      "source": 9109,
+      "alpha": 0.9375,
+      "method": "infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.92919921875,
+          0.0166015625,
+          0.05419921875
+        ],
+        "near_shape_tv_bound": 0.005780504591269414,
+        "far_shape_tv_bound": 0.11363325870822169
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 0.11262806639035369,
+      "affine_r2": 0.9341899111343398,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.9375,
+      "method": "raw_infonce",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.92919921875,
+          0.0166015625,
+          0.05419921875
+        ],
+        "near_shape_tv_bound": 0.005780504591269414,
+        "far_shape_tv_bound": 0.11363325870822169
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.1705554632381308,
+      "affine_r2": 0.92697594659827,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.9375,
+      "method": "sigreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.92919921875,
+          0.0166015625,
+          0.05419921875
+        ],
+        "near_shape_tv_bound": 0.005780504591269414,
+        "far_shape_tv_bound": 0.11363325870822169
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 2.758213410876302,
+      "affine_r2": 0.8753157050835756,
+      "roots_in_source_support": []
+    },
+    {
+      "source": 9109,
+      "alpha": 0.9375,
+      "method": "vicreg",
+      "is_native": false,
+      "measure": {
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.92919921875,
+          0.0166015625,
+          0.05419921875
+        ],
+        "near_shape_tv_bound": 0.005780504591269414,
+        "far_shape_tv_bound": 0.11363325870822169
+      },
+      "roots": [],
+      "folded": false,
+      "material_fold": false,
+      "backward_fraction": 0.0,
+      "std": 3.991773190727053,
+      "affine_r2": 0.862119738981445,
+      "roots_in_source_support": []
+    }
+  ],
+  "maximum_near_shape_tv_bound": 0.005780504591269414,
+  "maximum_far_shape_tv_bound": 0.11363325870822169
+}

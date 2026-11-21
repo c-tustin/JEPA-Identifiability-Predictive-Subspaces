@@ -1,0 +1,763 @@
+{
+  "passed": true,
+  "native_joint_corners_exact": true,
+  "target_masses_exact": true,
+  "shared_forward_calls": 1,
+  "both_endpoint_gradients": {
+    "sigreg": [
+      5.033706188201904,
+      4.926337242126465
+    ],
+    "infonce": [
+      14.491504669189453,
+      14.632224082946777
+    ],
+    "raw_infonce": [
+      0.19825147092342377,
+      0.20127427577972412
+    ],
+    "vicreg": [
+      7.213288307189941,
+      7.089797496795654
+    ]
+  },
+  "dependencies": {
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/run.py": "6be84f0fc4612e4a7b35fd5331de775d07fdc149c26259cc6509ede31ae28ffd",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/PROTOCOL.md": "80862e8028ae145486ebeaa91809d001c0ea91f4664054f659aaabbd34779295",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/initialization-crossing/run.py": "5bd9e057e7436ce506c6318db97fa8ba54be62985863f7034ffb22d88c06b54b",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/qualitative-study/run_trials.py": "7149d54cef2126273b0459b471e331dc0570c9f894f3dfa3a1139efd77c6c7b5",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/identifiability/reproduce.py": "60c6636b5fe28487e07e1a911c448bdcc226d650a31972e6750a0cbcda58e3a4",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/identifiability/sigreg.py": "9ebc336776793c3bb33a59bd2a142849fd46b94bb4ce37bf8ff6cb5cb865f344",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/curiosity/experiment.py": "b69f7def8642e54a8b726c2b0982040d8da75997b597976f35ad0a5253538328",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/reliability/run_study.py": "c20a49e93ce85c0486259e07a7145169b3dc99c6851b437c42139ee151079fca",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/curriculum-controls/run_controls.py": "cbcff97aef32622fd73dca86acc376a9f863e627c3c4756dc56d1e94bc4c3232",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/dose.py": "53cfa989be3ac547736c3cd1aa50e072817f5f1b937e0f3a5cd6a51d529de981",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/DOSE_PROTOCOL.md": "0379d78756749ab397de4550ee83a7f871fda60ad9454673e3f9183ccd3adf3d",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/raw-embedding-infonce/run.py": "7771529b04b45e9fc2f0d7b479a81f6d306961e151dfac05da87890ae36c2d65",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/joint.py": "1e7574f02655e2aabb98eb3168c3bb7b10849a90d8e2931ee487813f43fcdf85",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/JOINT_PROTOCOL.md": "9f0d1eaec554c07f00fa3194615fa37c95c32b315c2ad3efbbb8b53c33143326",
+    "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/fresh_fit.py": "a050721ec13c0c75ec5bcdd3f2616c2d5f677dce56284312458a1e973d7fef81"
+  },
+  "records": [
+    {
+      "source": 9100,
+      "alpha": 0.962371826171875,
+      "gamma": 0.00335693359375,
+      "native_mass": 0.962371826171875,
+      "counts": [
+        15740,
+        55,
+        589
+      ],
+      "weights": [
+        0.960693359375,
+        0.00335693359375,
+        0.03594970703125
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9100,
+      "alpha": 0.5,
+      "gamma": 0.00335693359375,
+      "native_mass": 0.962371826171875,
+      "counts": [
+        15740,
+        55,
+        589
+      ],
+      "weights": [
+        0.498321533203125,
+        0.00335693359375,
+        0.498321533203125
+      ],
+      "near_shape_tv_bound": 0.0016128397297893212,
+      "far_shape_tv_bound": 0.04124971685231651
+    },
+    {
+      "source": 9100,
+      "alpha": 0.75,
+      "gamma": 0.00335693359375,
+      "native_mass": 0.962371826171875,
+      "counts": [
+        15740,
+        55,
+        589
+      ],
+      "weights": [
+        0.748321533203125,
+        0.00335693359375,
+        0.248321533203125
+      ],
+      "near_shape_tv_bound": 0.0004938618652059879,
+      "far_shape_tv_bound": 0.03789278325856651
+    },
+    {
+      "source": 9100,
+      "alpha": 0.9375,
+      "gamma": 0.00335693359375,
+      "native_mass": 0.962371826171875,
+      "counts": [
+        15740,
+        55,
+        589
+      ],
+      "weights": [
+        0.935821533203125,
+        0.00335693359375,
+        0.060821533203125
+      ],
+      "near_shape_tv_bound": 4.627071937265462e-05,
+      "far_shape_tv_bound": 0.017751181696066504
+    },
+    {
+      "source": 9101,
+      "alpha": 0.89581298828125,
+      "gamma": 0.005859375,
+      "native_mass": 0.89581298828125,
+      "counts": [
+        14629,
+        96,
+        1659
+      ],
+      "weights": [
+        0.89288330078125,
+        0.005859375,
+        0.10125732421875
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9101,
+      "alpha": 0.5,
+      "gamma": 0.005859375,
+      "native_mass": 0.89581298828125,
+      "counts": [
+        14629,
+        96,
+        1659
+      ],
+      "weights": [
+        0.4970703125,
+        0.005859375,
+        0.4970703125
+      ],
+      "near_shape_tv_bound": 0.0025889518890100157,
+      "far_shape_tv_bound": 0.022260132908611598
+    },
+    {
+      "source": 9101,
+      "alpha": 0.75,
+      "gamma": 0.005859375,
+      "native_mass": 0.89581298828125,
+      "counts": [
+        14629,
+        96,
+        1659
+      ],
+      "weights": [
+        0.7470703125,
+        0.005859375,
+        0.2470703125
+      ],
+      "near_shape_tv_bound": 0.0006358268890100157,
+      "far_shape_tv_bound": 0.016400757908611598
+    },
+    {
+      "source": 9101,
+      "alpha": 0.9375,
+      "gamma": 0.005859375,
+      "native_mass": 0.89581298828125,
+      "counts": [
+        14629,
+        96,
+        1659
+      ],
+      "weights": [
+        0.9345703125,
+        0.005859375,
+        0.0595703125
+      ],
+      "near_shape_tv_bound": 0.00014542311098998412,
+      "far_shape_tv_bound": 0.018755492091388402
+    },
+    {
+      "source": 9102,
+      "alpha": 0.937774658203125,
+      "gamma": 0.00555419921875,
+      "native_mass": 0.937774658203125,
+      "counts": [
+        15319,
+        91,
+        974
+      ],
+      "weights": [
+        0.93499755859375,
+        0.00555419921875,
+        0.0594482421875
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9102,
+      "alpha": 0.5,
+      "gamma": 0.00555419921875,
+      "native_mass": 0.937774658203125,
+      "counts": [
+        15319,
+        91,
+        974
+      ],
+      "weights": [
+        0.497222900390625,
+        0.00555419921875,
+        0.497222900390625
+      ],
+      "near_shape_tv_bound": 0.002592827224867999,
+      "far_shape_tv_bound": 0.039075521232451574
+    },
+    {
+      "source": 9102,
+      "alpha": 0.75,
+      "gamma": 0.00555419921875,
+      "native_mass": 0.937774658203125,
+      "counts": [
+        15319,
+        91,
+        974
+      ],
+      "weights": [
+        0.747222900390625,
+        0.00555419921875,
+        0.247222900390625
+      ],
+      "near_shape_tv_bound": 0.0007414274852846655,
+      "far_shape_tv_bound": 0.033521322013701574
+    },
+    {
+      "source": 9102,
+      "alpha": 0.9375,
+      "gamma": 0.00555419921875,
+      "native_mass": 0.937774658203125,
+      "counts": [
+        15319,
+        91,
+        974
+      ],
+      "weights": [
+        0.934722900390625,
+        0.00555419921875,
+        0.059722900390625
+      ],
+      "near_shape_tv_bound": 8.67589451332346e-07,
+      "far_shape_tv_bound": 0.0001961267012015723
+    },
+    {
+      "source": 9103,
+      "alpha": 0.876251220703125,
+      "gamma": 0.00567626953125,
+      "native_mass": 0.876251220703125,
+      "counts": [
+        14310,
+        93,
+        1981
+      ],
+      "weights": [
+        0.8734130859375,
+        0.00567626953125,
+        0.12091064453125
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9103,
+      "alpha": 0.5,
+      "gamma": 0.00567626953125,
+      "native_mass": 0.876251220703125,
+      "counts": [
+        14310,
+        93,
+        1981
+      ],
+      "weights": [
+        0.497161865234375,
+        0.00567626953125,
+        0.497161865234375
+      ],
+      "near_shape_tv_bound": 0.002437318533444128,
+      "far_shape_tv_bound": 0.017258379050747532
+    },
+    {
+      "source": 9103,
+      "alpha": 0.75,
+      "gamma": 0.00567626953125,
+      "native_mass": 0.876251220703125,
+      "counts": [
+        14310,
+        93,
+        1981
+      ],
+      "weights": [
+        0.747161865234375,
+        0.00567626953125,
+        0.247161865234375
+      ],
+      "near_shape_tv_bound": 0.0005452286896941278,
+      "far_shape_tv_bound": 0.011582109519497534
+    },
+    {
+      "source": 9103,
+      "alpha": 0.9375,
+      "gamma": 0.00567626953125,
+      "native_mass": 0.876251220703125,
+      "counts": [
+        14310,
+        93,
+        1981
+      ],
+      "weights": [
+        0.934661865234375,
+        0.00567626953125,
+        0.059661865234375
+      ],
+      "near_shape_tv_bound": 0.00021160724780587204,
+      "far_shape_tv_bound": 0.022475507668002468
+    },
+    {
+      "source": 9104,
+      "alpha": 0.746856689453125,
+      "gamma": 0.01202392578125,
+      "native_mass": 0.746856689453125,
+      "counts": [
+        12138,
+        197,
+        4049
+      ],
+      "weights": [
+        0.7408447265625,
+        0.01202392578125,
+        0.24713134765625
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9104,
+      "alpha": 0.5,
+      "gamma": 0.01202392578125,
+      "native_mass": 0.746856689453125,
+      "counts": [
+        12138,
+        197,
+        4049
+      ],
+      "weights": [
+        0.493988037109375,
+        0.01202392578125,
+        0.493988037109375
+      ],
+      "near_shape_tv_bound": 0.003974238370634219,
+      "far_shape_tv_bound": 0.011725320752806662
+    },
+    {
+      "source": 9104,
+      "alpha": 0.75,
+      "gamma": 0.01202392578125,
+      "native_mass": 0.746856689453125,
+      "counts": [
+        12138,
+        197,
+        4049
+      ],
+      "weights": [
+        0.743988037109375,
+        0.01202392578125,
+        0.243988037109375
+      ],
+      "near_shape_tv_bound": 3.373688978244823e-05,
+      "far_shape_tv_bound": 0.0002986050284433385
+    },
+    {
+      "source": 9104,
+      "alpha": 0.9375,
+      "gamma": 0.01202392578125,
+      "native_mass": 0.746856689453125,
+      "counts": [
+        12138,
+        197,
+        4049
+      ],
+      "weights": [
+        0.931488037109375,
+        0.01202392578125,
+        0.056488037109375
+      ],
+      "near_shape_tv_bound": 0.0016369269939491146,
+      "far_shape_tv_bound": 0.07244215971594334
+    },
+    {
+      "source": 9105,
+      "alpha": 0.8980712890625,
+      "gamma": 0.0045166015625,
+      "native_mass": 0.8980712890625,
+      "counts": [
+        14677,
+        74,
+        1633
+      ],
+      "weights": [
+        0.89581298828125,
+        0.0045166015625,
+        0.09967041015625
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9105,
+      "alpha": 0.5,
+      "gamma": 0.0045166015625,
+      "native_mass": 0.8980712890625,
+      "counts": [
+        14677,
+        74,
+        1633
+      ],
+      "weights": [
+        0.49774169921875,
+        0.0045166015625,
+        0.49774169921875
+      ],
+      "near_shape_tv_bound": 0.002001989628287685,
+      "far_shape_tv_bound": 0.01763908706025449
+    },
+    {
+      "source": 9105,
+      "alpha": 0.75,
+      "gamma": 0.0045166015625,
+      "native_mass": 0.8980712890625,
+      "counts": [
+        14677,
+        74,
+        1633
+      ],
+      "weights": [
+        0.74774169921875,
+        0.0045166015625,
+        0.24774169921875
+      ],
+      "near_shape_tv_bound": 0.0004964557741210183,
+      "far_shape_tv_bound": 0.01312248549775449
+    },
+    {
+      "source": 9105,
+      "alpha": 0.9375,
+      "gamma": 0.0045166015625,
+      "native_mass": 0.8980712890625,
+      "counts": [
+        14677,
+        74,
+        1633
+      ],
+      "weights": [
+        0.93524169921875,
+        0.0045166015625,
+        0.06024169921875
+      ],
+      "near_shape_tv_bound": 0.00010575776754564828,
+      "far_shape_tv_bound": 0.01397712387724551
+    },
+    {
+      "source": 9106,
+      "alpha": 0.739105224609375,
+      "gamma": 0.01068115234375,
+      "native_mass": 0.739105224609375,
+      "counts": [
+        12022,
+        175,
+        4187
+      ],
+      "weights": [
+        0.7337646484375,
+        0.01068115234375,
+        0.25555419921875
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9106,
+      "alpha": 0.5,
+      "gamma": 0.01068115234375,
+      "native_mass": 0.739105224609375,
+      "counts": [
+        12022,
+        175,
+        4187
+      ],
+      "weights": [
+        0.494659423828125,
+        0.01068115234375,
+        0.494659423828125
+      ],
+      "near_shape_tv_bound": 0.003455420480336978,
+      "far_shape_tv_bound": 0.009789078092558341
+    },
+    {
+      "source": 9106,
+      "alpha": 0.75,
+      "gamma": 0.01068115234375,
+      "native_mass": 0.739105224609375,
+      "counts": [
+        12022,
+        175,
+        4187
+      ],
+      "weights": [
+        0.744659423828125,
+        0.01068115234375,
+        0.244659423828125
+      ],
+      "near_shape_tv_bound": 0.000104963634246356,
+      "far_shape_tv_bound": 0.0008920742511916588
+    },
+    {
+      "source": 9106,
+      "alpha": 0.9375,
+      "gamma": 0.01068115234375,
+      "native_mass": 0.739105224609375,
+      "counts": [
+        12022,
+        175,
+        4187
+      ],
+      "weights": [
+        0.932159423828125,
+        0.01068115234375,
+        0.057159423828125
+      ],
+      "near_shape_tv_bound": 0.001529117280079689,
+      "far_shape_tv_bound": 0.06497898831369166
+    },
+    {
+      "source": 9107,
+      "alpha": 0.830596923828125,
+      "gamma": 0.00775146484375,
+      "native_mass": 0.830596923828125,
+      "counts": [
+        13545,
+        127,
+        2712
+      ],
+      "weights": [
+        0.82672119140625,
+        0.00775146484375,
+        0.16552734375
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9107,
+      "alpha": 0.5,
+      "gamma": 0.00775146484375,
+      "native_mass": 0.830596923828125,
+      "counts": [
+        13545,
+        127,
+        2712
+      ],
+      "weights": [
+        0.496124267578125,
+        0.00775146484375,
+        0.496124267578125
+      ],
+      "near_shape_tv_bound": 0.003085263572485717,
+      "far_shape_tv_bound": 0.015127295739928617
+    },
+    {
+      "source": 9107,
+      "alpha": 0.75,
+      "gamma": 0.00775146484375,
+      "native_mass": 0.830596923828125,
+      "counts": [
+        13545,
+        127,
+        2712
+      ],
+      "weights": [
+        0.746124267578125,
+        0.00775146484375,
+        0.246124267578125
+      ],
+      "near_shape_tv_bound": 0.000501441957902383,
+      "far_shape_tv_bound": 0.0073758308961786164
+    },
+    {
+      "source": 9107,
+      "alpha": 0.9375,
+      "gamma": 0.00775146484375,
+      "native_mass": 0.830596923828125,
+      "counts": [
+        13545,
+        127,
+        2712
+      ],
+      "weights": [
+        0.933624267578125,
+        0.00775146484375,
+        0.058624267578125
+      ],
+      "near_shape_tv_bound": 0.0005320866879309501,
+      "far_shape_tv_bound": 0.03913295816632138
+    },
+    {
+      "source": 9108,
+      "alpha": 0.855438232421875,
+      "gamma": 0.00494384765625,
+      "native_mass": 0.855438232421875,
+      "counts": [
+        13975,
+        81,
+        2328
+      ],
+      "weights": [
+        0.85296630859375,
+        0.00494384765625,
+        0.14208984375
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9108,
+      "alpha": 0.5,
+      "gamma": 0.00494384765625,
+      "native_mass": 0.855438232421875,
+      "counts": [
+        13975,
+        81,
+        2328
+      ],
+      "weights": [
+        0.497528076171875,
+        0.00494384765625,
+        0.497528076171875
+      ],
+      "near_shape_tv_bound": 0.0020541897774729316,
+      "far_shape_tv_bound": 0.012155582362749367
+    },
+    {
+      "source": 9108,
+      "alpha": 0.75,
+      "gamma": 0.00494384765625,
+      "native_mass": 0.855438232421875,
+      "counts": [
+        13975,
+        81,
+        2328
+      ],
+      "weights": [
+        0.747528076171875,
+        0.00494384765625,
+        0.247528076171875
+      ],
+      "near_shape_tv_bound": 0.00040624055872293135,
+      "far_shape_tv_bound": 0.007211734706499367
+    },
+    {
+      "source": 9108,
+      "alpha": 0.9375,
+      "gamma": 0.00494384765625,
+      "native_mass": 0.855438232421875,
+      "counts": [
+        13975,
+        81,
+        2328
+      ],
+      "weights": [
+        0.935028076171875,
+        0.00494384765625,
+        0.060028076171875
+      ],
+      "near_shape_tv_bound": 0.0002529391287770685,
+      "far_shape_tv_bound": 0.022451351231000633
+    },
+    {
+      "source": 9109,
+      "alpha": 0.56719970703125,
+      "gamma": 0.0166015625,
+      "native_mass": 0.56719970703125,
+      "counts": [
+        9157,
+        272,
+        6955
+      ],
+      "weights": [
+        0.55889892578125,
+        0.0166015625,
+        0.42449951171875
+      ],
+      "near_shape_tv_bound": 0.0,
+      "far_shape_tv_bound": 0.0
+    },
+    {
+      "source": 9109,
+      "alpha": 0.5,
+      "gamma": 0.0166015625,
+      "native_mass": 0.56719970703125,
+      "counts": [
+        9157,
+        272,
+        6955
+      ],
+      "weights": [
+        0.49169921875,
+        0.0166015625,
+        0.49169921875
+      ],
+      "near_shape_tv_bound": 0.001966891242063919,
+      "far_shape_tv_bound": 0.002577678791778312
+    },
+    {
+      "source": 9109,
+      "alpha": 0.75,
+      "gamma": 0.0166015625,
+      "native_mass": 0.56719970703125,
+      "counts": [
+        9157,
+        272,
+        6955
+      ],
+      "weights": [
+        0.74169921875,
+        0.0166015625,
+        0.24169921875
+      ],
+      "near_shape_tv_bound": 0.0035669629246027484,
+      "far_shape_tv_bound": 0.014023883708221689
+    },
+    {
+      "source": 9109,
+      "alpha": 0.9375,
+      "gamma": 0.0166015625,
+      "native_mass": 0.56719970703125,
+      "counts": [
+        9157,
+        272,
+        6955
+      ],
+      "weights": [
+        0.92919921875,
+        0.0166015625,
+        0.05419921875
+      ],
+      "near_shape_tv_bound": 0.005780504591269414,
+      "far_shape_tv_bound": 0.11363325870822169
+    }
+  ]
+}

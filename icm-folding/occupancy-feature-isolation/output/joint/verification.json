@@ -1,0 +1,933 @@
+{
+  "passed": true,
+  "checkpoints": 160,
+  "dense_reload_exact": true,
+  "sources_initializers_and_plans_verified": true,
+  "transition_region_masses_verified": true,
+  "shared_forward_preflight": {
+    "passed": true,
+    "native_joint_corners_exact": true,
+    "target_masses_exact": true,
+    "shared_forward_calls": 1,
+    "both_endpoint_gradients": {
+      "sigreg": [
+        5.033706188201904,
+        4.926337242126465
+      ],
+      "infonce": [
+        14.491504669189453,
+        14.632224082946777
+      ],
+      "raw_infonce": [
+        0.19825147092342377,
+        0.20127427577972412
+      ],
+      "vicreg": [
+        7.213288307189941,
+        7.089797496795654
+      ]
+    },
+    "dependencies": {
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/run.py": "6be84f0fc4612e4a7b35fd5331de775d07fdc149c26259cc6509ede31ae28ffd",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/PROTOCOL.md": "80862e8028ae145486ebeaa91809d001c0ea91f4664054f659aaabbd34779295",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/initialization-crossing/run.py": "5bd9e057e7436ce506c6318db97fa8ba54be62985863f7034ffb22d88c06b54b",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/qualitative-study/run_trials.py": "7149d54cef2126273b0459b471e331dc0570c9f894f3dfa3a1139efd77c6c7b5",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/identifiability/reproduce.py": "60c6636b5fe28487e07e1a911c448bdcc226d650a31972e6750a0cbcda58e3a4",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/identifiability/sigreg.py": "9ebc336776793c3bb33a59bd2a142849fd46b94bb4ce37bf8ff6cb5cb865f344",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/curiosity/experiment.py": "b69f7def8642e54a8b726c2b0982040d8da75997b597976f35ad0a5253538328",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/reliability/run_study.py": "c20a49e93ce85c0486259e07a7145169b3dc99c6851b437c42139ee151079fca",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/predictive-closure-workspace/behavior-policy-experiments/curriculum-controls/run_controls.py": "cbcff97aef32622fd73dca86acc376a9f863e627c3c4756dc56d1e94bc4c3232",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/dose.py": "53cfa989be3ac547736c3cd1aa50e072817f5f1b937e0f3a5cd6a51d529de981",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/DOSE_PROTOCOL.md": "0379d78756749ab397de4550ee83a7f871fda60ad9454673e3f9183ccd3adf3d",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/raw-embedding-infonce/run.py": "7771529b04b45e9fc2f0d7b479a81f6d306961e151dfac05da87890ae36c2d65",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/joint.py": "1e7574f02655e2aabb98eb3168c3bb7b10849a90d8e2931ee487813f43fcdf85",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/JOINT_PROTOCOL.md": "9f0d1eaec554c07f00fa3194615fa37c95c32b315c2ad3efbbb8b53c33143326",
+      "/Users/canelatustin/Documents/ChatGPT/kempner/icm-folding/occupancy-feature-isolation/fresh_fit.py": "a050721ec13c0c75ec5bcdd3f2616c2d5f677dce56284312458a1e973d7fef81"
+    },
+    "records": [
+      {
+        "source": 9100,
+        "alpha": 0.962371826171875,
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.960693359375,
+          0.00335693359375,
+          0.03594970703125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9100,
+        "alpha": 0.5,
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.498321533203125,
+          0.00335693359375,
+          0.498321533203125
+        ],
+        "near_shape_tv_bound": 0.0016128397297893212,
+        "far_shape_tv_bound": 0.04124971685231651
+      },
+      {
+        "source": 9100,
+        "alpha": 0.75,
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.748321533203125,
+          0.00335693359375,
+          0.248321533203125
+        ],
+        "near_shape_tv_bound": 0.0004938618652059879,
+        "far_shape_tv_bound": 0.03789278325856651
+      },
+      {
+        "source": 9100,
+        "alpha": 0.9375,
+        "gamma": 0.00335693359375,
+        "native_mass": 0.962371826171875,
+        "counts": [
+          15740,
+          55,
+          589
+        ],
+        "weights": [
+          0.935821533203125,
+          0.00335693359375,
+          0.060821533203125
+        ],
+        "near_shape_tv_bound": 4.627071937265462e-05,
+        "far_shape_tv_bound": 0.017751181696066504
+      },
+      {
+        "source": 9101,
+        "alpha": 0.89581298828125,
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.89288330078125,
+          0.005859375,
+          0.10125732421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9101,
+        "alpha": 0.5,
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.4970703125,
+          0.005859375,
+          0.4970703125
+        ],
+        "near_shape_tv_bound": 0.0025889518890100157,
+        "far_shape_tv_bound": 0.022260132908611598
+      },
+      {
+        "source": 9101,
+        "alpha": 0.75,
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.7470703125,
+          0.005859375,
+          0.2470703125
+        ],
+        "near_shape_tv_bound": 0.0006358268890100157,
+        "far_shape_tv_bound": 0.016400757908611598
+      },
+      {
+        "source": 9101,
+        "alpha": 0.9375,
+        "gamma": 0.005859375,
+        "native_mass": 0.89581298828125,
+        "counts": [
+          14629,
+          96,
+          1659
+        ],
+        "weights": [
+          0.9345703125,
+          0.005859375,
+          0.0595703125
+        ],
+        "near_shape_tv_bound": 0.00014542311098998412,
+        "far_shape_tv_bound": 0.018755492091388402
+      },
+      {
+        "source": 9102,
+        "alpha": 0.937774658203125,
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.93499755859375,
+          0.00555419921875,
+          0.0594482421875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9102,
+        "alpha": 0.5,
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.497222900390625,
+          0.00555419921875,
+          0.497222900390625
+        ],
+        "near_shape_tv_bound": 0.002592827224867999,
+        "far_shape_tv_bound": 0.039075521232451574
+      },
+      {
+        "source": 9102,
+        "alpha": 0.75,
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.747222900390625,
+          0.00555419921875,
+          0.247222900390625
+        ],
+        "near_shape_tv_bound": 0.0007414274852846655,
+        "far_shape_tv_bound": 0.033521322013701574
+      },
+      {
+        "source": 9102,
+        "alpha": 0.9375,
+        "gamma": 0.00555419921875,
+        "native_mass": 0.937774658203125,
+        "counts": [
+          15319,
+          91,
+          974
+        ],
+        "weights": [
+          0.934722900390625,
+          0.00555419921875,
+          0.059722900390625
+        ],
+        "near_shape_tv_bound": 8.67589451332346e-07,
+        "far_shape_tv_bound": 0.0001961267012015723
+      },
+      {
+        "source": 9103,
+        "alpha": 0.876251220703125,
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.8734130859375,
+          0.00567626953125,
+          0.12091064453125
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9103,
+        "alpha": 0.5,
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.497161865234375,
+          0.00567626953125,
+          0.497161865234375
+        ],
+        "near_shape_tv_bound": 0.002437318533444128,
+        "far_shape_tv_bound": 0.017258379050747532
+      },
+      {
+        "source": 9103,
+        "alpha": 0.75,
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.747161865234375,
+          0.00567626953125,
+          0.247161865234375
+        ],
+        "near_shape_tv_bound": 0.0005452286896941278,
+        "far_shape_tv_bound": 0.011582109519497534
+      },
+      {
+        "source": 9103,
+        "alpha": 0.9375,
+        "gamma": 0.00567626953125,
+        "native_mass": 0.876251220703125,
+        "counts": [
+          14310,
+          93,
+          1981
+        ],
+        "weights": [
+          0.934661865234375,
+          0.00567626953125,
+          0.059661865234375
+        ],
+        "near_shape_tv_bound": 0.00021160724780587204,
+        "far_shape_tv_bound": 0.022475507668002468
+      },
+      {
+        "source": 9104,
+        "alpha": 0.746856689453125,
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.7408447265625,
+          0.01202392578125,
+          0.24713134765625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9104,
+        "alpha": 0.5,
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.493988037109375,
+          0.01202392578125,
+          0.493988037109375
+        ],
+        "near_shape_tv_bound": 0.003974238370634219,
+        "far_shape_tv_bound": 0.011725320752806662
+      },
+      {
+        "source": 9104,
+        "alpha": 0.75,
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.743988037109375,
+          0.01202392578125,
+          0.243988037109375
+        ],
+        "near_shape_tv_bound": 3.373688978244823e-05,
+        "far_shape_tv_bound": 0.0002986050284433385
+      },
+      {
+        "source": 9104,
+        "alpha": 0.9375,
+        "gamma": 0.01202392578125,
+        "native_mass": 0.746856689453125,
+        "counts": [
+          12138,
+          197,
+          4049
+        ],
+        "weights": [
+          0.931488037109375,
+          0.01202392578125,
+          0.056488037109375
+        ],
+        "near_shape_tv_bound": 0.0016369269939491146,
+        "far_shape_tv_bound": 0.07244215971594334
+      },
+      {
+        "source": 9105,
+        "alpha": 0.8980712890625,
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.89581298828125,
+          0.0045166015625,
+          0.09967041015625
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9105,
+        "alpha": 0.5,
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.49774169921875,
+          0.0045166015625,
+          0.49774169921875
+        ],
+        "near_shape_tv_bound": 0.002001989628287685,
+        "far_shape_tv_bound": 0.01763908706025449
+      },
+      {
+        "source": 9105,
+        "alpha": 0.75,
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.74774169921875,
+          0.0045166015625,
+          0.24774169921875
+        ],
+        "near_shape_tv_bound": 0.0004964557741210183,
+        "far_shape_tv_bound": 0.01312248549775449
+      },
+      {
+        "source": 9105,
+        "alpha": 0.9375,
+        "gamma": 0.0045166015625,
+        "native_mass": 0.8980712890625,
+        "counts": [
+          14677,
+          74,
+          1633
+        ],
+        "weights": [
+          0.93524169921875,
+          0.0045166015625,
+          0.06024169921875
+        ],
+        "near_shape_tv_bound": 0.00010575776754564828,
+        "far_shape_tv_bound": 0.01397712387724551
+      },
+      {
+        "source": 9106,
+        "alpha": 0.739105224609375,
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.7337646484375,
+          0.01068115234375,
+          0.25555419921875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9106,
+        "alpha": 0.5,
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.494659423828125,
+          0.01068115234375,
+          0.494659423828125
+        ],
+        "near_shape_tv_bound": 0.003455420480336978,
+        "far_shape_tv_bound": 0.009789078092558341
+      },
+      {
+        "source": 9106,
+        "alpha": 0.75,
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.744659423828125,
+          0.01068115234375,
+          0.244659423828125
+        ],
+        "near_shape_tv_bound": 0.000104963634246356,
+        "far_shape_tv_bound": 0.0008920742511916588
+      },
+      {
+        "source": 9106,
+        "alpha": 0.9375,
+        "gamma": 0.01068115234375,
+        "native_mass": 0.739105224609375,
+        "counts": [
+          12022,
+          175,
+          4187
+        ],
+        "weights": [
+          0.932159423828125,
+          0.01068115234375,
+          0.057159423828125
+        ],
+        "near_shape_tv_bound": 0.001529117280079689,
+        "far_shape_tv_bound": 0.06497898831369166
+      },
+      {
+        "source": 9107,
+        "alpha": 0.830596923828125,
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.82672119140625,
+          0.00775146484375,
+          0.16552734375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9107,
+        "alpha": 0.5,
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.496124267578125,
+          0.00775146484375,
+          0.496124267578125
+        ],
+        "near_shape_tv_bound": 0.003085263572485717,
+        "far_shape_tv_bound": 0.015127295739928617
+      },
+      {
+        "source": 9107,
+        "alpha": 0.75,
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.746124267578125,
+          0.00775146484375,
+          0.246124267578125
+        ],
+        "near_shape_tv_bound": 0.000501441957902383,
+        "far_shape_tv_bound": 0.0073758308961786164
+      },
+      {
+        "source": 9107,
+        "alpha": 0.9375,
+        "gamma": 0.00775146484375,
+        "native_mass": 0.830596923828125,
+        "counts": [
+          13545,
+          127,
+          2712
+        ],
+        "weights": [
+          0.933624267578125,
+          0.00775146484375,
+          0.058624267578125
+        ],
+        "near_shape_tv_bound": 0.0005320866879309501,
+        "far_shape_tv_bound": 0.03913295816632138
+      },
+      {
+        "source": 9108,
+        "alpha": 0.855438232421875,
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.85296630859375,
+          0.00494384765625,
+          0.14208984375
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9108,
+        "alpha": 0.5,
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.497528076171875,
+          0.00494384765625,
+          0.497528076171875
+        ],
+        "near_shape_tv_bound": 0.0020541897774729316,
+        "far_shape_tv_bound": 0.012155582362749367
+      },
+      {
+        "source": 9108,
+        "alpha": 0.75,
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.747528076171875,
+          0.00494384765625,
+          0.247528076171875
+        ],
+        "near_shape_tv_bound": 0.00040624055872293135,
+        "far_shape_tv_bound": 0.007211734706499367
+      },
+      {
+        "source": 9108,
+        "alpha": 0.9375,
+        "gamma": 0.00494384765625,
+        "native_mass": 0.855438232421875,
+        "counts": [
+          13975,
+          81,
+          2328
+        ],
+        "weights": [
+          0.935028076171875,
+          0.00494384765625,
+          0.060028076171875
+        ],
+        "near_shape_tv_bound": 0.0002529391287770685,
+        "far_shape_tv_bound": 0.022451351231000633
+      },
+      {
+        "source": 9109,
+        "alpha": 0.56719970703125,
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.55889892578125,
+          0.0166015625,
+          0.42449951171875
+        ],
+        "near_shape_tv_bound": 0.0,
+        "far_shape_tv_bound": 0.0
+      },
+      {
+        "source": 9109,
+        "alpha": 0.5,
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.49169921875,
+          0.0166015625,
+          0.49169921875
+        ],
+        "near_shape_tv_bound": 0.001966891242063919,
+        "far_shape_tv_bound": 0.002577678791778312
+      },
+      {
+        "source": 9109,
+        "alpha": 0.75,
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.74169921875,
+          0.0166015625,
+          0.24169921875
+        ],
+        "near_shape_tv_bound": 0.0035669629246027484,
+        "far_shape_tv_bound": 0.014023883708221689
+      },
+      {
+        "source": 9109,
+        "alpha": 0.9375,
+        "gamma": 0.0166015625,
+        "native_mass": 0.56719970703125,
+        "counts": [
+          9157,
+          272,
+          6955
+        ],
+        "weights": [
+          0.92919921875,
+          0.0166015625,
+          0.05419921875
+        ],
+        "near_shape_tv_bound": 0.005780504591269414,
+        "far_shape_tv_bound": 0.11363325870822169
+      }
+    ]
+  },
+  "checkpoint_hashes": {
+    "9100-a0.5-infonce.pt": "f8e67cebadea39b878abfc4bd7cd62724d59785cf894b8600f6c8cc7d12c9b0f",
+    "9100-a0.5-raw_infonce.pt": "f02c02942c684e95c10a09187ef9ec256ceab542b792e70c58e8f1073c71651e",
+    "9100-a0.5-sigreg.pt": "914b237bb6503a597684ff46d76150bc17b7213e8ed517d80a179fa7991e0406",
+    "9100-a0.5-vicreg.pt": "8c0e133445095075777a5a79e62dedc6fbf3a238b2c0f6d69252eba4d03bf174",
+    "9100-a0.75-infonce.pt": "e5202a8c4d67db0e657714cc11e7d8702b2e7383baf2813df8552184c49dec49",
+    "9100-a0.75-raw_infonce.pt": "7f4e4ba8a030aa4a198defba3ef7fc0004c8d1a2763d6de44d7cfc72d611956f",
+    "9100-a0.75-sigreg.pt": "e1038bd994cb26a617598b931ce207cf487f891bf8e2238f97bb21eedf700ac2",
+    "9100-a0.75-vicreg.pt": "a885da397f98b38ed53b62760876be126613a5512faae280ccf5b5a613049f25",
+    "9100-a0.9375-infonce.pt": "f5fcabfaed5e9a5e051fa4f78a958ca22a542cf45a1377aa76b20697921f3fbd",
+    "9100-a0.9375-raw_infonce.pt": "76a9f9699f2e0f0595ace73b130e61274b7360ac5216f61a9d590bafec12a498",
+    "9100-a0.9375-sigreg.pt": "3ade2ebaf11d45f4620a196b8ad1f0235d8f799229a3ab9c007df830b2bb295f",
+    "9100-a0.9375-vicreg.pt": "ab057c9d8f6996b657eae9c6fc1b08650e02d152eb5196ee8a81d4a7f6edf998",
+    "9100-a0.962372-infonce.pt": "cbf865d835fd24b752b88209adc6982103ed0b2b5c76dfcbb0c18bb2e98ddb50",
+    "9100-a0.962372-raw_infonce.pt": "45346db2922f335335bfb352c56bac3109cf68fd303dfedf92d8a0395d3ccb09",
+    "9100-a0.962372-sigreg.pt": "6c91c9216ab7ed4be4217067df6969c976721c31fc72e711f468b06a0393769b",
+    "9100-a0.962372-vicreg.pt": "ea1cc379e520eb722a886a714928f7f51c718faa66ee1f038810e8d2bddec38b",
+    "9101-a0.5-infonce.pt": "3f4e37f4f29af19565d89973bd3668e42ef6ab37d7cd32bc25c5ebbe2bccaffd",
+    "9101-a0.5-raw_infonce.pt": "e549ed1361f9700d32be1125c5bafe8f7782933e985a3165e269e0d01d660262",
+    "9101-a0.5-sigreg.pt": "978a2d4f5ee45493cd50af2fbc99cbb1f9ea13aa648b70aa68e3f74e285128cb",
+    "9101-a0.5-vicreg.pt": "e4a01cc7606098b36299ab4a9fdff49349091bfb0248e32d1e420f7ae522bb83",
+    "9101-a0.75-infonce.pt": "68385e0a1bd6bf5ff573bde6ffc23d64eefebfc55e067d9a9f0aab0dee360aa3",
+    "9101-a0.75-raw_infonce.pt": "6212f174838c946e03308de86db36924556f967ba125c450a24e02c4500cc80c",
+    "9101-a0.75-sigreg.pt": "fc906adca4dcb52b2c5c6c28a888e989b6fb25cd9cb5fec0a737e4d50089e7d8",
+    "9101-a0.75-vicreg.pt": "d017ac1be9641e2dba0c2c30284d6952b9e9148c288a0bec847b411a19fbcefa",
+    "9101-a0.895813-infonce.pt": "c5624762496447bbefe73b28ade9f2609dd2faf71b73796ffa009f8d68a7b513",
+    "9101-a0.895813-raw_infonce.pt": "0c3690154fadd6a221885926bf3a6cc55768104ceddba60c1dc9cbd25e4dea22",
+    "9101-a0.895813-sigreg.pt": "e3bb0ad1a93e429f3bddda0f0c58c9eee023d907039df76895129bb9a6a16044",
+    "9101-a0.895813-vicreg.pt": "f85781721d92f64351d734322a8e111920ebb99f0f19dbeec1a80b0c984edcf9",
+    "9101-a0.9375-infonce.pt": "efd392b682ddd615f9843250dd3faa1caff7ea2c1f36dd80033da22b9b15ea5e",
+    "9101-a0.9375-raw_infonce.pt": "8a817feeb736f345d36fafe9b2ded1d576ef8823adc576a001f26b51bb3c74f8",
+    "9101-a0.9375-sigreg.pt": "5f137f83b9289812922758a4e17e6ac179aeeb0d508febc7dbc4cf3d8f21fcd7",
+    "9101-a0.9375-vicreg.pt": "c72f6edd4abc2476a2bf8990da5fe3abb71d98805b6c7fda5c17d4bd85ff929d",
+    "9102-a0.5-infonce.pt": "6fd7f381b8e88ef24c9adde45ae0dee0ce8501e777bec058e900ae3fe5238e56",
+    "9102-a0.5-raw_infonce.pt": "c800f03ab1cc4f0bc96122edf9bf01cfba1aabe58f3843e1feeb9d7dc57dfed5",
+    "9102-a0.5-sigreg.pt": "731c575f54ee772c1d2ed59476f8b6eec87c056f82a9a5d8c629499130049da4",
+    "9102-a0.5-vicreg.pt": "de8d7c6ab1975070d20544bc59b0ebdc8d0593216031bdb678b08684682e6e01",
+    "9102-a0.75-infonce.pt": "e98c823f1b471752a0c11fee617f90bb6dac85a597978472c32531ede2bfad19",
+    "9102-a0.75-raw_infonce.pt": "fcd9e580bfc5d6f6c4a397da6c833037d47ee2eea7f654dbb99afb97b5294b97",
+    "9102-a0.75-sigreg.pt": "7fa7e6f5be36a2aef45957da7e7eb4f6473153391ff36c5b97e2fb5b718876da",
+    "9102-a0.75-vicreg.pt": "a6fe037d5996f664d935ba4bef6ce424b063cf40d7c64edefe3e93428bb4f3a6",
+    "9102-a0.9375-infonce.pt": "2584098420ff44b103eede9a6e9441342646bd08fc5c4d22c9e6ae8710c9ecaa",
+    "9102-a0.9375-raw_infonce.pt": "67cdf409efd45e232d6a7a52d39acde1e9f3234a7b74e4a240ce6076d6118c45",
+    "9102-a0.9375-sigreg.pt": "7c97cc0c83adb6a630130056523d0ee48651354e865e0af52415f0ba03101cb1",
+    "9102-a0.9375-vicreg.pt": "055ee16096233ca371b46bf26325ac886e874240dc9b5d4fc23aaf872fa363e9",
+    "9102-a0.937775-infonce.pt": "ccc5d0d98945b3405c68cb7cf1cdd074accaeacb4f312d164c92a437cbf415bc",
+    "9102-a0.937775-raw_infonce.pt": "d9630b8713e299b474e8fd04df04828b09554b4ad9da8fb50d598d6c3029b7cf",
+    "9102-a0.937775-sigreg.pt": "885e211a299da2bc34679980a8ce25d8cd0a8e723f8d2d33cf87aed84e34ceae",
+    "9102-a0.937775-vicreg.pt": "9266d58184df30f30fb2d2746d78fc04e049e3b4c697d0a51abd18289bb1178e",
+    "9103-a0.5-infonce.pt": "1ad3cefef9832e61fe0e614fc56cee88d81374c589ba2d6bf45f31febf377a6b",
+    "9103-a0.5-raw_infonce.pt": "2757cc5299c52c9af34b09ea06edc19da12864ca0bbef07eb3d277ab5a2f0af0",
+    "9103-a0.5-sigreg.pt": "cf339e712c8b9c52ca2802bb71a7451d71d79bf88c8f5ddbcc9bba39b0faac42",
+    "9103-a0.5-vicreg.pt": "452004895c2154e65e3bba0c63ddd23fbdd156036af870585e8ad74f60fe8c4b",
+    "9103-a0.75-infonce.pt": "710e627c79e92e07d1fd34dd408881eab1bd331ef2c4c457658affdaa92e62da",
+    "9103-a0.75-raw_infonce.pt": "71afbf61541c0826f354b16325f514a9ce7460d1485d0aa6c9c25c7ff074ccf9",
+    "9103-a0.75-sigreg.pt": "da9151f964e97b54247a8161260bbc122b46e83a003d6619cd2a27a36f003ac2",
+    "9103-a0.75-vicreg.pt": "c89b975b5ee4788d5b73c33d59fc942d3d02bfc36646cd8eee59122d0745a09e",
+    "9103-a0.876251-infonce.pt": "8a122376baa0accd15bbf7fe0ea8eb208becca8dd6c1808b4577a637557d483f",
+    "9103-a0.876251-raw_infonce.pt": "364cd7b7ee83c3046f5d18fe79842e43d73dd0f8728be8f8d6691e95a957a2fd",
+    "9103-a0.876251-sigreg.pt": "5f684e693544c0f635ec0c98567d88c09f7aedd6f94ce1512c2979e58e190ee4",
+    "9103-a0.876251-vicreg.pt": "6a3100a5abd956705bfa5b672a3ea5cd9744e82a72a51ce3bee9d287f8a78858",
+    "9103-a0.9375-infonce.pt": "0937c3a8aa26392d23976dbd8b093ee68836cc330cde8fa69a4af3367833afae",
+    "9103-a0.9375-raw_infonce.pt": "f401feeca94600bcca951daae29f5ede6635a79e62e16e3edcef5f4a5c034a0b",
+    "9103-a0.9375-sigreg.pt": "748f2e93aad5acbb7f69a4947c5e23c877db6073effaca1df83d3f540323b45a",
+    "9103-a0.9375-vicreg.pt": "985f5bcf13762d4c51bdbda648a6f4ccac0e29f45ec697eda650744e2954f79b",
+    "9104-a0.5-infonce.pt": "7e5a1e6c5b44e9f82229a0dcb502181591e8634f1e1f1b57d7b18ddbf28728cd",
+    "9104-a0.5-raw_infonce.pt": "e9976c9eaed1af89f6d5372a8dc77aa346274e4bca010a9d518f277a287e4e9f",
+    "9104-a0.5-sigreg.pt": "eea0b3e33cc8c0386989b1878f06ef7ae077ea908c71bcaec43a3835042b769a",
+    "9104-a0.5-vicreg.pt": "a60a88e7533e0ae9020ecb4d57189300967ac6a1e3a0e0ad4db2ead87f74b85c",
+    "9104-a0.746857-infonce.pt": "896c692fce4f43db6b7ef790ea6f83382fc894defb7a306328de14545a106acd",
+    "9104-a0.746857-raw_infonce.pt": "63d65ad12b3be15f7ceef51d65b02f7c0c4d2efcaf1972df1c578045c0060600",
+    "9104-a0.746857-sigreg.pt": "5204b00f776435d19141b798619fbbc05355d681634c49d14a6f9d0782871502",
+    "9104-a0.746857-vicreg.pt": "ccc9a4321717aa862b7ffa12d06502ce46648163b37afb40d0c9a4bf281d3fb8",
+    "9104-a0.75-infonce.pt": "388cbf74729a422fe081964721005f955acb80ba7f7c7db818a88dcd5b19d682",
+    "9104-a0.75-raw_infonce.pt": "981526bf3e85e01cb604bd170285e53f7b95ca96f8757fa9da8f2ecaafae7656",
+    "9104-a0.75-sigreg.pt": "9cf52e873f00f3320934200f9cf54dc04aff40d4a23613f63f84ae9951fe9412",
+    "9104-a0.75-vicreg.pt": "002e33203e60cf91afb98c1e0c0b1f4384a0974cc85fdceb0aa5652a32554728",
+    "9104-a0.9375-infonce.pt": "a3209eba7ddc2532459f8c8665382b01299b71c1c1a8b8b987603d16e25994c4",
+    "9104-a0.9375-raw_infonce.pt": "35732723e7a4bae67d95e3cee64c64c5cdc53cae760c23deae4a78a671256f6b",
+    "9104-a0.9375-sigreg.pt": "e34f4b2ca75d9e9c0bb3cf9a30b40295f4834ad321a22467b2c22b7b87f05e1d",
+    "9104-a0.9375-vicreg.pt": "66d2b42ce7e5bf1b23a2ed55d053622564b8c725ac069f7d83bb580be3a83d03",
+    "9105-a0.5-infonce.pt": "435c68d55a1cd17f2a6d2166e402c871bfb59149702fbfdc0419f323d299d130",
+    "9105-a0.5-raw_infonce.pt": "f0583802280334832ec56cc2943731377e25ffeda01849abd6fd36e25d5a316a",
+    "9105-a0.5-sigreg.pt": "39375fcef3bd15641dca741841ef21dddde99540fbec72c7dcc14d35a02839ad",
+    "9105-a0.5-vicreg.pt": "91486c299fd7a6bb51ae5a8af78180c103b1bc522a8223787da08a36aef2d106",
+    "9105-a0.75-infonce.pt": "ffbbdcc25a04e6232cf8ab1a494b841796bc9037477fccd31e54b4bb281033f0",
+    "9105-a0.75-raw_infonce.pt": "abab00a4c2b288254ef550309fa1b652ea6beb99d6aaf7b5101cdfe22561fb8a",
+    "9105-a0.75-sigreg.pt": "37c7c7b811779297669cfa705c249268a6aacc83c3129d12039241abc3aafb9d",
+    "9105-a0.75-vicreg.pt": "7563b687cd6dff4a8e919143c30ecb4defeca271a8d4a3e3c61b180d34c78436",
+    "9105-a0.898071-infonce.pt": "efba540ee8f9f28306f8013e8c70697816578ed46ca238000943b245c2e5195d",
+    "9105-a0.898071-raw_infonce.pt": "023fdb167f96527df574f482d49ae3f37ac9e1708e9887775c1bbf8be656fee2",
+    "9105-a0.898071-sigreg.pt": "4f4c082f8e6c9a880e245ad3e520f6eed7c655b4750b49cbcc9a9d53cfc0c6ce",
+    "9105-a0.898071-vicreg.pt": "6cbfd52ee79d02558d4e770e2392bb572ac31aafa9b5838fd1919a2de259d1a4",
+    "9105-a0.9375-infonce.pt": "4b108a7c7a8d0c1bafbf9b36d2df1d13c160c8fb07af5c97deb8f4dddea06de8",
+    "9105-a0.9375-raw_infonce.pt": "136d5db675034729cdd1fc3e51cc8a3e0a32b66c04e3f6197cb3e1ab024030ba",
+    "9105-a0.9375-sigreg.pt": "c571dabace59956d1e4d85f9420a450cbf578c1763ee36026f1242f47c2cf83e",
+    "9105-a0.9375-vicreg.pt": "4a4d958268764fa149b231b6c45b8cffcadd9fd1bc90de110f446fc33d89c68b",
+    "9106-a0.5-infonce.pt": "8bb3bc23e9bcba5590f807d420db5b95fbe037de1bf730e4b29c35b0ab2f3080",
+    "9106-a0.5-raw_infonce.pt": "852ee30a25d574c866aa01ffa7326d0c37f8b1e4ce7872cc06f96f8042c31766",
+    "9106-a0.5-sigreg.pt": "1b7f97521f58d8c654544a0590ea11602732d2bcdc54022f95b060686a5fe47e",
+    "9106-a0.5-vicreg.pt": "44e456448bfa33c4bc76daf6eec57cbe71e5a78f0e9d80b78007a09238dc13a6",
+    "9106-a0.739105-infonce.pt": "edbb6fdf1fcda750f8a3182c63168f92c5e3ed53d1255e0d2dd24f6353121771",
+    "9106-a0.739105-raw_infonce.pt": "d3af1aced835109b817e48b87da345f13de65dca96538899ded86bca5a362d11",
+    "9106-a0.739105-sigreg.pt": "a6cc2e8802b96454a0037718af097b4b93af705a5df61536698e021e383eca05",
+    "9106-a0.739105-vicreg.pt": "2b1ffa7cef9cf9a954dceaa5f81f2d6f979293f26c960b18ed4ad8552fe7d568",
+    "9106-a0.75-infonce.pt": "64ff15620a835c0b2f7b6f91a2dbe28674fb34a0bbc456cbc08fef5a155666d0",
+    "9106-a0.75-raw_infonce.pt": "2d6488b10bc2a6967786568040cdb15882dbf493542e408cf4f06886dfc2cc80",
+    "9106-a0.75-sigreg.pt": "e2f767d7bd2c083b8bfc171f621dc09ad09d21165ca56a6490a67afd8bf644c9",
+    "9106-a0.75-vicreg.pt": "2a1463ae7a28c863ac0de76e4f14702923b9ae942063128c6751a7b65cdf0492",
+    "9106-a0.9375-infonce.pt": "60f63ded80565592ede33a4f84711e0c51b427349c59c7399d8ed5fe52e3178b",
+    "9106-a0.9375-raw_infonce.pt": "d82d9a3a0454dc79dee762577ab7f197f93cde039779f8e7ddd079cffb0a975a",
+    "9106-a0.9375-sigreg.pt": "35072ee3356bde974926aa1cfda87e7944e3e7e3f829cdeb69701bcb1dcdaaf7",
+    "9106-a0.9375-vicreg.pt": "db0e9ed909e75df82e762cd2f6cfd0bae5a5e1b645f1411f7ba742dd3075e329",
+    "9107-a0.5-infonce.pt": "2febefc6eab9d6fe8284decdd584aebade9ea694327c897b13fd502f6c23093d",
+    "9107-a0.5-raw_infonce.pt": "c1f19ffdc0e39bd507ccf4968705244059fb627f6c91be342345a60264839012",
+    "9107-a0.5-sigreg.pt": "c5b1d9ea3c967a7f425042db905dab644c22a47b21866f26e7cd9a51fa74e90e",
+    "9107-a0.5-vicreg.pt": "f0e57a2c373d6f837d60118c49b3411d77dda9215885a45d7e37b0be46da7d02",
+    "9107-a0.75-infonce.pt": "d4222aa265e2fe03f59336bfa42bb915caf2783ffa4d5cb6c79fd3e443fe2fb3",
+    "9107-a0.75-raw_infonce.pt": "0fe22d39e4610ebe59134f1b08f3f1d81c34211aba676e33503195d30db297ba",
+    "9107-a0.75-sigreg.pt": "17488406bcbb5de3ffaa49e396d6d6d9a7d3b549be4ea8b248438ebe3e1bd383",
+    "9107-a0.75-vicreg.pt": "4050faa9f025a758962467965fcc75a5a7062d1bc6cbf938313980e2839345cc",
+    "9107-a0.830597-infonce.pt": "e38d3616ffa418ae8ba23bd7695cc1dfe4b479faa5d36a126766ae501bb42b57",
+    "9107-a0.830597-raw_infonce.pt": "f6412f33a4c4a748f70dc99a80dd9cc51ab74ebb34847e8879ebc0d8d416d3e1",
+    "9107-a0.830597-sigreg.pt": "7660ffe71207ad31992adbd7cb754f1cd5cbd6a889556990e8a00db501082969",
+    "9107-a0.830597-vicreg.pt": "41ea93e106db5f66e3c32b85eeca4eff8655acb20e021d07604992e8a7b5b8dc",
+    "9107-a0.9375-infonce.pt": "9f8e48ba0b4d47c0fd5b4dd8b08db689c53878b604cc6265f41340da2bdd41ee",
+    "9107-a0.9375-raw_infonce.pt": "49574945b8e4b2501216fdabbc99dafe049b94a5ae898343ca4f0d32547b75cc",
+    "9107-a0.9375-sigreg.pt": "a305f7726d8a852cc57673083d85961b40000f01c65024fa2280ab612309d14a",
+    "9107-a0.9375-vicreg.pt": "8158754daff852094f52c28e8fb573303abf295bc37336e243940ba91a3c84cd",
+    "9108-a0.5-infonce.pt": "bc69e71f77ac96fb6b6047955d3feda062fa47cb7798aac0ff3060222aa25206",
+    "9108-a0.5-raw_infonce.pt": "9cf6616228e2cf3f646dbd1dd0de22538a3e828ccdab86bb8bc9cbd4fe32ada3",
+    "9108-a0.5-sigreg.pt": "3026896ab54b8e05414944464c5715b2d0d1a80238fa45004bfe2fc9f70c5868",
+    "9108-a0.5-vicreg.pt": "1501a7b3249867736626cc63fe2d395038b4016a2b24f007485234e1d81f2004",
+    "9108-a0.75-infonce.pt": "4c8fd8980a1bea59fdccfad211afebb61973212ee14f9eabbae54b0ef2dafe3e",
+    "9108-a0.75-raw_infonce.pt": "94e55e000918f1d0b03b35f7ef941111f94db61f85151ed41991c8391b3b28b1",
+    "9108-a0.75-sigreg.pt": "14d467ff9374e3b8cde8f313397ccb62dd1c066062b5903bb18f411737963cd0",
+    "9108-a0.75-vicreg.pt": "c168072462ecfab724f90883439f8a5ba97dc61fcbea475cfe5feb31f4cf77ee",
+    "9108-a0.855438-infonce.pt": "0f08af424ea3cdaad1e3497af038e4d240e502cf57e6e982d73bd45820c8a686",
+    "9108-a0.855438-raw_infonce.pt": "85a347fb9d35912815ff8c2eca8fda36d83afde154f303eb30b267141fbe8daf",
+    "9108-a0.855438-sigreg.pt": "61d3a97771b9544e6c42f0b0aca7c2fc532506439c11632e2c6c37ce06203f18",
+    "9108-a0.855438-vicreg.pt": "d1b1cfb430041a2fda25d938995d1866b87eb81494534a26d5e38d5c0da3885a",
+    "9108-a0.9375-infonce.pt": "dc6d25025c02dc13e060aa81560224d02eef049f557207142f3f1e5b83f75159",
+    "9108-a0.9375-raw_infonce.pt": "a6a3526002771efb640968942c1d1b49a1101eb61fb4b5880899a685c1bf2bff",
+    "9108-a0.9375-sigreg.pt": "7658310bbadfab06e9e1aa6f91ffd677ccbbc9c20e88a06e1bb332e1e0b26df4",
+    "9108-a0.9375-vicreg.pt": "8a146c5fad7110ff044f4fdb3cd52b58076b478512cdf8fc7b9643313e16c0db",
+    "9109-a0.5-infonce.pt": "a7bda77ebd58049b573c89e15b121cee88927665981f9d29bbb468ca1556d8e2",
+    "9109-a0.5-raw_infonce.pt": "0991b2a572783bed3a06589d95908d832db13d0a372bf83d49cbb9eac97e502a",
+    "9109-a0.5-sigreg.pt": "22142422dd545ba8753a024298ebf35d12cb05713054e6d5d242bc3997d12bbe",
+    "9109-a0.5-vicreg.pt": "08599b6c5ea29e30e185068db978d84f3b8ce1d00484d46363f04c74b45b3aa3",
+    "9109-a0.5672-infonce.pt": "602fbd2587fde8944d6c601eeb20e1b00d9af774f573e6102b296e0c43bfd40e",
+    "9109-a0.5672-raw_infonce.pt": "7b63bcac267306e07c778568c80cab6f0416f82b1f99d7e3c28074d4ac548489",
+    "9109-a0.5672-sigreg.pt": "f095e2444b184b8284b3aea00f4696f8cf8e5f6ba5a31e4d1524ee1de09b3c13",
+    "9109-a0.5672-vicreg.pt": "5e53e389cacabae9b325193045f172d380b9420a22dfeec506c62fc39e926024",
+    "9109-a0.75-infonce.pt": "64c2e10fa4e1485da7d185f6b33e363130360e8428c2b1168c663cd61791fcb8",
+    "9109-a0.75-raw_infonce.pt": "37aea8258c3217156841ffc480e913d69441602f0547991c8ee35ae1c4cd178a",
+    "9109-a0.75-sigreg.pt": "5617ada257bde638d64b3a10c73719d382e109bef83b78f38979310d0b55326d",
+    "9109-a0.75-vicreg.pt": "1861362357161f62bb84523c258947539b515919a6589534fd59b98338c2f2df",
+    "9109-a0.9375-infonce.pt": "5b10fb2a0e6cb2782a72781d79e97e5e251ea50ba0ecd0aa5915ec5f5f56ff9b",
+    "9109-a0.9375-raw_infonce.pt": "a5b2832302071b0f672ea3af01156ddfce62178c5e4fbbf23ff89d465a8e3bd9",
+    "9109-a0.9375-sigreg.pt": "e93f511174f140c610a3eca98e6a65522cf19a49cd504fbf61813f2e2e451887",
+    "9109-a0.9375-vicreg.pt": "3e0e2b06b7d3485e1bbcfad82e75ff16f8ee4ca30ab5eab774583a460db02740"
+  },
+  "report_hash": "54656b8f7dcc8a40dea44c0b01131376306fd5c935902a19db905b46cda2b511"
+}
