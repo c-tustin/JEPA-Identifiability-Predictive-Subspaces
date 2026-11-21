@@ -2,6 +2,49 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 21: Occupancy feature and InfoNCE mechanism (identified, with limits)
+
+- **SIGReg as a kernel distance.** The encoder is a scalar function of distance. SIGReg1D is exactly 1024 × MMD² to
+  N(0,1) with a unit Gaussian kernel.
+- **Force structure.** On positively skewed code laws, the exact SIGReg force pulls back codes at standardized
+  1.1 < z < 3.45 and pushes codes beyond about 3.45 outward.
+- **Training replays.** Bit-exact replays of the dose fits show three regimes: monotone at 50% near mass, a fold at 75%
+  (the far branch is retracted over the near branch), and ejection at 93.75% (the far tail is thrown to code about 14,
+  beyond the kernel).
+- **Why near mass looked causal.** The tanh-compressed initialization geometry makes the near cluster nearly a point,
+  so near mass almost fixes code skewness.
+- **Pre-registration.** The [skewness protocol](occupancy-feature-isolation/SKEW_PROTOCOL.md) and its hashed
+  predictions were pushed to GitHub before training.
+- **Part A, 38 fits** reweighting actual source observations. 20 of 26 scored predictions were correct.
+  - Removing asymmetry at fixed near mass 0.75, 0.875 and 0.9375 stopped the fold.
+  - Raising skewness by piling far mass at distance 2–3 did not cause folds at 0.5, 0.9375 or 0.96875. These failures
+    falsify skewness as a sufficient feature.
+- **Part B, 29 fits.**
+  - Even-only SIGReg (sine term removed) still folds, falsifying that pre-registered prediction.
+  - A pure skewness penalty makes raw InfoNCE fold at 75% and 93.75% near mass (backward 0.29–0.32) and makes the
+    variance control fold at several laws.
+- **[Cluster-position protocol](occupancy-feature-isolation/CLUSTER_PROTOCOL.md), 24 fits.**
+  - The wall hypothesis is falsified: at 75% every window folds.
+  - Compact wall clusters fold even at 93.75%.
+  - Three of 31 laws flip fold status with the initialization.
+
+Conclusion:
+- The causal feature is the occupancy's asymmetry in the encoder's input geometry: a heavy cluster the encoder cannot
+  spread, plus a lighter tail spread over distance.
+- It is necessary (136 of 138 junction folds in 338 cells have skewness > 0.45) but not sufficient.
+- Whether it folds depends on tail spread, cluster compactness, and, near the boundaries, the initialization. No exact
+  threshold on the distribution alone exists for this encoder.
+- InfoNCE does not fold because it sets no target shape for the code marginal; adding one makes it fold under the same
+  occupancy.
+- Junction folds are now separated from tiny far-end turns with a backward-fraction threshold of 0.1.
+
+[Results](occupancy-feature-isolation/output/skew/RESULTS.md). All are empirical checks, not analytic guarantees.
+
+Remaining work:
+- a quantitative sufficient criterion combining tail spread and cluster compactness, tested on new sources;
+- other encoder input geometries;
+- an analytic account of the ejection boundary.
+
 ## November 19: Occupancy-feature isolation (started; no final feature claim)
 
 The user clarified that identifying the SIGReg data pathway does not explain which distribution feature causes the historical five/five folding split. Added a [separate feature-isolation protocol](occupancy-feature-isolation/PROTOCOL.md) and [trainer](occupancy-feature-isolation/run.py). First-stage design: five preselected folded/nonfolded source pairs, independently swapping mass below distance 2, conditional shape below 2, and conditional shape at/above 2 (40 fits). Keep initialization 131, original architecture/optimizer/budget and source-131 alignment stream common. A shared float64 uniform plan samples exact empirical hybrid measures without smoothing or new states. All ten native empirical corner-recovery checks passed; source profiles and provenance are recorded in [preflight](occupancy-feature-isolation/output/preflight.json). Training has started; completed outcomes and independent audits are pending.

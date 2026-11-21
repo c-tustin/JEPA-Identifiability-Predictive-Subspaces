@@ -1,6 +1,6 @@
 # Which occupancy feature creates the fold?
 
-Status November 19, 2026: active investigation; no feature has yet been declared isolated.
+Status November 21, 2026: feature and objective mechanism identified, with documented limits. See [feature and InfoNCE results](output/skew/RESULTS.md).
 
 The [fixed first-stage protocol](PROTOCOL.md) decomposes the empirical endpoint distribution into mass below distance 2, its conditional near-distance shape, and its conditional far-distance shape. Forty completed hybrid fits independently exchange these components between five preselected folded/nonfolded source pairs. Alignment data, initialization and both sampling streams remain common. This is a sampling intervention using actual source observations, with no new sensor states synthesized.
 
@@ -44,3 +44,39 @@ The [120 new initialization/stream fits](output/robustness/RESULTS.md) replicate
 The [80 new-source controlled fits](output/fresh/encoders/RESULTS.md) are also audited. They falsify a universal mass-only window: at 50% near mass, three new sources still fold materially. All ten fold at 75% and none at 93.75%; no raw/own-code InfoNCE fit has a final turn. The risk bank frozen before source generation predicts only 8/10 native material outcomes, the coarse mass window 9/10. Failures 9105 and 9109 are retained; the bank is not an exact predictor. Source 9109 folds at its native 56.72% near mass, below the historical-template lower boundary.
 
 Required follow-ups are running: [new-source fixed-mass shape swaps](FRESH_SHAPE_PROTOCOL.md), [joint-data temporal InfoNCE/original scalar VICReg comparisons](JOINT_PROTOCOL.md), and [alternative splits/identical support](SPLIT_SUPPORT_PROTOCOL.md). The [exploratory moment plots](output/exploratory_moments.png) are associations, not an isolated moment criterion. The active goal remains incomplete: regional mass is causal, but its shape-dependent boundaries and the relevant conditional-shape feature still need to be isolated correctly.
+
+
+## Feature isolation and InfoNCE mechanism (November 21, 2026)
+
+[Results](output/skew/RESULTS.md) · [skewness protocol](SKEW_PROTOCOL.md) · [cluster protocol](CLUSTER_PROTOCOL.md) · [locked predictions](output/skew/PREDICTIONS.json) · [figure](output/skew/skew_mechanism.png)
+
+### Mechanism
+
+- The encoder is a scalar function of distance.
+- In one dimension, `SIGReg1D` equals 1024 × MMD² to N(0,1) with a unit Gaussian kernel. On a skewed code law, its
+  force pulls back codes at standardized 1.1 < z < 3.45 and pushes codes beyond 3.45 outward.
+- Bit-exact replays ([trace.py](trace.py)) show the far branch rising and then being pulled back over the near branch
+  (the fold) at m = 0.75, and being ejected out of kernel reach at m = 0.9375.
+- In the initialization's input geometry, the near cluster is nearly a point. That is why near mass and code asymmetry
+  were confounded before.
+
+### Interventions on actual source observations
+
+- 67 pre-registered fits, plus 24 cluster-position fits.
+- Removing asymmetry at fixed near mass stops folding.
+- Raising asymmetry without a spread tail does not cause folding: 6 of 26 predictions failed and are retained.
+- Compact wall clusters fold even at m = 0.9375.
+- Three of 31 laws fold or not depending on the initialization.
+
+### Objectives
+
+- Even-only SIGReg still folds.
+- A pure skewness target makes both raw InfoNCE and the variance control fold.
+- Plain InfoNCE, temporal InfoNCE and the variance hinge set no target shape for the code marginal, and they do not fold.
+
+### Limits
+
+This is a necessary condition plus a mechanism, not an exact one-number criterion, and the work tests one encoder
+class. Fit with `python3 skew.py --design` then `python3 skew.py --shard K --shards N`, and the same with `cluster.py`.
+Report with `python3 skew_report.py`. [function_space.py](function_space.py) records why an unconstrained function-space
+optimum is degenerate: it zigzags with the policy's 0.25 lattice.
