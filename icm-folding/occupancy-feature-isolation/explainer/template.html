@@ -1,0 +1,369 @@
+<title>Why the Code Folds</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column (~68ch) with full-width figure panels; a lab-notebook feel built on a cool graph-paper neutral. */
+:root {
+  --bg: #f6f7f9;
+  --panel: #ffffff;
+  --ink: #16202b;
+  --ink-2: #4a5663;
+  --ink-3: #7a8592;
+  --rule: #dde2e8;
+  --grid: #eceff3;
+  --stretched: #2a78d6;
+  --fold: #eb6834;
+  --inflated: #1baf7a;
+  --near: #16202b;
+  --band: rgba(235,104,52,.12);
+  --code-bg: #eef1f5;
+  --f-display: "Space Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --f-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161c; --panel: #171e26; --ink: #e8ecf0; --ink-2: #b4bdc7; --ink-3: #8592a0; --rule: #2a333d; --grid: #1f2730;
+    --stretched: #3987e5; --fold: #e2622f; --inflated: #199e70; --near: #e8ecf0; --band: rgba(226,98,47,.18); --code-bg: #1f2730;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161c; --panel: #171e26; --ink: #e8ecf0; --ink-2: #b4bdc7; --ink-3: #8592a0; --rule: #2a333d; --grid: #1f2730;
+  --stretched: #3987e5; --fold: #e2622f; --inflated: #199e70; --near: #e8ecf0; --band: rgba(226,98,47,.18); --code-bg: #1f2730;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--f-body); font-size: 16px; line-height: 1.6; }
+.wrap { max-width: 980px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 40px 72px; }
+.prose { max-width: 68ch; }
+h1, h2, h3 { font-family: var(--f-display); text-wrap: balance; line-height: 1.15; margin: 0; }
+h1 { font-size: clamp(2rem, 5vw, 3.1rem); font-weight: 700; letter-spacing: -.02em; }
+h2 { font-size: 1.6rem; font-weight: 600; margin-top: 56px; }
+h3 { font-size: 1.1rem; font-weight: 600; }
+p { margin: 0; }
+.stack { display: flex; flex-direction: column; gap: 14px; }
+.eyebrow { font-family: var(--f-mono); font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--ink-3); }
+.lede { font-size: 1.2rem; color: var(--ink-2); }
+code, .mono { font-family: var(--f-mono); font-size: .88em; }
+code { background: var(--code-bg); padding: 1px 5px; border-radius: 4px; }
+.panel { background: var(--panel); border: 1px solid var(--rule); border-radius: 10px; padding: 20px; min-width: 0; }
+.panel figcaption { font-size: .85rem; color: var(--ink-3); margin-top: 10px; }
+figure { margin: 0; }
+.grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 16px; }
+.answer { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 8px; }
+.answer .item { border-top: 3px solid var(--ink); padding-top: 10px; }
+.answer .k { font-family: var(--f-mono); font-size: .78rem; color: var(--ink-3); letter-spacing: .06em; text-transform: uppercase; }
+.answer h3 { margin: 4px 0 6px; }
+.answer p { font-size: .95rem; color: var(--ink-2); }
+.states { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 12px; }
+.state { border-left: 4px solid var(--c); padding: 4px 0 4px 12px; }
+.state b { font-family: var(--f-display); font-size: 1.05rem; }
+.state p { font-size: .92rem; color: var(--ink-2); }
+.tw { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: .92rem; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-family: var(--f-mono); font-weight: 500; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--ink-3); }
+td.num { font-variant-numeric: tabular-nums; font-family: var(--f-mono); font-size: .85rem; white-space: nowrap; }
+.pill { display: inline-flex; align-items: center; gap: 6px; font-family: var(--f-mono); font-size: .75rem; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--rule); white-space: nowrap; }
+.pill::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--c); }
+.controls { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; margin-bottom: 12px; }
+.seg { display: inline-flex; border: 1px solid var(--rule); border-radius: 8px; overflow: hidden; }
+.seg button { font: 500 .85rem var(--f-body); background: transparent; color: var(--ink-2); border: 0; padding: 6px 12px; cursor: pointer; }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.seg button:focus-visible, input:focus-visible { outline: 2px solid var(--stretched); outline-offset: 2px; }
+input[type=range] { width: min(360px, 100%); accent-color: var(--fold); }
+.readout { font-family: var(--f-mono); font-size: .85rem; color: var(--ink-2); }
+.verdict { font-family: var(--f-display); font-weight: 600; font-size: 1.05rem; }
+svg { display: block; width: 100%; height: auto; overflow: visible; }
+svg text { fill: var(--ink-3); font-family: var(--f-mono); font-size: 11px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .82rem; color: var(--ink-2); margin-top: 8px; }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.sw { width: 14px; height: 3px; background: var(--c); display: inline-block; border-radius: 2px; }
+.sw.dash { background: repeating-linear-gradient(90deg, var(--c) 0 4px, transparent 4px 7px); }
+.sw.box { height: 10px; width: 12px; }
+.tip { position: fixed; pointer-events: none; background: var(--panel); color: var(--ink); border: 1px solid var(--rule); border-radius: 6px; padding: 6px 9px; font: 12px/1.4 var(--f-mono); box-shadow: 0 4px 14px rgba(0,0,0,.12); z-index: 20; }
+.phase { display: grid; grid-template-columns: 64px repeat(9, minmax(52px, 1fr)); gap: 3px; min-width: 600px; }
+.phase .cell { height: 44px; border-radius: 4px; background: var(--c); display: flex; align-items: center; justify-content: center; font: 500 10.5px var(--f-mono); color: #fff; cursor: default; }
+.phase .cell:hover, .phase .cell:focus { outline: 2px solid var(--ink); outline-offset: 1px; }
+.phase .lab { font: 11px var(--f-mono); color: var(--ink-3); display: flex; align-items: center; justify-content: center; text-align: center; line-height: 1.2; }
+.phase .ylab { justify-content: flex-end; padding-right: 6px; }
+.score td:last-child { color: var(--ink-2); }
+.ok { color: var(--stretched); } .bad { color: var(--fold); }
+footer { margin-top: 56px; padding-top: 16px; border-top: 1px solid var(--rule); font-size: .85rem; color: var(--ink-3); }
+a { color: var(--stretched); }
+@media (prefers-reduced-motion: no-preference) { .cell, .seg button { transition: background .15s; } }
+</style>
+
+<div class="wrap">
+  <header class="stack prose">
+    <div class="eyebrow">ICM occupancy · SIGReg · scalar distance code</div>
+    <h1>Why the code folds</h1>
+    <p class="lede">An encoder learns a one-number code for distance from a wall. Under SIGReg, the code sometimes turns back on itself, so two different distances get the same code. This page explains when and why, using nearly 500 trained encoders.</p>
+  </header>
+
+  <section class="stack" aria-labelledby="short">
+    <h2 id="short">The short answer</h2>
+    <p class="prose">A fold needs three things at once. Remove any one and it goes away.</p>
+    <div class="answer">
+      <div class="item"><div class="k">The force</div><h3>A target shape for the codes</h3><p>SIGReg wants the histogram of codes across visited states to look like a bell curve. InfoNCE has no such target, so it never folds.</p></div>
+      <div class="item"><div class="k">The material</div><h3>A lopsided histogram</h3><p>The exploring agent spends most of its time near the wall. Those states pile into a spike of codes, and the rest form a tail.</p></div>
+      <div class="item"><div class="k">The response</div><h3>A spike that can't stretch</h3><p>The encoder could stretch the spike into a bell curve, but its input squashes the near-wall region. Bending the tail back is faster, and that bend is the fold.</p></div>
+    </div>
+  </section>
+
+  <section class="stack" aria-labelledby="what">
+    <h2 id="what">What a fold looks like</h2>
+    <p class="prose">Each line is a trained code as a function of distance. A good code rises steadily. A folded one rises, then turns back down over codes it already used.</p>
+    <figure class="panel">
+      <div class="controls">
+        <div class="seg" role="group" aria-label="Encoder input" id="curveMap">
+          <button aria-pressed="true" data-v="tanh4">baseline encoder, tanh(4x)</button>
+          <button aria-pressed="false" data-v="linear">unsquashed input, x</button>
+          <button aria-pressed="false" data-v="tanh8x">stronger squash, tanh(8x)</button>
+        </div>
+      </div>
+      <svg id="curves" viewBox="0 0 900 320" role="img" aria-label="Trained code versus distance for three near masses"></svg>
+      <div class="legend" id="curvesLegend"></div>
+      <figcaption>Laws put mass m uniformly over states closer than distance 2 and 1 − m over the rest. Initialization 131, 4,000 updates. Backward fraction is the share of the curve's total movement that runs backward; a fold is anything above 0.1.</figcaption>
+    </figure>
+  </section>
+
+  <section class="stack" aria-labelledby="force">
+    <h2 id="force">1. The force: a target shape for the histogram</h2>
+    <p class="prose">The code is a function of distance, so its histogram is just the agent's occupancy pushed through that function. Objectives differ in whether they care what that histogram looks like.</p>
+    <div class="panel tw">
+      <table>
+        <thead><tr><th>Objective</th><th>Target shape for the histogram?</th><th>Folds?</th></tr></thead>
+        <tbody>
+          <tr><td>SIGReg (0.9 alignment + 0.1 SIGReg)</td><td>Yes: a standard Gaussian</td><td><span class="pill" style="--c:var(--fold)">yes</span></td></tr>
+          <tr><td>Only SIGReg's symmetric (cosine) half</td><td>Yes: the Gaussian's even part</td><td><span class="pill" style="--c:var(--fold)">yes, 4 of 5 laws</span></td></tr>
+          <tr><td>InfoNCE + skewness penalty</td><td>Yes: zero skewness</td><td><span class="pill" style="--c:var(--fold)">yes</span></td></tr>
+          <tr><td>Variance control + skewness penalty</td><td>Yes: zero skewness</td><td><span class="pill" style="--c:var(--fold)">yes</span></td></tr>
+          <tr><td>InfoNCE, temporal InfoNCE, variance control alone</td><td>No</td><td><span class="pill" style="--c:var(--stretched)">no</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose">InfoNCE compares codes through a learned critic, and the critic can absorb any monotone relabelling of the codes, so a lopsided histogram costs it nothing. Adding a skewness penalty, and nothing else, makes InfoNCE fold on the same data. That was a pre-registered test.</p>
+  </section>
+
+  <section class="stack" aria-labelledby="land">
+    <h2 id="land">2. The material: where the force pulls</h2>
+    <p class="prose">For a one-number code, SIGReg's pull on each code can be written exactly: blur the code histogram with a unit Gaussian, subtract a blurred bell curve, and every code slides downhill on the difference. The spike is a hill, so its codes are pushed outward. The gap after it is a valley, so tail codes between the valley and the tail's own crest (shaded) are pulled back toward the spike. Codes past the crest slide outward.</p>
+    <figure class="panel">
+      <div class="controls">
+        <label for="mSlider" class="readout">near mass m = <b id="mVal">0.75</b></label>
+        <input type="range" id="mSlider" min="0" max="19" step="1" value="10" aria-describedby="mVerdict">
+        <span class="verdict" id="mVerdict"></span>
+      </div>
+      <svg id="land" viewBox="0 0 900 360" role="img" aria-label="Initial code histogram and SIGReg excess landscape"></svg>
+      <div class="legend">
+        <span><i class="sw box" style="--c:var(--near)"></i>near-wall states (spike)</span>
+        <span><i class="sw box" style="--c:var(--stretched)"></i>far states (tail)</span>
+        <span><i class="sw" style="--c:var(--fold)"></i>excess landscape (codes slide downhill)</span>
+        <span><i class="sw box" style="--c:var(--band)"></i>pull-back band</span>
+      </div>
+      <p class="readout" id="mRead" style="margin-top:8px"></p>
+      <figcaption>Baseline encoder at initialization, codes standardized. The identity between SIGReg's gradient and the landscape's slope was checked numerically (correlation ≥ 0.999, zero-crossings within 0.01).</figcaption>
+    </figure>
+    <div class="states">
+      <div class="state" style="--c:var(--stretched)"><b>Balanced (m ≈ 0.5)</b><p>Spike and tail weigh about the same. The tail sits in the valley and just compresses.</p></div>
+      <div class="state" style="--c:var(--fold)"><b>Lopsided, tail in reach (m ≈ 0.6–0.9)</b><p>The whole tail lies in the pull-back band and gets dragged toward the spike.</p></div>
+      <div class="state" style="--c:var(--inflated)"><b>Tail out of reach (m ≳ 0.92)</b><p>Much of the light tail starts past its crest and slides away. SIGReg fits the spike alone by inflating the code scale.</p></div>
+    </div>
+  </section>
+
+  <section class="stack" aria-labelledby="race">
+    <h2 id="race">3. The response: stretch the spike or bend the tail</h2>
+    <p class="prose">A lopsided histogram can be fixed without folding: stretch the spike until the histogram is a bell curve. That monotone solution always exists. Whether training finds it depends on what the encoder can move quickly. The baseline encoder sees <code>tanh(4x)</code> with x ∝ 1/distance, which crushes distances 1–2 into 3.5% of its input range. Every near-wall state moves together, so the spike barely stretches, while the tail bends freely.</p>
+    <figure class="panel">
+      <svg id="raceChart" viewBox="0 0 900 320" role="img" aria-label="Tail position during training, two encoders, near mass 0.75"></svg>
+      <div class="legend">
+        <span><i class="sw" style="--c:var(--fold)"></i>tanh(4x): far end of tail</span>
+        <span><i class="sw dash" style="--c:var(--fold)"></i>tanh(4x): tail median</span>
+        <span><i class="sw" style="--c:var(--stretched)"></i>x: far end of tail</span>
+        <span><i class="sw dash" style="--c:var(--stretched)"></i>x: tail median</span>
+      </div>
+      <figcaption>Same occupancy (m = 0.75), same initial weights, same training; only the input map differs. Bit-exact replays of the saved fits. Under tanh(4x), the far end overtakes the median by step ~400, and that crossing is the fold. Under x, the tail moves as a block while the spike spreads (0.35 → 0.7 standardized units).</figcaption>
+    </figure>
+  </section>
+
+  <section class="stack" aria-labelledby="phase">
+    <h2 id="phase">Putting it together: the phase map</h2>
+    <p class="prose">Varying the near mass and the input squashing together gives three end states. Folds fill a wedge at strong squashing. A fold is easiest near m ≈ 0.7, where the histogram is lopsided enough to pull hard and the tail is still within reach.</p>
+    <figure class="panel">
+      <div class="tw"><div class="phase" id="phaseGrid"></div></div>
+      <div class="legend">
+        <span><i class="sw box" style="--c:var(--stretched)"></i>stretched: monotone, symmetric</span>
+        <span><i class="sw box" style="--c:var(--fold)"></i>fold: backward fraction &gt; 0.1</span>
+        <span><i class="sw box" style="--c:var(--inflated)"></i>inflated: scale blown up, tail out of reach</span>
+      </div>
+      <figcaption>Exploratory map, initialization 131, state after 4,000 updates. At m = 0.75 and 0.875 the fold/no-fold split repeats at every initialization tested (2–4 per map). The inflated state can be temporary: under x at m = 0.875 a run sat there for ~1,000 steps, then stretched.</figcaption>
+    </figure>
+  </section>
+
+  <section class="stack" aria-labelledby="puzzles">
+    <h2 id="puzzles">Earlier puzzles, resolved</h2>
+    <div class="panel tw">
+      <table>
+        <thead><tr><th>What we saw</th><th>Why</th></tr></thead>
+        <tbody>
+          <tr><td>"Mass below distance 2" seemed to cause folds</td><td>In the baseline encoder, d &lt; 2 is exactly the squashed region, so near mass sets both the spike and where the tail sits.</td></tr>
+          <tr><td>Skewness was necessary but not sufficient</td><td>Skewness supplies the force. A fold also needs a spread tail in the pull-back band and an encoder that can bend it.</td></tr>
+          <tr><td>Folds vanished above m ≈ 0.92</td><td>The tail starts past its crest and the run ends inflated. A stronger squash, tanh(6x), folds even there.</td></tr>
+          <tr><td>The same law folded under one initialization only</td><td>Those laws sit on the phase boundary. Away from it, initializations agree.</td></tr>
+          <tr><td>InfoNCE never folded</td><td>No target shape, so no force. Give it one and it folds.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="stack" aria-labelledby="score">
+    <h2 id="score">What was tested, and what failed</h2>
+    <p class="prose">Every test below had its predictions committed to GitHub before training. Failures stay in the record; three of them reshaped the framework.</p>
+    <div class="panel tw">
+      <table class="score">
+        <thead><tr><th>Test</th><th>Fits</th><th>Score</th><th>What it showed</th></tr></thead>
+        <tbody>
+          <tr><td>Skewness interventions</td><td class="num">38</td><td class="num">20 / 26</td><td>Removing asymmetry at fixed near mass stops the fold <span class="ok">(held)</span>. Skewness alone is not enough <span class="bad">(failed)</span>.</td></tr>
+          <tr><td>Objective decomposition</td><td class="num">35</td><td class="num">mixed</td><td>InfoNCE + skewness penalty folds <span class="ok">(held)</span>. SIGReg's even half alone folds too <span class="bad">(predicted not to)</span>.</td></tr>
+          <tr><td>Cluster position</td><td class="num">24</td><td class="num">H_wall failed</td><td>At m = 0.75, every position of the near cluster folds.</td></tr>
+          <tr><td>Input geometry</td><td class="num">48</td><td class="num">19 / 38</td><td>Unsquashed input never folds <span class="bad">(skewness rule failed)</span>. This revealed the encoder's role.</td></tr>
+          <tr><td>Compact cluster</td><td class="num">32</td><td class="num">4 / 11</td><td>A cluster with tiny input span is not enough <span class="bad">(failed)</span>.</td></tr>
+          <tr><td>Kernel locking</td><td class="num">52</td><td class="num">40 / 52</td><td>Fold rate rises with locking <span class="ok">(held)</span>. The threshold was wrong and per-initialization locking predicts nothing <span class="bad">(failed)</span>. Squash strength decides.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="stack prose" aria-labelledby="open">
+    <h2 id="open">Still open</h2>
+    <p>A reduced model that reproduces the shape of the fold wedge from the spike's stretch speed, the tail's bend speed and the landscape's band. Whether the inflated state eventually escapes. Whether wider or deeper encoders, or encoders that compress the near region in other ways, give the same map.</p>
+  </section>
+
+  <footer>Source and full write-up: <span class="mono">icm-folding/occupancy-feature-isolation/FRAMEWORK.md</span> in <a href="https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces" target="_blank" rel="noopener">JEPA-Identifiability-Predictive-Subspaces</a>. Updated November 22, 2026. All results are empirical checks on one encoder architecture, not analytic guarantees.</footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const DATA = __DATA__;
+const NS = 'http://www.w3.org/2000/svg';
+const css = n => getComputedStyle(document.documentElement).getPropertyValue(n).trim();
+function el(tag, attrs = {}, parent) { const e = document.createElementNS(NS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (parent) parent.appendChild(e); return e; }
+function scale(d0, d1, r0, r1) { return v => r0 + (v - d0) / (d1 - d0) * (r1 - r0); }
+const tip = document.getElementById('tip');
+function showTip(html, x, y) { tip.innerHTML = html; tip.hidden = false; const w = tip.offsetWidth; tip.style.left = Math.min(x + 14, innerWidth - w - 8) + 'px'; tip.style.top = (y + 14) + 'px'; }
+function hideTip() { tip.hidden = true; }
+function axes(svg, x, y, xt, yt, M, W, H, xl, yl, fmtx = v => v) {
+  const g = el('g', {}, svg);
+  yt.forEach(v => { el('line', { x1: M.l, x2: W - M.r, y1: y(v), y2: y(v), stroke: css('--grid') }, g); const t = el('text', { x: M.l - 8, y: y(v) + 4, 'text-anchor': 'end' }, g); t.textContent = v; });
+  xt.forEach(v => { const t = el('text', { x: x(v), y: H - M.b + 18, 'text-anchor': 'middle' }, g); t.textContent = fmtx(v); });
+  el('line', { x1: M.l, x2: W - M.r, y1: H - M.b, y2: H - M.b, stroke: css('--ink-3') }, g);
+  if (xl) { const t = el('text', { x: (M.l + W - M.r) / 2, y: H - 4, 'text-anchor': 'middle' }, g); t.textContent = xl; }
+  if (yl) { const t = el('text', { x: 14, y: M.t + (H - M.t - M.b) / 2, transform: `rotate(-90 14 ${M.t + (H - M.t - M.b) / 2})`, 'text-anchor': 'middle' }, g); t.textContent = yl; }
+}
+function path(pts) { return pts.map((p, i) => (i ? 'L' : 'M') + p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join(''); }
+function backward(c) { let up = 0, dn = 0; for (let i = 1; i < c.length; i++) { const d = c[i] - c[i - 1]; if (d > 0) up += d; else dn -= d; } return Math.min(up, dn) / (up + dn); }
+
+/* ---------- code curves ---------- */
+let curveMap = 'tanh4';
+const LAWCOL = { 'm0.5': '--stretched', 'm0.75': '--fold', 'm0.9375': '--inflated' };
+function drawCurves() {
+  const svg = document.getElementById('curves'); svg.innerHTML = '';
+  const W = 900, H = 320, M = { l: 52, r: 20, t: 14, b: 42 };
+  const D = DATA.curve_d, lx = scale(0, Math.log(16), M.l, W - M.r);
+  const laws = ['m0.5', 'm0.75', 'm0.9375'];
+  const series = laws.map(l => { const c = DATA.curves[curveMap + '|' + l]; const mu = c.reduce((a, b) => a + b) / c.length; const sd = Math.sqrt(c.reduce((a, b) => a + (b - mu) ** 2, 0) / c.length) || 1; const sign = c[c.length - 1] >= c[0] ? 1 : -1; return { l, z: c.map(v => sign * (v - mu) / sd), b: backward(c) }; });
+  const y = scale(-2.5, 2.5, H - M.b, M.t);
+  axes(svg, v => lx(Math.log(v)), y, [1, 2, 4, 8, 16], [-2, -1, 0, 1, 2], M, W, H, 'distance from wall (log scale)', 'code (standardized)');
+  el('line', { x1: lx(Math.log(2)), x2: lx(Math.log(2)), y1: M.t, y2: H - M.b, stroke: css('--ink-3'), 'stroke-dasharray': '3 4' }, svg);
+  series.forEach(s => el('path', { d: path(D.map((d, i) => [lx(Math.log(d)), y(Math.max(-2.5, Math.min(2.5, s.z[i])))])), fill: 'none', stroke: css(LAWCOL[s.l]), 'stroke-width': 2.2 }, svg));
+  const leg = document.getElementById('curvesLegend');
+  leg.innerHTML = series.map(s => `<span><i class="sw" style="--c:var(${LAWCOL[s.l]})"></i>m = ${s.l.slice(1)} · backward ${s.b.toFixed(2)} ${s.b > .1 ? '<b>fold</b>' : ''}</span>`).join('');
+  const hit = el('rect', { x: M.l, y: M.t, width: W - M.l - M.r, height: H - M.t - M.b, fill: 'transparent' }, svg);
+  const cross = el('line', { y1: M.t, y2: H - M.b, stroke: css('--ink-3'), visibility: 'hidden' }, svg);
+  hit.addEventListener('mousemove', e => { const r = svg.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width * W; const ld = (px - M.l) / (W - M.l - M.r) * Math.log(16); const i = Math.max(0, Math.min(D.length - 1, Math.round(ld / Math.log(16) * (D.length - 1)))); cross.setAttribute('x1', lx(Math.log(D[i]))); cross.setAttribute('x2', lx(Math.log(D[i]))); cross.setAttribute('visibility', 'visible'); showTip(`distance ${D[i].toFixed(2)}<br>` + series.map(s => `m ${s.l.slice(1)}: ${s.z[i].toFixed(2)}`).join('<br>'), e.clientX, e.clientY); });
+  hit.addEventListener('mouseleave', () => { cross.setAttribute('visibility', 'hidden'); hideTip(); });
+}
+document.querySelectorAll('#curveMap button').forEach(b => b.addEventListener('click', () => { curveMap = b.dataset.v; document.querySelectorAll('#curveMap button').forEach(o => o.setAttribute('aria-pressed', o === b)); drawCurves(); }));
+
+/* ---------- landscape ---------- */
+function drawLand(idx) {
+  const r = DATA.masses[idx]; const svg = document.getElementById('land'); svg.innerHTML = '';
+  const W = 900, H = 360, M = { l: 52, r: 20, t: 14, b: 42 }; const mid = 190;
+  const x = scale(-2, 7, M.l, W - M.r);
+  const [e0, e1, de] = DATA.hist_edges; const nb = r.hist_near.length;
+  const hmax = 0.5;
+  const yh = v => mid - 8 - Math.sqrt(Math.min(v, hmax) / hmax) * (mid - 8 - M.t);
+  if (r.band) el('rect', { x: x(r.band[0]), y: M.t, width: x(r.band[1]) - x(r.band[0]), height: H - M.b - M.t, fill: css('--band') }, svg);
+  el('line', { x1: M.l, x2: W - M.r, y1: mid - 8, y2: mid - 8, stroke: css('--rule') }, svg);
+  for (let i = 0; i < nb; i++) {
+    const x0 = x(e0 + i * de) + .5, w = x(e0 + (i + 1) * de) - x(e0 + i * de) - 1;
+    if (r.hist_near[i] > 1e-5) el('rect', { x: x0, y: yh(r.hist_near[i]), width: w, height: mid - 8 - yh(r.hist_near[i]), fill: css('--near'), rx: 1 }, svg);
+    if (r.hist_far[i] > 1e-5) el('rect', { x: x0, y: yh(r.hist_far[i] + r.hist_near[i]), width: w, height: yh(r.hist_near[i]) - yh(r.hist_far[i] + r.hist_near[i]), fill: css('--stretched'), rx: 1 }, svg);
+  }
+  const t1 = el('text', { x: M.l + 4, y: M.t + 12 }, svg); t1.textContent = 'histogram (√ scale)';
+  const U = DATA.u; const ex = r.excess; const emin = -0.3, emax = 0.45;
+  const ye = scale(emin, emax, H - M.b, mid + 6);
+  el('line', { x1: M.l, x2: W - M.r, y1: ye(0), y2: ye(0), stroke: css('--rule'), 'stroke-dasharray': '3 4' }, svg);
+  const pts = U.map((u, i) => [x(u), ye(Math.max(emin, Math.min(emax, ex[i])))]).filter((p, i) => U[i] >= -2 && U[i] <= 7);
+  el('path', { d: path(pts), fill: 'none', stroke: css('--fold'), 'stroke-width': 2.2 }, svg);
+  const t2 = el('text', { x: M.l + 4, y: mid + 18 }, svg); t2.textContent = 'excess landscape';
+  [-2, 0, 2, 4, 6].forEach(v => { const t = el('text', { x: x(v), y: H - M.b + 18, 'text-anchor': 'middle' }, svg); t.textContent = v; });
+  const tx = el('text', { x: (M.l + W - M.r) / 2, y: H - 4, 'text-anchor': 'middle' }, svg); tx.textContent = 'standardized code at initialization';
+  [['tail median', r.tail_median, '4 3'], ['tail end', r.tail_end, '']].forEach(([lab, v, da]) => { if (v > 7) return; el('line', { x1: x(v), x2: x(v), y1: M.t, y2: H - M.b, stroke: css('--ink-2'), 'stroke-dasharray': da || 'none' }, svg); const t = el('text', { x: x(v) + 4, y: M.t + 26 + (lab === 'tail end' ? 14 : 0) }, svg); t.textContent = lab; });
+  document.getElementById('mVal').textContent = r.m.toFixed(3).replace(/0+$/, '');
+  // Observed outcome for the baseline encoder (307 audited fits), not a prediction from the landscape.
+  let verdict, col;
+  if (r.m <= .55) { verdict = 'observed: no fold (balanced)'; col = '--stretched'; }
+  else if (r.m <= .875) { verdict = 'observed: fold'; col = '--fold'; }
+  else if (r.m <= .9) { verdict = 'observed: boundary, sometimes folds'; col = '--ink-2'; }
+  else { verdict = 'observed: inflated, rarely folds'; col = '--inflated'; }
+  const v = document.getElementById('mVerdict'); v.textContent = verdict; v.style.color = css(col);
+  document.getElementById('mRead').textContent = `skewness ${r.skew.toFixed(2)} · pull-back band ${r.band ? r.band[0].toFixed(2) + ' to ' + r.band[1].toFixed(2) : 'none'} · tail median ${r.tail_median.toFixed(2)} · tail end ${r.tail_end.toFixed(2)}`;
+}
+const slider = document.getElementById('mSlider'); slider.max = DATA.masses.length - 1;
+slider.addEventListener('input', () => drawLand(+slider.value));
+
+/* ---------- race ---------- */
+function drawRace() {
+  const svg = document.getElementById('raceChart'); svg.innerHTML = '';
+  const W = 900, H = 320, M = { l: 52, r: 20, t: 14, b: 42 };
+  const x = scale(0, 2000, M.l, W - M.r), y = scale(0, 3, H - M.b, M.t);
+  axes(svg, x, y, [0, 500, 1000, 1500, 2000], [0, 1, 2, 3], M, W, H, 'training step', 'standardized code');
+  const S = [['tanh4', 1, '--fold', ''], ['tanh4', 2, '--fold', '5 4'], ['linear', 1, '--stretched', ''], ['linear', 2, '--stretched', '5 4']];
+  S.forEach(([mp, k, c, da]) => el('path', { d: path(DATA.race[mp].map(r => [x(r[0]), y(r[k])])), fill: 'none', stroke: css(c), 'stroke-width': k === 1 ? 2.4 : 1.6, 'stroke-dasharray': da || 'none' }, svg));
+  const cross = el('line', { y1: M.t, y2: H - M.b, stroke: css('--ink-3'), visibility: 'hidden' }, svg);
+  const hit = el('rect', { x: M.l, y: M.t, width: W - M.l - M.r, height: H - M.t - M.b, fill: 'transparent' }, svg);
+  hit.addEventListener('mousemove', e => { const r = svg.getBoundingClientRect(); const px = (e.clientX - r.left) / r.width * W; const step = (px - M.l) / (W - M.l - M.r) * 2000; const i = Math.max(0, Math.min(DATA.race.tanh4.length - 1, Math.round(step / 20))); const a = DATA.race.tanh4[i], b = DATA.race.linear[i]; cross.setAttribute('x1', x(a[0])); cross.setAttribute('x2', x(a[0])); cross.setAttribute('visibility', 'visible'); showTip(`step ${a[0]}<br>tanh(4x): end ${a[1].toFixed(2)}, median ${a[2].toFixed(2)}, backward ${a[4].toFixed(2)}<br>x: end ${b[1].toFixed(2)}, median ${b[2].toFixed(2)}, spike spread ${b[3].toFixed(2)}`, e.clientX, e.clientY); });
+  hit.addEventListener('mouseleave', () => { cross.setAttribute('visibility', 'hidden'); hideTip(); });
+}
+
+/* ---------- phase map ---------- */
+function drawPhase() {
+  const maps = ['linear', 'tanh1', 'tanh1.5x', 'tanh2x', 'tanh2.5x', 'tanh3x', 'tanh4', 'tanh6x', 'tanh8x'];
+  const labs = ['x', 'tanh(x)', 'tanh(1.5x)', 'tanh(2x)', 'tanh(2.5x)', 'tanh(3x)', 'tanh(4x) base', 'tanh(6x)', 'tanh(8x)'];
+  const laws = ['m0.9375', 'm0.875', 'm0.75', 'm0.625', 'm0.5'];
+  const col = { fold: '--fold', inflated: '--inflated', stretched: '--stretched' };
+  const g = document.getElementById('phaseGrid'); g.innerHTML = '';
+  laws.forEach(l => {
+    const y = document.createElement('div'); y.className = 'lab ylab'; y.textContent = 'm ' + l.slice(1); g.appendChild(y);
+    maps.forEach((mp, j) => {
+      const r = DATA.phase.find(q => q.law === l && q.input_map === mp); const c = document.createElement('div');
+      c.className = 'cell'; c.tabIndex = 0; c.style.setProperty('--c', `var(${col[r.state]})`); c.textContent = r.state;
+      const info = `near mass ${l.slice(1)} · ${labs[j]}<br>${r.state} · backward ${r.backward.toFixed(3)}`;
+      c.setAttribute('aria-label', info.replace('<br>', ', '));
+      c.addEventListener('mousemove', e => showTip(info, e.clientX, e.clientY)); c.addEventListener('mouseleave', hideTip);
+      g.appendChild(c);
+    });
+  });
+  g.appendChild(Object.assign(document.createElement('div'), { className: 'lab' }));
+  labs.forEach(t => { const d = document.createElement('div'); d.className = 'lab'; d.textContent = t; g.appendChild(d); });
+}
+
+function drawAll() { drawCurves(); drawLand(+slider.value); drawRace(); drawPhase(); }
+drawAll();
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', drawAll);
+new MutationObserver(drawAll).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+</script>

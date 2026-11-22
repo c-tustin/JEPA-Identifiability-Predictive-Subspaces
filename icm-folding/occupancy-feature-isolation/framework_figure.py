@@ -93,3 +93,28 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+def phase_figure():
+    import matplotlib.patches as mp_
+    rows = json.loads((HERE/'output'/'phase.json').read_text())
+    maps = ['linear', 'tanh1', 'tanh1.5x', 'tanh2x', 'tanh2.5x', 'tanh3x', 'tanh4', 'tanh6x', 'tanh8x']
+    labels = ['x', 'tanh(x)', 'tanh(1.5x)', 'tanh(2x)', 'tanh(2.5x)', 'tanh(3x)', 'tanh(4x)\nbaseline', 'tanh(6x)', 'tanh(8x)']
+    laws = ['m0.5', 'm0.625', 'm0.75', 'm0.875', 'm0.9375']
+    col = {'fold': '#eb6834', 'inflated': '#1baf7a', 'stretched': '#86b6ef'}
+    txt = {'fold': 'fold', 'inflated': 'inflated', 'stretched': 'stretched'}
+    fig, ax = plt.subplots(figsize=(10, 3.8))
+    for r in rows:
+        i, j = maps.index(r['input_map']), laws.index(r['law'])
+        ax.add_patch(mp_.Rectangle((i + .03, j + .03), .94, .94, color=col[r['state']], lw=0))
+        ax.text(i + .5, j + .5, txt[r['state']], ha='center', va='center', fontsize=7.5, color='#1a1a19')
+    ax.set_xlim(0, len(maps)); ax.set_ylim(0, len(laws)); ax.grid(False)
+    ax.set_xticks(np.arange(len(maps)) + .5, labels, fontsize=8); ax.set_yticks(np.arange(len(laws)) + .5, [l[1:] for l in laws])
+    ax.set_xlabel('encoder input map (squashing of the near-wall region increases →)'); ax.set_ylabel('near mass m')
+    ax.set_title('End state after 4,000 updates, initialization 131 (exploratory map; fold vs no-fold in the 0.75 and 0.875 rows repeats at 2–4 initializations)', loc='left', fontsize=9)
+    for s in ax.spines.values(): s.set_visible(False)
+    plt.tight_layout(); plt.savefig(HERE/'output'/'phase.png', dpi=140)
+
+
+if __name__ == '__main__' and 'phase' in sys.argv:
+    phase_figure()

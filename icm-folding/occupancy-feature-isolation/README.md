@@ -101,3 +101,18 @@ Observed, not pre-registered:
 - [kernel.py](kernel.py): tangent-kernel decoupling. Under `tanh(4x)` the near cluster is 0.003–0.005 and the tail
   0.14–0.16; under `x` the near cluster is 0.06 and the tail 0.02–0.03.
 - Figure: [framework_figure.py](framework_figure.py) → `output/framework.png`.
+
+## Kernel test, force landscape, phase map and explainer (November 22, 2026, later)
+
+- [Kernel-locking test](KERNEL_PROTOCOL.md) ([code](kernel_test.py), 52 fits, pre-registered): 40 of 52 correct.
+  - Held: the ordinal prediction (fold fraction 0.50, 0.57, 0.96 across locking bins).
+  - Failed: the threshold of 5, and the Spearman prediction (ρ = −0.04).
+  - Within each input map, all four initializations agree. Squashing strength k decides; locking at initialization does not.
+  - A first-order kernel-velocity statistic ([kernel_race.py](kernel_race.py)) failed beforehand and is recorded in the
+    protocol.
+- [force_landscape.py](force_landscape.py): SIGReg's per-sample force is the negative slope of (blurred code histogram −
+  N(0, 2) density), checked to correlation ≥ 0.999. The pull-back band depends on the law.
+- [phase.py](phase.py) (exploratory, 45 cells): end state (stretched, fold, inflated) over input map × near mass. The fold
+  threshold in k is 6, 2, 1.5, 3 and 6 at m = 0.5, 0.625, 0.75, 0.875 and 0.9375. Figure: `output/phase.png`.
+- [Explainer page](explainer/fold-explainer.html), built by [explainer/build.py](explainer/build.py) from
+  [explainer/template.html](explainer/template.html).

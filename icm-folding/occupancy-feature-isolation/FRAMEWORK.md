@@ -1,6 +1,6 @@
 # Why the code folds: one framework
 
-Written November 22, 2026. This organizes every fold experiment in this study around one mechanism. Each claim
+Written November 22, 2026; updated the same day with the kernel test, the force landscape and the phase map. This organizes every fold experiment in this study around one mechanism. Each claim
 below is labelled by its evidence:
 - **tested**: pre-registered and confirmed;
 - **falsified**: pre-registered and failed;
@@ -10,11 +10,24 @@ None of this is an analytic guarantee.
 
 ![framework](output/framework.png)
 
+![phase map](output/phase.png)
+
 ## The one-sentence version
 
-A fold happens when an objective forces the code histogram toward a fixed shape, the histogram starts out lopsided, and
-the encoder can fix the lopsidedness faster by bending the tail of its code curve back over the heavy region than by
-stretching the heavy region out.
+A fold happens when three things hold:
+- an objective forces the code histogram toward a fixed shape;
+- the histogram starts out lopsided;
+- the encoder can fix the lopsidedness faster by bending the tail of its code curve back over the heavy region than by
+  stretching the heavy region out.
+
+Training ends in one of three states:
+- **stretched**: monotone and symmetric;
+- **folded**;
+- **inflated**: the code scale blows up so the heavy region alone looks Gaussian, and the tail is left out of SIGReg's
+  reach.
+
+Which state wins is set jointly by the near mass and by how strongly the encoder's input squashes the near-wall region
+(the phase map above).
 
 ## The three ingredients
 
@@ -39,12 +52,32 @@ not fold: no shape target means no force.
 ### 2. What the force pushes on: a heavy cluster next to a tail
 
 Through the initial encoder, the near-wall states (d < 2) become a spike and the far states a tail (panel a). This
-histogram is skewed. SIGReg's exact per-sample force on a skewed histogram has a fixed sign pattern:
-- the bulk is pushed outward;
-- tail codes 1.1–3.45 standard deviations out are pulled back toward the bulk;
-- codes beyond about 3.45 are pushed weakly further out, since the Gaussian kernel barely sees them.
+histogram is skewed.
 
-The near mass m sets where the tail sits, giving three regimes (panel c, 307 audited fits):
+**Exact form of the force.** SIGReg1D is N·MMD² with kernel ≈ √(2π)·exp(−u²/2). The gradient on a code at u is therefore
+proportional to the slope of the excess landscape
+
+  E(u) = (code histogram blurred by a unit Gaussian)(u) − (N(0, 2) density)(u),
+
+and each code slides downhill on E. [force_landscape.py](force_landscape.py) checks this against the exact SIGReg1D
+gradient: correlation ≥ 0.999 on skew-normal laws and on the three native initial code laws, with zero-crossings
+matching to 0.01.
+
+E is high where the codes over-fill the Gaussian (at the spike) and low where they under-fill it (in the gap between
+spike and tail). This gives a sign pattern:
+- codes in the spike are pushed outward;
+- codes between the gap's bottom and the tail's own crest are pulled back: the pull-back band;
+- codes beyond the crest slide outward: the start of ejection.
+
+The band depends on the law. The earlier values 1.1 and 3.45 were specific to a skew-normal:
+
+| Near mass | Pull-back band (standardized) | Tail at initialization |
+| --- | --- | --- |
+| 0.5 | 0.43–2.17 | median 1.0, end 1.98: it sits in the gap and just compresses |
+| 0.75 | 1.04–3.02 | end 2.89: the whole tail is pulled back |
+| 0.9375 | 1.63–4.63 | median 3.8, end 5.88: the outer part slides out |
+
+For the baseline encoder, the near mass m sets where the tail sits, giving three regimes (panel c, 307 audited fits):
 
 | Regime | Near mass | What happens |
 | --- | --- | --- |
@@ -59,7 +92,7 @@ The near mass m sets where the tail sits, giving three regimes (panel c, 307 aud
 **Falsified.**
 - Skewness is not sufficient. Laws whose skewness came from far mass piled at d 2–3, with no spread tail, did not fold.
 
-### 3. Which response wins: the encoder's tangent kernel
+### 3. Which response wins: how strongly the encoder squashes the heavy region
 
 A skewed histogram can be made Gaussian in two ways:
 - **Stretch the heavy region.** The monotone quantile map Φ⁻¹(F_P(d)) always exists and never folds.
@@ -93,27 +126,60 @@ bit-identical to the saved fits):
 - A cluster squeezed into d ∈ [1, 1.02) under `x` did not fold.
 - A wide cluster did fold at initialization 133 under both unsquashed maps.
 
-Input span is therefore not the right measure. The kernel's coupling, which depends on the initial weights as well as the
-input map, is the candidate; it has been measured on 3 maps × 2 initializations, not yet tested prospectively.
+**Prospective kernel test** ([protocol](KERNEL_PROTOCOL.md), [code](kernel_test.py), 52 fits; 40 of 52 correct).
+- **The prediction.** Fold if the locking ratio L = decoupling(tail)/decoupling(cluster) at initialization exceeds 5.
+- **What held.** Fold fraction rose across L bins (0.50, 0.57, 0.96), so the ordinal prediction held.
+- **What failed.**
+  - At m = 0.75, every map from `tanh(1.5x)` up folded, even at L = 2.
+  - At m = 0.875, maps `tanh(1.5x)`–`tanh(2.5x)` ended inflated, not folded, even at L = 26.
+  - Spearman correlation between log L and backward fraction was −0.04, not positive (predicted positive).
+- **What decided it.** Within each map, all four initializations gave the same outcome. The squashing strength k of
+  `tanh(kx)` decides; the initialization-to-initialization variation in L does not.
+
+**A first-order statistic also failed** (recorded before the kernel test). It used the instantaneous kernel-filtered
+velocity at initialization ([kernel_race.py](kernel_race.py)) and made 73–133 errors in 418 fits, against 44 for near
+mass alone. The fold develops nonlinearly over about 300 steps.
+
+**Phase map** ([phase.py](phase.py), exploratory, initialization 131; 45 cells). The fold threshold in k depends on the
+near mass:
+
+| near mass | smallest squashing that folds |
+| --- | --- |
+| 0.5 | 6 |
+| 0.625 | 2 |
+| 0.75 | 1.5 |
+| 0.875 | 3 |
+| 0.9375 | 6 |
+
+Below the threshold, low near mass ends stretched and high near mass ends inflated. The fold is easiest near
+m ≈ 0.7. There the histogram is skewed enough to create a strong pull-back, and the tail is heavy enough to stay within
+the kernel's reach.
+
+The fold versus no-fold boundary at m = 0.75 and 0.875 repeats at 2–4 initializations. One exception to the simple
+picture: under `x` at m = 0.875, the run sat in the inflated state for about 1,000 steps and then stretched (race replay).
+So the inflated state can be transient, and the map shows the state at 4,000 updates.
 
 ## How the earlier puzzles fit
 
 | Earlier puzzle | Explanation in this framework |
 | --- | --- |
-| "Mass below distance 2 causes the fold." | In the baseline encoder, d < 2 is exactly the kernel-locked region, so near mass sets both the spike and where the tail sits. |
+| "Mass below distance 2 causes the fold." | In the baseline encoder, d < 2 is exactly the squashed region, so near mass sets both the spike and where the tail sits. |
 | Skewness is necessary but not sufficient. | Skewness creates the force (2); whether the tail bends depends on the tail being spread and on the kernel (3). |
-| The fold disappears above m ≈ 0.92. | The tail starts beyond the pull-back band and is ejected (2). |
-| The same law folds at one initialization and not another. | The race in (3) is decided by the kernel, which depends on the initial weights. Near the boundary the initialization decides. |
+| The fold disappears above m ≈ 0.92. | In the baseline encoder, the tail starts past its crest on the landscape and the run ends inflated (2). Stronger squashing (`tanh(6x)`) folds even there (3). |
+| The same law folds at one initialization and not another. | Laws on the phase boundary for the baseline encoder. Away from the boundary, initializations agree (kernel test). |
 | InfoNCE never folds. | No shape target, so no force (1). |
 | The InfoNCE gradient can repair SIGReg folds. | Interpretation, not tested: it adds an order-preserving force without a shape force (1). |
 
 ## What is still open
 
-1. Pre-register a kernel-based prediction: compute decoupling for new input maps or initializations, predict fold or no
-   fold, then train.
-2. Give a law-dependent version of the kernel statistic. It should weight the decoupling by where the occupancy's spike
-   and tail fall, which the compact-cluster misses suggest is needed.
-3. Account for the 1.1 and 3.45 force zero-crossings analytically, for general laws.
+1. **Why the threshold curve has its shape.** A reduced model should reproduce the U-shaped fold threshold in (k, m):
+   the spike's stretch speed against the tail's bend speed, with the landscape's band.
+2. **Is the inflated state stable?** It can be escaped (under `x` at m = 0.875 it was), so longer runs would show
+   whether the inflated cells eventually stretch or fold.
+3. **Other architectures.** Wider or deeper encoders, and encoders without input squashing but with other
+   compressions (for example a learned first layer that saturates).
+4. **A law-weighted predictor.** One that uses where each occupancy's spike and tail fall in the encoder's input; the
+   compact-cluster misses suggest it is needed.
 
 ## Reproduce
 
@@ -123,5 +189,8 @@ input map, is the candidate; it has been measured on 3 maps × 2 initializations
   `output/compact/summary.json`.
 - [race.py](race.py): bit-exact replays with race statistics, in `output/geometry/race/`.
 - [kernel.py](kernel.py): tangent-kernel decoupling, in `output/kernel.json`.
-- [framework_figure.py](framework_figure.py): the figure above.
+- [kernel_test.py](kernel_test.py) and [KERNEL_PROTOCOL.md](KERNEL_PROTOCOL.md): prospective test; results in `output/kernel-test/summary.json`.
+- [force_landscape.py](force_landscape.py): excess-landscape identity; `output/force_landscape.json`.
+- [phase.py](phase.py): phase map; `output/phase.json`.
+- [framework_figure.py](framework_figure.py): both figures above (`python3 framework_figure.py phase` also draws the map).
 - Earlier skewness and cluster tests: [output/skew/RESULTS.md](output/skew/RESULTS.md).

@@ -2,6 +2,29 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 22 (later): Kernel test, force landscape, phase map, explainer
+
+- **Kernel-locking test** (pre-registered, 52 fits): 40 of 52 correct.
+  - Held: fold fraction rose with locking.
+  - Failed: the threshold of 5. At m = 0.75 every `tanh(kx)` with k ≥ 1.5 folds; at m = 0.875, k = 1.5–2.5 ends
+    inflated.
+  - Failed: Spearman (−0.04). The four initializations always agree within a map, so squashing strength, not
+    per-initialization locking, decides.
+- **A first-order kernel-velocity statistic failed** (73–133 errors in 418 fits, against 44 for near mass). Recorded
+  before the test.
+- **Analytic force.** SIGReg's force is the negative slope of the blurred code histogram minus the N(0, 2) density
+  (checked, correlation ≥ 0.999). The pull-back band is law-dependent: 0.43–2.17 at m = 0.5, 1.04–3.02 at 0.75 and
+  1.63–4.63 at 0.9375.
+- **Phase map** (exploratory, 45 cells, initialization 131). Three end states: stretched, fold and inflated. The fold
+  wedge needs squashing k ≥ 6, 2, 1.5, 3 and 6 at m = 0.5, 0.625, 0.75, 0.875 and 0.9375. The inflated state can be
+  transient (`x` at m = 0.875 escaped it after ~1,000 steps).
+- **Explainer page:** `occupancy-feature-isolation/explainer/`.
+- **Remaining:**
+  - a reduced model for the wedge's shape;
+  - longer runs on the inflated cells;
+  - other architectures;
+  - a law-weighted predictor.
+
 ## November 22: One framework for the fold; encoder geometry decides the response
 
 - **Framework.** [FRAMEWORK.md](occupancy-feature-isolation/FRAMEWORK.md). Three ingredients:
