@@ -1,5 +1,7 @@
 # Which occupancy feature causes the fold, and why InfoNCE does not fold
 
+> **Superseded in part, November 22, 2026.** The [framework](../../FRAMEWORK.md) replaces the statement below that asymmetry *in the encoder's input geometry* is the feature. The geometry test showed that the same skewed laws do not fold under an unsquashed input map. The deciding factor is the encoder's tangent kernel: whether the tail can bend faster than the heavy cluster can stretch. The skewness findings below still hold for the baseline encoder.
+
 Updated November 21, 2026. All fits share one encoder class, source-131 alignment pairs, the original 4,000-update
 schedule and a dense 20,001-point reload. Every fold count below is an empirical check, not an analytic guarantee.
 

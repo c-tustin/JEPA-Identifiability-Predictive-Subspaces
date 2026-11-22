@@ -2,6 +2,31 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 22: One framework for the fold; encoder geometry decides the response
+
+- **Framework.** [FRAMEWORK.md](occupancy-feature-isolation/FRAMEWORK.md). Three ingredients:
+  - force: a shape target on the code histogram;
+  - target: a skewed initial histogram with the tail in SIGReg's pull-back band;
+  - response: the encoder's tangent kernel lets the tail bend faster than the heavy cluster can stretch.
+- **Geometry test** (pre-registered, 48 fits). Same occupancies, initial weights and training; only the input map
+  changed. `tanh(4x)` folds at m = 0.625–0.875 (6/6). `x` and `tanh(x)` never fold (0/32, m = 0.125–0.9375) and reach
+  skewness ≈ 0 monotonically.
+  - The pre-registered skewness-in-f0 rule failed: 19 of 38 correct.
+  - H1 failed (m = 0.9375 does not fold under `x`); H2 failed (no mirror fold at m = 0.125); H3 held (m = 0.5 does not
+    fold).
+- **Compact-cluster test** (pre-registered, 32 fits). Falsified "a cluster with tiny input span suffices" (4 of 11
+  correct). A [1, 1.02) cluster under `x` did not fold; a [1, 1.25) cluster folded at initialization 133 under `x` and
+  `tanh(x)`.
+- **Observed, not pre-registered:**
+  - Race replays (bit-exact): under `tanh(4x)` the tail's far end overtakes its median by step ~400. Under `x` the tail
+    moves as a block and the cluster spreads.
+  - Tangent-kernel decoupling at initialization (near cluster / tail): `tanh(4x)` 0.003–0.005 / 0.14–0.16; `x` 0.06 /
+    0.02–0.03.
+- **Remaining:**
+  - a prospective, kernel-based prediction on new maps or initializations;
+  - a law-weighted kernel statistic;
+  - an analytic account of the force zero-crossings.
+
 ## November 21: Occupancy feature and InfoNCE mechanism (identified, with limits)
 
 - **SIGReg as a kernel distance.** The encoder is a scalar function of distance. SIGReg1D is exactly 1024 × MMD² to

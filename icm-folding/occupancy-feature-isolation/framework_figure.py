@@ -46,19 +46,15 @@ def main():
     ax[0].set_yscale('log'); ax[0].set_ylim(1e-3, 1); ax[0].set_xlabel('standardized code at initialization')
     ax[0].set_ylabel('probability per bin'); ax[0].set_title('(a) Start: a spike (near states) plus a tail (far states)', loc='left')
     ax[0].legend(frameon=False)
-    # (b) what happens to the tail during training
-    for a in COL:
-        z = np.load(HERE/f'output/trace/n130-f130-a{a}.npz'); w = np.load(OUT/'skew'/'laws'/f'native-m{a}.npy')
-        steps = z['steps']; keep = steps <= 1500; med, end, clu = [], [], []
-        for cv in z['curves'][keep]:
-            zz, _ = standardized(cv, z['grid'], d, w)
-            fw = w[~near]/w[~near].sum(); fz = zz[~near]
-            med.append(np.interp(.5, np.cumsum(fw), fz)); end.append(fz[-1]); clu.append(w[near] @ zz[near]/w[near].sum())
-        ax[1].plot(steps[keep], end, color=COL[a], lw=2, label=f'{a}: far end')
-        ax[1].plot(steps[keep], med, color=COL[a], lw=1.2, ls='--', label=f'{a}: far median')
-    ax[1].axhspan(1.1, 3.45, color='#eb6834', alpha=.08)
-    ax[1].set_xlabel('training step'); ax[1].set_ylabel('standardized code')
-    ax[1].set_title('(b) Tail during training: fold = far end drops below median', loc='left'); ax[1].legend(frameon=False, ncol=3, fontsize=7)
+    # (b) the race: same occupancy (m = 0.75), two input maps
+    for mp, col, lab in [('tanh4', '#2a78d6', 'tanh(4x)'), ('linear', '#eb6834', 'x')]:
+        r = json.loads((OUT/'geometry'/'race'/f'm0.75-{mp}-i131.json').read_text())['rows']
+        st = [q['step'] for q in r if q['step'] <= 2000]; q = [q for q in r if q['step'] <= 2000]
+        ax[1].plot(st, [v['far_end'] for v in q], color=col, lw=2, label=f'{lab}: far end of tail')
+        ax[1].plot(st, [v['far_median'] for v in q], color=col, lw=1.2, ls='--', label=f'{lab}: tail median')
+        ax[1].plot(st, [v['near_spread'] for v in q], color=col, lw=1.2, ls=':', label=f'{lab}: spread of near cluster')
+    ax[1].set_xlabel('training step'); ax[1].set_ylabel('standardized code units')
+    ax[1].set_title('(b) Same occupancy (m = 0.75), two encoders', loc='left'); ax[1].legend(frameon=False, ncol=2, fontsize=7)
     # (c) two-lump idealization vs all audited cells
     tl = two_lump(); m = np.array([r['m'] for r in tl])
     rows = [(float(1 - (w/w.sum())[dd >= 2].sum()), r_['backward'] > .1) for r_ in FB.cells() for dd, w in [r_['law']]]
@@ -71,15 +67,14 @@ def main():
     for lo, hi in zip(bins[:-1], bins[1:]):
         s = (nm >= lo) & (nm < hi)
         if s.sum(): centers.append(nm[s].mean()); frac.append(fo[s].mean()); n.append(s.sum())
-    ax[2].plot(centers, frac, 'o-', color='#2a78d6', ms=7, lw=2, label='fraction of audited fits that fold (init 131)')
-    for x_, y_, k in zip(centers, frac, n): ax[2].annotate(f'n={k}', (x_, y_), textcoords='offset points', xytext=(0, 8), ha='center', fontsize=7, color='#555')
-    ax[2].plot(m, [r['tail_over_cluster'] for r in tl], color='#555', lw=1.5, ls=':', label='two-lump model: |force on tail| / |force on spike|')
+    ax[2].plot(centers, frac, 'o-', color='#2a78d6', ms=7, lw=2)
+    for x_, y_, k in zip(centers, frac, n): ax[2].annotate(f'{k}', (x_, y_), textcoords='offset points', xytext=(7, -3), fontsize=7, color='#555')
     ax[2].axvspan(.4, .6, color='#2a78d6', alpha=.06); ax[2].axvspan(.92, 1, color='#1baf7a', alpha=.08)
     ax[2].text(.5, 1.12, 'balanced\n(monotone)', ha='center', fontsize=8, color='#555')
     ax[2].text(.76, 1.12, 'skewed, tail in reach\n(fold)', ha='center', fontsize=8, color='#555')
     ax[2].text(.96, 1.12, 'tail out\nof reach\n(eject)', ha='center', fontsize=8, color='#555')
-    ax[2].set_xlim(.4, 1); ax[2].set_ylim(0, 1.3); ax[2].set_xlabel('near mass m'); ax[2].set_title('(c) Three regimes vs near mass', loc='left')
-    ax[2].legend(frameon=False, fontsize=7, loc='lower left')
+    ax[2].set_xlim(.4, 1); ax[2].set_ylim(0, 1.3); ax[2].set_xlabel('near mass m'); ax[2].set_ylabel('fraction of fits that fold')
+    ax[2].set_title('(c) Baseline encoder: 307 audited fits (labels = n)', loc='left')
     # (d) geometry test
     sp = OUT/'geometry'/'summary.json'
     if sp.exists():
@@ -91,7 +86,7 @@ def main():
                            ls='-' if i == 131 else '--', ms=6, label=f'{lab}, init {i}')
         ax[3].axhline(.1, color='#555', lw=1, ls=':'); ax[3].text(.13, .11, 'fold threshold', fontsize=7, color='#555')
         ax[3].set_xlabel('near mass m'); ax[3].set_ylabel('backward fraction')
-        ax[3].set_title('(d) Same occupancies, different encoder input map', loc='left'); ax[3].legend(frameon=False, fontsize=7)
+        ax[3].set_title('(d) Same occupancies, three input maps (x and tanh(x) overlap at 0)', loc='left'); ax[3].legend(frameon=False, fontsize=7)
     plt.tight_layout(); plt.savefig(HERE/'output'/'framework.png', dpi=140)
     R = K.R; R.trials.atomic_json(HERE/'output'/'framework.json', dict(two_lump=tl, near_mass_bins=dict(centers=centers, fold_fraction=frac, n=[int(k) for k in n])))
 

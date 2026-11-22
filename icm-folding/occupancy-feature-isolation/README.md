@@ -1,6 +1,6 @@
 # Which occupancy feature creates the fold?
 
-Status November 21, 2026: feature and objective mechanism identified, with documented limits. See [feature and InfoNCE results](output/skew/RESULTS.md).
+Status November 22, 2026: one framework now covers all results. See [the fold framework](FRAMEWORK.md). Earlier: [feature and InfoNCE results](output/skew/RESULTS.md).
 
 The [fixed first-stage protocol](PROTOCOL.md) decomposes the empirical endpoint distribution into mass below distance 2, its conditional near-distance shape, and its conditional far-distance shape. Forty completed hybrid fits independently exchange these components between five preselected folded/nonfolded source pairs. Alignment data, initialization and both sampling streams remain common. This is a sampling intervention using actual source observations, with no new sensor states synthesized.
 
@@ -80,3 +80,24 @@ This is a necessary condition plus a mechanism, not an exact one-number criterio
 class. Fit with `python3 skew.py --design` then `python3 skew.py --shard K --shards N`, and the same with `cluster.py`.
 Report with `python3 skew_report.py`. [function_space.py](function_space.py) records why an unconstrained function-space
 optimum is degenerate: it zigzags with the policy's 0.25 lattice.
+
+## Encoder geometry and the fold framework (November 22, 2026)
+
+[FRAMEWORK.md](FRAMEWORK.md) explains every result with three ingredients:
+1. a shape target on the code histogram, which supplies the force;
+2. a skewed initial histogram (heavy cluster plus a spread tail within SIGReg's pull-back band), which the force acts on;
+3. an encoder whose tangent kernel lets the tail bend more easily than the cluster stretches, which decides the response.
+
+New tests, all pre-registered:
+- [Geometry test](GEOMETRY_PROTOCOL.md) ([code](geometry.py), 48 fits). Changing only the input map from `tanh(4x)` to `x`
+  or `tanh(x)` removed every fold (0 of 32), despite initial skewness up to 2.7. The skewness rule scored 19 of 38;
+  H1 and H2 failed, H3 held.
+- [Compact-cluster test](COMPACT_PROTOCOL.md) ([code](compact.py), 32 fits). Falsified "tiny input span is enough":
+  4 of 11 predictions correct.
+
+Observed, not pre-registered:
+- [race.py](race.py): bit-exact replays. Under `tanh(4x)` the tail's far end overtakes its median (the fold). Under `x`
+  the tail moves as a block while the cluster spreads.
+- [kernel.py](kernel.py): tangent-kernel decoupling. Under `tanh(4x)` the near cluster is 0.003–0.005 and the tail
+  0.14–0.16; under `x` the near cluster is 0.06 and the tail 0.02–0.03.
+- Figure: [framework_figure.py](framework_figure.py) → `output/framework.png`.
