@@ -17,8 +17,11 @@ None of this is an analytic guarantee.
 A fold happens when three things hold:
 - an objective forces the code histogram toward a fixed shape;
 - the histogram starts out lopsided;
-- the encoder can fix the lopsidedness faster by bending the tail of its code curve back over the heavy region than by
-  stretching the heavy region out.
+- the encoder lets the far end of the tail move independently of the tail's middle. SIGReg pulls the far end back
+  harder than the middle, so the end overtakes the middle, and that crossing is the fold.
+
+**Revised after the causal stretch test below.** An earlier version said the fold wins a race against stretching the
+spike. With the starting histogram held fixed, a stretchable spike did *not* prevent the fold at m = 0.625 or 0.75.
 
 Training ends in one of three states:
 - **stretched**: monotone and symmetric;
@@ -94,6 +97,10 @@ For the baseline encoder, the near mass m sets where the tail sits, giving three
 
 ### 3. Which response wins: how strongly the encoder squashes the heavy region
 
+> **Read with the causal stretch test below.** The stretch-versus-bend race in this section was the working hypothesis.
+> Holding the starting histogram fixed falsified it at m = 0.625 and 0.75: the fold formed on schedule even when the
+> spike could stretch. The measurements here stand; the interpretation is revised below.
+
 A skewed histogram can be made Gaussian in two ways:
 - **Stretch the heavy region.** The monotone quantile map Φ⁻¹(F_P(d)) always exists and never folds.
 - **Bend the tail** back over the heavy region, which folds the code.
@@ -159,6 +166,58 @@ The fold versus no-fold boundary at m = 0.75 and 0.875 repeats at 2–4 initiali
 picture: under `x` at m = 0.875, the run sat in the inflated state for about 1,000 steps and then stretched (race replay).
 So the inflated state can be transient, and the map shows the state at 4,000 updates.
 
+## Causal stretch test: starting histogram held fixed
+
+([protocol](STRETCH_PROTOCOL.md), [code](stretch.py), [timing replays](stretch_race.py); 36 fits, pre-registered)
+
+The baseline encoder gets one extra input channel whose weights start at zero, so the initial code is bit-identical
+(maximum difference 0) and the starting histogram is the same. The channel is nonzero only near the wall (near-only:
+the spike can stretch), only far from it (far-only: the tail bends more), or everywhere as a copy of `tanh(4x)`
+(duplicate: control).
+
+| Channel | m = 0.625 | m = 0.75 | m = 0.875 | Prediction |
+| --- | --- | --- | --- | --- |
+| near-only | fold 4/4 | fold 4/4 | no fold 4/4 | no fold in ≥ 10 of 12, **failed** (4 of 12) |
+| far-only | fold 4/4 | fold 4/4 | fold 4/4 | fold in ≥ 10 of 12, held |
+| duplicate | fold 4/4 | fold 4/4 | fold 4/4 | fold in ≥ 10 of 12, held |
+
+**What this establishes.**
+- **Causal, at m = 0.875:** the same starting histogram folds or does not depending only on what the encoder can move,
+  at all four initializations. The starting histogram alone does not decide the outcome.
+- **The stretch race is falsified at m = 0.625 and 0.75.** Bit-exact replays at m = 0.75, initialization 131:
+  - with the near-only channel, the spike stretched much faster (spread 0.58 at step 300 against 0.28 for the
+    duplicate), and skewness fell faster;
+  - the tail's far end still crossed its median at step 300, the same step as the duplicate.
+  The fold forms regardless of how fast the spike stretches.
+- **At m = 0.875 the channel changed the path.** The near-only run went to the inflated state (sd ≈ 1.6) for about
+  1,000 steps and then stretched; the duplicate folded at step 240.
+
+**Revised mechanism.** The force landscape pulls the tail's far end back harder than its middle, because the landscape
+steepens toward the tail's crest. If the encoder lets the end move independently, the end overtakes the middle. The
+evidence for each part:
+- tail decoupling 0.14–0.16 under `tanh(4x)` against 0.02–0.03 under `x`;
+- folds under every map that resolves the tail;
+- the race traces.
+
+Stretching the spike competes with this only near the top of the fold window, where the tail starts near its crest.
+
+**Not yet tested causally:** reducing only tail bendability with the starting histogram held fixed. Zero-initialized
+channels can add flexibility but not remove it. That test needs a different design, such as freezing the parameters that
+move the tail.
+
+## How sure each claim is
+
+| Claim | Status |
+| --- | --- |
+| SIGReg's force is the slope of the blurred histogram minus N(0, 2) | exact identity, checked numerically |
+| Without a target shape (InfoNCE), no fold; adding one makes InfoNCE fold | pre-registered, held |
+| The encoder's parametrization causally changes the outcome from an identical start | pre-registered, held at m = 0.875 (4/4 initializations) |
+| Asymmetry of the starting histogram is necessary (baseline encoder) | pre-registered, held |
+| "The spike can't stretch, so the tail bends" (race) | **falsified** at m = 0.625 and 0.75 |
+| The fold is the tail's far end overtaking its middle, which needs a bendable tail | supported by replays and the map comparisons; **not yet tested causally** |
+| Phase map and its wedge shape | exploratory; one initialization per cell outside the 0.75 and 0.875 rows |
+| All of the above | one MLP architecture, one data source, 4,000 updates, fold threshold 0.1 |
+
 ## How the earlier puzzles fit
 
 | Earlier puzzle | Explanation in this framework |
@@ -172,6 +231,8 @@ So the inflated state can be transient, and the map shows the state at 4,000 upd
 
 ## What is still open
 
+0. **Causal test of tail bendability.** Freeze or tie the parameters that let the tail's far end move independently,
+   with the starting histogram held fixed, and check whether the fold disappears.
 1. **Why the threshold curve has its shape.** A reduced model should reproduce the U-shaped fold threshold in (k, m):
    the spike's stretch speed against the tail's bend speed, with the landscape's band.
 2. **Is the inflated state stable?** It can be escaped (under `x` at m = 0.875 it was), so longer runs would show
@@ -192,5 +253,6 @@ So the inflated state can be transient, and the map shows the state at 4,000 upd
 - [kernel_test.py](kernel_test.py) and [KERNEL_PROTOCOL.md](KERNEL_PROTOCOL.md): prospective test; results in `output/kernel-test/summary.json`.
 - [force_landscape.py](force_landscape.py): excess-landscape identity; `output/force_landscape.json`.
 - [phase.py](phase.py): phase map; `output/phase.json`.
+- [stretch.py](stretch.py), [STRETCH_PROTOCOL.md](STRETCH_PROTOCOL.md) and [stretch_race.py](stretch_race.py): causal stretch test; `output/stretch/`.
 - [framework_figure.py](framework_figure.py): both figures above (`python3 framework_figure.py phase` also draws the map).
 - Earlier skewness and cluster tests: [output/skew/RESULTS.md](output/skew/RESULTS.md).

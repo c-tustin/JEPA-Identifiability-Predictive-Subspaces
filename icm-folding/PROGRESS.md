@@ -2,6 +2,22 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 22 (latest): Causal stretch test; race interpretation falsified at m ≤ 0.75
+
+- **Design.** Pre-registered, 36 fits. A zero-initialized extra input channel keeps the initial code, and hence the
+  starting histogram, bit-identical.
+- **Results:**
+  - near-only (stretchable spike): fold 8/8 at m = 0.625 and 0.75, no fold 4/4 at m = 0.875. Prediction 1 failed
+    (4 of 12).
+  - far-only and duplicate: fold 12/12 each. Predictions held.
+- **Replays (bit-exact).** At m = 0.75 the spike stretched about 2× faster with the near channel, but the fold formed at
+  step 300 in both. At m = 0.875 the near channel gave inflated-then-stretched instead of a fold at step 240.
+- **Established:** encoder flexibility causally changes the outcome from an identical start (m = 0.875).
+- **Revised:** the fold is the tail's far end overtaking its middle under the landscape's steeper pull near the crest,
+  which needs a bendable tail. Supported, not causally tested.
+- **Updated:** [FRAMEWORK.md](occupancy-feature-isolation/FRAMEWORK.md) (confidence table) and the explainer.
+- **Next:** reduce only tail bendability, with the starting histogram fixed (for example by freezing parameters).
+
 ## November 22 (later): Kernel test, force landscape, phase map, explainer
 
 - **Kernel-locking test** (pre-registered, 52 fits): 40 of 52 correct.

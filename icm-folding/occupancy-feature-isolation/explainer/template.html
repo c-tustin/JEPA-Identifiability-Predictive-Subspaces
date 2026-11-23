@@ -109,7 +109,7 @@ a { color: var(--stretched); }
     <div class="answer">
       <div class="item"><div class="k">The force</div><h3>A target shape for the codes</h3><p>SIGReg wants the histogram of codes across visited states to look like a bell curve. InfoNCE has no such target, so it never folds.</p></div>
       <div class="item"><div class="k">The material</div><h3>A lopsided histogram</h3><p>The exploring agent spends most of its time near the wall. Those states pile into a spike of codes, and the rest form a tail.</p></div>
-      <div class="item"><div class="k">The response</div><h3>A spike that can't stretch</h3><p>The encoder could stretch the spike into a bell curve, but its input squashes the near-wall region. Bending the tail back is faster, and that bend is the fold.</p></div>
+      <div class="item"><div class="k">The response</div><h3>A tail that can bend</h3><p>SIGReg pulls the tail's far end back harder than its middle. If the encoder lets the far end move on its own, the end overtakes the middle, and that crossing is the fold.</p></div>
     </div>
   </section>
 
@@ -175,8 +175,8 @@ a { color: var(--stretched); }
   </section>
 
   <section class="stack" aria-labelledby="race">
-    <h2 id="race">3. The response: stretch the spike or bend the tail</h2>
-    <p class="prose">A lopsided histogram can be fixed without folding: stretch the spike until the histogram is a bell curve. That monotone solution always exists. Whether training finds it depends on what the encoder can move quickly. The baseline encoder sees <code>tanh(4x)</code> with x ∝ 1/distance, which crushes distances 1–2 into 3.5% of its input range. Every near-wall state moves together, so the spike barely stretches, while the tail bends freely.</p>
+    <h2 id="race">3. The response: the tail's far end overtakes its middle</h2>
+    <p class="prose">The landscape gets steeper toward the tail's crest, so the far end of the tail is pulled back harder than its middle. If the encoder can move the far end on its own, the end catches up with the middle and passes it, and the code curve turns back. The baseline encoder sees <code>tanh(4x)</code> with x ∝ 1/distance, which spreads the far region across most of its input, so the tail bends freely. An unsquashed input, <code>x</code>, crowds the far tail together, and it moves as a block.</p>
     <figure class="panel">
       <svg id="raceChart" viewBox="0 0 900 320" role="img" aria-label="Tail position during training, two encoders, near mass 0.75"></svg>
       <div class="legend">
@@ -187,6 +187,19 @@ a { color: var(--stretched); }
       </div>
       <figcaption>Same occupancy (m = 0.75), same initial weights, same training; only the input map differs. Bit-exact replays of the saved fits. Under tanh(4x), the far end overtakes the median by step ~400, and that crossing is the fold. Under x, the tail moves as a block while the spike spreads (0.35 → 0.7 standardized units).</figcaption>
     </figure>
+    <div class="panel stack">
+      <h3>The test that changed the story</h3>
+      <p>We first thought the fold won a race against stretching the spike. To test that cleanly, we gave the baseline encoder one extra input channel whose weights start at zero. The starting code, and so the starting histogram, stays bit-for-bit identical, but the encoder gains a new way to move certain states.</p>
+      <div class="tw"><table>
+        <thead><tr><th>Extra channel</th><th>m = 0.625</th><th>m = 0.75</th><th>m = 0.875</th></tr></thead>
+        <tbody>
+          <tr><td>near-wall only (spike can stretch)</td><td><span class="pill" style="--c:var(--fold)">fold 4/4</span></td><td><span class="pill" style="--c:var(--fold)">fold 4/4</span></td><td><span class="pill" style="--c:var(--stretched)">no fold 4/4</span></td></tr>
+          <tr><td>far only (tail bends more)</td><td><span class="pill" style="--c:var(--fold)">fold 4/4</span></td><td><span class="pill" style="--c:var(--fold)">fold 4/4</span></td><td><span class="pill" style="--c:var(--fold)">fold 4/4</span></td></tr>
+          <tr><td>copy of tanh(4x) (control)</td><td><span class="pill" style="--c:var(--fold)">fold 4/4</span></td><td><span class="pill" style="--c:var(--fold)">fold 4/4</span></td><td><span class="pill" style="--c:var(--fold)">fold 4/4</span></td></tr>
+        </tbody>
+      </table></div>
+      <p>At m = 0.75 the spike stretched twice as fast with the near-wall channel, yet the tail's far end crossed its middle at step 300, the same step as the control. Stretching the spike does not stop the fold there. At m = 0.875 the same starting histogram stopped folding, so what the encoder can move does change the outcome causally.</p>
+    </div>
   </section>
 
   <section class="stack" aria-labelledby="phase">
@@ -209,7 +222,7 @@ a { color: var(--stretched); }
       <table>
         <thead><tr><th>What we saw</th><th>Why</th></tr></thead>
         <tbody>
-          <tr><td>"Mass below distance 2" seemed to cause folds</td><td>In the baseline encoder, d &lt; 2 is exactly the squashed region, so near mass sets both the spike and where the tail sits.</td></tr>
+          <tr><td>"Mass below distance 2" seemed to cause folds</td><td>Near mass sets how lopsided the histogram is and where the tail sits on the landscape.</td></tr>
           <tr><td>Skewness was necessary but not sufficient</td><td>Skewness supplies the force. A fold also needs a spread tail in the pull-back band and an encoder that can bend it.</td></tr>
           <tr><td>Folds vanished above m ≈ 0.92</td><td>The tail starts past its crest and the run ends inflated. A stronger squash, tanh(6x), folds even there.</td></tr>
           <tr><td>The same law folded under one initialization only</td><td>Those laws sit on the phase boundary. Away from it, initializations agree.</td></tr>
@@ -231,15 +244,35 @@ a { color: var(--stretched); }
           <tr><td>Cluster position</td><td class="num">24</td><td class="num">H_wall failed</td><td>At m = 0.75, every position of the near cluster folds.</td></tr>
           <tr><td>Input geometry</td><td class="num">48</td><td class="num">19 / 38</td><td>Unsquashed input never folds <span class="bad">(skewness rule failed)</span>. This revealed the encoder's role.</td></tr>
           <tr><td>Compact cluster</td><td class="num">32</td><td class="num">4 / 11</td><td>A cluster with tiny input span is not enough <span class="bad">(failed)</span>.</td></tr>
+          <tr><td>Stretch, identical start</td><td class="num">36</td><td class="num">2 of 3</td><td>Encoder flexibility changes the outcome from the same start <span class="ok">(held at m = 0.875)</span>. A stretchable spike prevents the fold <span class="bad">(failed at 0.625 and 0.75)</span>.</td></tr>
           <tr><td>Kernel locking</td><td class="num">52</td><td class="num">40 / 52</td><td>Fold rate rises with locking <span class="ok">(held)</span>. The threshold was wrong and per-initialization locking predicts nothing <span class="bad">(failed)</span>. Squash strength decides.</td></tr>
         </tbody>
       </table>
     </div>
   </section>
 
+  <section class="stack" aria-labelledby="sure">
+    <h2 id="sure">How sure is each claim?</h2>
+    <div class="panel tw">
+      <table>
+        <thead><tr><th>Claim</th><th>Status</th></tr></thead>
+        <tbody>
+          <tr><td>SIGReg's pull is the slope of the blurred histogram minus a blurred bell curve</td><td><span class="pill" style="--c:var(--stretched)">exact, checked</span></td></tr>
+          <tr><td>No target shape, no fold; adding one makes InfoNCE fold</td><td><span class="pill" style="--c:var(--stretched)">tested, held</span></td></tr>
+          <tr><td>What the encoder can move changes the outcome from an identical start</td><td><span class="pill" style="--c:var(--stretched)">tested, held at m = 0.875</span></td></tr>
+          <tr><td>A lopsided starting histogram is necessary (baseline encoder)</td><td><span class="pill" style="--c:var(--stretched)">tested, held</span></td></tr>
+          <tr><td>The fold is a race lost by a spike that can't stretch</td><td><span class="pill" style="--c:var(--fold)">falsified at m = 0.625 and 0.75</span></td></tr>
+          <tr><td>The fold is the tail's far end overtaking its middle, which needs a bendable tail</td><td><span class="pill" style="--c:var(--inflated)">supported, not yet tested causally</span></td></tr>
+          <tr><td>Phase map and the shape of the fold wedge</td><td><span class="pill" style="--c:var(--inflated)">exploratory</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="prose" style="color:var(--ink-3);font-size:.9rem">Everything here comes from one small MLP architecture, one data source and 4,000 training updates, and uses a fold threshold of 0.1 that we chose.</p>
+  </section>
+
   <section class="stack prose" aria-labelledby="open">
     <h2 id="open">Still open</h2>
-    <p>A reduced model that reproduces the shape of the fold wedge from the spike's stretch speed, the tail's bend speed and the landscape's band. Whether the inflated state eventually escapes. Whether wider or deeper encoders, or encoders that compress the near region in other ways, give the same map.</p>
+    <p>The next causal test: stop only the tail's far end from moving independently, with the starting histogram held fixed, and check whether the fold disappears. After that, a reduced model that reproduces the shape of the fold wedge from the spike's stretch speed, the tail's bend speed and the landscape's band. Whether the inflated state eventually escapes. Whether wider or deeper encoders, or encoders that compress the near region in other ways, give the same map.</p>
   </section>
 
   <footer>Source and full write-up: <span class="mono">icm-folding/occupancy-feature-isolation/FRAMEWORK.md</span> in <a href="https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces" target="_blank" rel="noopener">JEPA-Identifiability-Predictive-Subspaces</a>. Updated November 22, 2026. All results are empirical checks on one encoder architecture, not analytic guarantees.</footer>

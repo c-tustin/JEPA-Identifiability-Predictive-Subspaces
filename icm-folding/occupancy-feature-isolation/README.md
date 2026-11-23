@@ -116,3 +116,17 @@ Observed, not pre-registered:
   threshold in k is 6, 2, 1.5, 3 and 6 at m = 0.5, 0.625, 0.75, 0.875 and 0.9375. Figure: `output/phase.png`.
 - [Explainer page](explainer/fold-explainer.html), built by [explainer/build.py](explainer/build.py) from
   [explainer/template.html](explainer/template.html).
+
+## Causal stretch test (November 22, 2026, latest)
+
+[STRETCH_PROTOCOL.md](STRETCH_PROTOCOL.md), [stretch.py](stretch.py) and [stretch_race.py](stretch_race.py); 36 fits,
+pre-registered. A zero-initialized extra input channel keeps the initial code bit-identical and adds one way of moving
+states.
+- **near-only channel:** prevents the fold only at m = 0.875 (4/4). It still folds at m = 0.625 and 0.75 (8/8). The
+  prediction failed.
+- **far-only and duplicate channels:** fold 12/12 each. These predictions held.
+- **Replays:** a faster-stretching spike did not delay the fold (the tail's far end crossed its median at step 300 in
+  both runs).
+- **Conclusions:** the stretch-race interpretation is falsified at m ≤ 0.75. What the encoder can move does change the
+  outcome causally from an identical start (m = 0.875). The revised mechanism (the far end of the tail overtakes its
+  middle) is not yet tested causally. See the confidence table in [FRAMEWORK.md](FRAMEWORK.md).
