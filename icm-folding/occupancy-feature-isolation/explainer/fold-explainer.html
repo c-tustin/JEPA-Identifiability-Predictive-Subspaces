@@ -105,11 +105,11 @@ a { color: var(--stretched); }
 
   <section class="stack" aria-labelledby="short">
     <h2 id="short">The short answer</h2>
-    <p class="prose">A fold needs three things at once. Remove any one and it goes away.</p>
+    <p class="prose">A fold needs three things at once. Remove any one and it goes away. The first two are established by controlled tests. For the third, we know it matters causally but not yet exactly how it works.</p>
     <div class="answer">
       <div class="item"><div class="k">The force</div><h3>A target shape for the codes</h3><p>SIGReg wants the histogram of codes across visited states to look like a bell curve. InfoNCE has no such target, so it never folds.</p></div>
-      <div class="item"><div class="k">The material</div><h3>A lopsided histogram</h3><p>The exploring agent spends most of its time near the wall. Those states pile into a spike of codes, and the rest form a tail.</p></div>
-      <div class="item"><div class="k">The response</div><h3>A tail that can bend</h3><p>SIGReg pulls the tail's far end back harder than its middle. If the encoder lets the far end move on its own, the end overtakes the middle, and that crossing is the fold.</p></div>
+      <div class="item"><div class="k">The material</div><h3>A lopsided histogram</h3><p>The exploring agent spends most of its time near the wall. Those states pile into a spike of codes, and the rest form a tail. The target shape then pushes to reposition and rescale the spike and the tail.</p></div>
+      <div class="item"><div class="k">The response</div><h3>An encoder that bends under that pressure</h3><p>From an identical start, changing only what the encoder can move changed whether it folded. Exactly how the encoder turns the pressure into a bend is still open.</p></div>
     </div>
   </section>
 
@@ -175,8 +175,8 @@ a { color: var(--stretched); }
   </section>
 
   <section class="stack" aria-labelledby="race">
-    <h2 id="race">3. The response: the tail's far end overtakes its middle</h2>
-    <p class="prose">The landscape gets steeper toward the tail's crest, so the far end of the tail is pulled back harder than its middle. If the encoder can move the far end on its own, the end catches up with the middle and passes it, and the code curve turns back. The baseline encoder sees <code>tanh(4x)</code> with x ∝ 1/distance, which spreads the far region across most of its input, so the tail bends freely. An unsquashed input, <code>x</code>, crowds the far tail together, and it moves as a block.</p>
+    <h2 id="race">3. The response: the encoder turns the pressure into a bend</h2>
+    <p class="prose">In a folding run, the tail's far end drops past the tail's middle, and the code curve turns back. The baseline encoder sees <code>tanh(4x)</code> with x ∝ 1/distance, which spreads the far region across most of its input. An unsquashed input, <code>x</code>, crowds the far tail together; there the tail moves as a block and never folds. We tested two explanations for why the bend happens, and both failed (below).</p>
     <figure class="panel">
       <svg id="raceChart" viewBox="0 0 900 320" role="img" aria-label="Tail position during training, two encoders, near mass 0.75"></svg>
       <div class="legend">
@@ -199,6 +199,21 @@ a { color: var(--stretched); }
         </tbody>
       </table></div>
       <p>At m = 0.75 the spike stretched twice as fast with the near-wall channel, yet the tail's far end crossed its middle at step 300, the same step as the control. Stretching the spike does not stop the fold there. At m = 0.875 the same starting histogram stopped folding, so what the encoder can move does change the outcome causally.</p>
+    </div>
+    <div class="panel stack">
+      <h3>Which part of SIGReg's pull is needed?</h3>
+      <p>We kept the loss value the same and changed only how SIGReg's gradient reaches the codes. With the spike and the tail each allowed only to move as a block and change their spread, four numbers per batch, the fold still formed every time, at the same size. Moving the blocks alone, or changing spreads alone, did not fold.</p>
+      <div class="tw"><table>
+        <thead><tr><th>What SIGReg can do to the codes</th><th>Folds?</th></tr></thead>
+        <tbody>
+          <tr><td>Full force (normal training)</td><td><span class="pill" style="--c:var(--fold)">yes</span></td></tr>
+          <tr><td>Tail only as a block; spike free</td><td><span class="pill" style="--c:var(--fold)">yes, 12/12</span></td></tr>
+          <tr><td>Both as blocks: position and spread</td><td><span class="pill" style="--c:var(--fold)">yes, 12/12</span></td></tr>
+          <tr><td>Both as blocks: position only</td><td><span class="pill" style="--c:var(--stretched)">no, 0/8 (stays skewed)</span></td></tr>
+          <tr><td>Both as blocks: spread only</td><td><span class="pill" style="--c:var(--inflated)">no, 0/8 (scale blows up)</span></td></tr>
+        </tbody>
+      </table></div>
+      <p>So the pressure that causes the fold is coarse: the spike and the tail must be repositioned and rescaled together. The fine shape of SIGReg's force does not matter.</p>
     </div>
   </section>
 
@@ -245,6 +260,7 @@ a { color: var(--stretched); }
           <tr><td>Input geometry</td><td class="num">48</td><td class="num">19 / 38</td><td>Unsquashed input never folds <span class="bad">(skewness rule failed)</span>. This revealed the encoder's role.</td></tr>
           <tr><td>Compact cluster</td><td class="num">32</td><td class="num">4 / 11</td><td>A cluster with tiny input span is not enough <span class="bad">(failed)</span>.</td></tr>
           <tr><td>Stretch, identical start</td><td class="num">36</td><td class="num">2 of 3</td><td>Encoder flexibility changes the outcome from the same start <span class="ok">(held at m = 0.875)</span>. A stretchable spike prevents the fold <span class="bad">(failed at 0.625 and 0.75)</span>.</td></tr>
+          <tr><td>Rigid force (5 conditions)</td><td class="num">52</td><td class="num">3 of 5</td><td>Block-level pull suffices <span class="ok">(held)</span>. Differential pull along the tail is needed <span class="bad">(failed)</span>. Position-only pull folds <span class="bad">(failed)</span>.</td></tr>
           <tr><td>Kernel locking</td><td class="num">52</td><td class="num">40 / 52</td><td>Fold rate rises with locking <span class="ok">(held)</span>. The threshold was wrong and per-initialization locking predicts nothing <span class="bad">(failed)</span>. Squash strength decides.</td></tr>
         </tbody>
       </table>
@@ -262,7 +278,9 @@ a { color: var(--stretched); }
           <tr><td>What the encoder can move changes the outcome from an identical start</td><td><span class="pill" style="--c:var(--stretched)">tested, held at m = 0.875</span></td></tr>
           <tr><td>A lopsided starting histogram is necessary (baseline encoder)</td><td><span class="pill" style="--c:var(--stretched)">tested, held</span></td></tr>
           <tr><td>The fold is a race lost by a spike that can't stretch</td><td><span class="pill" style="--c:var(--fold)">falsified at m = 0.625 and 0.75</span></td></tr>
-          <tr><td>The fold is the tail's far end overtaking its middle, which needs a bendable tail</td><td><span class="pill" style="--c:var(--inflated)">supported, not yet tested causally</span></td></tr>
+          <tr><td>The fold needs SIGReg to pull the tail's far end harder than its middle</td><td><span class="pill" style="--c:var(--fold)">falsified</span></td></tr>
+          <tr><td>Block-level pressure (position and spread of spike and tail) is enough to fold</td><td><span class="pill" style="--c:var(--stretched)">tested, held 12/12</span></td></tr>
+          <tr><td>How the encoder turns that pressure into a bend</td><td><span class="pill" style="--c:var(--inflated)">open</span></td></tr>
           <tr><td>Phase map and the shape of the fold wedge</td><td><span class="pill" style="--c:var(--inflated)">exploratory</span></td></tr>
         </tbody>
       </table>
@@ -272,7 +290,7 @@ a { color: var(--stretched); }
 
   <section class="stack prose" aria-labelledby="open">
     <h2 id="open">Still open</h2>
-    <p>The next causal test: stop only the tail's far end from moving independently, with the starting histogram held fixed, and check whether the fold disappears. After that, a reduced model that reproduces the shape of the fold wedge from the spike's stretch speed, the tail's bend speed and the landscape's band. Whether the inflated state eventually escapes. Whether wider or deeper encoders, or encoders that compress the near region in other ways, give the same map.</p>
+    <p>The next step is to find how the encoder converts block-level pressure into a bend: which parameters carry it, and where along the tail it starts. Then freeze those parameters from an identical start and see if the fold disappears. After that, a reduced model that reproduces the shape of the fold wedge from the spike's stretch speed, the tail's bend speed and the landscape's band. Whether the inflated state eventually escapes. Whether wider or deeper encoders, or encoders that compress the near region in other ways, give the same map.</p>
   </section>
 
   <footer>Source and full write-up: <span class="mono">icm-folding/occupancy-feature-isolation/FRAMEWORK.md</span> in <a href="https://github.com/c-tustin/JEPA-Identifiability-Predictive-Subspaces" target="_blank" rel="noopener">JEPA-Identifiability-Predictive-Subspaces</a>. Updated November 22, 2026. All results are empirical checks on one encoder architecture, not analytic guarantees.</footer>

@@ -2,6 +2,22 @@
 
 Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
 
+## November 22 (final): Rigid-force tests; block-level pressure suffices
+
+- **Design.** Pre-registered, 52 fits, identical start and loss value. SIGReg's gradient is projected per group
+  (spike d < 2, tail d ≥ 2).
+- **Results:**
+  - tail rigid folds 12/12 (prediction failed);
+  - spike rigid folds 12/12 and both rigid folds 12/12 (held), with backward fraction 0.33–0.37, as in normal training;
+  - shift only: 0/8 (prediction failed);
+  - scale only: 0/8 (held).
+- **Established:** a shape target acting only through the position and spread of the spike and tail blocks is enough to
+  fold. Differential pull within the tail is not needed.
+- **Falsified today:** the stretch race, differential tail pull, and position-only pull.
+- **Open:** how the encoder converts block-level pressure into a bend. Next: identify the parameters that carry the bend,
+  then freeze them from an identical start.
+- **Updated:** FRAMEWORK.md confidence table and the explainer.
+
 ## November 22 (latest): Causal stretch test; race interpretation falsified at m ≤ 0.75
 
 - **Design.** Pre-registered, 36 fits. A zero-initialized extra input channel keeps the initial code, and hence the

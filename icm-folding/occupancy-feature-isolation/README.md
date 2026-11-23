@@ -130,3 +130,20 @@ states.
 - **Conclusions:** the stretch-race interpretation is falsified at m ≤ 0.75. What the encoder can move does change the
   outcome causally from an identical start (m = 0.875). The revised mechanism (the far end of the tail overtakes its
   middle) is not yet tested causally. See the confidence table in [FRAMEWORK.md](FRAMEWORK.md).
+
+## Rigid-force tests (November 22, 2026, latest)
+
+[RIGID_PROTOCOL.md](RIGID_PROTOCOL.md) (two addenda) and [rigid.py](rigid.py); 52 fits, each condition pre-registered.
+The loss value and start are unchanged; only SIGReg's gradient is projected onto block shift and/or rescale of the spike
+(d < 2) and the tail (d ≥ 2).
+
+| Condition | Folds | Prediction |
+| --- | --- | --- |
+| tail rigid | 12/12 | no fold, **failed** |
+| spike rigid | 12/12 | fold, held |
+| both rigid | 12/12 | fold, held |
+| shift only | 0/8, stays skewed | fold, **failed** |
+| scale only | 0/8, scale blows up | no fold, held |
+
+Block-level pressure (position and spread of the spike and tail) is enough, and differential pull along the tail is not
+needed. How the encoder converts that pressure into a bend is open. See [FRAMEWORK.md](FRAMEWORK.md).

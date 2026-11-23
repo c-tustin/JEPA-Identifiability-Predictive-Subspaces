@@ -17,11 +17,18 @@ None of this is an analytic guarantee.
 A fold happens when three things hold:
 - an objective forces the code histogram toward a fixed shape;
 - the histogram starts out lopsided;
-- the encoder lets the far end of the tail move independently of the tail's middle. SIGReg pulls the far end back
-  harder than the middle, so the end overtakes the middle, and that crossing is the fold.
+- the encoder's parametrization lets that pressure turn into a bend of the code curve. With an identical starting
+  histogram, changing only what the encoder can move changed the outcome.
 
-**Revised after the causal stretch test below.** An earlier version said the fold wins a race against stretching the
-spike. With the starting histogram held fixed, a stretchable spike did *not* prevent the fold at m = 0.625 or 0.75.
+The pressure needs only four numbers. SIGReg's force can be cut down to "move the spike and the tail as blocks, and
+adjust each block's spread", and the fold still forms in 12 of 12 cases, with the same size. Position alone or spread
+alone does not fold.
+
+**Revised twice after causal tests below.**
+- "The spike can't stretch, so bending wins the race": falsified.
+- "SIGReg pulls the tail's far end harder than its middle": falsified.
+
+How the encoder turns the block-level pressure into a bend is still open.
 
 Training ends in one of three states:
 - **stretched**: monotone and symmetric;
@@ -192,7 +199,7 @@ the spike can stretch), only far from it (far-only: the tail bends more), or eve
 - **At m = 0.875 the channel changed the path.** The near-only run went to the inflated state (sd ≈ 1.6) for about
   1,000 steps and then stretched; the duplicate folded at step 240.
 
-**Revised mechanism.** The force landscape pulls the tail's far end back harder than its middle, because the landscape
+**Revised mechanism (since falsified by the rigid test below).** The force landscape pulls the tail's far end back harder than its middle, because the landscape
 steepens toward the tail's crest. If the encoder lets the end move independently, the end overtakes the middle. The
 evidence for each part:
 - tail decoupling 0.14–0.16 under `tanh(4x)` against 0.02–0.03 under `x`;
@@ -205,6 +212,30 @@ Stretching the spike competes with this only near the top of the fold window, wh
 channels can add flexibility but not remove it. That test needs a different design, such as freezing the parameters that
 move the tail.
 
+## Rigid-force tests: which part of SIGReg's force is needed
+
+([protocol with two addenda](RIGID_PROTOCOL.md), [code](rigid.py); 52 fits, each condition pre-registered before it was
+trained)
+
+The baseline encoder is used, with an identical start and loss value. Only the gradient that SIGReg sends to the codes is
+projected. "Rigid" means a group (spike: d < 2; tail: d ≥ 2) receives only a block shift plus a rescale about its own
+mean; "shift" and "scale" keep only one of those two parts.
+
+| Condition | m = 0.625 | m = 0.75 | m = 0.875 | Prediction |
+| --- | --- | --- | --- | --- |
+| tail rigid | fold 4/4 | fold 4/4 | fold 4/4 | no fold, **failed** |
+| spike rigid | fold 4/4 | fold 4/4 | fold 4/4 | fold, held |
+| both rigid | fold 4/4 | fold 4/4 | fold 4/4 | fold, held |
+| shift only (both groups) | — | no fold 4/4 | no fold 4/4 | fold, **failed** |
+| scale only (both groups) | — | no fold 4/4 | no fold 4/4 | no fold, held (scale blows up, sd 12–17) |
+
+What this establishes:
+- **The detailed shape of SIGReg's force is not needed.** With only block shift and rescale for each group, the fold
+  forms at every mass and initialization, with backward fraction 0.33–0.37, the same as unmodified SIGReg.
+- **Differential pull within the tail is not needed** (tail rigid still folds).
+- **Both parts are needed together.** Moving the blocks alone leaves the code skewed and monotone (skewness 1.4–2.5).
+  Rescaling alone inflates the code.
+
 ## How sure each claim is
 
 | Claim | Status |
@@ -214,7 +245,10 @@ move the tail.
 | The encoder's parametrization causally changes the outcome from an identical start | pre-registered, held at m = 0.875 (4/4 initializations) |
 | Asymmetry of the starting histogram is necessary (baseline encoder) | pre-registered, held |
 | "The spike can't stretch, so the tail bends" (race) | **falsified** at m = 0.625 and 0.75 |
-| The fold is the tail's far end overtaking its middle, which needs a bendable tail | supported by replays and the map comparisons; **not yet tested causally** |
+| The fold needs differential pull along the tail | **falsified** (tail rigid still folds) |
+| Block-level SIGReg (shift and rescale of spike and tail) is enough to fold | pre-registered, held (12/12) |
+| Block shift alone, or block rescale alone, is enough | shift-only **falsified** (0/8); scale-only did not fold, as predicted |
+| How the encoder converts block-level pressure into a bend | **open** |
 | Phase map and its wedge shape | exploratory; one initialization per cell outside the 0.75 and 0.875 rows |
 | All of the above | one MLP architecture, one data source, 4,000 updates, fold threshold 0.1 |
 
@@ -231,8 +265,9 @@ move the tail.
 
 ## What is still open
 
-0. **Causal test of tail bendability.** Freeze or tie the parameters that let the tail's far end move independently,
-   with the starting histogram held fixed, and check whether the fold disappears.
+0. **How the encoder converts block-level pressure into a bend.** Measure the encoder's response to the four block
+   forces over training (which parameters carry the bend, and where along the tail it starts). Then test that response
+   causally by freezing the responsible parameters from an identical start.
 1. **Why the threshold curve has its shape.** A reduced model should reproduce the U-shaped fold threshold in (k, m):
    the spike's stretch speed against the tail's bend speed, with the landscape's band.
 2. **Is the inflated state stable?** It can be escaped (under `x` at m = 0.875 it was), so longer runs would show
@@ -253,6 +288,7 @@ move the tail.
 - [kernel_test.py](kernel_test.py) and [KERNEL_PROTOCOL.md](KERNEL_PROTOCOL.md): prospective test; results in `output/kernel-test/summary.json`.
 - [force_landscape.py](force_landscape.py): excess-landscape identity; `output/force_landscape.json`.
 - [phase.py](phase.py): phase map; `output/phase.json`.
+- [rigid.py](rigid.py) and [RIGID_PROTOCOL.md](RIGID_PROTOCOL.md): rigid-force tests; `output/rigid/summary.json`.
 - [stretch.py](stretch.py), [STRETCH_PROTOCOL.md](STRETCH_PROTOCOL.md) and [stretch_race.py](stretch_race.py): causal stretch test; `output/stretch/`.
 - [framework_figure.py](framework_figure.py): both figures above (`python3 framework_figure.py phase` also draws the map).
 - Earlier skewness and cluster tests: [output/skew/RESULTS.md](output/skew/RESULTS.md).
