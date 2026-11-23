@@ -1,0 +1,3498 @@
+{
+ "checks": {
+  "cells": 55,
+  "material": 51,
+  "multiset_equal": true,
+  "max_wrapper_error": 4.172325134277344e-06,
+  "protocol_unchanged": true
+ },
+ "hypotheses": {
+  "H1": {
+   "count": 5,
+   "of": 6,
+   "held": true
+  },
+  "H2": {
+   "small": {
+    "131": false,
+    "132": false,
+    "133": false,
+    "139": false
+   },
+   "d136": true,
+   "held": false
+  },
+  "H3": {
+   "count": 5,
+   "of": 6,
+   "held": true
+  },
+  "H4": {
+   "count": 5,
+   "of": 6,
+   "held": true
+  }
+ },
+ "noise_sd": {
+  "next_obs/native": 0.0073237880311295585,
+  "next_obs/common": 0.1330219304559853,
+  "readout/native": 0.0031813408641608995,
+  "readout/grid": 0.022392469613754677,
+  "planning/shared/standard/error": 0.22700294157037967,
+  "planning/shared/standard/success": 0.08818652794005362,
+  "planning/shared/near/error": 0.10058984335317778,
+  "planning/shared/near/success": 0.06879327236688244,
+  "planning/native/standard/error": 0.1821904236361786,
+  "planning/native/standard/success": 0.033170492081216564,
+  "planning/native/near/error": 0.17184109925002963,
+  "planning/native/near/success": 0.05833139456161166
+ },
+ "by_dataset": {
+  "131": {
+   "n": 10,
+   "moved_native_mass": 0.972418212890625,
+   "moved_route_standard": 0.7253605769230769,
+   "moved_route_near": 0.9983173076923076,
+   "moved_span": [
+    1.0,
+    15.999999999999998
+   ],
+   "next_obs/native": {
+    "original": 0.6699282338221868,
+    "rearranged": 0.007162956423902264,
+    "change": -0.6627652773982845,
+    "ratio": 0.010692125010219326
+   },
+   "next_obs/common": {
+    "original": 3.4300272941589354,
+    "rearranged": 1.5225306238202998,
+    "change": -1.9074966703386356,
+    "ratio": 0.44388294705789916
+   },
+   "readout/native": {
+    "original": 0.21615576197703676,
+    "rearranged": 0.0013385447780213627,
+    "change": -0.2148172171990154,
+    "ratio": 0.006192501026937984
+   },
+   "readout/grid": {
+    "original": 0.6958618094523749,
+    "rearranged": 0.12694015203160233,
+    "change": -0.5689216574207725,
+    "ratio": 0.1824214956292844
+   },
+   "planning/shared/standard/error": {
+    "original": 0.8281212667624157,
+    "rearranged": 0.14910369515419006,
+    "change": -0.6790175716082256,
+    "ratio": 0.18005055677065138
+   },
+   "planning/shared/standard/success": {
+    "original": 0.5640624999999999,
+    "rearranged": 0.8890625,
+    "change": 0.32500000000000007,
+    "ratio": 1.5761772853185598
+   },
+   "planning/shared/near/error": {
+    "original": 1.0828333059946695,
+    "rearranged": 0.06892522623141607,
+    "change": -1.0139080797632534,
+    "ratio": 0.06365266551170838
+   },
+   "planning/shared/near/success": {
+    "original": 0.29166666666666663,
+    "rearranged": 0.9963541666666667,
+    "change": 0.7046875,
+    "ratio": 3.416071428571429
+   },
+   "planning/native/standard/error": {
+    "original": 1.795798667271932,
+    "rearranged": 0.6972634255886079,
+    "change": -1.098535241683324,
+    "ratio": 0.388274831859547
+   },
+   "planning/native/standard/success": {
+    "original": 0.11510416666666665,
+    "rearranged": 0.4953125,
+    "change": 0.38020833333333337,
+    "ratio": 4.30316742081448
+   },
+   "planning/native/near/error": {
+    "original": 1.3626978357632953,
+    "rearranged": 0.17320215205351513,
+    "change": -1.18949568370978,
+    "ratio": 0.12710239020560157
+   },
+   "planning/native/near/success": {
+    "original": 0.28854166666666664,
+    "rearranged": 0.9302083333333334,
+    "change": 0.6416666666666668,
+    "ratio": 3.2238267148014446
+   }
+  },
+  "132": {
+   "n": 10,
+   "moved_native_mass": 0.941302490234375,
+   "moved_route_standard": 0.2525240384615385,
+   "moved_route_near": 0.9978365384615385,
+   "moved_span": [
+    1.0,
+    15.999999999999998
+   ],
+   "next_obs/native": {
+    "original": 0.14660177677869796,
+    "rearranged": 0.0022114259889349343,
+    "change": -0.14439035078976303,
+    "ratio": 0.01508457835591708
+   },
+   "next_obs/common": {
+    "original": 0.8752837985754013,
+    "rearranged": 0.21530178558702268,
+    "change": -0.6599820129883787,
+    "ratio": 0.24597940226637877
+   },
+   "readout/native": {
+    "original": 0.05850393983225029,
+    "rearranged": 0.0004678817097252855,
+    "change": -0.058036058122525,
+    "ratio": 0.007997439335997775
+   },
+   "readout/grid": {
+    "original": 0.32448061207930246,
+    "rearranged": 0.02026449132245034,
+    "change": -0.3042161207568521,
+    "ratio": 0.062452086713574544
+   },
+   "planning/shared/standard/error": {
+    "original": 0.288770870367686,
+    "rearranged": 0.10364583333333333,
+    "change": -0.18512503703435268,
+    "ratio": 0.3589206667603392
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8458333333333332,
+    "rearranged": 0.9546875,
+    "change": 0.10885416666666681,
+    "ratio": 1.1286945812807883
+   },
+   "planning/shared/near/error": {
+    "original": 1.0272588074207305,
+    "rearranged": 0.08629806178311508,
+    "change": -0.9409607456376154,
+    "ratio": 0.08400810113256134
+   },
+   "planning/shared/near/success": {
+    "original": 0.4098958333333333,
+    "rearranged": 0.9989583333333334,
+    "change": 0.5890625,
+    "ratio": 2.4371029224904706
+   },
+   "planning/native/standard/error": {
+    "original": 1.6467738787333168,
+    "rearranged": 0.5145833333333334,
+    "change": -1.1321905453999834,
+    "ratio": 0.3124796549051082
+   },
+   "planning/native/standard/success": {
+    "original": 0.13854166666666667,
+    "rearranged": 0.6114583333333334,
+    "change": 0.47291666666666676,
+    "ratio": 4.413533834586467
+   },
+   "planning/native/near/error": {
+    "original": 1.2502791186173756,
+    "rearranged": 0.13294486403465272,
+    "change": -1.117334254582723,
+    "ratio": 0.1063321478020605
+   },
+   "planning/native/near/success": {
+    "original": 0.33229166666666665,
+    "rearranged": 0.9578125,
+    "change": 0.6255208333333333,
+    "ratio": 2.8824451410658307
+   }
+  },
+  "133": {
+   "n": 10,
+   "moved_native_mass": 0.95570068359375,
+   "moved_route_standard": 0.4443509615384615,
+   "moved_route_near": 0.9997596153846153,
+   "moved_span": [
+    1.0,
+    15.999999999999998
+   ],
+   "next_obs/native": {
+    "original": 0.46533737281958254,
+    "rearranged": 0.0029290696217988926,
+    "change": -0.46240830319778364,
+    "ratio": 0.006294507582855443
+   },
+   "next_obs/common": {
+    "original": 2.2506591637929283,
+    "rearranged": 0.5043747791244338,
+    "change": -1.7462843846684946,
+    "ratio": 0.2241009155177611
+   },
+   "readout/native": {
+    "original": 0.1298306864996751,
+    "rearranged": 0.0005001467652618885,
+    "change": -0.12933053973441322,
+    "ratio": 0.003852300089803038
+   },
+   "readout/grid": {
+    "original": 0.48257749279340106,
+    "rearranged": 0.028455764460765448,
+    "change": -0.45412172833263564,
+    "ratio": 0.05896620726351986
+   },
+   "planning/shared/standard/error": {
+    "original": 0.2608234872420629,
+    "rearranged": 0.07513020833333332,
+    "change": -0.18569327890872955,
+    "ratio": 0.2880500108627376
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8515625,
+    "rearranged": 0.9776041666666666,
+    "change": 0.1260416666666666,
+    "ratio": 1.1480122324159021
+   },
+   "planning/shared/near/error": {
+    "original": 1.2593792080879211,
+    "rearranged": 0.05536745662490526,
+    "change": -1.204011751463016,
+    "ratio": 0.0439640866462835
+   },
+   "planning/shared/near/success": {
+    "original": 0.3458333333333333,
+    "rearranged": 0.9989583333333334,
+    "change": 0.6531250000000001,
+    "ratio": 2.8885542168674703
+   },
+   "planning/native/standard/error": {
+    "original": 2.0338541666666665,
+    "rearranged": 0.49124058087666833,
+    "change": -1.542613585789998,
+    "ratio": 0.24153186050786254
+   },
+   "planning/native/standard/success": {
+    "original": 0.11666666666666667,
+    "rearranged": 0.6286458333333333,
+    "change": 0.5119791666666667,
+    "ratio": 5.388392857142857
+   },
+   "planning/native/near/error": {
+    "original": 0.9007857739925385,
+    "rearranged": 0.1307077944278717,
+    "change": -0.7700779795646667,
+    "ratio": 0.14510419480598324
+   },
+   "planning/native/near/success": {
+    "original": 0.4213541666666666,
+    "rearranged": 0.9328125,
+    "change": 0.5114583333333335,
+    "ratio": 2.213844252163165
+   }
+  },
+  "134": {
+   "n": 1,
+   "moved_native_mass": 0.0,
+   "moved_route_standard": 0.007211538461538462,
+   "moved_route_near": 0.0,
+   "moved_span": [
+    15.095012014325757,
+    15.999999999999998
+   ],
+   "next_obs/native": {
+    "original": 0.0017766793025657535,
+    "rearranged": 0.001779751037247479,
+    "change": 3.071734681725502e-06,
+    "ratio": 1.001728919044247
+   },
+   "next_obs/common": {
+    "original": 1.7484145164489746,
+    "rearranged": 1.7358118295669556,
+    "change": -0.012602686882019043,
+    "ratio": 0.9927919341989822
+   },
+   "readout/native": {
+    "original": 0.0003829831936551879,
+    "rearranged": 0.0003831260110018775,
+    "change": 1.4281734668958367e-07,
+    "ratio": 1.000372907608103
+   },
+   "readout/grid": {
+    "original": 0.11695333818594615,
+    "rearranged": 0.1167773778239886,
+    "change": -0.00017596036195755005,
+    "ratio": 0.9984954652454828
+   },
+   "planning/shared/standard/error": {
+    "original": 1.483097990353902,
+    "rearranged": 1.4453375736872356,
+    "change": -0.03776041666666652,
+    "ratio": 0.9745394998090072
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3489583333333333,
+    "rearranged": 0.34375,
+    "change": -0.005208333333333315,
+    "ratio": 0.9850746268656717
+   },
+   "planning/shared/near/error": {
+    "original": 0.11501790086428325,
+    "rearranged": 0.11501790086428325,
+    "change": 0.0,
+    "ratio": 1.0
+   },
+   "planning/shared/near/success": {
+    "original": 0.921875,
+    "rearranged": 0.921875,
+    "change": 0.0,
+    "ratio": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.6263020833333333,
+    "rearranged": 1.5924479166666667,
+    "change": -0.03385416666666652,
+    "ratio": 0.979183346677342
+   },
+   "planning/native/standard/success": {
+    "original": 0.18229166666666666,
+    "rearranged": 0.1875,
+    "change": 0.005208333333333343,
+    "ratio": 1.0285714285714287
+   },
+   "planning/native/near/error": {
+    "original": 0.20102475583553314,
+    "rearranged": 0.2036289225021998,
+    "change": 0.0026041666666666574,
+    "ratio": 1.0129544575534628
+   },
+   "planning/native/near/success": {
+    "original": 0.8541666666666666,
+    "rearranged": 0.8489583333333334,
+    "change": -0.005208333333333259,
+    "ratio": 0.9939024390243903
+   }
+  },
+  "136": {
+   "n": 10,
+   "moved_native_mass": 0.399676513671875,
+   "moved_route_standard": 0.9993990384615385,
+   "moved_route_near": 0.8576923076923076,
+   "moved_span": [
+    1.4471354875421718,
+    15.999999999999998
+   ],
+   "next_obs/native": {
+    "original": 0.30682165225346886,
+    "rearranged": 0.0007180860101167734,
+    "change": -0.3061035662433521,
+    "ratio": 0.002340402005017411
+   },
+   "next_obs/common": {
+    "original": 1.1722179412841798,
+    "rearranged": 0.0028886799700558186,
+    "change": -1.169329261314124,
+    "ratio": 0.0024642857512411323
+   },
+   "readout/native": {
+    "original": 0.16819696724414826,
+    "rearranged": 0.001320967289696758,
+    "change": -0.16687599995445151,
+    "ratio": 0.007853692675559914
+   },
+   "readout/grid": {
+    "original": 0.460629258553187,
+    "rearranged": 0.00503283008777847,
+    "change": -0.4555964284654085,
+    "ratio": 0.010925988730256372
+   },
+   "planning/shared/standard/error": {
+    "original": 1.7167642911275227,
+    "rearranged": 0.36256770342588424,
+    "change": -1.3541965877016384,
+    "ratio": 0.2111924772082485
+   },
+   "planning/shared/standard/success": {
+    "original": 0.2557291666666667,
+    "rearranged": 0.7546875,
+    "change": 0.4989583333333333,
+    "ratio": 2.95112016293279
+   },
+   "planning/shared/near/error": {
+    "original": 0.98671875,
+    "rearranged": 0.1635185405611992,
+    "change": -0.8232002094388008,
+    "ratio": 0.16571950270652017
+   },
+   "planning/shared/near/success": {
+    "original": 0.30208333333333337,
+    "rearranged": 0.8729166666666666,
+    "change": 0.5708333333333332,
+    "ratio": 2.8896551724137924
+   },
+   "planning/native/standard/error": {
+    "original": 1.9456329186757404,
+    "rearranged": 0.8870644390583038,
+    "change": -1.0585684796174366,
+    "ratio": 0.4559258997643132
+   },
+   "planning/native/standard/success": {
+    "original": 0.11614583333333332,
+    "rearranged": 0.4572916666666667,
+    "change": 0.34114583333333337,
+    "ratio": 3.9372197309417047
+   },
+   "planning/native/near/error": {
+    "original": 0.8596183379491169,
+    "rearranged": 0.19450635264317193,
+    "change": -0.665111985305945,
+    "ratio": 0.22627059481679562
+   },
+   "planning/native/near/success": {
+    "original": 0.4020833333333334,
+    "rearranged": 0.8776041666666666,
+    "change": 0.4755208333333332,
+    "ratio": 2.1826424870466314
+   }
+  },
+  "139": {
+   "n": 10,
+   "moved_native_mass": 0.965106201171875,
+   "moved_route_standard": 0.38149038461538465,
+   "moved_route_near": 0.9990384615384615,
+   "moved_span": [
+    1.0,
+    15.999999999999998
+   ],
+   "next_obs/native": {
+    "original": 0.3386000499129296,
+    "rearranged": 0.004169994383119047,
+    "change": -0.33443005552981053,
+    "ratio": 0.012315398016602046
+   },
+   "next_obs/common": {
+    "original": 2.1998256365458166,
+    "rearranged": 0.5151390229196597,
+    "change": -1.684686613626157,
+    "ratio": 0.23417266094258954
+   },
+   "readout/native": {
+    "original": 0.10189557845393815,
+    "rearranged": 0.000630695023573935,
+    "change": -0.10126488343036422,
+    "ratio": 0.006189621111568059
+   },
+   "readout/grid": {
+    "original": 0.49441912273565924,
+    "rearranged": 0.03810574945722085,
+    "change": -0.4563133732784384,
+    "ratio": 0.07707175492399808
+   },
+   "planning/shared/standard/error": {
+    "original": 0.6210768610239029,
+    "rearranged": 0.10689950486024222,
+    "change": -0.5141773561636607,
+    "ratio": 0.17211960639462312
+   },
+   "planning/shared/standard/success": {
+    "original": 0.7374999999999999,
+    "rearranged": 0.9541666666666666,
+    "change": 0.21666666666666667,
+    "ratio": 1.2937853107344632
+   },
+   "planning/shared/near/error": {
+    "original": 1.2026938875516255,
+    "rearranged": 0.08203128973642984,
+    "change": -1.1206625978151956,
+    "ratio": 0.0682062913809468
+   },
+   "planning/shared/near/success": {
+    "original": 0.23697916666666669,
+    "rearranged": 0.9973958333333333,
+    "change": 0.7604166666666665,
+    "ratio": 4.208791208791208
+   },
+   "planning/native/standard/error": {
+    "original": 1.984079186121623,
+    "rearranged": 0.6943922678629558,
+    "change": -1.289686918258667,
+    "ratio": 0.3499821341406834
+   },
+   "planning/native/standard/success": {
+    "original": 0.0875,
+    "rearranged": 0.5249999999999999,
+    "change": 0.4374999999999999,
+    "ratio": 5.999999999999999
+   },
+   "planning/native/near/error": {
+    "original": 1.320702862739563,
+    "rearranged": 0.13904491662979127,
+    "change": -1.1816579461097716,
+    "ratio": 0.10528099889279209
+   },
+   "planning/native/near/success": {
+    "original": 0.3026041666666667,
+    "rearranged": 0.9385416666666666,
+    "change": 0.6359374999999999,
+    "ratio": 3.101549053356282
+   }
+  }
+ },
+ "tiny_folds": {
+  "134-136": {
+   "next_obs/native": {
+    "original": 0.001718218360717098,
+    "rearranged": 0.001718558487482369
+   },
+   "next_obs/common": {
+    "original": 1.6237526734670003,
+    "rearranged": 1.617946942647298
+   },
+   "readout/native": {
+    "original": 0.00035619037225842476,
+    "rearranged": 0.0003562095856371646
+   },
+   "readout/grid": {
+    "original": 0.11155455311139424,
+    "rearranged": 0.11147741725047429
+   },
+   "planning/shared/standard/error": {
+    "original": 1.3294521570205688,
+    "rearranged": 1.4648688236872356
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3854166666666667,
+    "rearranged": 0.375
+   },
+   "planning/shared/near/error": {
+    "original": 0.09688262393077214,
+    "rearranged": 0.09688262393077214
+   },
+   "planning/shared/near/success": {
+    "original": 0.9270833333333334,
+    "rearranged": 0.9270833333333334
+   },
+   "planning/native/standard/error": {
+    "original": 1.359375,
+    "rearranged": 1.359375
+   },
+   "planning/native/standard/success": {
+    "original": 0.21875,
+    "rearranged": 0.21875
+   },
+   "planning/native/near/error": {
+    "original": 0.1907555212577184,
+    "rearranged": 0.1907555212577184
+   },
+   "planning/native/near/success": {
+    "original": 0.8333333333333334,
+    "rearranged": 0.8333333333333334
+   }
+  },
+  "135-130": {
+   "next_obs/native": {
+    "original": 0.0028027196725209555,
+    "rearranged": 0.0028027196725209555
+   },
+   "next_obs/common": {
+    "original": 1.161249081293742,
+    "rearranged": 1.1612552404403687
+   },
+   "readout/native": {
+    "original": 0.0006661019870080054,
+    "rearranged": 0.0006661019870080054
+   },
+   "readout/grid": {
+    "original": 0.07780593633651733,
+    "rearranged": 0.07780196517705917
+   },
+   "planning/shared/standard/error": {
+    "original": 1.0826483567555745,
+    "rearranged": 1.0853090286254883
+   },
+   "planning/shared/standard/success": {
+    "original": 0.4739583333333333,
+    "rearranged": 0.4739583333333333
+   },
+   "planning/shared/near/error": {
+    "original": 0.07005857490003109,
+    "rearranged": 0.07005857490003109
+   },
+   "planning/shared/near/success": {
+    "original": 0.9739583333333334,
+    "rearranged": 0.9739583333333334
+   },
+   "planning/native/standard/error": {
+    "original": 1.501975695292155,
+    "rearranged": 1.501975695292155
+   },
+   "planning/native/standard/success": {
+    "original": 0.17708333333333334,
+    "rearranged": 0.17708333333333334
+   },
+   "planning/native/near/error": {
+    "original": 0.266441543896993,
+    "rearranged": 0.266441543896993
+   },
+   "planning/native/near/success": {
+    "original": 0.6979166666666666,
+    "rearranged": 0.6979166666666666
+   }
+  },
+  "135-136": {
+   "next_obs/native": {
+    "original": 0.0028091686932990947,
+    "rearranged": 0.0028091686932990947
+   },
+   "next_obs/common": {
+    "original": 1.0435039401054382,
+    "rearranged": 1.0435044169425964
+   },
+   "readout/native": {
+    "original": 0.0006117896021654209,
+    "rearranged": 0.0006117896021654209
+   },
+   "readout/grid": {
+    "original": 0.07274659226338069,
+    "rearranged": 0.07274657239516576
+   },
+   "planning/shared/standard/error": {
+    "original": 0.9915025234222412,
+    "rearranged": 0.9915025234222412
+   },
+   "planning/shared/standard/success": {
+    "original": 0.5052083333333334,
+    "rearranged": 0.5052083333333334
+   },
+   "planning/shared/near/error": {
+    "original": 0.06871660550435384,
+    "rearranged": 0.06871660550435384
+   },
+   "planning/shared/near/success": {
+    "original": 0.9895833333333334,
+    "rearranged": 0.9895833333333334
+   },
+   "planning/native/standard/error": {
+    "original": 1.23828125,
+    "rearranged": 1.23828125
+   },
+   "planning/native/standard/success": {
+    "original": 0.23958333333333334,
+    "rearranged": 0.23958333333333334
+   },
+   "planning/native/near/error": {
+    "original": 0.2713331381479899,
+    "rearranged": 0.2713331381479899
+   },
+   "planning/native/near/success": {
+    "original": 0.7447916666666666,
+    "rearranged": 0.7447916666666666
+   }
+  },
+  "137-130": {
+   "next_obs/native": {
+    "original": 0.0012328343000262976,
+    "rearranged": 0.0012328343000262976
+   },
+   "next_obs/common": {
+    "original": 0.7328227559725443,
+    "rearranged": 0.7320949832598368
+   },
+   "readout/native": {
+    "original": 0.00038651700015179813,
+    "rearranged": 0.00038651700015179813
+   },
+   "readout/grid": {
+    "original": 0.071161104987065,
+    "rearranged": 0.07114155093828838
+   },
+   "planning/shared/standard/error": {
+    "original": 0.7604166666666666,
+    "rearranged": 0.82278972864151
+   },
+   "planning/shared/standard/success": {
+    "original": 0.4895833333333333,
+    "rearranged": 0.4635416666666667
+   },
+   "planning/shared/near/error": {
+    "original": 0.09091450522343318,
+    "rearranged": 0.09091450522343318
+   },
+   "planning/shared/near/success": {
+    "original": 0.9635416666666666,
+    "rearranged": 0.9635416666666666
+   },
+   "planning/native/standard/error": {
+    "original": 1.859375,
+    "rearranged": 1.859375
+   },
+   "planning/native/standard/success": {
+    "original": 0.140625,
+    "rearranged": 0.140625
+   },
+   "planning/native/near/error": {
+    "original": 0.2574870139360428,
+    "rearranged": 0.2574870139360428
+   },
+   "planning/native/near/success": {
+    "original": 0.8020833333333334,
+    "rearranged": 0.8020833333333334
+   }
+  }
+ },
+ "encoders": {
+  "131-130": {
+   "next_obs/native": {
+    "original": 0.8478147784868876,
+    "rearranged": 0.008330958895385265
+   },
+   "next_obs/common": {
+    "original": 5.223866939544678,
+    "rearranged": 1.5513639847437541
+   },
+   "readout/native": {
+    "original": 0.2562220096588135,
+    "rearranged": 0.0014295193056265514
+   },
+   "readout/grid": {
+    "original": 0.9252659479777018,
+    "rearranged": 0.11954127748807271
+   },
+   "planning/shared/standard/error": {
+    "original": 1.19292155901591,
+    "rearranged": 0.16478930910428366
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3802083333333333,
+    "rearranged": 0.8802083333333334
+   },
+   "planning/shared/near/error": {
+    "original": 1.171875,
+    "rearranged": 0.10877333084742229
+   },
+   "planning/shared/near/success": {
+    "original": 0.2760416666666667,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.8424479166666667,
+    "rearranged": 0.7593026757240295
+   },
+   "planning/native/standard/success": {
+    "original": 0.09895833333333333,
+    "rearranged": 0.40625
+   },
+   "planning/native/near/error": {
+    "original": 1.4174727201461792,
+    "rearranged": 0.20713692903518677
+   },
+   "planning/native/near/success": {
+    "original": 0.2760416666666667,
+    "rearranged": 0.8958333333333334
+   }
+  },
+  "131-131": {
+   "next_obs/native": {
+    "original": 0.43880070249239606,
+    "rearranged": 0.002338387925798694
+   },
+   "next_obs/common": {
+    "original": 1.0593996246655781,
+    "rearranged": 0.0023153826283911863
+   },
+   "readout/native": {
+    "original": 0.16328887144724527,
+    "rearranged": 0.0005241538553188244
+   },
+   "readout/grid": {
+    "original": 0.40586880842844647,
+    "rearranged": 0.0018912801363815863
+   },
+   "planning/shared/standard/error": {
+    "original": 0.24739583333333334,
+    "rearranged": 0.07291666666666667
+   },
+   "planning/shared/standard/success": {
+    "original": 0.859375,
+    "rearranged": 0.9583333333333334
+   },
+   "planning/shared/near/error": {
+    "original": 1.0426763494809468,
+    "rearranged": 0.026140406727790833
+   },
+   "planning/shared/near/success": {
+    "original": 0.2864583333333333,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.556179364522298,
+    "rearranged": 0.5345809857050577
+   },
+   "planning/native/standard/success": {
+    "original": 0.13541666666666666,
+    "rearranged": 0.609375
+   },
+   "planning/native/near/error": {
+    "original": 1.5313422282536824,
+    "rearranged": 0.13231650739908218
+   },
+   "planning/native/near/success": {
+    "original": 0.2864583333333333,
+    "rearranged": 0.96875
+   }
+  },
+  "131-132": {
+   "next_obs/native": {
+    "original": 0.8587374488512675,
+    "rearranged": 0.00679821955660979
+   },
+   "next_obs/common": {
+    "original": 5.276562054951985,
+    "rearranged": 1.3333148558934529
+   },
+   "readout/native": {
+    "original": 0.2596055865287781,
+    "rearranged": 0.0012041243802135189
+   },
+   "readout/grid": {
+    "original": 0.9343262116114298,
+    "rearranged": 0.09874425331751506
+   },
+   "planning/shared/standard/error": {
+    "original": 1.2351867357889812,
+    "rearranged": 0.17317708333333334
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3697916666666667,
+    "rearranged": 0.8802083333333334
+   },
+   "planning/shared/near/error": {
+    "original": 1.20703125,
+    "rearranged": 0.07101291169722874
+   },
+   "planning/shared/near/success": {
+    "original": 0.24479166666666666,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.8489583333333333,
+    "rearranged": 0.7397714257240295
+   },
+   "planning/native/standard/success": {
+    "original": 0.09375,
+    "rearranged": 0.4270833333333333
+   },
+   "planning/native/near/error": {
+    "original": 1.4057539701461792,
+    "rearranged": 0.1928140123685201
+   },
+   "planning/native/near/success": {
+    "original": 0.2708333333333333,
+    "rearranged": 0.90625
+   }
+  },
+  "131-133": {
+   "next_obs/native": {
+    "original": 0.9943706194559733,
+    "rearranged": 0.001866540522314608
+   },
+   "next_obs/common": {
+    "original": 6.534746805826823,
+    "rearranged": 0.20677566528320312
+   },
+   "readout/native": {
+    "original": 0.2886170744895935,
+    "rearranged": 0.0005887172883376479
+   },
+   "readout/grid": {
+    "original": 1.089676856994629,
+    "rearranged": 0.012377535303433737
+   },
+   "planning/shared/standard/error": {
+    "original": 1.10698405901591,
+    "rearranged": 0.14583333333333334
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3385416666666667,
+    "rearranged": 0.921875
+   },
+   "planning/shared/near/error": {
+    "original": 1.2268141110738118,
+    "rearranged": 0.10096083084742229
+   },
+   "planning/shared/near/success": {
+    "original": 0.17708333333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/native/standard/error": {
+    "original": 1.9921875,
+    "rearranged": 0.8029982447624207
+   },
+   "planning/native/standard/success": {
+    "original": 0.13541666666666666,
+    "rearranged": 0.4739583333333333
+   },
+   "planning/native/near/error": {
+    "original": 1.33793306350708,
+    "rearranged": 0.1550605297088623
+   },
+   "planning/native/near/success": {
+    "original": 0.3489583333333333,
+    "rearranged": 0.9739583333333334
+   }
+  },
+  "131-134": {
+   "next_obs/native": {
+    "original": 0.6232097347577413,
+    "rearranged": 0.020469905187686283
+   },
+   "next_obs/common": {
+    "original": 3.746720870335897,
+    "rearranged": 5.063424428304036
+   },
+   "readout/native": {
+    "original": 0.20271368324756622,
+    "rearranged": 0.0035632761816183725
+   },
+   "readout/grid": {
+    "original": 0.7506589492162069,
+    "rearranged": 0.43224156896273297
+   },
+   "planning/shared/standard/error": {
+    "original": 1.3421456416447957,
+    "rearranged": 0.2611434757709503
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3802083333333333,
+    "rearranged": 0.7083333333333334
+   },
+   "planning/shared/near/error": {
+    "original": 0.9231770833333334,
+    "rearranged": 0.1041231428583463
+   },
+   "planning/shared/near/success": {
+    "original": 0.3854166666666667,
+    "rearranged": 0.9895833333333334
+   },
+   "planning/native/standard/error": {
+    "original": 1.5794270833333333,
+    "rearranged": 1.0832366347312927
+   },
+   "planning/native/standard/success": {
+    "original": 0.109375,
+    "rearranged": 0.2864583333333333
+   },
+   "planning/native/near/error": {
+    "original": 1.3919270833333333,
+    "rearranged": 0.22667511304219565
+   },
+   "planning/native/near/success": {
+    "original": 0.21875,
+    "rearranged": 0.84375
+   }
+  },
+  "131-135": {
+   "next_obs/native": {
+    "original": 0.5783231655756632,
+    "rearranged": 0.0029002228596558175
+   },
+   "next_obs/common": {
+    "original": 1.5246024131774902,
+    "rearranged": 0.004922653315588832
+   },
+   "readout/native": {
+    "original": 0.1979677826166153,
+    "rearranged": 0.0006026378832757473
+   },
+   "readout/grid": {
+    "original": 0.4149959683418274,
+    "rearranged": 0.0012278192249747615
+   },
+   "planning/shared/standard/error": {
+    "original": 0.21614583333333334,
+    "rearranged": 0.0625
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8541666666666666,
+    "rearranged": 0.984375
+   },
+   "planning/shared/near/error": {
+    "original": 1.2202387650807698,
+    "rearranged": 0.026041666666666668
+   },
+   "planning/shared/near/success": {
+    "original": 0.17708333333333334,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.09823211034139,
+    "rearranged": 0.3307291666666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.13541666666666666,
+    "rearranged": 0.71875
+   },
+   "planning/native/near/error": {
+    "original": 1.072314977645874,
+    "rearranged": 0.12049207836389542
+   },
+   "planning/native/near/success": {
+    "original": 0.3802083333333333,
+    "rearranged": 0.9739583333333334
+   }
+  },
+  "131-136": {
+   "next_obs/native": {
+    "original": 0.36372117201487225,
+    "rearranged": 0.0021710848280539117
+   },
+   "next_obs/common": {
+    "original": 0.8808012207349142,
+    "rearranged": 0.0017438591457903385
+   },
+   "readout/native": {
+    "original": 0.14829170207182565,
+    "rearranged": 0.0006066432688385248
+   },
+   "readout/grid": {
+    "original": 0.38247206807136536,
+    "rearranged": 0.002183245417351524
+   },
+   "planning/shared/standard/error": {
+    "original": 0.2890625,
+    "rearranged": 0.061197916666666664
+   },
+   "planning/shared/standard/success": {
+    "original": 0.796875,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 0.8761144677797953,
+    "rearranged": 0.051474725206693016
+   },
+   "planning/shared/near/success": {
+    "original": 0.390625,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.5862776438395183,
+    "rearranged": 0.4166666666666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.13020833333333334,
+    "rearranged": 0.6770833333333334
+   },
+   "planning/native/near/error": {
+    "original": 1.6307852268218994,
+    "rearranged": 0.14131847769021988
+   },
+   "planning/native/near/success": {
+    "original": 0.21354166666666666,
+    "rearranged": 0.9635416666666666
+   }
+  },
+  "131-137": {
+   "next_obs/native": {
+    "original": 0.548202653725942,
+    "rearranged": 0.0029021736700087786
+   },
+   "next_obs/common": {
+    "original": 1.444280743598938,
+    "rearranged": 0.004641506898527344
+   },
+   "readout/native": {
+    "original": 0.1920909881591797,
+    "rearranged": 0.0006032153323758394
+   },
+   "readout/grid": {
+    "original": 0.4077875812848409,
+    "rearranged": 0.0013784565574799974
+   },
+   "planning/shared/standard/error": {
+    "original": 0.22395833333333334,
+    "rearranged": 0.05078125
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8385416666666666,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.189051866531372,
+    "rearranged": 0.025446929037570953
+   },
+   "planning/shared/near/success": {
+    "original": 0.24479166666666666,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.0467246373494468,
+    "rearranged": 0.3645833333333333
+   },
+   "planning/native/standard/success": {
+    "original": 0.125,
+    "rearranged": 0.6770833333333334
+   },
+   "planning/native/near/error": {
+    "original": 1.282766064008077,
+    "rearranged": 0.13150348017613092
+   },
+   "planning/native/near/success": {
+    "original": 0.34375,
+    "rearranged": 0.9427083333333334
+   }
+  },
+  "131-138": {
+   "next_obs/native": {
+    "original": 0.8192151586214701,
+    "rearranged": 0.009644029041131338
+   },
+   "next_obs/common": {
+    "original": 4.883090496063232,
+    "rearranged": 1.7725379069646199
+   },
+   "readout/native": {
+    "original": 0.2516542573769887,
+    "rearranged": 0.0016963943683852751
+   },
+   "readout/grid": {
+    "original": 0.8980086247126261,
+    "rearranged": 0.14333083232243857
+   },
+   "planning/shared/standard/error": {
+    "original": 1.1627462307612102,
+    "rearranged": 0.15755208333333334
+   },
+   "planning/shared/standard/success": {
+    "original": 0.4427083333333333,
+    "rearranged": 0.8802083333333334
+   },
+   "planning/shared/near/error": {
+    "original": 1.0690104166666667,
+    "rearranged": 0.05869249006112417
+   },
+   "planning/shared/near/success": {
+    "original": 0.3177083333333333,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/native/standard/error": {
+    "original": 1.85546875,
+    "rearranged": 0.8550541400909424
+   },
+   "planning/native/standard/success": {
+    "original": 0.08854166666666667,
+    "rearranged": 0.4010416666666667
+   },
+   "planning/native/near/error": {
+    "original": 1.3548601071039836,
+    "rearranged": 0.20323761304219565
+   },
+   "planning/native/near/success": {
+    "original": 0.3125,
+    "rearranged": 0.9427083333333334
+   }
+  },
+  "131-139": {
+   "next_obs/native": {
+    "original": 0.6268869042396545,
+    "rearranged": 0.014208041752378145
+   },
+   "next_obs/common": {
+    "original": 3.7262017726898193,
+    "rearranged": 5.284265995025635
+   },
+   "readout/native": {
+    "original": 0.201105664173762,
+    "rearranged": 0.002566765916223327
+   },
+   "readout/grid": {
+    "original": 0.7495570778846741,
+    "rearranged": 0.4564852515856425
+   },
+   "planning/shared/standard/error": {
+    "original": 1.2646659413973491,
+    "rearranged": 0.3411458333333333
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3802083333333333,
+    "rearranged": 0.6822916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 0.90234375,
+    "rearranged": 0.11658582836389542
+   },
+   "planning/shared/near/success": {
+    "original": 0.4166666666666667,
+    "rearranged": 0.984375
+   },
+   "planning/native/standard/error": {
+    "original": 1.5520833333333333,
+    "rearranged": 1.0857109824816387
+   },
+   "planning/native/standard/success": {
+    "original": 0.09895833333333333,
+    "rearranged": 0.2760416666666667
+   },
+   "planning/native/near/error": {
+    "original": 1.2018229166666667,
+    "rearranged": 0.2214667797088623
+   },
+   "planning/native/near/success": {
+    "original": 0.234375,
+    "rearranged": 0.890625
+   }
+  },
+  "132-130": {
+   "next_obs/native": {
+    "original": 0.12869604925314584,
+    "rearranged": 0.002037372983371218
+   },
+   "next_obs/common": {
+    "original": 0.45265360673268634,
+    "rearranged": 0.0031872179824858904
+   },
+   "readout/native": {
+    "original": 0.06017035121719042,
+    "rearranged": 0.0003786266800792267
+   },
+   "readout/grid": {
+    "original": 0.3063973883787791,
+    "rearranged": 0.002710027853026986
+   },
+   "planning/shared/standard/error": {
+    "original": 0.18880208333333334,
+    "rearranged": 0.08854166666666667
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8802083333333334,
+    "rearranged": 0.96875
+   },
+   "planning/shared/near/error": {
+    "original": 0.8782931963602701,
+    "rearranged": 0.10885920003056526
+   },
+   "planning/shared/near/success": {
+    "original": 0.4375,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.6236979166666667,
+    "rearranged": 0.484375
+   },
+   "planning/native/standard/success": {
+    "original": 0.08854166666666667,
+    "rearranged": 0.6197916666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.400896708170573,
+    "rearranged": 0.14341600239276886
+   },
+   "planning/native/near/success": {
+    "original": 0.2864583333333333,
+    "rearranged": 0.9635416666666666
+   }
+  },
+  "132-131": {
+   "next_obs/native": {
+    "original": 0.12625597169001898,
+    "rearranged": 0.0023091242959101996
+   },
+   "next_obs/common": {
+    "original": 0.5495030283927917,
+    "rearranged": 0.007436962487796943
+   },
+   "readout/native": {
+    "original": 0.04726261148850123,
+    "rearranged": 0.0005705979419872165
+   },
+   "readout/grid": {
+    "original": 0.2519698242346446,
+    "rearranged": 0.0027749779789398112
+   },
+   "planning/shared/standard/error": {
+    "original": 0.12630208333333334,
+    "rearranged": 0.045572916666666664
+   },
+   "planning/shared/standard/success": {
+    "original": 0.984375,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.2351073026657104,
+    "rearranged": 0.047688918809096016
+   },
+   "planning/shared/near/success": {
+    "original": 0.3645833333333333,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.5247395833333333,
+    "rearranged": 0.3411458333333333
+   },
+   "planning/native/standard/success": {
+    "original": 0.18229166666666666,
+    "rearranged": 0.703125
+   },
+   "planning/native/near/error": {
+    "original": 1.082280437151591,
+    "rearranged": 0.1077957550684611
+   },
+   "planning/native/near/success": {
+    "original": 0.4010416666666667,
+    "rearranged": 0.9947916666666666
+   }
+  },
+  "132-132": {
+   "next_obs/native": {
+    "original": 0.13160615166028342,
+    "rearranged": 0.002111175640796622
+   },
+   "next_obs/common": {
+    "original": 0.48422811428705853,
+    "rearranged": 0.003798674326390028
+   },
+   "readout/native": {
+    "original": 0.056156196941932045,
+    "rearranged": 0.0003622452689645191
+   },
+   "readout/grid": {
+    "original": 0.2933351794878642,
+    "rearranged": 0.0026171724312007427
+   },
+   "planning/shared/standard/error": {
+    "original": 0.18359375,
+    "rearranged": 0.08984375
+   },
+   "planning/shared/standard/success": {
+    "original": 0.859375,
+    "rearranged": 0.9791666666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.0268784562746684,
+    "rearranged": 0.12749247128764787
+   },
+   "planning/shared/near/success": {
+    "original": 0.3697916666666667,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.6744791666666667,
+    "rearranged": 0.4713541666666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.11979166666666667,
+    "rearranged": 0.6510416666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.3334898948669434,
+    "rearranged": 0.1588496466477712
+   },
+   "planning/native/near/success": {
+    "original": 0.328125,
+    "rearranged": 0.8958333333333334
+   }
+  },
+  "132-133": {
+   "next_obs/native": {
+    "original": 0.12844874461491904,
+    "rearranged": 0.0022753749508410692
+   },
+   "next_obs/common": {
+    "original": 0.5615711708863577,
+    "rearranged": 0.006028526152173678
+   },
+   "readout/native": {
+    "original": 0.04945686956246694,
+    "rearranged": 0.0005386592820286751
+   },
+   "readout/grid": {
+    "original": 0.2667271097501119,
+    "rearranged": 0.0028960745160778365
+   },
+   "planning/shared/standard/error": {
+    "original": 0.15104166666666666,
+    "rearranged": 0.040364583333333336
+   },
+   "planning/shared/standard/success": {
+    "original": 0.9427083333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.1588153839111328,
+    "rearranged": 0.0500129833817482
+   },
+   "planning/shared/near/success": {
+    "original": 0.3958333333333333,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.4479166666666667,
+    "rearranged": 0.3515625
+   },
+   "planning/native/standard/success": {
+    "original": 0.18229166666666666,
+    "rearranged": 0.6979166666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.1750343243281047,
+    "rearranged": 0.11033835510412852
+   },
+   "planning/native/near/success": {
+    "original": 0.375,
+    "rearranged": 0.9791666666666666
+   }
+  },
+  "132-134": {
+   "next_obs/native": {
+    "original": 0.1141078770160675,
+    "rearranged": 0.00206465149919192
+   },
+   "next_obs/common": {
+    "original": 0.3798784017562866,
+    "rearranged": 0.008472190083314976
+   },
+   "readout/native": {
+    "original": 0.05682919919490814,
+    "rearranged": 0.0005218631801350663
+   },
+   "readout/grid": {
+    "original": 0.2919764618078868,
+    "rearranged": 0.004286617661515872
+   },
+   "planning/shared/standard/error": {
+    "original": 0.19921875,
+    "rearranged": 0.06510416666666667
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8697916666666666,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 0.6819807887077332,
+    "rearranged": 0.08123324190576871
+   },
+   "planning/shared/near/success": {
+    "original": 0.5364583333333334,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.463903824488322,
+    "rearranged": 0.7356770833333334
+   },
+   "planning/native/standard/success": {
+    "original": 0.11458333333333333,
+    "rearranged": 0.5
+   },
+   "planning/native/near/error": {
+    "original": 1.3883535464604695,
+    "rearranged": 0.13244420289993286
+   },
+   "planning/native/near/success": {
+    "original": 0.22916666666666666,
+    "rearranged": 0.9479166666666666
+   }
+  },
+  "132-135": {
+   "next_obs/native": {
+    "original": 0.12485806395610173,
+    "rearranged": 0.0023541885893791914
+   },
+   "next_obs/common": {
+    "original": 0.48385436336199444,
+    "rearranged": 0.00695792818441987
+   },
+   "readout/native": {
+    "original": 0.04698937386274338,
+    "rearranged": 0.00040091493671449524
+   },
+   "readout/grid": {
+    "original": 0.24634125332037607,
+    "rearranged": 0.002607095753774047
+   },
+   "planning/shared/standard/error": {
+    "original": 0.16796875,
+    "rearranged": 0.109375
+   },
+   "planning/shared/standard/success": {
+    "original": 0.9114583333333334,
+    "rearranged": 0.9895833333333334
+   },
+   "planning/shared/near/error": {
+    "original": 1.2304775317509968,
+    "rearranged": 0.09375
+   },
+   "planning/shared/near/success": {
+    "original": 0.3541666666666667,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.7408854166666667,
+    "rearranged": 0.3541666666666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.19270833333333334,
+    "rearranged": 0.6927083333333334
+   },
+   "planning/native/near/error": {
+    "original": 1.0809434652328491,
+    "rearranged": 0.1112125813961029
+   },
+   "planning/native/near/success": {
+    "original": 0.3802083333333333,
+    "rearranged": 0.9947916666666666
+   }
+  },
+  "132-136": {
+   "next_obs/native": {
+    "original": 0.13215557237466177,
+    "rearranged": 0.0021931129352500043
+   },
+   "next_obs/common": {
+    "original": 0.4805915753046672,
+    "rearranged": 0.002579518205796679
+   },
+   "readout/native": {
+    "original": 0.05650476738810539,
+    "rearranged": 0.0003813559499879678
+   },
+   "readout/grid": {
+    "original": 0.29194703698158264,
+    "rearranged": 0.0018546346885462601
+   },
+   "planning/shared/standard/error": {
+    "original": 0.13932291666666666,
+    "rearranged": 0.057291666666666664
+   },
+   "planning/shared/standard/success": {
+    "original": 0.9635416666666666,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 0.9411609570185343,
+    "rearranged": 0.07832137619455655
+   },
+   "planning/shared/near/success": {
+    "original": 0.4427083333333333,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.69140625,
+    "rearranged": 0.3580729166666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.125,
+    "rearranged": 0.703125
+   },
+   "planning/native/near/error": {
+    "original": 1.3099876244862874,
+    "rearranged": 0.13419056932131448
+   },
+   "planning/native/near/success": {
+    "original": 0.3125,
+    "rearranged": 0.9375
+   }
+  },
+  "132-137": {
+   "next_obs/native": {
+    "original": 0.12605997423330942,
+    "rearranged": 0.0023659331103165946
+   },
+   "next_obs/common": {
+    "original": 0.5017531315485636,
+    "rearranged": 0.007383387225369613
+   },
+   "readout/native": {
+    "original": 0.04666184758146604,
+    "rearranged": 0.00040108261358303327
+   },
+   "readout/grid": {
+    "original": 0.24486727019151053,
+    "rearranged": 0.00268817242855827
+   },
+   "planning/shared/standard/error": {
+    "original": 0.16927083333333334,
+    "rearranged": 0.10546875
+   },
+   "planning/shared/standard/success": {
+    "original": 0.9322916666666666,
+    "rearranged": 0.9895833333333334
+   },
+   "planning/shared/near/error": {
+    "original": 1.307997703552246,
+    "rearranged": 0.0859375
+   },
+   "planning/shared/near/success": {
+    "original": 0.328125,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.7278645833333333,
+    "rearranged": 0.3463541666666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.15625,
+    "rearranged": 0.6927083333333334
+   },
+   "planning/native/near/error": {
+    "original": 1.0101084510485332,
+    "rearranged": 0.115649809439977
+   },
+   "planning/native/near/success": {
+    "original": 0.4114583333333333,
+    "rearranged": 0.9947916666666666
+   }
+  },
+  "132-138": {
+   "next_obs/native": {
+    "original": 0.13277386128902435,
+    "rearranged": 0.002087981440126896
+   },
+   "next_obs/common": {
+    "original": 0.5452681084473928,
+    "rearranged": 0.0038201495384176574
+   },
+   "readout/native": {
+    "original": 0.056797237445910774,
+    "rearranged": 0.0005080043144213656
+   },
+   "readout/grid": {
+    "original": 0.3066072463989258,
+    "rearranged": 0.0030465290571252504
+   },
+   "planning/shared/standard/error": {
+    "original": 0.15885416666666666,
+    "rearranged": 0.06640625
+   },
+   "planning/shared/standard/success": {
+    "original": 0.9322916666666666,
+    "rearranged": 0.9895833333333334
+   },
+   "planning/shared/near/error": {
+    "original": 0.9643681645393372,
+    "rearranged": 0.09776342411835988
+   },
+   "planning/shared/near/success": {
+    "original": 0.4270833333333333,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.4830729166666667,
+    "rearranged": 0.4466145833333333
+   },
+   "planning/native/standard/success": {
+    "original": 0.140625,
+    "rearranged": 0.6354166666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.3336759010950725,
+    "rearranged": 0.12394716838995616
+   },
+   "planning/native/near/success": {
+    "original": 0.3333333333333333,
+    "rearranged": 0.9739583333333334
+   }
+  },
+  "132-139": {
+   "next_obs/native": {
+    "original": 0.32105550169944763,
+    "rearranged": 0.002315344444165627
+   },
+   "next_obs/common": {
+    "original": 4.313536485036214,
+    "rearranged": 2.1033533016840615
+   },
+   "readout/native": {
+    "original": 0.10821094363927841,
+    "rearranged": 0.0006154669293512901
+   },
+   "readout/grid": {
+    "original": 0.7446373502413431,
+    "rearranged": 0.1771636108557383
+   },
+   "planning/shared/standard/error": {
+    "original": 1.4033337036768596,
+    "rearranged": 0.3684895833333333
+   },
+   "planning/shared/standard/success": {
+    "original": 0.18229166666666666,
+    "rearranged": 0.640625
+   },
+   "planning/shared/near/error": {
+    "original": 0.8475085894266764,
+    "rearranged": 0.09192150210340817
+   },
+   "planning/shared/near/success": {
+    "original": 0.4427083333333333,
+    "rearranged": 0.9895833333333334
+   },
+   "planning/native/standard/error": {
+    "original": 2.0897724628448486,
+    "rearranged": 1.2565104166666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.08333333333333333,
+    "rearranged": 0.21875
+   },
+   "planning/native/near/error": {
+    "original": 1.3880208333333333,
+    "rearranged": 0.19160454968611398
+   },
+   "planning/native/near/success": {
+    "original": 0.265625,
+    "rearranged": 0.8958333333333334
+   }
+  },
+  "133-130": {
+   "next_obs/native": {
+    "original": 0.41600722074508667,
+    "rearranged": 0.002900719720249375
+   },
+   "next_obs/common": {
+    "original": 1.3756142457326253,
+    "rearranged": 0.004242647128800551
+   },
+   "readout/native": {
+    "original": 0.12360020726919174,
+    "rearranged": 0.0004703082862154891
+   },
+   "readout/grid": {
+    "original": 0.39333107074101764,
+    "rearranged": 0.002068774774670601
+   },
+   "planning/shared/standard/error": {
+    "original": 0.16954394429922104,
+    "rearranged": 0.03515625
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8802083333333334,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 1.1202656825383503,
+    "rearranged": 0.0432339571416378
+   },
+   "planning/shared/near/success": {
+    "original": 0.390625,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.2447916666666665,
+    "rearranged": 0.4557291666666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.07291666666666667,
+    "rearranged": 0.6354166666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.0302672386169434,
+    "rearranged": 0.09948874513308208
+   },
+   "planning/native/near/success": {
+    "original": 0.4270833333333333,
+    "rearranged": 0.984375
+   }
+  },
+  "133-131": {
+   "next_obs/native": {
+    "original": 0.4679315686225891,
+    "rearranged": 0.00324912058810393
+   },
+   "next_obs/common": {
+    "original": 2.007621248563131,
+    "rearranged": 0.005562068739285071
+   },
+   "readout/native": {
+    "original": 0.1257244348526001,
+    "rearranged": 0.0005075902445241809
+   },
+   "readout/grid": {
+    "original": 0.43878042697906494,
+    "rearranged": 0.000915870574923853
+   },
+   "planning/shared/standard/error": {
+    "original": 0.18940816322962442,
+    "rearranged": 0.04296875
+   },
+   "planning/shared/standard/success": {
+    "original": 0.9010416666666666,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 1.4865259726842244,
+    "rearranged": 0.0598958283662796
+   },
+   "planning/shared/near/success": {
+    "original": 0.28125,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.9348958333333333,
+    "rearranged": 0.3671875
+   },
+   "planning/native/standard/success": {
+    "original": 0.11979166666666667,
+    "rearranged": 0.6979166666666666
+   },
+   "planning/native/near/error": {
+    "original": 0.8323005040486654,
+    "rearranged": 0.10743747154871623
+   },
+   "planning/native/near/success": {
+    "original": 0.453125,
+    "rearranged": 0.9427083333333334
+   }
+  },
+  "133-132": {
+   "next_obs/native": {
+    "original": 0.43352505564689636,
+    "rearranged": 0.0029784368816763163
+   },
+   "next_obs/common": {
+    "original": 1.4804811477661133,
+    "rearranged": 0.004679367799932758
+   },
+   "readout/native": {
+    "original": 0.12250333031018575,
+    "rearranged": 0.00048218049535838264
+   },
+   "readout/grid": {
+    "original": 0.4095157980918884,
+    "rearranged": 0.0018247586752598484
+   },
+   "planning/shared/standard/error": {
+    "original": 0.19688769181569418,
+    "rearranged": 0.078125
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8958333333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.2306267420450847,
+    "rearranged": 0.0588589571416378
+   },
+   "planning/shared/near/success": {
+    "original": 0.3541666666666667,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.2565104166666665,
+    "rearranged": 0.4270833333333333
+   },
+   "planning/native/standard/success": {
+    "original": 0.0625,
+    "rearranged": 0.6614583333333334
+   },
+   "planning/native/near/error": {
+    "original": 0.9201997915903727,
+    "rearranged": 0.10646247863769531
+   },
+   "planning/native/near/success": {
+    "original": 0.4114583333333333,
+    "rearranged": 0.984375
+   }
+  },
+  "133-133": {
+   "next_obs/native": {
+    "original": 0.46914400657018024,
+    "rearranged": 0.0032574638413886228
+   },
+   "next_obs/common": {
+    "original": 1.8808247645696003,
+    "rearranged": 0.0062993597239255905
+   },
+   "readout/native": {
+    "original": 0.1266520470380783,
+    "rearranged": 0.0004940546156528095
+   },
+   "readout/grid": {
+    "original": 0.4333901107311249,
+    "rearranged": 0.0009042901801876724
+   },
+   "planning/shared/standard/error": {
+    "original": 0.1881060798962911,
+    "rearranged": 0.053385416666666664
+   },
+   "planning/shared/standard/success": {
+    "original": 0.90625,
+    "rearranged": 0.984375
+   },
+   "planning/shared/near/error": {
+    "original": 1.448896884918213,
+    "rearranged": 0.06119791169961294
+   },
+   "planning/shared/near/success": {
+    "original": 0.3020833333333333,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.0286458333333335,
+    "rearranged": 0.3997395833333333
+   },
+   "planning/native/standard/success": {
+    "original": 0.11979166666666667,
+    "rearranged": 0.640625
+   },
+   "planning/native/near/error": {
+    "original": 0.8269922335942587,
+    "rearranged": 0.11932192742824554
+   },
+   "planning/native/near/success": {
+    "original": 0.4322916666666667,
+    "rearranged": 0.9270833333333334
+   }
+  },
+  "133-134": {
+   "next_obs/native": {
+    "original": 0.34138789772987366,
+    "rearranged": 0.002442128180215756
+   },
+   "next_obs/common": {
+    "original": 1.0174789031346638,
+    "rearranged": 0.005449155655999978
+   },
+   "readout/native": {
+    "original": 0.12107775608698527,
+    "rearranged": 0.00044550446909852326
+   },
+   "readout/grid": {
+    "original": 0.3569602370262146,
+    "rearranged": 0.004882551574458678
+   },
+   "planning/shared/standard/error": {
+    "original": 0.21701116859912872,
+    "rearranged": 0.053385416666666664
+   },
+   "planning/shared/standard/success": {
+    "original": 0.84375,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 0.7891042232513428,
+    "rearranged": 0.049744373808304466
+   },
+   "planning/shared/near/success": {
+    "original": 0.46875,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.37890625,
+    "rearranged": 0.6028645833333334
+   },
+   "planning/native/standard/success": {
+    "original": 0.18229166666666666,
+    "rearranged": 0.5572916666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.1290489435195923,
+    "rearranged": 0.12582536041736603
+   },
+   "planning/native/near/success": {
+    "original": 0.3697916666666667,
+    "rearranged": 0.96875
+   }
+  },
+  "133-135": {
+   "next_obs/native": {
+    "original": 0.47289947668711346,
+    "rearranged": 0.0032233678891013065
+   },
+   "next_obs/common": {
+    "original": 1.6700069904327393,
+    "rearranged": 0.005610860728969176
+   },
+   "readout/native": {
+    "original": 0.12363883604605992,
+    "rearranged": 0.0005564144424473246
+   },
+   "readout/grid": {
+    "original": 0.4498649537563324,
+    "rearranged": 0.0014103013866891463
+   },
+   "planning/shared/standard/error": {
+    "original": 0.21422420938809714,
+    "rearranged": 0.03515625
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8697916666666666,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 1.5636109908421834,
+    "rearranged": 0.03021312380830447
+   },
+   "planning/shared/near/success": {
+    "original": 0.2552083333333333,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.0416666666666665,
+    "rearranged": 0.3580729166666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.15104166666666666,
+    "rearranged": 0.734375
+   },
+   "planning/native/near/error": {
+    "original": 0.7051690022150675,
+    "rearranged": 0.09160935878753662
+   },
+   "planning/native/near/success": {
+    "original": 0.46875,
+    "rearranged": 0.984375
+   }
+  },
+  "133-136": {
+   "next_obs/native": {
+    "original": 0.4309909741083781,
+    "rearranged": 0.002920521811271707
+   },
+   "next_obs/common": {
+    "original": 1.6797680854797363,
+    "rearranged": 0.004083481151610613
+   },
+   "readout/native": {
+    "original": 0.12040186673402786,
+    "rearranged": 0.0005046250007580966
+   },
+   "readout/grid": {
+    "original": 0.4102623164653778,
+    "rearranged": 0.0018193174231176574
+   },
+   "planning/shared/standard/error": {
+    "original": 0.1721481109658877,
+    "rearranged": 0.04296875
+   },
+   "planning/shared/standard/success": {
+    "original": 0.9114583333333334,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 1.2579686641693115,
+    "rearranged": 0.0432339571416378
+   },
+   "planning/shared/near/success": {
+    "original": 0.3489583333333333,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.1861979166666665,
+    "rearranged": 0.3489583333333333
+   },
+   "planning/native/standard/success": {
+    "original": 0.08333333333333333,
+    "rearranged": 0.71875
+   },
+   "planning/native/near/error": {
+    "original": 0.8909751574198405,
+    "rearranged": 0.11504685878753662
+   },
+   "planning/native/near/success": {
+    "original": 0.4114583333333333,
+    "rearranged": 0.9791666666666666
+   }
+  },
+  "133-137": {
+   "next_obs/native": {
+    "original": 0.472083459297816,
+    "rearranged": 0.0032340876447657743
+   },
+   "next_obs/common": {
+    "original": 1.6708170572916667,
+    "rearranged": 0.005635327969988187
+   },
+   "readout/native": {
+    "original": 0.12334056695302327,
+    "rearranged": 0.0005596328895383825
+   },
+   "readout/grid": {
+    "original": 0.4484645525614421,
+    "rearranged": 0.0014380838256329298
+   },
+   "planning/shared/standard/error": {
+    "original": 0.21552629272143045,
+    "rearranged": 0.03515625
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8802083333333334,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 1.573358416557312,
+    "rearranged": 0.027608957141637802
+   },
+   "planning/shared/near/success": {
+    "original": 0.25,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.0703125,
+    "rearranged": 0.33984375
+   },
+   "planning/native/standard/success": {
+    "original": 0.15104166666666666,
+    "rearranged": 0.7395833333333334
+   },
+   "planning/native/near/error": {
+    "original": 0.7338148355484009,
+    "rearranged": 0.09681769212086995
+   },
+   "planning/native/near/success": {
+    "original": 0.453125,
+    "rearranged": 0.9791666666666666
+   }
+  },
+  "133-138": {
+   "next_obs/native": {
+    "original": 0.4414865970611572,
+    "rearranged": 0.0030482710960010686
+   },
+   "next_obs/common": {
+    "original": 1.6814020872116089,
+    "rearranged": 0.004723567593221863
+   },
+   "readout/native": {
+    "original": 0.1253038098414739,
+    "rearranged": 0.00043542195150318247
+   },
+   "readout/grid": {
+    "original": 0.40757859746615094,
+    "rearranged": 0.0011597727813447516
+   },
+   "planning/shared/standard/error": {
+    "original": 0.22900028030077615,
+    "rearranged": 0.10286458333333333
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8802083333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.2812103430430095,
+    "rearranged": 0.09505208333333333
+   },
+   "planning/shared/near/success": {
+    "original": 0.34375,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.2005208333333335,
+    "rearranged": 0.4231770833333333
+   },
+   "planning/native/standard/success": {
+    "original": 0.08854166666666667,
+    "rearranged": 0.671875
+   },
+   "planning/native/near/error": {
+    "original": 0.8732444445292155,
+    "rearranged": 0.12445578972498576
+   },
+   "planning/native/near/success": {
+    "original": 0.4635416666666667,
+    "rearranged": 0.9583333333333334
+   }
+  },
+  "133-139": {
+   "next_obs/native": {
+    "original": 0.7079174717267355,
+    "rearranged": 0.002036578565215071
+   },
+   "next_obs/common": {
+    "original": 8.042577107747396,
+    "rearranged": 4.9974619547526045
+   },
+   "readout/native": {
+    "original": 0.18606400986512503,
+    "rearranged": 0.0005457352575225135
+   },
+   "readout/grid": {
+    "original": 1.0776268641153972,
+    "rearranged": 0.2681339234113693
+   },
+   "planning/shared/standard/error": {
+    "original": 0.8163789312044779,
+    "rearranged": 0.2721354166666667
+   },
+   "planning/shared/standard/success": {
+    "original": 0.546875,
+    "rearranged": 0.8020833333333334
+   },
+   "planning/shared/near/error": {
+    "original": 0.8422241608301798,
+    "rearranged": 0.08463541666666667
+   },
+   "planning/shared/near/success": {
+    "original": 0.4635416666666667,
+    "rearranged": 0.9895833333333334
+   },
+   "planning/native/standard/error": {
+    "original": 1.99609375,
+    "rearranged": 1.1897495587666829
+   },
+   "planning/native/standard/success": {
+    "original": 0.13541666666666666,
+    "rearranged": 0.22916666666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.0658455888430278,
+    "rearranged": 0.3206122616926829
+   },
+   "planning/native/near/success": {
+    "original": 0.3229166666666667,
+    "rearranged": 0.6197916666666666
+   }
+  },
+  "134-130": {
+   "next_obs/native": {
+    "original": 0.0017766793025657535,
+    "rearranged": 0.001779751037247479
+   },
+   "next_obs/common": {
+    "original": 1.7484145164489746,
+    "rearranged": 1.7358118295669556
+   },
+   "readout/native": {
+    "original": 0.0003829831936551879,
+    "rearranged": 0.0003831260110018775
+   },
+   "readout/grid": {
+    "original": 0.11695333818594615,
+    "rearranged": 0.1167773778239886
+   },
+   "planning/shared/standard/error": {
+    "original": 1.483097990353902,
+    "rearranged": 1.4453375736872356
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3489583333333333,
+    "rearranged": 0.34375
+   },
+   "planning/shared/near/error": {
+    "original": 0.11501790086428325,
+    "rearranged": 0.11501790086428325
+   },
+   "planning/shared/near/success": {
+    "original": 0.921875,
+    "rearranged": 0.921875
+   },
+   "planning/native/standard/error": {
+    "original": 1.6263020833333333,
+    "rearranged": 1.5924479166666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.18229166666666666,
+    "rearranged": 0.1875
+   },
+   "planning/native/near/error": {
+    "original": 0.20102475583553314,
+    "rearranged": 0.2036289225021998
+   },
+   "planning/native/near/success": {
+    "original": 0.8541666666666666,
+    "rearranged": 0.8489583333333334
+   }
+  },
+  "134-136": {
+   "next_obs/native": {
+    "original": 0.001718218360717098,
+    "rearranged": 0.001718558487482369
+   },
+   "next_obs/common": {
+    "original": 1.6237526734670003,
+    "rearranged": 1.617946942647298
+   },
+   "readout/native": {
+    "original": 0.00035619037225842476,
+    "rearranged": 0.0003562095856371646
+   },
+   "readout/grid": {
+    "original": 0.11155455311139424,
+    "rearranged": 0.11147741725047429
+   },
+   "planning/shared/standard/error": {
+    "original": 1.3294521570205688,
+    "rearranged": 1.4648688236872356
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3854166666666667,
+    "rearranged": 0.375
+   },
+   "planning/shared/near/error": {
+    "original": 0.09688262393077214,
+    "rearranged": 0.09688262393077214
+   },
+   "planning/shared/near/success": {
+    "original": 0.9270833333333334,
+    "rearranged": 0.9270833333333334
+   },
+   "planning/native/standard/error": {
+    "original": 1.359375,
+    "rearranged": 1.359375
+   },
+   "planning/native/standard/success": {
+    "original": 0.21875,
+    "rearranged": 0.21875
+   },
+   "planning/native/near/error": {
+    "original": 0.1907555212577184,
+    "rearranged": 0.1907555212577184
+   },
+   "planning/native/near/success": {
+    "original": 0.8333333333333334,
+    "rearranged": 0.8333333333333334
+   }
+  },
+  "135-130": {
+   "next_obs/native": {
+    "original": 0.0028027196725209555,
+    "rearranged": 0.0028027196725209555
+   },
+   "next_obs/common": {
+    "original": 1.161249081293742,
+    "rearranged": 1.1612552404403687
+   },
+   "readout/native": {
+    "original": 0.0006661019870080054,
+    "rearranged": 0.0006661019870080054
+   },
+   "readout/grid": {
+    "original": 0.07780593633651733,
+    "rearranged": 0.07780196517705917
+   },
+   "planning/shared/standard/error": {
+    "original": 1.0826483567555745,
+    "rearranged": 1.0853090286254883
+   },
+   "planning/shared/standard/success": {
+    "original": 0.4739583333333333,
+    "rearranged": 0.4739583333333333
+   },
+   "planning/shared/near/error": {
+    "original": 0.07005857490003109,
+    "rearranged": 0.07005857490003109
+   },
+   "planning/shared/near/success": {
+    "original": 0.9739583333333334,
+    "rearranged": 0.9739583333333334
+   },
+   "planning/native/standard/error": {
+    "original": 1.501975695292155,
+    "rearranged": 1.501975695292155
+   },
+   "planning/native/standard/success": {
+    "original": 0.17708333333333334,
+    "rearranged": 0.17708333333333334
+   },
+   "planning/native/near/error": {
+    "original": 0.266441543896993,
+    "rearranged": 0.266441543896993
+   },
+   "planning/native/near/success": {
+    "original": 0.6979166666666666,
+    "rearranged": 0.6979166666666666
+   }
+  },
+  "135-136": {
+   "next_obs/native": {
+    "original": 0.0028091686932990947,
+    "rearranged": 0.0028091686932990947
+   },
+   "next_obs/common": {
+    "original": 1.0435039401054382,
+    "rearranged": 1.0435044169425964
+   },
+   "readout/native": {
+    "original": 0.0006117896021654209,
+    "rearranged": 0.0006117896021654209
+   },
+   "readout/grid": {
+    "original": 0.07274659226338069,
+    "rearranged": 0.07274657239516576
+   },
+   "planning/shared/standard/error": {
+    "original": 0.9915025234222412,
+    "rearranged": 0.9915025234222412
+   },
+   "planning/shared/standard/success": {
+    "original": 0.5052083333333334,
+    "rearranged": 0.5052083333333334
+   },
+   "planning/shared/near/error": {
+    "original": 0.06871660550435384,
+    "rearranged": 0.06871660550435384
+   },
+   "planning/shared/near/success": {
+    "original": 0.9895833333333334,
+    "rearranged": 0.9895833333333334
+   },
+   "planning/native/standard/error": {
+    "original": 1.23828125,
+    "rearranged": 1.23828125
+   },
+   "planning/native/standard/success": {
+    "original": 0.23958333333333334,
+    "rearranged": 0.23958333333333334
+   },
+   "planning/native/near/error": {
+    "original": 0.2713331381479899,
+    "rearranged": 0.2713331381479899
+   },
+   "planning/native/near/success": {
+    "original": 0.7447916666666666,
+    "rearranged": 0.7447916666666666
+   }
+  },
+  "136-130": {
+   "next_obs/native": {
+    "original": 0.3134260376294454,
+    "rearranged": 0.0006901050413337847
+   },
+   "next_obs/common": {
+    "original": 1.194654146830241,
+    "rearranged": 0.0026817984568576017
+   },
+   "readout/native": {
+    "original": 0.17168778677781424,
+    "rearranged": 0.0012485142797231674
+   },
+   "readout/grid": {
+    "original": 0.46084316571553546,
+    "rearranged": 0.004764041087279717
+   },
+   "planning/shared/standard/error": {
+    "original": 1.6288736661275227,
+    "rearranged": 0.29954685767491657
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3020833333333333,
+    "rearranged": 0.7864583333333334
+   },
+   "planning/shared/near/error": {
+    "original": 0.9453125,
+    "rearranged": 0.18266170223553976
+   },
+   "planning/shared/near/success": {
+    "original": 0.28125,
+    "rearranged": 0.8385416666666666
+   },
+   "planning/native/standard/error": {
+    "original": 2.047475894292196,
+    "rearranged": 0.8522988160451254
+   },
+   "planning/native/standard/success": {
+    "original": 0.08333333333333333,
+    "rearranged": 0.4947916666666667
+   },
+   "planning/native/near/error": {
+    "original": 0.8068621158599854,
+    "rearranged": 0.1635683278242747
+   },
+   "planning/native/near/success": {
+    "original": 0.40625,
+    "rearranged": 0.9010416666666666
+   }
+  },
+  "136-131": {
+   "next_obs/native": {
+    "original": 0.30027668674786884,
+    "rearranged": 0.0005265218981852134
+   },
+   "next_obs/common": {
+    "original": 1.0044490496317546,
+    "rearranged": 0.0016314886355151732
+   },
+   "readout/native": {
+    "original": 0.16639162600040436,
+    "rearranged": 0.0010265361246032019
+   },
+   "readout/grid": {
+    "original": 0.41099581122398376,
+    "rearranged": 0.0037268410281588635
+   },
+   "planning/shared/standard/error": {
+    "original": 1.8372069994608562,
+    "rearranged": 0.37376562754313153
+   },
+   "planning/shared/standard/success": {
+    "original": 0.265625,
+    "rearranged": 0.7135416666666666
+   },
+   "planning/shared/near/error": {
+    "original": 0.8450520833333334,
+    "rearranged": 0.2069289187590281
+   },
+   "planning/shared/near/success": {
+    "original": 0.3854166666666667,
+    "rearranged": 0.8125
+   },
+   "planning/native/standard/error": {
+    "original": 1.8248196442921956,
+    "rearranged": 0.7584811051686605
+   },
+   "planning/native/standard/success": {
+    "original": 0.09895833333333333,
+    "rearranged": 0.5
+   },
+   "planning/native/near/error": {
+    "original": 0.8979548613230387,
+    "rearranged": 0.18301905194918314
+   },
+   "planning/native/near/success": {
+    "original": 0.359375,
+    "rearranged": 0.8645833333333334
+   }
+  },
+  "136-132": {
+   "next_obs/native": {
+    "original": 0.3054819405078888,
+    "rearranged": 0.0007912440729948381
+   },
+   "next_obs/common": {
+    "original": 1.2143270174662273,
+    "rearranged": 0.003333847038447857
+   },
+   "readout/native": {
+    "original": 0.16625556349754333,
+    "rearranged": 0.001332300443512698
+   },
+   "readout/grid": {
+    "original": 0.4680581291516622,
+    "rearranged": 0.005182652889440457
+   },
+   "planning/shared/standard/error": {
+    "original": 1.6223632494608562,
+    "rearranged": 0.30735937754313153
+   },
+   "planning/shared/standard/success": {
+    "original": 0.2708333333333333,
+    "rearranged": 0.796875
+   },
+   "planning/shared/near/error": {
+    "original": 0.95703125,
+    "rearranged": 0.15792211890220642
+   },
+   "planning/shared/near/success": {
+    "original": 0.2708333333333333,
+    "rearranged": 0.890625
+   },
+   "planning/native/standard/error": {
+    "original": 2.039663394292196,
+    "rearranged": 0.8379758993784586
+   },
+   "planning/native/standard/success": {
+    "original": 0.11458333333333333,
+    "rearranged": 0.4947916666666667
+   },
+   "planning/native/near/error": {
+    "original": 0.7912371158599854,
+    "rearranged": 0.2082988421122233
+   },
+   "planning/native/near/success": {
+    "original": 0.4270833333333333,
+    "rearranged": 0.890625
+   }
+  },
+  "136-133": {
+   "next_obs/native": {
+    "original": 0.2693148156007131,
+    "rearranged": 0.0007308213195453087
+   },
+   "next_obs/common": {
+    "original": 1.1445156335830688,
+    "rearranged": 0.0030664860581358275
+   },
+   "readout/native": {
+    "original": 0.14383282760779062,
+    "rearranged": 0.0013043713212634127
+   },
+   "readout/grid": {
+    "original": 0.45307181278864544,
+    "rearranged": 0.0050855702720582485
+   },
+   "planning/shared/standard/error": {
+    "original": 1.7499674161275227,
+    "rearranged": 0.39720312754313153
+   },
+   "planning/shared/standard/success": {
+    "original": 0.21354166666666666,
+    "rearranged": 0.6875
+   },
+   "planning/shared/near/error": {
+    "original": 0.9440104166666666,
+    "rearranged": 0.1317781259616216
+   },
+   "planning/shared/near/success": {
+    "original": 0.2708333333333333,
+    "rearranged": 0.890625
+   },
+   "planning/native/standard/error": {
+    "original": 1.872896432876587,
+    "rearranged": 0.9591373602549235
+   },
+   "planning/native/standard/success": {
+    "original": 0.125,
+    "rearranged": 0.453125
+   },
+   "planning/native/near/error": {
+    "original": 1.1271838943163555,
+    "rearranged": 0.21036280194918314
+   },
+   "planning/native/near/success": {
+    "original": 0.34375,
+    "rearranged": 0.8541666666666666
+   }
+  },
+  "136-134": {
+   "next_obs/native": {
+    "original": 0.32529371976852417,
+    "rearranged": 0.0006964221926561246
+   },
+   "next_obs/common": {
+    "original": 1.1291640996932983,
+    "rearranged": 0.0027887007066359124
+   },
+   "readout/native": {
+    "original": 0.18074929217497507,
+    "rearranged": 0.0014381874740744631
+   },
+   "readout/grid": {
+    "original": 0.45453834533691406,
+    "rearranged": 0.005381118971854448
+   },
+   "planning/shared/standard/error": {
+    "original": 1.9205403327941895,
+    "rearranged": 0.43756771087646484
+   },
+   "planning/shared/standard/success": {
+    "original": 0.17708333333333334,
+    "rearranged": 0.7552083333333334
+   },
+   "planning/shared/near/error": {
+    "original": 0.9947916666666666,
+    "rearranged": 0.15755208333333334
+   },
+   "planning/shared/near/success": {
+    "original": 0.3229166666666667,
+    "rearranged": 0.84375
+   },
+   "planning/native/standard/error": {
+    "original": 1.7786458333333333,
+    "rearranged": 0.9681842227776846
+   },
+   "planning/native/standard/success": {
+    "original": 0.11458333333333333,
+    "rearranged": 0.4114583333333333
+   },
+   "planning/native/near/error": {
+    "original": 0.8753700256347656,
+    "rearranged": 0.19994613528251648
+   },
+   "planning/native/near/success": {
+    "original": 0.4010416666666667,
+    "rearranged": 0.8697916666666666
+   }
+  },
+  "136-135": {
+   "next_obs/native": {
+    "original": 0.2677958607673645,
+    "rearranged": 0.0008206957330306371
+   },
+   "next_obs/common": {
+    "original": 1.1927639643351238,
+    "rearranged": 0.003414794880275925
+   },
+   "readout/native": {
+    "original": 0.1425898720820745,
+    "rearranged": 0.0012997269708042343
+   },
+   "readout/grid": {
+    "original": 0.471174677213033,
+    "rearranged": 0.005156443454325199
+   },
+   "planning/shared/standard/error": {
+    "original": 1.4218424161275227,
+    "rearranged": 0.27741143604119617
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3125,
+    "rearranged": 0.8333333333333334
+   },
+   "planning/shared/near/error": {
+    "original": 1.2513020833333333,
+    "rearranged": 0.16693437099456787
+   },
+   "planning/shared/near/success": {
+    "original": 0.2864583333333333,
+    "rearranged": 0.9114583333333334
+   },
+   "planning/native/standard/error": {
+    "original": 2.279146432876587,
+    "rearranged": 0.854902982711792
+   },
+   "planning/native/standard/success": {
+    "original": 0.109375,
+    "rearranged": 0.4739583333333333
+   },
+   "planning/native/near/error": {
+    "original": 0.7513322234153748,
+    "rearranged": 0.18233496447404227
+   },
+   "planning/native/near/success": {
+    "original": 0.4739583333333333,
+    "rearranged": 0.9322916666666666
+   }
+  },
+  "136-136": {
+   "next_obs/native": {
+    "original": 0.3174041211605072,
+    "rearranged": 0.0007786802016198635
+   },
+   "next_obs/common": {
+    "original": 1.2348120212554932,
+    "rearranged": 0.003243332185472051
+   },
+   "readout/native": {
+    "original": 0.17417792975902557,
+    "rearranged": 0.0013468558512007196
+   },
+   "readout/grid": {
+    "original": 0.4728950460751851,
+    "rearranged": 0.005162155410895745
+   },
+   "planning/shared/standard/error": {
+    "original": 1.6379882494608562,
+    "rearranged": 0.31517187257607776
+   },
+   "planning/shared/standard/success": {
+    "original": 0.2916666666666667,
+    "rearranged": 0.78125
+   },
+   "planning/shared/near/error": {
+    "original": 0.9830729166666666,
+    "rearranged": 0.16359013319015503
+   },
+   "planning/shared/near/success": {
+    "original": 0.25,
+    "rearranged": 0.8854166666666666
+   },
+   "planning/native/standard/error": {
+    "original": 2.0110175609588623,
+    "rearranged": 0.878340482711792
+   },
+   "planning/native/standard/success": {
+    "original": 0.11458333333333333,
+    "rearranged": 0.4791666666666667
+   },
+   "planning/native/near/error": {
+    "original": 0.8237891991933187,
+    "rearranged": 0.17194284001986185
+   },
+   "planning/native/near/success": {
+    "original": 0.421875,
+    "rearranged": 0.8697916666666666
+   }
+  },
+  "136-137": {
+   "next_obs/native": {
+    "original": 0.2909896969795227,
+    "rearranged": 0.0007588632870465517
+   },
+   "next_obs/common": {
+    "original": 1.1861328681310017,
+    "rearranged": 0.0030795979934434095
+   },
+   "readout/native": {
+    "original": 0.15731466809908548,
+    "rearranged": 0.001253244428274532
+   },
+   "readout/grid": {
+    "original": 0.46202783783276874,
+    "rearranged": 0.004883241684486468
+   },
+   "planning/shared/standard/error": {
+    "original": 1.5533528327941895,
+    "rearranged": 0.33340102434158325
+   },
+   "planning/shared/standard/success": {
+    "original": 0.3020833333333333,
+    "rearranged": 0.7447916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 0.96484375,
+    "rearranged": 0.13969295223553976
+   },
+   "planning/shared/near/success": {
+    "original": 0.28125,
+    "rearranged": 0.9114583333333334
+   },
+   "planning/native/standard/error": {
+    "original": 2.052583932876587,
+    "rearranged": 0.827559232711792
+   },
+   "planning/native/standard/success": {
+    "original": 0.140625,
+    "rearranged": 0.484375
+   },
+   "planning/native/near/error": {
+    "original": 0.7956030368804932,
+    "rearranged": 0.20402255654335022
+   },
+   "planning/native/near/success": {
+    "original": 0.4322916666666667,
+    "rearranged": 0.890625
+   }
+  },
+  "136-138": {
+   "next_obs/native": {
+    "original": 0.3283188243707021,
+    "rearranged": 0.0006689382522987822
+   },
+   "next_obs/common": {
+    "original": 1.128712773323059,
+    "rearranged": 0.0026363812697430453
+   },
+   "readout/native": {
+    "original": 0.18283996979395548,
+    "rearranged": 0.0014182723437746365
+   },
+   "readout/grid": {
+    "original": 0.4531855583190918,
+    "rearranged": 0.00526864252363642
+   },
+   "planning/shared/standard/error": {
+    "original": 1.8697590827941895,
+    "rearranged": 0.42454687754313153
+   },
+   "planning/shared/standard/success": {
+    "original": 0.20833333333333334,
+    "rearranged": 0.7447916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 0.9895833333333334,
+    "rearranged": 0.14973958333333334
+   },
+   "planning/shared/near/success": {
+    "original": 0.3385416666666667,
+    "rearranged": 0.875
+   },
+   "planning/native/standard/error": {
+    "original": 1.7649238109588623,
+    "rearranged": 0.9252154727776846
+   },
+   "planning/native/standard/success": {
+    "original": 0.13541666666666666,
+    "rearranged": 0.4322916666666667
+   },
+   "planning/native/near/error": {
+    "original": 0.8572202324867249,
+    "rearranged": 0.21296696861584982
+   },
+   "planning/native/near/success": {
+    "original": 0.3802083333333333,
+    "rearranged": 0.84375
+   }
+  },
+  "136-139": {
+   "next_obs/native": {
+    "original": 0.3499148190021515,
+    "rearranged": 0.0007185681024566293
+   },
+   "next_obs/common": {
+    "original": 1.2926478385925293,
+    "rearranged": 0.003010372476031383
+   },
+   "readout/native": {
+    "original": 0.19613013664881387,
+    "rearranged": 0.001541663659736514
+   },
+   "readout/grid": {
+    "original": 0.49950220187505084,
+    "rearranged": 0.005717593555649121
+   },
+   "planning/shared/standard/error": {
+    "original": 1.9257486661275227,
+    "rearranged": 0.45970312257607776
+   },
+   "planning/shared/standard/success": {
+    "original": 0.21354166666666666,
+    "rearranged": 0.703125
+   },
+   "planning/shared/near/error": {
+    "original": 0.9921875,
+    "rearranged": 0.17838541666666666
+   },
+   "planning/shared/near/success": {
+    "original": 0.3333333333333333,
+    "rearranged": 0.8697916666666666
+   },
+   "planning/native/standard/error": {
+    "original": 1.78515625,
+    "rearranged": 1.0085488160451253
+   },
+   "planning/native/standard/success": {
+    "original": 0.125,
+    "rearranged": 0.3489583333333333
+   },
+   "planning/native/near/error": {
+    "original": 0.8696306745211283,
+    "rearranged": 0.20860103766123453
+   },
+   "planning/native/near/success": {
+    "original": 0.375,
+    "rearranged": 0.859375
+   }
+  },
+  "137-130": {
+   "next_obs/native": {
+    "original": 0.0012328343000262976,
+    "rearranged": 0.0012328343000262976
+   },
+   "next_obs/common": {
+    "original": 0.7328227559725443,
+    "rearranged": 0.7320949832598368
+   },
+   "readout/native": {
+    "original": 0.00038651700015179813,
+    "rearranged": 0.00038651700015179813
+   },
+   "readout/grid": {
+    "original": 0.071161104987065,
+    "rearranged": 0.07114155093828838
+   },
+   "planning/shared/standard/error": {
+    "original": 0.7604166666666666,
+    "rearranged": 0.82278972864151
+   },
+   "planning/shared/standard/success": {
+    "original": 0.4895833333333333,
+    "rearranged": 0.4635416666666667
+   },
+   "planning/shared/near/error": {
+    "original": 0.09091450522343318,
+    "rearranged": 0.09091450522343318
+   },
+   "planning/shared/near/success": {
+    "original": 0.9635416666666666,
+    "rearranged": 0.9635416666666666
+   },
+   "planning/native/standard/error": {
+    "original": 1.859375,
+    "rearranged": 1.859375
+   },
+   "planning/native/standard/success": {
+    "original": 0.140625,
+    "rearranged": 0.140625
+   },
+   "planning/native/near/error": {
+    "original": 0.2574870139360428,
+    "rearranged": 0.2574870139360428
+   },
+   "planning/native/near/success": {
+    "original": 0.8020833333333334,
+    "rearranged": 0.8020833333333334
+   }
+  },
+  "139-130": {
+   "next_obs/native": {
+    "original": 0.291933407386144,
+    "rearranged": 0.002275035328542193
+   },
+   "next_obs/common": {
+    "original": 1.1707857449849446,
+    "rearranged": 0.0035164236711959043
+   },
+   "readout/native": {
+    "original": 0.09532405436038971,
+    "rearranged": 0.00029899191576987505
+   },
+   "readout/grid": {
+    "original": 0.3947118322054545,
+    "rearranged": 0.0013846412766724825
+   },
+   "planning/shared/standard/error": {
+    "original": 0.3395811915397644,
+    "rearranged": 0.07421875
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8072916666666666,
+    "rearranged": 0.984375
+   },
+   "planning/shared/near/error": {
+    "original": 1.2562789519627888,
+    "rearranged": 0.0625
+   },
+   "planning/shared/near/success": {
+    "original": 0.20833333333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/native/standard/error": {
+    "original": 2.105144818623861,
+    "rearranged": 0.5364583333333334
+   },
+   "planning/native/standard/success": {
+    "original": 0.09375,
+    "rearranged": 0.5416666666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.3972658316294353,
+    "rearranged": 0.1496597280104955
+   },
+   "planning/native/near/success": {
+    "original": 0.3020833333333333,
+    "rearranged": 0.9322916666666666
+   }
+  },
+  "139-131": {
+   "next_obs/native": {
+    "original": 0.3471241295337677,
+    "rearranged": 0.002843773070101937
+   },
+   "next_obs/common": {
+    "original": 2.325472911198934,
+    "rearranged": 0.012712918998052677
+   },
+   "readout/native": {
+    "original": 0.0991025095184644,
+    "rearranged": 0.00042740823118947446
+   },
+   "readout/grid": {
+    "original": 0.48890236020088196,
+    "rearranged": 0.0006536741663391391
+   },
+   "planning/shared/standard/error": {
+    "original": 0.5493478775024414,
+    "rearranged": 0.11328125
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8125,
+    "rearranged": 0.9635416666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.1454253594080608,
+    "rearranged": 0.11458333333333333
+   },
+   "planning/shared/near/success": {
+    "original": 0.23958333333333334,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.0520833333333335,
+    "rearranged": 0.5338541666666666
+   },
+   "planning/native/standard/success": {
+    "original": 0.08854166666666667,
+    "rearranged": 0.5677083333333334
+   },
+   "planning/native/near/error": {
+    "original": 1.2381857633590698,
+    "rearranged": 0.10178240636984508
+   },
+   "planning/native/near/success": {
+    "original": 0.3229166666666667,
+    "rearranged": 0.9895833333333334
+   }
+  },
+  "139-132": {
+   "next_obs/native": {
+    "original": 0.31896666685740155,
+    "rearranged": 0.0023470770101994276
+   },
+   "next_obs/common": {
+    "original": 1.6263353824615479,
+    "rearranged": 0.005025304892721276
+   },
+   "readout/native": {
+    "original": 0.09850938121477763,
+    "rearranged": 0.00028566038721085835
+   },
+   "readout/grid": {
+    "original": 0.4528117775917053,
+    "rearranged": 0.001032889704219997
+   },
+   "planning/shared/standard/error": {
+    "original": 0.4525836606820424,
+    "rearranged": 0.07291666666666667
+   },
+   "planning/shared/standard/success": {
+    "original": 0.7552083333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.2457439104715984,
+    "rearranged": 0.05859375
+   },
+   "planning/shared/near/success": {
+    "original": 0.21875,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/native/standard/error": {
+    "original": 2.1412837505340576,
+    "rearranged": 0.58203125
+   },
+   "planning/native/standard/success": {
+    "original": 0.0625,
+    "rearranged": 0.5104166666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.3559580246607463,
+    "rearranged": 0.14795010288556418
+   },
+   "planning/native/near/success": {
+    "original": 0.28125,
+    "rearranged": 0.9322916666666666
+   }
+  },
+  "139-133": {
+   "next_obs/native": {
+    "original": 0.34836819767951965,
+    "rearranged": 0.0027965318877249956
+   },
+   "next_obs/common": {
+    "original": 2.3445738156636557,
+    "rearranged": 0.011701268920054039
+   },
+   "readout/native": {
+    "original": 0.1002356434861819,
+    "rearranged": 0.00042142122401855886
+   },
+   "readout/grid": {
+    "original": 0.5005000531673431,
+    "rearranged": 0.0006911032445107897
+   },
+   "planning/shared/standard/error": {
+    "original": 0.5180978775024414,
+    "rearranged": 0.12369791666666667
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8333333333333334,
+    "rearranged": 0.9479166666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.1386455297470093,
+    "rearranged": 0.11197916666666667
+   },
+   "planning/shared/near/success": {
+    "original": 0.2604166666666667,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.1028645833333335,
+    "rearranged": 0.5611979166666666
+   },
+   "planning/native/standard/success": {
+    "original": 0.057291666666666664,
+    "rearranged": 0.5729166666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.250007430712382,
+    "rearranged": 0.10848045845826466
+   },
+   "planning/native/near/success": {
+    "original": 0.3385416666666667,
+    "rearranged": 0.984375
+   }
+  },
+  "139-134": {
+   "next_obs/native": {
+    "original": 0.17252088089783987,
+    "rearranged": 0.0024098755481342473
+   },
+   "next_obs/common": {
+    "original": 0.564156174659729,
+    "rearranged": 0.012331047716240088
+   },
+   "readout/native": {
+    "original": 0.07486138492822647,
+    "rearranged": 0.0006268519597748915
+   },
+   "readout/grid": {
+    "original": 0.29608165224393207,
+    "rearranged": 0.004792874678969383
+   },
+   "planning/shared/standard/error": {
+    "original": 0.2552083333333333,
+    "rearranged": 0.05727629860242208
+   },
+   "planning/shared/standard/success": {
+    "original": 0.8125,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 1.0895741780598958,
+    "rearranged": 0.086752583583196
+   },
+   "planning/shared/near/success": {
+    "original": 0.3072916666666667,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 1.5097278753916423,
+    "rearranged": 1.0807291666666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.15104166666666666,
+    "rearranged": 0.3802083333333333
+   },
+   "planning/native/near/error": {
+    "original": 1.530245264371236,
+    "rearranged": 0.13306894153356552
+   },
+   "planning/native/near/success": {
+    "original": 0.20833333333333334,
+    "rearranged": 0.90625
+   }
+  },
+  "139-135": {
+   "next_obs/native": {
+    "original": 0.3361422618230184,
+    "rearranged": 0.002747232715288798
+   },
+   "next_obs/common": {
+    "original": 2.144782781600952,
+    "rearranged": 0.013702905348812541
+   },
+   "readout/native": {
+    "original": 0.09181809177001317,
+    "rearranged": 0.0003084714408032596
+   },
+   "readout/grid": {
+    "original": 0.4544653594493866,
+    "rearranged": 0.0005955302622169256
+   },
+   "planning/shared/standard/error": {
+    "original": 0.575389544169108,
+    "rearranged": 0.057291666666666664
+   },
+   "planning/shared/standard/success": {
+    "original": 0.7864583333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.10647980372111,
+    "rearranged": 0.0625
+   },
+   "planning/shared/near/success": {
+    "original": 0.23958333333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/native/standard/error": {
+    "original": 2.0,
+    "rearranged": 0.453125
+   },
+   "planning/native/standard/success": {
+    "original": 0.09375,
+    "rearranged": 0.6197916666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.020266056060791,
+    "rearranged": 0.14362107714017233
+   },
+   "planning/native/near/success": {
+    "original": 0.4010416666666667,
+    "rearranged": 0.9583333333333334
+   }
+  },
+  "139-136": {
+   "next_obs/native": {
+    "original": 0.3176981508731842,
+    "rearranged": 0.002375783088306586
+   },
+   "next_obs/common": {
+    "original": 1.528364896774292,
+    "rearranged": 0.0052053746379291015
+   },
+   "readout/native": {
+    "original": 0.09784458577632904,
+    "rearranged": 0.0002960752705500151
+   },
+   "readout/grid": {
+    "original": 0.4366060296694438,
+    "rearranged": 0.0008736150921322405
+   },
+   "planning/shared/standard/error": {
+    "original": 0.4437478582064311,
+    "rearranged": 0.06640625
+   },
+   "planning/shared/standard/success": {
+    "original": 0.828125,
+    "rearranged": 1.0
+   },
+   "planning/shared/near/error": {
+    "original": 1.255517562230428,
+    "rearranged": 0.053385416666666664
+   },
+   "planning/shared/near/success": {
+    "original": 0.21875,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.0872395833333335,
+    "rearranged": 0.4505208333333333
+   },
+   "planning/native/standard/success": {
+    "original": 0.057291666666666664,
+    "rearranged": 0.6354166666666666
+   },
+   "planning/native/near/error": {
+    "original": 1.3238155444463093,
+    "rearranged": 0.13686796029408774
+   },
+   "planning/native/near/success": {
+    "original": 0.3125,
+    "rearranged": 0.953125
+   }
+  },
+  "139-137": {
+   "next_obs/native": {
+    "original": 0.3407921890417735,
+    "rearranged": 0.002725931660582622
+   },
+   "next_obs/common": {
+    "original": 2.2152411142985025,
+    "rearranged": 0.013243069872260094
+   },
+   "readout/native": {
+    "original": 0.09431260079145432,
+    "rearranged": 0.00030428800770702463
+   },
+   "readout/grid": {
+    "original": 0.47336621085802716,
+    "rearranged": 0.0005641040625050664
+   },
+   "planning/shared/standard/error": {
+    "original": 0.5805978775024414,
+    "rearranged": 0.0625
+   },
+   "planning/shared/standard/success": {
+    "original": 0.796875,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.110568602879842,
+    "rearranged": 0.059895833333333336
+   },
+   "planning/shared/near/success": {
+    "original": 0.23958333333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/native/standard/error": {
+    "original": 2.0416666666666665,
+    "rearranged": 0.4674479166666667
+   },
+   "planning/native/standard/success": {
+    "original": 0.08854166666666667,
+    "rearranged": 0.6145833333333334
+   },
+   "planning/native/near/error": {
+    "original": 1.2639657656351726,
+    "rearranged": 0.12569032609462738
+   },
+   "planning/native/near/success": {
+    "original": 0.3125,
+    "rearranged": 0.9791666666666666
+   }
+  },
+  "139-138": {
+   "next_obs/native": {
+    "original": 0.3304129143555959,
+    "rearranged": 0.0025342768834282956
+   },
+   "next_obs/common": {
+    "original": 1.8947676420211792,
+    "rearranged": 0.005449488991871476
+   },
+   "readout/native": {
+    "original": 0.10022492210070293,
+    "rearranged": 0.000419966255625089
+   },
+   "readout/grid": {
+    "original": 0.4632660746574402,
+    "rearranged": 0.0010929490672424436
+   },
+   "planning/shared/standard/error": {
+    "original": 0.4477853775024414,
+    "rearranged": 0.13671875
+   },
+   "planning/shared/standard/success": {
+    "original": 0.84375,
+    "rearranged": 0.9322916666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.2319509188334148,
+    "rearranged": 0.10677083333333333
+   },
+   "planning/shared/near/success": {
+    "original": 0.22916666666666666,
+    "rearranged": 1.0
+   },
+   "planning/native/standard/error": {
+    "original": 2.125,
+    "rearranged": 0.6041666666666666
+   },
+   "planning/native/standard/success": {
+    "original": 0.057291666666666664,
+    "rearranged": 0.5520833333333334
+   },
+   "planning/native/near/error": {
+    "original": 1.363593300183614,
+    "rearranged": 0.11150321116050084
+   },
+   "planning/native/near/success": {
+    "original": 0.3177083333333333,
+    "rearranged": 0.9739583333333334
+   }
+  },
+  "139-139": {
+   "next_obs/native": {
+    "original": 0.5820417006810507,
+    "rearranged": 0.018644426638881367
+   },
+   "next_obs/common": {
+    "original": 6.183775901794434,
+    "rearranged": 5.068502426147461
+   },
+   "readout/native": {
+    "original": 0.1667226105928421,
+    "rearranged": 0.002917815543090304
+   },
+   "readout/grid": {
+    "original": 0.9834798773129781,
+    "rearranged": 0.3693761130174001
+   },
+   "planning/shared/standard/error": {
+    "original": 2.048429012298584,
+    "rearranged": 0.3046875
+   },
+   "planning/shared/standard/success": {
+    "original": 0.09895833333333333,
+    "rearranged": 0.7291666666666666
+   },
+   "planning/shared/near/error": {
+    "original": 1.4467540582021077,
+    "rearranged": 0.10335198044776917
+   },
+   "planning/shared/near/success": {
+    "original": 0.20833333333333334,
+    "rearranged": 0.9947916666666666
+   },
+   "planning/native/standard/error": {
+    "original": 1.67578125,
+    "rearranged": 1.6743914286295574
+   },
+   "planning/native/standard/success": {
+    "original": 0.125,
+    "rearranged": 0.2552083333333333
+   },
+   "planning/native/near/error": {
+    "original": 1.4637256463368733,
+    "rearranged": 0.2318249543507894
+   },
+   "planning/native/near/success": {
+    "original": 0.22916666666666666,
+    "rearranged": 0.7760416666666666
+   }
+  }
+ }
+}

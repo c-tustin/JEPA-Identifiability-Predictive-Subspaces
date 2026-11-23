@@ -1,6 +1,31 @@
 # Merged progress: ICM policy, folding, and repairs
 
-Updated November 19, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+Updated November 23, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+
+## November 23: The fold itself hurts downstream use (completed, pre-registered)
+
+- **Design.** [fold-downstream](fold-downstream/README.md), [protocol](fold-downstream/PROTOCOL.md) hash-locked before any run.
+  The 55 initialization-crossing encoders with a final reversal (51 material) were each compared with their monotone
+  rearrangement on a 20,001-point log-d grid: the same multiset of code values, ordered, with the fold removed. Data,
+  predictor networks, predictor seeds (3 replicates) and goals are identical across arms. The rearranged arm reads d from
+  the observation, so it is an **evaluation-only oracle counterfactual**, not a trainable repair.
+- **Results (dataset means, material folds).** Native next-observation MSE 0.15–0.67 → 0.0007–0.007. Log-d readout MSE
+  0.06–0.22 → ≤ 0.001. Near-object planning on shared data: error 0.99–1.26 → 0.06–0.16, success 24–41% → 87–100%.
+  Standard-goal planning: 0.26–1.72 → 0.08–0.36. 50/51 encoders improve on every measure. The exception is dataset 134,
+  whose fold lies at d ∈ [15.1, 16] with no data. Replicate noise is far smaller than these changes.
+- **Predictions.** H1 (next-obs), H3 (near planning) and H4 (readout) held at 5/6 datasets. H2 failed: folds whose
+  reversed slope is confined to d < 2.6 still hurt standard-goal planning by 0.19–0.68. The reversed branch's code values
+  collide with ordinary states up to d ≈ 6 or beyond, which affects 25–73% of standard-route positions.
+- **Correction to earlier reading.** The qualitative study's observation that folded seeds 131–133 planned better than
+  ordered seeds 130/138 was a cross-seed confound. In a matched comparison the fold is costly. Measuring a fold by its
+  reversed-slope span understates its reach.
+- **Checks.** Multiset equality holds for all 55 encoders; maximum wrapper/network difference is 4.2e-6; the protocol hash
+  is unchanged. Tiny folds produce no measurable change.
+- **Limits.** Oracle counterfactual; rearrangement also changes local slopes (it does not separate non-injectivity from
+  compression); one deterministic 1-d world; six independent datasets.
+- **Next.** Measure how much of this gap trained repairs actually recover, using the existing weighted-moment, mining and
+  hard-order encoders with the same downstream harness. Then test whether folding occurs at all in multi-dimensional
+  SIGReg embeddings.
 
 ## November 22 (final): Rigid-force tests; block-level pressure suffices
 
@@ -371,7 +396,7 @@ Sources: [actor geometry results](sources/explanations/occupancy-folding/hypothe
 ## Remaining work
 
 - Validate the proposed repairs on fresh seeds and observation models beyond this known one-dimensional geometry.
-- Measure downstream prediction or planning performance for repaired and hard-constrained representations; fold removal alone does not establish task improvement.
+- Measure downstream performance of *trained* repairs and hard-constrained representations. The Nov 23 oracle rearrangement shows the fold itself is costly; whether trainable fixes recover that gap is open.
 - Develop a correction or order constraint for observations without a known physical ordering coordinate.
 - Separate actor-learning causes further with matched geometry and optimizer interventions.
 
