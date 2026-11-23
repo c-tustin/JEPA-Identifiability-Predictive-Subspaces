@@ -39,3 +39,15 @@ Baseline fits on these laws fold at every initialization tested.
 
 If (1) fails, differential pull along the tail is not needed for the fold. All cells are reported, and failures are kept.
 One architecture; an empirical check, not an analytic guarantee.
+
+## Addendum: both groups rigid (fixed after scoring the 24 fits above, before training the 12 below)
+
+Result above: tail-rigid folded in 12 of 12 cells, so prediction 1 failed; spike-rigid folded in 12 of 12, so prediction
+2 held.
+
+Follow-up condition **both-rigid**: the projection is applied to the near and far groups separately in every batch. SIGReg
+can then only shift and rescale each group as a block; no within-group force reaches any code. The laws, initializations
+and training are as above (12 fits).
+
+Prediction 3 (block-pull account: the encoder itself converts a block pull on the tail into a bend): fold in at least
+10 of 12 cells. If it fails, some within-group force (on either the spike or the tail) is needed.
