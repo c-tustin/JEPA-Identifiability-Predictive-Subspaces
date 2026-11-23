@@ -14,9 +14,10 @@ OUT = K.S.OUT/'rigid'
 PROTOCOL = HERE/'RIGID_PROTOCOL.md'
 LAWS = ('m0.625', 'm0.75', 'm0.875')
 INITS = (131, 133, 135, 137)
-GROUPS = ('tail', 'spike', 'both')
+GROUPS = ('tail', 'spike', 'both', 'shift', 'scale')
 # tail/spike fits were trained by the version of this file in commit 4f407af4 (same behaviour); 'both' is the addendum.
-PRED_FILE = {'tail': 'PREDICTIONS.json', 'spike': 'PREDICTIONS.json', 'both': 'PREDICTIONS_BOTH.json'}
+PRED_FILE = {'tail': 'PREDICTIONS.json', 'spike': 'PREDICTIONS.json', 'both': 'PREDICTIONS_BOTH.json', 'shift': 'PREDICTIONS_SPLIT.json', 'scale': 'PREDICTIONS_SPLIT.json'}
+# 'both' was trained by the version of this file in commit 444c05a5 (same behaviour); shift/scale are addendum 2.
 
 
 def rigid(y, mask):
@@ -26,7 +27,15 @@ def rigid(y, mask):
     out = y.clone(); out[mask] = gd + (mu - mud) + (gd - mud)*(sd/sdd - 1); return out
 
 
+def part(y, mask, keep):
+    """Like rigid(), but keep only the shift ('shift') or only the rescale ('scale') part of the gradient."""
+    if mask.sum() < 2: return y
+    g = y[mask]; mu = g.mean(); sd = g.std(unbiased=False); gd, mud, sdd = g.detach(), mu.detach(), sd.detach()
+    out = y.clone(); out[mask] = gd + ((mu - mud) if keep == 'shift' else (gd - mud)*(sd/sdd - 1)); return out
+
+
 def project(code, near_mask, group):
+    if group in ('shift', 'scale'): return part(part(code, near_mask, group), ~near_mask, group)
     if group == 'spike': return rigid(code, near_mask)
     if group == 'tail': return rigid(code, ~near_mask)
     return rigid(rigid(code, near_mask), ~near_mask)
@@ -84,10 +93,13 @@ def report():
     verdict = {}
     for g in GROUPS:
         f = [r['fold'] for r in rows if r['group'] == g]
-        verdict[g] = dict(cells=len(f), folds=sum(f), correct=((len(f) - sum(f) >= 10) if g == 'tail' else sum(f) >= 10) if len(f) == 12 else None)
+        need = {'tail': lambda f: len(f) - sum(f) >= 10, 'spike': lambda f: sum(f) >= 10, 'both': lambda f: sum(f) >= 10,
+                'shift': lambda f: sum(f) >= 7, 'scale': lambda f: sum(f) <= 1}[g]
+        verdict[g] = dict(cells=len(f), folds=sum(f), correct=need(f) if len(f) in (8, 12) else None)
     # predictions_hash records both locked files
     R.trials.atomic_json(OUT/'summary.json', dict(rows=rows, verdict=verdict, predictions_hash=R.digest((OUT/'PREDICTIONS.json').read_bytes()),
-                         addendum_predictions_hash=R.digest((OUT/'PREDICTIONS_BOTH.json').read_bytes())))
+                         addendum_predictions_hash=R.digest((OUT/'PREDICTIONS_BOTH.json').read_bytes()),
+                         addendum2_predictions_hash=R.digest((OUT/'PREDICTIONS_SPLIT.json').read_bytes())))
     for r in rows: print(f"{r['group']:5s} {r['law']:7s} i{r['init']} bwd {r['backward']:.3f} skew {r['skew']:+.2f} sd {r['sd']:.2f}")
     print(verdict)
 
@@ -101,12 +113,14 @@ def main():
     if a.design: return design()
     if a.report: return report()
     if a.addendum:
-        R.trials.atomic_json(OUT/'PREDICTIONS_BOTH.json', dict(protocol_hash=R.digest(PROTOCOL.read_bytes()), code_hash=R.digest(Path(__file__).read_bytes()),
-                             predictions={'both': 'fold in >= 10 of 12'}))
-        return print('addendum locked')
-    assert json.loads((OUT/'PREDICTIONS_BOTH.json').read_text())['protocol_hash'] == R.digest(PROTOCOL.read_bytes())
+        y = torch.randn(64, requires_grad=True); m = torch.arange(64) % 3 == 0
+        assert torch.equal(project(y, m, 'shift'), y) and torch.equal(project(y, m, 'scale'), y)
+        R.trials.atomic_json(OUT/'PREDICTIONS_SPLIT.json', dict(protocol_hash=R.digest(PROTOCOL.read_bytes()), code_hash=R.digest(Path(__file__).read_bytes()),
+                             predictions={'shift': 'fold in >= 7 of 8', 'scale': 'fold in <= 1 of 8'}))
+        return print('addendum 2 locked')
+    assert json.loads((OUT/'PREDICTIONS_SPLIT.json').read_text())['protocol_hash'] == R.digest(PROTOCOL.read_bytes())
     setup = K.D.setup(); x, d = K.atoms(setup[0])
-    jobs = [(law, 'both', i) for law in LAWS for i in INITS]
+    jobs = [(law, g, i) for g in ('shift', 'scale') for law in ('m0.75', 'm0.875') for i in INITS]
     for k, job in enumerate(jobs):
         if k % a.shards == a.shard: fit(*job, setup, x, d)
 

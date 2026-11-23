@@ -51,3 +51,16 @@ and training are as above (12 fits).
 
 Prediction 3 (block-pull account: the encoder itself converts a block pull on the tail into a bend): fold in at least
 10 of 12 cells. If it fails, some within-group force (on either the spike or the tail) is needed.
+
+## Addendum 2: shift-only versus scale-only (fixed after scoring both-rigid, before training below)
+
+Result: both-rigid folded in 12 of 12 cells, so prediction 3 held. The block projection still includes a rescale, which
+pulls a group's ends toward its middle. Two further conditions, each applied to both groups:
+- **shift-only:** y_g' = sg(y_g) + (μ − sg(μ)). SIGReg moves each group only as a rigid translation.
+- **scale-only:** y_g' = sg(y_g) + (sg(y_g) − sg(μ))·(σ/sg(σ) − 1). SIGReg only contracts or expands each group about
+  its own mean.
+
+Laws m0.75 and m0.875, initializations 131, 133, 135 and 137 (16 fits).
+
+Prediction 4 (the fold is the encoder's response to pulling the tail block toward the spike): shift-only folds in at
+least 7 of 8 cells, and scale-only folds in at most 1 of 8.
