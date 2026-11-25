@@ -1,6 +1,26 @@
 # Merged progress: ICM policy, folding, and repairs
 
-Updated November 23, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+Updated November 25, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+
+## November 25: Downstream value of trained repairs (completed, pre-registered)
+
+- **Design.** [Protocol 2](fold-downstream/REPAIRS_PROTOCOL.md), hash-locked. 125 existing checkpoints were evaluated
+  in the Nov 23 harness; none was retrained. Each repair is paired with its own ordinary baseline and that baseline's
+  oracle rearrangement. Gap recovered: G = (baseline − repair) / (baseline − oracle).
+- **Results** (folded sources). Weighted moments, with or without an order penalty, match or beat the oracle on every
+  measure (next-obs 0.388 → 0.002; near planning 1.19 → 0.076; standard 0.86 → 0.095). They also improve never-folded
+  sources' standard planning (0.72 → 0.17). Late repair with weights + strong order ≈ oracle; weights alone stays folded
+  and is often worse than no repair. Global mining, the only repair without privileged information, fully recovers
+  next-obs where it unfolds but only part of planning (median G 0.81 near, 0.28 standard); 136 stays folded. Hard-order
+  splines fix next-obs but plan worse than the folded baseline on standard goals (projected 1.40 versus 0.86) and hurt
+  never-folded sources.
+- **Predictions.** R1, R2, R3 held. R4 failed (mining 4/6), R5 failed on its weights-only half (3/5), and R6 failed
+  (splines degrade never-folded sources).
+- **Meaning.** The fold's downstream cost is fully recoverable by trainable occupancy correction, but that correction uses
+  privileged distance bins. The label-free fix (mining) recovers less than the oracle on planning. A certified ordering
+  alone does not give a usable code.
+- **Next.** A label-free occupancy correction, for example weights from a density estimate in code space or observation
+  space instead of physical distance, tested against the same harness. Then the multi-dimensional SIGReg question.
 
 ## November 23: The fold itself hurts downstream use (completed, pre-registered)
 
@@ -396,7 +416,7 @@ Sources: [actor geometry results](sources/explanations/occupancy-folding/hypothe
 ## Remaining work
 
 - Validate the proposed repairs on fresh seeds and observation models beyond this known one-dimensional geometry.
-- Measure downstream performance of *trained* repairs and hard-constrained representations. The Nov 23 oracle rearrangement shows the fold itself is costly; whether trainable fixes recover that gap is open.
+- Find a label-free occupancy correction that recovers the fold's downstream cost. Nov 25: privileged weighted moments recover all of it; label-free mining recovers only part for planning; hard-order splines remove the fold but plan poorly.
 - Develop a correction or order constraint for observations without a known physical ordering coordinate.
 - Separate actor-learning causes further with matched geometry and optimizer interventions.
 

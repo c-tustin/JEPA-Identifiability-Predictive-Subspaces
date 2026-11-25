@@ -1,0 +1,112 @@
+{
+ "family": "mining",
+ "arm": "oracle",
+ "source": 136,
+ "checkpoint": "icm-folding/mlp-gradient-study/output/runs/136-sigreg-c0-n4000.pt",
+ "checkpoint_sha256": "8856f07e115cdf6dc350bea0c089a96f1e41bcaa56fef8c79a67d03819e94a1c",
+ "source_sha256": "21c07001b9d00b85ccd44a49ff57d8647321ec4733fc1fc283ef1355b065806e",
+ "protocol_sha256": "3f3101703d5f369d2ae253823fc048ed97c2852f4057e06be29039d6ac9fe6bc",
+ "code_std": 0.6767402464212261,
+ "backward_fraction": 0.0,
+ "material_fold": false,
+ "any_reversal": false,
+ "reps": [
+  {
+   "next_obs": {
+    "native": 0.0008226466597989202,
+    "common": 0.003651971695944667
+   },
+   "readout": {
+    "native": 0.0012246363330632448,
+    "grid": 0.0045111761428415775
+   },
+   "planning": {
+    "shared": {
+     "standard": {
+      "error": 0.5392656326293945,
+      "success": 0.609375
+     },
+     "near": {
+      "error": 0.09876635670661926,
+      "success": 0.921875
+     }
+    },
+    "native": {
+     "standard": {
+      "error": 1.5566933155059814,
+      "success": 0.25
+     },
+     "near": {
+      "error": 0.23636244237422943,
+      "success": 0.875
+     }
+    }
+   }
+  },
+  {
+   "next_obs": {
+    "native": 0.0007634626235812902,
+    "common": 0.0035283074248582125
+   },
+   "readout": {
+    "native": 0.0013879407197237015,
+    "grid": 0.004795829765498638
+   },
+   "planning": {
+    "shared": {
+     "standard": {
+      "error": 0.3125,
+      "success": 0.71875
+     },
+     "near": {
+      "error": 0.1328125,
+      "success": 0.953125
+     }
+    },
+    "native": {
+     "standard": {
+      "error": 0.6877031326293945,
+      "success": 0.5625
+     },
+     "near": {
+      "error": 0.17598477005958557,
+      "success": 0.921875
+     }
+    }
+   }
+  },
+  {
+   "next_obs": {
+    "native": 0.0008587920456193388,
+    "common": 0.00305069237947464
+   },
+   "readout": {
+    "native": 0.0013011435512453318,
+    "grid": 0.006164491642266512
+   },
+   "planning": {
+    "shared": {
+     "standard": {
+      "error": 0.25,
+      "success": 0.84375
+     },
+     "near": {
+      "error": 0.21484375,
+      "success": 0.796875
+     }
+    },
+    "native": {
+     "standard": {
+      "error": 0.484375,
+      "success": 0.5625
+     },
+     "near": {
+      "error": 0.1782703995704651,
+      "success": 0.90625
+     }
+    }
+   }
+  }
+ ],
+ "seconds": 1038.4741299152374
+}

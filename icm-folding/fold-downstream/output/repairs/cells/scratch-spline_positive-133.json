@@ -1,0 +1,112 @@
+{
+ "family": "scratch",
+ "arm": "spline_positive",
+ "source": 133,
+ "checkpoint": "explanations/occupancy-folding/hypothesis-guarantee/output/guaranteed/133-positive-native.pt",
+ "checkpoint_sha256": "c7f30a6260c5fe7760e945b65fda53d24437c939e2fe242a53b0fc6542cf0f28",
+ "source_sha256": "e96c2f1cc2385bc5c7aec2a1eea52de3f9a5c0230845d1ae776c537faf4e02ee",
+ "protocol_sha256": "3f3101703d5f369d2ae253823fc048ed97c2852f4057e06be29039d6ac9fe6bc",
+ "code_std": 0.6368668474347694,
+ "backward_fraction": 0.0,
+ "material_fold": false,
+ "any_reversal": false,
+ "reps": [
+  {
+   "next_obs": {
+    "native": 0.00044023810187354684,
+    "common": 0.013757630251348019
+   },
+   "readout": {
+    "native": 0.0008058604435063899,
+    "grid": 0.015763867646455765
+   },
+   "planning": {
+    "shared": {
+     "standard": {
+      "error": 0.375,
+      "success": 0.625
+     },
+     "near": {
+      "error": 0.16233757138252258,
+      "success": 0.90625
+     }
+    },
+    "native": {
+     "standard": {
+      "error": 1.5593987703323364,
+      "success": 0.1875
+     },
+     "near": {
+      "error": 0.26953125,
+      "success": 0.71875
+     }
+    }
+   }
+  },
+  {
+   "next_obs": {
+    "native": 0.0003959429741371423,
+    "common": 0.010638508945703506
+   },
+   "readout": {
+    "native": 0.0008726070518605411,
+    "grid": 0.012805629521608353
+   },
+   "planning": {
+    "shared": {
+     "standard": {
+      "error": 1.33203125,
+      "success": 0.421875
+     },
+     "near": {
+      "error": 0.12718132138252258,
+      "success": 0.984375
+     }
+    },
+    "native": {
+     "standard": {
+      "error": 2.34375,
+      "success": 0.0625
+     },
+     "near": {
+      "error": 0.7015039324760437,
+      "success": 0.40625
+     }
+    }
+   }
+  },
+  {
+   "next_obs": {
+    "native": 0.0003761402331292629,
+    "common": 0.013075451366603374
+   },
+   "readout": {
+    "native": 0.0002740008640103042,
+    "grid": 0.008876601234078407
+   },
+   "planning": {
+    "shared": {
+     "standard": {
+      "error": 0.5487438440322876,
+      "success": 0.5625
+     },
+     "near": {
+      "error": 0.2599938213825226,
+      "success": 0.765625
+     }
+    },
+    "native": {
+     "standard": {
+      "error": 2.09765625,
+      "success": 0.078125
+     },
+     "near": {
+      "error": 0.5008482336997986,
+      "success": 0.453125
+     }
+    }
+   }
+  }
+ ],
+ "seconds": 51.309197187423706
+}

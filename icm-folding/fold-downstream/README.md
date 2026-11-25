@@ -89,6 +89,62 @@ ones does not survive a matched comparison. Seed-level differences other than th
 - **Dependent encoders.** Encoders within a dataset share their data, so datasets (6) are the independent unit.
 - **These are empirical comparisons**, not analytic guarantees.
 
+## Stage 2: how much of that cost do trained repairs recover? (Nov 25)
+
+[Protocol 2 (hash-locked)](REPAIRS_PROTOCOL.md) · [Code](repairs.py) · [Summary](output/repairs/summary.json) ·
+[Figure](output/repairs/gap_recovered.png)
+
+This stage re-evaluates 125 existing checkpoints; no encoder was retrained. Each repair is compared with its own
+ordinary-SIGReg baseline (same source and initialization) and with that baseline's oracle rearrangement, all through the
+same harness. *Gap recovered* is G = (baseline − repair) / (baseline − oracle): G = 1 matches the oracle, and G > 1
+beats it.
+
+Mean over sources whose baseline is materially folded (lower is better; standard/near = goal sets, shared data):
+
+| Repair (source count) | Privileged info | Next-obs MSE | Near-goal plan error | Standard-goal plan error |
+| --- | --- | ---: | ---: | ---: |
+| Ordinary SIGReg, folded (5) | — | 0.388 | 1.19 | 0.86 |
+| Oracle rearrangement (5) | ordering, at evaluation | 0.005 | 0.096 | 0.17 |
+| Weighted moments, from scratch (5) | distance-binned weights | 0.002 | 0.076 | 0.095 |
+| Weighted + order penalty (5) | + ordered probes | 0.002 | 0.075 | 0.096 |
+| Hard order, projected spline (5) | known coordinate, new model class | 0.027 | 0.27 | 1.40 |
+| Hard order, positive spline (5) | same | 0.000 | 0.22 | 0.71 |
+| Global successor mining (7; its own baseline 0.393 / 1.09 / 0.95) | none | 0.028 | 0.39 | 0.44 |
+| Late: weights + strong order (5; baseline 0.328 / 0.93 / 0.99) | ordered probes | 0.001 | 0.11 | 0.10 |
+| Late: weights only, stays folded (5) | distance-binned weights | 0.388 | 1.31 | 1.11 |
+
+**What this shows**
+
+1. **Occupancy-weighted moments recover the whole cost, and more.** On folded sources they match or beat the oracle on
+   every measure (median G ≈ 1.0–1.1). On sources that never folded they still improve standard-goal planning
+   (0.72 → 0.17). The fold was one symptom of a poorly spread code; reweighting fixes both the fold and the spread.
+2. **Late repair works only with the strong order term.** Weights plus strong order matches the oracle on existing folds
+   (median G 0.98–1.30). Weights alone leave the fold, and in 3 of 5 sources make downstream use worse than doing nothing.
+3. **Mining, the only fix using no privileged information, gets about half way for planning.** It fully recovers
+   next-observation prediction where it removes the fold (G ≈ 1.0), but recovers a median of 0.81 for near-goal planning
+   and 0.28 for standard goals. Source 136 stays folded under mining (G 0.35 / −0.27). On never-folded sources mining
+   helps standard planning (0.60 → 0.17).
+4. **Guaranteed order is not the same as a useful code.** Both hard-order splines remove the fold and fix next-observation
+   prediction, but plan worse than the folded baseline on standard goals (projected 1.40 versus 0.86). The projected
+   spline also degrades never-folded sources (near-goal +0.39). The certificate guarantees injectivity, not a geometry
+   the planner can use.
+
+**Pre-registered predictions**
+
+| Prediction | Outcome |
+| --- | --- |
+| R1: weighted moments | **Held** (5/5) |
+| R2: weighted + order | **Held** (5/5) |
+| R3: hard-order splines on next-obs and near planning | **Held** (projected 5/5, positive 4/5). Not covered by the prediction: both fail badly on standard goals. |
+| R4: mining reaches G ≥ 0.8 wherever it unfolds | **Failed**, 4/6. Source 132 reached 0.78 on near planning; source 143 reached 0.33. |
+| R5: late strong ≥ 0.8 in ≥ 4/5, and weights-only < 0.5 in ≥ 4/5 | **Failed** on the second half. The strong half held 5/5, but weights-only stayed below 0.5 on both measures in only 3/5 (139 reached 0.83 on next-obs while still folded). |
+| R6: no repair raises near-goal error on never-folded sources by > 0.05 | **Failed.** Projected spline +0.39, positive spline +0.08; weighted and mining improve slightly. |
+
+**Limits.** The repairs come from different studies, and the weight and mining coefficients were partly tuned on these
+development sources. Only five of the fifteen mining sources (140–144) are fresh. These are downstream values of
+existing checkpoints, not new fold rates. The privileged-information column matters: the best performer uses
+distance-binned weights that a real agent would not have.
+
 ## Reproduce
 
 From the workspace root, about 7 minutes on 10 CPU workers:
@@ -96,7 +152,8 @@ From the workspace root, about 7 minutes on 10 CPU workers:
 ```sh
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/fold-downstream/run.py --workers 10
 python3 icm-folding/fold-downstream/run.py --report-only
+OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 python3 icm-folding/fold-downstream/repairs.py --workers 10   # stage 2, ~25 min
 ```
 
-The runner needs the initialization-crossing checkpoints (kept local, regenerable with that study's `run.py`) and the
+Stage 2 also needs the occupancy-folding, gradient-followup, hard-order and mining checkpoints (all local). The runner needs the initialization-crossing checkpoints (kept local, regenerable with that study's `run.py`) and the
 qualitative-study sources.
