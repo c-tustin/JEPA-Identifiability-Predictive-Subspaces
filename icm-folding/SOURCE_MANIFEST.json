@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-23",
+  "date": "2026-11-26",
   "files": [
     {
       "source": "explanations/occupancy-folding/PROTOCOL.md",
@@ -45079,30 +45079,1720 @@
       "adapted": true
     },
     {
+      "source": "icm-folding/multidim-sigreg/PROTOCOL.md",
+      "destination": "multidim-sigreg/PROTOCOL.md",
+      "bytes": 4676,
+      "source_sha256": "889d04a157e04f473196cdb7edd6885e5161bd37a1e26f237d1931cc2dcb173c",
+      "included": true,
+      "published_sha256": "889d04a157e04f473196cdb7edd6885e5161bd37a1e26f237d1931cc2dcb173c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/README.md",
+      "destination": "multidim-sigreg/README.md",
+      "bytes": 5945,
+      "source_sha256": "9ea4cabad444d229ea0c94f96068c6ddd5fc13ceec56437c67ce90d3311eb133",
+      "included": true,
+      "published_sha256": "9ea4cabad444d229ea0c94f96068c6ddd5fc13ceec56437c67ce90d3311eb133",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/aliasing_vs_downstream.png",
+      "destination": "multidim-sigreg/output/aliasing_vs_downstream.png",
+      "bytes": 63351,
+      "source_sha256": "b90d5fd405669aced435772f49e9da747b53a64da555add5daf26e2e8f0c01f5",
+      "included": true,
+      "published_sha256": "b90d5fd405669aced435772f49e9da747b53a64da555add5daf26e2e8f0c01f5",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/by_dimension.png",
+      "destination": "multidim-sigreg/output/by_dimension.png",
+      "bytes": 140463,
+      "source_sha256": "05d652b8ec2967d834023daed087987d269e5d50986482e3aec66d13a586d18d",
+      "included": true,
+      "published_sha256": "05d652b8ec2967d834023daed087987d269e5d50986482e3aec66d13a586d18d",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-130.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-130.json",
+      "bytes": 2142,
+      "source_sha256": "0445f33394c6f0c32bdac074e0265070850bd76c084a8d350713492908a9d434",
+      "included": true,
+      "published_sha256": "0445f33394c6f0c32bdac074e0265070850bd76c084a8d350713492908a9d434",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-131.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-131.json",
+      "bytes": 2236,
+      "source_sha256": "fbc00365bafb50da6934f4abdd250f11fdc346b004f71315207b07cded5ff09f",
+      "included": true,
+      "published_sha256": "fbc00365bafb50da6934f4abdd250f11fdc346b004f71315207b07cded5ff09f",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-132.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-132.json",
+      "bytes": 2204,
+      "source_sha256": "32d6efff5bbb9560c0533a01240a7d7c071e226eafd7001fe2d806c706c167ad",
+      "included": true,
+      "published_sha256": "32d6efff5bbb9560c0533a01240a7d7c071e226eafd7001fe2d806c706c167ad",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-133.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-133.json",
+      "bytes": 2221,
+      "source_sha256": "786e08c76e743a6004d8c4a064e6f696a3bd14b93be5dd8e35375a362f49a8e1",
+      "included": true,
+      "published_sha256": "786e08c76e743a6004d8c4a064e6f696a3bd14b93be5dd8e35375a362f49a8e1",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-134.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-134.json",
+      "bytes": 2124,
+      "source_sha256": "89ce44599beba0b5b28f34a0da51442fdd35f181f9df1a1041132b4f115fa844",
+      "included": true,
+      "published_sha256": "89ce44599beba0b5b28f34a0da51442fdd35f181f9df1a1041132b4f115fa844",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-135.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-135.json",
+      "bytes": 2164,
+      "source_sha256": "e2ea474643df2b933b114557e865c6580db4ec673ec4993d0f0ee43a8bce522e",
+      "included": true,
+      "published_sha256": "e2ea474643df2b933b114557e865c6580db4ec673ec4993d0f0ee43a8bce522e",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-136.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-136.json",
+      "bytes": 2217,
+      "source_sha256": "623ad57af9d8b9a37750ae3025dcf8a77ff8515e4e566873758739d7b318e15f",
+      "included": true,
+      "published_sha256": "623ad57af9d8b9a37750ae3025dcf8a77ff8515e4e566873758739d7b318e15f",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-137.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-137.json",
+      "bytes": 2159,
+      "source_sha256": "f8dc0f8376415483d57692b1fa7f6f5646449ef8c63da8f4ae632bd9593ba59c",
+      "included": true,
+      "published_sha256": "f8dc0f8376415483d57692b1fa7f6f5646449ef8c63da8f4ae632bd9593ba59c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-138.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-138.json",
+      "bytes": 2159,
+      "source_sha256": "a06f1b8b46891e0f6f56de9109abbd858a2b33a69ffccef16587c8ac28a0a9ea",
+      "included": true,
+      "published_sha256": "a06f1b8b46891e0f6f56de9109abbd858a2b33a69ffccef16587c8ac28a0a9ea",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d1-139.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d1-139.json",
+      "bytes": 2216,
+      "source_sha256": "926d7489ee8bf52ef870f7dacf8171505d7bcd8480033ddd192690be66a5637c",
+      "included": true,
+      "published_sha256": "926d7489ee8bf52ef870f7dacf8171505d7bcd8480033ddd192690be66a5637c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-130.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-130.json",
+      "bytes": 2072,
+      "source_sha256": "42dd0e570560286747032f17569dbd1de3ffe44a95e3e51078564a1e48332d4a",
+      "included": true,
+      "published_sha256": "42dd0e570560286747032f17569dbd1de3ffe44a95e3e51078564a1e48332d4a",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-131.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-131.json",
+      "bytes": 2061,
+      "source_sha256": "b52f44f74919206b013f95acfe77db63fab04e746f2a88838c13a2c7a7010c45",
+      "included": true,
+      "published_sha256": "b52f44f74919206b013f95acfe77db63fab04e746f2a88838c13a2c7a7010c45",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-132.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-132.json",
+      "bytes": 2079,
+      "source_sha256": "9e53cd4bf7e4afc423cfa3cb2c10c0d610f9a1cdfa5fe987b5174d91806122ed",
+      "included": true,
+      "published_sha256": "9e53cd4bf7e4afc423cfa3cb2c10c0d610f9a1cdfa5fe987b5174d91806122ed",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-133.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-133.json",
+      "bytes": 2080,
+      "source_sha256": "4c4c7868740971a16867288ab5e7196e86f26ecb986123d774e2a4bb38518224",
+      "included": true,
+      "published_sha256": "4c4c7868740971a16867288ab5e7196e86f26ecb986123d774e2a4bb38518224",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-134.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-134.json",
+      "bytes": 2113,
+      "source_sha256": "e5f1bf946c43836c3f730adac049b1c394ae8a2a3f502057b4444b4e9df61e6e",
+      "included": true,
+      "published_sha256": "e5f1bf946c43836c3f730adac049b1c394ae8a2a3f502057b4444b4e9df61e6e",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-135.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-135.json",
+      "bytes": 2085,
+      "source_sha256": "bb7e697fe2f72ade770be599f5523ccefc3557d819c525cbe6176896c292eb89",
+      "included": true,
+      "published_sha256": "bb7e697fe2f72ade770be599f5523ccefc3557d819c525cbe6176896c292eb89",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-136.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-136.json",
+      "bytes": 2091,
+      "source_sha256": "6cae2341f21129c2c14f797542deaa96d66bdd7ec64ca09816552b795a4ee20c",
+      "included": true,
+      "published_sha256": "6cae2341f21129c2c14f797542deaa96d66bdd7ec64ca09816552b795a4ee20c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-137.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-137.json",
+      "bytes": 2095,
+      "source_sha256": "923cf9e964ab1e96f8e9156a09bc99f711fdd6c1521b9626c570277a51183b11",
+      "included": true,
+      "published_sha256": "923cf9e964ab1e96f8e9156a09bc99f711fdd6c1521b9626c570277a51183b11",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-138.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-138.json",
+      "bytes": 2090,
+      "source_sha256": "21028cdb4375bbb0339cf9e2c0196c3bfc005d65cba5347c4c4569c46ec00c4c",
+      "included": true,
+      "published_sha256": "21028cdb4375bbb0339cf9e2c0196c3bfc005d65cba5347c4c4569c46ec00c4c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d16-139.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d16-139.json",
+      "bytes": 2081,
+      "source_sha256": "f34b2d3908ab20c05603d7cbd77c0b983fd1afdc107aefd83023ca2d4a6cee32",
+      "included": true,
+      "published_sha256": "f34b2d3908ab20c05603d7cbd77c0b983fd1afdc107aefd83023ca2d4a6cee32",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-130.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-130.json",
+      "bytes": 2082,
+      "source_sha256": "d7d4152665053d03f8ea27e91d1f9ca248171111c63beb3ca02ae100c748c7b0",
+      "included": true,
+      "published_sha256": "d7d4152665053d03f8ea27e91d1f9ca248171111c63beb3ca02ae100c748c7b0",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-131.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-131.json",
+      "bytes": 2094,
+      "source_sha256": "ec3e2ce92902c2693625201662266e2ee47914920858c9b75f0e115c2d088c8d",
+      "included": true,
+      "published_sha256": "ec3e2ce92902c2693625201662266e2ee47914920858c9b75f0e115c2d088c8d",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-132.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-132.json",
+      "bytes": 2078,
+      "source_sha256": "a23b8ef325ef2b75fb1fb2d58fcbe9496c74694d29a0d6a3af82f5b6a471dd93",
+      "included": true,
+      "published_sha256": "a23b8ef325ef2b75fb1fb2d58fcbe9496c74694d29a0d6a3af82f5b6a471dd93",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-133.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-133.json",
+      "bytes": 2085,
+      "source_sha256": "284416f9d1088d65a4b0c6900cc828fbc53f8fdcc268cfeb0135bc173296ceda",
+      "included": true,
+      "published_sha256": "284416f9d1088d65a4b0c6900cc828fbc53f8fdcc268cfeb0135bc173296ceda",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-134.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-134.json",
+      "bytes": 2081,
+      "source_sha256": "8eb2c2dc68ae5e69d3ea1368fe652bfccf586c28164ca3493f83937c10141ddb",
+      "included": true,
+      "published_sha256": "8eb2c2dc68ae5e69d3ea1368fe652bfccf586c28164ca3493f83937c10141ddb",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-135.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-135.json",
+      "bytes": 2059,
+      "source_sha256": "b28788b0142b92066396375c81e9451593d0feaa6761b374251319edda8d8eff",
+      "included": true,
+      "published_sha256": "b28788b0142b92066396375c81e9451593d0feaa6761b374251319edda8d8eff",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-136.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-136.json",
+      "bytes": 2103,
+      "source_sha256": "a839a876787e5e130ff19867a961175174f6f960c9229c6cfaca578e6c6341d1",
+      "included": true,
+      "published_sha256": "a839a876787e5e130ff19867a961175174f6f960c9229c6cfaca578e6c6341d1",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-137.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-137.json",
+      "bytes": 2090,
+      "source_sha256": "b0b79608ab511b4d88221b9e6e54ae60ce5634418a94d1aafe60d8e1329ab971",
+      "included": true,
+      "published_sha256": "b0b79608ab511b4d88221b9e6e54ae60ce5634418a94d1aafe60d8e1329ab971",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-138.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-138.json",
+      "bytes": 2102,
+      "source_sha256": "c94e46ed48a43f7da3c2b6660a472599435124d85277deebb7cbb7160fde42f0",
+      "included": true,
+      "published_sha256": "c94e46ed48a43f7da3c2b6660a472599435124d85277deebb7cbb7160fde42f0",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d2-139.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d2-139.json",
+      "bytes": 2101,
+      "source_sha256": "752153ddd5314537a6e2e76136a5583eba549efb35a1f6eaaf7ada7cbf3189c7",
+      "included": true,
+      "published_sha256": "752153ddd5314537a6e2e76136a5583eba549efb35a1f6eaaf7ada7cbf3189c7",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-130.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-130.json",
+      "bytes": 2073,
+      "source_sha256": "b8421f29360713eff59c4569d5b853dfcbc46cf63df45cc3715182e0600fd0a5",
+      "included": true,
+      "published_sha256": "b8421f29360713eff59c4569d5b853dfcbc46cf63df45cc3715182e0600fd0a5",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-131.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-131.json",
+      "bytes": 2052,
+      "source_sha256": "0f003a5c651eea8566c9c0e3ef5121c8abc2ec7a049929bc3aa21bd0ed795b60",
+      "included": true,
+      "published_sha256": "0f003a5c651eea8566c9c0e3ef5121c8abc2ec7a049929bc3aa21bd0ed795b60",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-132.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-132.json",
+      "bytes": 2081,
+      "source_sha256": "4408b77852ce5073001b3c1392c59da5be2edf23a5300bd4a334c8c972cd2985",
+      "included": true,
+      "published_sha256": "4408b77852ce5073001b3c1392c59da5be2edf23a5300bd4a334c8c972cd2985",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-133.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-133.json",
+      "bytes": 2075,
+      "source_sha256": "fb12c1baab78fdd83cdaffc8cd68dd7cd6a8d0af83e4855837d49dccc78948d6",
+      "included": true,
+      "published_sha256": "fb12c1baab78fdd83cdaffc8cd68dd7cd6a8d0af83e4855837d49dccc78948d6",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-134.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-134.json",
+      "bytes": 2054,
+      "source_sha256": "885795d5fd1decc4cb1895dbec2f6c80c407da770345cbaf24338a5c0365a323",
+      "included": true,
+      "published_sha256": "885795d5fd1decc4cb1895dbec2f6c80c407da770345cbaf24338a5c0365a323",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-135.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-135.json",
+      "bytes": 2068,
+      "source_sha256": "f7050b35a26bf401cf6956f7136f098dd9e815fca852a0956dc412ce1dc85dff",
+      "included": true,
+      "published_sha256": "f7050b35a26bf401cf6956f7136f098dd9e815fca852a0956dc412ce1dc85dff",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-136.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-136.json",
+      "bytes": 2118,
+      "source_sha256": "beef4135cff058ec24bad79c56cb65881413bb4de656176133afd964540ca21e",
+      "included": true,
+      "published_sha256": "beef4135cff058ec24bad79c56cb65881413bb4de656176133afd964540ca21e",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-137.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-137.json",
+      "bytes": 2101,
+      "source_sha256": "3a0219980581eeb26556c1a41e99bedabdde03911b45fa19649c6c426bb81b83",
+      "included": true,
+      "published_sha256": "3a0219980581eeb26556c1a41e99bedabdde03911b45fa19649c6c426bb81b83",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-138.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-138.json",
+      "bytes": 2103,
+      "source_sha256": "8f49e4bfbb98f5c62ee97ffe526eb4ddc6b9bc4af3155ba832a35596879d32d0",
+      "included": true,
+      "published_sha256": "8f49e4bfbb98f5c62ee97ffe526eb4ddc6b9bc4af3155ba832a35596879d32d0",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d4-139.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d4-139.json",
+      "bytes": 2059,
+      "source_sha256": "3aabaa5288ed9bcb1ffef486c5f337b14858133215a0e3c8b1e171eb28edee9b",
+      "included": true,
+      "published_sha256": "3aabaa5288ed9bcb1ffef486c5f337b14858133215a0e3c8b1e171eb28edee9b",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-130.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-130.json",
+      "bytes": 2076,
+      "source_sha256": "6462188859c1b931a6093b15b1e2d68a0f1a9767451082c947a4c5a2a19361e3",
+      "included": true,
+      "published_sha256": "6462188859c1b931a6093b15b1e2d68a0f1a9767451082c947a4c5a2a19361e3",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-131.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-131.json",
+      "bytes": 2080,
+      "source_sha256": "f1c1683ddfa784d5be1e40ad4ff2cb44ebc6e7ab7031acfeeef1350f81ea70c0",
+      "included": true,
+      "published_sha256": "f1c1683ddfa784d5be1e40ad4ff2cb44ebc6e7ab7031acfeeef1350f81ea70c0",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-132.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-132.json",
+      "bytes": 2093,
+      "source_sha256": "8658a76802bd8fd2639552a4d4c8556cd1212b1636d2cdf8747cb0c1031e7bbb",
+      "included": true,
+      "published_sha256": "8658a76802bd8fd2639552a4d4c8556cd1212b1636d2cdf8747cb0c1031e7bbb",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-133.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-133.json",
+      "bytes": 2069,
+      "source_sha256": "717f6361cb4279d200bee19de67acc9416c6b420491e246dc0dccceb337f0936",
+      "included": true,
+      "published_sha256": "717f6361cb4279d200bee19de67acc9416c6b420491e246dc0dccceb337f0936",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-134.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-134.json",
+      "bytes": 2062,
+      "source_sha256": "b221c54e7161ab0358607b75f74ce8bef20cb31bdf2d12620de645e32d72356f",
+      "included": true,
+      "published_sha256": "b221c54e7161ab0358607b75f74ce8bef20cb31bdf2d12620de645e32d72356f",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-135.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-135.json",
+      "bytes": 2077,
+      "source_sha256": "e76bdb4395fe4a315d507ef37f67230ba6b8c90abc1831e483800fc58c97ba7c",
+      "included": true,
+      "published_sha256": "e76bdb4395fe4a315d507ef37f67230ba6b8c90abc1831e483800fc58c97ba7c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-136.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-136.json",
+      "bytes": 2079,
+      "source_sha256": "7719c680d6eecb294ecc6780f686250777e564d74c48549f49788d6a8274f8f2",
+      "included": true,
+      "published_sha256": "7719c680d6eecb294ecc6780f686250777e564d74c48549f49788d6a8274f8f2",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-137.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-137.json",
+      "bytes": 2103,
+      "source_sha256": "efd069e1ce6e0ec2dd02fccc567bd225ef81683598aac22c74a05dfb21740636",
+      "included": true,
+      "published_sha256": "efd069e1ce6e0ec2dd02fccc567bd225ef81683598aac22c74a05dfb21740636",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-138.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-138.json",
+      "bytes": 2092,
+      "source_sha256": "bded67f4f09eb887b9711f02f1cfa90bae1a5bc46cc8c52f77384f015754d966",
+      "included": true,
+      "published_sha256": "bded67f4f09eb887b9711f02f1cfa90bae1a5bc46cc8c52f77384f015754d966",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/ordinary-d8-139.json",
+      "destination": "multidim-sigreg/output/cells/ordinary-d8-139.json",
+      "bytes": 2072,
+      "source_sha256": "78074a27d4dbd1f8aff323528a30dc2bf35e76da390b0017dccfe6414643a537",
+      "included": true,
+      "published_sha256": "78074a27d4dbd1f8aff323528a30dc2bf35e76da390b0017dccfe6414643a537",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-130.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-130.json",
+      "bytes": 2126,
+      "source_sha256": "949c6bdc01998190ed3ee674ff40da42783a0db77f5302ba722f00132dea3b4d",
+      "included": true,
+      "published_sha256": "949c6bdc01998190ed3ee674ff40da42783a0db77f5302ba722f00132dea3b4d",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-131.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-131.json",
+      "bytes": 2131,
+      "source_sha256": "5ee22ba126645d0d79d10f5603c4926d1c0473f48e3058006afe45561156fd87",
+      "included": true,
+      "published_sha256": "5ee22ba126645d0d79d10f5603c4926d1c0473f48e3058006afe45561156fd87",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-132.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-132.json",
+      "bytes": 2135,
+      "source_sha256": "f76748fcf96fdc5ac6fd46bfb061a6cdecfc41719ce32bfe56089fbd4f5e759b",
+      "included": true,
+      "published_sha256": "f76748fcf96fdc5ac6fd46bfb061a6cdecfc41719ce32bfe56089fbd4f5e759b",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-133.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-133.json",
+      "bytes": 2135,
+      "source_sha256": "66c936c7e4ff5dd7fb1b88e50425fdd672069b22717ea5d76f22f70457829d34",
+      "included": true,
+      "published_sha256": "66c936c7e4ff5dd7fb1b88e50425fdd672069b22717ea5d76f22f70457829d34",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-134.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-134.json",
+      "bytes": 2141,
+      "source_sha256": "b02d0b5e90a75652d382e08632e7be38d3dbe4d0abcca237a9a88a73f4922957",
+      "included": true,
+      "published_sha256": "b02d0b5e90a75652d382e08632e7be38d3dbe4d0abcca237a9a88a73f4922957",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-135.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-135.json",
+      "bytes": 2138,
+      "source_sha256": "037ed1293e6333d4c916dc3da639dca341ba230963bc48d90f8a376ebff3c855",
+      "included": true,
+      "published_sha256": "037ed1293e6333d4c916dc3da639dca341ba230963bc48d90f8a376ebff3c855",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-136.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-136.json",
+      "bytes": 2136,
+      "source_sha256": "d733f8011e2102730e7de7941ff4ed0386d2808b4bb4f9b3192e5c81100cee31",
+      "included": true,
+      "published_sha256": "d733f8011e2102730e7de7941ff4ed0386d2808b4bb4f9b3192e5c81100cee31",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-137.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-137.json",
+      "bytes": 2154,
+      "source_sha256": "9a14137720a404dc5e570b0cb6a420f4ba8fe4c6be9c34bb9d95437a5da024c1",
+      "included": true,
+      "published_sha256": "9a14137720a404dc5e570b0cb6a420f4ba8fe4c6be9c34bb9d95437a5da024c1",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-138.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-138.json",
+      "bytes": 2131,
+      "source_sha256": "0b9730fa810a91844b2c8bbaed797b1e6de5a4d8db145b3492f2eaa340b3b0f1",
+      "included": true,
+      "published_sha256": "0b9730fa810a91844b2c8bbaed797b1e6de5a4d8db145b3492f2eaa340b3b0f1",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d1-139.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d1-139.json",
+      "bytes": 2106,
+      "source_sha256": "d1ca6805ce3a2bf5772aa0bdcb45b9f02c77b2cc7b16ddd1e121bdc40a7d960a",
+      "included": true,
+      "published_sha256": "d1ca6805ce3a2bf5772aa0bdcb45b9f02c77b2cc7b16ddd1e121bdc40a7d960a",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-130.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-130.json",
+      "bytes": 2102,
+      "source_sha256": "d83e32a80bcfe7dd96e5f00c8329958df7184b13c721fe03fb89ce74e222b5f1",
+      "included": true,
+      "published_sha256": "d83e32a80bcfe7dd96e5f00c8329958df7184b13c721fe03fb89ce74e222b5f1",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-131.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-131.json",
+      "bytes": 2090,
+      "source_sha256": "55af1151909f249e682eced70a03669bf0d01bf4519f46b9da73c4a37b419a85",
+      "included": true,
+      "published_sha256": "55af1151909f249e682eced70a03669bf0d01bf4519f46b9da73c4a37b419a85",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-132.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-132.json",
+      "bytes": 2077,
+      "source_sha256": "574fe5a1e084507e43ecacde66947fa15f41bac608d96ec91168a0e5f438d4f6",
+      "included": true,
+      "published_sha256": "574fe5a1e084507e43ecacde66947fa15f41bac608d96ec91168a0e5f438d4f6",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-133.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-133.json",
+      "bytes": 2085,
+      "source_sha256": "f5a3ced1635b6756f4462540fdf0a81248227c9355ac6a7a1ae2155b9df42ed6",
+      "included": true,
+      "published_sha256": "f5a3ced1635b6756f4462540fdf0a81248227c9355ac6a7a1ae2155b9df42ed6",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-134.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-134.json",
+      "bytes": 2073,
+      "source_sha256": "07ab5c086330a0b78e6d006c48e93d5a744dd5fc07d83747549c22d571f81a2e",
+      "included": true,
+      "published_sha256": "07ab5c086330a0b78e6d006c48e93d5a744dd5fc07d83747549c22d571f81a2e",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-135.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-135.json",
+      "bytes": 2082,
+      "source_sha256": "b255647a15e12536328ae6527c3ac3adf2db20576d346a9621a545f2ef8ace8e",
+      "included": true,
+      "published_sha256": "b255647a15e12536328ae6527c3ac3adf2db20576d346a9621a545f2ef8ace8e",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-136.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-136.json",
+      "bytes": 2064,
+      "source_sha256": "3aa7a3d59aad14de77abbcb03cccd351be7d205eebc7db88099cd8cfa15b30b8",
+      "included": true,
+      "published_sha256": "3aa7a3d59aad14de77abbcb03cccd351be7d205eebc7db88099cd8cfa15b30b8",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-137.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-137.json",
+      "bytes": 2083,
+      "source_sha256": "bb46a486ad1176fd25aa1ad9c25c0229523f99b4655751b49a54ea1c477f71d0",
+      "included": true,
+      "published_sha256": "bb46a486ad1176fd25aa1ad9c25c0229523f99b4655751b49a54ea1c477f71d0",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-138.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-138.json",
+      "bytes": 2085,
+      "source_sha256": "2af3e9bedf7a1d582ce1e8ed78ba670af1568f668bd3617900b3fec990c1c494",
+      "included": true,
+      "published_sha256": "2af3e9bedf7a1d582ce1e8ed78ba670af1568f668bd3617900b3fec990c1c494",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d16-139.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d16-139.json",
+      "bytes": 2086,
+      "source_sha256": "20168b281393bba259e4fa05f1a4914be1c69e43bb468fcccf99028b461cb28b",
+      "included": true,
+      "published_sha256": "20168b281393bba259e4fa05f1a4914be1c69e43bb468fcccf99028b461cb28b",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-130.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-130.json",
+      "bytes": 2080,
+      "source_sha256": "7d8fec3b127bd6b6361659d0b31de45cfab11fd8290591d7b2697c87d09d290b",
+      "included": true,
+      "published_sha256": "7d8fec3b127bd6b6361659d0b31de45cfab11fd8290591d7b2697c87d09d290b",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-131.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-131.json",
+      "bytes": 2099,
+      "source_sha256": "501fb5b865b404391653ab909d209c875bd7e9118e0fc325e210fc3f960bf570",
+      "included": true,
+      "published_sha256": "501fb5b865b404391653ab909d209c875bd7e9118e0fc325e210fc3f960bf570",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-132.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-132.json",
+      "bytes": 2079,
+      "source_sha256": "abddfc5f39779ec7861a6987f423048a390589e607094da0ec9461f030464511",
+      "included": true,
+      "published_sha256": "abddfc5f39779ec7861a6987f423048a390589e607094da0ec9461f030464511",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-133.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-133.json",
+      "bytes": 2066,
+      "source_sha256": "f381ec6dd90f9402778c65c6188f249280a45587b237dd86e492dbe2bca8b625",
+      "included": true,
+      "published_sha256": "f381ec6dd90f9402778c65c6188f249280a45587b237dd86e492dbe2bca8b625",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-134.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-134.json",
+      "bytes": 2098,
+      "source_sha256": "0a4cee0b98b9d18bc6e8c998bfc0f6e0c4ff71c64582bbe5282646fa1944e43a",
+      "included": true,
+      "published_sha256": "0a4cee0b98b9d18bc6e8c998bfc0f6e0c4ff71c64582bbe5282646fa1944e43a",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-135.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-135.json",
+      "bytes": 2094,
+      "source_sha256": "536cfe3766d9057028a0bfb195167601c49e3fe68ca4e7aa6fc7578faeac426f",
+      "included": true,
+      "published_sha256": "536cfe3766d9057028a0bfb195167601c49e3fe68ca4e7aa6fc7578faeac426f",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-136.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-136.json",
+      "bytes": 2080,
+      "source_sha256": "9964188c44bfd7272a5d4421052a2e2ce94a8a6398f1f4efb81f2fa63c2eb954",
+      "included": true,
+      "published_sha256": "9964188c44bfd7272a5d4421052a2e2ce94a8a6398f1f4efb81f2fa63c2eb954",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-137.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-137.json",
+      "bytes": 2107,
+      "source_sha256": "87cda69d9398eeb334df7bc48cb9f0b7cf128bf46692a1629a4288ce8a7cb551",
+      "included": true,
+      "published_sha256": "87cda69d9398eeb334df7bc48cb9f0b7cf128bf46692a1629a4288ce8a7cb551",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-138.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-138.json",
+      "bytes": 2083,
+      "source_sha256": "a7d0ebf46f232a75591609912db052fb72af19071de5bb03110b17299760124b",
+      "included": true,
+      "published_sha256": "a7d0ebf46f232a75591609912db052fb72af19071de5bb03110b17299760124b",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d2-139.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d2-139.json",
+      "bytes": 2100,
+      "source_sha256": "485876b84329964842cb784c154bdd9aebc472a82b64945ee21b32b3a39643db",
+      "included": true,
+      "published_sha256": "485876b84329964842cb784c154bdd9aebc472a82b64945ee21b32b3a39643db",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-130.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-130.json",
+      "bytes": 2054,
+      "source_sha256": "6359d863d694532af23483ca4515608098c36b2a57affbbeb2200d2161238e7a",
+      "included": true,
+      "published_sha256": "6359d863d694532af23483ca4515608098c36b2a57affbbeb2200d2161238e7a",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-131.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-131.json",
+      "bytes": 2067,
+      "source_sha256": "c0bdf23df0c2225e0059b6adf6ea9755f8b4bd9c54d56da4062b388d912ebade",
+      "included": true,
+      "published_sha256": "c0bdf23df0c2225e0059b6adf6ea9755f8b4bd9c54d56da4062b388d912ebade",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-132.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-132.json",
+      "bytes": 2103,
+      "source_sha256": "5429a6fa04aa70cc7e2f5dd73f0cc291c4caeec988d17a0557692c999de082ae",
+      "included": true,
+      "published_sha256": "5429a6fa04aa70cc7e2f5dd73f0cc291c4caeec988d17a0557692c999de082ae",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-133.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-133.json",
+      "bytes": 2099,
+      "source_sha256": "17abb7b138ad12970dfdc48996968ff974c7c9f8bd0e682960b97398406f3a3c",
+      "included": true,
+      "published_sha256": "17abb7b138ad12970dfdc48996968ff974c7c9f8bd0e682960b97398406f3a3c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-134.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-134.json",
+      "bytes": 2112,
+      "source_sha256": "877444b2267f68259f1e014cdae8578a3abf56f8ca05b696067a213c74b8c63c",
+      "included": true,
+      "published_sha256": "877444b2267f68259f1e014cdae8578a3abf56f8ca05b696067a213c74b8c63c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-135.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-135.json",
+      "bytes": 2079,
+      "source_sha256": "a9ae5b50ae6e3408582b6f8ad9dc58017b67ba906f9e6fd627f0eb600aadb925",
+      "included": true,
+      "published_sha256": "a9ae5b50ae6e3408582b6f8ad9dc58017b67ba906f9e6fd627f0eb600aadb925",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-136.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-136.json",
+      "bytes": 2078,
+      "source_sha256": "d1ac0316d9aabf0a175e247f50ac0040a609702b7c7661a2023ee5d09aea01e1",
+      "included": true,
+      "published_sha256": "d1ac0316d9aabf0a175e247f50ac0040a609702b7c7661a2023ee5d09aea01e1",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-137.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-137.json",
+      "bytes": 2099,
+      "source_sha256": "934dc4bfefdb3eb9d8cad4b49eb39b90d4000ea6f4a0616153ef7a6693419e99",
+      "included": true,
+      "published_sha256": "934dc4bfefdb3eb9d8cad4b49eb39b90d4000ea6f4a0616153ef7a6693419e99",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-138.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-138.json",
+      "bytes": 2085,
+      "source_sha256": "ca242406e904062598be40e0850d0f56d1fe7d408fe0f549b7842e9f0a419a30",
+      "included": true,
+      "published_sha256": "ca242406e904062598be40e0850d0f56d1fe7d408fe0f549b7842e9f0a419a30",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d4-139.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d4-139.json",
+      "bytes": 2070,
+      "source_sha256": "c43359c47d348cf5107e0250dae338de18de04f20ebf2d745e9f1f19e159055c",
+      "included": true,
+      "published_sha256": "c43359c47d348cf5107e0250dae338de18de04f20ebf2d745e9f1f19e159055c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-130.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-130.json",
+      "bytes": 2076,
+      "source_sha256": "270f343fd68b69bc466d01dec52dc8497841da2f4849fc4cb2dbcb3b730f45b3",
+      "included": true,
+      "published_sha256": "270f343fd68b69bc466d01dec52dc8497841da2f4849fc4cb2dbcb3b730f45b3",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-131.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-131.json",
+      "bytes": 2097,
+      "source_sha256": "5e169aa7084727dd4cb251391f889b9547ebe42ebf26f1bedc0ed4ec58717933",
+      "included": true,
+      "published_sha256": "5e169aa7084727dd4cb251391f889b9547ebe42ebf26f1bedc0ed4ec58717933",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-132.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-132.json",
+      "bytes": 2086,
+      "source_sha256": "943e0524780a5c5f08820ceffacaf63857955497461f67e1a574699b96f13cd7",
+      "included": true,
+      "published_sha256": "943e0524780a5c5f08820ceffacaf63857955497461f67e1a574699b96f13cd7",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-133.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-133.json",
+      "bytes": 2054,
+      "source_sha256": "5fa490b8ee8a943ebc63675f8527ffddbf181ac23c1f7affdbf501c8a4483f8a",
+      "included": true,
+      "published_sha256": "5fa490b8ee8a943ebc63675f8527ffddbf181ac23c1f7affdbf501c8a4483f8a",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-134.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-134.json",
+      "bytes": 2080,
+      "source_sha256": "2768a77c5710c461d4b52a2bf2966d452065f062b585c1ac0312e0f00211aa5a",
+      "included": true,
+      "published_sha256": "2768a77c5710c461d4b52a2bf2966d452065f062b585c1ac0312e0f00211aa5a",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-135.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-135.json",
+      "bytes": 2066,
+      "source_sha256": "93d7d5715fb46d6c159901d95c8e40cb5afdb407a258b70d1b663fe2456f6938",
+      "included": true,
+      "published_sha256": "93d7d5715fb46d6c159901d95c8e40cb5afdb407a258b70d1b663fe2456f6938",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-136.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-136.json",
+      "bytes": 2067,
+      "source_sha256": "6585ff6f6381dae0a88bfa5ac0f8cd8d43f946249c2c9ce6d1283f696d0b8ea2",
+      "included": true,
+      "published_sha256": "6585ff6f6381dae0a88bfa5ac0f8cd8d43f946249c2c9ce6d1283f696d0b8ea2",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-137.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-137.json",
+      "bytes": 2075,
+      "source_sha256": "1104618ca69fb9973dba886aeb03fbc3e53f198de050f6398a3d509fbda8be67",
+      "included": true,
+      "published_sha256": "1104618ca69fb9973dba886aeb03fbc3e53f198de050f6398a3d509fbda8be67",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-138.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-138.json",
+      "bytes": 2098,
+      "source_sha256": "678b4cd82fbed93ce6ee60cd3823b9444061ed616d87972d2bce583e01cce5c2",
+      "included": true,
+      "published_sha256": "678b4cd82fbed93ce6ee60cd3823b9444061ed616d87972d2bce583e01cce5c2",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/cells/weighted-d8-139.json",
+      "destination": "multidim-sigreg/output/cells/weighted-d8-139.json",
+      "bytes": 2063,
+      "source_sha256": "26cc50ece82da46d29c77455426fe4d732535bfcbb3fd10baf625b03f6c17e88",
+      "included": true,
+      "published_sha256": "26cc50ece82da46d29c77455426fe4d732535bfcbb3fd10baf625b03f6c17e88",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/d2_embeddings.png",
+      "destination": "multidim-sigreg/output/d2_embeddings.png",
+      "bytes": 174133,
+      "source_sha256": "1c83d770a475d146bf59b9614b2b535d9571c032769a79633b2b8e00fd5dca1c",
+      "included": true,
+      "published_sha256": "1c83d770a475d146bf59b9614b2b535d9571c032769a79633b2b8e00fd5dca1c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/exploratory_spread.json",
+      "destination": "multidim-sigreg/output/exploratory_spread.json",
+      "bytes": 3284,
+      "source_sha256": "769a88fb88fbd9e948ec6fb2b21ae9b99314477e78e14a4d4093f768a78f114f",
+      "included": true,
+      "published_sha256": "769a88fb88fbd9e948ec6fb2b21ae9b99314477e78e14a4d4093f768a78f114f",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/protocol.sha256",
+      "destination": "multidim-sigreg/output/protocol.sha256",
+      "bytes": 78,
+      "source_sha256": "6614999fd4b86aefef2ce78da544450d43c1521c243dfacd56d28566acbd6e32",
+      "included": true,
+      "published_sha256": "6614999fd4b86aefef2ce78da544450d43c1521c243dfacd56d28566acbd6e32",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-130.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-130.pt",
+      "bytes": 26610,
+      "source_sha256": "45d2c909aff606e3807132538396e6b13b32611763ac9a18877ccc95484e5b03",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-131.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-131.pt",
+      "bytes": 26610,
+      "source_sha256": "e6a9e1f929ef9c6c5f4d5baade6c5f8c049f0839aa856c9033aebe3938da05e4",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-132.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-132.pt",
+      "bytes": 26610,
+      "source_sha256": "cc37d1699ee0438b12071f0fdab4f6b88e356159a1f1f93cc62ecc3082d470be",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-133.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-133.pt",
+      "bytes": 26610,
+      "source_sha256": "7081399f4ff7a7690f3e4287cff79c99c49f639e72b645b7f4bf6c586b11d587",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-134.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-134.pt",
+      "bytes": 26610,
+      "source_sha256": "a05f5a064cbf1fd6558aff5428b6fbd2f185d2a3b53b1aaed42233174597df1c",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-135.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-135.pt",
+      "bytes": 26610,
+      "source_sha256": "487e674c5216ccf50bb3e3f0f431d44fd4ba894dac91ba55305f4ce6cd71f2f7",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-136.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-136.pt",
+      "bytes": 26610,
+      "source_sha256": "bfd10da0b5754f98d16fb291f62db65d2d7feae33bd90038e443591192dd484d",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-137.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-137.pt",
+      "bytes": 26610,
+      "source_sha256": "fc479005a8b41008e6dc99dba268173943eb7e13ec5f9ac36377bbbe7258bab6",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-138.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-138.pt",
+      "bytes": 26610,
+      "source_sha256": "36ed75d0fb3dd09ba0af55b3e0f8f3795ccc9cbfb968e86eb5d1b85a9eb7ca1b",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d1-139.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d1-139.pt",
+      "bytes": 26610,
+      "source_sha256": "eaaf687dd067cfc73e536e7d31c0a26234a43aebaf3ed3b0c2d2b5e3a03fb3be",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-130.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-130.pt",
+      "bytes": 32370,
+      "source_sha256": "58621270d265bcf0842648bd0a1147b397a27615984ad246f3bbe37ee44eac8f",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-131.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-131.pt",
+      "bytes": 32370,
+      "source_sha256": "6f1239ef597d85cd524394925e176b87fab1412cad45f9a511c77dd39aa985d6",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-132.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-132.pt",
+      "bytes": 32370,
+      "source_sha256": "7571397e3fa54e35a5a5f90deb3cb378ac0bd9aeba513622a0f0539b0db25a40",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-133.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-133.pt",
+      "bytes": 32370,
+      "source_sha256": "5dfa7a0c6606a02b1d37754e254b61a5d953860c32ce81b80ca3421d784934e3",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-134.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-134.pt",
+      "bytes": 32370,
+      "source_sha256": "1a9b99c91251f061963b8383e5c7b6e317c26718feac30da03fe60a9328e2537",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-135.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-135.pt",
+      "bytes": 32370,
+      "source_sha256": "72f2648d3858d38d36b29b29b01dd4b2da649c4a91b72639fecc17b5ed11892d",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-136.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-136.pt",
+      "bytes": 32370,
+      "source_sha256": "fc6ab1921bf4e872b935d710623c5fd2dae146b7769f5ebe8e2ec9df73b17e29",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-137.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-137.pt",
+      "bytes": 32370,
+      "source_sha256": "fc0d99a8093da5d343600abc7e2d4b279ee65cf94061f6d8e8b071bbcab8a988",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-138.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-138.pt",
+      "bytes": 32370,
+      "source_sha256": "2766862ab938fe9c73f9ad7d12b6c08f2b9b7c32551172ace1a596c8c657d122",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d16-139.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d16-139.pt",
+      "bytes": 32370,
+      "source_sha256": "a464c4e4de3879b4bfedfad62b0515e3f8ac1c9174fab1ab5574628028cceb3f",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-130.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-130.pt",
+      "bytes": 26994,
+      "source_sha256": "f9e47fc6a60c200c98cb65f65220a9e2314a6b3141674bf1714f7ac5bda80b4b",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-131.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-131.pt",
+      "bytes": 26994,
+      "source_sha256": "645f372f18bdebae23e53557ea6e74dfb73629c363b5b833a458db14cb4f57b1",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-132.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-132.pt",
+      "bytes": 26994,
+      "source_sha256": "0c1d2aebbac6a59c0d62c5af84e6b60569ae9b715f285ac13a422a10586f9b3e",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-133.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-133.pt",
+      "bytes": 26994,
+      "source_sha256": "24b24c048b1649fe9cacda0f20d722c7b4f92c3a4f42cb0e795bb57d329e0350",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-134.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-134.pt",
+      "bytes": 26994,
+      "source_sha256": "953c2d29cc888027663c8e74d6fc53c7239d14f799ba69a269fba5eabde36cd5",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-135.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-135.pt",
+      "bytes": 26994,
+      "source_sha256": "ab4f96addb3ab75b4ed9f2e6fffc5f5451412a004c7f32f7220cf5a15747dfc5",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-136.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-136.pt",
+      "bytes": 26994,
+      "source_sha256": "4a9dd8f9146a7951933716009e96a6f5e86c5e6d810be4a377b6be752e6c9bb7",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-137.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-137.pt",
+      "bytes": 26994,
+      "source_sha256": "354faa5a8fc11f2522e92751536e57eae33c3b679ef2b89ec3ce625afc04d615",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-138.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-138.pt",
+      "bytes": 26994,
+      "source_sha256": "736387408f20b66a5d62da175a81f635bd6b23b29bb892f264bb058d4cbcfbba",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d2-139.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d2-139.pt",
+      "bytes": 26994,
+      "source_sha256": "43258036a8655cfc55ba13ab69e669b3fbd96a574651240f8e8a727f689f5f80",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-130.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-130.pt",
+      "bytes": 27762,
+      "source_sha256": "251545efde8022eacfa95a5bd25a26a78d1040929d3cac243d3eb411d1c62219",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-131.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-131.pt",
+      "bytes": 27762,
+      "source_sha256": "d4ebeb96f3166ccba2a9eb7563e81f294059b6d08c15d3244f006b1e7f00bab9",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-132.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-132.pt",
+      "bytes": 27762,
+      "source_sha256": "de0831a9a7b6a5615a3ca673d4f447753a5fce71c0df7bc5142ab640d3c7a77a",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-133.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-133.pt",
+      "bytes": 27762,
+      "source_sha256": "203668bea81c355599f98f117cb937d5c2150763153579c82f43eb3bf80f3e12",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-134.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-134.pt",
+      "bytes": 27762,
+      "source_sha256": "eb1458d10b66fc394994e5ef83c745ffb6239bff890aa0d9d02131f353f39844",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-135.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-135.pt",
+      "bytes": 27762,
+      "source_sha256": "f5e4cfbc1d370537a15c3cd7432403e60a53b3389ba064b9eddd82aa95a80f42",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-136.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-136.pt",
+      "bytes": 27762,
+      "source_sha256": "9be59f564c8719e622106d7253e0c52f728cc9592e1829f92a6f55ee5c5979c4",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-137.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-137.pt",
+      "bytes": 27762,
+      "source_sha256": "7a71f7d7fab1272c6f7133bef4659feab8d96bacd3415931c7d81430b087cc20",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-138.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-138.pt",
+      "bytes": 27762,
+      "source_sha256": "9818cc2c9ea6a9818ca7d45211d42fff01ab79bbd26138b06547a43955f99824",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d4-139.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d4-139.pt",
+      "bytes": 27762,
+      "source_sha256": "53a29eee726e37c2e85f14280caa8d33876e3e59d48ecf05d4d6d980598172d4",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-130.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-130.pt",
+      "bytes": 29298,
+      "source_sha256": "40ffabdc254bac93a9eaff53fed1b656f9472ddd226104ecb967496a604995c6",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-131.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-131.pt",
+      "bytes": 29298,
+      "source_sha256": "3fef0535497ef4bf984a62b6efa7917ffe3bfd65f0ff043848436b6614135581",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-132.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-132.pt",
+      "bytes": 29298,
+      "source_sha256": "e7e61ac6a8c77675cacd36b17df750b7e7fe1301f5bf4c3a92c028e0427abbea",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-133.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-133.pt",
+      "bytes": 29298,
+      "source_sha256": "39f628e5389a65017c49a330170e5c9f8da1090d6afaf0dff5524ab698b93748",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-134.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-134.pt",
+      "bytes": 29298,
+      "source_sha256": "42251c3fc2d3dd5860dad3fb8ac40ab8d2c8bbff3b2c08ed7abb09e81f2bd55a",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-135.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-135.pt",
+      "bytes": 29298,
+      "source_sha256": "2304d1b04982b9da10310eed5d7d4c5b8be7d11f85545b63d31d4c9b796c997d",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-136.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-136.pt",
+      "bytes": 29298,
+      "source_sha256": "2556fc0ac81051d4726359aac8eb9ac052b87f763c517b51a4be83d2c2caa8c5",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-137.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-137.pt",
+      "bytes": 29298,
+      "source_sha256": "f0ae3cf743a18708403f255325a91d1112526e8cfaf630fa6d4ea8a324862d4d",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-138.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-138.pt",
+      "bytes": 29298,
+      "source_sha256": "31b21f95e0c89785214125e49105a249f2b075355e7f56d6325c2e67a965d539",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/ordinary-d8-139.pt",
+      "destination": "multidim-sigreg/output/runs/ordinary-d8-139.pt",
+      "bytes": 29298,
+      "source_sha256": "c613215556f95b57c08c4c4b3800c16bf6a38b525fdc822201ac778a91e3a089",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-130.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-130.pt",
+      "bytes": 26610,
+      "source_sha256": "485e820b652a4187497d9fd0bf4ec704ebc16d5b3c6b5afc438349a685ded75f",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-131.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-131.pt",
+      "bytes": 26610,
+      "source_sha256": "e44d122204c58b7c21f35ee929bf1a16e3a40f833b28162e2774d16dec52e898",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-132.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-132.pt",
+      "bytes": 26610,
+      "source_sha256": "e5f08ad45dee8027eccc94c6d812d5e947ec405962275b4065545d9889144bef",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-133.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-133.pt",
+      "bytes": 26610,
+      "source_sha256": "05435a9d31f4dacab13ee8efff483ab9327889183a48ea3a7b8d34acd2343e55",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-134.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-134.pt",
+      "bytes": 26610,
+      "source_sha256": "6a9e8e25d0292057ad962c1b40f6ba3cd3ef557668c3c51c44fa87542ad266c4",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-135.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-135.pt",
+      "bytes": 26610,
+      "source_sha256": "b0baa31234fed62435107be2a0825d879ed4408b422cdc976d430a389e1f6ccd",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-136.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-136.pt",
+      "bytes": 26610,
+      "source_sha256": "ba8773bd769f2cea6f4dd3edfb4161252e9a155fb665bb2c6acfbde62d4b6a4c",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-137.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-137.pt",
+      "bytes": 26610,
+      "source_sha256": "57e0ec8119ad8178ddde222d1a1a8ea9e1a38f02ff5a79eaf13c1c4c1294f375",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-138.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-138.pt",
+      "bytes": 26610,
+      "source_sha256": "147f8f5d379e5caa7dbd3c020bb1b2fa924f6a6856973d8e9a9cfa83ec4f117a",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d1-139.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d1-139.pt",
+      "bytes": 26610,
+      "source_sha256": "a475ebb86e962ac0860b65a79d638eab2d0ee4e27b3917e57ec19f3aed1a12ad",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-130.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-130.pt",
+      "bytes": 32370,
+      "source_sha256": "3a243a63e45650a85b76111780266bb2b9020abc14a1fcbe7633a767ddee9913",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-131.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-131.pt",
+      "bytes": 32370,
+      "source_sha256": "b32a56e894c6e200aa5f38006bf4785c7687430c006590090bf811d8c6639a49",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-132.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-132.pt",
+      "bytes": 32370,
+      "source_sha256": "15f96d07f11f29853712d8f9b57d3ce913847a9abe2980284bdabe12576750f6",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-133.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-133.pt",
+      "bytes": 32370,
+      "source_sha256": "3517dcb6ae5a55b6f6227d93cdb32e2c66fdbe827d370b7090f5fd22e2647734",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-134.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-134.pt",
+      "bytes": 32370,
+      "source_sha256": "f15aecb4a2fccb27f2ebb6e1e8b8f8a1ec5669f40092357cb27afff8b1e8f4cb",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-135.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-135.pt",
+      "bytes": 32370,
+      "source_sha256": "85c44d77de6df152e01b38b36fad67c7168b371e93eb17eb752eec146355f090",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-136.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-136.pt",
+      "bytes": 32370,
+      "source_sha256": "6a5f8c44c9ac2bbe91de9b04b7e3552bfabe9db2db6df585c7cbbe4663c2813d",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-137.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-137.pt",
+      "bytes": 32370,
+      "source_sha256": "8212fa2d6c1deb6faccc5cb9444341220abc81ec279f3aa4c9a9c0fa79ced514",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-138.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-138.pt",
+      "bytes": 32370,
+      "source_sha256": "2c64aa8dc2c7a92c26a1762a97365900f68b85e459779871697c570beb4897fa",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d16-139.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d16-139.pt",
+      "bytes": 32370,
+      "source_sha256": "de36aea8d920fcc84e2ae5b6077844b6bd0c646f6fdaafb219f01d570274a3c2",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-130.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-130.pt",
+      "bytes": 26994,
+      "source_sha256": "cbe11b5c5d2bb8c04fa8e826b29cf0d0d19e79fb0389b26332cde7ca4da1bc9d",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-131.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-131.pt",
+      "bytes": 26994,
+      "source_sha256": "16c7971fe68d353a0b3709ba0916a31df674fcb6589f977be838a6728b45491a",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-132.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-132.pt",
+      "bytes": 26994,
+      "source_sha256": "31f7779c1f7a74e7a0e6f5464c56f084a12fda7db0d75005dc2f354fefd562af",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-133.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-133.pt",
+      "bytes": 26994,
+      "source_sha256": "700125c28f575ee4464705a5150a376b2562f7b5bd9e84076952720917549066",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-134.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-134.pt",
+      "bytes": 26994,
+      "source_sha256": "0a650ea36c7de6a3059f31753b552ef21a4f1388134569ec5203854311b2a5ee",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-135.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-135.pt",
+      "bytes": 26994,
+      "source_sha256": "bde5ceb39eff449bf4e87e1220aeed300bc48f39598bc084de4d472ce99ec925",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-136.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-136.pt",
+      "bytes": 26994,
+      "source_sha256": "7d6fe521c65f8a8704acad4496e3edae097b8c79dc42a4ad43fc292467388294",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-137.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-137.pt",
+      "bytes": 26994,
+      "source_sha256": "1916da55848d736112cd900e5487f311107725d7b87824b0ccc2bb39f8209c80",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-138.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-138.pt",
+      "bytes": 26994,
+      "source_sha256": "0aa44d7d0313d0aba4afa07b9168da9765d26bd1b8b9ddf6a71c441869ad7eb5",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d2-139.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d2-139.pt",
+      "bytes": 26994,
+      "source_sha256": "0f2d81e99bfb2b0fe8d3da6b31fc9a1b6e37e433897a4df0ce51c99eba3bf9a6",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-130.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-130.pt",
+      "bytes": 27762,
+      "source_sha256": "c3734d56817f07bacfaeb41acb964a4ac819975ce78d7ef528f05c7287fe9370",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-131.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-131.pt",
+      "bytes": 27762,
+      "source_sha256": "a107fb72d1328e22961defda09dbd175a8ccb406e113a317336ee86b45a2a323",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-132.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-132.pt",
+      "bytes": 27762,
+      "source_sha256": "5f02e833700ce8f3b27602e0f6a006026dddd2332a36b00fa00cbef4194522f9",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-133.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-133.pt",
+      "bytes": 27762,
+      "source_sha256": "5d966391578b5b0499c9d4cff14398f4711f4a2196897c07d3ef31aee46bfd66",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-134.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-134.pt",
+      "bytes": 27762,
+      "source_sha256": "a346f12015dc4c438e09a913ab8bddf998bb5634049f23efa584e80c1d65350e",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-135.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-135.pt",
+      "bytes": 27762,
+      "source_sha256": "eaf69a96f0ffa8890052021e592879c2d0a975ce80ab176230f37780f59efcc3",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-136.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-136.pt",
+      "bytes": 27762,
+      "source_sha256": "612e4e6ff13d3cfa8ee34b19dfa07b6297809eb2a05eb356a5775a992206eae8",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-137.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-137.pt",
+      "bytes": 27762,
+      "source_sha256": "3a83aec4d7ae6195e6bc76bd1654f359cab567f62f4a8653934677da5ec0d4e2",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-138.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-138.pt",
+      "bytes": 27762,
+      "source_sha256": "ede67d168d25301c18630bb5aaad0c3e5c4eb0b0c8b4a5083e0d1e9be1c46014",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d4-139.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d4-139.pt",
+      "bytes": 27762,
+      "source_sha256": "52cec979813d15c945bba8dfe6f57f12be10cf169f8bf7099b438b4d3cdf0e4a",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-130.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-130.pt",
+      "bytes": 29298,
+      "source_sha256": "52fb2ef487e23c37512cd3cf09d43727070b149eb94d7bdd52ed70e52d05b50c",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-131.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-131.pt",
+      "bytes": 29298,
+      "source_sha256": "258249ebc2275a55415effc469ebc53a12ba1da1f488e873294c1f75719d4f5a",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-132.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-132.pt",
+      "bytes": 29298,
+      "source_sha256": "21b2d7ebb2afd6df381693b834060c1418d553182f21a91bfeaadb5926bbe498",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-133.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-133.pt",
+      "bytes": 29298,
+      "source_sha256": "5b96349c48d3c5f519b8e0d099c57b39e729f9a77523f504ded6a70b5e46adf6",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-134.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-134.pt",
+      "bytes": 29298,
+      "source_sha256": "a95a1022eeec613b0a43de44fcde9dcd80bea0cd2b9574643f76623af690072d",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-135.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-135.pt",
+      "bytes": 29298,
+      "source_sha256": "c437e4c8f513643a49b3ac8c60f8c7fe20e11824601056abee5d06dcde399ddc",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-136.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-136.pt",
+      "bytes": 29298,
+      "source_sha256": "adb009d663d277b818f2da4a2d215c965dc1b81de86b1038ff314a77a38d59ee",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-137.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-137.pt",
+      "bytes": 29298,
+      "source_sha256": "48a0fb9446ba5448d64211fc73cdf0f8ab59e5acdedc43e2785c50dd820344c5",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-138.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-138.pt",
+      "bytes": 29298,
+      "source_sha256": "30c6f4810e4a8cab42fbac7e3cf08268d7d8d7903cfb222b95529fb1e248dc32",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/runs/weighted-d8-139.pt",
+      "destination": "multidim-sigreg/output/runs/weighted-d8-139.pt",
+      "bytes": 29298,
+      "source_sha256": "2f57fcf3b24a9eb59062a45e4488c8ac92b74e7b89a9fd37f233e1df7d5e38b5",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/output/summary.json",
+      "destination": "multidim-sigreg/output/summary.json",
+      "bytes": 47410,
+      "source_sha256": "f7170fbcc6ded51706abbb229bd9473bac1898f26028564171262959b6a8ac5c",
+      "included": true,
+      "published_sha256": "f7170fbcc6ded51706abbb229bd9473bac1898f26028564171262959b6a8ac5c",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/run.py",
+      "destination": "multidim-sigreg/run.py",
+      "bytes": 20010,
+      "source_sha256": "8db2f6564385f382a7a63b823012f9c80cc5735fb6d0771099f94babed24a0ba",
+      "included": true,
+      "published_sha256": "8db2f6564385f382a7a63b823012f9c80cc5735fb6d0771099f94babed24a0ba",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multidim-sigreg/spread.py",
+      "destination": "multidim-sigreg/spread.py",
+      "bytes": 2641,
+      "source_sha256": "4d5cc4ea2ca1258abd8d73549913d3c4a8bad9f6dd2c26d8d15963184879edf6",
+      "included": true,
+      "published_sha256": "4d5cc4ea2ca1258abd8d73549913d3c4a8bad9f6dd2c26d8d15963184879edf6",
+      "adapted": false
+    },
+    {
       "source": "icm-folding/README.md",
       "destination": "README.md",
-      "bytes": 17741,
-      "source_sha256": "3342a3a71fe5174696c4934d230d7191f5164325cb50952f8d2883fca0431ed6",
+      "bytes": 18528,
+      "source_sha256": "f2a0ada83a6095d23a7657014d388d04aeebf7d32df1d619ec76a5454cda5455",
       "included": true,
-      "published_sha256": "d2d2b0ab9259fe7089b866b333b5b57292ad0dbd2401e63b072919df59bcc118",
+      "published_sha256": "af1a799052736a4ec097946bb132174060f325e99d12f32cceebc3788309740e",
       "adapted": true
     },
     {
       "source": "icm-folding/PROGRESS.md",
       "destination": "PROGRESS.md",
-      "bytes": 70092,
-      "source_sha256": "7e37da7ca3ec40e072cdcb356cb4a211552e5ab341d68f06561c804a74b38039",
+      "bytes": 72245,
+      "source_sha256": "401cbd0e15e410025ce5f062287e10fb8a9f44dd9768a7f78deaa96778d6e8ca",
       "included": true,
-      "published_sha256": "ad18d889351e45e7f0be6b344aebc11e977e77339f5843f88bc76f5dace9c27e",
+      "published_sha256": "fad4f0402338ed8ad6df43226abea25224d2d98c14b8e28eb0afe68db673df5a",
       "adapted": true
     },
     {
       "source": "icm-folding/export_github.py",
       "destination": "export_github.py",
-      "bytes": 12446,
-      "source_sha256": "2b6038bf88627d06dcf575a16ed87ae65afc2be04a7d440645d104676f352034",
+      "bytes": 12678,
+      "source_sha256": "c3f5f3a932ec3e14933441dce2921091a53cadf35d869576e430f31d3ac23e86",
       "included": true,
-      "published_sha256": "2b6038bf88627d06dcf575a16ed87ae65afc2be04a7d440645d104676f352034",
+      "published_sha256": "c3f5f3a932ec3e14933441dce2921091a53cadf35d869576e430f31d3ac23e86",
       "adapted": false
     }
   ],

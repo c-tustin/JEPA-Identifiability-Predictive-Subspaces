@@ -1,6 +1,29 @@
 # Merged progress: ICM policy, folding, and repairs
 
-Updated November 25, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+Updated November 26, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+
+## November 26: Multi-dimensional SIGReg: no aliasing, but the occupancy cost remains (completed, pre-registered)
+
+- **Design.** [multidim-sigreg](multidim-sigreg/README.md), [protocol](multidim-sigreg/PROTOCOL.md) hash-locked.
+  Sources 130–139 × D ∈ {1, 2, 4, 8, 16} × {ordinary, weighted}, for 100 fits. The original trainer is used with only the
+  output layer changed. SIGReg is averaged over 64 random unit projections per step. A state is aliased if a state more
+  than four moves away embeds closer than its one-move neighbour.
+- **Checks.** D = 1 reproduces the stored 1-d checkpoints bit-for-bit in both arms (20/20), and the D = 1 downstream
+  harness reproduces Protocol 1 exactly. At D = 1 the aliasing measure flags exactly the five folded sources.
+- **Results.** 0/40 ordinary fits with D ≥ 2 are aliased; the closest far pair is still ≥ 1.67 one-move displacements
+  away. Next-obs MSE falls from 0.195 (D = 1) to 0.0014–0.0057, and near-goal success is 92–96%. Standard-goal planning
+  stays poor under ordinary SIGReg (0.53–0.92, worsening with D) against weighted (0.14–0.30); weighted is better in 36/40
+  pairs and on next-obs in 37/40.
+- **Exploratory mechanism.** Ordinary SIGReg at D ≥ 2 lays the line out nearly straight. It stretches the dense near
+  region (about 11% of native data outside 3√D, code norms 22–53) and compresses the far region (per-move displacement
+  1–1.5% of the near region's, against 8–9% for weighted).
+- **Predictions.** M1 held. M2 and M3 failed (no aliasing at any D ≥ 2). M4 and M5 are not testable.
+- **Meaning.** Folding is a scalar-bottleneck phenomenon in this world. The skewed occupancy still produces a costly,
+  non-Gaussian code through compression, which occupancy weighting fixes.
+- **Limits.** One-dimensional state, so this does not test aliasing across several state dimensions. Small D and few
+  projections. Privileged weights.
+- **Next.** A world with multi-dimensional state (for example 2-d position with skewed occupancy), where the embedding
+  dimension can be below, equal to, or above the state dimension. And a label-free occupancy correction.
 
 ## November 25: Downstream value of trained repairs (completed, pre-registered)
 
