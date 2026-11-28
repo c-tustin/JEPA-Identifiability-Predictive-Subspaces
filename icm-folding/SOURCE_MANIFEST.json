@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-26",
+  "date": "2026-11-27",
   "files": [
     {
       "source": "explanations/occupancy-folding/PROTOCOL.md",
@@ -46769,30 +46769,366 @@
       "adapted": false
     },
     {
+      "source": "icm-folding/multistate-sigreg/PROTOCOL.md",
+      "destination": "multistate-sigreg/PROTOCOL.md",
+      "bytes": 5698,
+      "source_sha256": "23d65eba7765dd45ec9f4f8bb1da80759acc6e206db6bc1216428878e0c6a24b",
+      "included": true,
+      "published_sha256": "23d65eba7765dd45ec9f4f8bb1da80759acc6e206db6bc1216428878e0c6a24b",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/README.md",
+      "destination": "multistate-sigreg/README.md",
+      "bytes": 1682,
+      "source_sha256": "9d91d45bc9c0b8a1f8f77afd2e2260df321d2830ecbbe792352ff6ea06338973",
+      "included": true,
+      "published_sha256": "9d91d45bc9c0b8a1f8f77afd2e2260df321d2830ecbbe792352ff6ea06338973",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-ordinary-d8-0.json",
+      "destination": "multistate-sigreg/output/cells/balanced-ordinary-d8-0.json",
+      "bytes": 2137,
+      "source_sha256": "a016454075496d1361b97debf5438577c71faf09e3b5171efbecf834dc4b7385",
+      "included": true,
+      "published_sha256": "a016454075496d1361b97debf5438577c71faf09e3b5171efbecf834dc4b7385",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-ordinary-d8-1.json",
+      "destination": "multistate-sigreg/output/cells/balanced-ordinary-d8-1.json",
+      "bytes": 2127,
+      "source_sha256": "388a1f89478e73b792925efb814b55a7184a337331e429f8ab6a26d0fe5b2189",
+      "included": true,
+      "published_sha256": "388a1f89478e73b792925efb814b55a7184a337331e429f8ab6a26d0fe5b2189",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-ordinary-d8-2.json",
+      "destination": "multistate-sigreg/output/cells/balanced-ordinary-d8-2.json",
+      "bytes": 2130,
+      "source_sha256": "2bd428b9c5f35c745810423ed4cb4ce712fd2b1e18da9890901e99c3b7b703d0",
+      "included": true,
+      "published_sha256": "2bd428b9c5f35c745810423ed4cb4ce712fd2b1e18da9890901e99c3b7b703d0",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-ordinary-d8-3.json",
+      "destination": "multistate-sigreg/output/cells/balanced-ordinary-d8-3.json",
+      "bytes": 2127,
+      "source_sha256": "c41ce40264ba8da9533107c1f49331631f25f53becaaac792e24fb73e67e125a",
+      "included": true,
+      "published_sha256": "c41ce40264ba8da9533107c1f49331631f25f53becaaac792e24fb73e67e125a",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-ordinary-d8-4.json",
+      "destination": "multistate-sigreg/output/cells/balanced-ordinary-d8-4.json",
+      "bytes": 2130,
+      "source_sha256": "5b9099c124403a371d1e106857742353c28ae7479d4d1d730cd2643d9291a4f3",
+      "included": true,
+      "published_sha256": "5b9099c124403a371d1e106857742353c28ae7479d4d1d730cd2643d9291a4f3",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-weighted-d8-0.json",
+      "destination": "multistate-sigreg/output/cells/balanced-weighted-d8-0.json",
+      "bytes": 2131,
+      "source_sha256": "f5c5a83bb0401879babcf5c0be67eb9f69d4de5a153aba9d133df7a363f3511e",
+      "included": true,
+      "published_sha256": "f5c5a83bb0401879babcf5c0be67eb9f69d4de5a153aba9d133df7a363f3511e",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-weighted-d8-1.json",
+      "destination": "multistate-sigreg/output/cells/balanced-weighted-d8-1.json",
+      "bytes": 2126,
+      "source_sha256": "8faf52255d096e554862493876c16ef44bec445cca04b3bc53851f71a76199f5",
+      "included": true,
+      "published_sha256": "8faf52255d096e554862493876c16ef44bec445cca04b3bc53851f71a76199f5",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-weighted-d8-2.json",
+      "destination": "multistate-sigreg/output/cells/balanced-weighted-d8-2.json",
+      "bytes": 2131,
+      "source_sha256": "4fec7427f719f4e89104db9552447d1f7a13bd839d341c70539ac87def60da36",
+      "included": true,
+      "published_sha256": "4fec7427f719f4e89104db9552447d1f7a13bd839d341c70539ac87def60da36",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-weighted-d8-3.json",
+      "destination": "multistate-sigreg/output/cells/balanced-weighted-d8-3.json",
+      "bytes": 2134,
+      "source_sha256": "0f0146ca7dbd1059d97ed80b3d7eb1642c02df720725f86904957f9cdcd00c29",
+      "included": true,
+      "published_sha256": "0f0146ca7dbd1059d97ed80b3d7eb1642c02df720725f86904957f9cdcd00c29",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/cells/balanced-weighted-d8-4.json",
+      "destination": "multistate-sigreg/output/cells/balanced-weighted-d8-4.json",
+      "bytes": 2123,
+      "source_sha256": "5a0dded1091127db0d31021c47d8cabc0c45dc8ee5e17979af8b7972e0500a2a",
+      "included": true,
+      "published_sha256": "5a0dded1091127db0d31021c47d8cabc0c45dc8ee5e17979af8b7972e0500a2a",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/balanced-0.pt",
+      "destination": "multistate-sigreg/output/data/balanced-0.pt",
+      "bytes": 1444581,
+      "source_sha256": "961013735010b160e2f0f5e56587dabac1664839660a0d3c152369d7ede111af",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/balanced-1.pt",
+      "destination": "multistate-sigreg/output/data/balanced-1.pt",
+      "bytes": 1444581,
+      "source_sha256": "d835c57fb81d31e7de72b4547ec0a4acc25e75d9ed43bfe2bb6818a51016f3a7",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/balanced-2.pt",
+      "destination": "multistate-sigreg/output/data/balanced-2.pt",
+      "bytes": 1444581,
+      "source_sha256": "2d7b002ee17b5b79e583a03deea22a5337b346f9366610db6605da3bc78d3435",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/balanced-3.pt",
+      "destination": "multistate-sigreg/output/data/balanced-3.pt",
+      "bytes": 1444581,
+      "source_sha256": "11291506e84c5b8a9c38258925819239c76601c409bf1f0b8966f903799a2e23",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/balanced-4.pt",
+      "destination": "multistate-sigreg/output/data/balanced-4.pt",
+      "bytes": 1444581,
+      "source_sha256": "4d4a905753a7e5f19a0ac2e6c5dd9944b101f1635a7ae53a52901da5d44992ff",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/shared-0.pt",
+      "destination": "multistate-sigreg/output/data/shared-0.pt",
+      "bytes": 1444559,
+      "source_sha256": "d4a2170257545dd6833e2cdc982aed1da471f374fe64a06f241c207f781d97a3",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/shared-1.pt",
+      "destination": "multistate-sigreg/output/data/shared-1.pt",
+      "bytes": 1444559,
+      "source_sha256": "8f815897c6fc08f8aba751c8a2966d299776040ae03e42e5ed1250e37defa67f",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/shared-2.pt",
+      "destination": "multistate-sigreg/output/data/shared-2.pt",
+      "bytes": 1444559,
+      "source_sha256": "4d591fc826693e49040019081e00c7751f9b99f6734c7e1d581bf6a8a4dc10a9",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/shared-3.pt",
+      "destination": "multistate-sigreg/output/data/shared-3.pt",
+      "bytes": 1444559,
+      "source_sha256": "2e58090799fcacad8768b100ce4533f76877aa4b953c06ea5539fa5ef0ea6699",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/shared-4.pt",
+      "destination": "multistate-sigreg/output/data/shared-4.pt",
+      "bytes": 1444559,
+      "source_sha256": "1b66c513b1fabf49fed8ce4b1fcf5568a1eaaffdb716c1aed79e96c73b4daa74",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-d-0.pt",
+      "destination": "multistate-sigreg/output/data/skew-d-0.pt",
+      "bytes": 1444559,
+      "source_sha256": "9c9c6159b3cfba7988bf1e43515ae0359b2460b847397af41a39eb63cebf475e",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-d-1.pt",
+      "destination": "multistate-sigreg/output/data/skew-d-1.pt",
+      "bytes": 1444559,
+      "source_sha256": "bdf99ed84971b9629f3c4c1085bf845cc574d8df55348e62ba1b1607865e69e0",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-d-2.pt",
+      "destination": "multistate-sigreg/output/data/skew-d-2.pt",
+      "bytes": 1444559,
+      "source_sha256": "058bba934f0e0505c602c393035c563d4501d0e431f9894a949a6d01e8eae4a8",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-d-3.pt",
+      "destination": "multistate-sigreg/output/data/skew-d-3.pt",
+      "bytes": 1444559,
+      "source_sha256": "07ee39ce3d1af1ecb7a2231e81e8508963d95e1926c53f913fcc93bea21bc784",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-d-4.pt",
+      "destination": "multistate-sigreg/output/data/skew-d-4.pt",
+      "bytes": 1444559,
+      "source_sha256": "b42da6623d97ba496a9fd49f67e62b8521882efea62b71ab293d051baf232270",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-db-0.pt",
+      "destination": "multistate-sigreg/output/data/skew-db-0.pt",
+      "bytes": 1444570,
+      "source_sha256": "0de2aaae9a203a97f1d9e842ce53eed90673a182c2df662744c039708bb77e43",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-db-1.pt",
+      "destination": "multistate-sigreg/output/data/skew-db-1.pt",
+      "bytes": 1444570,
+      "source_sha256": "45c4254d202c63e9360cda87e84b66ffdf506b31a7a3d5659673f6d2172674ae",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-db-2.pt",
+      "destination": "multistate-sigreg/output/data/skew-db-2.pt",
+      "bytes": 1444570,
+      "source_sha256": "ffda0c8a42c4ed3fc58bf3d3d70e6173a49d9faee107ef7b212a7a44d5a7aea9",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-db-3.pt",
+      "destination": "multistate-sigreg/output/data/skew-db-3.pt",
+      "bytes": 1444570,
+      "source_sha256": "31b20ed3e8380725fadad9f836d850b5833a9689093fdc4e91007f47e69f5989",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/data/skew-db-4.pt",
+      "destination": "multistate-sigreg/output/data/skew-db-4.pt",
+      "bytes": 1444570,
+      "source_sha256": "17610c8ab8864b6c43ec6073f2c88ebe4fc593d836a7af8ad33d894fa694a848",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/protocol.sha256",
+      "destination": "multistate-sigreg/output/protocol.sha256",
+      "bytes": 78,
+      "source_sha256": "09cd2aec2d0ccb7923c09e5579cd17e4be8ff12fe3af6f24e0b488cdf67408de",
+      "included": true,
+      "published_sha256": "09cd2aec2d0ccb7923c09e5579cd17e4be8ff12fe3af6f24e0b488cdf67408de",
+      "adapted": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-ordinary-d8-0.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-ordinary-d8-0.pt",
+      "bytes": 15176,
+      "source_sha256": "be50586645a462846b02973f0742f6974bf342e0aa50aa6081851eeb508ad58e",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-ordinary-d8-1.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-ordinary-d8-1.pt",
+      "bytes": 15176,
+      "source_sha256": "e38006f9be90ecdfd8af46128950134a284829e86c35e890a8e38ee813a99826",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-ordinary-d8-2.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-ordinary-d8-2.pt",
+      "bytes": 15176,
+      "source_sha256": "f3a02b7948bc2e4d954534f479e9866e61df66d9beba411d65ee3858304c66ca",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-ordinary-d8-3.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-ordinary-d8-3.pt",
+      "bytes": 15176,
+      "source_sha256": "1eb79eed2d6ecfd3c53e6d288d821d5e6b07eb29f53dc0e00974c0f362c8e03f",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-ordinary-d8-4.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-ordinary-d8-4.pt",
+      "bytes": 15176,
+      "source_sha256": "cbfdc6c3eb7a0f4f52f45e4275159d112ace52bd397cebfd40798023a5a5f875",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-weighted-d8-0.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-weighted-d8-0.pt",
+      "bytes": 15176,
+      "source_sha256": "9015a5a4ba477f06408100c4b06c9cf4f7e285a04cd49ffbfb843123ab8d0148",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-weighted-d8-1.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-weighted-d8-1.pt",
+      "bytes": 15176,
+      "source_sha256": "2c0b1a31d4ea343f03e973bf532c46b9c3cf5eba157c5d9408348659a364290e",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-weighted-d8-2.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-weighted-d8-2.pt",
+      "bytes": 15176,
+      "source_sha256": "546155c855ebeecbed1ab23b766ffb1a41a6d030a799a25af722f73cba741414",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-weighted-d8-3.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-weighted-d8-3.pt",
+      "bytes": 15176,
+      "source_sha256": "55b3c068a1d1a69da32758dfdf5a2aa3e68a1d3cda2ffa0618eb3feaeebfdc74",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/output/runs/balanced-weighted-d8-4.pt",
+      "destination": "multistate-sigreg/output/runs/balanced-weighted-d8-4.pt",
+      "bytes": 15176,
+      "source_sha256": "4c53a4bb48350009cbec10aa78e6edb8f67b3fa3a94376274140e3beb2c14ce5",
+      "included": false
+    },
+    {
+      "source": "icm-folding/multistate-sigreg/run.py",
+      "destination": "multistate-sigreg/run.py",
+      "bytes": 20685,
+      "source_sha256": "1562f707ab950be742b99ad5c5e23b8a16297dead09fa16edfb50a57cba7255e",
+      "included": true,
+      "published_sha256": "1562f707ab950be742b99ad5c5e23b8a16297dead09fa16edfb50a57cba7255e",
+      "adapted": false
+    },
+    {
       "source": "icm-folding/README.md",
       "destination": "README.md",
-      "bytes": 18528,
-      "source_sha256": "f2a0ada83a6095d23a7657014d388d04aeebf7d32df1d619ec76a5454cda5455",
+      "bytes": 18914,
+      "source_sha256": "4e47b350035b6779ab42874fdc39eb343d247d39fe4450d42b720ca91a8eb99d",
       "included": true,
-      "published_sha256": "af1a799052736a4ec097946bb132174060f325e99d12f32cceebc3788309740e",
+      "published_sha256": "3b8399e30dbdc66571526d2751fac87279a8586a0f37255004dca89328cd64f1",
       "adapted": true
     },
     {
       "source": "icm-folding/PROGRESS.md",
       "destination": "PROGRESS.md",
-      "bytes": 72245,
-      "source_sha256": "401cbd0e15e410025ce5f062287e10fb8a9f44dd9768a7f78deaa96778d6e8ca",
+      "bytes": 73124,
+      "source_sha256": "936ab3346928ba6a2212f1ec3dd3d8bdfda314efc5e6dc4bd532b19638bd1292",
       "included": true,
-      "published_sha256": "fad4f0402338ed8ad6df43226abea25224d2d98c14b8e28eb0afe68db673df5a",
+      "published_sha256": "d741e89fb6434ca29ab982b40de221e190f0bae907576b92bb9d5fffdc2502a0",
       "adapted": true
     },
     {
       "source": "icm-folding/export_github.py",
       "destination": "export_github.py",
-      "bytes": 12678,
-      "source_sha256": "c3f5f3a932ec3e14933441dce2921091a53cadf35d869576e430f31d3ac23e86",
+      "bytes": 12836,
+      "source_sha256": "5d231a9b233917e63009fcac5a4e9c0258d27b1f7b9d18fb28eb3f5e31dcdc20",
       "included": true,
-      "published_sha256": "c3f5f3a932ec3e14933441dce2921091a53cadf35d869576e430f31d3ac23e86",
+      "published_sha256": "5d231a9b233917e63009fcac5a4e9c0258d27b1f7b9d18fb28eb3f5e31dcdc20",
       "adapted": false
     }
   ],

@@ -1,6 +1,16 @@
 # Merged progress: ICM policy, folding, and repairs
 
-Updated November 26, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+Updated November 27, 2026 from the studies linked in [the index](README.md). Most historical results use previously inspected diagnostic sources, primarily seeds 130–139, rather than a new independent validation cohort. Fold counts from different protocols should be read with their stated grid and support definitions.
+
+## November 27: SIGReg with a 2-d state (started; results pending)
+
+- **Why.** The 1-d-state world cannot test aliasing between state variables. [multistate-sigreg](multistate-sigreg/README.md)
+  adds a lateral offset b to depth d, using the same renderer with 6 coordinates and 5 actions.
+- **Design.** [Protocol](multistate-sigreg/PROTOCOL.md), hash-locked before any fit. Three scripted occupancies, verified:
+  balanced (about 6% of mass below d = 2), skew-d (about 87%), and skew-db (about 85%, plus about 81% at b < −2).
+  D ∈ {1, 2, 3, 4, 8}, ordinary vs weighted SIGReg, 5 seeds: 150 fits. Predictions S1–S6 are fixed in the protocol.
+- **Status.** Running. One smoke-test fit (skew-d, ordinary, D = 2) aliased 28% of native mass. This is not yet a result.
+- **Remaining.** Complete the fits, then report predictions, downstream effects, figures and the write-up.
 
 ## November 26: Multi-dimensional SIGReg: no aliasing, but the occupancy cost remains (completed, pre-registered)
 
